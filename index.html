@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Bienvenidas al juego de - Misión 0 - Identifica tus retos para fijar un rumbo a tu expedición! - webApp">
+  <meta name="author" content="visualiabcn.com">
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+  <title>Misión 0</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,700" rel="stylesheet"> check quins gruixos s'usen si 100 i 200 s'usen-->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,600,700" rel="stylesheet"> -->
+
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="text-center hidden-md-up p-5">
+    <h2>Esta WebApp no está preparada para móviles</h2>
+  </div>
+  <nav id="mainNav" class="navbar navbar-fixed-top hidden-sm-down">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="justify-content-end">
+      <div class="float-right">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-bars mr-2"></i>
+          Menu Game Master
+        </button>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a class="" href="#">Introducir problemática</a>
+            </li>
+            <li>
+              <a class="" href="#">Formación equipos</a>
+            </li>
+            <li>
+              <a class="" href="#">Empezar partida</a>
+            </li>
+            <li>
+              <hr/>
+            </li>
+            <li>
+              <a class="" href="#">Ranking bikles</a>
+            </li>
+            <li>
+              <a class="" href="#">Resumen final</a>
+            </li>
+            <li>
+              <a class="" href="#">Exportar resumen final</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid hidden-sm-down px-10">
+    <!-- ** pag p1/2/3 GM** -->
+    <main>
+      <header class="text-center mb-10">
+        <div class="text-center">
+          <img src="img/logo_binnakle_es.png" alt="">
+        </div>
+        <div class="text-center">
+          <img src="img/logo_m0_es.svg" alt="">
+        </div>
+      </header>
+      <section class="text-center">
+        <form>
+          <div class="form-group">
+            <p class="fs26">Introduce el código</p>
+            <div class="row mx-5">
+              <div class="col">
+                <input type="password" class="form-control fs26" aria-describedby="codeHelp" placeholder="Introduce aquí el código">
+              </div>
+              <div class="col-12 col-md-auto">
+                <i class="fa fa-wpforms fa-3x example_ic align-middle mr-3"></i>
+                <span id="codeHelp" class="text-muted">Ejemplo 9P8674</span>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mb-10">Empezar partida</button>
+        </form>
+
+        <!-- Button trigger modals -->
+
+        <div>
+          <a href="#" data-toggle="modal" data-target="#modal_buy">Compra tu código para poder jugar</a>
+        </div>
+        <div>
+          <a href="#" data-toggle="modal" data-target="#modal_contact">Contacta con nosotros</a>
+        </div>
+      </section>
+      <div>
+        <!-- Modal contact -->
+
+        <div id="modal_contact" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_contactLiveLabel" style="display: none;" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal_contactLiveLabel">Contacta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group row">
+                    <div class="col">
+                      <label class="sr-only" for="inlineFormInput">Persona de contacto</label>
+                      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Persona de contacto">
+                    </div>
+                    <div class="col">
+                      <label class="sr-only" for="inlineFormInput">Empresa</label>
+                      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Empresa">
+                    </div>
+                    <div class="col">
+                      <label class="sr-only" for="inlineFormInput">E-mail</label>
+                      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="E-mail">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                  </div>
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal buy -->
+
+        <div id="modal_buy" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_buyLiveLabel" style="display: none;" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal_buyLiveLabel">Compra</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <p>Precio de una partida: 100€</p>
+                <p>Para continuar con el proceso, a continuación encontrarás el Código IBAN y SWIFT para realizar la transferencia:</br></br>Código IBAN: BBVA ES74 0182-7212-50-0201916788</br></br>SWIFT: BBVAESMMXXX</p>
+                <p>Una vez realizada la transferencia envia el justificante a info@binnakle.com, indicando tu nombre, y procederemos al envío de tu pedido.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ** pag p4 ** -->
+    <main>
+      <header class="mb-5">
+        <div class="text-center">
+          <img src="img/logo_m0_es_sm.svg" alt="">
+        </div>
+      </header>
+      <section>
+        <p>Misión cero ¿por qué?</p>
+        <p class="fs22">Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica</p>
+        <img src="img/img1.jpg" alt="" class="float-right">
+        <div>
+          <p>Por ejemplo:</p>
+          <ul style="line-height: 3rem;">
+            <li>
+              Tengo un problema de comunicación interna
+            </li>
+            <li>
+              Tengo que integrar a los millenials
+            </li>
+            <li>
+              Quiero reducir costes
+            </li>
+            <li>
+              Quiero relanzar mi producto
+            </li>
+            <li>
+              Tengo que optimizar mi logística
+            </li>
+            <li>
+              Quiero impulsar la transformación digital
+            </li>
+            <li>
+              Quiero entrar en un nuevo mercado
+            </li>
+            <li>
+              Tengo que adaptar la estructura de ventas al nuevo entorno
+            </li>
+            <li>
+              …
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p5 ** -->
+    <main>
+      <header class="mb-5">
+        <div class="text-center">
+          <img src="img/logo_m0_es_sm.svg" alt="">
+        </div>
+      </header>
+      <section>
+        <p class="fs22">
+          Se organizan muchas reuniones para tratar problemáticas, pero…
+        </p>
+        <div class="row">
+          <div class="col-7">
+            <p>
+              Trabajar sobre temas tan génericos no ayuda a generar soluciones nuevas, especialmente si ya se ha trabajado sobre ellos
+            </p>
+            <img src="img/img2.jpg" alt="" class="img-fluid">
+          </div>
+          <div class="col-5 pl-5">
+            <img src="img/img3.jpg" alt="" class="img-fluid">
+            <p>
+              Estas reuniones suelen transformarse en tertulias y debates sin un output concreto
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p6 ** -->
+    <main>
+      <header class="mb-5">
+        <div class="text-center">
+          <img src="img/logo_m0_es_sm.svg" alt="">
+        </div>
+      </header>
+      <section>
+        <p class="fs22">
+          ¡Sin retos concretos, es complicado llegar a soluciones concretas!
+        </p>
+        <p class="fs22 text-center">
+          If you only focus on the problem
+        </p>
+        <div class="text-center">
+          <img src="img/img4.jpg" alt="">
+        </div>
+        <p class="fs22 text-center">
+          You might miss the easy solution
+        </p>
+        <div>
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p7 ** -->
+    <main>
+      <section>
+        <p class="fs22">
+          Ayuda a las empresas a identificar <b>retos concretos</b>, con una <b>metodología lúdica</b>
+        </p>
+        <div class="py-20 text-center">
+          <img src="img/imgp7.gif" alt="" class="img-fluid">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p8 ** -->
+    <main>
+      <section>
+        <p class="fs22">
+          Acabarán la partida con una <b>lista de retos concretos, priorizados y clasificados por ambito,</b> que les permitirán trabajar su problemática de manera concreta y enfocada, <b>optimizando la búsqueda de soluciones novedosas</b>
+        </p>
+        <div class="text-right">
+          <a href="#" class="mr-2" data-toggle="tooltip" title="Haz click para descargar"><i class="fa fa-download"></i></a>
+          <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
+            <i class="fa fa-print"></i>
+          </a>          
+        </div>
+        <p class="fs22">
+          Problemática inicial:
+        </p>
+        <h2 class="text-center green">
+          ¿Cómo………………………………?
+        </h2>
+        <p class="fs22 mt-5">
+          Tabla resumen de los retos
+        </p>
+        <article class="row mt-2">
+          <div class="col mr-4 pz-4 t5_p">
+            <h4 class>TOP 5 RETOS PRIORITARIOS</h4>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+          </div>
+          <div class="col ml-4 pz-4 t5_qw">
+            <h4>TOP 5 RETOS OPERATIVOS (QUICK WINS)</h4>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+          </div>
+        </article>
+        <article class="mt-5">
+          <p class="fs22">
+            Ámbitos
+          </p>
+          <div id="accordion_a_ex" role="tablist" aria-multiselectable="true">
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a1_ex">
+                <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a1_ex" aria-expanded="true" aria-controls="c_a1_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a1_ex" class="collapse" role="tabpanel" aria-labelledby="h_a1_ex">
+                <div class="card-block">
+                  
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a2_ex">
+                <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a2_ex" aria-expanded="false" aria-controls="c_a2_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a2_ex" class="collapse" role="tabpanel" aria-labelledby="h_a2_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a3_ex">
+                <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a3_ex" aria-expanded="false" aria-controls="c_a3_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a3_ex" class="collapse" role="tabpanel" aria-labelledby="h_a3_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a4_ex">
+                <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a4_ex" aria-expanded="false" aria-controls="c_a4_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a4_ex" class="collapse" role="tabpanel" aria-labelledby="h_a4_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a5_ex">
+                <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a5_ex" aria-expanded="false" aria-controls="c_a5_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a5_ex" class="collapse" role="tabpanel" aria-labelledby="h_a5_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a6_ex">
+                <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a6_ex" aria-expanded="false" aria-controls="c_a6_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a6_ex" class="collapse" role="tabpanel" aria-labelledby="h_a6_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p class="mb-0">
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a7_ex">
+                <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a7_ex" aria-expanded="false" aria-controls="c_a7_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a7_ex" class="collapse" role="tabpanel" aria-labelledby="h_a7_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="mt-5">
+          <p class="fs22">
+            Tipologia
+          </p>
+          <div id="accordion_t_ex" role="tablist" aria-multiselectable="true">
+            <div class="card">
+              <div class="progressa" role="tab" id="h_t1_ex">
+                <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t1_ex" aria-expanded="true" aria-controls="c_t1_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_t1_ex" class="collapse" role="tabpanel" aria-labelledby="h_t1_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_t2_ex">
+                <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t2_ex" aria-expanded="false" aria-controls="c_t2_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_t2_ex" class="collapse" role="tabpanel" aria-labelledby="h_t2_ex">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_t3_ex">
+                <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t3_ex" aria-expanded="false" aria-controls="c_t3_ex" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_t3_ex" class="collapse" role="tabpanel" aria-labelledby="h_t3">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <!-- ** pag p9 ** -->
+    <main>
+      <section>
+        <p class="fs22">
+          Un recorrido en 9 etapas
+          </br>
+          Cada etapa nos llevará a seleccionar 5 retos relevantes y novedosos
+        </p>
+        <div class="text-center py-20 mx-10neg">
+          <img src="img/imgp9.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p10/11 GM** -->
+    <main>
+      <section>
+        <p class="fs22">
+          ¡Competiremos entre equipos!
+        </p>
+        <p>
+          Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!
+          </br>
+          </br>
+          Cada equipo:
+          </br>
+          1. elije el nombre que quiere llevar durante la partida (no pierda tiempo porque ¡si otro equipo lo elije antes, sera suyo!)
+          </br>
+          2. Introduce los nombres de sus miembros, separados por comas (¡importante!)
+        </p>
+        <div class="row">
+          <div class="col">
+            <p class="fs22">
+              Equipo
+            </p>
+            <div class="d-inline">
+              <img class="img-fluid" style="height: 50px; width: 50px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22771%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20771%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ddcba636d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ddcba636d%22%3E%3Crect%20width%3D%22771%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.7421875%22%20y%3D%22143%22%3E771x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+              <select class="custom-select ml-2">
+                <option selected>Selecciona el nombre del equipo</option>
+                <option value="1">A</option>
+                <option value="2">B</option>
+                <option value="3">C</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-8">
+            <p class="fs22">
+              Jugadores
+            </p>
+            <div class="row form-group">
+              <div class="col pl-0">
+                <input type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas">
+              </div>
+              <div class="col-12 col-md-auto">
+                <a href="#" data-toggle="tooltip" title="Haz click para confirmar los nombres" class="d-inline-block">
+                  <i class="fa fa-check fa-2x"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ** pag p12/13 GM** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp12.svg" alt="" class="w-100">
+      </header>
+      <section class="text-center">
+        <form>
+          <p class="fs26">El reto de la partida</p>
+          <div class="row mx-5 form-group">
+            <div class="col">
+              <input type="password" class="form-control fs26" placeholder="Introduce aquí la problemática">
+              <b class="fs26">Así tiene que quedar una vez introducida la problemática</b>
+            </div>
+            <div class="col col-md-auto">
+              <a href="#" data-toggle="tooltip" title="Confirma la problematica" class="d-inline-block">
+                <i class="fa fa-check fa-3x"></i>
+              </a>
+            </div>
+          </div>
+        </form>
+
+        <div class="example">
+          <i class="fa fa-wpforms fa-2x example_ic align-top mr-3"></i>
+          <div class="example_wrapper d-inline-block">
+            <div class="example_inner text-left py-3 px-4">
+              Tiene que expresar de la siguiente manera: 
+              <i>Cómo podríamos ...?</i>
+              </br>
+              <b>Ejemplo</b>
+              <i>¿Cómo mejorar mi comunicación interna?</i>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <!-- ** pag p14 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp14.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p15 ** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp15.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <p class="fs22">
+          ¿Cómo hablamos de la problemática de manera espontánea e informal?
+        </p>
+        <p>
+          Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)
+        </p>
+        <ul class="green">
+          <li>
+            lo que no funciona es
+          </li>
+          <li>
+            lo que deberíamos solucionar es
+          </li>
+          <li>
+            ¿por qué no hacemos…?
+          </li>
+          <li>
+            …
+          </li>
+        </ul>
+      </section>
+    </main>
+    <!-- ** pag p16/17/18/19 GM** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp15.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <div class="row no-gutters mb-5">
+          <div class="col-12 col-md-auto">
+            <p class="fs22">
+              Comentarios espontáneos más relevantes
+            </p>
+          </div>
+          <div class="col fs34">
+            <div class="d-flex align-items-end flex-column">
+              <div>
+                <time>10:00</time>
+                <i class="fa fa-clock-o"></i>
+                <button class="btn btn-primary fs22">Parar tiempo</button>
+              </div>
+              <div>
+                <time>00:10</time>
+                <a href="#" data-toggle="tooltip" title="Haz click para añadir tiempo" class="d-inline-block grey_link">
+                  <i class="fa fa-plus"></i>
+                </a>
+                <a href="#" data-toggle="tooltip" title="Haz click para restar tiempo" class="d-inline-block grey_link">
+                  <i class="fa fa-minus"></i>
+                </a>
+                <button class="btn btn-primary fs22">Añadir tiempo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col pl-0">
+            <input type="text" class="form-control" placeholder="El equipo introduce aquí un comentario y clicka en + para grabarlo y pasar al siguiente">
+            <b class="fs26">Así tiene que quedar una vez introducido el comentario espontáneo - Los rumores siempre van más rápido que la información interna</b>
+
+          </div>
+          <div class="col col-md-auto">
+            <a href="#" data-toggle="tooltip" title="Haz click para añadir un comentario" class="d-inline-block">
+              <i class="fa fa-plus fa-2x"></i>
+            </a>
+            <a href="#" data-toggle="tooltip" title="Haz click para borrar un comentario" class="d-inline-block pull-right">
+              <i class="fa fa-close fa-2x"></i>
+              Para borrar una vez introducido el comentario espontáneo
+            </a>
+          </div>
+        </div>
+
+        <!-- Button trigger modal_ex1 -->
+        <div>
+          <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
+            <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+            <p class="fs12">click aquí para<br> ver ejemplo
+            </p>
+          </a>
+        </div>
+
+        <div class="text-center mt-5">
+          <div class="alert alert-danger d-inline-block" role="alert">
+            <b>
+              ¡Ganarán Bikles los equipos con más comentarios!
+            </b>
+            </br>
+            ¡Perderán Bikles los equipos con menos comentarios!
+        </div>
+        </div>
+      </section>
+      <!-- modal_ex1 -->
+      <div>
+        <div id="modal_ex1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header align-items-start">
+                <div class="example fs26">
+                  <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                  <div class="example_wrapper d-inline-block">
+                    <div class="example_inner text-left py-3 px-4">
+                      <span>
+                        <b>Ejemplo Problemática</b> 
+                        ¿Cómo mejorar mi comunicación interna?
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  <b>
+                    Para entender mejor lo que se nos pide, seguiremos una simulación de partida sobre un reto teorico:       
+                    </br></br>
+                    ¿Cómo mejorar mi comunicación interna?
+                    </br></br>
+                    En cada etapa podrá clickar sobre el icono amarillo para leer los contenidos que se podrían haber generado sobre este reto.
+                    </br></br>
+                    En este caso, los comentarios informales podrían haber sido
+                    </br></br>
+                  </b>
+                    Los rumores siempre van más rápido que la información interna
+                    </br>
+                    Nadie lee los mails de comunicación interna       
+                    </br>
+                    Mucha gente no entiende los mails de comunicación interna
+                    </br>
+                    No tocan lo que nos gustaría realmente saber
+                    </br>
+                    Para los de la fábrica, la información no es relevante
+                    </br>
+                    Los mails de comunicación son muy aburridos
+                    </br>
+                    Siempre presentan un mundo perfecto
+                    </br>
+                    Los que mandan comunicación están muy lejos y no saben lo que hacemos
+                    </br>
+                    Tendríamos que tener a personas de comunicación en cada área 
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ** pag 20 ** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp15.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <div class="row no-gutters mb-5">
+          <div class="col-12 col-md-auto">
+            <p class="fs22">
+              Ranking de comentarios
+            </p>
+            <p>
+              Los equipos con más comentarios ganan Bikles y los equipos con menos pierden Bikles!
+            </p>
+          </div>
+          <div class="col fs34">
+            <div class="d-flex align-items-end flex-column">
+              <div>
+                <time>10:00</time>
+                <i class="fa fa-clock-o"></i>
+                <button class="btn btn-primary fs22">Parar tiempo</button>
+              </div>
+              <div>
+                <time>00:10</time>
+                <a href="#" data-toggle="tooltip" title="Haz click para añadir tiempo" class="d-inline-block grey_link">
+                  <i class="fa fa-plus"></i>
+                </a>
+                <a href="#" data-toggle="tooltip" title="Haz click para restar tiempo" class="d-inline-block grey_link">
+                  <i class="fa fa-minus"></i>
+                </a>
+                <button class="btn btn-primary fs22">Añadir tiempo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th></th>
+              <th>Equipo</th>
+              <th>Comentarios</th>
+              <th>Bikles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><img class="img-fluid" style="height: 50px; width: 50px;   margin: -7px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22771%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20771%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ddcba636d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ddcba636d%22%3E%3Crect%20width%3D%22771%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.7421875%22%20y%3D%22143%22%3E771x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></td>
+              <td>xxx</td>
+              <td>15</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><img class="img-fluid" style="height: 50px; width: 50px;   margin: -7px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22771%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20771%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ddcba636d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ddcba636d%22%3E%3Crect%20width%3D%22771%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.7421875%22%20y%3D%22143%22%3E771x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></td>
+              <td>xxx</td>
+              <td>15</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><img class="img-fluid" style="height: 50px; width: 50px;   margin: -7px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22771%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20771%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ddcba636d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ddcba636d%22%3E%3Crect%20width%3D%22771%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.7421875%22%20y%3D%22143%22%3E771x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></td>
+              <td>xxx</td>
+              <td>15</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="text-center mt-5">
+          <div class="alert alert-danger d-inline-block" role="alert">
+            <b>
+              ¡Ganarán Bikles los equipos con más comentarios!
+            </b>
+            </br>
+            ¡Perderán Bikles los equipos con menos comentarios!
+        </div>
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p21 ** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp15.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <p class="fs22">
+          ¿Cómo hablamos de la problemática de manera espontánea e informal?
+        </p>
+        <p>
+          Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)
+        </p>
+        <ul class="green">
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+        <div class="text-right">
+          <a href="#" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block">
+            <i class="fa fa-check fa-2x"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p22 ** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp15.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <div class="row no-gutters mb-5">
+          <div class="col-12 col-md-auto">
+            <p class="fs22">
+              Transformar los 3 comentarios seleccionados en retos y elegir en qué ambito colocarlos
+            </p>
+          </div>
+          <div class="col fs34">
+            <div class="d-flex align-items-end flex-column">
+              <div>
+                <time>5:00</time>
+                <i class="fa fa-clock-o"></i>
+                <button class="btn btn-primary fs22">Parar tiempo</button>
+              </div>
+              <div>
+                <time>00:10</time>
+                <a href="#" data-toggle="tooltip" title="Haz click para añadir tiempo" class="d-inline-block grey_link">
+                  <i class="fa fa-plus"></i>
+                </a>
+                <a href="#" data-toggle="tooltip" title="Haz click para restar tiempo" class="d-inline-block grey_link">
+                  <i class="fa fa-minus"></i>
+                </a>
+                <button class="btn btn-primary fs22">Añadir tiempo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="fs22">
+        </p>
+        <p>
+          Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)
+        </p>
+        <ul class="green">
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>Los rumores siempre van más rápido que la información interna</span>
+            <div class="form-check pull-right">
+              <label class="custom-control custom-checkbox" data-toggle="tooltip" title="Haz click para seleccionar">
+                <input type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+        <div class="text-right">
+          <a href="#" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block">
+            <i class="fa fa-check fa-2x"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p27 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp27.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p32 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp32.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p44 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp44.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p48 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp48.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p59 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp59.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p62 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp62.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p73 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp73.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p77 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp77.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p84 ** -->
+    <main>
+      <section>
+        <div class="py-20 mx-10neg">
+          <img src="img/imgp84.svg" alt="" class="w-100">
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p99 ** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp12.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <div>
+          
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p99 ** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp12.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <div>
+          
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p99 ** -->
+    <main>
+      <header class="text-center m-5 mb-10">
+        <img src="img/breadp12.svg" alt="" class="w-100">
+      </header>
+      <section>
+        <div>
+          
+        </div>
+      </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!--
+
+
+                                            .....'',;;::cccllllllllllllcccc:::;;,,,''...'',,'..
+                                  ..';cldkO00KXNNNNXXXKK000OOkkkkkxxxxxddoooddddddxxxxkkkkOO0XXKx:.
+                            .':ok0KXXXNXK0kxolc:;;,,,,,,,,,,,;;,,,''''''',,''..              .'lOXKd'
+                       .,lx00Oxl:,'............''''''...................    ...,;;'.             .oKXd.
+                    .ckKKkc'...'',:::;,'.........'',;;::::;,'..........'',;;;,'.. .';;'.           'kNKc.
+                 .:kXXk:.    ..       ..................          .............,:c:'...;:'.         .dNNx.
+                :0NKd,          .....''',,,,''..               ',...........',,,'',,::,...,,.        .dNNx.
+               .xXd.         .:;'..         ..,'             .;,.               ...,,'';;'. ...       .oNNo
+               .0K.         .;.              ;'              ';                      .'...'.           .oXX:
+              .oNO.         .                 ,.              .     ..',::ccc:;,..     ..                lXX:
+             .dNX:               ......       ;.                'cxOKK0OXWWWWWWWNX0kc.                    :KXd.
+           .l0N0;             ;d0KKKKKXK0ko:...              .l0X0xc,...lXWWWWWWWWKO0Kx'                   ,ONKo.
+         .lKNKl...'......'. .dXWN0kkk0NWWWWWN0o.            :KN0;.  .,cokXWWNNNNWNKkxONK: .,:c:.      .';;;;:lk0XXx;
+        :KN0l';ll:'.         .,:lodxxkO00KXNWWWX000k.       oXNx;:okKX0kdl:::;'',;coxkkd, ...'. ...'''.......',:lxKO:.
+       oNNk,;c,'',.                      ...;xNNOc,.         ,d0X0xc,.     .dOd,           ..;dOKXK00000Ox:.   ..''dKO,
+      'KW0,:,.,:..,oxkkkdl;'.                'KK'              ..           .dXX0o:'....,:oOXNN0d;.'. ..,lOKd.   .. ;KXl.
+      ;XNd,;  ;. l00kxoooxKXKx:..ld:         ;KK'                             .:dkO000000Okxl;.   c0;      :KK;   .  ;XXc
+      'XXdc.  :. ..    '' 'kNNNKKKk,      .,dKNO.                                   ....       .'c0NO'      :X0.  ,.  xN0.
+      .kNOc'  ,.      .00. ..''...      .l0X0d;.             'dOkxo;...                    .;okKXK0KNXx;.   .0X:  ,.  lNX'
+       ,KKdl  .c,    .dNK,            .;xXWKc.                .;:coOXO,,'.......       .,lx0XXOo;...oNWNXKk:.'KX;  '   dNX.
+        :XXkc'....  .dNWXl        .';l0NXNKl.          ,lxkkkxo' .cK0.          ..;lx0XNX0xc.     ,0Nx'.','.kXo  .,  ,KNx.
+         cXXd,,;:, .oXWNNKo'    .'..  .'.'dKk;        .cooollox;.xXXl     ..,cdOKXXX00NXc.      'oKWK'     ;k:  .l. ,0Nk.
+          cXNx.  . ,KWX0NNNXOl'.           .o0Ooldk;            .:c;.':lxOKKK0xo:,.. ;XX:   .,lOXWWXd.      . .':,.lKXd.
+           lXNo    cXWWWXooNWNXKko;'..       .lk0x;       ...,:ldk0KXNNOo:,..       ,OWNOxO0KXXNWNO,        ....'l0Xk,
+           .dNK.   oNWWNo.cXK;;oOXNNXK0kxdolllllooooddxk00KKKK0kdoc:c0No        .'ckXWWWNXkc,;kNKl.          .,kXXk,
+            'KXc  .dNWWX;.xNk.  .kNO::lodxkOXWN0OkxdlcxNKl,..        oN0'..,:ox0XNWWNNWXo.  ,ONO'           .o0Xk;
+            .ONo    oNWWN0xXWK, .oNKc       .ONx.      ;X0.          .:XNKKNNWWWWNKkl;kNk. .cKXo.           .ON0;
+            .xNd   cNWWWWWWWWKOkKNXxl:,'...;0Xo'.....'lXK;...',:lxk0KNWWWWNNKOd:..   lXKclON0:            .xNk.
+            .dXd   ;XWWWWWWWWWWWWWWWWWWNNNNNWWNNNNNNNNNWWNNNNNNWWWWWNXKNNk;..        .dNWWXd.             cXO.
+            .xXo   .ONWNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNNK0ko:'..OXo          'l0NXx,              :KK,
+            .OXc    :XNk0NWXKNWWWWWWWWWWWWWWWWWWWWWNNNX00NNx:'..       lXKc.     'lONN0l.              .oXK:
+            .KX;    .dNKoON0;lXNkcld0NXo::cd0NNO:;,,'.. .0Xc            lXXo..'l0NNKd,.              .c0Nk,
+            :XK.     .xNX0NKc.cXXl  ;KXl    .dN0.       .0No            .xNXOKNXOo,.               .l0Xk;.
+           .dXk.      .lKWN0d::OWK;  lXXc    .OX:       .ONx.     . .,cdk0XNXOd;.   .'''....;c:'..;xKXx,
+           .0No         .:dOKNNNWNKOxkXWXo:,,;ONk;,,,,,;c0NXOxxkO0XXNXKOdc,.  ..;::,...;lol;..:xKXOl.
+           ,XX:             ..';cldxkOO0KKKXXXXXXXXXXKKKKK00Okxdol:;'..   .';::,..':llc,..'lkKXkc.
+           :NX'    .     ''            ..................             .,;:;,',;ccc;'..'lkKX0d;.
+           lNK.   .;      ,lc,.         ................        ..,,;;;;;;:::,....,lkKX0d:.
+          .oN0.    .'.      .;ccc;,'....              ....'',;;;;;;;;;;'..   .;oOXX0d:.
+          .dN0.      .;;,..       ....                ..''''''''....     .:dOKKko;.
+           lNK'         ..,;::;;,'.........................           .;d0X0kc'.
+           .xXO'                                                 .;oOK0x:.
+            .cKKo.                                    .,:oxkkkxk0K0xc'.
+              .oKKkc,.                         .';cok0XNNNX0Oxoc,.
+                .;d0XX0kdlc:;,,,',,,;;:clodkO0KK0Okdl:,'..
+                    .,coxO0KXXXXXXXKK0OOxdoc:,..
+
+
+    ** -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ** pag p90 ** -->
+    <main>
+      <section>
+        <div>
+
+                <i class="fa fa-check fa-3x" style="font-size: 14rem"></i>
+                <i class="fa fa-check fa-3x" style="font-size: 14rem"></i>
+                <i class="fa fa-check fa-3x" style="font-size: 14rem"></i>
+                <i class="fa fa-check fa-3x" style="font-size: 14rem"></i>
+
+
+        </div>
+      </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ** pag p88 ** -->
+    <main>
+      <section>
+        <div class="text-right">
+          <a href="#" class="mr-2"><i class="fa fa-download"></i></a>
+          <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
+            <i class="fa fa-print"></i>
+          </a>          
+        </div>
+        <p class="fs22">
+          Problemática inicial:
+        </p>
+        <h2 class="text-center green">
+          ¿Cómo………………………………?
+        </h2>
+        <p class="fs22 mt-5">
+          Tabla resumen de los retos
+        </p>
+        <article class="row mt-2">
+          <div class="col mr-4 pz-4 t5_p">
+            <h4 class>TOP 5 RETOS PRIORITARIOS</h4>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+          </div>
+          <div class="col ml-4 pz-4 t5_qw">
+            <h4>TOP 5 RETOS OPERATIVOS (QUICK WINS)</h4>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+            <p>¿Cómo………………………………?</p>
+          </div>
+        </article>
+      </section>
+    </main>
+    <!-- ** pag p89 ** -->
+    <main>
+      <section>
+        <div class="text-right">
+          <a href="#" class="mr-2" data-toggle="tooltip" title="Haz click para descargar"><i class="fa fa-download"></i></a>
+          <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
+            <i class="fa fa-print"></i>
+          </a>          
+        </div>
+        <article>
+          <p class="fs22">
+            Ámbitos
+          </p>
+          <div id="accordion_a" role="tablist" aria-multiselectable="true">
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a1">
+                <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a1" aria-expanded="true" aria-controls="c_a1" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a1" class="collapse" role="tabpanel" aria-labelledby="h_a1">
+                <div class="card-block">
+                  
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a2">
+                <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a2" aria-expanded="false" aria-controls="c_a2" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a2" class="collapse" role="tabpanel" aria-labelledby="h_a2">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a3">
+                <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a3" aria-expanded="false" aria-controls="c_a3" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a3" class="collapse" role="tabpanel" aria-labelledby="h_a3">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a4">
+                <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a4" aria-expanded="false" aria-controls="c_a4" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a4" class="collapse" role="tabpanel" aria-labelledby="h_a4">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a5">
+                <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a5" aria-expanded="false" aria-controls="c_a5" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a5" class="collapse" role="tabpanel" aria-labelledby="h_a5">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a6">
+                <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a6" aria-expanded="false" aria-controls="c_a6" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a6" class="collapse" role="tabpanel" aria-labelledby="h_a6">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p class="mb-0">
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_a7">
+                <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a7" aria-expanded="false" aria-controls="c_a7" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_a7" class="collapse" role="tabpanel" aria-labelledby="h_a7">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <!-- ** pag p90 ** -->
+    <main>
+      <section>
+        <article>
+        <div class="text-right">
+          <a href="#" class="mr-2" data-toggle="tooltip" title="Haz click para descargar"><i class="fa fa-download"></i></a>
+          <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
+            <i class="fa fa-print"></i>
+          </a>          
+        </div>
+          <p class="fs22">
+            Tipologia
+          </p>
+          <div id="accordion_t" role="tablist" aria-multiselectable="true">
+            <div class="card">
+              <div class="progressa" role="tab" id="h_t1">
+                <a data-toggle="collapse" data-parent="#accordion_t" href="#c_t1" aria-expanded="true" aria-controls="c_t1" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_t1" class="collapse" role="tabpanel" aria-labelledby="h_t1">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_t2">
+                <a data-toggle="collapse" data-parent="#accordion_t" href="#c_t2" aria-expanded="false" aria-controls="c_t2" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_t2" class="collapse" role="tabpanel" aria-labelledby="h_t2">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="progressa" role="tab" id="h_t3">
+                <a data-toggle="collapse" data-parent="#accordion_t" href="#c_t3" aria-expanded="false" aria-controls="c_t3" class="w-100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                    <p class="mb-0">
+                      Collapsible
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div id="c_t3" class="collapse" role="tabpanel" aria-labelledby="h_t3">
+                <div class="card-block">
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                  <p>
+                    ¿Cómo………………………………?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <!-- ** pag p90 ** -->
+    <main>
+      <section>
+      </section>
+    </main>
+    <!-- ** pag p90 ** -->
+    <main>
+      <section>
+        <div>
+          
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p90 ** -->
+    <main>
+      <section>
+        <div>
+          
+        </div>
+      </section>
+    </main>
+    <!-- ** pag p90 ** -->
+    <main>
+      <section>
+        <div>
+
+        </div>
+      </section>
+    </main>
+    <footer>
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-end">
+          <li progresss="page-item">
+            <a class="page-link" href="#" aria-label="Previous" data-toggle="tooltip" title="Página anterior">
+              <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next" data-toggle="tooltip" title="Página siguiente">
+              <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+
+  <!--CDN té el Tether que es una mica diferent jQuery first, then Tether, then Bootstrap JS. 
+
+  USAR CDN i sino copia local, veure:
+  https://stackoverflow.com/questions/26192897/should-i-use-bootstrap-from-cdn-or-make-a-copy-on-my-server
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  -->
+
+  <!-- jQuery -->
+  <script src="vendor/jquery/jquery-3.1.1.slim.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="vendor/bootstrap/js/tether.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="vendor/scrollreveal/scrollreveal.min.js"></script> -->
+
+  <!-- Custom JavaScript -->
+  <script src="js/scripts.js"></script>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+
+</html>

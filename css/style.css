@@ -1,0 +1,344 @@
+/*!
+    INDEX 
+   ========================================================================== */
+/* BORRAR */
+/* NETEJAR 
+
+/* TEXT
+
+/* FORM
+/*checkboxes*/
+
+/* BTN 
+
+/* SPACING
+
+/* SECTIONS
+/*summary*/
+
+/* ELEMENTS
+
+/*examples*/
+/*tooltip overwrites*/
+
+/* OTHER
+
+/* RESPONSIVE
+    $ficar bloquejant mobil!
+ */
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #ECEED7;
+  color: #666;
+  font-weight: 200;
+  font-size: 1.125rem; /*18px rem es relatiu al HTML tag, 16px*/
+}
+
+section {
+}
+aside {
+}
+header {
+}
+header .header-content {
+}
+footer {
+}
+
+
+/* TEXT */
+/* NETEJAR */
+i{
+  font-weight: 200;
+}
+p {
+/*  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+*/}
+
+hr {
+  border-color: #83A521;
+  max-width: 50px;
+}
+
+
+.green {
+  color: #83A521;
+}
+/*.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}*/
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.7);
+}
+/*.fwl, b{
+  font-weight: 300;
+}*/
+
+/*.fs18{
+  font-size: 1.125rem; /*18px
+}*/
+/* END NETEJAR */
+
+
+th {
+  font-weight: 500;
+  text-align: center;
+}
+.table td, .table th{
+  vertical-align: inherit;
+}
+
+.form-control:focus {
+  border-color: #83A521;
+}
+ul{
+  list-style-type: none;
+  -webkit-padding-start: 0;
+}
+/*.fs-10{
+  font-size: 0.625rem;
+}*/
+.fs12{
+  font-size: 0.75rem;
+}
+.fs22{
+  font-size: 1.375rem; /*22px*/
+}
+.fs26{
+  font-size: 1.45rem; /*26.1px*/
+}
+.fs34{
+  font-size: 2.125rem; 
+}
+
+/* FORM */
+
+.form-control{
+  font-weight: 300;
+  /* color: #CCC !important; */
+}
+
+/*checkboxes*/
+/*x fer que el tick surti del cuadrat https://codepen.io/visualiaBCN/pen/JyrENK*/
+.custom-control {
+  top: -3px;
+}
+.custom-control-input:checked~.custom-control-indicator {
+  background-color: #83A521;
+}
+.custom-control-input:active~.custom-control-indicator {
+  color: #fff;
+  background-color: lightgreen;
+}
+
+.custom-control-input:focus~.custom-control-indicator {
+  -webkit-box-shadow: 0 0 0 1px #fff,0 0 0 3px lightgreen;
+  box-shadow: 0 0 0 1px #fff,0 0 0 3px lightgreen;
+}
+
+.custom-control-indicator{
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #D2DEB2;
+}
+.custom-checkbox .custom-control-indicator {
+  border-radius: .4rem;
+}
+/* BTN */
+/* NETEJAR */
+a, .btn {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+a,
+a:hover,
+a:focus {
+  color: #83A521;
+}
+.btn{
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus,
+.btn:active,
+.btn.active,
+{
+}
+/* END NETEJAR */
+.btn-primary {
+  color: #666;
+  background-color: transparent;
+  border-color: rgba(0,0,0,0.3);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #83A521;;
+  border-color: white !important;
+  color: white;  
+}
+
+.grey_link, .grey_link:hover, .grey_link:focus, .grey_link:active{
+  color: #666;
+}
+.navbar-toggler{
+  color: #83A521;
+}
+
+/* NETEJAR */
+
+/* SPACING */
+main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
+.mb-10{
+  margin-bottom: 6rem !important;
+}
+.px-10{
+  padding-left: 6rem !important;
+  padding-right: 6rem !important;
+}
+.py-20{
+  padding-top: 12rem !important;
+  padding-bottom: 12rem !important;
+}
+/*padding z vol dir top, right i left, el bottom l'hi he afegit per ajustar*/
+.pz-4{
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem !important;
+}
+.mx-10neg {
+  margin-left: -6rem !important;
+  margin-right: -6rem !important;
+}
+
+
+/* SECTIONS */
+
+/*summary*/
+.t5_p{
+  border: 3px solid #83A521;
+  font-weight: 400;
+}
+.t5_qw{
+  border: 3px solid white;
+}
+.t5_qw h4{
+  font-weight: 100;
+}
+.progressa{
+  background-color: #eee;
+}
+.progress-bar{
+  padding: .75rem 1.25rem;
+  height: initial;
+}
+
+/* ELEMENTS
+
+/*examples*/
+.example_ic{
+  color: #FBB03B;
+}
+.example_wrapper {
+  position: relative;
+}
+.example_inner {
+  background: #fff;
+  border: 0.1em solid #FBB03B;
+}
+.example_inner:before, .example_inner:after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-right: 0.5em solid #fff;
+  left: -0.45em;
+  top: 0.5em;
+}  
+.example_inner:before {
+  border-right-color: #FBB03B;
+  left: -0.5em;
+}
+@media (min-width: 992px) {
+  /*modal-lg overwrite*/
+  .modal-lg {
+    max-width: 80vw;
+  }
+}
+/*tooltip overwrites*/
+.tooltip{ 
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.tooltip-inner{
+  border-radius: 0;
+  background: #fff;
+  color: #666;
+}
+.tooltip-inner::before{
+  border-top-color: #fff !important;
+}
+
+/* OTHER */
+
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: green;
+}
+::selection {
+  color: white;
+  text-shadow: none;
+  background: green;
+}
+img::selection {
+  color: white;
+  background: transparent;
+}
+img::-moz-selection {
+  color: white;
+  background: transparent;
+}
+body {
+  webkit-tap-highlight-color: #222222;
+}
+
+
+/* ==========================================================================
+/* RESPONSIVE
+   ========================================================================== */
+
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 768px){
+}
+@media (min-width: 768px) {
+}
+
+/* Desktops and laptops ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Large screens ----------- */
+@media (min-width: 1200px) and (max-width: 3000px) {
+}   
+
+
+
+
+
+
