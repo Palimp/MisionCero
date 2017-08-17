@@ -6,8 +6,11 @@
 
 /* TEXT
 
+/*TABLES*/
+
 /* FORM
 /*checkboxes*/
+/*radios*/
 
 /* BTN 
 
@@ -71,10 +74,15 @@ hr {
 .green {
   color: #83A521;
 }
-/*.no-gutter > [class*='col-'] {
+/*
+.darkgreen {
+  color: #8DAD30;
+}
+.no-gutter > [class*='col-'] {
   padding-right: 0;
   padding-left: 0;
-}*/
+}
+*/
 
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
@@ -83,32 +91,17 @@ hr {
   font-weight: 300;
 }*/
 
-/*.fs18{
-  font-size: 1.125rem; /*18px
-}*/
 /* END NETEJAR */
 
-
-th {
-  font-weight: 500;
-  text-align: center;
-}
-.table td, .table th{
-  vertical-align: inherit;
-}
-
-.form-control:focus {
-  border-color: #83A521;
-}
 ul{
   list-style-type: none;
   -webkit-padding-start: 0;
 }
-/*.fs-10{
-  font-size: 0.625rem;
-}*/
 .fs12{
   font-size: 0.75rem;
+}
+.fs14{
+  font-size: 0.875rem;
 }
 .fs22{
   font-size: 1.375rem; /*22px*/
@@ -116,8 +109,35 @@ ul{
 .fs26{
   font-size: 1.45rem; /*26.1px*/
 }
-.fs34{
-  font-size: 2.125rem; 
+.fs32{
+  font-size: 2rem; 
+}
+
+/*TABLES*/
+th {
+  font-weight: 500;
+  text-align: center;
+}
+.table td, .table th{
+  vertical-align: inherit;
+  border-top: none;
+}
+td.fs32{
+  padding: 0;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .reduced.table{
+    font-size: 0.8em;
+  }
+  .reduced.table td, .reduced.table th{
+    padding: .2em;
+  }
+  .reduced.table .custom-control.custom-checkbox{
+    margin: 0 -0.2em;
+  }
+  .reduced.table .custom-checkbox .custom-control-indicator {
+    top: 4px;
+  }
 }
 
 /* FORM */
@@ -127,11 +147,10 @@ ul{
   /* color: #CCC !important; */
 }
 
-/*checkboxes*/
-/*x fer que el tick surti del cuadrat https://codepen.io/visualiaBCN/pen/JyrENK*/
-.custom-control {
-  top: -3px;
+.form-control:focus {
+  border-color: #83A521;
 }
+/*checkboxes & radios*/
 .custom-control-input:checked~.custom-control-indicator {
   background-color: #83A521;
 }
@@ -144,14 +163,23 @@ ul{
   -webkit-box-shadow: 0 0 0 1px #fff,0 0 0 3px lightgreen;
   box-shadow: 0 0 0 1px #fff,0 0 0 3px lightgreen;
 }
-
-.custom-control-indicator{
+/*checkboxes*/
+/*x fer que el tick surti del cuadrat https://codepen.io/visualiaBCN/pen/JyrENK*/
+.custom-checkbox .custom-control-indicator {
+  top: 2px;
+}
+.custom-checkbox .custom-control-indicator{
   width: 1.5rem;
   height: 1.5rem;
   background-color: #D2DEB2;
-}
-.custom-checkbox .custom-control-indicator {
   border-radius: .4rem;
+}
+/*radios*/
+.custom-radio .custom-control-input:checked~.custom-control-indicator {
+   background-image: none; 
+}
+.custom-radio .custom-control-indicator{
+  margin-top: -1px;
 }
 /* BTN */
 /* NETEJAR */
