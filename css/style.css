@@ -12,11 +12,12 @@
 /*checkboxes*/
 /*radios*/
 
-/* BTN 
+ /*BTN */
 
 /* SPACING
 
 /* SECTIONS
+/*nav*/
 /*summary*/
 /*ranking*/
 
@@ -192,6 +193,10 @@ td.fs32{
   -webkit-box-shadow: 0 0 0 1px #fff,0 0 0 3px lightgreen;
   box-shadow: 0 0 0 1px #fff,0 0 0 3px lightgreen;
 }
+
+.custom-select{  
+  margin-top: -0.9rem;
+}
 /*checkboxes*/
 /*x fer que el tick surti del cuadrat https://codepen.io/visualiaBCN/pen/JyrENK*/
 .custom-checkbox .custom-control-indicator {
@@ -309,6 +314,28 @@ main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
 
 
 /* SECTIONS */
+
+/*nav*/
+
+#mainNav li {
+  font: 200 1rem/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #83A521;
+}
+
+#mainNav li:last-child {
+  border: none;
+}
+
+#mainNav li a {
+  text-decoration: none;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+}
+
+#mainNav li a:hover {
+  font-size: 1.2rem;
+  background: #f6f6f6;
+}
 
 /*summary*/
 .t5_p{
