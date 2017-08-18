@@ -279,6 +279,7 @@ a:focus {
 }
 .navbar-toggler{
   color: #83A521;
+  cursor: pointer;
 }
 
 /* NETEJAR */
