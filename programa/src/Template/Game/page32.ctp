@@ -10,20 +10,39 @@ if ($admin) {
 
 <!-- ** pag p15 ** -->
 <main>
+
+    <header class="text-center m-5 mb-10">
+        <?= $this->Html->image("breadp49.svg", ['class' => 'w-100']); ?>
+    </header>
     <section>
-     <div class="py-20 mx-10neg">
-            <?= $this->Html->image("imgp32.svg", ['class' => 'w-100']); ?>
+        <p class="fs22">
+            Pensar cómo los diferentes actores del tema, los Stakeholders, ven el problema desde su punto de vista
+        </p>
+        <p>
+            Un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...)
+        </p>
+
+        <div class="text-center green fs26">
+            <p>
+                ¿cómo ven el reto desde su punto de vista?
+                </br>
+                <i class="fa fa-chevron-down"></i>
+                </br>
+                expresarlos en forma de reto:
+                </br>
+                <em>¿cómo podríamos…?</em>
+            </p>
         </div>
+
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-<?php } ?>
+    <?php if ($admin) { ?>
+        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <?php } ?>
 </main>
 
 <script>
-    var page = 18;
+    var page = 32;
     $(function () {
 <?php if ($admin) { ?>
 
@@ -32,7 +51,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page19"
+        "action" => "page33"
     ])
     ?>';
             });
@@ -40,7 +59,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page17"
+        "action" => "page31"
     ])
     ?>';
             });

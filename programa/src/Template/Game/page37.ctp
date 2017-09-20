@@ -11,7 +11,7 @@ if ($admin) {
 <!-- ** pag p15 ** -->
 <main>
     <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
         <p class="fs22">
@@ -34,19 +34,19 @@ if ($admin) {
                 <?php foreach ($retos as $reto) { ?>
                     <tr>
                         <td scope="row" class="text-left">
-                            <?= $reto['challenge'] ?>
+                            <?= $reto['question'] ?>
                         </td>
                         <?php foreach ($users as $user) { ?>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input id="<?= $user . $reto['id'] ?>" <?= $voted?'disabled="disabled"':'' ?> type="checkbox" class="custom-control-input">
+                                    <input id="<?= $user . $reto['id'] ?>" <?= $voted ? 'disabled="disabled"' : '' ?> type="checkbox" class="custom-control-input">
                                     <span class="custom-control-indicator" data-toggle="tooltip" title="Haz click para seleccionar"></span>
                                 </label>
                             </td>
                         <?php } ?>
 
 
-                        <td><?= $ambits[$reto['ambit']]->ambit ?></td>
+                        <td><?= $ambits[$reto['ambit'] - 1]->ambit ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -59,7 +59,7 @@ if ($admin) {
         <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
     <?php } else { ?>
         <div class="text-right mt-5">
-            <a href="#" id="submitvotos" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block" <?= $voted?'style="display:none !important"':'' ?>>
+            <a href="#" id="submitvotos" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
                 <i class="fa fa-check fa-2x"></i>
             </a>
         </div>
@@ -67,12 +67,33 @@ if ($admin) {
 </main>
 
 <script>
-    var page = 12;
+    var page = 37;
     var cambiar = false;
     var chequeados = [];
     var users = JSON.parse('<?= json_encode($users) ?>');
     var retos = JSON.parse('<?= json_encode($retos) ?>');
+    function checkPage() {
+        $.get("<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "pageactive"
+    ])
+    ?>", function (data, status) {
 
+            if (data == page) {
+                setTimeout(checkPage, 1000);
+            } else {
+                location.href = '<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "index"
+    ])
+    ?>';
+            }
+
+        });
+
+    }
     $(function () {
 <?php if ($admin) { ?>
 
@@ -81,7 +102,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page13"
+        "action" => "page38"
     ])
     ?>';
             });
@@ -89,14 +110,14 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page11"
+        "action" => "page36"
     ])
     ?>';
             });
 <?php } else { ?>
             $('#submitvotos').click(function () {
                 $('#submitvotos').attr('style', 'display:none !important');
-                
+
                 $('#error').html('');
                 var votos = [];
                 for (var i = 0; i < users.length; i++) {
@@ -110,25 +131,26 @@ if ($admin) {
                     if (cont != 3) {
                         $('#error').html('Revise los votos');
                         $('#submitvotos').attr('style', '');
-                                return;
+                        return;
                     }
                 }
 
                 $.get("<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "saveretovotos"
+        "action" => "savestakesvotos"
     ])
     ?>", {'ids': JSON.stringify(votos)}, function (data, status) {
-                    
+
                     $(':checkbox').attr('disabled', 'disabled');
                     cambiar = true;
                     $('#error').html('Votos enviados');
+                    setTimeout(checkPage, 1000);
                 });
 
             });
 
-         
+
 
 <?php } ?>
     });

@@ -101,7 +101,7 @@ if ($admin) {
     ])
     ?>", function (data, status) {
 
-                    if (data === page) {
+                    if (data == page) {
                         setTimeout(checkPage, 500);
                     } else {
                         location.href = '<?=

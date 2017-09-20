@@ -34,7 +34,7 @@ if ($admin) {
                 <?php foreach ($retos as $reto) { ?>
                     <tr>
                         <td scope="row" class="text-left">
-                            <?= $reto['challenge'] ?>
+                            <?= $reto['question'] ?>
                         </td>
                         <?php foreach ($users as $user) { ?>
                             <td>
@@ -67,7 +67,7 @@ if ($admin) {
 </main>
 
 <script>
-    var page = 12;
+    var page = 24;
     var cambiar = false;
     var chequeados = [];
     var users = JSON.parse('<?= json_encode($users) ?>');
@@ -81,7 +81,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page13"
+        "action" => "page25"
     ])
     ?>';
             });
@@ -89,7 +89,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page11"
+        "action" => "page23"
     ])
     ?>';
             });
@@ -113,14 +113,14 @@ if ($admin) {
                                 return;
                     }
                 }
-
+console.log(votos)
                 $.get("<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "saveretovotos"
+        "action" => "savequestionvotos"
     ])
     ?>", {'ids': JSON.stringify(votos)}, function (data, status) {
-                    
+                    console.log(data);
                     $(':checkbox').attr('disabled', 'disabled');
                     cambiar = true;
                     $('#error').html('Votos enviados');

@@ -126,8 +126,23 @@ class CodeComponent extends Component {
         return $query->fetchAll('assoc');
     }
 
+    public function getTeamQuestions($id, $table = 'questions') {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('select teams.*, count(' . $table . '.id) as num from teams left join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . " group by teams.id order by num desc,team asc");
+        return $query->fetchAll('assoc');
+    }
+
     public function getComment($id) {
         $comments = TableRegistry::get('Comments');
+
+        $comment = $comments->find('all')
+                        ->where(['team_id' => $id])->toArray();
+        return $comment;
+    }
+
+    public function getQuestion($id, $table = 'Questions') {
+        $comments = TableRegistry::get($table);
 
         $comment = $comments->find('all')
                         ->where(['team_id' => $id])->toArray();
@@ -139,7 +154,7 @@ class CodeComponent extends Component {
 
         $team = $table->get($id);
         $users = explode(',', $team->members);
-        return $users;
+        return array_map('trim', $users);
     }
 
     public function getCommentSel($id) {
@@ -150,6 +165,23 @@ class CodeComponent extends Component {
         return $comment;
     }
 
+    public function getQuestionSel($id, $table = 'Questions') {
+        $comments = TableRegistry::get($table);
+
+        $comment = $comments->find('all')
+                        ->where(['team_id' => $id, 'sel' => 1])->toArray();
+        return $comment;
+    }
+
+    public function getQuestionAmbit($id, $table = 'Questions') {
+        $comments = TableRegistry::get($table);
+
+        $comment = $comments->find('all')
+                        ->where(['team_id' => $id, 'sel' => 1, 'ambit >' => '0'])->toArray();
+
+        return $comment;
+    }
+
     public function saveChallenges($team_id, $challenges) {
         $table = TableRegistry::get('Challenges');
         $table->deleteAll(['team_id' => $team_id]);
@@ -157,6 +189,16 @@ class CodeComponent extends Component {
             $c = $table->newEntity();
             $c->team_id = $team_id;
             $c->challenge = $challenge->reto;
+            $c->ambit = $challenge->ambito;
+            $table->save($c);
+        }
+    }
+
+    public function saveQuestions($team_id, $challenges, $table = 'Questions') {
+
+        $table = TableRegistry::get($table);
+        foreach ($challenges as $challenge) {
+            $c = $table->get($challenge->id);
             $c->ambit = $challenge->ambito;
             $table->save($c);
         }
@@ -195,20 +237,152 @@ class CodeComponent extends Component {
         return 1;
     }
 
+    public function addquestion($id, $commen, $table = 'Questions') {
+        $comments = TableRegistry::get($table);
+        $comment = $comments->newEntity();
+        $comment->team_id = $id;
+        $comment->question = $commen;
+
+        $comments->save($comment);
+        return $comment->id;
+    }
+
+    public function addpain($id, $commen, $inter_id) {
+        $comments = TableRegistry::get('Painpoints');
+        $comment = $comments->newEntity();
+        $comment->team_id = $id;
+        $comment->interaction_id = $inter_id;
+        $comment->question = $commen;
+
+        $comments->save($comment);
+        return $comment->id;
+    }
+
+    public function getPainPoints($team_id) {
+        $inters = $this->getAll($team_id, 'Interactions', 'team_id', $team_id);
+
+        for ($i = 0; $i < count($inters); $i++) {
+
+            $inters[$i]->pain = $this->getAll($team_id, 'Painpoints', 'interaction_id', $inters[$i]->id);
+            //TODO: TRatar interacciones huérfanas
+            for ($j = 0; $j < count($inters[$i]->pain); $j++) {
+                $inters[$i]->pain[$j]->ppchan = $this->getAll($team_id, 'Ppchallenges', 'painpoint_id', $inters[$i]->pain[$j]->id);
+            }
+        }
+        return $inters;
+    }
+
+    public function addppcha($id, $commen, $inter_id) {
+        $comments = TableRegistry::get('Ppchallenges');
+        $comment = $comments->newEntity();
+        $comment->team_id = $id;
+        $comment->painpoint_id = $inter_id;
+        $comment->question = $commen;
+
+        $comments->save($comment);
+        return $comment->id;
+    }
+
+    public function deletequestion($id, $idc, $table = 'Questions') {
+        $comments = TableRegistry::get($table);
+        $comment = $comments->find('all')
+                ->where(['id' => $idc, 'team_id' => $id,]);
+        $c = $comment->first();
+
+
+        return $comments->delete($c);
+    }
+
+    public function deleteinter($id, $idc) {
+        $this->deletequestion($id, $idc, 'Interactions');
+        $comments = TableRegistry::get('Painpoints');
+
+        $query = $comments->find('all')
+                ->where(['interaction_id' => $id, 'team_id' => $team_id,]);
+        foreach ($query as $row) {
+            $this->deleteAll($team_id, 'Ppchallenges', 'painpoint_id', $row->$id);
+        }
+        $this->deleteAll($team_id, 'Painpoints', 'interaction_id', $id);
+    }
+
+    public function deleteAll($team_id, $table, $field, $value) {
+        $table = TableRegistry::get($table);
+        $table->deleteAll(['team_id' => $team_id, $field => $value]);
+    }
+
+    public function getAll($team_id, $table, $field, $value) {
+        $table = TableRegistry::get($table);
+        $res = $table->find('all')->where(['team_id' => $team_id, $field => $value])->toArray();
+        return $res;
+    }
+
+    public function selectquestion($team_id, $ids, $table = 'Questions') {
+
+        $comments = TableRegistry::get($table);
+        foreach ($ids as $id) {
+            $comment = $comments->find('all')
+                            ->where(['id' => $id, 'team_id' => $team_id,])->first();
+            $comment->sel = 1;
+            if (!$comments->save($comment)) {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
     public function saveretovotos($team_id, $ids) {
         $table = TableRegistry::get('Challenges');
 
         foreach ($ids as $id) {
             $cha = $table->get($id);
-            if ($cha->team_id == $team_id) {
-                if ($cha->votes == null) {
-                    $cha->votes = 0;
-                }
-                $cha->votes++;
-                $table->save($cha);
+            //if ($cha->team_id == $team_id) {
+            if ($cha->votes == null) {
+                $cha->votes = 0;
             }
+            $cha->votes++;
+            $table->save($cha);
+            //}
         }
+        $table = TableRegistry::get('Teams');
+        $team = $table->get($team_id);
+        $team->vc = 1;
+        $table->save($team);
         return 1;
+    }
+
+    public function saveQuestionVotes($team_id, $ids, $table = 'Questions', $vote = 'vq') {
+
+        $table = TableRegistry::get($table);
+        $teams = TableRegistry::get('Teams');
+        $team = $teams->get($team_id);
+        if ($team->$vote) {
+            return 1;
+        }
+        foreach ($ids as $id) {
+            $cha = $table->get($id);
+            if ($cha->votes == null) {
+                $cha->votes = 0;
+            }
+            $cha->votes++;
+            $table->save($cha);
+        }
+
+        $team->$vote = 1;
+        $teams->save($team);
+        return 1;
+    }
+
+    public function hasVoted($team_id, $section = 'vc') {
+        $table = TableRegistry::get('Teams');
+        $team = $table->get($team_id);
+        return $team->$section;
+    }
+
+    public function getChallengesTeam($team_id) {
+        $table = TableRegistry::get('Challenges');
+        $num = $table->find('all')
+                        ->where(['team_id' => $team_id,])->toArray();
+        return $num;
     }
 
     public function getCommentsSel($id) {
@@ -219,26 +393,34 @@ class CodeComponent extends Component {
         return $res[0]['num'];
     }
 
-    public function getRetos($id) {
+    public function getQuestionsSel($id, $table = 'questions') {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT * FROM teams join challenges on teams.id=challenges.team_id where game_id=' . $id);
+        $query = $conn->execute('select sum(sel) as num from ' . $table . ' where team_id=' . $id);
+        $res = $query->fetchAll('assoc');
+        return $res[0]['num'];
+    }
+
+    public function getRetos($id, $table = 'challenges') {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('SELECT * FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where sel=1 and game_id=' . $id);
         $res = $query->fetchAll('assoc');
         return $res;
     }
 
-    public function getChallenges($id) {
+    public function getChallenges($id, $table = 'challenges') {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT * FROM teams join challenges on teams.id=challenges.team_id where game_id=' . $id . ' order by votes desc');
+        $query = $conn->execute('SELECT * FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' order by votes desc');
         $res = $query->fetchAll('assoc');
         return $res;
     }
 
-    public function getChallengeTeams($id) {
+    public function getChallengeTeams($id, $table = 'challenges') {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT team_id,sum(votes) votos FROM teams join challenges on teams.id=challenges.team_id where game_id=' . $id . ' order by votos desc;');
+        $query = $conn->execute('SELECT team_id,sum(votes) votos FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' group by team_id order by votos desc;');
         $res = $query->fetchAll('assoc');
         return $res;
     }
@@ -274,20 +456,23 @@ class CodeComponent extends Component {
     public function getTeams($id) {
         $games = TableRegistry::get('Teams');
         $query = $games->find('all')
-                ->where(['game_id' => $id])
-                ->orderDesc('bikles')->toArray();
+                        ->where(['game_id' => $id])
+                        ->orderDesc('bikles')->toArray();
 
         return $query;
     }
-    public function addBikles($id,$cant=1) {
+
+    public function addBikles($id, $cant = 1) {
         $games = TableRegistry::get('Teams');
         $query = $games->get($id);
-        $query->bikles+=$cant;
+        $query->bikles += $cant;
         $games->save($query);
 
         return 1;
     }
+
     public function setTime($id, $tipo = 0, $time = 0) {
+        
         $games = TableRegistry::get('Games');
         $game = $games->get($id);
         if ($tipo == 0) {
@@ -311,12 +496,14 @@ class CodeComponent extends Component {
     }
 
     public function setScore($id, $fase, $order) {
+
         $games = TableRegistry::get('Games');
         $game = $games->get($id);
         if ($game->score < $fase) {
             $this->addBikle($order[0], 15);
             $this->addBikle($order[1], 10);
-            $this->addBikle($order[2], 5);
+            if (count($order) > 2)
+                $this->addBikle($order[2], 5);
             $this->addBikle($order[count($order) - 1], -5);
         }
         $game->score = $fase;

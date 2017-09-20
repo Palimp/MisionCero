@@ -11,19 +11,15 @@ if ($admin) {
 <!-- ** pag p15 ** -->
 <main>
     <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section>
         <div class="col-12 col-md-auto">
             <p class="fs22">
-                <?= __('Comentarios espontáneos más relevantes') ?>
+                <?= __('Cada equipo selecciona en que ámbito colocar los 3 retos que le parece más relevantes') ?>
             </p>
         </div>
-        <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?= $trouble ?>
-            </p>
-        </div>
+       
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
@@ -32,7 +28,7 @@ if ($admin) {
                     <?php
                     if ($stop) {
                         echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                            'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
                         ));
                         ?>
                         <input type="hidden" name="stop" value="1">
@@ -40,7 +36,7 @@ if ($admin) {
                         <?php
                     } else {
                         echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                            'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
                         ));
                         ?>
                         <input type="hidden" name="start" value="1">
@@ -53,7 +49,7 @@ if ($admin) {
                     <time>00:30</time>
                     <?php
                     echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                        'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
                     ));
                     ?>
                     <input type="hidden" name="time" value="30">
@@ -63,7 +59,7 @@ if ($admin) {
                     </form>
                     <?php
                     echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                        'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
                     ));
                     ?>
                     <input type="hidden" name="time" value="-30">
@@ -74,25 +70,16 @@ if ($admin) {
                 </div>
             </div>
         </div>
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
-                </b>
-                </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
-            </div>
-        </div>
+
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase comentarios') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase retos') ?></button>
     <?php } ?>
 </main>
 
 <script>
-    var page = 8;
-    var stop =<?= $stop ?>;
+    var page = 23;
     $(function () {
 <?php if ($admin) { ?>
 
@@ -105,19 +92,19 @@ if ($admin) {
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-                    if (data != "0" && data != "00:00") {
+                    if (data != "0" && data !="00:00") {
+
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
                     } else {
-                        if (stop) {
-                            alert("Se acabó el tiempo");
-                            location.href = '<?=
+                      
+                        alert("Se acabó el tiempo");
+                        location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page9"
+        "action" => "page24"
     ])
     ?>';
-                        }
                     }
                 });
             }
@@ -125,7 +112,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page9"
+        "action" => "page24"
     ])
     ?>';
             });
@@ -133,7 +120,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page7"
+        "action" => "page22"
     ])
     ?>';
             });

@@ -11,17 +11,13 @@ if ($admin) {
 <!-- ** pag p15 ** -->
 <main>
     <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section>
+
         <div class="col-12 col-md-auto">
             <p class="fs22">
-                <?= __('Comentarios espontáneos más relevantes') ?>
-            </p>
-        </div>
-        <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?= $trouble ?>
+                El equipo escribe los retos
             </p>
         </div>
         <div class="col fs32">
@@ -32,7 +28,7 @@ if ($admin) {
                     <?php
                     if ($stop) {
                         echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                            'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
                         ));
                         ?>
                         <input type="hidden" name="stop" value="1">
@@ -40,7 +36,7 @@ if ($admin) {
                         <?php
                     } else {
                         echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                            'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
                         ));
                         ?>
                         <input type="hidden" name="start" value="1">
@@ -53,7 +49,7 @@ if ($admin) {
                     <time>00:30</time>
                     <?php
                     echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                        'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
                     ));
                     ?>
                     <input type="hidden" name="time" value="30">
@@ -63,7 +59,7 @@ if ($admin) {
                     </form>
                     <?php
                     echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                        'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
                     ));
                     ?>
                     <input type="hidden" name="time" value="-30">
@@ -91,8 +87,9 @@ if ($admin) {
 </main>
 
 <script>
-    var page = 8;
+    var page = 33;
     var stop =<?= $stop ?>;
+
     $(function () {
 <?php if ($admin) { ?>
 
@@ -105,6 +102,7 @@ if ($admin) {
         "action" => "gettime"
     ])
     ?>", function (data, status) {
+
                     if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
@@ -114,7 +112,7 @@ if ($admin) {
                             location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page9"
+        "action" => "page34"
     ])
     ?>';
                         }
@@ -125,7 +123,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page9"
+        "action" => "page34"
     ])
     ?>';
             });
@@ -133,7 +131,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page7"
+        "action" => "page32"
     ])
     ?>';
             });

@@ -10,20 +10,39 @@ if ($admin) {
 
 <!-- ** pag p15 ** -->
 <main>
+    <header class="text-center m-5 mb-10">
+        <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
+    </header> 
     <section>
-     <div class="py-20 mx-10neg">
-            <?= $this->Html->image("imgp32.svg", ['class' => 'w-100']); ?>
-        </div>
+    
+            Retos seleccionados:
+        </p>
+        <?php if ($admin) { ?>
+
+        <?php } else { ?>
+            <table class="reduced table table-striped">
+                <tbody>
+                    <?php foreach ($comments as $comment) { ?>
+                        <tr>
+                            <td scope="row" >
+                                <span id="com<?= $comment['id'] ?>"> <?= $comment['question'] ?></span>
+                            </td>
+
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+
+        <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-<?php } ?>
+    <?php if ($admin) { ?>
+        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <?php } ?>
 </main>
 
 <script>
-    var page = 18;
+    var page = 35;
     $(function () {
 <?php if ($admin) { ?>
 
@@ -32,7 +51,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page19"
+        "action" => "page23"
     ])
     ?>';
             });
@@ -40,12 +59,12 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page17"
+        "action" => "page21"
     ])
     ?>';
             });
 <?php } else { ?>
-            setTimeout(checkPage, 1000);
+            setTimeout(checkPage, 500);
 
             function checkPage() {
                 $.get("<?=

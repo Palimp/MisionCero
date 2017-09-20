@@ -12,10 +12,9 @@ if ($admin) {
 <main>
     <section>
      <div class="py-20 mx-10neg">
-            <?= $this->Html->image("imgp32.svg", ['class' => 'w-100']); ?>
+            <?= $this->Html->image("imgp62.svg", ['class' => 'w-100']); ?>
         </div>
     </section>
-</section>
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
     <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
@@ -23,7 +22,7 @@ if ($admin) {
 </main>
 
 <script>
-    var page = 18;
+    var page = 43;
     $(function () {
 <?php if ($admin) { ?>
 
@@ -32,7 +31,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page19"
+        "action" => "page44"
     ])
     ?>';
             });
@@ -40,7 +39,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page17"
+        "action" => "page42"
     ])
     ?>';
             });

@@ -32,7 +32,7 @@ if ($admin) {
                     <?php
                     if ($stop) {
                         echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                            'url' => array('controller' => 'Game', 'action' => 'page11'), 'class' => 'd-inline-block'
                         ));
                         ?>
                         <input type="hidden" name="stop" value="1">

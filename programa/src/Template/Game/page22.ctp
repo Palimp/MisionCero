@@ -11,17 +11,13 @@ if ($admin) {
 <!-- ** pag p15 ** -->
 <main>
     <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
         <p class="fs22">
-            ¿Cómo hablamos de la problemática de manera espontánea e informal?
-        </p>
-        <p>
-            Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)
-        </p>
-        <p>
-            Seleccionad los tres mejores retos para enfocarse en ellos.
+            Cada equipo selecciona los 3 retos espontáneos que le parece más relevantes y novedosos 
+            </br>
+            (para abrir nuevas líneas de trabajo de la problemática)
         </p>
         <?php if ($admin) { ?>
 
@@ -31,7 +27,7 @@ if ($admin) {
                     <?php foreach ($comments as $comment) { ?>
                         <tr>
                             <td scope="row" >
-                                <span id="com<?= $comment['id'] ?>"> <?= $comment['comment'] ?></span>
+                                <span id="com<?= $comment['id'] ?>"> <?= $comment['question'] ?></span>
                             </td>
                             <td class="text-right">
                                 <label class="custom-control custom-checkbox">
@@ -57,7 +53,7 @@ if ($admin) {
 </main>
 
 <script>
-    var page = 10;
+    var page = 22;
     var chequeados = [];
     $(function () {
 <?php if ($admin) { ?>
@@ -67,7 +63,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page11"
+        "action" => "page23"
     ])
     ?>';
             });
@@ -75,7 +71,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page9"
+        "action" => "page21"
     ])
     ?>';
             });
@@ -85,16 +81,11 @@ if ($admin) {
                     $.get("<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "selectcomment"
+        "action" => "selectquestion"
     ])
     ?>", {'ids': JSON.stringify(chequeados)}, function (data, status) {
 
-                         location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "index"
-    ])
-    ?>';
+                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
 
                     });
                 } else {
@@ -111,7 +102,7 @@ if ($admin) {
 
                     chequeados.splice(index, 1);
                 }
-                
+
             });
 <?php } ?>
     });
