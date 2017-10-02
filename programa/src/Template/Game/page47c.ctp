@@ -28,7 +28,7 @@
 
 
             <b>
-                Ámbito: 
+                <?=__('Ámbito: ')?>
 
 
                 <?= $ambits[$comments[$i]->ambit-1]->ambit ?>
@@ -62,7 +62,7 @@
                         setTimeout(checkTime, 500);
                     } else {
 
-                        alert("Se acabó el tiempo");
+                        alert("<?=__('Se acabó el tiempo')?>");
 //                        location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

@@ -15,13 +15,13 @@ if ($admin) {
     </header> 
     <section>
         <p class="fs22">
-            ¿Cómo hablamos de la problemática de manera espontánea e informal?
+            <?= __('¿Cómo hablamos de la problemática de manera espontánea e informal?') ?>
         </p>
         <p>
-            Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)
+            <?= __('Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)') ?>
         </p>
         <p>
-            Retos seleccionados:
+            <?= __('Retos seleccionados:') ?>
         </p>
         <?php if ($admin) { ?>
 

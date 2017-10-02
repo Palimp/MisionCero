@@ -17,50 +17,50 @@ if ($admin) {
         </header>
         <section>
             <p class="fs22">
-                ¿Cómo mejorar mi comunicación interna?
+                <?=__('¿Cómo mejorar mi comunicación interna?')?>
             </p>
             <p>
-                Utilizar las preguntas básicas para identificar retos más concretos y, si es posible, no habituales, sobre la problemática.
+                <?=__('Utilizar las preguntas básicas para identificar retos más concretos y, si es posible, no habituales, sobre la problemática.')?>
             </p>
             <p class="fs22">
-                Pensar en las preguntas más básicas para identificar retos:
+                <?=__('Pensar en las preguntas más básicas para identificar retos:')?>
             </p>
             <div class="row fs22">
                 <div class="col">
-                    ¿Cuándo?
+                    <?=__('¿Cuándo?')?>
                 </div>
                 <div class="col">
-                    ¿Dónde?
+                    <?=__('¿Dónde?')?>
                 </div>
                 <div class="col">
-                    ¿Cómo?
+                    <?=__('¿Cómo?')?>
                 </div>
                 <div class="col">
-                    ¿Quién?
+                    <?=__('¿Quién?')?>
                 </div>
             </div>
             <ol class="green">
                 <li>
-                    estas preguntas nos hacen pensar en identificar: momentos relevantes, lugares de uso o compra, maneras de hacer las cossas, públicos objetivos,
+                    <?=__('estas preguntas nos hacen pensar en identificar: momentos relevantes, lugares de uso o compra, maneras de hacer las cossas, públicos objetivos,')?>
                 </li>
                 <li>
-                    los transformamos en forma de reto <em>¿cómo podríamos…?</em>
+                    <?=__('los transformamos en forma de reto ')?><em><?=__('¿cómo podríamos…?')?></em>
                 </li>
             </ol>
             <div class="row fs22">
                 <div class="col">
-                    ¿Por qué?
+                    <?=__('¿Por qué?')?>
                 </div>
                 <div class="col">
-                    ¿Para qué?
+                    <?=__('¿Para qué?')?>
                 </div>
             </div>
             <ol class="green">
                 <li>
-                    pensamos en “por qué / para qué tenemos que trabajar este reto?” y escribimos estos porqués/ para qués
+                    <?=__('pensamos en “por qué / para qué tenemos que trabajar este reto?” y escribimos estos porqués/ para qués')?>
                 </li>
                 <li>
-                    los transformamos en forma de reto <em>¿cómo podríamos…?</em>
+                    <?=__('los transformamos en forma de reto ')?><em><?=__('¿cómo podríamos…?')?></em>
                 </li>
             </ol>
         </section>

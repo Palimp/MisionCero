@@ -22,10 +22,10 @@ if ($admin) {
             </div>
             <div class="text-center mt-5">
                 <div class="alert alert-danger d-inline-block" role="alert">
-                    2 Bikles al primer equipo que dice que algo de decorado ha cambiado
+                    <?=__('2 Bikles al primer equipo que dice que algo de decorado ha cambiado')?>
                     </br>
                     <b>
-                        4 Bikles al primer equipo capaz de citar elementos que han cambiado
+                        <?=__('4 Bikles al primer equipo capaz de citar elementos que han cambiado')?>
                     </b>
                 </div>
             </div>

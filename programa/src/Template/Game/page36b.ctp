@@ -36,7 +36,7 @@
 
             <input type="hidden" id="reto<?= $i ?>" value="<?= $comments[$i]['id'] ?>">
             <b>
-                Ámbitos
+                <?=__('Ámbitos')?>
             </b>
             <div class="fs14 mr-1">
                 <?php foreach ($ambits as $ambit) { ?>
@@ -106,7 +106,7 @@
                         setTimeout(checkTime, 500);
                     } else {
 
-                        alert("Se acabó el tiempo");
+                        alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

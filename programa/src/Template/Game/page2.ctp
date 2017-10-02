@@ -17,19 +17,19 @@ if ($admin) {
     </header>
     <section>
         <p class="fs22">
-            Se organizan muchas reuniones para tratar problemáticas, pero…
+            <?=__('Se organizan muchas reuniones para tratar problemáticas, pero…')?>
         </p>
         <div class="row">
             <div class="col-7">
                 <p>
-                    Trabajar sobre temas tan génericos no ayuda a generar soluciones nuevas, especialmente si ya se ha trabajado sobre ellos
+                    <?=__('Trabajar sobre temas tan génericos no ayuda a generar soluciones nuevas, especialmente si ya se ha trabajado sobre ellos')?>
                 </p>
                 <?= $this->Html->image("img2.jpg", ['class' => 'img-fluid']); ?>
             </div>
             <div class="col-5 pl-5">
                 <?= $this->Html->image("img3.jpg", ['class' => 'img-fluid']); ?>
                 <p>
-                    Estas reuniones suelen transformarse en tertulias y debates sin un output concreto
+                    <?=__('Estas reuniones suelen transformarse en tertulias y debates sin un output concreto')?>
                 </p>
             </div>
         </div>

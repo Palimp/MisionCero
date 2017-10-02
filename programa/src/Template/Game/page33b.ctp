@@ -31,18 +31,18 @@
         foreach ($comments as $comment) {
             ?>
             <div id="bloque<?= $comment->id ?>" class="row form-group"><div class="col pl-0"> <b class="fs26">¿</b>
-            <span>Cómo podríamos</span> <b><?= $comment->question ?> ?</b></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="Haz click para borrar un comentario" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
+            <span><?=__('Cómo podríamos')?></span> <b><?= $comment->question ?> ?</b></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="<?=__('Haz click para borrar un comentario')?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
             <?php
         }
         ?>
         <div id="bloque" class="row form-group">
             <div class="col pl-0">
                 <b class="fs26">¿</b>
-            <span>Cómo podríamos</span>
-                <input type="text" name="comment" id="comment" class="form-control d-inline w-75" placeholder="Introduzca aquí su reto">
+            <span><?=__('Cómo podríamos')?></span>
+                <input type="text" name="comment" id="comment" class="form-control d-inline w-75" placeholder="<?=__('Introduzca aquí su reto')?>">
             </div>
             <div class="col col-md-auto">
-                <a id="addcomment" href="#" data-toggle="tooltip" title="Haz click para añadir un reto" class="d-inline-block">
+                <a id="addcomment" href="#" data-toggle="tooltip" title="<?=__('Haz click para añadir un reto')?>" class="d-inline-block">
                     <i class="fa fa-plus fa-2x"></i>
                 </a>
             </div>
@@ -50,17 +50,17 @@
      <div>
           <a href="#" data-toggle="modal" data-target="#modal_ex4" class="grey_link">
             <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-            <p class="fs12">click aquí para<br> ver ejemplo
+            <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
             </p>
           </a>
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
+                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
                 </b>
                 </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
+                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
             </div>
         </div>
     </section>
@@ -74,8 +74,8 @@
                   <div class="example_wrapper d-inline-block">
                     <div class="example_inner text-left py-3 px-4">
                       <span>
-                        <b>Ejemplo Problemática</b> 
-                        ¿Cómo mejorar mi comunicación interna?
+                        <b><?=__('Ejemplo Problemática')?></b> 
+                        <?=__('¿Cómo mejorar mi comunicación interna?')?>
                       </span>
                     </div>
                   </div>
@@ -92,18 +92,18 @@
                         <i class="fa fa-shopping-cart fa-2x"></i>
                         </br>
                         <b>
-                          Mis clientes
+                          <?=__('Mis clientes')?>
                         </b>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir que mi comunicación acerque los empleados al cliente?
+                        <?=__('¿cómo conseguir que mi comunicación acerque los empleados al cliente?')?>
                       </p>
                       <p>
-                        Los que la reciben
+                        <?=__('Los que la reciben')?>
                         </br>
                         </br>
-                        ¿cómo conseguir involucrar a la gente en la comunicación?
+                        <?=__('¿cómo conseguir involucrar a la gente en la comunicación?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -111,15 +111,15 @@
                         <i class="fa fa-user-o fa-2x"></i>
                         </br>
                         <b>
-                          Los jefes
+                          <?=__('Los jefes')?>
                         </b>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir que los jefes ayuden a sus equipos a entender la comunicación?
+                        <?=__('¿cómo conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
                         </br>
                         </br>
-                        ¿cómo conseguir informarles primero y que no digan nada hasta que sea oficial?
+                        <?=__('¿cómo conseguir informarles primero y que no digan nada hasta que sea oficial?')?>
                       </p>
                     </div>
                   </div>
@@ -129,15 +129,15 @@
                         <i class="fa fa-handshake-o fa-2x"></i>
                         </br>
                         <b>
-                          Los responsables de comunicación
+                          <?=__('Los responsables de comunicación')?>
                         </b>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir que conozcan mejor los diferentes colectivos?
+                        <?=__('¿cómo conseguir que conozcan mejor los diferentes colectivos?')?>
                         </br>
                         </br>
-                        ¿cómo conseguir que formen a la gente?
+                        <?=__('¿cómo conseguir que formen a la gente?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -145,13 +145,13 @@
                         <i class="fa fa-crosshairs fa-2x"></i>
                         </br>
                         <b>
-                          El entorno de los trabajadores
+                          <?=__('El entorno de los trabajadores')?>
                         </b>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
                         </br>
-                        ¿cómo conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entonro?
+                        <?=__('¿cómo conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entonro?')?>
                       </p>
                     </div>
                   </div>
@@ -191,7 +191,7 @@
     ?>", {'comment': $('#comment').val()}, function (data, status) {
                     if (status == 'success') {
                         $('#addcomment').removeAttr('style');
-                        $('#bloque').before('  <div id="bloque' + data + '" class="row form-group"><div class="col pl-0"><b class="fs26">¿</b><span>Cómo podríamos</span> <b>' + $('#comment').val() + ' ?</b></div><div class="col col-md-auto"><a href="#" id="delete' + data + '" onclick="delComment(' + data + ')" data-toggle="tooltip" title="Haz click para borrar un reto" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>');
+                        $('#bloque').before('  <div id="bloque' + data + '" class="row form-group"><div class="col pl-0"><b class="fs26">¿</b><span><?=__('Cómo podríamos')?></span> <b>' + $('#comment').val() + ' ?</b></div><div class="col col-md-auto"><a href="#" id="delete' + data + '" onclick="delComment(' + data + ')" data-toggle="tooltip" title="<?=__('Haz click para borrar un reto')?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>');
                         $('#comment').val('');
 
                     }
@@ -211,7 +211,7 @@
                         setTimeout(checkTime, 500);
 
                     } else {
-                        alert("Se acabó el tiempo");
+                        alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

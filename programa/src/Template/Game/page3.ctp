@@ -17,18 +17,18 @@ if ($admin) {
     </header>
     <section>
         <p class="fs22">
-            ¡Sin retos concretos, es complicado llegar a soluciones concretas!
+            <?= __('¡Sin retos concretos, es complicado llegar a soluciones concretas!')?>
         </p>
         <p class="fs22 text-center">
-            If you only focus on the problem
+            <?= __('If you only focus on the problem')?>
         </p>
         <div class="text-center">
 
-            <?= $this->Html->image("img4.jpg", ['class' => 'img-fluid']); ?>
+            <?= $this->Html->image("img4.jpg", ['class' => 'img-fluid']);?>
 
         </div>
         <p class="fs22 text-center">
-            You might miss the easy solution
+            <?= __('You might miss the easy solution')?>
         </p>
         <div>
         </div>

@@ -10,44 +10,44 @@ if ($admin) {
  <main>
       <section>
         <p class="fs22">
-          Acabarán la partida con una <b>lista de retos concretos, priorizados y clasificados por ambito,</b> que les permitirán trabajar su problemática de manera concreta y enfocada, <b>optimizando la búsqueda de soluciones novedosas</b>
+          <?=__('Acabarán la partida con una <b>lista de retos concretos, priorizados y clasificados por ambito,')?></b> <?=__('que les permitirán trabajar su problemática de manera concreta y enfocada, ')?><b><?=__('optimizando la búsqueda de soluciones novedosas')?></b>
         </p>
         <div class="text-right">
-          <a href="#" class="mr-2" data-toggle="tooltip" title="Haz click para descargar"><i class="fa fa-download"></i></a>
-          <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
+          <a href="#" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
+          <a href="#" data-toggle="tooltip" title="<?=__('Haz click para imprimir')?>">
             <i class="fa fa-print"></i>
           </a>          
         </div>
         <p class="fs22">
-          Problemática inicial:
+          <?=__('Problemática inicial:')?>
         </p>
         <h2 class="text-center green">
-          ¿Cómo………………………………?
+          <?=__('¿Cómo………………………………?')?>
         </h2>
         <p class="fs22 mt-5">
-          Tabla resumen de los retos
+          <?=__('Tabla resumen de los retos')?>
         </p>
         <article class="row mt-2">
           <div class="col mr-4 pz-4 t5_p">
-            <h4 class>TOP 5 RETOS PRIORITARIOS</h4>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
+            <h4 class><?=__('TOP 5 RETOS PRIORITARIOS')?></h4>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
           </div>
           <div class="col ml-4 pz-4 t5_qw">
-            <h4>TOP 5 RETOS OPERATIVOS (QUICK WINS)</h4>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
-            <p>¿Cómo………………………………?</p>
+            <h4><?=__('TOP 5 RETOS OPERATIVOS (QUICK WINS)')?></h4>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
+            <p><?=__('¿Cómo………………………………?')?></p>
           </div>
         </article>
         <article class="mt-5">
           <p class="fs22">
-            Ámbitos
+            <?=__('Ámbitos')?>
           </p>
           <div id="accordion_a_ex" role="tablist" aria-multiselectable="true">
             <div class="card">
@@ -55,7 +55,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a1_ex" aria-expanded="true" aria-controls="c_a1_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #D9E095;">
                     <p class="mb-0">
-                      Proceso interno
+                      <?=__('Proceso interno')?>
                     </p>
                   </div>
                 </a>
@@ -64,19 +64,19 @@ if ($admin) {
                 <div class="card-block">
                   
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -87,7 +87,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a2_ex" aria-expanded="false" aria-controls="c_a2_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FEFBC5;">
                     <p class="mb-0">
-                      Recursos
+                      <?=__('Recursos')?>
                     </p>
                   </div>
                 </a>
@@ -95,19 +95,19 @@ if ($admin) {
               <div id="c_a2_ex" class="collapse" role="tabpanel" aria-labelledby="h_a2_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a3_ex" aria-expanded="false" aria-controls="c_a3_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #E1F5EC;">
                     <p class="mb-0">
-                      Comercial
+                      <?=__('Comercial')?>
                     </p>
                   </div>
                 </a>
@@ -126,19 +126,19 @@ if ($admin) {
               <div id="c_a3_ex" class="collapse" role="tabpanel" aria-labelledby="h_a3_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -149,7 +149,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a4_ex" aria-expanded="false" aria-controls="c_a4_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FEE4BD;">
                     <p class="mb-0">
-                      Comunicación
+                      <?=__('Comunicación')?>
                     </p>
                   </div>
                 </a>
@@ -157,19 +157,19 @@ if ($admin) {
               <div id="c_a4_ex" class="collapse" role="tabpanel" aria-labelledby="h_a4_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -180,7 +180,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a5_ex" aria-expanded="false" aria-controls="c_a5_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FFE1FF;">
                     <p class="mb-0">
-                      Organización
+                      <?=__('Organización')?>
                     </p>
                   </div>
                 </a>
@@ -188,19 +188,19 @@ if ($admin) {
               <div id="c_a5_ex" class="collapse" role="tabpanel" aria-labelledby="h_a5_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -211,7 +211,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a6_ex" aria-expanded="false" aria-controls="c_a6_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #E1F5FF;">
                     <p class="mb-0">
-                      Supply
+                      <?=__('Supply')?>
                     </p>
                   </div>
                 </a>
@@ -219,19 +219,19 @@ if ($admin) {
               <div id="c_a6_ex" class="collapse" role="tabpanel" aria-labelledby="h_a6_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p class="mb-0">
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -242,7 +242,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a7_ex" aria-expanded="false" aria-controls="c_a7_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FFD8D9;">
                     <p class="mb-0">
-                      Otros
+                      <?=__('Otros')?>
                     </p>
                   </div>
                 </a>
@@ -250,19 +250,19 @@ if ($admin) {
               <div id="c_a7_ex" class="collapse" role="tabpanel" aria-labelledby="h_a7_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -271,7 +271,7 @@ if ($admin) {
         </article>
         <article class="mt-5">
           <p class="fs22">
-            Tipologia
+            <?=__('Tipologia')?>
           </p>
           <div id="accordion_t_ex" role="tablist" aria-multiselectable="true">
             <div class="card">
@@ -279,7 +279,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t1_ex" aria-expanded="true" aria-controls="c_t1_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #D9E095;">
                     <p class="mb-0">
-                      Ambicioso
+                      <?=__('Ambicioso')?>
                     </p>
                   </div>
                 </a>
@@ -287,19 +287,19 @@ if ($admin) {
               <div id="c_t1_ex" class="collapse" role="tabpanel" aria-labelledby="h_t1_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -310,7 +310,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t2_ex" aria-expanded="false" aria-controls="c_t2_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FEFBC5;">
                     <p class="mb-0">
-                      Normal
+                      <?=__('Normal')?>
                     </p>
                   </div>
                 </a>
@@ -318,19 +318,19 @@ if ($admin) {
               <div id="c_t2_ex" class="collapse" role="tabpanel" aria-labelledby="h_t2_ex">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>
@@ -341,7 +341,7 @@ if ($admin) {
                 <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t3_ex" aria-expanded="false" aria-controls="c_t3_ex" class="w-100">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #E1F5EC;">
                     <p class="mb-0">
-                      Quick Win
+                      <?=__('Quick Win')?>
                     </p>
                   </div>
                 </a>
@@ -349,19 +349,19 @@ if ($admin) {
               <div id="c_t3_ex" class="collapse" role="tabpanel" aria-labelledby="h_t3">
                 <div class="card-block">
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                   <p>
-                    ¿Cómo………………………………?
+                    <?=__('¿Cómo………………………………?')?>
                   </p>
                 </div>
               </div>

@@ -14,8 +14,8 @@ if ($admin) {
         <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-    
-            Retos seleccionados:
+        <p>
+            <?=__('Retos seleccionados:')?>
         </p>
         <?php if ($admin) { ?>
 
@@ -51,7 +51,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page23"
+        "action" => "page36"
     ])
     ?>';
             });
@@ -59,7 +59,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page21"
+        "action" => "page34"
     ])
     ?>';
             });

@@ -11,7 +11,7 @@ if ($admin) {
 <main>
     <section>
         <p class="fs22">
-            Ayuda a las empresas a identificar <b>retos concretos</b>, con una <b>metodología lúdica</b>
+            <?=__('Ayuda a las empresas a identificar ')?><b><?=__('retos concretos, ')?></b><?=__('con una <b>metodología lúdica')?></b>
         </p>
         <div class="py-20 text-center">
 

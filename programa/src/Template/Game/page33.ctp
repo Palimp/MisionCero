@@ -17,7 +17,7 @@ if ($admin) {
 
         <div class="col-12 col-md-auto">
             <p class="fs22">
-                El equipo escribe los retos
+                <?=__('El equipo escribe los retos')?>
             </p>
         </div>
         <div class="col fs32">
@@ -32,7 +32,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="stop" value="1">
-                        <button class="btn btn-primary">Parar tiempo</button>
+                        <button class="btn btn-primary"><?=__('Parar tiempo')?></button>
                         <?php
                     } else {
                         echo $this->Form->create('Begin', array(
@@ -40,7 +40,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="start" value="1">
-                        <button class="btn btn-primary">Reanudar tiempo</button>
+                        <button class="btn btn-primary"><?=__('Reanudar tiempo')?></button>
                     <?php } ?>
 
                     </form>
@@ -53,7 +53,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Haz click para añadir tiempo" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para añadir tiempo')?>" class="d-inline-block grey_link">
                         <i class="fa fa-plus"></i>
                     </a>
                     </form>
@@ -63,7 +63,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="-30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Haz click para restar tiempo" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar tiempo')?>" class="d-inline-block grey_link">
                         <i class="fa fa-minus"></i>
                     </a>
                     </form>
@@ -73,10 +73,10 @@ if ($admin) {
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
+                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
                 </b>
                 </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
+                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
             </div>
         </div>
     </section>
@@ -108,7 +108,7 @@ if ($admin) {
                         setTimeout(checkTime, 500);
                     } else {
                         if (stop) {
-                            alert("Se acabó el tiempo");
+                            alert("<?=__('Se acabó el tiempo')?>");
                             location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

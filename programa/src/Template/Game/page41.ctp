@@ -17,19 +17,19 @@ if ($admin) {
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo
+                    <?=__('Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo')?>
                 </p>
                 <p>
-                    <b>Fase 1:</b>
-                    Se dividen los equipos en 2
+                    <b>Fase 1:')?></b>
+                    <?=__('Se dividen los equipos en 2')?>
                     </br>
-                    - la mitad tendrá que tratar de vender el objeto que aparece en la foto (¡teniendo en cuenta la observación que incluye!)
+                    <?=__('- la mitad tendrá que tratar de vender el objeto que aparece en la foto (¡teniendo en cuenta la observación que incluye!)')?>
                     </br>
-                    - los otros equipos escucharán la presentación de sus compañeros e indicarán al final si les han convencido
+                    <?=__('- los otros equipos escucharán la presentación de sus compañeros e indicarán al final si les han convencido')?>
                     </br>
                     </br>
-                    <b>Fase 2:</b>
-                    se repite el proceso: los equipos que escucharón ahora presentan y vice versa
+                    <b><?=__('Fase 2:')?></b>
+                    <?=__('se repite el proceso: los equipos que escucharón ahora presentan y vice versa')?>
                 </p>
             </div>
             <div class="col fs32">
@@ -44,7 +44,7 @@ if ($admin) {
                             ));
                             ?>
                             <input type="hidden" name="stop" value="1">
-                            <button class="btn btn-primary">Parar tiempo</button>
+                            <button class="btn btn-primary"><?=__('Parar tiempo')?></button>
                             <?php
                         } else {
                             echo $this->Form->create('Begin', array(
@@ -52,7 +52,7 @@ if ($admin) {
                             ));
                             ?>
                             <input type="hidden" name="start" value="1">
-                            <button class="btn btn-primary">Reanudar tiempo</button>
+                            <button class="btn btn-primary"><?=__('Reanudar tiempo')?></button>
                         <?php } ?>
 
                         </form>
@@ -65,7 +65,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="time" value="30">
-                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Haz click para añadir tiempo" class="d-inline-block grey_link">
+                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para añadir tiempo')?>" class="d-inline-block grey_link">
                             <i class="fa fa-plus"></i>
                         </a>
                         </form>
@@ -75,7 +75,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="time" value="-30">
-                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Haz click para restar tiempo" class="d-inline-block grey_link">
+                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar tiempo')?>" class="d-inline-block grey_link">
                             <i class="fa fa-minus"></i>
                         </a>
                         </form>
@@ -89,10 +89,10 @@ if ($admin) {
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    nos han convencido + 2 Bikles
+                    <?=__('nos han convencido + 2 Bikles')?>
                 </b>
-                </br> neutro 0 Bikles
-                </br> no nos convence nada - 2 Bikles
+                </br><?=__(' neutro 0 Bikles')?>
+                </br><?=__(' no nos convence nada - 2 Bikles')?>
             </div>
         </div>
     </section>
@@ -122,7 +122,7 @@ if ($admin) {
                         setTimeout(checkTime, 1000);
                     } else {
 
-                        alert("Se acabó el tiempo");
+                        alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

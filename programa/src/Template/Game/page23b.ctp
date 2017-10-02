@@ -62,7 +62,7 @@
                 'id' => 'datos'
             ]);
             ?>
-            <a href="#" id="sendretos" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block">
+            <a href="#" id="sendretos" data-toggle="tooltip" title="<?=__('Haz click para enviar')?>" class="d-inline-block">
                 <i class="fa fa-check fa-2x"></i>
             </a>
             </form>
@@ -106,7 +106,7 @@
                         setTimeout(checkTime, 500);
                     } else {
 
-                        alert("Se acabó el tiempo");
+                        alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

@@ -14,7 +14,7 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    Transformar los 3 comentarios seleccionados en retos y elegir en qué ambito colocarlos
+                    <?= __('Transformar los 3 comentarios seleccionados en retos y elegir en qué ambito colocarlos') ?>
                 </p>
             </div>
             <div class="col fs32">
@@ -29,7 +29,7 @@
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             ?>
-            <b class="fs22">
+            <b class="fs22" id="c<?=$i?>">
                 <?= $comments[$i]['comment'] ?>
             </b>
 
@@ -37,13 +37,13 @@
                 <div class="col-10 pl-0">
                     <b class="fs26">¿</b>
                     <span>Cómo podríamos</span>
-                    <input type="text" id="reto<?= $i ?>" class="form-control d-inline w-75" placeholder="Introduce aquí el reto">
+                    <input type="text" id="reto<?= $i ?>" class="form-control d-inline w-75" placeholder="<?= __('Introduce aquí el reto') ?>">
                     <b class="fs26">?</b>
 
                 </div>
             </div>
             <b>
-                Ámbito
+                <?= __('Ámbito') ?>
             </b>
             <div class="fs14 mr-1">
                 <?php foreach ($ambits as $ambit) { ?>
@@ -62,7 +62,7 @@
                 <div class="d-inline">
                     <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">
                         <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                        <p class="fs12">click aquí para<br> ver ejemplo
+                        <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                         </p>
                     </a>
                 </div>
@@ -77,8 +77,8 @@
                                         <div class="example_wrapper d-inline-block">
                                             <div class="example_inner text-left py-3 px-4">
                                                 <span>
-                                                    <b>Ejemplo Problemática</b> 
-                                                    ¿Cómo mejorar mi comunicación interna?
+                                                    <b><?= __('Ejemplo Problemática') ?></b> 
+                                                    <?= __('¿Cómo mejorar mi comunicación interna?') ?>
                                                 </span>
                                             </div>
                                         </div>
@@ -90,72 +90,72 @@
                                 <div class="modal-body">
                                     <p>
                                         <b>
-                                            Transformar los comentarios elegidos en retos:
+                                            <?= __('Transformar los comentarios elegidos en retos:') ?>
                                         </b>
                                     </p>
                                     <div class="text-center">
                                         <p>
-                                            Los rumores siempre van más rápido que la información interna
+                                            <?= __('Los rumores siempre van más rápido que la información interna') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podríamos conseguir que la información se adelante a los rumores?
+                                            <?= __('¿Cómo podríamos conseguir que la información se adelante a los rumores?') ?>
                                         </p>
                                         <p>
-                                            Nadie lee los mails de comunicación interna
+                                            <?= __('Nadie lee los mails de comunicación interna') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podríamos conseguir que todos abren y lean los mails de comunicación interna?
+                                            <?= __('¿Cómo podríamos conseguir que todos abren y lean los mails de comunicación interna?') ?>
                                         </p>
                                         <p>
-                                            Mucha gente no entiende los mails de comunicación interna
+                                            <?= __('Mucha gente no entiende los mails de comunicación interna') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo conseguir que los mails de comunicación interna sean fáciles de entender?
+                                            <?= __('¿Cómo conseguir que los mails de comunicación interna sean fáciles de entender?') ?>
                                         </p>
                                         <p>
-                                            No tocan lo que nos gustaría realmente saber
+                                            <?= __('No tocan lo que nos gustaría realmente saber') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podríamos conseguir que la comunicación que recibimos sea la que nos interesa?
+                                            <?= __('¿Cómo podríamos conseguir que la comunicación que recibimos sea la que nos interesa?') ?>
                                         </p>
                                         <p>
-                                            Para los de la fábrica, la información no es relevante
+                                            <?= __('Para los de la fábrica, la información no es relevante') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podríamos conseguir que la información que recibe la gente de la fábrica sea relevante para ellos?
+                                            <?= __('¿Cómo podríamos conseguir que la información que recibe la gente de la fábrica sea relevante para ellos?') ?>
                                         </p>
                                         <p>
-                                            Los mails de comunicación son muy aburridos
+                                            <?= __('Los mails de comunicación son muy aburridos') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podríamos conseguir que los mails de comunicación sean amenos?
+                                            <?= __('¿Cómo podríamos conseguir que los mails de comunicación sean amenos?') ?>
                                         </p>
                                         <p>
-                                            Siempre presentan un mundo perfecto
+                                            <?= __('Siempre presentan un mundo perfecto') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podríamos conseguir que la comunicación nos parezca realista ?
+                                            <?= __('¿Cómo podríamos conseguir que la comunicación nos parezca realista ?') ?>
                                         </p>
                                         <p>
-                                            Los que mandan comunicación están muy lejos y no saben lo que hacemos
+                                            <?= __('Los que mandan comunicación están muy lejos y no saben lo que hacemos') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podróamso conseguir que todos perciban que los que mandan la comunicación están cerca y entienden nuestro trabajo?
+                                            <?= __('¿Cómo podróamso conseguir que todos perciban que los que mandan la comunicación están cerca y entienden nuestro trabajo?') ?>
                                         </p>
                                         <p>
-                                            Tendríamos que tener a personas de comunicación en cada área
+                                            <?= __('Tendríamos que tener a personas de comunicación en cada área') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            ¿Cómo podríamos tener a personas de comunicación o capaces de comunicar en cada área?
+                                            <?= __('¿Cómo podríamos tener a personas de comunicación o capaces de comunicar en cada área?') ?>
                                         </p>
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@
                 'id' => 'datos'
             ]);
             ?>
-            <a href="#" id="sendretos" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block">
+            <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
                 <i class="fa fa-check fa-2x"></i>
             </a>
             </form>
@@ -202,7 +202,7 @@
                         return;
                     }
                     datos.push({"reto": $('#reto' + i).val(), "ambito": $("[name='radio" + i + "']:checked").val()});
-                    console.log($('#reto' + i).val() + "-" + $("[name='radio" + i + "']:checked").val())
+
                 }
                 $('#datos').val(JSON.stringify(datos));
                 $('#team').submit();
@@ -216,19 +216,36 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
+
                     if (data != "0" && data != "00:00") {
 
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
-                    } else {
+                    } else if (data != "0") {
+                        var datos = [], ambito;
+                        for (i = 0; i < 3; i++) {
+                            if (!$('#reto' + i).val()) {
+                                $('#reto' + i).val($('#c'+i).text().trim());
+                            }
+                            ambito=$("[name='radio" + i + "']:checked").val();
+                            if (!ambito) {
+                                ambito=10;
+                            }
+                            datos.push({"reto": $('#reto' + i).val(), "ambito": ambito});
 
-                        alert("Se acabó el tiempo");
+                        }
+                        $('#datos').val(JSON.stringify(datos));
+                        
+                        $('#team').submit();return;
+                        alert("<?= __('Se acabó el tiempo') ?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page12"
+        "action" => "index"
     ])
     ?>';
+                    } else {
+                        setTimeout(checkTime, 500);
                     }
                 });
             }

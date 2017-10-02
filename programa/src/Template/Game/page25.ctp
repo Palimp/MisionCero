@@ -6,6 +6,8 @@
 if ($admin) {
     echo $this->element('navbar');
 }
+$ambits[-1]= new \stdClass();
+$ambits[-1]->ambit=__('Sin ámbito');
 ?>
 
 <!-- ** pag p15 ** -->
@@ -15,17 +17,17 @@ if ($admin) {
     </header> 
     <section>
         <p class="fs22">
-            Los retos de todos los equipos por orden de votos
+            <?=__('Los retos de todos los equipos por orden de votos')?>
         </p>
         <p>
-            Los 5 retos mas votados pasan a la etapa final de la misión
+            <?=__('Los 5 retos mas votados pasan a la etapa final de la misión')?>
         </p>
         <table class="reduced table table-striped text-center">
             <thead>
                 <tr>
                     <td></td>
-                    <th>Votos</th>
-                    <th>Ámbito</th>
+                    <th><?=__('Votos')?></th>
+                    <th><?=__('Ámbito')?></th>
                 </tr>
             </thead>
             <tbody>
@@ -41,7 +43,7 @@ if ($admin) {
                         <td>
                             <?=$team['votes']?>
                         </td>
-                        <td><?= $ambits[$team['ambit']]->ambit ?></td>
+                        <td><?= $ambits[$team['ambit']-1]->ambit ?></td>
                     </tr>
                     <?php
                 }
@@ -51,7 +53,7 @@ if ($admin) {
 
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                ¡Ganarán Bikles los equipos con más votos!
+                <?=__('¡Ganarán Bikles los equipos con más votos!')?>
             </div>
         </div>
     </section>

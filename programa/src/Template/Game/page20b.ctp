@@ -30,16 +30,16 @@
         <?php
         foreach ($comments as $comment) {
             ?>
-            <div id="bloque<?= $comment->id ?>" class="row form-group"><div class="col pl-0"><b><?= $comment->comment ?></b></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="Haz click para borrar un comentario" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
+            <div id="bloque<?= $comment->id ?>" class="row form-group"><div class="col pl-0"><b><?= $comment->question ?></b></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="<?=__('Haz click para borrar un comentario') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
             <?php
         }
         ?>
         <div id="bloque" class="row form-group">
             <div class="col pl-0">
-                <input type="text" name="comment" id="comment" class="form-control" placeholder="Introduzca aquí su reto">
+                <input type="text" name="comment" id="comment" class="form-control" placeholder="<?=__('Introduzca aquí su reto')?>">
             </div>
             <div class="col col-md-auto">
-                <a id="addcomment" href="#" data-toggle="tooltip" title="Haz click para añadir un reto" class="d-inline-block">
+                <a id="addcomment" href="#" data-toggle="tooltip" title="<?=__('Haz click para añadir un reto')?>" class="d-inline-block">
                     <i class="fa fa-plus fa-2x"></i>
                 </a>
             </div>
@@ -47,17 +47,17 @@
         <div>
             <a href="#" data-toggle="modal" data-target="#modal_ex3" class="grey_link">
             <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-            <p class="fs12">click aquí para<br> ver ejemplo
+            <p class="fs12"><?=__('click aquí para<br> ver ejemplo')?>
             </p>
           </a>
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
+                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
                 </b>
                 </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
+                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
             </div>
         </div>
     </section>
@@ -71,8 +71,8 @@
                   <div class="example_wrapper d-inline-block">
                     <div class="example_inner text-left py-3 px-4">
                       <span>
-                        <b>Ejemplo Problemática</b> 
-                        ¿Cómo mejorar mi comunicación interna?
+                        <b><?=__('Ejemplo Problemática')?></b> 
+                        <?=__('¿Cómo mejorar mi comunicación interna?')?>
                       </span>
                     </div>
                   </div>
@@ -89,21 +89,21 @@
                         <i class="fa fa-user fa-2x"></i>
                         </br>
                         <b>
-                          QUIÉN
+                          <?=__('QUIÉN')?>
                         </b>
                         </br>
-                        El que manda la comunicación
+                        <?=__('El que manda la comunicación')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir que el que manda la comunicación conozca el colectivo que la recibe?
+                        <?=__('¿cómo conseguir que el que manda la comunicación conozca el colectivo que la recibe?')?>
                       </p>
                       <p>
-                        Los que la reciben
+                        <?=__('Los que la reciben')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir involucrar a la gente en la comunicación?
+                        <?=__('¿cómo conseguir involucrar a la gente en la comunicación?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -111,21 +111,21 @@
                         <i class="fa fa-clock-o fa-2x"></i>
                         </br>
                         <b>
-                          CUÁNDO
+                          <?=__('CUÁNDO')?>
                         </b>
                         </br>
-                        Cuando hay cambios
+                        <?=__('Cuando hay cambios')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo comunicar bien cuando hay cambios importantes?
+                        <?=__('¿cómo comunicar bien cuando hay cambios importantes?')?>
                       </p>
                       <p>
-                        Cuando hay dudas
+                        <?=__('Cuando hay dudas')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo comunicar cuándo hay incertidumbre?
+                        <?=__('¿cómo comunicar cuándo hay incertidumbre?')?>
                       </p>
                     </div>
                   </div>
@@ -135,34 +135,34 @@
                         <i class="fa fa-map-pin fa-2x"></i>
                         </br>
                         <b>
-                          DÓNDE
+                          <?=__('DÓNDE')?>
                         </b>
                         </br>
-                        En la fábrica
+                        <?=__('En la fábrica')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo adecuar la comunicación al personal de fábrica?
+                        <?=__('¿cómo adecuar la comunicación al personal de fábrica?')?>
                       </p>
                       <p>
-                        En los espacios donde se comunica
+                        <?=__('En los espacios donde se comunica')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo optimizar la comunicación en los paneles de los espacios comunes?
+                        <?=__('¿cómo optimizar la comunicación en los paneles de los espacios comunes?')?>
                       </p>
                       <p>
                         <i class="fa fa-crosshairs fa-2x"></i>
                         </br>
                         <b>
-                          PARA QUÉ
+                          <?=__('PARA QUÉ')?>
                         </b>
                         </br>
-                        Para que todos lo entiendan
+                        <?=__('Para que todos lo entiendan')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir que se entienda a primera vista el objetivo de una comunicación?
+                        <?=__('¿cómo conseguir que se entienda a primera vista el objetivo de una comunicación?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -170,28 +170,28 @@
                         <i class="fa fa-question-circle fa-2x"></i>
                         </br>
                         <b>
-                          POR QUÉ’S
+                          <?=__('POR QUÉ’S')?>
                         </b>
                         </br>
-                        porque nadie hace caso
+                        <?=__('porque nadie hace caso')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿Cómo conseguir que la genta haga caso a la comunicación?
+                        <?=__('¿Cómo conseguir que la genta haga caso a la comunicación?')?>
                       </p>
                       <p>
-                        porque no nos enteramos de nada
+                        <?=__('porque no nos enteramos de nada')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir que la comunicación interna nos ayude a conocer mejor lo que nos puede ayudar?
+                        <?=__('¿cómo conseguir que la comunicación interna nos ayude a conocer mejor lo que nos puede ayudar?')?>
                       </p>
                       <p>
-                        porque queremos que toda la empresa comparte la visión y los valores
+                        <?=__('porque queremos que toda la empresa comparte la visión y los valores')?>
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        ¿cómo conseguir una comunicación que involucre a la gente en los valores?
+                        <?=__('¿cómo conseguir una comunicación que involucre a la gente en los valores?')?>
                       </p>
                     </div>
                   </div>
@@ -251,7 +251,7 @@
                         setTimeout(checkTime, 500);
 
                     } else {
-                        alert("Se acabó el tiempo");
+                        alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

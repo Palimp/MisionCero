@@ -15,9 +15,9 @@ if ($admin) {
     </header> 
     <section>
         <p class="fs22">
-            Los retos elegidos por todos los equipos (3 por equipo)
+            <?= __('Los retos elegidos por todos los equipos (3 por equipo)') ?>
             </br>
-            Cada persona votará a los 3 retos que le parecen más relevantes (no más de uno de su equipo)
+            <?= __('Cada persona votará a los 3 retos que le parecen más relevantes (no más de uno de su equipo)') ?>
         </p>
         <table class="reduced table table-striped text-center">
             <thead>
@@ -27,7 +27,7 @@ if ($admin) {
                         <td><?= $user ?></td>
 
                     <?php } ?>
-                    <th>Ámbito</th>
+                    <th><?= __('Ámbito') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -39,14 +39,14 @@ if ($admin) {
                         <?php foreach ($users as $user) { ?>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input id="<?= $user . $reto['id'] ?>" <?= $voted?'disabled="disabled"':'' ?> type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator" data-toggle="tooltip" title="Haz click para seleccionar"></span>
+                                    <input id="<?= $user . $reto['id'] ?>" <?= $voted ? 'disabled="disabled"' : '' ?> type="checkbox" class="custom-control-input <?= in_array($reto['id'], $propios) ? $user . "_propio propios" : '' ?>">
+                                    <span class="custom-control-indicator" data-toggle="tooltip" title="<?= __('Haz click para seleccionar') ?>"></span>
                                 </label>
                             </td>
                         <?php } ?>
 
 
-                        <td><?= $ambits[$reto['ambit']]->ambit ?></td>
+                        <td><?= $ambits[$reto['ambit'] - 1]->ambit ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -59,7 +59,7 @@ if ($admin) {
         <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
     <?php } else { ?>
         <div class="text-right mt-5">
-            <a href="#" id="submitvotos" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block" <?= $voted?'style="display:none !important"':'' ?>>
+            <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
                 <i class="fa fa-check fa-2x"></i>
             </a>
         </div>
@@ -94,9 +94,27 @@ if ($admin) {
     ?>';
             });
 <?php } else { ?>
+
+
+            function checkPage() {
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "pageactive"])
+    ?>", function (data, status) {
+                    if (data == page) {
+                        setTimeout(checkPage, 1000);
+                    } else {
+                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                    }
+                });
+            }
+            $(":checkbox.propios").click(function () {
+                var c = $(this).attr('id').replace(/[0-9]/g, '');
+
+                $('.' + c + '_propio').not('#' + $(this).attr('id')).prop("checked", false);
+
+            })
             $('#submitvotos').click(function () {
                 $('#submitvotos').attr('style', 'display:none !important');
-                
+
                 $('#error').html('');
                 var votos = [];
                 for (var i = 0; i < users.length; i++) {
@@ -108,9 +126,9 @@ if ($admin) {
                         }
                     }
                     if (cont != 3) {
-                        $('#error').html('Revise los votos');
+                        $('#error').html('<?= __('Revise los votos') ?>');
                         $('#submitvotos').attr('style', '');
-                                return;
+                        return;
                     }
                 }
 
@@ -120,15 +138,16 @@ if ($admin) {
         "action" => "saveretovotos"
     ])
     ?>", {'ids': JSON.stringify(votos)}, function (data, status) {
-                    
+
                     $(':checkbox').attr('disabled', 'disabled');
                     cambiar = true;
-                    $('#error').html('Votos enviados');
+                    $('#error').html('<?= __('Votos enviados') ?>');
+                    setTimeout(checkPage, 1000);
                 });
 
             });
 
-         
+
 
 <?php } ?>
     });

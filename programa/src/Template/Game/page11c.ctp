@@ -14,7 +14,7 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    Retos seleccionados
+                    <?=__('Retos seleccionados')?>
                 </p>
             </div>
         </div>

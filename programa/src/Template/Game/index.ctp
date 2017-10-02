@@ -2,7 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
- */
+ *  */
 if ($admin) {
     echo $this->element('navbar');
 }
@@ -14,35 +14,35 @@ if ($admin) {
         </div>
     </header>
     <section>
-        <p>Misión cero ¿por qué?</p>
-        <p class="fs22">Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica</p>
+        <p><?=__('Misión cero ¿por qué?')?></p>
+        <p class="fs22"><?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?></p>
         <img src="img/img1.jpg" alt="" class="float-right">
         <div>
-            <p>Por ejemplo:</p>
+            <p><?=__('Por ejemplo:')?></p>
             <ul style="line-height: 3rem;">
                 <li>
-                    Tengo un problema de comunicación interna
+                    <?=__('Tengo un problema de comunicación interna')?>
                 </li>
                 <li>
-                    Tengo que integrar a los millenials
+                    <?=__('Tengo que integrar a los millenials')?>
                 </li>
                 <li>
-                    Quiero reducir costes
+                    <?=__('Quiero reducir costes')?>
                 </li>
                 <li>
-                    Quiero relanzar mi producto
+                    <?=__('Quiero relanzar mi producto')?>
                 </li>
                 <li>
-                    Tengo que optimizar mi logística
+                    <?=__('Tengo que optimizar mi logística')?>
                 </li>
                 <li>
-                    Quiero impulsar la transformación digital
+                    <?=__('Quiero impulsar la transformación digital')?>
                 </li>
                 <li>
-                    Quiero entrar en un nuevo mercado
+                    <?=__('Quiero entrar en un nuevo mercado')?>
                 </li>
                 <li>
-                    Tengo que adaptar la estructura de ventas al nuevo entorno
+                    <?=__('Tengo que adaptar la estructura de ventas al nuevo entorno')?>
                 </li>
                 <li>
                     …

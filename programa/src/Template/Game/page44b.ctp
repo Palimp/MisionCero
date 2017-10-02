@@ -34,42 +34,42 @@
                         <span>1</span>
                         </br>
                         <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
-                        INTERACCIONES
+                        <?= __('INTERACCIONES') ?>
                     </th>
                     <th class="fs32 fw100" style="position: relative;">
                         <span>2</span>
                         </br>
                         <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
-                        PAINPOINTS
+                        <?= __('PAINPOINTS') ?>
                     </th>
                     <th class="green fs32 fw100" style="position: relative;">
                         <span>3</span>
                         </br>
-                        RETOS
+                        <?= __('RETOS') ?>
                     </th>
                 </tr>
             </thead>
             <tbody class="fs16">
                 <tr>
                     <td scope="row" class="align-top">
-                        <i>Hay algo que comunicar</i>
+                        <i><?= __('Hay algo que comunicar') ?></i>
                     </td>
                     <td>
-                        <i>Los cambios no se explican bien</i>
+                        <i><?= __('Los cambios no se explican bien') ?></i>
                     </td>
                     <td class="green">
-                        <i>¿cómo explicar mejor los cambios?</i>
+                        <i><?= __('¿cómo explicar mejor los cambios?') ?></i>
                     </td>
                 </tr>
                 <?php
                 foreach ($comments as $comment) {
                     foreach ($comment->pain as $pain) {
                         ?>
-                        <tr id="pain<?= $pain->id ?>"><td> <b><?= $comment->question ?></b></td><td><?= $pain->question ?><a href="#" id="delete<?= $pain->id ?>" onclick="delPain(<?= $pain->id ?>)" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>
+                        <tr id="pain<?= $pain->id ?>"><td> <b><?= $comment->question ?></b></td><td><?= $pain->question ?><a href="#" id="delete<?= $pain->id ?>" onclick="delPain(<?= $pain->id ?>)" data-toggle="tooltip" title="<?= __('Haz click para borrar una interacción') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>
                                 <?php
                                 foreach ($pain->ppchan as $chan) {
                                     ?>
-                                <div id="<?=$chan->id?>"> <b><?=$chan->question?></b><a href="#" id="delcha<?=$chan->id?>" onclick="delPpcha(<?=$chan->id?>)" data-toggle="tooltip" title="Haz click para borrar un reto" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>
+                                    <div id="<?= $chan->id ?>"> <b><?= $chan->question ?></b><a href="#" id="delcha<?= $chan->id ?>" onclick="delPpcha(<?= $chan->id ?>)" data-toggle="tooltip" title="<?= __('Haz click para borrar un reto') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>
                                     <?php
                                 }
                                 ?>
@@ -80,8 +80,8 @@
                 ?>
                 <tr>
                     <td scope="row" class="align-top">
-                        <input type="text" id="inter" class="form-control d-inline-block" placeholder="Introduce aquí la interacción" >
-                        <a id="addinter" href="#" data-toggle="tooltip" title="Haz click para añadir una interacción" class="d-inline-block">
+                        <input type="text" id="inter" class="form-control d-inline-block" placeholder="<?= __('Introduce aquí la interacción') ?>" >
+                        <a id="addinter" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block">
                             <i class="fa fa-plus fa-2x"></i>
                         </a>
                     </td>
@@ -101,7 +101,7 @@
                 <!-- Button trigger modal_ex5 -->
                 <a href="#" data-toggle="modal" data-target="#modal_ex5" class="grey_link">
                     <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                    <p class="fs12">click aquí para<br> ver ejemplo
+                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                     </p>
                 </a>
             </div>
@@ -110,10 +110,10 @@
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
+                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
                 </b>
                 </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
+                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
             </div>
         </div>
     </section>
@@ -127,8 +127,8 @@
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
                                     <span>
-                                        <b>Ejemplo Problemática</b> 
-                                        ¿Cómo mejorar mi comunicación interna?
+                                        <b><?= __('Ejemplo Problemática') ?></b> 
+                                        <?= __('¿Cómo mejorar mi comunicación interna?') ?>
                                     </span>
                                 </div>
                             </div>
@@ -145,70 +145,70 @@
                                         <span>1</span>
                                         </br>
                                         <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
-                                        INTERACCIONES
+                                        <?= __('INTERACCIONES') ?>
                                     </th>
                                     <th class="fs32 fw100 w30" style="position: relative;">
                                         <span>2</span>
                                         </br>
                                         <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
-                                        PAINPOINTS
+                                        <?= __('PAINPOINTS') ?>
                                     </th>
                                     <th class="green fs32 fw100 w30" style="position: relative;">
                                         <span>3</span>
                                         </br>
-                                        RETOS
+                                        <?= __('RETOS') ?>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="fs16">
                                 <tr>
                                     <td scope="row" class="align-top">
-                                        Hay algo que comunicar
+                                        <?= __('Hay algo que comunicar') ?>
                                     </td>
                                     <td>
-                                        Los cambios no se explican bien
+                                        <?= __('Los cambios no se explican bien') ?>
                                         </br>
-                                        No tenemos la información oficial completa a la hora de comunicar
+                                        <?= __('No tenemos la información oficial completa a la hora de comunicar') ?>
                                     </td>
                                     <td class="green">
-                                        ¿cómo explicar mejor los cambios?
+                                        <?= __('¿cómo explicar mejor los cambios?') ?>
                                         </br>
-                                        ¿Cómo conseguir tener toda la info a tiempo antes de tener que comunicar?
+                                        <?= __('¿Cómo conseguir tener toda la info a tiempo antes de tener que comunicar?') ?>
                                         </br>
-                                        ¿cómo comunicar bien sin tener toda la información
+                                        <?= __('¿cómo comunicar bien sin tener toda la información') ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td scope="row" class="align-top">
-                                        Hay algo que comunicar
+                                        <?= __('Hay algo que comunicar') ?>
                                     </td>
                                     <td>
-                                        Los cambios no se explican bien
+                                        <?= __('Los cambios no se explican bien') ?>
                                     </td>
                                     <td class="green">
-                                        ¿cómo explicar mejor los cambios?
+                                        <?= __('¿cómo explicar mejor los cambios?') ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td scope="row" class="align-top">
-                                        Hay algo que comunicar
+                                        <?= __('Hay algo que comunicar') ?>
                                     </td>
                                     <td>
-                                        Los cambios no se explican bien
+                                        <?= __('Los cambios no se explican bien') ?>
                                     </td>
                                     <td class="green">
-                                        ¿cómo explicar mejor los cambios?
+                                        <?= __('¿cómo explicar mejor los cambios?') ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td scope="row" class="align-top">
-                                        Hay algo que comunicar
+                                        <?= __('Hay algo que comunicar') ?>
                                     </td>
                                     <td>
-                                        Los cambios no se explican bien
+                                        <?= __('Los cambios no se explican bien') ?>
                                     </td>
                                     <td class="green">
-                                        ¿cómo explicar mejor los cambios?
+                                        <?= __('¿cómo explicar mejor los cambios?') ?>
                                     </td>
                                 </tr>
                             </tbody>
@@ -222,16 +222,16 @@
 
 <script>
     var page = 44;
-    var inter = '<tr><td scope="row" class="align-top"><input type="text" id="inter" class="form-control" placeholder="Introduce aquí la interacción"><a id="addinter" href="#" data-toggle="tooltip" title="Haz click para añadir una interacción" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a></td><td></td><td></td></tr>';
-    var pain = '<input id="pain" type="text" class="form-control form-group" placeholder="Introduce aquí el painpoint"><a id="addpain" href="#" data-toggle="tooltip" title="Haz click para añadir una interacción" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
-    var ppcha = '<input id="ppcha" type="text" class="form-control form-group" placeholder="Introduce aquí un reto"><a id="addppcha" href="#" data-toggle="tooltip" title="Haz click para añadir una interacción" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
+    var inter = '<tr><td scope="row" class="align-top"><input type="text" id="inter" class="form-control" placeholder="<?= __('Introduce aquí la interacción') ?>"><a id="addinter" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a></td><td></td><td></td></tr>';
+    var pain = '<input id="pain" type="text" class="form-control form-group" placeholder="<?= __('Introduce aquí el painpoint') ?>"><a id="addpain" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
+    var ppcha = '<input id="ppcha" type="text" class="form-control form-group" placeholder="<?= __('Introduce aquí un reto') ?>"><a id="addppcha" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
     function delPpcha(id) {
         $.get("<?=
-                $this->Url->build([
-                    "controller" => "Game",
-                    "action" => "deleteppcha"
-                ])
-                ?>", {'id': id}, function (data, status) {
+                                        $this->Url->build([
+                                            "controller" => "Game",
+                                            "action" => "deleteppcha"
+                                        ])
+                                        ?>", {'id': id}, function (data, status) {
             if (status == 'success') {
 
                 $('#' + id).remove();
@@ -240,12 +240,12 @@
     }
     function delPain(id) {
         $.get("<?=
-                $this->Url->build([
-                    "controller" => "Game",
-                    "action" => "deletepain"
-                ])
-                ?>", {'id': id}, function (data, status) {
-                    console.log(data);
+                                        $this->Url->build([
+                                            "controller" => "Game",
+                                            "action" => "deletepain"
+                                        ])
+                                        ?>", {'id': id}, function (data, status) {
+            console.log(data);
             if (status == 'success') {
 
                 $('#pain' + id).remove();
@@ -257,12 +257,8 @@
 
             $('#addinter').click(function () {
                 $('#addinter').attr('style', 'display: none !important');
-                $.get("<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "addinter"
-    ])
-    ?>", {'comment': $('#inter').val()}, function (data, status) {
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "addinter"]) ?>",
+                        {'comment': $('#inter').val()}, function (data, status) {
 
                     if (status == 'success') {
                         $('#addinter').removeAttr('style');
@@ -274,6 +270,7 @@
                         $('#inter').val('');
                         $('#addpain').click(function () {
                             var id = $('#addpain').closest('tr').attr('id').replace('bloque', '');
+                            console.log('pain1 ' + id);
 
 
                             $('#addpain').attr('style', 'display: none !important');
@@ -286,6 +283,9 @@
 
                                 if (status == 'success') {
                                     $('#addpain').removeAttr('style');
+                                    $('#addppcha').remove();
+                                    $('#ppcha').remove();
+
                                     $('#addpain').closest('tr').before('<tr id="pain' + data + '"><td> <b>' + $('#addpain').closest('tr').find("td:first").find("b").html() + '</b></td><td>' + $('#pain').val() + '<a href="#" id="delete' + data + '" onclick="delPain(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + ppcha + '</td></tr>');
                                     $('#pain').val('');
                                     $('#addppcha').click(function () {
@@ -293,16 +293,12 @@
                                         console.log(id);
 
                                         $('#addppcha').attr('style', 'display: none !important');
-                                        $.get("<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "addppcha"
-    ])
-    ?>", {'comment': $('#ppcha').val(), 'inter_id': id}, function (data, status) {
+                                        $.get("<?= $this->Url->build(["controller" => "Game", "action" => "addppcha"]) ?>",
+                                                {'comment': $('#ppcha').val(), 'inter_id': id}, function (data, status) {
 
                                             if (status == 'success') {
                                                 $('#addppcha').removeAttr('style');
-                                                $('#ppcha').before('<div id="' + data + '"> <b>' + $('#ppcha').val() + '</b><a href="#" id="delete' + data + '" onclick="delPpcha(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>');
+                                                $('#ppcha').before('<div id="' + data + '"> <b>' + $('#ppcha').val() + '</b><a href="#" id="delete' + data + '" onclick="delPpcha(' + data + ')" data-toggle="tooltip" title="<?= __('Haz click para borrar una interacción') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>');
                                                 $('#ppcha').val('');
 
                                             }
@@ -318,7 +314,8 @@
 
             $('#addpain').click(function () {
                 var id = $('#addinter').closest('tr').attr('id');
-                console.log(id);
+                console.log('pain2 ' + id);
+
                 return;
                 $('#addpain').attr('style', 'display: none !important');
                 $.get("<?=
@@ -350,7 +347,7 @@
                         setTimeout(checkTime, 500);
 
                     } else {
-                        /* alert("Se acabó el tiempo");
+                        /* alert("<?= __('Se acabó el tiempo') ?>");
                          location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

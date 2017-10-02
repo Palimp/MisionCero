@@ -43,7 +43,7 @@
                 <input type="text" name="comment" id="comment" class="form-control" placeholder="Introduzca aquí su comentario">
             </div>
             <div class="col col-md-auto">
-                <a id="addcomment" href="#" data-toggle="tooltip" title="Haz click para añadir un comentario" class="d-inline-block">
+                <a id="addcomment" href="#" data-toggle="tooltip" title="<?=('Haz click para añadir un comentario')?>" class="d-inline-block">
                     <i class="fa fa-plus fa-2x"></i>
                 </a>
             </div>
@@ -51,17 +51,17 @@
         <div>
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
                 <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12">click aquí para<br> ver ejemplo
+                <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
                 </p>
             </a>
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
+                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
                 </b>
                 </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
+                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
             </div>
         </div>
     </section>
@@ -75,8 +75,8 @@
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
                                     <span>
-                                        <b>Ejemplo Problemática</b> 
-                                        ¿Cómo mejorar mi comunicación interna?
+                                        <b><?=__('Ejemplo Problemática')?></b> 
+                                        <?=__('¿Cómo mejorar mi comunicación interna?')?>
                                     </span>
                                 </div>
                             </div>
@@ -88,32 +88,32 @@
                     <div class="modal-body">
                         <p>
                             <b>
-                                Para entender mejor lo que se nos pide, seguiremos una simulación de partida sobre un reto teorico:       
+                                <?=__('Para entender mejor lo que se nos pide, seguiremos una simulación de partida sobre un reto teorico: ')?>      
                                 </br></br>
-                                ¿Cómo mejorar mi comunicación interna?
+                                <?=__('¿Cómo mejorar mi comunicación interna?')?>
                                 </br></br>
-                                En cada etapa podrá clickar sobre el icono amarillo para leer los contenidos que se podrían haber generado sobre este reto.
+                                <?=__('En cada etapa podrá clickar sobre el icono amarillo para leer los contenidos que se podrían haber generado sobre este reto.')?>
                                 </br></br>
-                                En este caso, los comentarios informales podrían haber sido
+                                <?=__('En este caso, los comentarios informales podrían haber sido')?>
                                 </br></br>
                             </b>
-                            Los rumores siempre van más rápido que la información interna
+                            <?=__('Los rumores siempre van más rápido que la información interna')?>
                             </br>
-                            Nadie lee los mails de comunicación interna       
+                            <?=__('Nadie lee los mails de comunicación interna')?> 
                             </br>
-                            Mucha gente no entiende los mails de comunicación interna
+                            <?=__('Mucha gente no entiende los mails de comunicación interna')?>
                             </br>
-                            No tocan lo que nos gustaría realmente saber
+                            <?=__('No tocan lo que nos gustaría realmente saber')?>
                             </br>
-                            Para los de la fábrica, la información no es relevante
+                            <?=__('Para los de la fábrica, la información no es relevante')?>
                             </br>
-                            Los mails de comunicación son muy aburridos
+                            <?=__('Los mails de comunicación son muy aburridos')?>
                             </br>
-                            Siempre presentan un mundo perfecto
+                            <?=__('Siempre presentan un mundo perfecto')?>
                             </br>
-                            Los que mandan comunicación están muy lejos y no saben lo que hacemos
+                            <?=__('Los que mandan comunicación están muy lejos y no saben lo que hacemos')?>
                             </br>
-                            Tendríamos que tener a personas de comunicación en cada área 
+                            <?=__('Tendríamos que tener a personas de comunicación en cada área ')?>
                         </p>
                     </div>
                 </div>
@@ -165,12 +165,13 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
+        console.log(data+"-"+(data != "0"));
                     if (data != "0" && data!="00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
 
-                    } else {
-                        alert("Se acabó el tiempo");
+                    } else if (data != "0") {
+                        alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
@@ -178,6 +179,9 @@
     ])
     ?>';
                     }
+                    else{
+                          setTimeout(checkTime, 500);
+                      }
 
                 });
 

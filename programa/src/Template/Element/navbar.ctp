@@ -38,6 +38,13 @@
                         ?>
                     </li>
                     <li>
+                        <?=
+                        $this->Html->link(
+                                __('Reset partida'), ['controller' => 'Build', 'action' => 'reset']
+                        )
+                        ?>
+                    </li>
+                    <li>
                         <hr/>
                     </li>
                     <li>

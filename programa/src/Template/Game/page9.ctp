@@ -56,10 +56,10 @@ if ($admin) {
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
+                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
                 </b>
                 </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
+                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
             </div>
         </div>
     </section>
@@ -87,7 +87,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page7"
+        "action" => "page8"
     ])
     ?>';
             });

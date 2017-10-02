@@ -15,9 +15,9 @@ if ($admin) {
     </header> 
     <section>
         <p class="fs22">
-            Cada equipo selecciona los 3 retos espontáneos que le parece más relevantes y novedosos 
+            <?=__('Cada equipo selecciona los 3 retos espontáneos que le parece más relevantes y novedosos ')?>
             </br>
-            (para abrir nuevas líneas de trabajo de la problemática)
+            <?=__('(para abrir nuevas líneas de trabajo de la problemática)')?>
         </p>
         <?php if ($admin) { ?>
 
@@ -32,7 +32,7 @@ if ($admin) {
                             <td class="text-right">
                                 <label class="custom-control custom-checkbox">
                                     <input id='<?= $comment['id'] ?>' type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator" data-toggle="tooltip" title="Haz click para seleccionar"></span>
+                                    <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
                                 </label>
                             </td>
                         </tr>
@@ -40,7 +40,7 @@ if ($admin) {
                 </tbody>
             </table>
             <div class="text-right mt-5">
-                <a href="#" id="submitcomment" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block">
+                <a href="#" id="submitcomment" data-toggle="tooltip" title="<?=__('Haz click para enviar')?>" class="d-inline-block">
                     <i class="fa fa-check fa-2x"></i>
                 </a>
             </div>
@@ -53,7 +53,7 @@ if ($admin) {
 </main>
 
 <script>
-    var page = 22;
+    var page = 35;
     var chequeados = [];
     $(function () {
 <?php if ($admin) { ?>
@@ -90,7 +90,7 @@ console.log(data);
 
                     });
                 } else {
-                    alert("Debe elegir tres comentarios");
+                    alert("<?=__('Debe elegir tres comentarios')?>");
                 }
             });
             $(':checkbox').click(function () {

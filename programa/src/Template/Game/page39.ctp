@@ -15,15 +15,15 @@ if ($admin) {
     </header> 
     <section>
         <p class="fs22">
-            Ranking de Bikles al acabar la etapa 6
+            <?=__('Ranking de Bikles al acabar la etapa 6')?>
         </p>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
                     <th></th>
                     <th></th>
-                    <th>Equipo</th>
-                    <th>Bikles</th>
+                    <th><?=__('Equipo')?></th>
+                    <th><?=__('Bikles')?></th>
                     <th></th>
                 </tr>
             </thead>
@@ -44,7 +44,7 @@ if ($admin) {
                                 ));
                                 ?>
                                 <input type="hidden" name="sumar" value="<?= $teams[$i]['id'] ?>">
-                                <a href="#" onclick="$(this).closest('form').submit()"  data-toggle="tooltip" title="Haz click para añadir Bikles" class="d-inline-block grey_link">
+                                <a href="#" onclick="$(this).closest('form').submit()"  data-toggle="tooltip" title="<?=__('Haz click para añadir Bikles')?>" class="d-inline-block grey_link">
                                     <i class="fa fa-plus"></i>
                                 </a>
                                 </form>
@@ -55,7 +55,7 @@ if ($admin) {
                                 ?>
                                 <input type="hidden" name="restar" value="<?= $teams[$i]['id'] ?>">
 
-                                <a href="#"  onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Haz click para restar Bikles" class="d-inline-block grey_link">
+                                <a href="#"  onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar Bikles')?>" class="d-inline-block grey_link">
                                     <i class="fa fa-minus"></i>
                                 </a>
                                 </form>

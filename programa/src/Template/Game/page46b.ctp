@@ -14,8 +14,8 @@ if ($admin) {
         <?= $this->Html->image("breadp63.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-    
-            Retos seleccionados:
+        <p>
+            <?=__('Retos seleccionados:')?>
         </p>
         <?php if ($admin) { ?>
 

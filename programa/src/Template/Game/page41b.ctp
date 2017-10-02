@@ -14,7 +14,7 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo
+                    <?=__('Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo')?>
                 </p>
                
             </div>
@@ -35,10 +35,10 @@
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    nos han convencido + 2 Bikles
+                    <?=__('nos han convencido + 2 Bikles')?>
                 </b>
-                </br> neutro 0 Bikles
-                </br> no nos convence nada - 2 Bikles
+                </br><?=__(' neutro 0 Bikles')?>
+                </br><?=__(' no nos convence nada - 2 Bikles')?>
             </div>
         </div>
     </section>
@@ -92,7 +92,7 @@
                         setTimeout(checkTime, 500);
 
                     } else {
-                        alert("Se acabó el tiempo");
+                        alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

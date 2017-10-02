@@ -189,7 +189,7 @@ class CodeComponent extends Component {
             $c = $table->newEntity();
             $c->team_id = $team_id;
             $c->challenge = $challenge->reto;
-            $c->ambit = $challenge->ambito;
+            $c->ambit = empty($challenge->ambito) ? 10 : $challenge->ambito;
             $table->save($c);
         }
     }
@@ -201,6 +201,18 @@ class CodeComponent extends Component {
             $c = $table->get($challenge->id);
             $c->ambit = $challenge->ambito;
             $table->save($c);
+        }
+    }
+
+    public function saveFeelings($team_id, $challenges) {
+
+        $table = TableRegistry::get('FeelingsTeams');
+        $table->deleteAll(['team_id' => $team_id]);
+        foreach ($challenges as $challenge) {
+            $f = $table->newEntity();
+            $f->team_id = $team_id;
+            $f->feeling_id = $challenge;
+            $table->save($f);
         }
     }
 
@@ -371,6 +383,52 @@ class CodeComponent extends Component {
         $teams->save($team);
         return 1;
     }
+ public function saveTopUSerVotes($team_id, $ids) {
+
+        $table = TableRegistry::get('Tops');
+        $teams = TableRegistry::get('Teams');
+        $team = $teams->get($team_id);
+        if ($team->vo) {
+            return 1;
+        }
+        foreach ($ids as $id) {
+            $cha = $table->get($id);
+            if ($cha->votes == null) {
+                $cha->votes = 0;
+            }
+            $cha->votes++;
+            $table->save($cha);
+        }
+
+        $team->vo = 1;
+        $teams->save($team);
+        return 1;
+    }
+    public function saveTopVotes($team_id, $ids) {
+        $code = ['amb', 'nor', 'qui'];
+        $table = TableRegistry::get('Tops');
+        $teams = TableRegistry::get('Teams');
+        $team = $teams->get($team_id);
+        if ($team->vt) {
+            return 1;
+        }
+
+        foreach ($ids as $id) {
+
+            $cha = $table->get($id->id);
+            $t = $code[$id->val - 1];
+
+            $cha->$t++;
+
+
+            $table->save($cha);
+        }
+
+        $team->vt = 1;
+        $teams->save($team);
+
+        return 1;
+    }
 
     public function hasVoted($team_id, $section = 'vc') {
         $table = TableRegistry::get('Teams');
@@ -382,6 +440,24 @@ class CodeComponent extends Component {
         $table = TableRegistry::get('Challenges');
         $num = $table->find('all')
                         ->where(['team_id' => $team_id,])->toArray();
+        return $num;
+    }
+
+    public function getGenericTeam($team_id, $table = 'Challenges') {
+        $table = TableRegistry::get($table);
+        $g = [];
+        $num = $table->find('all')
+                        ->where(['team_id' => $team_id,])->toArray();
+        foreach ($num as $n) {
+            $g[] = $n['id'];
+        }
+        return $g;
+    }
+
+    public function getFeelings($type = 1) {
+        $table = TableRegistry::get('Feelings');
+        $num = $table->find('all')
+                        ->where(['type' => $type,])->toArray();
         return $num;
     }
 
@@ -403,10 +479,69 @@ class CodeComponent extends Component {
 
     public function getRetos($id, $table = 'challenges') {
         $conn = ConnectionManager::get('default');
-
-        $query = $conn->execute('SELECT * FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where sel=1 and game_id=' . $id);
+        $sel = '';
+        if ($table != 'challenges') {
+            $sel = " sel=1 and ";
+        }
+        $query = $conn->execute('SELECT * FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where ' . $sel . 'game_id=' . $id);
         $res = $query->fetchAll('assoc');
         return $res;
+    }
+
+    public function createTops($id) {
+        if ($this->countTops($id) == 25) {
+            return;
+        }
+        $table = TableRegistry::get('Tops');
+        $table->deleteAll(['game_id' => $id]);
+        $cha = $this->getTops($id);
+        $this->saveTops($id, array_column($cha, 'challenge'), array_column($cha, 'ambit'),1);
+        $cha = $this->getTops($id, 'questions');
+        $this->saveTops($id, array_column($cha, 'question'), array_column($cha, 'ambit'), 2);
+        $cha = $this->getTops($id, 'stakes');
+        $this->saveTops($id, array_column($cha, 'question'), array_column($cha, 'ambit'), 3);
+        $cha = $this->getTops($id, 'ppchallenges');
+        $this->saveTops($id, array_column($cha, 'question'), array_column($cha, 'ambit'), 4);
+        $cha = $this->getTops($id, 'motions');
+        $this->saveTops($id, array_column($cha, 'question'), array_column($cha, 'ambit'), 5);
+    }
+
+    public function countTops($id) {
+        $conn = ConnectionManager::get('default');
+        $query = $conn->execute('SELECT count(*) as t FROM tops where game_id=' . $id);
+        $res = $query->fetchAll('assoc');
+
+        return $res[0]['t'];
+    }
+
+    public function saveTops($id, $terms, $ambits, $type) {
+        $table = TableRegistry::get('Tops');
+        for ($i=0;$i<count($terms);$i++){
+
+            $top = $table->newEntity();
+            $top->game_id = $id;
+            $top->question = $terms[$i];
+            $top->ambit = $ambits[$i];
+            $top->sel = $type;
+
+            $table->save($top);
+        }
+    }
+
+    public function getTops($id, $table = 'challenges') {
+        $conn = ConnectionManager::get('default');
+        $sel = '';
+
+        $query = $conn->execute('SELECT ' . $table . '.* FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' order by votes desc, ' . $table . '.id limit 5');
+        $res = $query->fetchAll('assoc');
+        return $res;
+    }
+
+    public function getTopsAll($id) {
+        $table = TableRegistry::get('Tops');
+        $num = $table->find('all')
+                        ->where(['game_id' => $id,])->toArray();
+        return $num;
     }
 
     public function getChallenges($id, $table = 'challenges') {
@@ -416,7 +551,14 @@ class CodeComponent extends Component {
         $res = $query->fetchAll('assoc');
         return $res;
     }
+    public function getTopsOrder($id) {
+        $conn = ConnectionManager::get('default');
 
+        $query = $conn->execute('SELECT * FROM tops where game_id=' . $id . ' order by votes desc');
+        $res = $query->fetchAll('assoc');
+        return $res;
+    }
+    
     public function getChallengeTeams($id, $table = 'challenges') {
         $conn = ConnectionManager::get('default');
 
@@ -472,7 +614,7 @@ class CodeComponent extends Component {
     }
 
     public function setTime($id, $tipo = 0, $time = 0) {
-        
+
         $games = TableRegistry::get('Games');
         $game = $games->get($id);
         if ($tipo == 0) {

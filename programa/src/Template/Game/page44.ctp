@@ -17,7 +17,7 @@ if ($admin) {
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    Identicar momentos clave de interacción y listar painpoints
+                    <?=__('Identicar momentos clave de interacción y listar painpoints')?>
                 </p>
             </div>
             <div class="col fs32">
@@ -32,7 +32,7 @@ if ($admin) {
                             ));
                             ?>
                             <input type="hidden" name="stop" value="1">
-                            <button class="btn btn-primary">Parar tiempo</button>
+                            <button class="btn btn-primary"><?=__('Parar tiempo')?></button>
                             <?php
                         } else {
                             echo $this->Form->create('Begin', array(
@@ -40,7 +40,7 @@ if ($admin) {
                             ));
                             ?>
                             <input type="hidden" name="start" value="1">
-                            <button class="btn btn-primary">Reanudar tiempo</button>
+                            <button class="btn btn-primary"><?=__('Reanudar tiempo')?></button>
                         <?php } ?>
 
                         </form>
@@ -53,7 +53,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="time" value="30">
-                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Haz click para añadir tiempo" class="d-inline-block grey_link">
+                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para añadir tiempo')?>" class="d-inline-block grey_link">
                             <i class="fa fa-plus"></i>
                         </a>
                         </form>
@@ -63,7 +63,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="time" value="-30">
-                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Haz click para restar tiempo" class="d-inline-block grey_link">
+                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar tiempo')?>" class="d-inline-block grey_link">
                             <i class="fa fa-minus"></i>
                         </a>
                         </form>
@@ -72,13 +72,13 @@ if ($admin) {
             </div>
         </div>
         <p>
-            Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.
+            <?=__('Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.')?>
         <p>
         </p>
-        Después, para cada uno de estos momentos, listar los “pain points” (puntos dolorosos): puntos críticos o problemas. Introducir estos "pain points en la segunda columna" Se puede introducir más de un "paint point" por interracción.
+        <?=__('Después, para cada uno de estos momentos, listar los “pain points” (puntos dolorosos): puntos críticos o problemas. Introducir estos "pain points en la segunda columna" Se puede introducir más de un "paint point" por interracción.')?>
         </p>
         <p>
-            Para acabar, lo más importante: transformar los "pain points" en retos (¿Cómo podríamos...?). Introducir los retos en la tercera columna. Pueden introducir más de un reto por pain point
+            <?=__('Para acabar, lo más importante: transformar los "pain points" en retos (¿Cómo podríamos...?). Introducir los retos en la tercera columna. Pueden introducir más de un reto por pain point')?>
         </p>
     </section>
     <?php if ($admin) { ?>
@@ -109,7 +109,7 @@ if ($admin) {
                         setTimeout(checkTime, 500);
                     } else {
                         if (stop) {
-                            alert("Se acabó el tiempo");
+                            alert("<?=__('Se acabó el tiempo')?>");
                             location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

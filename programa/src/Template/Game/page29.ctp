@@ -17,53 +17,53 @@ if ($admin) {
     </header>
     <section>
         <p>
-            Una empresa que fabrica taladradoras quiere reinventarse. El DG insiste en no limitarse a incrementar las ventas actuales: quiere abrir caminos muy novedosos
+            <?=__('Una empresa que fabrica taladradoras quiere reinventarse. El DG insiste en no limitarse a incrementar las ventas actuales: quiere abrir caminos muy novedosos')?>
             </br>
-            Qué reto piensa trabajar el equipo:
+            <?=__('Qué reto piensa trabajar el equipo:')?>
         </p>
         <table class="reduced table table-striped">
             <tbody>
                 <tr>
                     <td scope="row">
-                        <span id="fila1">¿Cómo aumentar las ventas de taladradoras?</span>
+                        <span id="fila1"><?=__('¿Cómo aumentar las ventas de taladradoras?')?></span>
                     </td>
                     <td class="text-right">
                         <label class="custom-control custom-checkbox">
                             <input id="1" type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="Haz click para seleccionar"></span>
+                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td scope="row">
-                        <span id="fila2">¿Cómo encontrar nuevos ingresos en productos de bricolaje?</span>
+                        <span id="fila2"><?=__('¿Cómo encontrar nuevos ingresos en productos de bricolaje?')?></span>
                     </td>
                     <td class="text-right">
                         <label class="custom-control custom-checkbox">
                             <input  id="2" type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="Haz click para seleccionar"></span>
+                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td scope="row">
-                        <span id="fila3">¿Cómo generar nuevos ingresos con taladradoras?</span>
+                        <span id="fila3"><?=__('¿Cómo generar nuevos ingresos con taladradoras?')?></span>
                     </td>
                     <td class="text-right">
                         <label class="custom-control custom-checkbox">
                             <input  id="3" type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="Haz click para seleccionar"></span>
+                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td scope="row">
-                        <span id="fila4">¿Cómo ofrecer nuevos servicios al consumidor que quiere hacer agujeros?</span>
+                        <span id="fila4"><?=__('¿Cómo ofrecer nuevos servicios al consumidor que quiere hacer agujeros?')?></span>
                     </td>
                     <td class="text-right">
                         <label class="custom-control custom-checkbox">
                             <input id="4"  type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="Haz click para seleccionar"></span>
+                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
                         </label>
                     </td>
                 </tr>
@@ -72,10 +72,10 @@ if ($admin) {
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    ¡Ganarán Bikles los equipos con más comentarios!
+                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
                 </b>
                 </br>
-                ¡Perderán Bikles los equipos con menos comentarios!
+                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
             </div>
         </div>
 
