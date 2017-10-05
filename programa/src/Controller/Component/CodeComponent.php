@@ -132,7 +132,13 @@ class CodeComponent extends Component {
         $query = $conn->execute('select teams.*, count(' . $table . '.id) as num from teams left join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . " group by teams.id order by num desc,team asc");
         return $query->fetchAll('assoc');
     }
+  public function getMaxTeam($id) {
+        $conn = ConnectionManager::get('default');
 
+        $query = $conn->execute('select coalesce(max(team),max(team),0)+1 as team from teams where game_id=' . $id );
+        $res= $query->fetchAll('assoc');
+        return $res[0]['team'];
+    }
     public function getComment($id) {
         $comments = TableRegistry::get('Comments');
 
@@ -560,7 +566,7 @@ class CodeComponent extends Component {
     public function getFreeNames($id) {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT name FROM misioncero.names where name not in (select name from teams where game_id = '.$id.')');
+        $query = $conn->execute('SELECT name FROM misioncero.names where name not in (select coalesce(name,name,\'\') from teams where game_id = '.$id.')');
         $res = $query->fetchAll('assoc');
         
         return array_column( $res,"name");

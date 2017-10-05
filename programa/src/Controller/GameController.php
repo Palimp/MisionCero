@@ -1486,19 +1486,25 @@ class GameController extends AppController {
 
     public function selectteam() {
         $sesion = $this->Code->loadSesion();
-        $data = $this->Code->teamsOK($sesion['id']);
-
-        if ($data == 0) {
+        $id = $sesion['id'];
+        $active = $sesion['active'];
+        $data = $this->Code->teamsOK($id);
+        if ($data == 0 || !$active) {
             $this->loadModel('Teams');
             if ($this->request->is(['patch', 'post', 'put'])) {
                 $idteam = $this->Cookie->read('team');
                 $datos = $this->request->getData();
-                
-                if (!empty($idteam)) {
 
-                    $team = $this->Teams->get($idteam);
-                    $team->taken = 0;
-                    $this->Teams->save($team);
+                if (!empty($idteam)) {
+                    $teams = $this->Teams->find('all')
+                            ->where(['id' => $idteam]);
+
+                    $team = $teams->first();
+                    if ($team) {
+                        $team = $this->Teams->get($idteam);
+                        $team->taken = 0;
+                        $this->Teams->save($team);
+                    }
                 }
                 if (!empty($datos['team'])) {
                     $query = $this->Teams->find('all')
@@ -1508,11 +1514,14 @@ class GameController extends AppController {
                     $this->Teams->save($team);
                 } else {
                     if (isset($datos['name']) && !empty($datos['member'])) {
+                        $names = json_decode($datos['names']);
+                        
                         $team = $this->Teams->newEntity();
-                        $team->name = $datos['name'];
+                        $team->name = $names[$datos['name']];
                         $team->members = $datos['member'];
                         $team->taken = 1;
-                        $team->game_id= $sesion['id'];
+                        $team->team= $this->Code->getMaxTeam($id);
+                        $team->game_id = $id;
                         $this->Teams->save($team);
                     }
                 }
@@ -1521,7 +1530,7 @@ class GameController extends AppController {
             $query = $this->Teams->find()
                             ->where(['game_id' => $sesion['id']])
                             ->order(['team' => 'ASC'])->toArray();
-            $names = $this->Code->getFreeNames($sesion['id']);
+            $names = $this->Code->getFreeNames($id);
             $this->set('teams', $query);
             $this->set('names', $names);
         } else {
@@ -1533,7 +1542,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $data = 0;
         if ($this->request->is('ajax')) {
-            $data = $this->Code->teamsOK($sesion['id']);
+            $data = $this->Code->teamsOK($sesion['id']) && $sesion['active'];
         }
 
         $this->set(compact('data'));

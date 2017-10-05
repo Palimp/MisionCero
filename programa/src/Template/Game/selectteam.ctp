@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
+
 ?>
 
 <main>
@@ -43,10 +44,10 @@
         <p class="fs26"><?= __('Al seleccionar su equipo quedará inhabilitado para el resto. ¡Revisa todo bien!') ?></p>
         <p class="fs26"><?= __('O bien cree su propio equipo:') ?></p>
 
-          <?php
+        <?php
         echo $this->Form->create('Teams', array(
             'url' => array('controller' => 'Game', 'action' => 'selectteam'),
-            "id"=>'team'
+            "id" => 'team'
         ));
         ?>
         <div class="row bloque">
@@ -63,7 +64,7 @@
                         'empty' => __('Selecciona el nombre del equipo'),
                         'label' => '',
                         'class' => 'custom-select ml-2',
-                        
+                                 'default' => null
                     ]);
                     ?>
 
@@ -75,6 +76,7 @@
                 <div class="row form-group">
                     <div class="col pl-0">
                         <input name="member"  type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas" >
+                        <input name="names" type="hidden" value='<?= json_encode($names) ?>'>
                     </div>
                     <div class="col-12 col-md-auto">
                         <button type="submit" id="saveteam" class="btn btn-primary mb-10"><?= __('Guardar equipo') ?></button>
@@ -83,7 +85,7 @@
 
             </div>
         </div>
-    </form>
+        </form>
 
 
     </section>
