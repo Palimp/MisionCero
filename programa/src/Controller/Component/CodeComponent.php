@@ -161,7 +161,7 @@ class CodeComponent extends Component {
         $team = $table->get($id);
         $users = explode(',',  $team->members);
         for($i=0;$i<count($users);$i++){
-            $users[$i]=preg_replace("/[^a-zA-Z0-9]+/", "_",$users[$i]);
+            $users[$i]=preg_replace("/[^a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙüÜ0-9]+/", "_",$users[$i]);
         }
         return array_map('trim', $users);
     }

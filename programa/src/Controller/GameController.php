@@ -1520,6 +1520,7 @@ class GameController extends AppController {
                         $team->name = $names[$datos['name']];
                         $team->members = $datos['member'];
                         $team->taken = 1;
+                        $team->bikles = 20;
                         $team->team= $this->Code->getMaxTeam($id);
                         $team->game_id = $id;
                         $this->Teams->save($team);

@@ -21,7 +21,7 @@
         <?php
         foreach($challenges as $challenge) {
             $reto=isset($challenge->reto)?$challenge->reto:$challenge->challenge;
-            $ambito=isset($challenge->ambito)?$ambits[$challenge->ambito]->ambit:$ambits[$challenge->ambit]->ambit;
+            $ambito=isset($challenge->ambito)?$ambits[$challenge->ambito-1]->ambit:$ambits[$challenge->ambit-1]->ambit;
             
             ?><p>
             <b class="fs22">

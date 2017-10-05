@@ -71,7 +71,7 @@ if ($admin) {
     var cambiar = false;
     var chequeados = [];
     var users = JSON.parse('<?= json_encode($users) ?>');
-    var retos = JSON.parse('<?= json_encode($retos) ?>');
+    var retos = JSON.parse('<?= addslashes(json_encode($retos)) ?>');
 
     $(function () {
 <?php if ($admin) { ?>
