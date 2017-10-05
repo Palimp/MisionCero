@@ -16,7 +16,7 @@ if ($admin) {
     <section>
         <p class="fs22">
             <?= __('Los retos elegidos por todos los equipos (3 por equipo)') ?>
-            </br>
+            <br/>
             <?= __('Cada persona votará a los 3 retos que le parecen más relevantes (no más de uno de su equipo)') ?>
         </p>
         <table class="reduced table table-striped text-center">
@@ -24,7 +24,7 @@ if ($admin) {
                 <tr>
                     <td></td>
                     <?php foreach ($users as $user) { ?>
-                        <td><?= $user ?></td>
+                        <td><?= str_replace("_", " ", $user) ?></td>
 
                     <?php } ?>
                     <th><?= __('Ámbito') ?></th>
@@ -130,18 +130,14 @@ if ($admin) {
                         return;
                     }
                 }
-                console.log(votos)
-                $.get("<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "savequestionvotos"
-    ])
-    ?>", {'ids': JSON.stringify(votos)}, function (data, status) {
-                    console.log(data);
+
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "savequestionvotos"]) ?>",
+                        {'ids': JSON.stringify(votos)}, function (data, status) {
+                    
                     $(':checkbox').attr('disabled', 'disabled');
                     cambiar = true;
                     $('#error').html('<?= __('Votos enviados') ?>');
-                     setTimeout(checkPage, 1000);
+                    setTimeout(checkPage, 1000);
                 });
 
             });

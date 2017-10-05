@@ -28,7 +28,6 @@
         </div>
         <?php
         for ($i = 0; $i < count($comments); $i++) {
-            
             ?>
             <p class="fs22">
                 <?= $comments[$i]['question'] ?>
@@ -62,7 +61,7 @@
                 'id' => 'datos'
             ]);
             ?>
-            <a href="#" id="sendretos" data-toggle="tooltip" title="<?=__('Haz click para enviar') ?>" class="d-inline-block">
+            <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
                 <i class="fa fa-check fa-2x"></i>
             </a>
             </form>
@@ -104,15 +103,10 @@
 
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
-                    } else {
+                    } else if (data != "0") {
 
-                        alert("<?=__('Se acabó el tiempo') ?>");
-                        location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "index"
-    ])
-    ?>';
+                        alert("<?= __('Se acabó el tiempo') ?>");
+                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
                     }
                 });
             }

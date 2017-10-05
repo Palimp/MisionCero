@@ -103,7 +103,8 @@ class BuildController extends AppController {
                     $team->name = $datos['names'][$datos['name'][$i]];
                     
                     $team->members = $datos['members'][$i];
-                    print_r($team);
+                    $team->bikles=20;
+                    
                     if (!$this->Teams->save($team)) {
                         $this->Flash->error(__('Algún equipo no se ha guardado. Inténtelo de nuevo'));
                     }

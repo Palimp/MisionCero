@@ -28,7 +28,7 @@ if ($admin) {
                     <?php
                     if ($stop) {
                         echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
+                            'url' => array('controller' => 'Game', 'action' => 'page57'), 'class' => 'd-inline-block'
                         ));
                         ?>
                         <input type="hidden" name="stop" value="1">
@@ -36,7 +36,7 @@ if ($admin) {
                         <?php
                     } else {
                         echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
+                            'url' => array('controller' => 'Game', 'action' => 'page57'), 'class' => 'd-inline-block'
                         ));
                         ?>
                         <input type="hidden" name="start" value="1">
@@ -49,7 +49,7 @@ if ($admin) {
                     <time>00:30</time>
                     <?php
                     echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
+                        'url' => array('controller' => 'Game', 'action' => 'page57'), 'class' => 'd-inline-block'
                     ));
                     ?>
                     <input type="hidden" name="time" value="30">
@@ -59,7 +59,7 @@ if ($admin) {
                     </form>
                     <?php
                     echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page33'), 'class' => 'd-inline-block'
+                        'url' => array('controller' => 'Game', 'action' => 'page57'), 'class' => 'd-inline-block'
                     ));
                     ?>
                     <input type="hidden" name="time" value="-30">

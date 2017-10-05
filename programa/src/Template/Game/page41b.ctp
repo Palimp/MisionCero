@@ -91,7 +91,7 @@
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
 
-                    } else {
+                    } else if (data != "0") {
                         alert("<?=__('Se acabó el tiempo')?>");
                         location.href = '<?=
     $this->Url->build([

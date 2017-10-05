@@ -384,7 +384,7 @@ class GameController extends AppController {
                         $this->set('admin', $sesion['admin']);
                         $this->set('ranking', $comments);
                     }
-                     if ($sesion['page'] == 66) {
+                    if ($sesion['page'] == 66) {
                         $comments = $this->Code->getTopsOrder($id);
                         $ambits = $this->Code->getAmbits();
                         $this->set('ambits', $ambits);
@@ -481,7 +481,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = 600 - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -490,7 +490,7 @@ class GameController extends AppController {
             if (!empty($datos['start'])) {
                 $time2 = Time::now();
                 $sec = $session->read('seconds');
-                $time2->subSecond(600 - $sec);
+                $time2->subSecond($period - $sec);
                 $this->Code->setTime($id, 1, $time2);
                 $this->set('stop', 1);
             }
@@ -509,6 +509,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 9);
         $comments = $this->Code->getTeamComments($id);
         $this->Code->setScore($id, 1, $this->Code->getOrder($comments));
+        $comments = $this->Code->getTeamComments($id);
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
     }
@@ -537,7 +538,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -590,9 +591,9 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 13);
-        $comments = $this->Code->getChallenges($id);
         $ranking = $this->Code->getChallengeTeams($id);
         $this->Code->setScore($id, 2, $this->Code->getOrder($ranking, 'team_id'));
+        $comments = $this->Code->getChallenges($id);
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
         $this->set('admin', $sesion['admin']);
@@ -634,7 +635,7 @@ class GameController extends AppController {
     public function page17() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
-        $this->Code->setPage($id, 14);
+        $this->Code->setPage($id, 17);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
             if (!empty($datos['sumar'])) {
@@ -679,7 +680,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = 600 - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -688,7 +689,7 @@ class GameController extends AppController {
             if (!empty($datos['start'])) {
                 $time2 = Time::now();
                 $sec = $session->read('seconds');
-                $time2->subSecond(600 - $sec);
+                $time2->subSecond($period - $sec);
                 $this->Code->setTime($id, 1, $time2);
                 $this->set('stop', 1);
             }
@@ -706,6 +707,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 21);
         $comments = $this->Code->getTeamQuestions($id);
         $this->Code->setScore($id, 3, $this->Code->getOrder($comments));
+        $comments = $this->Code->getTeamQuestions($id);
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
     }
@@ -734,7 +736,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -783,9 +785,9 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 25);
-        $comments = $this->Code->getChallenges($id, 'questions');
         $ranking = $this->Code->getChallengeTeams($id, 'questions');
-        $this->Code->setScore($id, 2, $this->Code->getOrder($ranking, 'team_id'));
+        $this->Code->setScore($id, 4, $this->Code->getOrder($ranking, 'team_id'));
+        $comments = $this->Code->getChallenges($id, 'questions');
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
         $this->set('admin', $sesion['admin']);
@@ -879,7 +881,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = 600 - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -888,7 +890,7 @@ class GameController extends AppController {
             if (!empty($datos['start'])) {
                 $time2 = Time::now();
                 $sec = $session->read('seconds');
-                $time2->subSecond(600 - $sec);
+                $time2->subSecond($period - $sec);
                 $this->Code->setTime($id, 1, $time2);
                 $this->set('stop', 1);
             }
@@ -905,7 +907,8 @@ class GameController extends AppController {
         $id = $sesion['id'];
         $this->Code->setPage($id, 34);
         $comments = $this->Code->getTeamQuestions($id, 'stakes');
-        $this->Code->setScore($id, 3, $this->Code->getOrder($comments));
+        $this->Code->setScore($id, 5, $this->Code->getOrder($comments));
+        $comments = $this->Code->getTeamQuestions($id, 'stakes');
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
     }
@@ -934,7 +937,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -983,9 +986,9 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 38);
-        $comments = $this->Code->getChallenges($id, 'stakes');
         $ranking = $this->Code->getChallengeTeams($id, 'stakes');
-        $this->Code->setScore($id, 2, $this->Code->getOrder($ranking, 'team_id'));
+        $this->Code->setScore($id, 6, $this->Code->getOrder($ranking, 'team_id'));
+        $comments = $this->Code->getChallenges($id, 'stakes');
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
         $this->set('admin', $sesion['admin']);
@@ -1034,7 +1037,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -1097,7 +1100,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -1123,7 +1126,8 @@ class GameController extends AppController {
         $id = $sesion['id'];
         $this->Code->setPage($id, 45);
         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
-        $this->Code->setScore($id, 3, $this->Code->getOrder($comments));
+        $this->Code->setScore($id, 7, $this->Code->getOrder($comments));
+        $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
     }
@@ -1152,7 +1156,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -1200,10 +1204,10 @@ class GameController extends AppController {
     public function page49() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
-        $this->Code->setPage($id, 38);
-        $comments = $this->Code->getChallenges($id, 'ppchallenges');
+        $this->Code->setPage($id, 49);
         $ranking = $this->Code->getChallengeTeams($id, 'ppchallenges');
-        $this->Code->setScore($id, 2, $this->Code->getOrder($ranking, 'team_id'));
+        $this->Code->setScore($id, 8, $this->Code->getOrder($ranking, 'team_id'));
+        $comments = $this->Code->getChallenges($id, 'ppchallenges');
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
         $this->set('admin', $sesion['admin']);
@@ -1252,7 +1256,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -1290,7 +1294,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -1361,7 +1365,7 @@ class GameController extends AppController {
             }
             if (!empty($datos['stop'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = 600 - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 $this->Code->setTime($id, -1);
                 $session->write('seconds', $sec);
                 $this->set('stop', 0);
@@ -1370,7 +1374,7 @@ class GameController extends AppController {
             if (!empty($datos['start'])) {
                 $time2 = Time::now();
                 $sec = $session->read('seconds');
-                $time2->subSecond(600 - $sec);
+                $time2->subSecond($period - $sec);
                 $this->Code->setTime($id, 1, $time2);
                 $this->set('stop', 1);
             }
@@ -1386,7 +1390,8 @@ class GameController extends AppController {
         $id = $sesion['id'];
         $this->Code->setPage($id, 58);
         $comments = $this->Code->getTeamQuestions($id, 'motions');
-        $this->Code->setScore($id, 3, $this->Code->getOrder($comments));
+        $this->Code->setScore($id, 9, $this->Code->getOrder($comments));
+        $comments = $this->Code->getTeamQuestions($id, 'motions');
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
     }
@@ -1414,9 +1419,9 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 61);
-        $comments = $this->Code->getChallenges($id, 'motions');
         $ranking = $this->Code->getChallengeTeams($id, 'motions');
-        $this->Code->setScore($id, 2, $this->Code->getOrder($ranking, 'team_id'));
+        $this->Code->setScore($id, 10, $this->Code->getOrder($ranking, 'team_id'));
+        $comments = $this->Code->getChallenges($id, 'motions');
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
         $this->set('admin', $sesion['admin']);
@@ -1482,28 +1487,43 @@ class GameController extends AppController {
     public function selectteam() {
         $sesion = $this->Code->loadSesion();
         $data = $this->Code->teamsOK($sesion['id']);
+
         if ($data == 0) {
             $this->loadModel('Teams');
             if ($this->request->is(['patch', 'post', 'put'])) {
                 $idteam = $this->Cookie->read('team');
                 $datos = $this->request->getData();
+                
                 if (!empty($idteam)) {
 
                     $team = $this->Teams->get($idteam);
                     $team->taken = 0;
                     $this->Teams->save($team);
                 }
-                $query = $this->Teams->find('all')
-                        ->where(['game_id' => $sesion['id'], 'team' => $datos['team']]);
-                $team = $query->first();
-                $team->taken = 1;
-                $this->Teams->save($team);
+                if (!empty($datos['team'])) {
+                    $query = $this->Teams->find('all')
+                            ->where(['game_id' => $sesion['id'], 'team' => $datos['team']]);
+                    $team = $query->first();
+                    $team->taken = 1;
+                    $this->Teams->save($team);
+                } else {
+                    if (isset($datos['name']) && !empty($datos['member'])) {
+                        $team = $this->Teams->newEntity();
+                        $team->name = $datos['name'];
+                        $team->members = $datos['member'];
+                        $team->taken = 1;
+                        $team->game_id= $sesion['id'];
+                        $this->Teams->save($team);
+                    }
+                }
                 $this->Cookie->write('team', $team->id);
             }
             $query = $this->Teams->find()
                             ->where(['game_id' => $sesion['id']])
                             ->order(['team' => 'ASC'])->toArray();
+            $names = $this->Code->getFreeNames($sesion['id']);
             $this->set('teams', $query);
+            $this->set('names', $names);
         } else {
             return $this->redirect(['action' => 'index']);
         }
@@ -1943,7 +1963,7 @@ class GameController extends AppController {
         if ($this->request->is('ajax')) {
             if (!empty($sesion['time1'])) {
                 $time2 = new Time($sesion['time1']);
-                $sec = $period - $time2->diffInSeconds(); //$time->diff($time2,1)->format('%i:%s');
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
                 if ($sec > 0) {
                     $data = gmdate("i:s", $sec);
                 } else {

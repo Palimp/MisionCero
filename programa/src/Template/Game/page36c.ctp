@@ -22,20 +22,20 @@
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             ?><p>
-            <b class="fs22">
-                <?= $comments[$i]->question ?>
-            </b>
+                <b class="fs22">
+                    <?= $comments[$i]->question ?>
+                </b>
 
 
-            <b>
-                <?=__('Ámbito: ')?>
+                <b>
+                    <?= __('Ámbito: ') ?>
 
 
-                <?= $ambits[$comments[$i]->ambit-1]->ambit ?>
-            </b>
+                    <?= $ambits[$comments[$i]->ambit - 1]->ambit ?>
+                </b>
             </p>
         <?php } ?>
-        
+
     </section>
 
 </main>
@@ -58,7 +58,7 @@
                         return;
                     }
                     datos.push({"reto": $('#reto' + i).val(), "ambito": $("[name='radio" + i + "']:checked").val()});
-                    
+
                 }
                 $('#datos').val(JSON.stringify(datos));
                 $('#team').submit();
@@ -76,15 +76,10 @@
 
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
-                    } else {
+                    } else if (data != "0") {
 
-                        alert("<?=__('Se acabó el tiempo')?>");
-//                        location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "index"
-    ])
-    ?>//';
+                        alert("<?= __('Se acabó el tiempo') ?>");
+                        //                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>//';
                     }
                 });
             }

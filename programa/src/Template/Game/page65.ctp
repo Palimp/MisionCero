@@ -38,7 +38,7 @@ if ($admin) {
                 <tr>
                     <td></td>
                     <?php foreach ($users as $user) { ?>
-                        <td><?= $user ?></td>
+                        <td><?= str_replace("_"," ",$user) ?></td>
 
                     <?php } ?>
 

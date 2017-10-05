@@ -153,7 +153,10 @@ class CodeComponent extends Component {
         $table = TableRegistry::get('Teams');
 
         $team = $table->get($id);
-        $users = explode(',', $team->members);
+        $users = explode(',',  $team->members);
+        for($i=0;$i<count($users);$i++){
+            $users[$i]=preg_replace("/[^a-zA-Z0-9]+/", "_",$users[$i]);
+        }
         return array_map('trim', $users);
     }
 
@@ -383,7 +386,8 @@ class CodeComponent extends Component {
         $teams->save($team);
         return 1;
     }
- public function saveTopUSerVotes($team_id, $ids) {
+
+    public function saveTopUSerVotes($team_id, $ids) {
 
         $table = TableRegistry::get('Tops');
         $teams = TableRegistry::get('Teams');
@@ -404,6 +408,7 @@ class CodeComponent extends Component {
         $teams->save($team);
         return 1;
     }
+
     public function saveTopVotes($team_id, $ids) {
         $code = ['amb', 'nor', 'qui'];
         $table = TableRegistry::get('Tops');
@@ -495,7 +500,7 @@ class CodeComponent extends Component {
         $table = TableRegistry::get('Tops');
         $table->deleteAll(['game_id' => $id]);
         $cha = $this->getTops($id);
-        $this->saveTops($id, array_column($cha, 'challenge'), array_column($cha, 'ambit'),1);
+        $this->saveTops($id, array_column($cha, 'challenge'), array_column($cha, 'ambit'), 1);
         $cha = $this->getTops($id, 'questions');
         $this->saveTops($id, array_column($cha, 'question'), array_column($cha, 'ambit'), 2);
         $cha = $this->getTops($id, 'stakes');
@@ -516,7 +521,7 @@ class CodeComponent extends Component {
 
     public function saveTops($id, $terms, $ambits, $type) {
         $table = TableRegistry::get('Tops');
-        for ($i=0;$i<count($terms);$i++){
+        for ($i = 0; $i < count($terms); $i++) {
 
             $top = $table->newEntity();
             $top->game_id = $id;
@@ -551,6 +556,17 @@ class CodeComponent extends Component {
         $res = $query->fetchAll('assoc');
         return $res;
     }
+
+    public function getFreeNames($id) {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('SELECT name FROM misioncero.names where name not in (select name from teams where game_id = '.$id.')');
+        $res = $query->fetchAll('assoc');
+        
+        return array_column( $res,"name");
+    }
+
+
     public function getTopsOrder($id) {
         $conn = ConnectionManager::get('default');
 
@@ -558,11 +574,11 @@ class CodeComponent extends Component {
         $res = $query->fetchAll('assoc');
         return $res;
     }
-    
+
     public function getChallengeTeams($id, $table = 'challenges') {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT team_id,sum(votes) votos FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' group by team_id order by votos desc;');
+        $query = $conn->execute('SELECT teams.id team_id,COALESCE(SUM(votes),0) votos FROM teams left join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' group by teams.id order by votos desc;');
         $res = $query->fetchAll('assoc');
         return $res;
     }
@@ -586,7 +602,9 @@ class CodeComponent extends Component {
         $games = TableRegistry::get('Teams');
         $query = $games->find('all')
                 ->where(['game_id' => $id]);
-
+        if ($query->count()==0){
+            return 0;
+        }
         foreach ($query as $row) {
             if ($row->taken == 0) {
                 return 0;
@@ -638,15 +656,26 @@ class CodeComponent extends Component {
     }
 
     public function setScore($id, $fase, $order) {
-
+        $score = [2 => [2, -1], 3 => [2, 0, -1], 4 => [3, 2, 0, -1], 5 => [4, 2, 0, -1, -2], 6 => [4, 2, 1, 0, -1, -2], 7 => [4, 3, 2, 1, 0, -1, -2], 8 => [4, 3, 2, 0, 0, -1, -2, -3], 9 => [4, 3, 2, 1, 0, -1, -2, -3, -4]];
         $games = TableRegistry::get('Games');
         $game = $games->get($id);
+
         if ($game->score < $fase) {
-            $this->addBikle($order[0], 15);
-            $this->addBikle($order[1], 10);
-            if (count($order) > 2)
-                $this->addBikle($order[2], 5);
-            $this->addBikle($order[count($order) - 1], -5);
+            $num = count($order);
+            if ($num >= 10) {
+                $this->addBikle($order[0], 4);
+                $this->addBikle($order[1], 3);
+                $this->addBikle($order[2], 2);
+                $this->addBikle($order[3], 1);
+                $this->addBikle($order[$num - 1], -4);
+                $this->addBikle($order[$num - 2], -3);
+                $this->addBikle($order[$num - 3], -2);
+                $this->addBikle($order[$num - 4], -1);
+            } else {
+                for ($i = 0; $i < $num; $i++) {
+                    $this->addBikle($order[$i], $score[$num][$i]);
+                }
+            }
         }
         $game->score = $fase;
         $games->save($game);

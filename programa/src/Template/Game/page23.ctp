@@ -19,7 +19,7 @@ if ($admin) {
                 <?= __('Cada equipo selecciona en que ámbito colocar los 3 retos que le parece más relevantes') ?>
             </p>
         </div>
-       
+
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
@@ -53,7 +53,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para añadir tiempo')?>" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para añadir tiempo') ?>" class="d-inline-block grey_link">
                         <i class="fa fa-plus"></i>
                     </a>
                     </form>
@@ -63,7 +63,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="-30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar tiempo')?>" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para restar tiempo') ?>" class="d-inline-block grey_link">
                         <i class="fa fa-minus"></i>
                     </a>
                     </form>
@@ -80,6 +80,8 @@ if ($admin) {
 
 <script>
     var page = 23;
+    var stop =<?= $stop ?>;
+
     $(function () {
 <?php if ($admin) { ?>
 
@@ -92,19 +94,15 @@ if ($admin) {
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-                    if (data != "0" && data !="00:00") {
+                    if (data != "0" && data != "00:00") {
 
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
                     } else {
-                      
-                        alert("<?=__('Se acabó el tiempo')?>");
-                        location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "page24"
-    ])
-    ?>';
+                        if (stop) {
+                            alert("<?= __('Se acabó el tiempo') ?>");
+                            location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page24"]) ?>';
+                        }
                     }
                 });
             }
