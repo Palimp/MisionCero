@@ -53,6 +53,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/error', ['controller' => 'Pages', 'action' => 'display', 'error']);
     $routes->connect('/sendmail', ['controller' => 'Mision', 'action' => 'sendmail']);
     $routes->connect('/codelogin', ['controller' => 'Mision', 'action' => 'codelogin']);
+    $routes->connect('/reset', ['controller' => 'Build', 'action' => 'reset']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

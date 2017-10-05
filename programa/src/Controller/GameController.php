@@ -1515,15 +1515,22 @@ class GameController extends AppController {
                 } else {
                     if (isset($datos['name']) && !empty($datos['member'])) {
                         $names = json_decode($datos['names']);
-                        
-                        $team = $this->Teams->newEntity();
-                        $team->name = $names[$datos['name']];
-                        $team->members = $datos['member'];
-                        $team->taken = 1;
-                        $team->bikles = 20;
-                        $team->team= $this->Code->getMaxTeam($id);
-                        $team->game_id = $id;
-                        $this->Teams->save($team);
+                        $query = $this->Teams->find('all')
+                                ->where(['game_id' => $id, 'name' => $names[$datos['name']]]);
+                        if ($query->count() == 0) {
+
+                            $team = $this->Teams->newEntity();
+                            $team->name = $names[$datos['name']];
+                            $team->members = $datos['member'];
+                            $team->taken = 1;
+                            $team->bikles = 20;
+                            $team->team = $this->Code->getMaxTeam($id);
+                            $team->game_id = $id;
+                            $this->Teams->save($team);
+                        }
+                        else{
+                            return $this->redirect(['action' => 'selectteam']);
+                        }
                     }
                 }
                 $this->Cookie->write('team', $team->id);
