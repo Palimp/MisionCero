@@ -4,7 +4,6 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 echo $this->element('navbar');
-
 ?>
 
 <main>
@@ -28,24 +27,35 @@ echo $this->element('navbar');
         <div>
             <?=
             $this->Html->link(
-                    __('Introducir problemática'), ['controller' => 'Build', 'action' => 'trouble']
-            )
+                    __('Introducir problemática'), ['controller' => 'Build', 'action' => 'trouble']);
             ?>
         </div>
         <div>
             <?=
             $this->Html->link(
-                    __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams']
-            )
+                    __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams']);
             ?>
         </div>
         <div>
-            <?=
-            $this->Html->link(
-                    __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin']
-            )
+            <?php
+            if ($teams) {
+                echo $this->Html->link(
+                        __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin']);
+            }
             ?>
         </div>
     </section>
 
 </main>
+<?php
+if (!$teams) {
+    ?>
+    <script>
+        setTimeout(function () {
+            location.reload()
+        }, 30000);
+    </script>
+    <?php
+}
+?>
+

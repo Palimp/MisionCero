@@ -27,7 +27,9 @@ class GameController extends AppController {
      * @return \Cake\Http\Response|void
      */
     public function index() {
+
         $sesion = $this->Code->loadSesion();
+
         $id = $sesion['id'];
         if (empty($id)) {
             return $this->redirect('/');
@@ -68,10 +70,12 @@ class GameController extends AppController {
                 if ($sesion['page'] == 57) {
 
                     $comments = $this->Code->getQuestion($team, 'Motions');
+                    $feelings = $this->Code->getTeamFeelings($team);
 
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('comments', $comments);
+                    $this->set('feelings', $feelings);
                     $period = 600;
                     $session->write('period', $period);
 
@@ -100,6 +104,7 @@ class GameController extends AppController {
                 } else
                 if ($sesion['page'] == 11) {
                     $comments = $this->Code->getCommentSel($team);
+
                     $ambits = $this->Code->getAmbits();
                     $this->set('id', $id);
                     $this->set('team', $team);
@@ -327,26 +332,33 @@ class GameController extends AppController {
                     if ($sesion['page'] == 24) {
                         $ambits = $this->Code->getAmbits();
                         $this->set('ambits', $ambits);
-                        $this->set('retos', $this->Code->getRetos($id, 'questions'));
+                        $retos = $this->Code->getRetos($id, 'questions');
                         $this->set('users', $this->Code->getTeamUsers($team));
                         $this->set('voted', $this->Code->hasVoted($team, 'vq'));
-                        $this->set('propios', $this->Code->getGenericTeam($team, 'Questions'));
+                        $propios = $this->Code->getGenericTeam($team, 'Questions');
+                        $this->set('propios', $propios);
+                        $this->set('retos', $this->Code->orderRetos($retos, $propios));
                     }
                     if ($sesion['page'] == 37) {
                         $ambits = $this->Code->getAmbits();
                         $this->set('ambits', $ambits);
+                        $retos = $this->Code->getRetos($id, 'stakes');
                         $this->set('retos', $this->Code->getRetos($id, 'stakes'));
                         $this->set('users', $this->Code->getTeamUsers($team));
                         $this->set('voted', $this->Code->hasVoted($team, 'vs'));
-                        $this->set('propios', $this->Code->getGenericTeam($team, 'Stakes'));
+                        $propios = $this->Code->getGenericTeam($team, 'Stakes');
+                        $this->set('propios', $propios);
                     }
                     if ($sesion['page'] == 60) {
                         $ambits = $this->Code->getAmbits();
                         $this->set('ambits', $ambits);
-                        $this->set('retos', $this->Code->getRetos($id, 'motions'));
+                        $retos = $this->Code->getRetos($id, 'motions');
+                        $this->set('retos', $retos);
                         $this->set('users', $this->Code->getTeamUsers($team));
                         $this->set('voted', $this->Code->hasVoted($team, 'vm'));
-                        $this->set('propios', $this->Code->getGenericTeam($team, 'Motions'));
+                        $propios=$this->Code->getGenericTeam($team, 'Motions');
+                        $this->set('propios', $propios);
+                        $this->set('retos', $this->Code->orderRetos($retos, $propios));
                     }
                     if ($sesion['page'] == 65) {
                         $ambits = $this->Code->getAmbits();
@@ -358,10 +370,13 @@ class GameController extends AppController {
                     if ($sesion['page'] == 48) {
                         $ambits = $this->Code->getAmbits();
                         $this->set('ambits', $ambits);
-                        $this->set('retos', $this->Code->getRetos($id, 'ppchallenges'));
+                        $retos = $this->Code->getRetos($id, 'ppchallenges');
+
                         $this->set('users', $this->Code->getTeamUsers($team));
                         $this->set('voted', $this->Code->hasVoted($team, 'vp'));
-                        $this->set('propios', $this->Code->getGenericTeam($team, 'Ppchallenges'));
+                        $propios = $this->Code->getGenericTeam($team, 'Ppchallenges');
+                        $this->set('propios', $propios);
+                        $this->set('retos', $this->Code->orderRetos($retos, $propios));
                     }
                     if ($sesion['page'] == 25) {
                         $comments = $this->Code->getChallenges($id, 'questions');
@@ -402,7 +417,7 @@ class GameController extends AppController {
                         $this->set('pos', $this->Code->getFeelings(1));
                         $this->set('neg', $this->Code->getFeelings(2));
                         $this->set('admin', $sesion['admin']);
-                        $ids = $this->Code->getGenericTeam($team, 'FeelingsTeams');
+                        $ids = $this->Code->getGenericTeam($team, 'Motions');
                         $this->set('voted', count($ids) > 0);
                     }
                     if ($sesion['page'] == 64) {
@@ -414,7 +429,11 @@ class GameController extends AppController {
                 }
             }
         } else {
-            $this->Code->setPage($id, 1);
+            if (empty($sesion['page'])) {
+                $this->Code->setPage($id, 1);
+            } else {
+                return $this->redirect(['action' => 'page' . $sesion['page']]);
+            }
         }
         $this->set('admin', $sesion['admin']);
     }
@@ -517,6 +536,7 @@ class GameController extends AppController {
     public function page10() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
+        $this->Code->blabla($id, 'comments', 'comment');
         $this->Code->setPage($id, 10);
         $this->set('admin', $sesion['admin']);
     }
@@ -705,6 +725,8 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 21);
+        $this->Code->blabla($id, 'questions', 'question');
+
         $comments = $this->Code->getTeamQuestions($id);
         $this->Code->setScore($id, 3, $this->Code->getOrder($comments));
         $comments = $this->Code->getTeamQuestions($id);
@@ -906,6 +928,8 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 34);
+        $this->Code->blabla($id, 'stakes', 'question');
+
         $comments = $this->Code->getTeamQuestions($id, 'stakes');
         $this->Code->setScore($id, 5, $this->Code->getOrder($comments));
         $comments = $this->Code->getTeamQuestions($id, 'stakes');
@@ -1125,6 +1149,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 45);
+        $this->Code->blabla($id, 'ppchallenges', 'question');
         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
         $this->Code->setScore($id, 7, $this->Code->getOrder($comments));
         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
@@ -1134,6 +1159,7 @@ class GameController extends AppController {
 
     public function page46() {
         $sesion = $this->Code->loadSesion();
+
         $id = $sesion['id'];
         $this->Code->setPage($id, 46);
         $this->set('admin', $sesion['admin']);
@@ -1389,6 +1415,8 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 58);
+        $this->Code->blabla($id, 'motions', 'question');
+
         $comments = $this->Code->getTeamQuestions($id, 'motions');
         $this->Code->setScore($id, 9, $this->Code->getOrder($comments));
         $comments = $this->Code->getTeamQuestions($id, 'motions');
@@ -1527,8 +1555,7 @@ class GameController extends AppController {
                             $team->team = $this->Code->getMaxTeam($id);
                             $team->game_id = $id;
                             $this->Teams->save($team);
-                        }
-                        else{
+                        } else {
                             return $this->redirect(['action' => 'selectteam']);
                         }
                     }
@@ -1758,6 +1785,20 @@ class GameController extends AppController {
         $this->set('_serialize', 'data');
     }
 
+    public function deleteppcha() {
+        $sesion = $this->Code->loadSesion();
+        $data = 0;
+        $this->viewBuilder()->template('ajax');
+        $datos = $this->request->query;
+
+        if ($this->request->is('ajax') && !empty($sesion['code'])) {
+            $data = $this->Code->deletequestion($this->Code->getTeam(), $datos['id'], 'Ppchallenges');
+        }
+
+        $this->set(compact('data'));
+        $this->set('_serialize', 'data');
+    }
+
     public function deleteinter() {
         $sesion = $this->Code->loadSesion();
         $data = 0;
@@ -1958,6 +1999,22 @@ class GameController extends AppController {
 
         $datos = $this->request->query;
         $data = $this->Code->saveFeelings($this->Code->getTeam(), json_decode($datos['ids']));
+
+        if ($this->request->is('ajax') && !empty($sesion['code'])) {
+            
+        }
+
+        $this->set(compact('data'));
+        $this->set('_serialize', 'data');
+    }
+
+    public function savemotions() {
+        $sesion = $this->Code->loadSesion();
+        $data = 0;
+        $this->viewBuilder()->template('ajax');
+
+        $datos = $this->request->query;
+        $data = $this->Code->saveMotions($this->Code->getTeam(), json_decode($datos['datos']));
 
         if ($this->request->is('ajax') && !empty($sesion['code'])) {
             

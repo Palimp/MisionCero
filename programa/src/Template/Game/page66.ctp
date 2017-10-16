@@ -6,21 +6,21 @@
 if ($admin) {
     echo $this->element('navbar');
 }
-$ambits[-1]= new \stdClass();
-$ambits[-1]->ambit=__('Sin ámbito');
-function getTipo($a,$b,$c){
-    $types=['Ambicioso','Normal','Quick win'];
-    if ($a>=$b and $a>=$c){
+$ambits[-1] = new \stdClass();
+$ambits[-1]->ambit = __('Sin ámbito');
+
+function getTipo($a, $b, $c) {
+    $types = ['Ambicioso', 'Normal', 'Quick win'];
+    if ($a >= $b and $a >= $c) {
         return $types[0];
     }
-    if ($b>=$a and $b>=$c){
-        return $types[1];
-    }
-    if ($c>=$b and $c>=$a){
+    if ($c >= $b and $c >= $a) {
         return $types[2];
     }
+    if ($b >= $a and $b >= $c) {
+        return $types[1];
+    }
 }
-
 ?>
 
 <!-- ** pag p15 ** -->
@@ -30,34 +30,39 @@ function getTipo($a,$b,$c){
     </header> 
     <section>
         <p class="fs22">
-            <?=__('Ranking final de los retos')?>
+            <?= __('Ranking final de los retos') ?>
         </p>
         <table class="reduced table table-striped text-center">
             <thead>
                 <tr>
                     <td></td>
-                    <th><?=__('Votos')?></th>
-                    <th><?=__('Ámbito')?></th>
-                    <th><?=__('Tipología')?></th>
+                    <th><?= __('Votos') ?></th>
+                    <th><?= __('Ámbito') ?></th>
+                    <th><?= __('Tipología') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $cont=0;
+                $cont = 0;
+                $ant = 0;
                 foreach ($ranking as $team) {
                     $cont++;
                     ?>
-                    <tr <?=$cont<=5?'class="green"':''?>>
+                    <tr <?= ($cont <= 5 || $ant == $team['votes'] ) ? 'class="green"' : '' ?>>
                         <td scope="row" class="text-left">
-                            <?=$team['question']?>
+                            <?= $team['question'] ?>
                         </td>
                         <td>
-                            <?=$team['votes']?>
+                            <?= $team['votes'] ?>
                         </td>
-                        <td><?= $ambits[$team['ambit']-1]->ambit ?></td>
-                        <td><?= getTipo($team['amb'],$team['nor'],$team['qui']) ?></td>
+                        <td><?= $ambits[$team['ambit'] - 1]->ambit ?></td>
+                        <td><?= getTipo($team['amb'], $team['nor'], $team['qui']) ?></td>
                     </tr>
                     <?php
+                    if ($cont == 5) {
+                        $ant = $team['votes'];
+                        
+                    }
                 }
                 ?>
             </tbody>
@@ -65,7 +70,7 @@ function getTipo($a,$b,$c){
 
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <?=__('¡Ganarán Bikles los equipos con más votos!')?>
+                <?= __('¡Ganarán Bikles los equipos con más votos!') ?>
             </div>
         </div>
     </section>
@@ -94,7 +99,7 @@ function getTipo($a,$b,$c){
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page66"
+        "action" => "page65"
     ])
     ?>';
             });

@@ -22,20 +22,20 @@
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             ?><p>
-            <b class="fs22">
-                <?= $comments[$i]->question ?>
-            </b>
+                <b class="fs22">
+                    <?= $comments[$i]->question ?>
+                </b>
 
 
-            <b>
-                <?=__('Ámbito: ')?>
+                <b>
+                    <?= __('Ámbito: ') ?>
 
 
-                <?= $ambits[$comments[$i]->ambit-1]->ambit ?>
-            </b>
+                    <?= $ambits[$comments[$i]->ambit - 1]->ambit ?>
+                </b>
             </p>
         <?php } ?>
-        
+
     </section>
 
 </main>
@@ -46,32 +46,19 @@
     $(function () {
 <?php if (!$admin) { ?>
 
-          
-            setTimeout(checkTime, 500);
-            function checkTime() {
 
-                $.get("<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "gettime"
-    ])
+            function checkPage() {
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "pageactive"])
     ?>", function (data, status) {
-                    if (data != "0" && data != "00:00") {
-
-                        $('#clock').html(data);
-                        setTimeout(checkTime, 500);
+                    if (data == page) {
+                        setTimeout(checkPage, 1000);
                     } else {
-
-                        alert("<?=__('Se acabó el tiempo')?>");
-//                        location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "index"
-    ])
-    ?>//';
+                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
                     }
                 });
             }
+
+            setTimeout(checkPage, 1000);
 
 <?php } ?>
 

@@ -42,8 +42,18 @@
 
 <script>
     var page = 36;
-
+    function checkPage() {
+        $.get("<?= $this->Url->build(["controller" => "Game", "action" => "pageactive"])
+    ?>", function (data, status) {
+            if (data == page) {
+                setTimeout(checkPage, 1000);
+            } else {
+                location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+            }
+        });
+    }
     $(function () {
+    setTimeout(checkPage, 1000);
 <?php if (!$admin) { ?>
 
             $('#sendretos').click(function () {

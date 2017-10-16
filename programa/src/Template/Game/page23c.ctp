@@ -164,7 +164,7 @@
 </main>
 
 <script>
-    var page = 36;
+    var page = 23;
 
     $(function () {
 <?php if (!$admin) { ?>

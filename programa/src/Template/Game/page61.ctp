@@ -28,7 +28,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
                 <tr>
                     <td></td>
                     <th><?=__('Votos')?></th>
-                    <th><?=__('Ámbito')?></th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +44,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
                         <td>
                             <?=$team['votes']?>
                         </td>
-                        <td><?= $ambits[$team['ambit']-1]->ambit ?></td>
+                        
                     </tr>
                     <?php
                 }

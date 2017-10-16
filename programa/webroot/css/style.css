@@ -447,7 +447,15 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
+.retos_propios{
+    background-color: #d1e6ce;
+}
 
+.painpoints{
+    width:90% ;
+    
+    display:inline-block;
+}
 /* ==========================================================================
 /* RESPONSIVE
    ========================================================================== */

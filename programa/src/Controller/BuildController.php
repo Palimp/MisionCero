@@ -22,7 +22,12 @@ class BuildController extends AppController {
      * @return \Cake\Http\Response|void
      */
     public function index() {
+        $sesion = $this->Code->loadSesion();
         
+        if (empty($sesion['trouble'])){
+            return $this->redirect([ 'action' => 'trouble']);
+        }
+        $this->set("teams",$this->Code->teamsOK($sesion['id']));
     }
 
     public function begin() {
@@ -32,13 +37,13 @@ class BuildController extends AppController {
         $game = $this->Games->get($id);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
-            
+
             if ($datos['ok']) {
                 $game->active = 1;
                 if ($this->Games->save($game)) {
                     $this->Flash->success(__('La partida ha empezado.'));
 
-                    return $this->redirect(['controller'=>'game', 'action' => 'index']);
+                    return $this->redirect(['controller' => 'game', 'action' => 'index']);
                 }
             }
         } else {
@@ -92,19 +97,19 @@ class BuildController extends AppController {
             $this->Teams->deleteAll(['game_id' => $id]);
             $datos = $this->request->getData();
             $datos['names'] = unserialize($datos['names']);
-            
+
             for ($i = 0; $i < count($datos['name']); $i++) {
-                
+
                 if (isset($datos['name'][$i]) && !empty($datos['members'][$i])) {
                     $team = $this->Teams->newEntity();
                     $team->game_id = $id;
                     $team->team = $i + 1;
 
                     $team->name = $datos['names'][$datos['name'][$i]];
-                    
+
                     $team->members = $datos['members'][$i];
-                    $team->bikles=20;
-                    
+                    $team->bikles = 20;
+
                     if (!$this->Teams->save($team)) {
                         $this->Flash->error(__('Algún equipo no se ha guardado. Inténtelo de nuevo'));
                     }
@@ -118,14 +123,25 @@ class BuildController extends AppController {
         $this->set('teams', $teams);
         $this->set('names', $this->Code->getNames());
     }
- public function reset(){
-     $this->Cookie->delete('code');
-     $this->Cookie->delete('id');
-     $this->Cookie->delete('admin');
-     $this->Cookie->delete('team');
-     $this->Cookie->delete('active');
-     $this->Cookie->delete('name');
-     $this->request->session()->destroy();
-     return $this->redirect('/');
- }
+
+    public function reset() {
+        $this->Cookie->delete('code');
+        $this->Cookie->delete('id');
+        $this->Cookie->delete('admin');
+        $this->Cookie->delete('team');
+        $this->Cookie->delete('active');
+        $this->Cookie->delete('name');
+        $this->request->session()->destroy();
+        return $this->redirect('/');
+    }
+
+    public function create() {
+        $datos = $this->request->query;
+        $codes = [];
+        if (!empty($datos['code']) && !empty($datos['name'])) {
+            $codes = $this->Code->createGame($datos['name']);
+        }
+        $this->set('codes', $codes);
+    }
+
 }

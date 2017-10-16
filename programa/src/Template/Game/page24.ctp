@@ -6,6 +6,7 @@
 if ($admin) {
     echo $this->element('navbar');
 }
+
 ?>
 
 <!-- ** pag p15 ** -->
@@ -33,7 +34,7 @@ if ($admin) {
             <tbody>
                 <?php foreach ($retos as $reto) { ?>
                     <tr>
-                        <td scope="row" class="text-left">
+                        <td scope="row" class="text-left ">
                             <?= $reto['question'] ?>
                         </td>
                         <?php foreach ($users as $user) { ?>

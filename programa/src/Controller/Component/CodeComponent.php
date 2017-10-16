@@ -10,6 +10,7 @@ use Cake\Datasource\ConnectionManager;
 class CodeComponent extends Component {
 
     var $components = array('Cookie');
+    var $frases = ['Cuanto peor mejor para todos y cuanto peor para todos mejor','El problema no es cosa menor, en otras palabras, es cosa mayor','Acometamos a la hueste manzona', 'Los ladros perran y los cantos gallan', 'Lo más importante de la vida es no haber muerto', 'Blablablá, blablá ¡Blah!', 'Es el problema el que elige el empleado y es el empleado el que quiere que sea el problema', ' Un ulucordio los encrestoriaba y paramovía', 'Agiliscosos giroscopaban los limazones'];
 
     public function getCode() {
         $letras = "ABCEFGHJKLMNPRTUWXYZ2346789";
@@ -122,23 +123,25 @@ class CodeComponent extends Component {
     public function getTeamComments($id) {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('select teams.*, count(comments.id) as num from teams left join comments on teams.id=comments.team_id where game_id=' . $id . " group by teams.id order by num desc");
+        $query = $conn->execute('select teams.*, count(comments.id) as num, min(comments.creation) as time from teams left join comments on teams.id=comments.team_id where game_id=' . $id . " group by teams.id order by num desc, time");
         return $query->fetchAll('assoc');
     }
 
     public function getTeamQuestions($id, $table = 'questions') {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('select teams.*, count(' . $table . '.id) as num from teams left join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . " group by teams.id order by num desc,team asc");
+        $query = $conn->execute('select teams.*, count(' . $table . '.id) as num, min(creation) as time from teams left join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . " group by teams.id order by num desc,time asc");
         return $query->fetchAll('assoc');
     }
-  public function getMaxTeam($id) {
+
+    public function getMaxTeam($id) {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('select coalesce(max(team),max(team),0)+1 as team from teams where game_id=' . $id );
-        $res= $query->fetchAll('assoc');
+        $query = $conn->execute('select coalesce(max(team),max(team),0)+1 as team from teams where game_id=' . $id);
+        $res = $query->fetchAll('assoc');
         return $res[0]['team'];
     }
+
     public function getComment($id) {
         $comments = TableRegistry::get('Comments');
 
@@ -159,10 +162,11 @@ class CodeComponent extends Component {
         $table = TableRegistry::get('Teams');
 
         $team = $table->get($id);
-        $users = explode(',',  $team->members);
-        for($i=0;$i<count($users);$i++){
-            $users[$i]=preg_replace("/[^a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙüÜ0-9]+/", "_",$users[$i]);
+        $users = explode(',', $team->members);
+        for ($i = 0; $i < count($users); $i++) {
+            $users[$i] = preg_replace("/[^a-zA-ZáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙüÜ0-9]+/", "_", $users[$i]);
         }
+
         return array_map('trim', $users);
     }
 
@@ -214,14 +218,48 @@ class CodeComponent extends Component {
     }
 
     public function saveFeelings($team_id, $challenges) {
+        $table = TableRegistry::get('Feelings');
+        $feelings = $table->find('all')->toArray();
+        $fee = [];
+        foreach ($feelings as $feeling) {
+            $fee[$feeling->id] = $feeling->name;
+        }
 
-        $table = TableRegistry::get('FeelingsTeams');
+        $table = TableRegistry::get('Motions');
         $table->deleteAll(['team_id' => $team_id]);
         foreach ($challenges as $challenge) {
             $f = $table->newEntity();
             $f->team_id = $team_id;
-            $f->feeling_id = $challenge;
+            $f->feeling = $fee[$challenge];
             $table->save($f);
+        }
+    }
+
+    public function saveMotions($team_id, $challenges) {
+        $table = TableRegistry::get('Motions');
+        foreach ($challenges as $challenge) {
+            $motion=$table->get($challenge->id);
+            $motion->question=$challenge->valor;
+            $table->save($motion);
+        }
+    }
+
+    public function blabla($id, $table, $field) {
+        $teams = $this->getTeams($id);
+        shuffle($this->frases);
+        $cont = 0;
+        $table = TableRegistry::get($table);
+        foreach ($teams as $team) {
+            $query = $table->find('all')
+                    ->where(['team_id' => $team->id]);
+            $num = 3 - $query->count();
+            for ($i = 0; $i < $num; $i++) {
+                $row = $table->newEntity();
+                $row->team_id = $team->id;
+                $row->$field = $this->frases[$cont];
+                $cont++;
+                $table->save($row);
+            }
         }
     }
 
@@ -285,7 +323,7 @@ class CodeComponent extends Component {
         for ($i = 0; $i < count($inters); $i++) {
 
             $inters[$i]->pain = $this->getAll($team_id, 'Painpoints', 'interaction_id', $inters[$i]->id);
-            //TODO: TRatar interacciones huérfanas
+//TODO: TRatar interacciones huérfanas
             for ($j = 0; $j < count($inters[$i]->pain); $j++) {
                 $inters[$i]->pain[$j]->ppchan = $this->getAll($team_id, 'Ppchallenges', 'painpoint_id', $inters[$i]->pain[$j]->id);
             }
@@ -356,13 +394,13 @@ class CodeComponent extends Component {
 
         foreach ($ids as $id) {
             $cha = $table->get($id);
-            //if ($cha->team_id == $team_id) {
+//if ($cha->team_id == $team_id) {
             if ($cha->votes == null) {
                 $cha->votes = 0;
             }
             $cha->votes++;
             $table->save($cha);
-            //}
+//}
         }
         $table = TableRegistry::get('Teams');
         $team = $table->get($team_id);
@@ -472,6 +510,14 @@ class CodeComponent extends Component {
         return $num;
     }
 
+    public function getTeamFeelings($id) {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('SELECT name FROM feelings_teams join feelings on feelings_teams.feeling_id=feelings.id where team_id=' . $id);
+        $res = $query->fetchAll('assoc');
+        return $res;
+    }
+
     public function getCommentsSel($id) {
         $conn = ConnectionManager::get('default');
 
@@ -494,7 +540,7 @@ class CodeComponent extends Component {
         if ($table != 'challenges') {
             $sel = " sel=1 and ";
         }
-        $query = $conn->execute('SELECT * FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where ' . $sel . 'game_id=' . $id);
+        $query = $conn->execute('SELECT ' . $table . '.* FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where ' . $sel . 'game_id=' . $id);
         $res = $query->fetchAll('assoc');
         return $res;
     }
@@ -558,7 +604,7 @@ class CodeComponent extends Component {
     public function getChallenges($id, $table = 'challenges') {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT * FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' order by votes desc');
+        $query = $conn->execute('SELECT * FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' order by votes desc,creation');
         $res = $query->fetchAll('assoc');
         return $res;
     }
@@ -566,12 +612,11 @@ class CodeComponent extends Component {
     public function getFreeNames($id) {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT name FROM misioncero.names where name not in (select coalesce(name,name,\'\') from teams where game_id = '.$id.')');
+        $query = $conn->execute('SELECT name FROM misioncero.names where name not in (select coalesce(name,name,\'\') from teams where game_id = ' . $id . ')');
         $res = $query->fetchAll('assoc');
-        
-        return array_column( $res,"name");
-    }
 
+        return array_column($res, "name");
+    }
 
     public function getTopsOrder($id) {
         $conn = ConnectionManager::get('default');
@@ -584,7 +629,7 @@ class CodeComponent extends Component {
     public function getChallengeTeams($id, $table = 'challenges') {
         $conn = ConnectionManager::get('default');
 
-        $query = $conn->execute('SELECT teams.id team_id,COALESCE(SUM(votes),0) votos FROM teams left join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' group by teams.id order by votos desc;');
+        $query = $conn->execute('SELECT teams.id team_id,COALESCE(SUM(votes),0) votos, min(' . $table . '.creation) time FROM teams left join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' group by teams.id order by votos desc, time;');
         $res = $query->fetchAll('assoc');
         return $res;
     }
@@ -608,7 +653,8 @@ class CodeComponent extends Component {
         $games = TableRegistry::get('Teams');
         $query = $games->find('all')
                 ->where(['game_id' => $id]);
-        if ($query->count()==0){
+
+        if ($query->count() < 2) {
             return 0;
         }
         foreach ($query as $row) {
@@ -701,6 +747,45 @@ class CodeComponent extends Component {
             $order[] = $team[$idfield];
         }
         return $order;
+    }
+
+    public function getFreeCode($type = 1) {
+        $table = TableRegistry::get('Games');
+        do {
+            $code = $this->getCode();
+
+            $query = $table->find('all')
+                    ->where(['code' . $type => $code]);
+        } while ($query->count() != 0);
+        return $code;
+    }
+
+    public function createGame($name) {
+        $table = TableRegistry::get('Games');
+        $game = $table->newEntity();
+        $game->name = $name;
+        $game->code1 = $this->getFreeCode(1);
+        $game->code2 = $this->getFreeCode(2);
+        $game->expiration = date('Y-m-d', strtotime("+60 days"));
+        if ($table->save($game)) {
+            return [$game->code1, $game->code2];
+        } else {
+            return [];
+        }
+    }
+
+    public function orderRetos($retos, $propios) {
+        $si = [];
+        $no = [];
+
+        foreach ($retos as $reto) {
+            if (in_array($reto['id'], $propios)) {
+                $si[] = $reto;
+            } else {
+                $no[] = $reto;
+            }
+        }
+        return array_merge($si, $no);
     }
 
 }
