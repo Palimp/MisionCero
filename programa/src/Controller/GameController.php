@@ -356,7 +356,7 @@ class GameController extends AppController {
                         $this->set('retos', $retos);
                         $this->set('users', $this->Code->getTeamUsers($team));
                         $this->set('voted', $this->Code->hasVoted($team, 'vm'));
-                        $propios=$this->Code->getGenericTeam($team, 'Motions');
+                        $propios = $this->Code->getGenericTeam($team, 'Motions');
                         $this->set('propios', $propios);
                         $this->set('retos', $this->Code->orderRetos($retos, $propios));
                     }
@@ -1510,6 +1510,88 @@ class GameController extends AppController {
         $this->set('ambits', $ambits);
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
+    }
+
+    public function page67() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 67);
+        $comments = $this->Code->getTopsOrder($id);
+        $quick = $this->Code->getTopsQuick($id);
+        $ambits = $this->Code->getAmbits();
+        $this->set('ambits', $ambits);
+        $this->set('admin', $sesion['admin']);
+        $this->set('ranking', $comments);
+        $this->set('quick', $quick);
+        $this->set('trouble', $sesion['trouble']);
+    }
+
+    public function page68() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 68);
+        $comments = $this->Code->getTopsOrder($id);
+        $retos = [];
+        foreach ($comments as $comment) {
+
+            $retos[$comment['ambit']][] = $comment['question'];
+        }
+
+        $ambits = $this->Code->getAmbits();
+        $this->set('ambits', $ambits);
+        $this->set('admin', $sesion['admin']);
+        $this->set('retos', $retos);
+        $this->set('trouble', $sesion['trouble']);
+    }
+
+    public function page69() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 69);
+        $comments = $this->Code->getTopsOrder($id);
+        $retos = [];
+        foreach ($comments as $comment) {
+            if ($comment['qui'] >= $comment['nor'] && $comment['qui'] >= $comment['amb']) {
+                $retos[2][] = $comment['question'];
+            } else if ($comment['amb'] >= $comment['nor'] && $comment['amb'] >= $comment['nor']) {
+                $retos[0][] = $comment['question'];
+            } else {
+                $retos[1][] = $comment['question'];
+            }
+        }
+
+        $ambits = $this->Code->getAmbits();
+        $this->set('ambits', $ambits);
+        $this->set('admin', $sesion['admin']);
+        $this->set('retos', $retos);
+        $this->set('trouble', $sesion['trouble']);
+    }
+
+    public function page70() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 70);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $datos = $this->request->getData();
+            if (!empty($datos['sumar'])) {
+                $this->Code->addBikles($datos['sumar'], 1);
+            }
+            if (!empty($datos['restar'])) {
+                $this->Code->addBikles($datos['restar'], -1);
+            }
+        }
+        $teams = $this->Code->getTeams($id);
+        $this->set('admin', $sesion['admin']);
+        $this->set('teams', $teams);
+    }
+
+        public function page71() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 71);
+        $teams = $this->Code->getTeams($id);
+        $this->set('admin', $sesion['admin']);
+        $this->set('teams', $teams);
     }
 
     public function selectteam() {

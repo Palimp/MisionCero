@@ -11,11 +11,11 @@ $ambits[-1]->ambit = __('Sin ámbito');
 
 function getTipo($a, $b, $c) {
     $types = ['Ambicioso', 'Normal', 'Quick win'];
-    if ($a >= $b and $a >= $c) {
-        return $types[0];
-    }
     if ($c >= $b and $c >= $a) {
         return $types[2];
+    }
+    if ($a >= $b and $a >= $c) {
+        return $types[0];
     }
     if ($b >= $a and $b >= $c) {
         return $types[1];

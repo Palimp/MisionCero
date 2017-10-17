@@ -10,7 +10,7 @@ use Cake\Datasource\ConnectionManager;
 class CodeComponent extends Component {
 
     var $components = array('Cookie');
-    var $frases = ['Cuanto peor mejor para todos y cuanto peor para todos mejor','El problema no es cosa menor, en otras palabras, es cosa mayor','Acometamos a la hueste manzona', 'Los ladros perran y los cantos gallan', 'Lo más importante de la vida es no haber muerto', 'Blablablá, blablá ¡Blah!', 'Es el problema el que elige el empleado y es el empleado el que quiere que sea el problema', ' Un ulucordio los encrestoriaba y paramovía', 'Agiliscosos giroscopaban los limazones'];
+    var $frases = ['Cuanto peor mejor para todos y cuanto peor para todos mejor', 'El problema no es cosa menor, en otras palabras, es cosa mayor', 'Acometamos a la hueste manzona', 'Los ladros perran y los cantos gallan', 'Lo más importante de la vida es no haber muerto', 'Blablablá, blablá ¡Blah!', 'Es el problema el que elige el empleado y es el empleado el que quiere que sea el problema', ' Un ulucordio los encrestoriaba y paramovía', 'Agiliscosos giroscopaban los limazones'];
 
     public function getCode() {
         $letras = "ABCEFGHJKLMNPRTUWXYZ2346789";
@@ -238,8 +238,8 @@ class CodeComponent extends Component {
     public function saveMotions($team_id, $challenges) {
         $table = TableRegistry::get('Motions');
         foreach ($challenges as $challenge) {
-            $motion=$table->get($challenge->id);
-            $motion->question=$challenge->valor;
+            $motion = $table->get($challenge->id);
+            $motion->question = $challenge->valor;
             $table->save($motion);
         }
     }
@@ -622,6 +622,14 @@ class CodeComponent extends Component {
         $conn = ConnectionManager::get('default');
 
         $query = $conn->execute('SELECT * FROM tops where game_id=' . $id . ' order by votes desc');
+        $res = $query->fetchAll('assoc');
+        return $res;
+    }
+
+    public function getTopsQuick($id) {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('SELECT * FROM tops where game_id=' . $id . ' and qui>=nor and qui>=amb order by votes desc');
         $res = $query->fetchAll('assoc');
         return $res;
     }
