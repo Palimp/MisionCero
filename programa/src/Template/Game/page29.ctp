@@ -6,6 +6,9 @@
 if ($admin) {
     echo $this->element('navbar');
 }
+$trouble = $practical->trouble;
+$answers = [[-1, $practical->answer1], [0, $practical->answer2], [1, $practical->answer3], [2, $practical->answer4]];
+shuffle($answers);
 ?>
 
 <!-- ** pag p15 ** -->
@@ -16,73 +19,40 @@ if ($admin) {
         <?= $this->Html->image("breadp45.svg", ['class' => 'w-100']); ?>
     </header>
     <section>
-        <p>
-            <?=__('Una empresa que fabrica taladradoras quiere reinventarse. El DG insiste en no limitarse a incrementar las ventas actuales: quiere abrir caminos muy novedosos')?>
-            </br>
-            <?=__('Qué reto piensa trabajar el equipo:')?>
-        </p>
+
+        <?= __($trouble) ?>
+
         <table class="reduced table table-striped">
             <tbody>
-                <tr>
-                    <td scope="row">
-                        <span id="fila1"><?=__('¿Cómo aumentar las ventas de taladradoras?')?></span>
-                    </td>
-                    <td class="text-right">
-                        <label class="custom-control custom-checkbox">
-                            <input id="1" type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">
-                        <span id="fila2"><?=__('¿Cómo encontrar nuevos ingresos en productos de bricolaje?')?></span>
-                    </td>
-                    <td class="text-right">
-                        <label class="custom-control custom-checkbox">
-                            <input  id="2" type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">
-                        <span id="fila3"><?=__('¿Cómo generar nuevos ingresos con taladradoras?')?></span>
-                    </td>
-                    <td class="text-right">
-                        <label class="custom-control custom-checkbox">
-                            <input  id="3" type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">
-                        <span id="fila4"><?=__('¿Cómo ofrecer nuevos servicios al consumidor que quiere hacer agujeros?')?></span>
-                    </td>
-                    <td class="text-right">
-                        <label class="custom-control custom-checkbox">
-                            <input id="4"  type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator" data-toggle="tooltip" title="<?=__('Haz click para seleccionar')?>"></span>
-                        </label>
-                    </td>
-                </tr>
+                <?php
+                for ($i = 0; $i < count($answers); $i++) {
+                    ?>
+                    <tr>
+                        <td scope="row">
+                            <span id="fila<?= $i ?>"><?= __($answers[$i][1]) ?></span>
+                        </td>
+                        <td class="text-right">
+                            <label class="custom-control custom-radio">
+                                <input name="opcion" id="<?= $i ?>" type="radio" value="<?= $answers[$i][0] ?>" class="custom-control-input">
+                                <span class="custom-control-indicator" data-toggle="tooltip" title="<?= __('Haz click para seleccionar') ?>"></span>
+                            </label>
+                        </td>
+                    </tr>                
+                <?php } ?>
+
             </tbody>
         </table>
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
-                </b>
-                </br>
-                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
-            </div>
-        </div>
-
+        <p id="error"></p>
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
         <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+        <?php
+    } else if (!isset($voted)) {
+        ?>
+        <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+            <i class="fa fa-check fa-2x"></i>
+        </a>
     <?php } ?>
 </main>
 
@@ -110,9 +80,28 @@ if ($admin) {
             });
 <?php } else { ?>
 
-            $(':checkbox').click(function () {
+            $('#sendretos').click(function () {
+                var voto = $('input[name=opcion]:checked').val();
+
+                if (voto == undefined) {
+                    $('#error').html('<?= __('Debe seleccionar una opción') ?>');
+                    return;
+                }
+                $.get("<?=
+    $this->Url->build(["controller" => "Game", "action" => "savepractical"])
+    ?>", {'bikles': voto}, function (data, status) {
+
+                    $(':radio').attr('disabled', 'disabled');
+                    
+                    $('#error').html('<?= __('Selección enviados') ?><br/>Bikles: '+voto);
+                    setTimeout(checkPage, 1000);
+                });
+            });
+
+            $(':radio').click(function () {
                 id = $(this).attr('id')
-                $('#fila' + id).toggleClass('green');
+                $('[id^=fila]').removeClass('green');
+                $('#fila' + id).addClass('green');
             });
             setTimeout(checkPage, 1000);
 

@@ -18,7 +18,7 @@ if ($admin) {
 
 
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_aSXE_xppME" frameborder="0" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="<?=$url?>" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="text-center mt-5">
                 <div class="alert alert-danger d-inline-block" role="alert">

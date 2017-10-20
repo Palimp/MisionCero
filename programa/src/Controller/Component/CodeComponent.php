@@ -78,6 +78,52 @@ class CodeComponent extends Component {
         return $query;
     }
 
+    public function getVideos() {
+        $games = TableRegistry::get('Videos');
+        $query = $games->find('all')->toArray();
+
+        return $query;
+    }
+
+    public function getPractical($id) {
+        $videos = $this->getPracticals();
+        $video = $videos[rand(0, count($videos) - 1)];
+        $this->saveLudico($id, $video->id);
+        return $video;
+    }
+
+    public function getPracticalId($id) {
+        $games = TableRegistry::get('Practicals');
+        return $games->get($id);
+    }
+
+    public function getPracticals() {
+        $games = TableRegistry::get('Practicals');
+        $query = $games->find('all')->toArray();
+
+        return $query;
+    }
+
+      public function getImage($id) {
+        $image= rand(1, 6);
+        $this->saveLudico($id, $image);
+        return $image;
+    }
+    
+    public function getVideo($id) {
+        $videos = $this->getVideos();
+        $video = $videos[rand(0, count($videos) - 1)]->url;
+        $this->saveLudico($id, $video);
+        return $video;
+    }
+
+    public function saveLudico($id, $ludico) {
+        $games = TableRegistry::get('Games');
+        $game = $games->get($id);
+        $game->ludico = $ludico;
+        $games->save($game);
+    }
+
     public function getCodeId($code) {
 
         $row = $this->getRow($code);
@@ -103,8 +149,8 @@ class CodeComponent extends Component {
             }
 
             if (!empty($row)) {
-                $this->setSesion($row->id, $code, $admin, $row->active, $row->page, $row->trouble, $row->time1);
-                return ['id' => $row->id, 'code' => $code, 'admin' => $admin, 'active' => $row->active, 'page' => $row->page, 'trouble' => $row->trouble, 'time1' => $row->time1];
+                $this->setSesion($row->id, $code, $admin, $row->active, $row->page, $row->trouble, $row->time1, $row->ludico);
+                return ['id' => $row->id, 'code' => $code, 'admin' => $admin, 'active' => $row->active, 'page' => $row->page, 'trouble' => $row->trouble, 'time1' => $row->time1, 'ludico' => $row->ludico];
             }
         }
     }
@@ -235,6 +281,14 @@ class CodeComponent extends Component {
         }
     }
 
+      public function savePractical($team_id, $bikles) {
+        $table = TableRegistry::get('Teams');
+        $team = $table->get($team_id);
+        $team->prac=$bikles;
+        $this->addBikle($team_id, $bikles);
+        $table->save($team);
+    }
+    
     public function saveMotions($team_id, $challenges) {
         $table = TableRegistry::get('Motions');
         foreach ($challenges as $challenge) {
@@ -642,7 +696,7 @@ class CodeComponent extends Component {
         return $res;
     }
 
-    public function setSesion($id, $code, $admin, $active, $page, $trouble, $time1) {
+    public function setSesion($id, $code, $admin, $active, $page, $trouble, $time1, $ludico) {
         $session = $this->request->session();
         $session->write('code', $code);
         $session->write('admin', $admin);
@@ -651,6 +705,7 @@ class CodeComponent extends Component {
         $session->write('page', $page);
         $session->write('trouble', $time1);
         $session->write('time1', $time1);
+        $session->write('ludico', $ludico);
         $this->Cookie->write('code', $code);
         $this->Cookie->write('admin', $admin);
         $this->Cookie->write('id', $id);
