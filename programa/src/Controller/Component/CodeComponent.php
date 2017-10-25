@@ -85,6 +85,32 @@ class CodeComponent extends Component {
         return $query;
     }
 
+    public function getVideo($id) {
+        $videos = $this->getVideos();
+        $video = $videos[rand(0, count($videos) - 1)]->url;
+        $this->saveLudico($id, $video);
+        return $video;
+    }
+
+    public function getPuzzles() {
+        $games = TableRegistry::get('Puzzles');
+        $query = $games->find('all')->toArray();
+
+        return $query;
+    }
+
+    public function getPuzzle($id) {
+        $videos = $this->getPuzzles();
+        $video = $videos[rand(0, count($videos) - 1)];
+        $this->saveLudico($id, $video->id);
+        return $video;
+    }
+
+    public function getPuzzleId($id) {
+        $games = TableRegistry::get('Puzzles');
+        return $games->get($id);
+    }
+
     public function getPractical($id) {
         $videos = $this->getPracticals();
         $video = $videos[rand(0, count($videos) - 1)];
@@ -104,17 +130,10 @@ class CodeComponent extends Component {
         return $query;
     }
 
-      public function getImage($id) {
-        $image= rand(1, 6);
+    public function getImage($id) {
+        $image = rand(1, 6);
         $this->saveLudico($id, $image);
         return $image;
-    }
-    
-    public function getVideo($id) {
-        $videos = $this->getVideos();
-        $video = $videos[rand(0, count($videos) - 1)]->url;
-        $this->saveLudico($id, $video);
-        return $video;
     }
 
     public function saveLudico($id, $ludico) {
@@ -281,14 +300,14 @@ class CodeComponent extends Component {
         }
     }
 
-      public function savePractical($team_id, $bikles) {
+    public function savePractical($team_id, $bikles) {
         $table = TableRegistry::get('Teams');
         $team = $table->get($team_id);
-        $team->prac=$bikles;
+        $team->prac = $bikles;
         $this->addBikle($team_id, $bikles);
         $table->save($team);
     }
-    
+
     public function saveMotions($team_id, $challenges) {
         $table = TableRegistry::get('Motions');
         foreach ($challenges as $challenge) {

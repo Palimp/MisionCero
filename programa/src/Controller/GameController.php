@@ -190,6 +190,10 @@ class GameController extends AppController {
                     $session->write('period', $period);
                     $this->set('time', '');
                     $this->set('stop', '');
+                    $idp = $sesion['ludico'];
+                    $puzzle = $this->Code->getPuzzleId($idp);
+                    $this->set('puzzle', $puzzle);
+
                     $this->viewBuilder()->template('page52');
                 } else
                 if ($sesion['page'] == 53) {
@@ -207,7 +211,7 @@ class GameController extends AppController {
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('stop', 1);
-                        $this->set('image', $sesion['ludico']);
+                    $this->set('image', $sesion['ludico']);
 
                     $session = $this->request->session();
                     $session->write('period', $period);
@@ -446,6 +450,13 @@ class GameController extends AppController {
                 return $this->redirect(['action' => 'page' . $sesion['page']]);
             }
         }
+        $this->set('admin', $sesion['admin']);
+    }
+
+    public function page1() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 1);
         $this->set('admin', $sesion['admin']);
     }
 
@@ -1317,6 +1328,9 @@ class GameController extends AppController {
         } else {
             $this->Code->setTime($id);
         }
+        $puzzle = $this->Code->getPuzzle($id);
+
+        $this->set('puzzle', $puzzle);
 
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
@@ -2109,7 +2123,7 @@ class GameController extends AppController {
         $this->set('_serialize', 'data');
     }
 
-      public function savepractical() {
+    public function savepractical() {
         $sesion = $this->Code->loadSesion();
         $data = 0;
         $this->viewBuilder()->template('ajax');
@@ -2124,7 +2138,7 @@ class GameController extends AppController {
         $this->set(compact('data'));
         $this->set('_serialize', 'data');
     }
-    
+
     public function savemotions() {
         $sesion = $this->Code->loadSesion();
         $data = 0;

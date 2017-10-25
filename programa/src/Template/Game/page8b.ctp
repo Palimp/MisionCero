@@ -148,6 +148,7 @@
         "action" => "addcomment"
     ])
     ?>", {'comment': $('#comment').val()}, function (data, status) {
+            
                     if (status == 'success') {
                         $('#addcomment').removeAttr('style');
                         $('#bloque').before('  <div id="bloque' + data + '" class="row form-group"><div class="col pl-0"><b>' + $('#comment').val() + '</b></div><div class="col col-md-auto"><a href="#" id="delete' + data + '" onclick="delComment(' + data + ')" data-toggle="tooltip" title="Haz click para borrar un comentario" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>');

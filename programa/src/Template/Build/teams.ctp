@@ -107,6 +107,7 @@ $fila = '<div class="row bloque">
                     <div class="row form-group">
                         <div class="col pl-0">
                             <input name="members[]"  type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas" value="<?= $team[2] ?>">
+                            <input name="ids[]"  type="hidden" class="form-control"  value="<?= $team[3] ?>">
                         </div>
                         <div class="col-12 col-md-auto">
                             <a href="#" data-toggle="tooltip" title="Haz click para eliminar el equipo" class="d-inline-block">

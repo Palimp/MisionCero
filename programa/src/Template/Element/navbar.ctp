@@ -30,13 +30,7 @@
                         )
                         ?>
                     </li>
-                    <li>
-                        <?=
-                        $this->Html->link(
-                                __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin']
-                        )
-                        ?>
-                    </li>
+                   
                     <li>
                         <?=
                         $this->Html->link(

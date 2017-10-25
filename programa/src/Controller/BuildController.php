@@ -23,11 +23,11 @@ class BuildController extends AppController {
      */
     public function index() {
         $sesion = $this->Code->loadSesion();
-        
-        if (empty($sesion['trouble'])){
-            return $this->redirect([ 'action' => 'trouble']);
+
+        if (empty($sesion['trouble'])) {
+            return $this->redirect(['action' => 'trouble']);
         }
-        $this->set("teams",$this->Code->teamsOK($sesion['id']));
+        $this->set("teams", $this->Code->teamsOK($sesion['id']));
     }
 
     public function begin() {
@@ -90,19 +90,25 @@ class BuildController extends AppController {
                 ->order(['team' => 'ASC']);
         $teams = [];
         foreach ($query as $row) {
-            $teams[] = [$row->team, $row->name, $row->members];
+            $teams[] = [$row->team, $row->name, $row->members, $row->id];
         }
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $this->Teams->deleteAll(['game_id' => $id]);
             $datos = $this->request->getData();
+            if (isset($datos['ids'])) {
+                $this->Teams->deleteAll(['game_id' => $id, 'id NOT IN' => $datos['ids']]);
+            }
             $datos['names'] = unserialize($datos['names']);
-
+            print_r($datos);
             for ($i = 0; $i < count($datos['name']); $i++) {
-
+                echo "#" . $i;
                 if (isset($datos['name'][$i]) && !empty($datos['members'][$i])) {
-                    $team = $this->Teams->newEntity();
-                    $team->game_id = $id;
+                    if (isset($datos['ids'][$i]) && !empty($datos['ids'][$i])) {
+                        $team = $this->Teams->get($datos['ids'][$i]);
+                    } else {
+                        $team = $this->Teams->newEntity();
+                        $team->game_id = $id;
+                    }
                     $team->team = $i + 1;
 
                     $team->name = $datos['names'][$datos['name'][$i]];

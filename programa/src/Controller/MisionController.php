@@ -35,7 +35,7 @@ class MisionController extends AppController {
     public function codelogin() {
         $code = $this->request->data['code'];
         $reg = $this->Code->checkCode($code);
-        
+
         if ($reg == 0) {
             $this->set('error', __("El código no es válido"));
             $this->viewBuilder()->template('error');
@@ -54,9 +54,12 @@ class MisionController extends AppController {
             $this->Cookie->write('code', $code);
             $this->Cookie->write('admin', 1);
             $this->Cookie->write('id', $this->Code->getCodeId($code));
-            return $this->redirect(
-                            ['controller' => 'Build', 'action' => 'index']
-            );
+            $sesion = $this->Code->loadSesion();
+            if ($sesion['active']) {
+                return $this->redirect(['controller' => 'Game', 'action' => 'index']);
+            } else {
+                return $this->redirect(['controller' => 'Build', 'action' => 'index']);
+            }
         }
         if ($reg == 3) {
             $session = $this->request->session();
@@ -71,7 +74,7 @@ class MisionController extends AppController {
             );
         }
         $this->set('error', __("Ha ocurrido un error"));
-            $this->viewBuilder()->template('error');
+        $this->viewBuilder()->template('error');
     }
 
 }
