@@ -20,7 +20,7 @@ if ($admin) {
             (para abrir nuevas líneas de trabajo de la problemática)
         </p>
         <?php if ($admin) { ?>
-
+ <div id="hasvoted"></div>
         <?php } else { ?>
             <table class="reduced table table-striped">
                 <tbody>
@@ -58,22 +58,26 @@ if ($admin) {
     $(function () {
 <?php if ($admin) { ?>
 
+            setTimeout(checkVote, 1000);
+            function checkVote() {
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "checkvote"]) ?>",
+                        {'table': 'questions'}, function (data, status) {
+                    console.log(data);
+                    if (data == 0) {
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        setTimeout(checkVote, 1000);
+                    } else {
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
 
+                    }
+
+                });
+            }
             $('#siguiente').click(function () {
-                location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "page23"
-    ])
-    ?>';
+                location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page23"]) ?>';
             });
             $('#anterior').click(function () {
-                location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "page21"
-    ])
-    ?>';
+                location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page21"]) ?>';
             });
 <?php } else { ?>
             $('#submitcomment').click(function () {

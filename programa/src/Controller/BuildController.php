@@ -30,6 +30,29 @@ class BuildController extends AppController {
         $this->set("teams", $this->Code->teamsOK($sesion['id']));
     }
 
+    public function estado() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->loadModel('Games');
+        $game = $this->Games->get($id);
+        $teams = $this->Code->getTeamsBegin($id);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $datos = $this->request->getData();
+          //  print_r($datos);
+            
+            if (isset($datos['begin'])) {
+                $game->active = !$datos['begin'];
+                $this->Games->save($game);
+            }
+            if (isset($datos['ok'])) {
+                
+                $this->Code->unlockTeams($id);
+            }
+        }
+        $this->set("game", $game);
+        $this->set("teams", $teams);
+    }
+
     public function begin() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];

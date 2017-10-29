@@ -37,7 +37,7 @@ if ($admin) {
                             <?php
                             if ($admin) {
                                 echo $this->Form->create('Begin', array(
-                                    'url' => array('controller' => 'Game', 'action' => 'page62'), 'class' => 'd-inline-block'
+                                    'url' => array('controller' => 'Game', 'action' => 'page70'), 'class' => 'd-inline-block'
                                 ));
                                 ?>
                                 <input type="hidden" name="sumar" value="<?= $teams[$i]['id'] ?>">
@@ -47,7 +47,7 @@ if ($admin) {
                                 </form>
                                 <?php
                                 echo $this->Form->create('Begin', array(
-                                    'url' => array('controller' => 'Game', 'action' => 'page62'), 'class' => 'd-inline-block'
+                                    'url' => array('controller' => 'Game', 'action' => 'page70'), 'class' => 'd-inline-block'
                                 ));
                                 ?>
                                 <input type="hidden" name="restar" value="<?= $teams[$i]['id'] ?>">

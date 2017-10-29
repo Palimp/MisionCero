@@ -30,11 +30,25 @@
                         )
                         ?>
                     </li>
+                    <li>
+                        <?=
+                        $this->Html->link(
+                                __('Estado partida'), ['controller' => 'Build', 'action' => 'estado']
+                        )
+                        ?>
+                    </li>
+                    <li>
+                        <?=
+                        $this->Html->link(
+                                __('Volver al juego'), ['controller' => 'Game', 'action' => 'index']
+                        )
+                        ?>
+                    </li>
                    
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Reset partida'), ['controller' => 'Build', 'action' => 'reset']
+                                __('Borrar cookies'), ['controller' => 'Build', 'action' => 'reset']
                         )
                         ?>
                     </li>

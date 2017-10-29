@@ -6,7 +6,6 @@
 if ($admin) {
     echo $this->element('navbar');
 }
-
 ?>
 
 <!-- ** pag p15 ** -->
@@ -52,6 +51,7 @@ if ($admin) {
                 <?php } ?>
             </tbody>
         </table>
+        <div id="hasvoted"></div>
         <div id="error"></div>
 
     </section>
@@ -76,7 +76,21 @@ if ($admin) {
 
     $(function () {
 <?php if ($admin) { ?>
+            setTimeout(checkVote, 1000);
+            function checkVote() {
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "checkvoteteam"]) ?>",
+                        {'field': 'vq'}, function (data, status) {
+                    console.log(data);
+                    if (data == 0) {
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        setTimeout(checkVote, 1000);
+                    } else {
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
 
+                    }
+
+                });
+            }
 
             $('#siguiente').click(function () {
                 location.href = '<?=
@@ -134,7 +148,7 @@ if ($admin) {
 
                 $.get("<?= $this->Url->build(["controller" => "Game", "action" => "savequestionvotos"]) ?>",
                         {'ids': JSON.stringify(votos)}, function (data, status) {
-                    
+
                     $(':checkbox').attr('disabled', 'disabled');
                     cambiar = true;
                     $('#error').html('<?= __('Votos enviados') ?>');

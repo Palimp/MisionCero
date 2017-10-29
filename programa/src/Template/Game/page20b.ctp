@@ -246,6 +246,7 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
+        
                     if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);

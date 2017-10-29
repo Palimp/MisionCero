@@ -24,7 +24,7 @@ if ($admin) {
             Seleccionad los tres mejores retos para enfocarse en ellos.
         </p>
         <?php if ($admin) { ?>
-
+            <div id="hasvoted"></div>
         <?php } else { ?>
             <table class="reduced table table-striped">
                 <tbody>
@@ -62,7 +62,21 @@ if ($admin) {
     $(function () {
 <?php if ($admin) { ?>
 
+            setTimeout(checkVote, 1000);
+            function checkVote() {
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "checkvote"]) ?>",
+                        {'table': 'comments'}, function (data, status) {
+                           
+                    if (data == 0) {
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        setTimeout(checkVote, 1000);
+                    } else {
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
 
+                    }
+
+                });
+            }
             $('#siguiente').click(function () {
                 location.href = '<?=
     $this->Url->build([
@@ -89,13 +103,12 @@ if ($admin) {
     ])
     ?>", {'ids': JSON.stringify(chequeados)}, function (data, status) {
 
-                         location.href = '<?=
+                        location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
         "action" => "index"
     ])
     ?>';
-
                     });
                 } else {
                     alert("Debe elegir tres comentarios");
@@ -111,7 +124,7 @@ if ($admin) {
 
                     chequeados.splice(index, 1);
                 }
-                
+
             });
 <?php } ?>
     });

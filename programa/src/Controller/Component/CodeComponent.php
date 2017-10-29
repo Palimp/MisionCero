@@ -150,8 +150,6 @@ class CodeComponent extends Component {
             $row = $this->getRow($code, 2);
         }
         if (empty($row)) {
-            return 0;
-        } else {
             return $row->id;
         }
     }
@@ -691,6 +689,25 @@ class CodeComponent extends Component {
         return array_column($res, "name");
     }
 
+    public function checkVote($id, $table) {
+        $conn = ConnectionManager::get('default');
+        $query = $conn->execute('SELECT team_id,count(*) t FROM teams join '.$table.' on teams.id='.$table.'.team_id where game_id='.$id.' and sel=1 group by team_id having t<3;');
+
+        if ($query->count() == 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function checkVoteTeam($id, $field) {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('SELECT * FROM teams where game_id=' . $id . ' and ' . $field . '=0;');
+
+        return $query->count() == 0;
+    }
+
     public function getTopsOrder($id) {
         $conn = ConnectionManager::get('default');
 
@@ -752,6 +769,22 @@ class CodeComponent extends Component {
         $query = $games->find('all')
                         ->where(['game_id' => $id])
                         ->orderDesc('bikles')->toArray();
+
+        return $query;
+    }
+
+    public function getTeamsBegin($id) {
+        $games = TableRegistry::get('Teams');
+        $query = $games->find('all')
+                        ->where(['game_id' => $id])
+                        ->order('team')->toArray();
+
+        return $query;
+    }
+
+    public function unlockTeams($id) {
+        $conn = ConnectionManager::get('default');
+        $query = $conn->execute('update teams set taken=0 where game_id=' . $id);
 
         return $query;
     }

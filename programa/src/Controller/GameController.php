@@ -327,10 +327,12 @@ class GameController extends AppController {
                     if ($sesion['page'] == 12) {
                         $ambits = $this->Code->getAmbits();
                         $this->set('ambits', $ambits);
-                        $this->set('retos', $this->Code->getRetos($id));
+                        $retos = $this->Code->getRetos($id);
+                        $propios = $this->Code->getGenericTeam($team);
                         $this->set('users', $this->Code->getTeamUsers($team));
                         $this->set('voted', $this->Code->hasVoted($team));
-                        $this->set('propios', $this->Code->getGenericTeam($team));
+                        $this->set('propios', $propios);
+                        $this->set('retos', $this->Code->orderRetos($retos, $propios));
                     }
                     if ($sesion['page'] == 13) {
                         $comments = $this->Code->getChallenges($id);
@@ -621,6 +623,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 12);
+        $this->Code->addTime($id, -600);
         $this->set('admin', $sesion['admin']);
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
@@ -750,11 +753,11 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 21);
-        $this->Code->blabla($id, 'questions', 'question');
-
+        $this->Code->addTime($id, -600);
         $comments = $this->Code->getTeamQuestions($id);
         $this->Code->setScore($id, 3, $this->Code->getOrder($comments));
         $comments = $this->Code->getTeamQuestions($id);
+        $this->Code->blabla($id, 'questions', 'question');
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
     }
@@ -820,6 +823,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 24);
+        $this->Code->addTime($id, -600);
         $this->set('admin', $sesion['admin']);
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
@@ -956,10 +960,10 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 34);
-        $this->Code->blabla($id, 'stakes', 'question');
-
+        $this->Code->addTime($id, -600);
         $comments = $this->Code->getTeamQuestions($id, 'stakes');
         $this->Code->setScore($id, 5, $this->Code->getOrder($comments));
+        $this->Code->blabla($id, 'stakes', 'question');
         $comments = $this->Code->getTeamQuestions($id, 'stakes');
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
@@ -1026,6 +1030,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 37);
+        $this->Code->addTime($id, -600);
         $this->set('admin', $sesion['admin']);
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
@@ -1116,6 +1121,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 42);
+        $this->Code->addTime($id, -600);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
             if (!empty($datos['sumar'])) {
@@ -1179,9 +1185,10 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 45);
-        $this->Code->blabla($id, 'ppchallenges', 'question');
+        $this->Code->addTime($id, -600);
         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
         $this->Code->setScore($id, 7, $this->Code->getOrder($comments));
+        $this->Code->blabla($id, 'ppchallenges', 'question');
         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
@@ -1249,6 +1256,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 48);
+        $this->Code->addTime($id, -600);
         $this->set('admin', $sesion['admin']);
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
@@ -1448,11 +1456,11 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 58);
-        $this->Code->blabla($id, 'motions', 'question');
-
+        $this->Code->addTime($id, -600);
         $comments = $this->Code->getTeamQuestions($id, 'motions');
         $this->Code->setScore($id, 9, $this->Code->getOrder($comments));
         $comments = $this->Code->getTeamQuestions($id, 'motions');
+        $this->Code->blabla($id, 'motions', 'question');
         $this->set('admin', $sesion['admin']);
         $this->set('ranking', $comments);
     }
@@ -1684,8 +1692,16 @@ class GameController extends AppController {
             $this->set('teams', $query);
             $this->set('names', $names);
         } else {
-            return $this->redirect(['action' => 'index']);
+            if ($active && $data == 1) {
+                return $this->redirect(['action' => 'taken']);
+            } else {
+                return $this->redirect(['action' => 'index']);
+            }
         }
+    }
+
+    public function taken() {
+        
     }
 
     public function teamsok() {
@@ -2146,6 +2162,38 @@ class GameController extends AppController {
 
         $datos = $this->request->query;
         $data = $this->Code->saveMotions($this->Code->getTeam(), json_decode($datos['datos']));
+
+        if ($this->request->is('ajax') && !empty($sesion['code'])) {
+            
+        }
+
+        $this->set(compact('data'));
+        $this->set('_serialize', 'data');
+    }
+
+    public function checkvote() {
+        $sesion = $this->Code->loadSesion();
+        $data = 0;
+        $this->viewBuilder()->template('ajax');
+
+        $datos = $this->request->query;
+        $data = $this->Code->checkVote($sesion['id'], $datos['table']);
+
+        if ($this->request->is('ajax') && !empty($sesion['code'])) {
+            
+        }
+
+        $this->set(compact('data'));
+        $this->set('_serialize', 'data');
+    }
+
+    public function checkvoteteam() {
+        $sesion = $this->Code->loadSesion();
+        $data = 0;
+        $this->viewBuilder()->template('ajax');
+
+        $datos = $this->request->query;
+        $data = $this->Code->checkVoteTeam($sesion['id'], $datos['field']);
 
         if ($this->request->is('ajax') && !empty($sesion['code'])) {
             
