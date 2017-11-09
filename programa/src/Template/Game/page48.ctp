@@ -24,7 +24,7 @@ if ($admin) {
                 <tr>
                     <td></td>
                     <?php foreach ($users as $user) { ?>
-                        <td><?= str_replace("_"," ",$user) ?></td>
+                        <td><?= str_replace("_", " ", $user) ?></td>
 
                     <?php } ?>
                     <th><?= __('Ámbito') ?></th>
@@ -52,6 +52,7 @@ if ($admin) {
                 <?php } ?>
             </tbody>
         </table>
+        <div id="hasvoted"></div>
         <div id="error"></div>
 
     </section>
@@ -98,7 +99,21 @@ if ($admin) {
     $(function () {
 <?php if ($admin) { ?>
 
+            setTimeout(checkVote, 1000);
+            function checkVote() {
+                $.get("<?= $this->Url->build(["controller" => "Game", "action" => "checkvoteteam"]) ?>",
+                        {'field': 'vp'}, function (data, status) {
+                    console.log(data);
+                    if (data == 0) {
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        setTimeout(checkVote, 1000);
+                    } else {
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
 
+                    }
+
+                });
+            }
             $('#siguiente').click(function () {
                 location.href = '<?=
     $this->Url->build([

@@ -125,14 +125,18 @@ if ($admin) {
             });
 <?php } else { ?>
             $('#submitvotos').click(function () {
-                $('#submitvotos').attr('style', 'display:none !important');
 
                 $('#error').html('');
                 var votos = [];
                 $(':checkbox:checked').each(function () {
                     votos.push($(this).attr('id').replace("_", ""));
                 });
-                
+                if (votos.length!=3){
+                    $('#error').html('<b style="color:red"><?=__('Revise los votos')?></b>');
+                    return;
+                }
+                                $('#submitvotos').attr('style', 'display:none !important');
+
                 $.get("<?=
     $this->Url->build(["controller" => "Game", "action" => "savefeelings"])
     ?>", {'ids': JSON.stringify(votos)}, function (data, status) {

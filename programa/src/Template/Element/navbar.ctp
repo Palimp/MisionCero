@@ -37,13 +37,7 @@
                         )
                         ?>
                     </li>
-                    <li>
-                        <?=
-                        $this->Html->link(
-                                __('Volver al juego'), ['controller' => 'Game', 'action' => 'index']
-                        )
-                        ?>
-                    </li>
+                    
                    
                     <li>
                         <?=

@@ -39,14 +39,7 @@ if ($admin) {
 <?php if ($admin) { ?>
 
 
-            $('#siguiente').click(function () {
-                location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "page72"
-    ])
-    ?>';
-            });
+          
             $('#anterior').click(function () {
                 location.href = '<?=
     $this->Url->build([

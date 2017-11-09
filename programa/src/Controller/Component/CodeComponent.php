@@ -691,9 +691,12 @@ class CodeComponent extends Component {
 
     public function checkVote($id, $table) {
         $conn = ConnectionManager::get('default');
-        $query = $conn->execute('SELECT team_id,count(*) t FROM teams join '.$table.' on teams.id='.$table.'.team_id where game_id='.$id.' and sel=1 group by team_id having t<3;');
+        $teams=$this->getTeamsBegin($id);
+        $n=count($teams);
+        
+        $query = $conn->execute('SELECT team_id,count(*) t FROM teams join '.$table.' on teams.id='.$table.'.team_id where game_id='.$id.' and sel=1 group by team_id having t=3;');
 
-        if ($query->count() == 0) {
+        if ($query->count() == $n) {
             return 1;
         } else {
             return 0;

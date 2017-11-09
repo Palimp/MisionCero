@@ -27,7 +27,7 @@ echo $this->element('navbar');
         <div>
             <?=
             $this->Html->link(
-                    __('Introducir problemática'), ['controller' => 'Build', 'action' => 'trouble']);
+                    __('Introducir/Modificar problemática'), ['controller' => 'Build', 'action' => 'trouble']);
             ?>
         </div>
         <div>

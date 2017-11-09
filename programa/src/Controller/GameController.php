@@ -245,6 +245,51 @@ class GameController extends AppController {
                         $comments = $this->Code->getTeamQuestions($id, 'motions');
                         $this->set('ranking', $comments);
                     }
+                    if ($sesion['page'] == 67) {
+                        $comments = $this->Code->getTopsOrder($id);
+                        $quick = $this->Code->getTopsQuick($id);
+                        $ambits = $this->Code->getAmbits();
+                        $this->set('ambits', $ambits);
+                        $this->set('ranking', $comments);
+                        $this->set('quick', $quick);
+                        $this->set('trouble', $sesion['trouble']);
+                    }
+                    if ($sesion['page'] == 68) {
+                        $comments = $this->Code->getTopsOrder($id);
+                        $retos = [];
+                        foreach ($comments as $comment) {
+
+                            $retos[$comment['ambit']][] = $comment['question'];
+                        }
+
+                        $ambits = $this->Code->getAmbits();
+                        $this->set('ambits', $ambits);
+                        $this->set('retos', $retos);
+                        $this->set('trouble', $sesion['trouble']);
+                    }
+                    if ($sesion['page'] == 69) {
+                        $comments = $this->Code->getTopsOrder($id);
+                        $retos = [];
+                        foreach ($comments as $comment) {
+                            if ($comment['qui'] >= $comment['nor'] && $comment['qui'] >= $comment['amb']) {
+                                $retos[2][] = $comment['question'];
+                            } else if ($comment['amb'] >= $comment['nor'] && $comment['amb'] >= $comment['nor']) {
+                                $retos[0][] = $comment['question'];
+                            } else {
+                                $retos[1][] = $comment['question'];
+                            }
+                        }
+
+                        $ambits = $this->Code->getAmbits();
+                        $this->set('ambits', $ambits);
+                        $this->set('retos', $retos);
+                        $this->set('trouble', $sesion['trouble']);
+                    }
+                    if ($sesion['page'] == 71) {
+                        $teams = $this->Code->getTeams($id);
+                        $this->set('admin', $sesion['admin']);
+                        $this->set('teams', $teams);
+                    }
                     if ($sesion['page'] == 45) {
                         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
                         $this->set('ranking', $comments);
@@ -341,7 +386,7 @@ class GameController extends AppController {
                         $this->set('admin', $sesion['admin']);
                         $this->set('ranking', $comments);
                     }
-                    if ($sesion['page'] == 14 || $sesion['page'] == 17 || $sesion['page'] == 26 || $sesion['page'] == 30 || $sesion['page'] == 39 || $sesion['page'] == 42 || $sesion['page'] == 50 || $sesion['page'] == 54 || $sesion['page'] == 62) {
+                    if ($sesion['page'] == 14 || $sesion['page'] == 17 || $sesion['page'] == 26 || $sesion['page'] == 30 || $sesion['page'] == 39 || $sesion['page'] == 42 || $sesion['page'] == 50 || $sesion['page'] == 54 || $sesion['page'] == 62 || $sesion['page'] == 70) {
                         $teams = $this->Code->getTeams($id);
                         $this->set('admin', $sesion['admin']);
                         $this->set('teams', $teams);
@@ -360,11 +405,11 @@ class GameController extends AppController {
                         $ambits = $this->Code->getAmbits();
                         $this->set('ambits', $ambits);
                         $retos = $this->Code->getRetos($id, 'stakes');
-                        $this->set('retos', $this->Code->getRetos($id, 'stakes'));
                         $this->set('users', $this->Code->getTeamUsers($team));
                         $this->set('voted', $this->Code->hasVoted($team, 'vs'));
                         $propios = $this->Code->getGenericTeam($team, 'Stakes');
                         $this->set('propios', $propios);
+                        $this->set('retos', $this->Code->orderRetos($retos, $propios));
                     }
                     if ($sesion['page'] == 60) {
                         $ambits = $this->Code->getAmbits();
@@ -1386,6 +1431,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 54);
+        $this->Code->addTime($id, -600);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
             if (!empty($datos['sumar'])) {
