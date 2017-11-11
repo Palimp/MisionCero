@@ -12,6 +12,10 @@ class CodeComponent extends Component {
     var $components = array('Cookie');
     var $frases = ['Cuanto peor mejor para todos y cuanto peor para todos mejor', 'El problema no es cosa menor, en otras palabras, es cosa mayor', 'Acometamos a la hueste manzona', 'Los ladros perran y los cantos gallan', 'Lo más importante de la vida es no haber muerto', 'Blablablá, blablá ¡Blah!', 'Es el problema el que elige el empleado y es el empleado el que quiere que sea el problema', ' Un ulucordio los encrestoriaba y paramovía', 'Agiliscosos giroscopaban los limazones'];
 
+    public function getTime($id=0){
+        $times=[600,300,120,60];
+        return $times[$id];
+    }
     public function getCode() {
         $letras = "ABCEFGHJKLMNPRTUWXYZ2346789";
         $res = $letras[rand(0, strlen($letras) - 1)];

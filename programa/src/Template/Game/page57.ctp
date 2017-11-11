@@ -112,7 +112,7 @@ if ($admin) {
                             location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page58"
+        "action" => "page60"
     ])
     ?>';
                         }
@@ -123,7 +123,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page58"
+        "action" => "page60"
     ])
     ?>';
             });

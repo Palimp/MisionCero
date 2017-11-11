@@ -12,7 +12,7 @@ if ($admin) {
 <!-- ** pag p15 ** -->
 <main>
     <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
         <p class="fs22">

@@ -149,18 +149,24 @@
 
             $('#sendretos').click(function () {
                 var datos = []
+                var a = 0;
                 $('input:text').each(function () {
                     if ($(this).val() == '') {
+                        console.log("2");
                         $('#mensaje').html('<?= __('Rellene todos los campos') ?>');
                         $(this).focus();
+                        a = 1;
                     }
                 });
+                if (a) {
+                    return;
+                }
                 $('input:text').each(function () {
                     var id = $(this).attr('id').replace('com', '');
 
                     datos.push({"id": id, "valor": $(this).val()});
                 });
-                console.log(JSON.stringify(datos));
+                
                 $.get("<?=
     $this->Url->build(["controller" => "Game", "action" => "savemotions"])
     ?>", {'datos': JSON.stringify(datos)}, function (data, status) {

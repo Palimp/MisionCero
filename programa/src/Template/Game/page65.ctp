@@ -11,7 +11,7 @@ if ($admin) {
 <!-- ** pag p15 ** -->
 <main>
     <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
         <p class="fs22">
@@ -147,7 +147,7 @@ if ($admin) {
                             votos.push(retos[j].id);
                         }
                     }
-                    if (cont != 3) {
+                    if (cont != 5) {
                         $('#error').html('<?= __('Revise los votos') ?>');
                         $('#submitvotos').attr('style', '');
                         return;

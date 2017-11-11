@@ -37,8 +37,6 @@
                         )
                         ?>
                     </li>
-                    
-                   
                     <li>
                         <?=
                         $this->Html->link(

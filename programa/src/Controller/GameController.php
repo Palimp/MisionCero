@@ -129,7 +129,7 @@ class GameController extends AppController {
                     $this->set('team', $team);
                     $this->set('comments', $comments);
                     $this->set('ambits', $ambits);
-                    $period = 300;
+                    $period = $this->Code->getTime(2);
                     $session = $this->request->session();
                     $session->write('period', $period);
                     $this->set('time', '');
@@ -149,7 +149,7 @@ class GameController extends AppController {
                     $this->set('team', $team);
                     $this->set('comments', $comments);
                     $this->set('ambits', $ambits);
-                    $period = 300;
+                    $period = $this->Code->getTime(2);
                     $session = $this->request->session();
                     $session->write('period', $period);
                     $this->set('time', '');
@@ -207,7 +207,7 @@ class GameController extends AppController {
                     $this->viewBuilder()->template('page53');
                 } else
                 if ($sesion['page'] == 41) {
-                    $period = 600;
+                    $period = $this->Code->getTime(2);
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('stop', 1);
@@ -821,7 +821,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 23);
         $this->set('stop', 1);
         $this->set('time', '');
-        $period = 300;
+        $period = $this->Code->getTime(2);
         $session->write('period', $period);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -1028,7 +1028,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 36);
         $this->set('stop', 1);
         $this->set('time', '');
-        $period = 300;
+        $period = $this->Code->getTime(2);
         $session->write('period', $period);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -1129,7 +1129,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 41);
         $this->set('stop', 1);
         $this->set('time', '');
-        $period = 600;
+        $period = $this->Code->getTime(2);
         $session->write('period', $period);
         $image = $this->Code->getImage($id);
 
@@ -1188,6 +1188,13 @@ class GameController extends AppController {
         $this->set('admin', $sesion['admin']);
     }
 
+    public function page430() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 430);
+        $this->set('admin', $sesion['admin']);
+    }
+
     public function page44() {
         $sesion = $this->Code->loadSesion();
         $session = $this->request->session();
@@ -1195,7 +1202,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 44);
         $this->set('stop', 1);
         $this->set('time', '');
-        $period = 600;
+        $period = $this->Code->getTime();
         $session->write('period', $period);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -1254,7 +1261,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 47);
         $this->set('stop', 1);
         $this->set('time', '');
-        $period = 300;
+        $period = $this->Code->getTime(2);
         $session->write('period', $period);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
