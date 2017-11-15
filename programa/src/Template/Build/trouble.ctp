@@ -18,6 +18,7 @@ echo $this->element('navbar');
         ));
         ?>
         <p class="fs26"><?= __('La problemática inicial de la partida') ?></p>
+        <p><?= __('El objetivo de la partida consistirá en transformar esta problemática en una serie de retos concretos') ?></p>
         <div class="row mx-5 form-group">
             <div class="col">
                
