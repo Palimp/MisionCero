@@ -15,8 +15,18 @@ echo $this->element('navbar');
             <img src="img/logo_m0_es.svg" alt="">
         </div>
     </header>
-    <section class="text-center">
-
+    <section>
+        <p class="fs22">Ahora, espera que los equipos entren en la partida y:</p>
+        <ul>
+            <li>
+                - en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.
+            </li>
+            <li>
+                - si no se han configurado con anterioridad, cada equipo tiene que elegir un nombre de equipo y introducir los nombres de todos sus miembros
+            </li>
+        <p>
+            Cuando todos los equipos hayan sido confirmados, aparecerá abajo “empezar partida”. 
+        </p>
         <div class="form-group">
             <p class="fs26"><?= __('Menú de administración') ?></p>
 
