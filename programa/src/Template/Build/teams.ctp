@@ -46,11 +46,21 @@ $fila = '<div class="row bloque">
             Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!
             </br>
             </br>
-            Cada equipo:
+            Como Jefe de Expedición, puedes formar los equipos antes de la partida y así tener todo preparado.
             </br>
-            1. elije el nombre que quiere llevar durante la partida (no pierda tiempo porque ¡si otro equipo lo elije antes, sera suyo!)
+            Si no dispones todavía de toda la información para formar los equipos, no te preocupes porque lo podrás hacer al inicio de la partida con los Exploradores (jugadores).
+            </br>
+            En este caso, pulsa abajo en “lo haré más adelante”
+            </br>
+            </br>
+            Si quieres formar los equipos ahora:
+            </br>
+
+            1. Elije un nombre de equipo
             </br>
             2. Introduce los nombres de sus miembros, separados por comas (¡importante!)
+            </br>
+            3. Repite el proceso hasta formar todos los equipos que participarán a la partida
         </p>
         <?php
         echo $this->Form->create('Teams', array(
