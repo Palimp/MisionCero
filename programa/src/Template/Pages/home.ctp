@@ -128,8 +128,13 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 <div class="form-group">
                                     <textarea class="form-control" id="text" name="text" rows="3"></textarea>
                                 </div>
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <p>O envía un mail a <a href="mailto:info@binnakle.com">info@binnakle.com</a></p>
+                                    </div>
+                                    <div class="col-md-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </div>
                                 </div>
                                 </form>
                             </div>
