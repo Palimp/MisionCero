@@ -16,7 +16,7 @@
         <p></p>
         <p class="fs26"><?= __('La partida ya ha comenzado') ?></p>
         <p class="fs26"><?= __('Todos los equipos están seleccionados') ?></p>
-        <p class="fs26"><?= __('Contacte con el Game Master') ?></p>
+        <p class="fs26"><?= __('Contacte con el Jefe de Expedición') ?></p>
 
         
      

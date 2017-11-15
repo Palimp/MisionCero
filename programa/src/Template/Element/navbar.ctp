@@ -11,7 +11,7 @@
             <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <i class="fa fa-bars mr-2"></i>
-                Menú Game Master
+                Menú Jefe de Expedición
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
