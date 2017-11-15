@@ -37,7 +37,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Bienvenidas al juego de - Misión 0 - Identifica tus retos para fijar un rumbo a tu expedición! - webApp">
+        <meta name="description" content="Bienvenidos al juego de - Misión 0 - Identifica tus retos para fijar un rumbo a tu expedición! - webApp">
         <meta name="author" content="visualiabcn.com">
         <title>Misión 0</title>
 
@@ -150,9 +150,17 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             </div>
                             <div class="modal-body">
 
-                                <p>Precio de una partida: 100€</p>
-                                <p>Para continuar con el proceso, a continuación encontrarás el Código IBAN y SWIFT para realizar la transferencia:</br></br>Código IBAN: BBVA ES74 0182-7212-50-0201916788</br></br>SWIFT: BBVAESMMXXX</p>
-                                <p>Una vez realizada la transferencia envia el justificante a info@binnakle.com, indicando tu nombre, y procederemos al envío de tu pedido.</p>
+                                <p>Compra un código para una partida de Misión 0</p>
+                                <p>Este código da acceso al Jefe de Expedición para que pueda configurar la partida (definir problématica por trabajar y equipos) y para poder jugar la partida (1 hora antes de la partida, 2 horas de parida, 1 hora después de la partida)</p>
+                                <br>
+                                <p>Precio: 500 € (+IVA si España)</p>
+                                <br>
+                                <p>Deberás realizar una transferencia bancaria a la cuenta indicada:<br>
+                                   Código IBAN: BBVA ES74 0182-7212-50-0201916788<br>
+                                   SWIFT: BBVAESMMXXX
+                                </p>
+                                <br>
+                                <p>Una vez realizada la transferencia envia el justificante a <a href="mailto:info@binnakle.com">info@binnakle.com</a>, indicando tu nombre, y procederemos al envío de tu código con tu factura</p>
                             </div>
                         </div>
                     </div>
