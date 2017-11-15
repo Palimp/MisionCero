@@ -17,6 +17,7 @@ echo $this->element('navbar');
             'url' => array('controller' => 'Build', 'action' => 'begin'),
         ));
         ?>
+        <p class="fs26"><?= __('Aquí tienes los datos de la partida:') ?></p>
         <p class="fs26"><?= __('El reto de la partida') ?></p>
         <div class="row mx-5 form-group">
             <div class="col">
