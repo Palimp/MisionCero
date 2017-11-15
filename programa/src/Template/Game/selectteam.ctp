@@ -41,8 +41,16 @@
                 ?>
             </div>
         <?php } ?>
-        <p class="fs26"><?= __('Al seleccionar su equipo quedará inhabilitado para el resto. ¡Revisa todo bien!') ?></p>
-        <p class="fs26"><?= __('O bien cree su propio equipo:') ?></p>
+        <p class="fs26"><?= __('Bienvenido a Misión 0, Explorador') ?></p>
+        <p class="fs22"><?= __('¡Competiremos por equipos!') ?></p>
+        <p><?= __('Si tu Jefe de Expedición ha formado los equipos con antelación, solo tienes que confirmar cuál es tu equipo pulsando “seleccionar equipo” al lado de tu equipo.')?>
+            <br>
+            <?= __('Aparecerá “Equipo seleccionado” y el equipo estará listo para esperar las instrucciones del Jefe de Expedición (¡no debes pulsar “guardar equipo abajo!)')?>
+        </p>
+        <p><?= __('Si no es el caso y los Exploradores forman ahora sus equipos, deberás seleccionar un nombre de equipo (¡no pierdas tiempo porque si otro equipo se adelanta y elije el nombre que querías deberás escoger otro!)  e indicar los nombres de todos sus miembros, separados por comas (¡importante!)')?>
+            <br>
+            <?= __('Una vez acabado, no te olvides de pulsar en “guardar equipo” para que el Jefe de Expedición pueda iniciar la partida')?>
+        </p>
 
         <?php
         echo $this->Form->create('Teams', array(
