@@ -14,11 +14,18 @@ if ($admin) {
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <?= __('¿Cómo hablamos de la problemática de manera espontánea e informal?') ?>
+        <h4>
+            <?=__('Problemática: ¿Cómo…?')?>
+        </h4>
+        <p class="fs22 green">
+            <?= __('Insights Espontáneos') ?>
         </p>
         <p>
-            <?= __('Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)') ?>
+            <i class="fa fa-lightbulb-o"></i>
+            <?= __('Entre todos los comentarios generados, ') ?>
+            <b><?= __('ahora cada equipo selecciona los 3 más relevantes') ?></b>
+            <br>
+            <?= __('(Un reto es relevante si abre una nueva vía o ¡si es diferente a lo que trabajamos habitualmente!)') ?>
         </p>
         <p>
             <?= __('Retos seleccionados:') ?>

@@ -14,14 +14,21 @@ if ($admin) {
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            ¿Cómo hablamos de la problemática de manera espontánea e informal?
+        <h4>
+            Problemática: ¿Cómo…?
+        </h4>
+        <p class="fs22 green">
+            Insights Espontáneos
         </p>
         <p>
-            Pensar en los comentarios negativos o positivos internos más habituales sobre la problemática (en reuniones, delante de la máquina de café, quejas de clientes o usuarios, etc.)
+            <i class="fa fa-lightbulb-o"></i>
+            Entre todos los comentarios generados,
+            <b>ahora cada equipo selecciona los 3 más relevantes</b>
+            <br>
+            (Un reto es relevante si abre una nueva vía o ¡si es diferente a lo que trabajamos habitualmente!)
         </p>
         <p>
-            Seleccionad los tres mejores retos para enfocarse en ellos.
+            Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
         </p>
         <?php if ($admin) { ?>
             <div id="hasvoted"></div>
@@ -68,10 +75,10 @@ if ($admin) {
                         {'table': 'comments'}, function (data, status) {
                            
                     if (data == 0) {
-                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Los equipos aún están votando') ?></b></p>')
                         setTimeout(checkVote, 1000);
                     } else {
-                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado. Ya puedes pulsar en “Continuar Etapa”') ?></b></p>')
 
                     }
 
