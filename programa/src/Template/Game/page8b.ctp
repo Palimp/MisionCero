@@ -18,6 +18,10 @@
             <p class="fs22 green">
                 <?= __('Comentarios espontáneos más relevantes') ?>
             </p>
+            <p>
+                <?= __('Los equipos tienen 10 minutos para introducir todos los comentarios posibles.') ?><br>
+                <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
+            </p>
         </div>
         <div class="col-12 col-md-auto">
             <p class="fs22">

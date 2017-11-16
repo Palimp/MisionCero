@@ -16,12 +16,14 @@ if ($admin) {
     <section>
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Ranking de comentarios') ?>
+                <h4>
+                    <?=__('Problemática inicial: ¿Cómo…?')?>
+                </h4>
+                <p class="fs22 green">
+                    <?= __('Etapa 1- Ranking de comentarios') ?>
                 </p>
                 <p>
-                    <?= __(' Los equipos con más comentarios ganan Bikles y los equipos con menos pierden Bikles!') ?>
-
+                    <?= __('¡Los equipos con más comentarios ganaron Bikles y los equipos con menos perdieron!') ?>
                 </p>
             </div>
 
@@ -52,16 +54,6 @@ if ($admin) {
                 ?>
             </tbody>
         </table>
-
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
-                </b>
-                </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
-            </div>
-        </div>
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
