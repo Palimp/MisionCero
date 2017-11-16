@@ -27,10 +27,10 @@ if ($admin) {
                 <?= $this->Html->image("img2.jpg", ['class' => 'img-fluid']); ?>
             </div>
             <div class="col-5 pl-5">
-                <?= $this->Html->image("img3.jpg", ['class' => 'img-fluid']); ?>
                 <p>
                     <?=__('Estas reuniones suelen transformarse en tertulias y debates sin un output concreto')?>
                 </p>
+                <?= $this->Html->image("img3.jpg", ['class' => 'img-fluid']); ?>
             </div>
         </div>
     </section>
