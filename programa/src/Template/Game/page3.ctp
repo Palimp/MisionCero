@@ -16,8 +16,10 @@ if ($admin) {
         </div>
     </header>
     <section>
-        <p class="fs22">
-            <?= __('¡Sin retos concretos, es complicado llegar a soluciones concretas!')?>
+        <p class="fs22 text-center">
+            <?= __('Si uno mira siempre su problema desde el mismo punto de vista…')?>
+            <br>
+            <?= __('…¡puede perderse soluciones simples y nuevas!')?>
         </p>
         <p class="fs22 text-center">
             <?= __('If you only focus on the problem')?>
@@ -26,11 +28,6 @@ if ($admin) {
 
             <?= $this->Html->image("img4.jpg", ['class' => 'img-fluid']);?>
 
-        </div>
-        <p class="fs22 text-center">
-            <?= __('You might miss the easy solution')?>
-        </p>
-        <div>
         </div>
     </section>
      <?php if ($admin) { ?>
