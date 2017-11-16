@@ -15,7 +15,10 @@ if ($admin) {
     </header>
     <section>
         <p><?=__('Misión cero ¿por qué?')?></p>
-        <p class="fs22"><?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?></p>
+        <div class="alert alert-success d-inline-block">
+            ¡Ganarán Bikles los equipos con más votos!
+          </div>
+        <div class="fs22 alert alert-success d-inline-block"><?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?></p>
         <?= $this->Html->image("img1.jpg", ['class' => 'float-right']); ?>
         
         <div>
