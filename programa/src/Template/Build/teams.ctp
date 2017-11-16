@@ -48,6 +48,7 @@ $fila = '<div class="row bloque">
             </br>
             Como Jefe de Expedición, puedes formar los equipos antes de la partida y así tener todo preparado.
             </br>
+            </br>
             Si no dispones todavía de toda la información para formar los equipos, no te preocupes porque lo podrás hacer al inicio de la partida con los Exploradores (jugadores).
             </br>
             En este caso, pulsa abajo en “lo haré más adelante”
