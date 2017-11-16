@@ -27,6 +27,9 @@ echo $this->element('navbar');
         <p>
             Cuando todos los equipos hayan sido confirmados, aparecerá abajo “empezar partida”. 
         </p>
+        <div>
+            <button type="submit" class="btn btn-primary mb-10"><?= __('Empezar partida') ?></button>
+        </div>
         <div class="form-group">
             <p class="fs26"><?= __('Menú de administración') ?></p>
 
