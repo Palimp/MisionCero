@@ -15,8 +15,13 @@ if ($admin) {
     </header>
     <section>
         <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?= __('Transformar los 3 comentarios seleccionados en retos y elegir en qué ambito colocarlos') ?>
+            <h4>
+                <?=__('Problemática: ¿Cómo…?')?>
+            </h4>
+            <p class="fs22 green">
+                <i class="fa fa-lightbulb-o"></i>
+                <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?><br>
+                <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?>
             </p>
         </div>
         <div class="col-12 col-md-auto">
@@ -27,6 +32,7 @@ if ($admin) {
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
+                    <?=__('Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.')?>
                     <h1><time id="clock"><?= $time ?></time></h1>
                     <i class="fa fa-clock-o"></i>
                     <?php
@@ -74,11 +80,15 @@ if ($admin) {
                 </div>
             </div>
         </div>
-
+        <div>
+            <p>
+                <?=__('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”')?>
+            </p>
+        </div>
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase retos') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 1') ?></button>
     <?php } ?>
 </main>
 

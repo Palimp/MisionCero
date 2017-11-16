@@ -13,8 +13,13 @@
     <section>
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Transformar los 3 comentarios seleccionados en retos y elegir en qué ambito colocarlos') ?>
+                <h4>
+                    <?=__('Problemática: ¿Cómo…?')?>
+                </h4>
+                <p class="fs22 green">
+                    <i class="fa fa-lightbulb-o"></i>
+                    <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?><br>
+                    <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?>
                 </p>
             </div>
             <div class="col fs32">
