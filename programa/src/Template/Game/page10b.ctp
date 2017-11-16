@@ -21,14 +21,7 @@ if ($admin) {
             <?= __('Insights Espontáneos') ?>
         </p>
         <p>
-            <i class="fa fa-lightbulb-o"></i>
-            <?= __('Entre todos los comentarios generados, ') ?>
-            <b><?= __('ahora cada equipo selecciona los 3 más relevantes') ?></b>
-            <br>
-            <?= __('(Un reto es relevante si abre una nueva vía o ¡si es diferente a lo que trabajamos habitualmente!)') ?>
-        </p>
-        <p>
-            <?= __('Retos seleccionados:') ?>
+            <?= __('Los 3 comentarios seleccionados por tu equipo:') ?>
         </p>
         <?php if ($admin) { ?>
 
