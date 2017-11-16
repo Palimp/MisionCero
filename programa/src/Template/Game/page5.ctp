@@ -9,9 +9,11 @@ if ($admin) {
 ?>
  <main>
       <section>
-        <p class="fs22">
-          <?=__('Acabarán la partida con una <b>lista de retos concretos, priorizados y clasificados por ambito,')?></b> <?=__('que les permitirán trabajar su problemática de manera concreta y enfocada, ')?><b><?=__('optimizando la búsqueda de soluciones novedosas')?></b>
-        </p>
+
+        <div class="alert alert-success d-inline-block">
+          <?=__('Acabarán la partida con una ')?><b><?=__('lista de retos concretos, priorizados y clasificados por ambito,')?></b> <?=__('que les permitirán trabajar su problemática de manera concreta y enfocada, ')?><b><?=__('optimizando la búsqueda de soluciones novedosas')?></b>
+        </div>
+
         <div class="text-right">
           <a href="#" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
           <a href="#" data-toggle="tooltip" title="<?=__('Haz click para imprimir')?>">
