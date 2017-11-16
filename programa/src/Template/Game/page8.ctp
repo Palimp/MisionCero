@@ -15,8 +15,15 @@ if ($admin) {
     </header>
     <section>
         <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?=__('Comentarios espontáneos más relevantes')?>
+            <h4>
+                <?=__('Problemática inicial: ¿Cómo…?')?>
+            </h4>
+            <p class="fs22 green">
+                <?= __('Comentarios espontáneos más relevantes') ?>
+            </p>
+            <p>
+                <?= __('Los equipos tienen 10 minutos para introducir todos los comentarios posibles.') ?><br>
+                <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
             </p>
         </div>
         <div class="col-12 col-md-auto">
@@ -27,6 +34,7 @@ if ($admin) {
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
+                    <?=__('Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.')?>
                     <h1><time id="clock"><?= $time ?></time></h1>
                     <i class="fa fa-clock-o"></i>
                     <?php
@@ -83,10 +91,13 @@ if ($admin) {
                 <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
             </div>
         </div>
+        <p>
+            <?=__('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”')?>
+        </p>
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase comentarios') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 1') ?></button>
     <?php } ?>
 </main>
 

@@ -12,7 +12,10 @@
     </header>
     <section>
         <div class="col-12 col-md-auto">
-            <p class="fs22">
+            <h4>
+                <?=__('Problemática inicial: ¿Cómo…?')?>
+            </h4>
+            <p class="fs22 green">
                 <?= __('Comentarios espontáneos más relevantes') ?>
             </p>
         </div>
