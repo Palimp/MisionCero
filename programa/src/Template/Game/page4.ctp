@@ -11,13 +11,16 @@ if ($admin) {
 <main>
     <section>
         <p class="fs22">
-            <?=__('Ayuda a las empresas a identificar ')?><b><?=__('retos concretos, ')?></b><?=__('con una <b>metodología lúdica')?></b>
+            <?=__('Misión Cero ayuda a transformar la problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas ideas.')?>
         </p>
         <div class="py-20 text-center">
 
             <?= $this->Html->image("imgp7.gif", ['class' => 'img-fluid']); ?>
 
         </div>
+        <p class="fs22">
+            <?=__('Binnakle, el juego que ayuda a generar ')?><b><?=__('nuevas soluciones ')?></b><?=__('sobre cualquier tipo de reto, te podrá ayudar más adelante a generar soluciones novedosas a estos retos')?>
+        </p>
     </section>
       <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
