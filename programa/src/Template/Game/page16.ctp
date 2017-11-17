@@ -21,13 +21,39 @@ if ($admin) {
                 <iframe class="embed-responsive-item" src="<?=$url?>" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="text-center mt-5">
-                <div class="alert alert-danger d-inline-block" role="alert">
-                    <?=__('2 Bikles al primer equipo que dice que algo de decorado ha cambiado')?>
+                <!-- ONLY GM -->
+                <div>
+                    <?=__('Pide a los Exploradores que observen con atención el siguiente vídeo')?>
                     </br>
                     <b>
-                        <?=__('4 Bikles al primer equipo capaz de citar elementos que han cambiado')?>
+                        <?=__('Pausa el vídeo en el segundo 40')?>
                     </b>
+                    </br>
+                    <?=__(' y pregunta si ha pasado algo')?>
+                    <ul>
+                        <li>
+                            <b>
+                                <?=__('Ganará 2 Bikles el primer equipo que haya detectado que algo en el decorado ha cambiado')?>
+                            </b>
+                        </li>
+                        <li>
+                            <b>
+                                <?=__('Ganará 4 Bikles el primer equipo capaz de citar elementos que han cambiado')?>
+                            </b>
+                        </li>
+                    </ul>
+                    <i><?=__('Si ningún equipo es capaz de decir que algo ha cambiado, puedes ayudar preguntando ¿habéis visto algún cambio? Y puedes dar ')?><b><?=__('2 Bikles al primer equipo capaz de citar elementos que han cambiado')?></b></i>
                 </div>
+                <!-- ONLY GM -->
+                <!-- ONLY PLAYER -->
+                <div class="alert alert-danger d-inline-block" role="alert">
+                    <b>
+                        <?=__('¡Observar bien el video!')?>
+                    </b>
+                    </br>
+                        <?=__('El Jefe de Expedición hará preguntas al acabar…')?>
+                </div>
+                <!-- ONLY PLAYER -->
             </div>
     </section>
 </section>
