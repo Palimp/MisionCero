@@ -16,6 +16,18 @@ if ($admin) {
             <?= $this->Html->image("breadp33.svg", ['class' => 'w-100']); ?>
         </header>
         <section>
+            <h4>
+                <?=__('Etapa 3- Preguntas básicas')?><br><?=__('Problemática: ¿Cómo…?')?>
+            </h4>
+            <p class="fs22 green">
+                <?=__('¿Cómo hablamos de la problemática de manera espontánea e informal?')?>
+            </p>
+            <p>
+                <i class="fa fa-lightbulb-o"></i>
+                <?=__('Pensar en los comentarios internos más habituales sobre la problemática, positivos o negativos, expresados de forma natural')?>
+            </p>
+
+
             <p class="fs22">
                 <?=__('¿Cómo mejorar mi comunicación interna?')?>
             </p>
@@ -25,50 +37,50 @@ if ($admin) {
             <p class="fs22">
                 <?=__('Pensar en las preguntas más básicas para identificar retos:')?>
             </p>
-            <div class="row fs22">
+            <div class="row fs22 green">
                 <div class="col">
-                    <?=__('¿Cuándo?')?>
+                    <?=__('¿CUÁNDO?')?>
                 </div>
                 <div class="col">
-                    <?=__('¿Dónde?')?>
+                    <?=__('¿DÓNDE?')?>
                 </div>
                 <div class="col">
-                    <?=__('¿Cómo?')?>
+                    <?=__('¿CÓMO?')?>
                 </div>
                 <div class="col">
-                    <?=__('¿Quién?')?>
-                </div>
-            </div>
-            <ol class="green">
-                <li>
-                    <?=__('estas preguntas nos hacen pensar en identificar: momentos relevantes, lugares de uso o compra, maneras de hacer las cossas, públicos objetivos,')?>
-                </li>
-                <li>
-                    <?=__('los transformamos en forma de reto ')?><em><?=__('¿cómo podríamos…?')?></em>
-                </li>
-            </ol>
-            <div class="row fs22">
-                <div class="col">
-                    <?=__('¿Por qué?')?>
-                </div>
-                <div class="col">
-                    <?=__('¿Para qué?')?>
+                    <?=__('¿QUIÉN?')?>
                 </div>
             </div>
-            <ol class="green">
+            <ul>
                 <li>
-                    <?=__('pensamos en “por qué / para qué tenemos que trabajar este reto?” y escribimos estos porqués/ para qués')?>
+                    <?=__('Paso 1- Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
                 </li>
                 <li>
-                    <?=__('los transformamos en forma de reto ')?><em><?=__('¿cómo podríamos…?')?></em>
+                    <?=__('Paso 2- Convertir estas respuestas en retos: ¿cómo podríamos…?')?>
                 </li>
-            </ol>
+            </ul>
+            <div class="row fs22 green">
+                <div class="col">
+                    <?=__('¿POR QUÉ?')?>
+                </div>
+                <div class="col">
+                    <?=__('¿PARA QUÉ?')?>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <?=__('Paso 1- Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
+                </li>
+                <li>
+                    <?=__('Paso 2- Convertirlos en reto: ¿Cómo podríamos…? ')?>
+                </li>
+            </ul>
         </section>
     </section>
 </section>
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Etapa 3') ?></button>
 <?php } ?>
 </main>
 
