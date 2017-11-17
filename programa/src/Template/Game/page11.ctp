@@ -20,7 +20,9 @@ if ($admin) {
             </h4>
             <p class="fs22 green">
                 <i class="fa fa-lightbulb-o"></i>
-                <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?><br>
+                <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?>
+            </p>
+            <p>
                 <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?>
             </p>
         </div>
