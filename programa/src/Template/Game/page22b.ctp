@@ -14,9 +14,16 @@ if ($admin) {
         <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p>
-            <?=__('Retos seleccionados:')?>
+        <h4>
+            <?=__('Problemática: ¿Cómo…?')?>
+        </h4>
+        <p class="fs22 green">
+            <?=__('Preguntas Básicas')?>
         </p>
+        <p>
+            <?=__('Los 3 retos seleccionados por tu equipo:')?>
+        </p>
+
         <?php if ($admin) { ?>
 
         <?php } else { ?>
