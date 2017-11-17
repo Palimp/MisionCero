@@ -11,11 +11,25 @@
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section>
-        <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?= __('El equipo escribe los retos') ?>
-            </p>
-        </div>
+        <h4>
+            <?=__('Problemática: ¿Cómo…?')?>
+        </h4>
+        <p class="fs22 green">
+            <?=__('Retos basados en preguntas básicas')?>
+        </p>
+        <p>
+            <?=__('Los equipos tienen 10 minutos para')?><br>
+            <ul>
+                <li>
+                    <?=__('Identificar momentos, lugares, maneras, razones… relevantes')?>
+                    <?=__('Pueden pulsar el icono amarilla para ver un ejemplo que ayude a entender e inspirar')?><br>
+                </li>
+                <li>
+                    <?=__('Transformarlos en retos en forma de “¿Cómo podríamos…?')?>
+                </li>
+            </ul>
+        </p>
+
 
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
@@ -54,10 +68,10 @@
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
+                    <?= __('¡Ganarán Bikles los equipos con más retos!') ?>
                 </b>
                 </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
+                <?= __('¡Perderán Bikles los equipos con menos retos!') ?>
             </div>
         </div>
     </section>

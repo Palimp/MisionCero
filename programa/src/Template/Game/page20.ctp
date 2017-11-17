@@ -33,7 +33,6 @@ if ($admin) {
             </ul>
         </p>
 
-
         <div class="col-12 col-md-auto">
             <p class="fs22">
                 <?= $trouble ?>
