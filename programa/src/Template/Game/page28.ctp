@@ -15,11 +15,31 @@ if ($admin) {
         <?= $this->Html->image("breadp45.svg", ['class' => 'w-100']); ?>
     </header>
     <section>
-        <p class="fs22">
-            En la siguiente página podrán leer una problemática de una empresa
+
+        <h4>
+            Etapa 2- Parada lúdica
+        </h4>
+        <p class="fs22 green">
+            ATENCIÓN exploradores! <i class="fa fa-smile-o"></i><br>
         </p>
         <p>
-            Deberán elegir qué reto (pregunta) piensan les ayudará mejor para cumplir lo que se pide
+            <i class="fa fa-lightbulb-o"></i>
+            En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación.<br> 
+            El Jefe de Expedición realizará algunas preguntas al terminar…<br>
+            ¡Los equipos que respondan correctamente ganarán Bikles!
+        </p>
+        <ul>
+            <li>
+                <i class="fa fa-comment-o"></i>
+                No pierdas ningún detalle!
+            </li>
+        </ul>
+
+        <p>
+            <b>¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!
+        </p>
+        <p>
+            Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
         </p>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
