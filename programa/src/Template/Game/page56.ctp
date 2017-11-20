@@ -15,9 +15,11 @@ if ($admin) {
     </header> 
     <section>
         <p class="fs22">
-            <?= __('Los retos elegidos por todos los equipos (3 por equipo)') ?>
+            <?= __('Encontrarás abajo una serie de estado de animo o sensaciones.') ?>
             </br>
-            <?= __('Cada persona votará a los 3 retos que le parecen más relevantes (no más de uno de su equipo)') ?>
+            <?= __('El equipo tendrá que elegir los 3 estados que más representan lo que siente ante la problemática trabajada.') ?>
+            </br>
+            <?= __('¡Pueden ser de columnas diferentes! ') ?>
         </p>
         <div class="m-auto">
             <div class="row justify-content-center top6">
@@ -66,8 +68,9 @@ if ($admin) {
 
     </section>
     <?php if ($admin) { ?>
+        <p>Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”</p>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 9') ?></button>
     <?php } else { ?>
         <div class="text-right mt-5">
             <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
@@ -132,7 +135,7 @@ if ($admin) {
                     votos.push($(this).attr('id').replace("_", ""));
                 });
                 if (votos.length!=3){
-                    $('#error').html('<b style="color:red"><?=__('Revise los votos')?></b>');
+                    $('#error').html('<b style="color:red"><?=__('Los equipos aún están votando')?></b>');
                     return;
                 }
                                 $('#submitvotos').attr('style', 'display:none !important');
@@ -143,7 +146,7 @@ if ($admin) {
 
                     $(':checkbox').attr('disabled', 'disabled');
                     cambiar = true;
-                    $('#error').html('<?= __('Votos enviados') ?>');
+                    $('#error').html('<?= __('Todos los equipos han votado. Ya puedes pulsar en “Continuar Etapa”') ?>');
                     setTimeout(checkPage, 1000);
                 });
 
