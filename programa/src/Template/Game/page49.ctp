@@ -17,11 +17,14 @@ $ambits[-1]->ambit=__('Sin ámbito');
         <?= $this->Html->image("breadp63.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <?=__('Los retos de todos los equipos por orden de votos')?>
+        <h4>
+            <?=__('ETAPA 7- Clasificación Retos / Votos / Ámbito')?>
+        </h4>
+        <p class="fs22 green">
+            <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 7')?>
         </p>
         <p>
-            <?=__('Los 5 retos mas votados pasan a la etapa final de la misión')?>
+            <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
         </p>
         <table class="reduced table table-striped text-center">
             <thead>
@@ -54,14 +57,14 @@ $ambits[-1]->ambit=__('Sin ámbito');
 
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <?=__('¡Ganarán Bikles los equipos con más votos!')?>
+                <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
             </div>
         </div>
     </section>
 </section>
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar Etapa 7') ?></button>
 <?php } ?>
 </main>
 
