@@ -15,22 +15,29 @@ if ($admin) {
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <b>
-                Fin del viaje
-            </b>
+        <h4>
+            Final del Viaje- Los 25 retos finalistas
+        </h4>
+        <p class="fs22 green">
+            Exploradores, hemos llegado al Final del Viaje<br>
+            Estamos a punto de conocer los mejores retos para resolver la problemática planteada.
         </p>
         <p>
-            Ahora cada equipo deberá indicar para cada uno de los 25 retos finalistas si lo considera un reto:
-        </p><ul>
+            <i class="fa fa-lightbulb-o"></i>
+            Cada equipo tiene que indicar, para cada retos, si lo considera un reto:
+        </p>
+        <ul>
             <li>
-                · ambicioso: a priori llevará a proyectos complejos, con impacto
+                <i class="fa fa-comment-o"></i>
+                AMBICIOSO: los retos ambiciosos nos llevan, a priori, a proyectos complejos, con impacto
             </li>
             <li>
-                · normal: a priori puede llevar a todo tipo de ideas
+                <i class="fa fa-comment-o"></i>
+                NORMAL: los retos normales nos llevan a todo tipo de ideas
             </li>
             <li>
-                · <em>quick win:</em> a priori llevará más a ideas operativas, implementables sin necesidad de muchos recursos
+                <i class="fa fa-comment-o"></i>
+                QUICK WIN: Un reto quick win nos llevará a ideas más operativas, implementables sin necesidad de elevados recursos
             </li>
         </ul>
         <table class="reduced table table-striped">
