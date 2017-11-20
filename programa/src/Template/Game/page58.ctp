@@ -20,7 +20,7 @@ if ($admin) {
                     <?= __('Ranking de comentarios') ?>
                 </p>
                 <p>
-                    <?= __(' Los equipos con más comentarios ganan Bikles y los equipos con menos pierden Bikles!') ?>
+                    <?= __(' ¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!') ?>
 
                 </p>
             </div>
