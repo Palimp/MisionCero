@@ -27,10 +27,11 @@ if ($admin) {
             <br>
             para explorar nuevas líneas de trabajo de la problemática
         </p>
-        <p>
-            Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
-        </p>
         <?php if ($admin) { ?>
+            
+            <p>
+                Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
+            </p>
  <div id="hasvoted"></div>
         <?php } else { ?>
             <table class="reduced table table-striped">

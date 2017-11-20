@@ -27,10 +27,10 @@ if ($admin) {
             <br>
             (Un reto es relevante si abre una nueva vía o ¡si es diferente a lo que trabajamos habitualmente!)
         </p>
-        <p>
-            Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
-        </p>
         <?php if ($admin) { ?>
+            <p>
+                Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
+            </p>
             <div id="hasvoted"></div>
         <?php } else { ?>
             <table class="reduced table table-striped">
