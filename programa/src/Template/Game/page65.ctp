@@ -14,23 +14,17 @@ if ($admin) {
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <b>
-                Fin del viaje
-            </b>
-            </br>
-            Los 25 retos seleccionados durante la partida
+        <h4>
+            Final del Viaje- Los 25 retos finalistas
+        </h4>
+        <p class="fs22 green">
+            <i class="fa fa-lightbulb-o"></i>
+            Selección final: Cada explorador selecciona los 5 retos más relevantes y novedosos entre los 25 finalistas (5 por etapa)
         </p>
-
         <ul>
             <li>
-                · ambicioso: a priori llevará a proyectos complejos, con impacto
-            </li>
-            <li>
-                · normal: a priori puede llevar a todo tipo de ideas
-            </li>
-            <li>
-                · <em>quick win:</em> a priori llevará más a ideas operativas, implementables sin necesidad de muchos recursos
+                <i class="fa fa-comment-o"></i>
+                Este voto es personal.
             </li>
         </ul>
         <table class="reduced table table-striped text-center">
@@ -106,10 +100,10 @@ if ($admin) {
                         {'field': 'vo'}, function (data, status) {
                     console.log(data);
                     if (data == 0) {
-                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Los equipos aún están votando') ?></b></p>')
                         setTimeout(checkVote, 1000);
                     } else {
-                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado. Ya puedes pulsar en “Continuar Etapa”') ?></b></p>')
 
                     }
 
