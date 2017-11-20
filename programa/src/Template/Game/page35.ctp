@@ -64,10 +64,10 @@ setTimeout(checkVote, 1000);
                         {'table': 'stakes'}, function (data, status) {
                            
                     if (data == 0) {
-                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Los equipos aún están votando') ?></b></p>')
                         setTimeout(checkVote, 1000);
                     } else {
-                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado. Ya puedes pulsar en “Continuar Etapa”') ?></b></p>')
 
                     }
 
