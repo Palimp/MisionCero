@@ -110,10 +110,8 @@
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
+                    <?= __('¡Los equipos con más retos ganarán Bikles, y los equipos con menos retos perderán Bikles!') ?>
                 </b>
-                </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
             </div>
         </div>
     </section>
