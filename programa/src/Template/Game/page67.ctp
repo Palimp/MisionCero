@@ -21,17 +21,21 @@ $ambits[-1]->ambit = __('Sin ámbito');
             <a href="#" class="mr-2"><i class="fa fa-download"></i></a>
             <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
                 <i class="fa fa-print"></i>
-            </a>          
+            </a>
+            <p>
+                <?= __('Descarga o imprime el resumen de la partida') ?>
+            </p>
         </div>
+
+        <h4>
+            <?=__('RESUMEN FINAL DE LA Misión 0')?>
+        </h4>
         <p class="fs22">
             <?= __('Problemática inicial:') ?>
         </p>
         <h2 class="text-center green">
             <?= $trouble ?>
         </h2>
-        <p class="fs22 mt-5">
-            <?= __('Tabla resumen de los retos') ?>
-        </p>
         <article class="row mt-2">
             <div class="col mr-4 pz-4 t5_p">
                 <h4 class><?= __('TOP 5 RETOS PRIORITARIOS') ?></h4>
