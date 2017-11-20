@@ -16,13 +16,10 @@ if ($admin) {
     <section>
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Ranking de comentarios') ?>
-                </p>
-                <p>
-                    <?= __(' Los equipos con más comentarios ganan Bikles y los equipos con menos pierden Bikles!') ?>
-
-                </p>
+                <h4>
+                    <?=__('Problemática: ¿Cómo…?')?><br>
+                    <?=__('Etapa 5- Ranking de retos')?>
+                </h4>
             </div>
 
         </div>
@@ -55,11 +52,7 @@ if ($admin) {
 
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
-                </b>
-                </br>
-                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
+                <?=__('¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!')?>
             </div>
         </div>
     </section>
