@@ -14,34 +14,32 @@ if ($admin) {
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <h4>
-                <?=__('Problemática: ¿Cómo…?')?>
-            </h4>
-            <p class="fs22 green">
-                <?= __('Listado completo de los retos elegidos por los equipos (3 retos por equipo).') ?><br>
-            </p>
-            <p>
-                <i class="fa fa-lightbulb-o"></i>
-                <?= __('Ahora, cada ') ?><b><?= __('explorador, INDIVIDUALMENTE,') ?></b><?= __(' votará los 3 retos que le parecen más relevantes') ?>
-                <br>
-                <?= __('Cada miembro del equipo debe marcar su selección de 3 retos en la columna que lleva su nombre') ?>
-            </p>
-            <ul>
-                <li>
-                    <i class="fa fa-comment-o"></i>
-                    <?=__('Los retos elegidos por tu equipo son los 3 primeros.')?>
-                </li>
-                <li>
-                    <i class="fa fa-comment-o"></i>
-                    <?=__('No puedes votar más de 1 reto de tu equipo')?>
-                </li>
-                <li>
-                    <i class="fa fa-comment-o"></i>
-                    <?=__('Este voto es personal')?>
-                </li>
-            </ul>
+        <h4>
+            <?=__('Problemática: ¿Cómo…?')?>
+        </h4>
+        <p class="fs22 green">
+            <?= __('Listado completo de los retos elegidos por los equipos (3 retos por equipo).') ?><br>
         </p>
+        <p>
+            <i class="fa fa-lightbulb-o"></i>
+            <?= __('Ahora, cada ') ?><b><?= __('explorador, INDIVIDUALMENTE,') ?></b><?= __(' votará los 3 retos que le parecen más relevantes') ?>
+            <br>
+            <?= __('Cada miembro del equipo debe marcar su selección de 3 retos en la columna que lleva su nombre') ?>
+        </p>
+        <ul>
+            <li>
+                <i class="fa fa-comment-o"></i>
+                <?=__('Los retos elegidos por tu equipo son los 3 primeros.')?>
+            </li>
+            <li>
+                <i class="fa fa-comment-o"></i>
+                <?=__('No puedes votar más de 1 reto de tu equipo')?>
+            </li>
+            <li>
+                <i class="fa fa-comment-o"></i>
+                <?=__('Este voto es personal')?>
+            </li>
+        </ul>
         <table class="reduced table table-striped text-center">
             <thead>
                 <tr>
