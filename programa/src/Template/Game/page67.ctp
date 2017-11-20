@@ -36,6 +36,9 @@ $ambits[-1]->ambit = __('Sin ámbito');
         <h2 class="text-center green">
             <?= $trouble ?>
         </h2>
+        <p class="fs22 mt-5">
+            <?= __('Tabla resumen de los retos') ?>
+        </p>
         <article class="row mt-2">
             <div class="col mr-4 pz-4 t5_p">
                 <h4 class><?= __('TOP 5 RETOS PRIORITARIOS') ?></h4>
