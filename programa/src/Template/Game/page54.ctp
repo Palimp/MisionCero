@@ -14,6 +14,11 @@ if ($admin) {
         <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
+        <?php if ($admin) { ?>
+            <p class="fs22 green">
+                <?=__('Como Jefe de Expedición, ')?><b><?=__('tienes el privilegio de sumar o restar Bikles ')?></b><?=__('si consideras que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc')?>
+            </p>
+        <?php } ?>
         <p class="fs22">
             <?=__('Ranking de Bikles al acabar la etapa 8')?>
         </p>
@@ -73,7 +78,7 @@ if ($admin) {
 </section>
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Ir a Etapa 9') ?></button>
 <?php } ?>
 </main>
 
