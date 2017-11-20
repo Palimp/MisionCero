@@ -16,8 +16,15 @@ if ($admin) {
     <section>
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?=__('Identicar momentos clave de interacción y listar painpoints')?>
+                <h4>
+                    <?=__('Problemática: ¿Cómo…?')?>
+                </h4>
+                <p class="fs22 green">
+                    <?= __('Retos basados en momentos claves de interacción y en ') ?><i><?= __('pain points') ?></i>
+                </p>
+                <p>
+                    <?= __('Los equipos tienen 10 minutos para introducir todos los retos posibles, basados en basados en los ') ?><i><?= __('pain points ') ?></i><?= __('identificados') ?><br>
+                    <?= __('Para ello, procederán en 3 fases:') ?>
                 </p>
             </div>
             <div class="col fs32">
@@ -75,7 +82,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase comentarios') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 7') ?></button>
     <?php } ?>
 </main>
 
