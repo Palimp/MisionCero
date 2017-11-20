@@ -28,8 +28,15 @@ $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9',
             <a href="#" class="mr-2"><i class="fa fa-download"></i></a>
             <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
                 <i class="fa fa-print"></i>
-            </a>          
+            </a>
+            <p>
+                <?= __('Descarga o imprime el resumen de la partida') ?>
+            </p>
         </div>
+        
+        <h4>
+            <?=__('RESUMEN FINAL DE LA Misión 0')?>
+        </h4>
         <p class="fs22">
             <?= __('Problemática inicial:') ?>
         </p>
