@@ -12,8 +12,14 @@
     </header>
     <section>
         <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?= __('El equipo escribe los retos') ?>.
+            <h4>
+                <?=__('Problemática: ¿Cómo…?')?>
+            </h4>
+            <p class="fs22 green">
+                <?=__('Retos basados en estados de ánimo')?>
+            </p>
+            <p>
+                <?=__('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados')?>
             </p>
         </div>
 
@@ -114,15 +120,6 @@
         <div class="text-center mt-5">
             <p id="mensaje"></p>
         </div>
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
-                </b>
-                </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
-            </div>
-        </div>
     </section>
     <div>
 
@@ -171,7 +168,7 @@
     $this->Url->build(["controller" => "Game", "action" => "savemotions"])
     ?>", {'datos': JSON.stringify(datos)}, function (data, status) {
 
-                    $('#mensaje').html('<?= __('Comentarios enviados') ?>');
+                    $('#mensaje').html('<?= __('El Jefe de Expedición ha recibido tus comentarios') ?>');
                     setTimeout(checkPage, 1000);
                 });
 
