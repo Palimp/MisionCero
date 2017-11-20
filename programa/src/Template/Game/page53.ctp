@@ -87,6 +87,14 @@ if ($admin) {
             </br>
             <?=__('¿Por qué lo llamamos el pantano de lo imposible?')?>
         </p>
+        <?php if ($admin) { ?>
+            <p>
+                <?=__('RESPUESTA CORRECTA: “pensar en el problema”')?>
+            </p>
+            <p>
+                <?=__('El Jefe de Expedición sumará 3 bikles al primer equipo que responda correctamente')?>
+            </p>
+        <?php } ?>
        <div class="text-center">
             <blockquote class="w-50 fs26 m-auto">
                 <?=__('si tuviera 1 hora para encontrar soluciones para salvar el mundo, invertiría 55 minutos en …')?>
@@ -100,7 +108,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase retos') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente enigma') ?></button>
     <?php } ?>
 </main>
 
