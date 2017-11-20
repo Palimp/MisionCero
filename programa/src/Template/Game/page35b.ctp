@@ -14,12 +14,19 @@ if ($admin) {
         <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p>
-            <?=__('Retos seleccionados:')?>
-        </p>
         <?php if ($admin) { ?>
 
         <?php } else { ?>
+
+            <h4>
+                <?=__('Problemática: ¿Cómo…?')?>
+            </h4>
+            <p class="fs22 green">
+                <?=__('Puntos de Vista')?>
+            </p>
+            <p>
+                <?=__('Los 3 retos seleccionados por tu equipo:')?> 
+            </p>
             <table class="reduced table table-striped">
                 <tbody>
                     <?php foreach ($comments as $comment) { ?>
