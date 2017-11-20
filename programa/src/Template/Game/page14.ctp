@@ -14,9 +14,11 @@ if ($admin) {
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22 green">
-            <?=__('Como Jefe de Expedición, ')?><b><?=__('tienes el privilegio de sumar o restar Bikles ')?></b><?=__('si consideras que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc')?>
-        </p>
+        <?php if ($admin) { ?>
+            <p class="fs22 green">
+                <?=__('Como Jefe de Expedición, ')?><b><?=__('tienes el privilegio de sumar o restar Bikles ')?></b><?=__('si consideras que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc')?>
+            </p>
+        <?php } ?>
         <p class="fs22">
             <?=__('Ranking de Bikles al acabar la etapa 1')?>
         </p>
