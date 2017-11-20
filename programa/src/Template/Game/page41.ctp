@@ -16,21 +16,23 @@ if ($admin) {
     <section>
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo') ?>
-                </p>
-                <p>
-                    <b>Fase 1:')?></b>
-                    <?= __('Se dividen los equipos en 2') ?>
-                    </br>
-                    <?= __('- la mitad tendrá que tratar de vender el objeto que aparece en la foto (¡teniendo en cuenta la observación que incluye!)') ?>
-                    </br>
-                    <?= __('- los otros equipos escucharán la presentación de sus compañeros e indicarán al final si les han convencido') ?>
-                    </br>
-                    </br>
-                    <b><?= __('Fase 2:') ?></b>
-                    <?= __('se repite el proceso: los equipos que escucharón ahora presentan y vice versa') ?>
-                </p>
+                <?php if ($admin) { ?>
+                    <p class="fs22">
+                        <?= __('Los equipos se agrupan por dos: cada equipo se junta con otro.') ?>
+                    </p>
+                    <p>
+                        <b>Fase 1:</b>
+                        </br>
+                        <?= __('- Uno de los 2 equipos tendrá que tratar de vender en 3 minutos el otro el objeto que aparece en la foto (¡teniendo en cuenta la observación que figura!): tendrá que explicarle porque tiene que comprar su objeto.') ?>
+                        </br>
+                        <?= __('- El otro equipo escucha la presentación y cuando acaba tiene que comunicar al Jefe de Expedición se le han convencido.') ?>
+                        </br>
+                        </br>
+                        <b><?= __('Fase 2:') ?></b>
+                        </br>
+                        <?= __('- se repite el proceso intercambiando los equipos: los que presentaron escuchan y viceversa') ?>
+                    </p>
+                <?php } ?>
             </div>
             <div class="col fs32">
                 <div class="d-flex align-items-end flex-column">
@@ -84,22 +86,37 @@ if ($admin) {
             </div>
         </div>
         <div class="text-center">
-             <?= $this->Html->image("ludica".$image.".png", ['class' => 'img-fluid']); ?>
+            <p class="f22 green"><?= __('Para cada objeto sus limitaciones') ?></p>
+
+            <?= $this->Html->image("ludica".$image.".png", ['class' => 'img-fluid']); ?>
+            <p><?= __('Este objeto NO puede colocarse en la cabeza') ?></p>
            
-        </div>
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    <?= __('nos han convencido + 2 Bikles') ?>
-                </b>
-                </br><?= __(' neutro 0 Bikles') ?>
-                </br><?= __(' no nos convence nada - 2 Bikles') ?>
-            </div>
         </div>
     </section>
     <?php if ($admin) { ?>
+        <div class="text-center mt-5">
+            <div class="alert alert-danger d-inline-block" role="alert">
+                <p><?= __('El Jefe de Expedición distribuirá Bikles:') ?></p>
+                </br>
+                <b>
+                    <?= __('- Si la venta ha sido neutra, no ganarán ni perderán Bikles') ?>
+                </b>
+                </br>
+                <b>
+                    <?= __('- Perderán 2 bikles los equipos que no hayan convencido en absoluto al equipo rival') ?>
+                </b>
+                </br>
+                <b>
+                    <?= __('- Ganarán 2 Bikles los equipos capaces de convencer al equipo rival') ?>
+                </b>
+                </br>
+                <b>
+                    <?= __('Apunta los Bikles ganados o perdidos por cada equipo: los distribuirás en la siguiente pantalla') ?>
+                </b>
+            </div>
+        </div>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente objeto') ?></button>
     <?php } ?>
 </main>
 
