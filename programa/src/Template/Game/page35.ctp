@@ -14,11 +14,20 @@ if ($admin) {
         <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <?=__('Cada equipo selecciona los 3 retos espontáneos que le parece más relevantes y novedosos ')?>
-            </br>
-            <?=__('(para abrir nuevas líneas de trabajo de la problemática)')?>
+
+        <h4>
+            <?=__('Problemática: ¿Cómo…?')?>
+        </h4>
+        <p class="fs22 green">
+            <?=__('Puntos de Vista')?>
         </p>
+        <p>
+            <i class="fa fa-lightbulb-o"></i>
+            <?=__('Entre todos los retos generados, ahora cada equipo selecciona')?> 
+            <b><?=__('los 3 más relevantes y novedosos')?></b>
+            <?=__('para explorar nuevas líneas de trabajo de la problemática')?>
+        </p>
+        
         <?php if ($admin) { ?>
 <div id="hasvoted"></div>
         <?php } else { ?>
@@ -48,7 +57,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 5') ?></button>
     <?php } ?>
 </main>
 
