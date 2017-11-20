@@ -29,8 +29,14 @@ function getTipo($a, $b, $c) {
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <?= __('Ranking final de los retos') ?>
+        <h4>
+            <?=__('FINAL DEL VIAJE- Clasificación Retos / Votos / Ámito / Alcance')?>
+        </h4>
+        <p class="fs22 green">
+            <?=__('¡Enhorabuena exploradores! Hemos terminado la Misión 0 con éxito.')?>
+        </p>
+        <p>
+            <?= __('Esta es la clasificación final de los retos finalistas') ?>
         </p>
         <table class="reduced table table-striped text-center">
             <thead>
@@ -70,7 +76,7 @@ function getTipo($a, $b, $c) {
 
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <?= __('¡Ganarán Bikles los equipos con más votos!') ?>
+                <?= __('¡Los equipos que hayan obtenido más votos ganan Bikles!') ?>
             </div>
         </div>
     </section>
