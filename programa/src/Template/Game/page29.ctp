@@ -93,7 +93,7 @@ shuffle($answers);
 
                     $(':radio').attr('disabled', 'disabled');
                     
-                    $('#error').html('<?= __('Selección enviados') ?><br/>Bikles: '+voto);
+                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: '+voto);
                     setTimeout(checkPage, 1000);
                 });
             });
