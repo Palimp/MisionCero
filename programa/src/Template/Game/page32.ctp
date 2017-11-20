@@ -15,8 +15,21 @@ if ($admin) {
         <?= $this->Html->image("breadp49.svg", ['class' => 'w-100']); ?>
     </header>
     <section>
+        <h4>
+            <?=__('Etapa 5- Puntos de vista')?><br>
+            <?=__('Problemática: ¿Cómo…?')?>
+        </h4>
+        <p class="fs22 green">
+            <?=__('¿Cómo ven los Stakeholders el problema, desde su punto de vista?')?>
+        </p>
+        <p>
+            <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
+        </p>
+
+
         <p class="fs22">
-            <?=__('Pensar cómo los diferentes actores del tema, los Stakeholders, ven el problema desde su punto de vista')?>
+            <i class="fa fa-comment-o"></i>
+            <?=__('Pensar en los diferentes actores, los stakeholders, que intervienen en nuestra problemática.')?>
         </p>
         <p>
             <?=__('Un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...)')?>
@@ -28,7 +41,7 @@ if ($admin) {
                 </br>
                 <i class="fa fa-chevron-down"></i>
                 </br>
-                <?=__('expresarlos en forma de reto:')?>
+                <b><?=__('Luego expresar las diferentes visiones en forma de reto:')?></b>
                 </br>
                 <em><?=__('¿cómo podríamos…?')?></em>
             </p>
@@ -37,7 +50,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Etapa 5') ?></button>
     <?php } ?>
 </main>
 
