@@ -20,17 +20,6 @@ if ($admin) {
                     <?=__('Problemática: ¿Cómo…?')?><br>
                     <?=__('Etapa 5- Ranking de retos')?>
                 </h4>
-                <p class="fs22 green">
-                    <?=__('¿Cómo ven los Stakeholders el problema, desde su punto de vista?')?>
-                </p>
-                <p>
-                    <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
-                </p>
-
-
-                <p class="fs22">
-                    <?= __('Ranking de comentarios') ?>
-                </p>
                 <p>
                     <?= __('¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!') ?>
 
