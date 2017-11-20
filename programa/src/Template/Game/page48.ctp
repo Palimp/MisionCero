@@ -14,11 +14,32 @@ if ($admin) {
         <?= $this->Html->image("breadp63.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
-        <p class="fs22">
-            <?= __('Los retos elegidos por todos los equipos (3 por equipo)') ?>
-            </br>
-            <?= __('Cada persona votará a los 3 retos que le parecen más relevantes (no más de uno de su equipo)') ?>
+        <h4>
+            <?=__('Problemática: ¿Cómo…?')?>
+        </h4>
+        <p class="fs22 green">
+            <?=__('Listado completo de retos (3 retos por equipo).')?>
         </p>
+        <p>
+            <i class="fa fa-lightbulb-o"></i>
+            <?= __('Ahora, cada ') ?><b><?= __('explorador, INDIVIDUALMENTE,') ?></b><?= __(' votará los 3 retos que le parecen más relevantes') ?>
+            <br>
+            <?= __('Cada miembro del equipo debe marcar su selección de 3 retos en la columna que lleva su nombre') ?>
+        </p>
+        <ul>
+            <li>
+                <i class="fa fa-comment-o"></i>
+                <?=__('Los retos elegidos por tu equipo son los 3 primeros.')?>
+            </li>
+            <li>
+                <i class="fa fa-comment-o"></i>
+                <?=__('No puedes votar más de 1 reto de tu equipo')?>
+            </li>
+            <li>
+                <i class="fa fa-comment-o"></i>
+                <?=__('Este voto es personal')?>
+            </li>
+        </ul>
         <table class="reduced table table-striped text-center">
             <thead>
                 <tr>
@@ -105,10 +126,10 @@ if ($admin) {
                         {'field': 'vp'}, function (data, status) {
                     console.log(data);
                     if (data == 0) {
-                        $('#hasvoted').html('<p style="color:red"><b><?= __('Faltan equipos por votar') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:red"><b><?= __('Los equipos aún están votando') ?></b></p>')
                         setTimeout(checkVote, 1000);
                     } else {
-                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado') ?></b></p>')
+                        $('#hasvoted').html('<p style="color:green"><b><?= __('Todos los equipos han votado. Ya puedes pulsar en “Continuar Etapa”') ?></b></p>')
 
                     }
 
