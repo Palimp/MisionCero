@@ -18,7 +18,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
     </header> 
     <section>
         <h4>
-            <?=__('ETAPA 5- Clasificación Retos / Votos / Ámbito')?>
+            <?=__('ETAPA 5- Clasificación Retos / Votos / Ámbitos')?>
         </h4>
         <p class="fs22 green">
             <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 5')?>

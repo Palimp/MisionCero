@@ -14,7 +14,7 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    <?= __('Selección de Retos / Ámbito de tu equipo:') ?>
+                    <?= __('Selección de Retos / Ámbitos de tu equipo:') ?>
                 </p>
             </div>
             <div class="col fs32">

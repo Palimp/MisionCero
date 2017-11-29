@@ -30,7 +30,7 @@ function getTipo($a, $b, $c) {
     </header> 
     <section>
         <h4>
-            <?=__('FINAL DEL VIAJE- Clasificación Retos / Votos / Ámito / Alcance')?>
+            <?=__('FINAL DEL VIAJE- Clasificación Retos / Votos / Ámbitos / Alcance')?>
         </h4>
         <p class="fs22 green">
             <?=__('¡Enhorabuena exploradores! Hemos terminado la Misión 0 con éxito.')?>
