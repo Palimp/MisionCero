@@ -19,7 +19,7 @@
                 <p class="fs22 green">
                     <i class="fa fa-lightbulb-o"></i>
                     <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?><br>
-                    <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?>
+                    <b><?= __('Los equipos tienen 5 minutos') ?>
                 </p>
             </div>
             <div class="col fs32">

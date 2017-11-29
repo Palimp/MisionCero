@@ -23,7 +23,7 @@ if ($admin) {
                 <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?>
             </p>
             <p>
-                <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?>
+                <b><?= __('Los equipos tienen 5 minutos') ?>
             </p>
         </div>
         <div class="col-12 col-md-auto">
