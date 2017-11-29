@@ -16,7 +16,7 @@
                 <?=__('Problemática: ¿Cómo…?')?>
             </h4>
             <p class="fs22 green">
-                <?= __('Comentarios espontáneos más relevantes') ?>
+                <?= __('Comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
             </p>
             <p>
                 <?= __('Los equipos tienen 10 minutos para introducir todos los comentarios posibles.') ?><br>
