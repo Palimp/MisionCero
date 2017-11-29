@@ -16,7 +16,7 @@ echo $this->element('navbar');
         </div>
     </header>
     <section>
-        <p class="fs22">Ahora, espera que los equipos entren en la partida y:</p>
+        <p class="fs22">Ahora, crea los equipos si lo deseas.<br> Si prefieres, los equipos se pueden configurar al inicio de la partida, </p>
         <ul>
             <li>
                 - en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.
