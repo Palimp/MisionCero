@@ -40,7 +40,7 @@
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Borrar cookies'), ['controller' => 'Build', 'action' => 'reset']
+                                __('Otro código'), ['controller' => 'Build', 'action' => 'reset']
                         )
                         ?>
                     </li>
