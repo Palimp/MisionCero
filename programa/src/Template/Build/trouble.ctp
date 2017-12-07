@@ -24,7 +24,7 @@ echo $this->element('navbar');
                
 
                 <input type="text" name="trouble" id="trouble" class="form-control fs26" placeholder="Introduce aquí la problemática" value="<?=$trouble?>">
-                <b class="fs26"><?= __('La problemática inicial tiene que expresarse de la siguiente manera: ¿Cómo podríamos…?') ?></b>
+                <b class="fs26"><?= __('La problemática inicial tiene que expresarse de la siguiente manera:') ?><br><?= __('¿Cómo podríamos…?') ?></b>
             </div>
             <div class="col col-md-auto">
                 <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Confirma la problematica" class="d-inline-block">
