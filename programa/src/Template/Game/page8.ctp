@@ -26,11 +26,6 @@ if ($admin) {
                 <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
             </p>
         </div>
-        <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?= $trouble ?>
-            </p>
-        </div>
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
