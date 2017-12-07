@@ -22,15 +22,16 @@ if ($admin) {
         </p>
         <p>
             <?=__('Los equipos tienen 10 minutos para')?><br>
-            <ul>
+            <ol>
                 <li>
                     <?=__('Identificar momentos, lugares, maneras, razones… relevantes')?>
-                    <?=__('Pueden pulsar el icono amarilla para ver un ejemplo que ayude a entender e inspirar')?><br>
+                    <br>
+                    <?=__('Pueden pulsar el icono amarilla para ver un ejemplo que ayude a entender e inspirar')?>
                 </li>
                 <li>
                     <?=__('Transformarlos en retos en forma de “¿Cómo podríamos…?')?>
                 </li>
-            </ul>
+            </ol>
         </p>
 
         <div class="col-12 col-md-auto">
@@ -38,6 +39,15 @@ if ($admin) {
                 <?= $trouble ?>
             </p>
         </div>
+
+        <?php if ($admin) { ?>
+            <p class="fs22">
+                Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.
+                <br>
+                Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”
+            </p>  
+        <?php } ?>
+
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
