@@ -22,18 +22,6 @@ if ($admin) {
                 <?=__('Problemática: '.$trouble)?>
             </h4>
             <p class="fs22 green">
-                <?=__('¿Cómo hablamos de la problemática de manera espontánea e informal?')?>
-            </p>
-            <p>
-                <i class="fa fa-lightbulb-o"></i>
-                <?=__('Pensar en los comentarios internos más habituales sobre la problemática, positivos o negativos, expresados de forma natural')?>
-            </p>
-
-
-            <p class="fs22">
-                <?=__('¿Cómo mejorar mi comunicación interna?')?>
-            </p>
-            <p>
                 <?=__('Utilizar las preguntas básicas para identificar retos más concretos y, si es posible, no habituales, sobre la problemática.')?>
             </p>
             <p class="fs22">
