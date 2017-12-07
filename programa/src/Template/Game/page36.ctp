@@ -25,6 +25,13 @@ if ($admin) {
             </p>
         </div>
 
+        <?php if ($admin) { ?>
+            <p>
+                Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.
+                <br>
+                Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”
+            </p>  
+        <?php } ?>
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
@@ -79,7 +86,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 3') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 5') ?></button>
     <?php } ?>
 </main>
 
