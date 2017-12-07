@@ -14,6 +14,35 @@ if ($admin) {
         <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section>
+        <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
+        <div class="col-12 col-md-auto">
+            <h4>
+                Etapa 2- Parada lúdica
+            </h4>
+            <p class="fs22 green">
+                ATENCIÓN exploradores! 
+                <i class="fa fa-smile-o"></i>
+            </p>
+            <p>
+                <i class="fa fa-comment-o"></i>
+                En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación. 
+                <br>
+                El Jefe de Expedición realizará algunas preguntas al terminar…
+                <br>
+                ¡Los equipos que respondan correctamente ganarán Bikles!
+                <b>
+                    No pierdas ningún detalle!
+                </b>
+            </p>
+        </div>
+        <?php if ($admin) { ?>
+            <p>
+                Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
+            </p>
+        <?php } ?>
+        <!-- en el boton de pasar al video poner TXTO: "Pasar al vídeo" -->
+        <!-- end ESTO VA EN UNA PAGINA PREVIA NUEVA-->
+
         <div class="d-flex align-items-end flex-column fs32 mb-5">
 
 
