@@ -29,7 +29,10 @@ if ($admin) {
         </p>
         
         <?php if ($admin) { ?>
-<div id="hasvoted"></div>
+            <p>
+                Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
+            </p>  
+            <div id="hasvoted"></div>
         <?php } else { ?>
             <table class="reduced table table-striped">
                 <tbody>
