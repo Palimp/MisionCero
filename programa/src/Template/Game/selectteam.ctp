@@ -50,6 +50,8 @@
         <p><?= __('Si no es el caso y los Exploradores forman ahora sus equipos, deberás seleccionar un nombre de equipo (¡no pierdas tiempo porque si otro equipo se adelanta y elije el nombre que querías deberás escoger otro!)  e indicar los nombres de todos sus miembros, separados por comas (¡importante!)')?>
             <br>
             <?= __('Una vez acabado, no te olvides de pulsar en “guardar equipo” para que el Jefe de Expedición pueda iniciar la partida')?>
+            <br>
+            <?= __('Si te has equivocado al introducir tu equipo puedes cambiarlo seleccionando otro nombre de explorador y añadiendo de nuevo los nombres de los participantes.')?>
         </p>
 
         <?php
