@@ -6,6 +6,9 @@
 if ($admin) {
     echo $this->element('navbar');
 }
+$ambits[-1] = new \stdClass();
+$ambits[-1]->ambit = __('Sin ámbito');
+
 ?>
 
 <!-- ** pag p15 ** -->

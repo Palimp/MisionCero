@@ -15,7 +15,7 @@ if ($admin) {
     </header>
     <section>
         <h4>
-            <?=__('Etapa 1- Insights espontáneos')?><br><?=__('Problemática inicial: ¿Cómo…?')?>
+            <?=__('Etapa 1- Insights espontáneos')?><br><?=__('Problemática inicial: '.$trouble)?>
         </h4>
         <p class="fs22 green">
             <?=__('¿Cómo hablamos de la problemática de manera espontánea e informal?')?>

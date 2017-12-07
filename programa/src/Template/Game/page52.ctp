@@ -101,35 +101,40 @@ if ($admin) {
 
 <script>
     var page = 52;
+    var stop =<?= $stop ?>;
+
     $(function () {
 
 
         setTimeout(checkTime, 1000);
-        function checkTime() {
 
-            $.get("<?=
+<?php if ($admin) { ?>
+            function checkTime() {
+
+                $.get("<?=
     $this->Url->build([
         "controller" => "Game",
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-                if (data != "0" && data != "00:00") {
+                    if (data != "0" && data != "00:00") {
 
-                    $('#clock').html(data);
-                    setTimeout(checkTime, 1000);
-                } else {
-
-                    alert("<?= __('Se acabó el tiempo') ?>");
-                    location.href = '<?=
+                        $('#clock').html(data);
+                        setTimeout(checkTime, 1000);
+                    } else {
+                        if (stop) {
+                            alert("<?= __('Se acabó el tiempo') ?>");
+                            location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => $admin ? 'page53' : 'index'
+        "action" => $admin ? 'page54' : 'index'
     ])
     ?>';
-                }
-            });
-        }
-<?php if ($admin) { ?>
+                        }
+                    }
+                });
+            }
+            
             $('#siguiente').click(function () {
                 location.href = '<?=
     $this->Url->build([
@@ -146,7 +151,37 @@ if ($admin) {
     ])
     ?>';
             });
-<?php } ?>
+    <?php
+} else {
+    ?>
+            function checkTime() {
+
+                $.get("<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "gettime"
+    ])
+    ?>", function (data, status) {
+                    if (data != "0" && data != "00:00") {
+
+                    $('#clock').html(data);
+                            setTimeout(checkTime, 1000);
+                    } 
+                    else if (data != "0") {
+                    alert("<?= __('Se acabó el tiempo') ?>");
+                    location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                    }
+                    else{
+                               setTimeout(checkTime, 1000);
+                    }
+                    
+                });
+                }
+    <?php
+}
+?>
+        
+        
 
     });
 </script>
