@@ -41,7 +41,7 @@ if ($admin) {
         </div>
 
         <?php if ($admin) { ?>
-            <p class="fs22">
+            <p>
                 Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.
                 <br>
                 Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”
