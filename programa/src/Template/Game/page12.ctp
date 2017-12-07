@@ -43,6 +43,9 @@ $ambits[-1]->ambit = __('Sin ámbito');
                 <?=__('Este voto es personal')?>
             </li>
         </ul>
+        <p>
+            <?= __('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”') ?><br>
+        </p>
         <table class="reduced table table-striped text-center">
             <thead>
                 <tr>
