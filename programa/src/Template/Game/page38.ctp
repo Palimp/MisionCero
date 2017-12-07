@@ -64,7 +64,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
 </section>
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar Etapa 5') ?></button>
 <?php } ?>
 </main>
 
