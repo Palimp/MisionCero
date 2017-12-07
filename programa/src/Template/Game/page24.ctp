@@ -43,6 +43,12 @@ $ambits[-1]->ambit = __('Sin ámbito');
                 <?=__('Este voto es personal')?>
             </li>
         </ul>
+
+        <?php if ($admin) { ?>
+            <p>
+                Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
+            </p>  
+        <?php } ?>
         <table class="reduced table table-striped text-center">
             <thead>
                 <tr>
