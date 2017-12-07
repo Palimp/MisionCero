@@ -14,7 +14,7 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    <?= __('Cada equipo selecciona en que ámbito colocar los 3 retos que le parece más relevantes') ?>
+                    <?= __('Los retos y ámbitos seleccionados por tu equipo:') ?>
                 </p>
             </div>
 
