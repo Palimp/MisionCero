@@ -16,7 +16,7 @@ if ($admin) {
     </header>
     <section>
         <h4>
-            Etapa 4- Parada lúdica
+            Etapa 4 - Parada lúdica
         </h4>
         <p class="fs22 green">
             Casos prácticos
@@ -37,7 +37,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Caso prácitco') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Caso práctico') ?></button>
     <?php } ?>
 </main>
 
