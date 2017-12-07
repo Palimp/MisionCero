@@ -16,10 +16,26 @@ if ($admin) {
     <section>
 
         <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?=__('El equipo escribe los retos')?>
+            <h4>
+                <?=__('Problemática: '.$trouble)?>
+            </h4>
+            <p class="fs22 green">
+                <?=__('Retos basados en puntos de vista')?>
+            </p>
+            <p>
+                <?=__('Los equipos tienen 10 minutos para introducir todos los retos posibles, basados en los puntos de vista de los Stakeholders:')?><br>
+                <?=__('Cada equipo se pondrá en el punto de vista de varios de ellos (un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...) para generar retos:')?><br>
+                <ol>
+                    <li>
+                        <?=__('Pensar: ¿cómo ven el reto desde su punto de vista? ')?>
+                    </li>
+                    <li>
+                        <?=__('Expresarlo en forma de reto:  ¿cómo podríamos…?')?>
+                    </li>
+                </ol>
             </p>
         </div>
+
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
@@ -72,17 +88,15 @@ if ($admin) {
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
-                </b>
+                <?=__('¡Los equipos con más retos ganarán Bikles, ')?>
                 </br>
-                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
+                <?=__('y los equipos con menos retos perderán Bikles!')?>
             </div>
         </div>
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase comentarios') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 5') ?></button>
     <?php } ?>
 </main>
 
