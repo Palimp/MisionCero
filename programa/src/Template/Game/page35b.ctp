@@ -19,7 +19,7 @@ if ($admin) {
         <?php } else { ?>
 
             <h4>
-                <?=__('Problemática: ¿Cómo…?')?>
+                <?=__('Problemática: '.$trouble)?>
             </h4>
             <p class="fs22 green">
                 <?=__('Puntos de Vista')?>

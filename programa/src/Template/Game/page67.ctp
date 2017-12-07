@@ -31,7 +31,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
             <?=__('RESUMEN FINAL DE LA Misión 0')?>
         </h4>
         <p class="fs22">
-            <?= __('Problemática inicial:') ?>
+            <?=__('Problemática inicial: '.$trouble)?>
         </p>
         <h2 class="text-center green">
             <?= $trouble ?>

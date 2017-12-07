@@ -17,7 +17,7 @@ if ($admin) {
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <h4>
-                    <?=__('Problemática: ¿Cómo…?')?>
+                    <?=__('Problemática: '.$trouble)?>
                 </h4>
                 <p class="fs22 green">
                     <?= __('Retos basados en momentos claves de interacción y en ') ?><i><?= __('pain points') ?></i>

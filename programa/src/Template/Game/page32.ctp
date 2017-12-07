@@ -17,7 +17,7 @@ if ($admin) {
     <section>
         <h4>
             <?=__('Etapa 5- Puntos de vista')?><br>
-            <?=__('Problemática: ¿Cómo…?')?>
+            <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">
             <?=__('¿Cómo ven los Stakeholders el problema, desde su punto de vista?')?>

@@ -38,7 +38,7 @@ $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9',
             <?=__('RESUMEN FINAL DE LA Misión 0')?>
         </h4>
         <p class="fs22">
-            <?= __('Problemática inicial:') ?>
+            <?=__('Problemática inicial: '.$trouble)?>
         </p>
         <h2 class="text-center green">
             <?= $trouble ?>

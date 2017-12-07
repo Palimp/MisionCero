@@ -38,7 +38,7 @@ $tipos=[__('Ambicioso'),__('Normal'),__('Quick win')]
             <?=__('RESUMEN FINAL DE LA Misión 0')?>
         </h4>
         <p class="fs22">
-            <?= __('Problemática inicial:') ?>
+            <?=__('Problemática inicial: '.$trouble)?>
         </p>
         <h2 class="text-center green">
             <?= $trouble ?>

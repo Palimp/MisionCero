@@ -17,7 +17,9 @@ if ($admin) {
         </header>
         <section>
             <h4>
-                <?=__('Etapa 3- Preguntas básicas')?><br><?=__('Problemática: ¿Cómo…?')?>
+                <?=__('Etapa 3- Preguntas básicas')?>
+                <br>
+                <?=__('Problemática: '.$trouble)?>
             </h4>
             <p class="fs22 green">
                 <?=__('¿Cómo hablamos de la problemática de manera espontánea e informal?')?>

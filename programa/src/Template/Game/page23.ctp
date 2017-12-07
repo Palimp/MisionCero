@@ -15,7 +15,7 @@ if ($admin) {
     </header>
     <section>
         <h4>
-            <?=__('Problemática: ¿Cómo…?')?>
+            <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">
             <i class="fa fa-lightbulb-o"></i>

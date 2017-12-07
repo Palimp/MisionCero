@@ -18,7 +18,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
     </header> 
     <section>
         <h4>
-            <?=__('Problemática: ¿Cómo…?')?>
+            <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">
             <?=__('Listado completo de retos (3 retos por equipo).')?>
