@@ -50,8 +50,6 @@ if ($admin) {
                 <iframe class="embed-responsive-item" src="<?= $url ?>" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="text-center mt-5">
-
-
                 <?php if ($admin) { ?>
                     <!-- ONLY GM -->
                     <div>
@@ -95,7 +93,7 @@ if ($admin) {
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
     <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <button  id="otro" type="button" class="btn btn-primary mb-10"><?= __('Otro vídeo') ?></button>
+    <button  id="otro" type="button" class="btn btn-primary mb-10"><?= __('Cambiar de vídeo') ?></button>
 <?php } ?>
 </main>
 
