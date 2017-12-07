@@ -18,7 +18,7 @@ if ($admin) {
 
 
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="<?=$url?>" frameborder="0" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="<?= $url ?>" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="text-center mt-5">
 
@@ -26,26 +26,26 @@ if ($admin) {
                 <?php if ($admin) { ?>
                     <!-- ONLY GM -->
                     <div>
-                        <?=__('Pide a los Exploradores que observen con atención el siguiente vídeo')?>
+                        <?= __('Pide a los Exploradores que observen con atención el siguiente vídeo') ?>
                         </br>
                         <b>
-                            <?=__('Pausa el vídeo en el segundo 40')?>
+                            <?= __('Pausa el vídeo en el segundo 40') ?>
                         </b>
                         </br>
-                        <?=__(' y pregunta si ha pasado algo')?>
+                        <?= __(' y pregunta si ha pasado algo') ?>
                         <ul>
                             <li>
                                 <b>
-                                    <?=__('Ganará 2 Bikles el primer equipo que haya detectado que algo en el decorado ha cambiado')?>
+                                    <?= __('Ganará 2 Bikles el primer equipo que haya detectado que algo en el decorado ha cambiado') ?>
                                 </b>
                             </li>
                             <li>
                                 <b>
-                                    <?=__('Ganará 4 Bikles el primer equipo capaz de citar elementos que han cambiado')?>
+                                    <?= __('Ganará 4 Bikles el primer equipo capaz de citar elementos que han cambiado') ?>
                                 </b>
                             </li>
                         </ul>
-                        <i><?=__('Si ningún equipo es capaz de decir que algo ha cambiado, puedes ayudar preguntando ¿habéis visto algún cambio? Y puedes dar ')?><b><?=__('2 Bikles al primer equipo capaz de citar elementos que han cambiado')?></b></i>
+                        <i><?= __('Si ningún equipo es capaz de decir que algo ha cambiado, puedes ayudar preguntando ¿habéis visto algún cambio? Y puedes dar ') ?><b><?= __('2 Bikles al primer equipo capaz de citar elementos que han cambiado') ?></b></i>
                     </div>
                     <!-- ONLY GM -->
 
@@ -53,10 +53,10 @@ if ($admin) {
                     <!-- ONLY PLAYER -->
                     <div class="alert alert-danger d-inline-block" role="alert">
                         <b>
-                            <?=__('¡Observar bien el video!')?>
+                            <?= __('¡Observar bien el video!') ?>
                         </b>
                         </br>
-                            <?=__('El Jefe de Expedición hará preguntas al acabar…')?>
+                        <?= __('El Jefe de Expedición hará preguntas al acabar…') ?>
                     </div>
                     <!-- ONLY PLAYER -->
                 <?php } ?>
@@ -66,6 +66,7 @@ if ($admin) {
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
     <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <button  id="otro" type="button" class="btn btn-primary mb-10"><?= __('Otro vídeo') ?></button>
 <?php } ?>
 </main>
 
@@ -74,7 +75,14 @@ if ($admin) {
     $(function () {
 <?php if ($admin) { ?>
 
-
+            $('#otro').click(function () {
+                location.href = '<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "page16"
+    ])
+    ?>';
+            });
             $('#siguiente').click(function () {
                 location.href = '<?=
     $this->Url->build([

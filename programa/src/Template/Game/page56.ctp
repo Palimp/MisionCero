@@ -34,7 +34,7 @@ if ($admin) {
                             ?>
                             <li>
                                 <label class="custom-control custom-checkbox">
-                                    <input id="_<?= $t->id ?>" type="checkbox" class="custom-control-input">
+                                    <input id="_<?= $t->id ?>" type="checkbox" <?=$admin?'disabled':''?> class="custom-control-input">
                                     <span class="custom-control-indicator" data-toggle="tooltip" title="<?= __('Haz click para seleccionar') ?>"></span>
                                     <span class="custom-control-description"><?= __($t->name) ?></span>
                                 </label>
@@ -54,7 +54,7 @@ if ($admin) {
                             ?>
                             <li>
                                 <label class="custom-control custom-checkbox">
-                                    <input id="_<?= $t->id ?>" type="checkbox" class="custom-control-input">
+                                    <input id="_<?= $t->id ?>" type="checkbox" <?=$admin?'disabled':''?> class="custom-control-input">
                                     <span class="custom-control-indicator" data-toggle="tooltip" title="<?= __('Haz click para seleccionar') ?>"></span>
                                     <span class="custom-control-description"><?= __($t->name) ?></span>
                                 </label>
@@ -135,7 +135,7 @@ if ($admin) {
                     votos.push($(this).attr('id').replace("_", ""));
                 });
                 if (votos.length!=3){
-                    $('#error').html('<b style="color:red"><?=__('Los equipos aún están votando')?></b>');
+                    $('#error').html('<b style="color:red"><?=__('Revise los votos')?></b>');
                     return;
                 }
                                 $('#submitvotos').attr('style', 'display:none !important');
@@ -146,7 +146,7 @@ if ($admin) {
 
                     $(':checkbox').attr('disabled', 'disabled');
                     cambiar = true;
-                    $('#error').html('<?= __('Todos los equipos han votado. Ya puedes pulsar en “Continuar Etapa”') ?>');
+                    $('#error').html('<?= __('Votos enviados') ?>');
                     setTimeout(checkPage, 1000);
                 });
 

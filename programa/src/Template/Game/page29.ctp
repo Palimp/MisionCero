@@ -92,8 +92,11 @@ shuffle($answers);
     ?>", {'bikles': voto}, function (data, status) {
 
                     $(':radio').attr('disabled', 'disabled');
-                    
-                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: '+voto);
+                    var textos = ['<?= __('Con este reto va a ser muy difícil alcanzar el objetivo planteado… ¡con las preguntas de siempre obtendremos las respuestas de siempre!<br/>Tu equipo pierde -1 Bikle') ?>',
+                        '<?= __('Bueno….. Los equipos que no arriesgan, ni ganan ni pierden  <br>Tu equipo no gana ni pierde bikles') ?>',
+                        '<?= __('Bien… aunque el reto seleccionado no es el mejor reto, es bastante innovador!<br/>Tu equipo ha ganado: 1 Bikle') ?>',
+                        '<?= __('¡Felicidades! El reto seleccionado es el que mejor va a ayudar a cumplir con el objetivo! <br/>Tu equipo ha ganado: 2 Bikles') ?>'];
+                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: ' + textos[parseInt(voto)+1]);
                     setTimeout(checkPage, 1000);
                 });
             });

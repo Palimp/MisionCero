@@ -15,9 +15,9 @@ if ($admin) {
     </header>
     <section>
         <div class="row no-gutters mb-5">
-             <div class="col-12 col-md-auto">
+            <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    <?=__('Completar la frase de Einstein')?>
+                    <?= __('Completar la frase de Einstein') ?>
                 </p>
             </div>
 
@@ -34,7 +34,7 @@ if ($admin) {
                                 ));
                                 ?>
                                 <input type="hidden" name="stop" value="1">
-                                <button class="btn btn-primary"><?=__('Parar tiempo')?></button>
+                                <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
                                 <?php
                             } else {
                                 echo $this->Form->create('Begin', array(
@@ -42,7 +42,7 @@ if ($admin) {
                                 ));
                                 ?>
                                 <input type="hidden" name="start" value="1">
-                                <button class="btn btn-primary"><?=__('Reanudar tiempo')?></button>
+                                <button class="btn btn-primary"><?= __('Reanudar tiempo') ?></button>
                                 <?php
                             }
                         }
@@ -60,7 +60,7 @@ if ($admin) {
                             ));
                             ?>
                             <input type="hidden" name="time" value="30">
-                            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para añadir tiempo')?>" class="d-inline-block grey_link">
+                            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para añadir tiempo') ?>" class="d-inline-block grey_link">
                                 <i class="fa fa-plus"></i>
                             </a>
                             </form>
@@ -70,7 +70,7 @@ if ($admin) {
                             ));
                             ?>
                             <input type="hidden" name="time" value="-30">
-                            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar tiempo')?>" class="d-inline-block grey_link">
+                            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para restar tiempo') ?>" class="d-inline-block grey_link">
                                 <i class="fa fa-minus"></i>
                             </a>
                             </form>
@@ -80,29 +80,31 @@ if ($admin) {
             </div>
         </div>
         <p>
-            <?=__('El primer equipo en comunicar la solución gana Bikles')?>
+            <?= __('El primer equipo en comunicar la solución gana Bikles') ?>
             </br>
             </br>
-            <b><?=__('Enigma')?></b>
+            <b><?= __('Enigma') ?></b>
             </br>
-            <?=__('¿Por qué lo llamamos el pantano de lo imposible?')?>
+            <?= __('¿Por qué lo llamamos el pantano de lo imposible?') ?>
         </p>
         <?php if ($admin) { ?>
             <p>
-                <?=__('RESPUESTA CORRECTA: “pensar en el problema”')?>
+                <?= __('RESPUESTA CORRECTA: “pensar en el problema”') ?>
             </p>
             <p>
-                <?=__('El Jefe de Expedición sumará 3 bikles al primer equipo que responda correctamente')?>
+                <?= __('El Jefe de Expedición sumará 3 bikles al primer equipo que responda correctamente') ?>
             </p>
         <?php } ?>
-       <div class="text-center">
+        <div class="text-center">
             <blockquote class="w-50 fs26 m-auto">
-                <?=__('si tuviera 1 hora para encontrar soluciones para salvar el mundo, invertiría 55 minutos en …')?>
+             <b><?= __('Enigma') ?></b>
+            </br>
+            <?= $puzzle->puzzle ?>
             </blockquote>
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <?=__('¡3 Bikles para el primer equipo que da la respuesta correcta!')?>
+                <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>
     </section>
@@ -114,6 +116,8 @@ if ($admin) {
 
 <script>
     var page = 53;
+    var stop =<?= $stop ?>;
+
     $(function () {
 
 
@@ -131,14 +135,15 @@ if ($admin) {
                     $('#clock').html(data);
                     setTimeout(checkTime, 1000);
                 } else {
-
-                    alert("<?=__('Se acabó el tiempo')?>");
-                    location.href = '<?=
+                    if (stop) {
+                        alert("<?= __('Se acabó el tiempo') ?>");
+                        location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
         "action" => "page54"
     ])
     ?>';
+                    }
                 }
             });
         }
