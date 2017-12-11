@@ -14,7 +14,30 @@ if ($admin) {
          <header class="text-center m-5 mb-10">
         <?= $this->Html->image("breadp63.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <p>
+        <h4>
+            Etapa 7- <i>Pain points</i>
+            <br>
+            <?=__('Problemática: '.$trouble)?>
+        </h4>
+
+        <p class="fs22 green">
+            <i class="fa fa-lightbulb-o"></i>
+             Identificar los momentos clave de interacción con los diferentes actores de la problemática y sus <i>pain points</i>: puntos críticos o problemas que se presentan en cada momento. 
+            <br>
+            Convertir los pain points en retos: <i>¿Cómo podríamos…?</i>
+            <br>
+            <i class="fa fa-comment-o"></i>
+            Para una interacción se pueden identificar varios <i>pain points</i>
+            <br>
+            <i class="fa fa-comment-o"></i>
+            Los Exploradores pueden introducir más de un reto por <i>pain point</i>
+        </p>
+
+
+        <p class="fs22 green">
+            <?=__('Retos basados en preguntas básicas')?>
+        </p>
+        <p>
             <?=__('Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.')?>
         <p>
         </p>
@@ -27,7 +50,7 @@ if ($admin) {
     </section>
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Empezar Etapa 7') ?></button>
 <?php } ?>
 </main>
 
