@@ -26,8 +26,10 @@ if ($admin) {
         </p>
         <?php if ($admin) { ?>
             <p>
-                Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
-            </p>
+                Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.
+                <br>
+                Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”
+            </p>  
         <div id="hasvoted"></div>
         <?php } else { ?>
             <table class="reduced table table-striped">
