@@ -22,8 +22,9 @@ if ($admin) {
 
         <p class="fs22 green">
             <i class="fa fa-lightbulb-o"></i>
-             Identificar los momentos clave de interacción con los diferentes actores de la problemática y sus <i>pain points</i>: puntos críticos o problemas que se presentan en cada momento. 
-            <br>
+             Identificar los momentos clave de interacción con los diferentes actores de la problemática y sus <i>pain points</i>: puntos críticos o problemas que se presentan en cada momento.
+        </p>
+        <p>
             Convertir los pain points en retos: <i>¿Cómo podríamos…?</i>
             <br>
             <i class="fa fa-comment-o"></i>
