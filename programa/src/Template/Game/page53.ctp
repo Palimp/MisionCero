@@ -15,12 +15,47 @@ if ($admin) {
     </header>
     <section>
         <div class="row no-gutters mb-5">
+
+            <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
             <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Completar la frase de Einstein') ?>
+                <h4>
+                    Etapa 6- Parada lúdica
+                </h4>
+                <p class="fs22 green">
+                    La parada que estabas esperando… ¡CULTURA GENERAL! <i class="fa fa-smile-o"></i>
+                </p>
+                <p>
+                    <i class="fa fa-comment-o"></i>
+                    En esta etapa los Exploradores tendrán que demostrar sus conocimientos respondiendo a preguntas
+                    <br>
+                    ¡Ganaran Bikles los equipos que responden correctamente!
                 </p>
             </div>
+            <?php if ($admin) { ?>
+                <p>
+                    Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
+                </p>
+            <?php } ?>
+            <!-- en el boton de pasar al video poner TXTO: "Pasar a enigmas" -->
+            <!-- end ESTO VA EN UNA PAGINA PREVIA NUEVA-->
 
+
+            <div class="col-12 col-md-auto">
+                <h4>
+                    Etapa 8- Parada lúdica
+                </h4>
+                <p class="fs22 green">
+                    Enigmas
+                </p>
+                <p>
+                    <i class="fa fa-comment-o"></i>
+                    A continuación se presentaran unos enigmas 
+                    <br>
+                    Debes averiguar la respuesta correcta.
+                    <br>
+                    Si el equipo acierta, ganarás Bikles
+                </p>
+            </div>
             <div class="col fs32">
                 <div class="d-flex align-items-end flex-column">
                     <div>
@@ -104,7 +139,7 @@ if ($admin) {
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
+                <?= __('¡Los equipos que aciertan ganarán Bikles!') ?>
             </div>
         </div>
     </section>
