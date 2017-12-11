@@ -33,20 +33,6 @@ if ($admin) {
             <i class="fa fa-comment-o"></i>
             Los Exploradores pueden introducir más de un reto por <i>pain point</i>
         </p>
-
-
-        <p class="fs22 green">
-            <?=__('Retos basados en preguntas básicas')?>
-        </p>
-        <p>
-            <?=__('Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.')?>
-        <p>
-        </p>
-        <?=__('Después, para cada uno de estos momentos, listar los “pain points” (puntos dolorosos): puntos críticos o problemas. Introducir estos "pain points en la segunda columna" Se puede introducir más de un "paint point" por interracción.')?>
-        </p>
-        <p>
-            <?=__('Para acabar, lo más importante: transformar los "pain points" en retos (¿Cómo podríamos...?). Introducir los retos en la tercera columna. Pueden introducir más de un reto por pain point')?>
-        </p>
         
     </section>
 <?php if ($admin) { ?>
