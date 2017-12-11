@@ -11,7 +11,7 @@ if ($admin) {
 <main>
     <section>
         <p class="fs22">
-            <?=__('Misión Cero ayuda a transformar la problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas ideas.')?>
+            <?=__('Misión 0 es el serious game que permite convertir una problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas soluciones')?>
         </p>
         <div class="py-20 text-center">
 
@@ -19,7 +19,7 @@ if ($admin) {
 
         </div>
         <p class="fs22">
-            <?=__('Binnakle, el juego que ayuda a generar ')?><b><?=__('nuevas soluciones ')?></b><?=__('sobre cualquier tipo de reto, te podrá ayudar más adelante a generar soluciones novedosas a estos retos')?>
+            <?=__('Binnakle, el juego para generar ')?><b><?=__('nuevas ideas ')?></b><?=__('sobre cualquier tipo de reto, te podrá ayudar más adelante a encontrar soluciones novedosas a estos retos')?>
         </p>
     </section>
       <?php if ($admin) { ?>

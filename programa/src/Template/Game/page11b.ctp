@@ -81,10 +81,9 @@
                                         <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                         <div class="example_wrapper d-inline-block">
                                             <div class="example_inner text-left py-3 px-4">
-                                                <span>
-                                                    <b><?= __('Ejemplo Problemática') ?></b> 
-                                                    <?= __('¿Cómo mejorar mi comunicación interna?') ?>
-                                                </span>
+                                                <b><?=__('Ejemplo: ')?></b>
+                                                <?=__('si nuestra problemática inicial fuera')?>
+                                                <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
                                             </div>
                                         </div>
                                     </div>
@@ -111,7 +110,7 @@
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos conseguir que todos abren y lean los mails de comunicación interna?') ?>
+                                            <?= __('¿Cómo podríamos conseguir que todos abran y lean los mails de comunicación interna?') ?>
                                         </p>
                                         <p>
                                             <?= __('Mucha gente no entiende los mails de comunicación interna') ?>
@@ -153,10 +152,10 @@
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podróamso conseguir que todos perciban que los que mandan la comunicación están cerca y entienden nuestro trabajo?') ?>
+                                            <?= __('Cómo podríamos conseguir que todos perciban que los que mandan la comunicación están cerca y entienden nuestro trabajo') ?>
                                         </p>
                                         <p>
-                                            <?= __('Tendríamos que tener a personas de comunicación en cada área') ?>
+                                            <?= __('Tendríamos que tener a personas de comunicación en cada área  ') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>

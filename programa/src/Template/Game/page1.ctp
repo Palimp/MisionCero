@@ -14,7 +14,7 @@ if ($admin) {
         </div>
     </header>
     <section>
-        <p><?=__('Misión cero ¿por qué?')?></p>
+        <h4><?=__('Misión 0 -¿Por qué?')?></h4>
         <div class="alert alert-success d-inline-block">
             ¡Ganarán Bikles los equipos con más votos!
           </div>

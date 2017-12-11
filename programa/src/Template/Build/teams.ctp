@@ -40,7 +40,7 @@ $fila = '<div class="row bloque">
 <main>
     <section>
         <p class="fs22">
-            ¡Competiremos entre equipos!
+            ¡Competiremos por equipos!
         </p>
         <p>
             Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!

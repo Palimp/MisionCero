@@ -147,10 +147,9 @@
                             <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
-                                    <span>
-                                        <b><?= __('Ejemplo Problemática') ?></b> 
-                                        <?= __('¿Cómo mejorar mi comunicación interna?') ?>
-                                    </span>
+                                    <b><?=__('Ejemplo: ')?></b>
+                                    <?=__('si nuestra problemática inicial fuera')?>
+                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
                                 </div>
                             </div>
                         </div>
@@ -159,6 +158,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <p>
+                            <b>
+                                <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave de interacción y en pain points')?></i> <?=__(' podrían ser:')?> 
+                            </b>
+                        </p>
                         <table class="table table-striped">
                             <thead class="text-center">
                                 <tr>
@@ -192,11 +196,11 @@
                                         <?= __('No tenemos la información oficial completa a la hora de comunicar') ?>
                                     </td>
                                     <td class="green">
-                                        <?= __('¿cómo explicar mejor los cambios?') ?>
+                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
                                         </br>
                                         <?= __('¿Cómo conseguir tener toda la info a tiempo antes de tener que comunicar?') ?>
                                         </br>
-                                        <?= __('¿cómo comunicar bien sin tener toda la información') ?>
+                                        <?= __('¿Cómo comunicar bien sin tener toda la información?') ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -207,7 +211,7 @@
                                         <?= __('Los cambios no se explican bien') ?>
                                     </td>
                                     <td class="green">
-                                        <?= __('¿cómo explicar mejor los cambios?') ?>
+                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -218,7 +222,7 @@
                                         <?= __('Los cambios no se explican bien') ?>
                                     </td>
                                     <td class="green">
-                                        <?= __('¿cómo explicar mejor los cambios?') ?>
+                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -229,7 +233,7 @@
                                         <?= __('Los cambios no se explican bien') ?>
                                     </td>
                                     <td class="green">
-                                        <?= __('¿cómo explicar mejor los cambios?') ?>
+                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
                                     </td>
                                 </tr>
                             </tbody>

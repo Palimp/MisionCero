@@ -84,10 +84,9 @@
                             <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
-                                    <span>
-                                        <b><?= __('Ejemplo Problemática') ?></b> 
-                                        <?= __('¿Cómo mejorar mi comunicación interna?') ?>
-                                    </span>
+                                    <b><?=__('Ejemplo: ')?></b>
+                                    <?=__('si nuestra problemática inicial fuera')?>
+                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
                                 </div>
                             </div>
                         </div>
@@ -96,6 +95,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <p>
+                            <b>
+                                <?=__('Para la Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en preguntas básicas')?></i> <?=__(' podrían ser:')?> 
+                            </b>
+                        </p>
                         <div class="text-center">
                             <div class="row">
                                 <div class="col">
@@ -110,14 +114,14 @@
                                         </br>
                                         <i class="fa fa-chevron-down"></i>
                                         </br>
-                                        <?= __('¿cómo conseguir que el que manda la comunicación conozca el colectivo que la recibe?') ?>
+                                        <?= __('¿Cómo podríamos conseguir que el que manda la comunicación conozca el colectivo que la recibe?') ?>
                                     </p>
                                     <p>
                                         <?= __('Los que la reciben') ?>
                                         </br>
                                         <i class="fa fa-chevron-down"></i>
                                         </br>
-                                        <?= __('¿cómo conseguir involucrar a la gente en la comunicación?') ?>
+                                        <?= __('¿Cómo podríamos involucrar a la gente en la comunicación?') ?>
                                     </p>
                                 </div>
                                 <div class="col">
@@ -132,14 +136,14 @@
                                         </br>
                                         <i class="fa fa-chevron-down"></i>
                                         </br>
-                                        <?= __('¿cómo comunicar bien cuando hay cambios importantes?') ?>
+                                        <?= __('¿Cómo podríamos comunicar bien cuando hay cambios importantes?') ?>
                                     </p>
                                     <p>
                                         <?= __('Cuando hay dudas') ?>
                                         </br>
                                         <i class="fa fa-chevron-down"></i>
                                         </br>
-                                        <?= __('¿cómo comunicar cuándo hay incertidumbre?') ?>
+                                        <?= __('¿Cómo podríamos comunicar en momentos de incertidumbre?') ?>
                                     </p>
                                 </div>
                             </div>
@@ -156,15 +160,44 @@
                                         </br>
                                         <i class="fa fa-chevron-down"></i>
                                         </br>
-                                        <?= __('¿cómo adecuar la comunicación al personal de fábrica?') ?>
+                                        <?= __('¿Cómo podríamos adecuar la comunicación al personal de fábrica?') ?>
                                     </p>
                                     <p>
                                         <?= __('En los espacios donde se comunica') ?>
                                         </br>
                                         <i class="fa fa-chevron-down"></i>
                                         </br>
-                                        <?= __('¿cómo optimizar la comunicación en los paneles de los espacios comunes?') ?>
+                                        <?= __('¿Cómo podríamos optimizar la comunicación en los paneles de los espacios comunes?') ?>
                                     </p>
+                                    <p>
+                                        <i class="fa fa-question-circle fa-2x"></i>
+                                        </br>
+                                        <b>
+                                            <?= __('POR QUÉ’S') ?>
+                                        </b>
+                                        </br>
+                                        <?= __('Porque nadie hace caso') ?>
+                                        </br>
+                                        <i class="fa fa-chevron-down"></i>
+                                        </br>
+                                        <?= __('Cómo podríamos conseguir que la gente haga caso a la comunicación?') ?>
+                                    </p>
+                                    <p>
+                                        <?= __('Porque no nos enteramos de nada') ?>
+                                        </br>
+                                        <i class="fa fa-chevron-down"></i>
+                                        </br>
+                                        <?= __('¿Cómo podríamos conseguir que la comunicación interna nos ayude a conocer mejor lo que nos puede ayudar?') ?>
+                                    </p>
+                                    <p>
+                                        <?= __('Porque queremos que toda la empresa comparta la visión y los valores') ?>
+                                        </br>
+                                        <i class="fa fa-chevron-down"></i>
+                                        </br>
+                                        <?= __('¿Cómo podríamos conseguir una comunicación que involucre a la gente en los valores?') ?>
+                                    </p>
+                                </div>
+                                <div class="col">
                                     <p>
                                         <i class="fa fa-crosshairs fa-2x"></i>
                                         </br>
@@ -176,36 +209,7 @@
                                         </br>
                                         <i class="fa fa-chevron-down"></i>
                                         </br>
-                                        <?= __('¿cómo conseguir que se entienda a primera vista el objetivo de una comunicación?') ?>
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p>
-                                        <i class="fa fa-question-circle fa-2x"></i>
-                                        </br>
-                                        <b>
-                                            <?= __('POR QUÉ’S') ?>
-                                        </b>
-                                        </br>
-                                        <?= __('porque nadie hace caso') ?>
-                                        </br>
-                                        <i class="fa fa-chevron-down"></i>
-                                        </br>
-                                        <?= __('¿Cómo conseguir que la genta haga caso a la comunicación?') ?>
-                                    </p>
-                                    <p>
-                                        <?= __('porque no nos enteramos de nada') ?>
-                                        </br>
-                                        <i class="fa fa-chevron-down"></i>
-                                        </br>
-                                        <?= __('¿cómo conseguir que la comunicación interna nos ayude a conocer mejor lo que nos puede ayudar?') ?>
-                                    </p>
-                                    <p>
-                                        <?= __('porque queremos que toda la empresa comparte la visión y los valores') ?>
-                                        </br>
-                                        <i class="fa fa-chevron-down"></i>
-                                        </br>
-                                        <?= __('¿cómo conseguir una comunicación que involucre a la gente en los valores?') ?>
+                                        <?= __('¿Cómo podríamos conseguir que se entienda a primera vista el objetivo de una comunicación?') ?>
                                     </p>
                                 </div>
                             </div>

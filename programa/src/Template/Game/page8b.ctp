@@ -81,10 +81,9 @@
                             <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
-                                    <span>
-                                        <b><?=__('Ejemplo Problemática')?></b> 
-                                        <?=__('¿Cómo mejorar mi comunicación interna?')?>
-                                    </span>
+                                    <b><?=__('Ejemplo: ')?></b>
+                                    <?=__('si nuestra problemática inicial fuera')?>
+                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
                                 </div>
                             </div>
                         </div>
@@ -93,35 +92,52 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <div class="alert alert-success d-inline-block">
+                            <p>
+                                <?=__('Podremos seguir una simulación de partida sobre la problemática ficticia ')?>
+                                <br>
+                                <b><?=__('“¿Cómo podríamos mejorar la comunicación interna?” ')?></b>
+                                <br>
+                                <?=__('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ')?>
+                            </p>
+                            <p>
+                                <?=__('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida')?>
+                            </p>
+                        </div>
                         <p>
                             <b>
-                                <?=__('Para entender mejor lo que se nos pide, seguiremos una simulación de partida sobre un reto teorico: ')?>      
-                                </br></br>
-                                <?=__('¿Cómo mejorar mi comunicación interna?')?>
-                                </br></br>
-                                <?=__('En cada etapa podrá clickar sobre el icono amarillo para leer los contenidos que se podrían haber generado sobre este reto.')?>
-                                </br></br>
-                                <?=__('En este caso, los comentarios informales podrían haber sido')?>
-                                </br></br>
+                                <?=__('Para la Etapa 1, algunos ejemplos de ')?><i><?=__('comentarios informales')?></i> <?=__('sobre la problemática podrían ser:')?> 
                             </b>
-                            <?=__('Los rumores siempre van más rápido que la información interna')?>
-                            </br>
-                            <?=__('Nadie lee los mails de comunicación interna')?> 
-                            </br>
-                            <?=__('Mucha gente no entiende los mails de comunicación interna')?>
-                            </br>
-                            <?=__('No tocan lo que nos gustaría realmente saber')?>
-                            </br>
-                            <?=__('Para los de la fábrica, la información no es relevante')?>
-                            </br>
-                            <?=__('Los mails de comunicación son muy aburridos')?>
-                            </br>
-                            <?=__('Siempre presentan un mundo perfecto')?>
-                            </br>
-                            <?=__('Los que mandan comunicación están muy lejos y no saben lo que hacemos')?>
-                            </br>
-                            <?=__('Tendríamos que tener a personas de comunicación en cada área ')?>
                         </p>
+                        <ul>
+                            <li>
+                                <?=__('Los rumores siempre van más rápido que la información interna')?>
+                            </li>
+                            <li>
+                                <?=__('Nadie lee los mails de comunicación interna')?> 
+                            </li>
+                            <li>
+                                <?=__('Mucha gente no entiende los mails de comunicación interna')?>
+                            </li>
+                            <li>
+                                <?=__('No tocan lo que nos gustaría realmente saber')?>
+                            </li>
+                            <li>
+                                <?=__('Para los de la fábrica, la información no es relevante')?>
+                            </li>
+                            <li>
+                                <?=__('Los mails de comunicación son muy aburridos')?>
+                            </li>
+                            <li>
+                                <?=__('Siempre presentan un mundo perfecto')?>
+                            </li>
+                            <li>
+                                <?=__('Los que mandan comunicación están muy lejos y no saben lo que hacemos')?>
+                            </li>
+                            <li>
+                                <?=__('Tendríamos que tener a personas de comunicación en cada área ')?>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

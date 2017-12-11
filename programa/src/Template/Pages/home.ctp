@@ -130,7 +130,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                 </div>
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <p>O envía un mail a <a href="mailto:info@binnakle.com">info@binnakle.com</a></p>
+                                        <p>O envíanos un mail a <a href="mailto:info@binnakle.com">info@binnakle.com</a></p>
                                     </div>
                                     <div class="col-md-3 text-right">
                                         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -155,17 +155,38 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             </div>
                             <div class="modal-body">
 
-                                <p>Compra un código para una partida de Misión 0</p>
-                                <p>Este código da acceso al Jefe de Expedición para que pueda configurar la partida (definir problématica por trabajar y equipos) y para poder jugar la partida (1 hora antes de la partida, 2 horas de parida, 1 hora después de la partida)</p>
+                                <p>Es necesario realizar la compra de una licencia de Misión 0 para poder jugar una partida.</p>
+                                <p>Con la compra de una licencia obtendrás un código de acceso que permite:</p>
+                                <ul>
+                                    <li>
+                                        La configuración de la partida por parte del Jefe de Expedición: problemática a trabajar y equipos
+                                    </li>
+                                    <li>
+                                        El desarrollo de la partida (Jefe de Expedición y Exploradores): 1 hora antes del inicio de la partida / 2 horas de duración de la partida / 1 hora después de la partida
+                                    </li>
+                                </ul>
                                 <br>
-                                <p>Precio: 500 € (+IVA si España)</p>
+                                <p>Precio de licencia para una partida de Misión 0: 500€ (+ IVA en España)</p>
                                 <br>
-                                <p>Deberás realizar una transferencia bancaria a la cuenta indicada:<br>
-                                   Código IBAN: BBVA ES74 0182-7212-50-0201916788<br>
-                                   SWIFT: BBVAESMMXXX
+                                <p>
+                                    Para comprar tu licencia y obtener tu código:
                                 </p>
-                                <br>
-                                <p>Una vez realizada la transferencia envia el justificante a <a href="mailto:info@binnakle.com">info@binnakle.com</a>, indicando tu nombre, y procederemos al envío de tu código con tu factura</p>
+                                    
+                                <ol>
+                                    <li>
+                                        Realiza una transferencia bancaria a esta cuenta
+                                        <br>
+                                       Código IBAN: BBVA ES74 0182-7212-50-0201916788
+                                       <br>
+                                       SWIFT: BBVAESMMXXX
+                                    </li>
+                                    <li>
+                                        Envía el justificante de la transferencia por email a <a href="mailto:info@binnakle.com">info@binnakle.com</a>, indicando tu nombre y los datos fiscales para la factura
+                                    </li>
+                                    <li>
+                                        Recibirás tu código de acceso junto a la factura.
+                                    </li>
+                                </ol>
                             </div>
                         </div>
                     </div>

@@ -17,12 +17,9 @@ if ($admin) {
     </header>
     <section>
         <p class="fs22 text-center">
-            <?= __('Si uno mira siempre su problema desde el mismo punto de vista…')?>
+            <?= __('Si siempre observamos nuestro problema desde el mismo punto de vista…')?>
             <br>
-            <?= __('…¡puede perderse soluciones simples y nuevas!')?>
-        </p>
-        <p class="fs22 text-center">
-            <?= __('If you only focus on the problem')?>
+            <?= __('…¡podemos perdernos soluciones simples y nuevas!')?>
         </p>
         <div class="text-center">
 

@@ -73,10 +73,9 @@
                   <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                   <div class="example_wrapper d-inline-block">
                     <div class="example_inner text-left py-3 px-4">
-                      <span>
-                        <b><?=__('Ejemplo Problemática')?></b> 
-                        <?=__('¿Cómo mejorar mi comunicación interna?')?>
-                      </span>
+                        <b><?=__('Ejemplo: ')?></b>
+                        <?=__('si nuestra problemática inicial fuera')?>
+                        <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
                     </div>
                   </div>
                 </div>
@@ -85,6 +84,11 @@
                 </button>
               </div>
               <div class="modal-body">
+                <p>
+                    <b>
+                        <?=__('Para la Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
+                    </b>
+                </p>
                 <div class="text-center">
                   <div class="row">
                     <div class="col">
@@ -97,13 +101,7 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿cómo conseguir que mi comunicación acerque los empleados al cliente?')?>
-                      </p>
-                      <p>
-                        <?=__('Los que la reciben')?>
-                        </br>
-                        </br>
-                        <?=__('¿cómo conseguir involucrar a la gente en la comunicación?')?>
+                        <?=__('¿Cómo podríamos conseguir que mi comunicación acerque los empleados al cliente?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -116,10 +114,10 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿cómo conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
+                        <?=__('¿Cómo podríamos conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
                         </br>
                         </br>
-                        <?=__('¿cómo conseguir informarles primero y que no digan nada hasta que sea oficial?')?>
+                        <?=__('¿Cómo podríamos informarles primero y que no digan nada hasta que sea oficial?')?>
                       </p>
                     </div>
                   </div>
@@ -134,10 +132,10 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿cómo conseguir que conozcan mejor los diferentes colectivos?')?>
+                        <?=__('¿Cómo podríamos conseguir que conozcan mejor los diferentes colectivos?')?>
                         </br>
                         </br>
-                        <?=__('¿cómo conseguir que formen a la gente?')?>
+                        <?=__('¿Cómo podríamos conseguir que formen a la gente?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -151,7 +149,7 @@
                         <i class="fa fa-chevron-down"></i>
                         </br>
                         </br>
-                        <?=__('¿cómo conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entonro?')?>
+                        <?=__('¿Cómo podríamos conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
                       </p>
                     </div>
                   </div>

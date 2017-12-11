@@ -65,10 +65,9 @@
                                     <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                     <div class="example_wrapper d-inline-block">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <span>
-                                                <b><?= __('Ejemplo Problemática') ?></b> 
-                                                <?= __('¿Cómo mejorar mi comunicación interna?') ?>
-                                            </span>
+                                            <b><?=__('Ejemplo: ')?></b>
+                                            <?=__('si nuestra problemática inicial fuera')?>
+                                            <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -76,8 +75,13 @@
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-                            <div class="modal-body text-center">
-                                <div class="row py-5">
+                            <div class="modal-body">
+                                <p>
+                                    <b>
+                                        <?=__('Para la Etapa 9, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave de interacción y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                    </b>
+                                </p>
+                                <div class="row py-5 text-center">
                                     <div class="col">
                                         <p>
                                             <i class="fa fa-smile-o fa-3x text-success"></i>
@@ -87,11 +91,11 @@
                                             </b>
                                             </br>
                                             </br>
-                                            <?= __('motivado') ?>
+                                            <?= __('Motivado') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿cómo motivar al cloectivo sobre nuestro problema?') ?>
+                                            <?= __('¿Cómo motivar al colectivo sobre nuestro problema?') ?>
                                         </p>
                                     </div>
                                     <div class="col">
@@ -103,11 +107,11 @@
                                             </b>
                                             </br>
                                             </br>
-                                            <?= __('eso no lo soluciona nadie') ?>
+                                            <?= __('Pesimista') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿cómo convencer que se podrá solucionar?') ?>
+                                            <?= __('¿Cómo podríamos convencernos de que tiene solución?') ?>
                                         </p>
                                     </div>
                                 </div>

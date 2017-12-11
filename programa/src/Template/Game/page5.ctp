@@ -11,7 +11,7 @@ if ($admin) {
       <section>
 
         <div class="alert alert-success d-inline-block">
-          <?=__('Acabarán la partida con una ')?><b><?=__('lista de retos concretos, priorizados y clasificados por ambito,')?></b> <?=__('que les permitirán trabajar su problemática de manera concreta y enfocada, ')?><b><?=__('optimizando la búsqueda de soluciones novedosas')?></b>
+          <?=__('Al finalizar la partida de Misión 0 obtendrás una ')?><b><?=__('lista de retos concretos, priorizados y clasificados por ámbito, ')?></b> <?=__(' que te permitirá trabajar la problemática de manera concreta y enfocada, optimizando la búsqueda posterior de soluciones innovadoras')?></b>
         </div>
 
         <div class="text-right">

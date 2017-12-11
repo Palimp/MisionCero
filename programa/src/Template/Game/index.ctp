@@ -14,8 +14,8 @@ if ($admin) {
         </div>
     </header>
     <section>
-        <p><?=__('Misión cero ¿por qué?')?></p>
-        <p class="fs22"><?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?></p>
+        <h4><?=__('Misión cero ¿por qué?')?></h4>
+        <p class="fs26 green"><?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?></p>
         <img src="img/img1.jpg" alt="" class="float-right">
         <div>
             <p><?=__('Por ejemplo:')?></p>

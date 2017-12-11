@@ -14,8 +14,8 @@
     <section class="text-center">
 
         <p></p>
-        <p class="fs26"><?= __('Seleccione su equipo') ?></p>
-        <p class="fs26"><?= __('Equipos') ?></p>
+        <p class="fs26"><?= __(' ') ?></p>
+        <p class="fs26"><?= __(' ') ?></p>
 
         <?php foreach ($teams as $team) {
             ?>
