@@ -16,7 +16,9 @@
                 <p class="fs22">
                     <?=__('Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo')?>
                 </p>
-               
+                <p>
+                    <?=__('Después, cada equipo presentará en 2 minutos su propuesta a otro equipo. El equipo audiente comunica su veredicto.En seguida se inversan los roles.')?>
+                </p>
             </div>
             <div class="col fs32">
                 <div class="d-flex align-items-end flex-column">
