@@ -79,10 +79,15 @@ $ambits[-1]->ambit = __('Sin ámbito');
         <div id="hasvoted"></div>
         <div id="error"></div>
 
-    </section>
+    </section>  
     <?php if ($admin) { ?>
+        <p>
+            Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.
+            <br>
+            Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”
+        </p>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 7') ?></button>
     <?php } else { ?>
         <div class="text-right mt-5">
             <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
