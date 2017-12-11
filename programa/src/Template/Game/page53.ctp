@@ -19,7 +19,7 @@ if ($admin) {
             <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
             <div class="col-12 col-md-auto">
                 <h4>
-                    Etapa 6- Parada lúdica
+                    Etapa 6?- Parada lúdica
                 </h4>
                 <p class="fs22 green">
                     La parada que estabas esperando… ¡CULTURA GENERAL! <i class="fa fa-smile-o"></i>
@@ -42,7 +42,7 @@ if ($admin) {
 
             <div class="col-12 col-md-auto">
                 <h4>
-                    Etapa 8- Parada lúdica
+                    Etapa 8?- Parada lúdica
                 </h4>
                 <p class="fs22 green">
                     Enigmas
@@ -139,7 +139,7 @@ if ($admin) {
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <?= __('¡Los equipos que aciertan ganarán Bikles!') ?>
+                <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>
     </section>
