@@ -16,7 +16,7 @@ if ($admin) {
     </header>
     <section>
         <h4>
-            Etapa 4 - Parada lúdica
+            Etapa 4- Parada lúdica
         </h4>
         <p class="fs22 green">
             Casos prácticos
