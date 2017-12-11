@@ -31,10 +31,11 @@ echo $this->element('navbar');
             <?php
             if ($teams) {
                 echo $this->Html->link(
-                        __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin']);
+                        __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin', 'class' => 'btn btn-primary']);
             }
             ?>
         </div>
+
         <div class="form-group">
             <p class="fs26"><?= __('Menú de administración') ?></p>
 
