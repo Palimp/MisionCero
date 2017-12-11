@@ -14,12 +14,21 @@ if ($admin) {
         <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
     </header> 
     <section>
+        <h4>
+            <?=__('Etapa 9- Me siento')?>
+            <br>
+            <?=__('Problemática: '.$trouble)?>
+        </h4>
+        <p class="fs22 green">
+            <?= __('¿Cómo me siento ante la problemática?') ?>
+        </p>
         <p class="fs22">
-            <?= __('Encontrarás abajo una serie de estado de animo o sensaciones.') ?>
-            </br>
-            <?= __('El equipo tendrá que elegir los 3 estados que más representan lo que siente ante la problemática trabajada.') ?>
-            </br>
-            <?= __('¡Pueden ser de columnas diferentes! ') ?>
+            <i class="fa fa-lightbulb-o"></i>
+            <?= __('Seleccionar los 3 estados de ánimo o sensaciones que mejor representan cómo se siente el equipo ante la problemática planteada.') ?>
+        </p>
+        <p>
+            <i class="fa fa-comment-o"></i>
+            <?= __('Pueden ser positivos y/o negativos: pueden ser de columnas diferentes') ?>
         </p>
         <div class="m-auto">
             <div class="row justify-content-center top6">
@@ -70,7 +79,7 @@ if ($admin) {
     <?php if ($admin) { ?>
         <p>Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”</p>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 9') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Etapa 9') ?></button>
     <?php } else { ?>
         <div class="text-right mt-5">
             <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
