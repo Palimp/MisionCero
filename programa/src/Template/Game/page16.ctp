@@ -14,34 +14,7 @@ if ($admin) {
         <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section>
-        <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
-        <div class="col-12 col-md-auto">
-            <h4>
-                Etapa 2- Parada lúdica
-            </h4>
-            <p class="fs22 green">
-                ATENCIÓN exploradores! 
-                <i class="fa fa-smile-o"></i>
-            </p>
-            <p>
-                <i class="fa fa-comment-o"></i>
-                En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación. 
-                <br>
-                El Jefe de Expedición realizará algunas preguntas al terminar…
-                <br>
-                ¡Los equipos que respondan correctamente ganarán Bikles!
-                <b>
-                    No pierdas ningún detalle!
-                </b>
-            </p>
-        </div>
-        <?php if ($admin) { ?>
-            <p>
-                Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
-            </p>
-        <?php } ?>
-        <!-- en el boton de pasar al video poner TXTO: "Pasar al vídeo" -->
-        <!-- end ESTO VA EN UNA PAGINA PREVIA NUEVA-->
+
 
         <div class="d-flex align-items-end flex-column fs32 mb-5">
 
@@ -52,42 +25,57 @@ if ($admin) {
             <div class="text-center mt-5">
                 <?php if ($admin) { ?>
                     <!-- ONLY GM -->
-                    <div>
-                        <?= __('Pide a los Exploradores que observen con atención el siguiente vídeo') ?>
-                        </br>
-                        <b>
-                            <?= __('Pausa el vídeo en el segundo 40') ?>
-                        </b>
-                        </br>
-                        <?= __(' y pregunta si ha pasado algo') ?>
-                        <ul>
-                            <li>
-                                <b>
-                                    <?= __('Ganará 2 Bikles el primer equipo que haya detectado que algo en el decorado ha cambiado') ?>
-                                </b>
-                            </li>
-                            <li>
-                                <b>
-                                    <?= __('Ganará 4 Bikles el primer equipo capaz de citar elementos que han cambiado') ?>
-                                </b>
-                            </li>
-                        </ul>
-                        <i><?= __('Si ningún equipo es capaz de decir que algo ha cambiado, puedes ayudar preguntando ¿habéis visto algún cambio? Y puedes dar ') ?><b><?= __('2 Bikles al primer equipo capaz de citar elementos que han cambiado') ?></b></i>
+                    <div class="video">
+                        <?= __($texto) ?>
                     </div>
                     <!-- ONLY GM -->
-
-                <?php } else { ?>
-                    <!-- ONLY PLAYER -->
-                    <div class="alert alert-danger d-inline-block" role="alert">
-                        <b>
-                            <?= __('¡Observar bien el video!') ?>
-                        </b>
-                        </br>
-                        <?= __('El Jefe de Expedición hará preguntas al acabar…') ?>
-                    </div>
-                    <!-- ONLY PLAYER -->
-                <?php } ?>
-            </div>
+                    <div class="text-right mt-5">
+                        <div class="col-2">
+                            <div class="d-inline">
+                                <a href="#" data-toggle="modal" data-target="#modal_video" class="grey_link">
+                                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver solución') ?>
+                                    </p>
+                                </a>
+                            </div>
+                            <div>
+                                <div id="modal_video" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_videoLiveLabel" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header align-items-start">
+                                                <div class="example fs26">
+                                                    <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                                                    <div class="example_wrapper d-inline-block">
+                                                        <div class="example_inner text-left py-3 px-4">
+                                                            <b><?= __('Solución') ?></b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="video"> <?= __($solucion) ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+            <?php } else { ?>
+                <!-- ONLY PLAYER -->
+                <div class="alert alert-danger d-inline-block" role="alert">
+                    <b>
+                        <?= __('¡Observar bien el video!') ?>
+                    </b>
+                    </br>
+                    <?= __('El Jefe de Expedición hará preguntas al acabar…') ?>
+                </div>
+                <!-- ONLY PLAYER -->
+            <?php } ?>
+        </div>
     </section>
 </section>
 <?php if ($admin) { ?>
@@ -122,7 +110,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page15"
+        "action" => "page151"
     ])
     ?>';
             });

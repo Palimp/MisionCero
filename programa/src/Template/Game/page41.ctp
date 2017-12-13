@@ -17,46 +17,7 @@ if ($admin) {
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
 
-                <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
-                <div class="col-12 col-md-auto">
-                    <h4>
-                        Etapa 6- Parada lúdica
-                    </h4>
-                    <p class="fs22 green">
-                        Eres bueno vendiendo?
-                        <i class="fa fa-smile-o"></i>
-                    </p>
-                    <p>
-                        <i class="fa fa-comment-o"></i>
-                        En esta etapa los Exploradores tendrán que demostrar su ingenio tratando de vender el objeto que aparecerá en pantalla a otro equipo, teniendo en cuenta las limitaciones indicadas.
-                        <br>
-                        2 equipos trabajan juntos: 
-                    </p>
-                    <ul>
-                        <li>
-                            Fase 1- El primer equipo tiene 3 minutos para convencer al segundo equipo que le compre su objeto. 
-                            <br>
-                            Finalizado el tiempo, el segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
-                        </li>
-                        <li>
-                            Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
-                        </li>
-                    </ul>
-                </div>
-                <?php if ($admin) { ?>
-                    <p>
-                        Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
-                    </p>
-                <?php } ?>
-                <div class="text-center mt-5">
-                    <div class="alert alert-danger d-inline-block" role="alert">
-                        <?= __('¡Los equipos que mejor vendan los objetos ganarán Bikles!') ?>
-                        </br>
-                        <?= __('Los equipos que no logren convencer al rival, perderán Bikles.') ?>
-                    </div>
-                </div>
-                <!-- en el boton de pasar al video poner TXTO: "Pasar al vídeo" -->
-                <!-- end ESTO VA EN UNA PAGINA PREVIA NUEVA-->
+
 
                 <?php if ($admin) { ?>
                     <p class="fs22">
@@ -133,9 +94,9 @@ if ($admin) {
         <div class="text-center">
             <p class="f22 green"><?= __('Para cada objeto sus limitaciones') ?></p>
 
-            <?= $this->Html->image("ludica".$image.".png", ['class' => 'img-fluid']); ?>
-            <p><?= __('Este objeto NO puede colocarse en la cabeza') ?></p>
-           
+            <?= $this->Html->image($image, ['class' => 'img-fluid']); ?>
+
+
         </div>
     </section>
     <?php if ($admin) { ?>
@@ -162,12 +123,14 @@ if ($admin) {
         </div>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
         <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Seguir etapa') ?></button>
+        <button  id="otro" type="button" class="btn btn-primary mb-10"><?= __('Cambiar de objeto') ?></button>
+
     <?php } ?>
 </main>
 
 <script>
     var page = 41;
-        var stop =<?= $stop ?>;
+    var stop =<?= $stop ?>;
 
     $(function () {
 <?php if ($admin) { ?>
@@ -195,6 +158,14 @@ if ($admin) {
                     }
                 });
             }
+            $('#otro').click(function () {
+                location.href = '<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "page41"
+    ])
+    ?>';
+            });
             $('#siguiente').click(function () {
                 location.href = '<?=
     $this->Url->build([
@@ -207,7 +178,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page40"
+        "action" => "page401"
     ])
     ?>';
             });

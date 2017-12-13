@@ -16,19 +16,19 @@ if ($admin) {
     <section>
         <?php if ($admin) { ?>
             <p class="fs22 green">
-                <?=__('Como Jefe de Expedición, ')?><b><?=__('tienes el privilegio de sumar o restar Bikles ')?></b><?=__('si consideras que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc')?>
+                <?= __('Como Jefe de Expedición, ') ?><b><?= __('tienes el privilegio de sumar o restar Bikles ') ?></b><?= __('si consideras que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc') ?>
             </p>
         <?php } ?>
         <p class="fs22">
-            <?=__('Ranking de Bikles al acabar la etapa 2')?>
+            <?= __('Ranking de Bikles al acabar la etapa 2') ?>
         </p>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
                     <th></th>
                     <th></th>
-                    <th><?=__('Equipo')?></th>
-                    <th><?=__('Bikles')?></th>
+                    <th><?= __('Equipo') ?></th>
+                    <th><?= __('Bikles') ?></th>
                     <th></th>
                 </tr>
             </thead>
@@ -38,7 +38,8 @@ if ($admin) {
                     ?>
                     <tr>
                         <td scope="row" class="fs32"><?= $teams[$i]['team'] ?></td>
-                        <td><img class="img-fluid" style="height: 50px; width: 50px; margin: -7px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22771%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20771%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ddcba636d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ddcba636d%22%3E%3Crect%20width%3D%22771%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.7421875%22%20y%3D%22143%22%3E771x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></td>
+                        <td>   <?= $this->Html->image("exp" . str_pad($teams[$i]['img'], 2, "0", STR_PAD_LEFT) . ".png", ['class' => 'img-fluid']); ?>
+                        </td>
                         <td><?= $teams[$i]['name'] ?></td>
                         <td>
                             <?= $teams[$i]['bikles'] ?>
@@ -49,7 +50,7 @@ if ($admin) {
                                 ));
                                 ?>
                                 <input type="hidden" name="sumar" value="<?= $teams[$i]['id'] ?>">
-                                <a href="#" onclick="$(this).closest('form').submit()"  data-toggle="tooltip" title="<?=__('Haz click para añadir Bikles')?>" class="d-inline-block grey_link">
+                                <a href="#" onclick="$(this).closest('form').submit()"  data-toggle="tooltip" title="<?= __('Haz click para añadir Bikles') ?>" class="d-inline-block grey_link">
                                     <i class="fa fa-plus"></i>
                                 </a>
                                 </form>
@@ -60,11 +61,11 @@ if ($admin) {
                                 ?>
                                 <input type="hidden" name="restar" value="<?= $teams[$i]['id'] ?>">
 
-                                <a href="#"  onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar Bikles')?>" class="d-inline-block grey_link">
+                                <a href="#"  onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para restar Bikles') ?>" class="d-inline-block grey_link">
                                     <i class="fa fa-minus"></i>
                                 </a>
                                 </form>
-    <?php } ?>
+                            <?php } ?>
                         </td>
                     </tr>
                     <?php

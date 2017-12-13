@@ -79,6 +79,9 @@ class GameController extends AppController {
                     $this->set('team', $team);
                     $this->set('comments', $comments);
                     $this->set('feelings', $feelings);
+                    $ambits = $this->Code->getAmbits();
+                    $this->set('ambits', $ambits);
+
                     $period = 300;
                     $session->write('period', $period);
 
@@ -193,6 +196,8 @@ class GameController extends AppController {
                     $this->set('stop', 1);
                     $idp = $sesion['ludico'];
                     $puzzle = $this->Code->getPuzzleId($idp);
+                    $this->set('voted', $this->Code->hasVoted($team, 'puzz1'));
+
                     $this->set('puzzle', $puzzle);
 
                     $this->viewBuilder()->template('page52');
@@ -204,7 +209,11 @@ class GameController extends AppController {
                     $session = $this->request->session();
                     $session->write('period', $period);
                     $this->set('time', '');
-                    $this->set('stop', '');
+                    $this->set('stop', 1);
+                    $idp = $sesion['ludico'];
+                    $puzzle = $this->Code->getPuzzleId($idp);
+                    $this->set('voted', $this->Code->hasVoted($team, 'puzz2'));
+                    $this->set('puzzle', $puzzle);
                     $this->viewBuilder()->template('page53');
                 } else
                 if ($sesion['page'] == 41) {
@@ -212,7 +221,8 @@ class GameController extends AppController {
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('stop', 1);
-                    $this->set('image', $sesion['ludico']);
+                    $image = $this->Code->getImageId($sesion['ludico']);
+                    $this->set('image', $image->name);
 
                     $session = $this->request->session();
                     $session->write('period', $period);
@@ -391,6 +401,7 @@ class GameController extends AppController {
                     }
                     if ($sesion['page'] == 14 || $sesion['page'] == 17 || $sesion['page'] == 26 || $sesion['page'] == 30 || $sesion['page'] == 39 || $sesion['page'] == 42 || $sesion['page'] == 50 || $sesion['page'] == 54 || $sesion['page'] == 62 || $sesion['page'] == 70) {
                         $teams = $this->Code->getTeams($id);
+
                         $this->set('admin', $sesion['admin']);
                         $this->set('trouble', $sesion['trouble']);
                         $this->set('teams', $teams);
@@ -489,6 +500,7 @@ class GameController extends AppController {
                         $this->set('neg', $this->Code->getFeelings(2));
                         $this->set('admin', $sesion['admin']);
                         $this->set('trouble', $sesion['trouble']);
+
                         $ids = $this->Code->getGenericTeam($team, 'Motions');
                         $this->set('voted', count($ids) > 0);
                     }
@@ -742,6 +754,14 @@ class GameController extends AppController {
         $this->set('trouble', $sesion['trouble']);
     }
 
+    public function page151() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 151);
+        $this->set('admin', $sesion['admin']);
+        $this->set('trouble', $sesion['trouble']);
+    }
+
     public function page16() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
@@ -750,7 +770,9 @@ class GameController extends AppController {
         $this->Code->setPage($id, 16);
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
-        $this->set('url', $video);
+        $this->set('url', $video['url']);
+        $this->set('texto', $video['texto']);
+        $this->set('solucion', $video['solucion']);
     }
 
     public function page17() {
@@ -1174,6 +1196,14 @@ class GameController extends AppController {
         $this->set('trouble', $sesion['trouble']);
     }
 
+    public function page401() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 401);
+        $this->set('admin', $sesion['admin']);
+        $this->set('trouble', $sesion['trouble']);
+    }
+
     public function page41() {
         $sesion = $this->Code->loadSesion();
         $session = $this->request->session();
@@ -1213,7 +1243,7 @@ class GameController extends AppController {
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
         $this->set('trouble', $sesion['trouble']);
-        $this->set('image', $image);
+        $this->set('image', $image->name);
     }
 
     public function page42() {
@@ -1420,9 +1450,19 @@ class GameController extends AppController {
         $this->set('trouble', $sesion['trouble']);
     }
 
+    public function page511() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 511);
+        $this->set('admin', $sesion['admin']);
+        $this->set('trouble', $sesion['trouble']);
+    }
+
     public function page52() {
         $sesion = $this->Code->loadSesion();
         $session = $this->request->session();
+
+
         $id = $sesion['id'];
         $this->Code->setPage($id, 52);
         $this->set('stop', 1);
@@ -1450,15 +1490,16 @@ class GameController extends AppController {
                 $this->Code->setTime($id, 1, $time2);
                 $this->set('stop', 1);
             }
+            $idp = $sesion['ludico'];
+            $puzzle = $this->Code->getPuzzleId($idp);
         } else {
             $this->Code->setTime($id);
+            $puzzle = $this->Code->getPuzzle($id);
         }
-        $puzzle = $this->Code->getPuzzle($id);
 
         $this->set('puzzle', $puzzle);
 
         $this->set('admin', $sesion['admin']);
-        $this->set('trouble', $sesion['trouble']);
         $this->set('trouble', $sesion['trouble']);
     }
 
@@ -1492,12 +1533,15 @@ class GameController extends AppController {
                 $this->Code->setTime($id, 1, $time2);
                 $this->set('stop', 1);
             }
+            $idp = $sesion['ludico'];
+            $puzzle = $this->Code->getPuzzleId($idp);
         } else {
             $this->Code->setTime($id);
+            $puzzle = $this->Code->getPuzzle($id);
         }
 
+        $this->set('puzzle', $puzzle);
         $this->set('admin', $sesion['admin']);
-        $this->set('trouble', $sesion['trouble']);
         $this->set('trouble', $sesion['trouble']);
     }
 
@@ -1604,6 +1648,8 @@ class GameController extends AppController {
         $this->Code->setPage($id, 60);
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
+        $this->Code->blablaExists($id, 'motions', 'question');
+
         $ambits = $this->Code->getAmbits();
         $this->set('ambits', $ambits);
         $this->set('retos', $this->Code->getRetos($id, 'motions'));
@@ -2284,6 +2330,22 @@ class GameController extends AppController {
 
         $datos = $this->request->query;
         $data = $this->Code->savePractical($this->Code->getTeam(), $datos['bikles']);
+
+        if ($this->request->is('ajax') && !empty($sesion['code'])) {
+            
+        }
+
+        $this->set(compact('data'));
+        $this->set('_serialize', 'data');
+    }
+
+    public function savepuzzle() {
+        $sesion = $this->Code->loadSesion();
+        $data = 0;
+        $this->viewBuilder()->template('ajax');
+
+        $datos = $this->request->query;
+        $data = $this->Code->savePuzzle($sesion['id'], $this->Code->getTeam(), $datos['bikles'], $datos['puzzle']);
 
         if ($this->request->is('ajax') && !empty($sesion['code'])) {
             

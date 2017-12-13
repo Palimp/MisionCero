@@ -489,8 +489,15 @@ body {
 @media (min-width: 1200px) and (max-width: 3000px) {
 }   
 
+.video{
+    white-space: pre-line;
+    text-align: center;
+}
 
-
+.video_stop{
+    font-weight: bold;
+    color:#990000;
+}
 
 
 

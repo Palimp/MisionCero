@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="text-center">
-            <?= $this->Html->image("ludica".$image.".png", ['class' => 'img-fluid']); ?>
+            <?= $this->Html->image($image, ['class' => 'img-fluid']); ?>
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">

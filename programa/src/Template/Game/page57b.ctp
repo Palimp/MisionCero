@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
+$ids = [];
 ?>
 
 <!-- ** pag p15 ** -->
@@ -13,13 +14,13 @@
     <section>
         <div class="col-12 col-md-auto">
             <h4>
-                <?=__('Problemática: '.$trouble)?>
+                <?= __('Problemática: ' . $trouble) ?>
             </h4>
             <p class="fs22 green">
-                <?=__('Retos basados en estados de ánimo')?>
+                <?= __('Retos basados en estados de ánimo') ?>
             </p>
             <p>
-                <?=__('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados')?>
+                <?= __('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados') ?>
             </p>
         </div>
 
@@ -34,12 +35,34 @@
             </div>
         </div>
         <?php
-        foreach ($comments as $comment) {
+        for ($i = 0; $i < count($comments); $i++) {
+            $ids[] = $comments[$i]->id;
             ?>
-            <div id="bloque<?= $comment->id ?>" class="row form-group"><div class="col pl-0"> 
-                    <span><?= $comment->feeling ?></b></div>
-                <input type="text" name="comment" id="com<?= $comment->id ?>" class="form-control d-inline w-75" placeholder="<?= __('Introduzca aquí su reto') ?>" value="<?= $comment->question ?>">
+
+            <b class="fs22" id="c<?= $i ?>">
+                <?= $comments[$i]->feeling ?>
+            </b>
+
+            <div class="row">
+                <div class="col-10 pl-0">
+                    <input type="text" id="com<?= $i ?>" class="form-control d-inline w-75" placeholder="<?= __('Introduce aquí el reto') ?>" value="<?= $comments[$i]->question ?>">
+
+                </div>
             </div>
+            <b>
+                <?= __('Ámbito') ?>
+            </b>
+            <div class="fs14 mr-1">
+                <?php foreach ($ambits as $ambit) { ?>
+                    <label class="custom-control custom-radio">
+                        <input name="radio<?= $i ?>" type="radio" class="custom-control-input" value="<?= $ambit->id ?>">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description"><?= $ambit->ambit ?></span>
+                    </label>
+                <?php } ?>
+
+            </div>
+
             <?php
         }
         ?>
@@ -65,9 +88,9 @@
                                     <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                     <div class="example_wrapper d-inline-block">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Ejemplo: ')?></b>
-                                            <?=__('si nuestra problemática inicial fuera')?>
-                                            <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                            <b><?= __('Ejemplo: ') ?></b>
+                                            <?= __('si nuestra problemática inicial fuera') ?>
+                                            <b><?= __('¿Cómo podríamos mejorar la comunicación interna?') ?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +101,7 @@
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?=__('Para la Etapa 9, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave de interacción y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                        <?= __('Para la Etapa 9, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave de interacción y en pain points') ?></i> <?= __(' podrían ser:') ?> 
                                     </b>
                                 </p>
                                 <div class="row py-5 text-center">
@@ -150,24 +173,20 @@
 
             $('#sendretos').click(function () {
                 var datos = []
-                var a = 0;
-                $('input:text').each(function () {
-                    if ($(this).val() == '') {
-                        console.log("2");
-                        $('#mensaje').html('<?= __('Rellene todos los campos') ?>');
-                        $(this).focus();
-                        a = 1;
+                var ids = [<?= join(",", $ids) ?>];
+                for (i = 0; i < 3; i++) {
+                    if (!$('#com' + i).val()) {
+                        $('#com' + i).focus();
+                        return;
                     }
-                });
-                if (a) {
-                    return;
-                }
-                $('input:text').each(function () {
-                    var id = $(this).attr('id').replace('com', '');
+                    if (!$("[name='radio" + i + "']:checked").val()) {
+                        $("[name='radio" + i + "']").focus();
+                        return;
+                    }
+                    datos.push({"id": ids[i], "valor": $('#com' + i).val(), "ambito": $("[name='radio" + i + "']:checked").val()});
 
-                    datos.push({"id": id, "valor": $(this).val()});
-                });
-                
+                }
+
                 $.get("<?=
     $this->Url->build(["controller" => "Game", "action" => "savemotions"])
     ?>", {'datos': JSON.stringify(datos)}, function (data, status) {

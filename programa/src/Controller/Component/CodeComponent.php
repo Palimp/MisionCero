@@ -12,10 +12,11 @@ class CodeComponent extends Component {
     var $components = array('Cookie');
     var $frases = ['Cuanto peor mejor para todos y cuanto peor para todos mejor', 'El problema no es cosa menor, en otras palabras, es cosa mayor', 'Acometamos a la hueste manzona', 'Los ladros perran y los cantos gallan', 'Lo más importante de la vida es no haber muerto', 'Blablablá, blablá ¡Blah!', 'Es el problema el que elige el empleado y es el empleado el que quiere que sea el problema', ' Un ulucordio los encrestoriaba y paramovía', 'Agiliscosos giroscopaban los limazones'];
 
-    public function getTime($id=0){
-        $times=[600,300,120,60,180];
+    public function getTime($id = 0) {
+        $times = [600, 300, 120, 60, 180];
         return $times[$id];
     }
+
     public function getCode() {
         $letras = "ABCEFGHJKLMNPRTUWXYZ2346789";
         $res = $letras[rand(0, strlen($letras) - 1)];
@@ -91,9 +92,9 @@ class CodeComponent extends Component {
 
     public function getVideo($id) {
         $videos = $this->getVideos();
-        $video = $videos[rand(0, count($videos) - 1)]->url;
-        $this->saveLudico($id, $video);
-        return $video;
+        $video = $videos[rand(0, count($videos) - 1)];
+        $this->saveLudico($id, $video->url);
+        return ['url' => $video->url, 'texto' => $video->texto, 'solucion' => $video->solucion];
     }
 
     public function getPuzzles() {
@@ -134,10 +135,29 @@ class CodeComponent extends Component {
         return $query;
     }
 
+//    public function getImage($id) {
+//        $image = rand(1, 6);getPuzzle
+//        $this->saveLudico($id, $image);
+//        return $image;
+//    }
+
     public function getImage($id) {
-        $image = rand(1, 6);
-        $this->saveLudico($id, $image);
-        return $image;
+        $videos = $this->getImagess();
+        $video = $videos[rand(0, count($videos) - 1)];
+        $this->saveLudico($id, $video->id);
+        return $video;
+    }
+
+    public function getImageId($id) {
+        $games = TableRegistry::get('Objects');
+        return $games->get($id);
+    }
+
+    public function getImagess() {
+        $games = TableRegistry::get('Objects');
+        $query = $games->find('all')->toArray();
+
+        return $query;
     }
 
     public function saveLudico($id, $ludico) {
@@ -237,6 +257,14 @@ class CodeComponent extends Component {
         return array_map('trim', $users);
     }
 
+    public function getTeamImg($id) {
+        $table = TableRegistry::get('Teams');
+
+        $team = $table->get($id);
+        $img = str_pad($team->img, 2, "0", STR_PAD_LEFT);
+        return $img;
+    }
+
     public function getCommentSel($id) {
         $comments = TableRegistry::get('Comments');
 
@@ -310,11 +338,39 @@ class CodeComponent extends Component {
         $table->save($team);
     }
 
+    public function firstPuzzle($id, $puzzle) {
+        $table = TableRegistry::get('Teams');
+        $first = $table->find('all')
+                        ->where(['game_id' => $id, 'puzz' . $puzzle => -1])->toArray();
+
+        return count($first) == 0;
+    }
+
+    public function savePuzzle($id, $team_id, $bikles, $puzzle) {
+        $table = TableRegistry::get('Teams');
+        $team = $table->get($team_id);
+        $first = $this->firstPuzzle($id, $puzzle);
+        $p = 'puzz' . $puzzle;
+        $team->$p = $bikles;
+        $table->save($team);
+        if ($bikles == -1) {
+            if ($first) {
+                $this->addBikle($team_id, 3);
+                return 2;
+            } else {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
     public function saveMotions($team_id, $challenges) {
+
         $table = TableRegistry::get('Motions');
         foreach ($challenges as $challenge) {
             $motion = $table->get($challenge->id);
             $motion->question = $challenge->valor;
+            $motion->ambit = $challenge->ambito;
             $table->save($motion);
         }
     }
@@ -327,7 +383,10 @@ class CodeComponent extends Component {
         foreach ($teams as $team) {
             $query = $table->find('all')
                     ->where(['team_id' => $team->id]);
+
             $num = 3 - $query->count();
+            echo $num;
+            die();
             for ($i = 0; $i < $num; $i++) {
                 $row = $table->newEntity();
                 $row->team_id = $team->id;
@@ -335,6 +394,24 @@ class CodeComponent extends Component {
                 $cont++;
                 $table->save($row);
             }
+        }
+    }
+
+    public function blablaExists($id, $table, $field) {
+        $teams = $this->getTeams($id);
+        shuffle($this->frases);
+        $cont = 0;
+        $table = TableRegistry::get($table);
+        foreach ($teams as $team) {
+            $query = $table->find('all')
+                    ->where(['team_id' => $team->id, $field.' is ' => null]);
+            
+            foreach ($query as $row) {
+                $row->$field = $this->frases[$cont++];
+                
+                $table->save($row);
+            }
+            
         }
     }
 
@@ -695,10 +772,10 @@ class CodeComponent extends Component {
 
     public function checkVote($id, $table) {
         $conn = ConnectionManager::get('default');
-        $teams=$this->getTeamsBegin($id);
-        $n=count($teams);
-        
-        $query = $conn->execute('SELECT team_id,count(*) t FROM teams join '.$table.' on teams.id='.$table.'.team_id where game_id='.$id.' and sel=1 group by team_id having t=3;');
+        $teams = $this->getTeamsBegin($id);
+        $n = count($teams);
+
+        $query = $conn->execute('SELECT team_id,count(*) t FROM teams join ' . $table . ' on teams.id=' . $table . '.team_id where game_id=' . $id . ' and sel=1 group by team_id having t=3;');
 
         if ($query->count() == $n) {
             return 1;
@@ -880,6 +957,22 @@ class CodeComponent extends Component {
                     ->where(['code' . $type => $code]);
         } while ($query->count() != 0);
         return $code;
+    }
+
+    public function resetGame() {
+        $conn = ConnectionManager::get('default');
+        $query = $conn->execute('truncate challenges');
+        $query = $conn->execute('truncate comments');
+        $query = $conn->execute('truncate interactions');
+        $query = $conn->execute('truncate painpoints');
+        $query = $conn->execute('truncate ppchallenges');
+        $query = $conn->execute('truncate questions');
+        $query = $conn->execute('truncate stakes');
+        $query = $conn->execute('truncate teams');
+        $query = $conn->execute('truncate tops');
+        $query = $conn->execute('update games set teams=NULL, active=0,trouble=NULL,page=NULL,time1=NULL,score=NULL,ludico=NULL');
+
+        return $query;
     }
 
     public function createGame($name) {

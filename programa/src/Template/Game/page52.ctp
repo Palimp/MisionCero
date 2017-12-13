@@ -6,6 +6,10 @@
 if ($admin) {
     echo $this->element('navbar');
 }
+
+$trouble = $puzzle->puzzle;
+$answers = [[-1, $puzzle->answer1], [0, $puzzle->answer2], [1, $puzzle->answer3], [2, $puzzle->answer4]];
+shuffle($answers);
 ?>
 
 <!-- ** pag p15 ** -->
@@ -85,8 +89,29 @@ if ($admin) {
             </br>
             <b><?= __('Enigma') ?></b>
             </br>
-            <?= $puzzle->puzzle ?>
+            <?= __($trouble) ?>
         </p>
+        <table class="reduced table table-striped">
+            <tbody>
+                <?php
+                for ($i = 0; $i < count($answers); $i++) {
+                    ?>
+                    <tr>
+                        <td scope="row">
+                            <span id="fila<?= $i ?>"><?= __($answers[$i][1]) ?></span>
+                        </td>
+                        <td class="text-right">
+                            <label class="custom-control custom-radio">
+                                <input name="opcion" id="<?= $i ?>" type="radio" value="<?= $answers[$i][0] ?>" class="custom-control-input">
+                                <span class="custom-control-indicator" data-toggle="tooltip" title="<?= __('Haz click para seleccionar') ?>"></span>
+                            </label>
+                        </td>
+                    </tr>                
+                <?php } ?>
+
+            </tbody>
+        </table>
+         <p id="error"></p>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
@@ -96,6 +121,12 @@ if ($admin) {
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
         <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase retos') ?></button>
+        <?php
+    } else if (!isset($voted)) {
+        ?>
+        <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+            <i class="fa fa-check fa-2x"></i>
+        </a>
     <?php } ?>
 </main>
 
@@ -127,19 +158,19 @@ if ($admin) {
                             location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => $admin ? 'page54' : 'index'
+        "action" => $admin ? 'page53' : 'index'
     ])
     ?>';
                         }
                     }
                 });
             }
-            
+
             $('#siguiente').click(function () {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page54"
+        "action" => "page53"
     ])
     ?>';
             });
@@ -147,13 +178,61 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page51"
+        "action" => "page511"
     ])
     ?>';
             });
     <?php
 } else {
     ?>
+            $('#sendretos').click(function () {
+                var voto = $('input[name=opcion]:checked').val();
+
+                if (voto == undefined) {
+                    $('#error').html('<?= __('Debe seleccionar una opción') ?>');
+                    return;
+                }
+                $.get("<?=
+    $this->Url->build(["controller" => "Game", "action" => "savepuzzle"])
+    ?>", {'bikles': voto, 'puzzle': 1}, function (data, status) {
+                    console.log(data);
+                    $(':radio').attr('disabled', 'disabled');
+                    var textos = ['<?= __('La respuesta es incorrecta, lo sentimos mucho.') ?>',
+                        '<?= __('Bien.. la respuesta es correcta pero no has sido el primero') ?>',
+                        '<?= __('¡Felicidades! Has sido el primero en adivinar la respuesta. Ganas 3 bikles') ?>'];
+
+                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>' + textos[parseInt(data)]);
+                    setTimeout(checkPage, 1000);
+                });
+            });
+
+            $(':radio').click(function () {
+                id = $(this).attr('id')
+                $('[id^=fila]').removeClass('green');
+                $('#fila' + id).addClass('green');
+            });
+            function checkPage() {
+                $.get("<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "pageactive"
+    ])
+    ?>", function (data, status) {
+
+                    if (data == page) {
+                        setTimeout(checkPage, 500);
+                    } else {
+                        location.href = '<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "index"
+    ])
+    ?>';
+                    }
+
+                });
+
+            }
             function checkTime() {
 
                 $.get("<?=
@@ -164,24 +243,22 @@ if ($admin) {
     ?>", function (data, status) {
                     if (data != "0" && data != "00:00") {
 
-                    $('#clock').html(data);
-                            setTimeout(checkTime, 1000);
-                    } 
-                    else if (data != "0") {
-                    alert("<?= __('Se acabó el tiempo') ?>");
-                    location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                        $('#clock').html(data);
+                        setTimeout(checkTime, 1000);
+                    } else if (data != "0") {
+                        alert("<?= __('Se acabó el tiempo') ?>");
+                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                    } else {
+                        setTimeout(checkTime, 1000);
                     }
-                    else{
-                               setTimeout(checkTime, 1000);
-                    }
-                    
+
                 });
-                }
+            }
     <?php
 }
 ?>
-        
-        
+
+
 
     });
 </script>

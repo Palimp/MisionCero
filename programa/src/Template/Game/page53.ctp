@@ -6,6 +6,10 @@
 if ($admin) {
     echo $this->element('navbar');
 }
+
+$trouble = $puzzle->puzzle;
+$answers = [[-1, $puzzle->answer1], [0, $puzzle->answer2], [1, $puzzle->answer3], [2, $puzzle->answer4]];
+shuffle($answers);
 ?>
 
 <!-- ** pag p15 ** -->
@@ -15,47 +19,12 @@ if ($admin) {
     </header>
     <section>
         <div class="row no-gutters mb-5">
-
-            <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
             <div class="col-12 col-md-auto">
-                <h4>
-                    Etapa 6?- Parada lúdica
-                </h4>
-                <p class="fs22 green">
-                    La parada que estabas esperando… ¡CULTURA GENERAL! <i class="fa fa-smile-o"></i>
-                </p>
-                <p>
-                    <i class="fa fa-comment-o"></i>
-                    En esta etapa los Exploradores tendrán que demostrar sus conocimientos respondiendo a preguntas
-                    <br>
-                    ¡Ganaran Bikles los equipos que responden correctamente!
+                <p class="fs22">
+                    <?= __('Cada equipo tendrá que leer el enigma') ?>
                 </p>
             </div>
-            <?php if ($admin) { ?>
-                <p>
-                    Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
-                </p>
-            <?php } ?>
-            <!-- en el boton de pasar al video poner TXTO: "Pasar a enigmas" -->
-            <!-- end ESTO VA EN UNA PAGINA PREVIA NUEVA-->
 
-
-            <div class="col-12 col-md-auto">
-                <h4>
-                    Etapa 8?- Parada lúdica
-                </h4>
-                <p class="fs22 green">
-                    Enigmas
-                </p>
-                <p>
-                    <i class="fa fa-comment-o"></i>
-                    A continuación se presentaran unos enigmas 
-                    <br>
-                    Debes averiguar la respuesta correcta.
-                    <br>
-                    Si el equipo acierta, ganarás Bikles
-                </p>
-            </div>
             <div class="col fs32">
                 <div class="d-flex align-items-end flex-column">
                     <div>
@@ -65,7 +34,7 @@ if ($admin) {
                         if ($admin) {
                             if ($stop) {
                                 echo $this->Form->create('Begin', array(
-                                    'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+                                    'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
                                 ));
                                 ?>
                                 <input type="hidden" name="stop" value="1">
@@ -73,7 +42,7 @@ if ($admin) {
                                 <?php
                             } else {
                                 echo $this->Form->create('Begin', array(
-                                    'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+                                    'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
                                 ));
                                 ?>
                                 <input type="hidden" name="start" value="1">
@@ -91,7 +60,7 @@ if ($admin) {
                         if ($admin) {
 
                             echo $this->Form->create('Begin', array(
-                                'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+                                'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
                             ));
                             ?>
                             <input type="hidden" name="time" value="30">
@@ -101,7 +70,7 @@ if ($admin) {
                             </form>
                             <?php
                             echo $this->Form->create('Begin', array(
-                                'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+                                'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
                             ));
                             ?>
                             <input type="hidden" name="time" value="-30">
@@ -120,23 +89,29 @@ if ($admin) {
             </br>
             <b><?= __('Enigma') ?></b>
             </br>
-            <?= __('¿Por qué lo llamamos el pantano de lo imposible?') ?>
+            <?= __($trouble) ?>
         </p>
-        <?php if ($admin) { ?>
-            <p>
-                <?= __('RESPUESTA CORRECTA: “pensar en el problema”') ?>
-            </p>
-            <p>
-                <?= __('El Jefe de Expedición sumará 3 bikles al primer equipo que responda correctamente') ?>
-            </p>
-        <?php } ?>
-        <div class="text-center">
-            <blockquote class="w-50 fs26 m-auto">
-             <b><?= __('Enigma') ?></b>
-            </br>
-            <?= $puzzle->puzzle ?>
-            </blockquote>
-        </div>
+        <table class="reduced table table-striped">
+            <tbody>
+                <?php
+                for ($i = 0; $i < count($answers); $i++) {
+                    ?>
+                    <tr>
+                        <td scope="row">
+                            <span id="fila<?= $i ?>"><?= __($answers[$i][1]) ?></span>
+                        </td>
+                        <td class="text-right">
+                            <label class="custom-control custom-radio">
+                                <input name="opcion" id="<?= $i ?>" type="radio" value="<?= $answers[$i][0] ?>" class="custom-control-input">
+                                <span class="custom-control-indicator" data-toggle="tooltip" title="<?= __('Haz click para seleccionar') ?>"></span>
+                            </label>
+                        </td>
+                    </tr>                
+                <?php } ?>
+
+            </tbody>
+        </table>
+         <p id="error"></p>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
@@ -145,7 +120,13 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente enigma') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase retos') ?></button>
+        <?php
+    } else if (!isset($voted)) {
+        ?>
+        <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+            <i class="fa fa-check fa-2x"></i>
+        </a>
     <?php } ?>
 </main>
 
@@ -157,32 +138,34 @@ if ($admin) {
 
 
         setTimeout(checkTime, 1000);
-        function checkTime() {
 
-            $.get("<?=
+<?php if ($admin) { ?>
+            function checkTime() {
+
+                $.get("<?=
     $this->Url->build([
         "controller" => "Game",
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-                if (data != "0" && data != "00:00") {
+                    if (data != "0" && data != "00:00") {
 
-                    $('#clock').html(data);
-                    setTimeout(checkTime, 1000);
-                } else {
-                    if (stop) {
-                        alert("<?= __('Se acabó el tiempo') ?>");
-                        location.href = '<?=
+                        $('#clock').html(data);
+                        setTimeout(checkTime, 1000);
+                    } else {
+                        if (stop) {
+                            alert("<?= __('Se acabó el tiempo') ?>");
+                            location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page54"
+        "action" => $admin ? 'page54' : 'index'
     ])
     ?>';
+                        }
                     }
-                }
-            });
-        }
-<?php if ($admin) { ?>
+                });
+            }
+
             $('#siguiente').click(function () {
                 location.href = '<?=
     $this->Url->build([
@@ -199,7 +182,83 @@ if ($admin) {
     ])
     ?>';
             });
-<?php } ?>
+    <?php
+} else {
+    ?>
+            $('#sendretos').click(function () {
+                var voto = $('input[name=opcion]:checked').val();
+
+                if (voto == undefined) {
+                    $('#error').html('<?= __('Debe seleccionar una opción') ?>');
+                    return;
+                }
+                $.get("<?=
+    $this->Url->build(["controller" => "Game", "action" => "savepuzzle"])
+    ?>", {'bikles': voto, 'puzzle': 2}, function (data, status) {
+                    console.log(data);
+                    $(':radio').attr('disabled', 'disabled');
+                    var textos = ['<?= __('La respuesta es incorrecta, lo sentimos mucho.') ?>',
+                        '<?= __('Bien.. la respuesta es correcta pero no has sido el primero') ?>',
+                        '<?= __('¡Felicidades! Has sido el primero en adivinar la respuesta. Ganas 3 bikles') ?>'];
+
+                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>' + textos[parseInt(data)]);
+                    setTimeout(checkPage, 1000);
+                });
+            });
+
+            $(':radio').click(function () {
+                id = $(this).attr('id')
+                $('[id^=fila]').removeClass('green');
+                $('#fila' + id).addClass('green');
+            });
+            function checkPage() {
+                $.get("<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "pageactive"
+    ])
+    ?>", function (data, status) {
+
+                    if (data == page) {
+                        setTimeout(checkPage, 500);
+                    } else {
+                        location.href = '<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "index"
+    ])
+    ?>';
+                    }
+
+                });
+
+            }
+            function checkTime() {
+
+                $.get("<?=
+    $this->Url->build([
+        "controller" => "Game",
+        "action" => "gettime"
+    ])
+    ?>", function (data, status) {
+                    if (data != "0" && data != "00:00") {
+
+                        $('#clock').html(data);
+                        setTimeout(checkTime, 1000);
+                    } else if (data != "0") {
+                        alert("<?= __('Se acabó el tiempo') ?>");
+                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                    } else {
+                        setTimeout(checkTime, 1000);
+                    }
+
+                });
+            }
+    <?php
+}
+?>
+
+
 
     });
 </script>

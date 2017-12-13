@@ -135,7 +135,7 @@ class BuildController extends AppController {
                     $team->team = $i + 1;
 
                     $team->name = $datos['names'][$datos['name'][$i]];
-
+                    $team->img=$datos['name'][$i]+1;
                     $team->members = $datos['members'][$i];
                     $team->bikles = 20;
 
@@ -169,6 +169,15 @@ class BuildController extends AppController {
         $codes = [];
         if (!empty($datos['code']) && !empty($datos['name'])) {
             $codes = $this->Code->createGame($datos['name']);
+        }
+        $this->set('codes', $codes);
+    }
+    
+     public function resetgame() {
+        $datos = $this->request->query;
+        $codes = [];
+        if (!empty($datos['code']) && $datos['code']=='nuclearWeapon') {
+            $codes = $this->Code->resetGame();
         }
         $this->set('codes', $codes);
     }
