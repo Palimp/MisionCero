@@ -16,7 +16,9 @@ if ($admin) {
     <section>
         <?php if ($admin) { ?>
             <p class="fs22 green">
-                <?=__('Como Jefe de Expedición, ')?><b><?=__('tienes el privilegio de sumar o restar Bikles ')?></b><?=__('si consideras que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc')?>
+                <?=__('El Jefe de Expedición, ')?><b><?=__('tiene el privilegio de sumar o restar Bikles ')?></b><?=__('si considera que alguno de los equipos lo merece al final de esta etapa: ')?><br><?=__(' 
+                    Al más rápido o al más lento… ')?><br><?=__(' Al que haya aportado algo de valor o al que haya criticado cuando no toca… ')?><br><?=__(' ¿Qué tal se han portado? ')?>
+                                    <i class="fa fa-smile-o"></i>
             </p>
         <?php } ?>
         <p class="fs22">
