@@ -77,6 +77,82 @@ if ($admin) {
                 </div>
             </div>
         </div>
+        <div>
+            <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
+                <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
+                </p>
+            </a>
+        </div>
+        <div id="modal_ex1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header align-items-start">
+                        <div class="example fs26">
+                            <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                            <div class="example_wrapper d-inline-block">
+                                <div class="example_inner text-left py-3 px-4">
+                                    <b><?=__('Ejemplo: ')?></b>
+                                    <?=__('si nuestra problemática inicial fuera')?>
+                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success d-inline-block">
+                            <p>
+                                <?=__('Podremos seguir una simulación de partida sobre la problemática ficticia ')?>
+                                <br>
+                                <b><?=__('“¿Cómo podríamos mejorar la comunicación interna?” ')?></b>
+                                <br>
+                                <?=__('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ')?>
+                            </p>
+                            <p>
+                                <?=__('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida')?>
+                            </p>
+                        </div>
+                        <p>
+                            <b>
+                                <?=__('Para la Etapa 1, algunos ejemplos de ')?><i><?=__('comentarios informales')?></i> <?=__('sobre la problemática podrían ser:')?> 
+                            </b>
+                        </p>
+                        <ul>
+                            <li>
+                                <?=__('Los rumores siempre van más rápido que la información interna')?>
+                            </li>
+                            <li>
+                                <?=__('Nadie lee los mails de comunicación interna')?> 
+                            </li>
+                            <li>
+                                <?=__('Mucha gente no entiende los mails de comunicación interna')?>
+                            </li>
+                            <li>
+                                <?=__('No tocan lo que nos gustaría realmente saber')?>
+                            </li>
+                            <li>
+                                <?=__('Para los de la fábrica, la información no es relevante')?>
+                            </li>
+                            <li>
+                                <?=__('Los mails de comunicación son muy aburridos')?>
+                            </li>
+                            <li>
+                                <?=__('Siempre presentan un mundo perfecto')?>
+                            </li>
+                            <li>
+                                <?=__('Los que mandan comunicación están muy lejos y no saben lo que hacemos')?>
+                            </li>
+                            <li>
+                                <?=__('Tendríamos que tener a personas de comunicación en cada área ')?>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
