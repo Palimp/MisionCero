@@ -82,7 +82,7 @@ if ($admin) {
                 </div>
             </div>
         </div>
-        
+
         <div class="col-2">
             <!-- Button trigger modal_ex2 -->
             <div class="d-inline">
