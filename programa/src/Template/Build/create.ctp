@@ -32,7 +32,7 @@ echo $this->element('navbar');
                 ?>
                 <h1 class="fs26"><?= __('Juego creado') ?></h1>
                 <h1 class="fs26"><?= __('Código administrador: ') . $codes[0] ?></h1>
-                <h1 class="fs26"><?= __('Código usuario:') . $codes[1] ?></h1>
+                <h1 class="fs26"><?= __('Código usuario: ') . $codes[1] ?></h1>
                 <?php
             }
             ?>
