@@ -48,7 +48,10 @@ if ($admin) {
                 foreach ($ranking as $team) {
                     ?>
                     <tr>
-                        <td scope="row" class="fs32"><?= $team['team'] ?></td>
+                        
+                                    <b><?=__('Ejemplo: ')?></b>
+                                    <?=__('si nuestra problemática inicial fuera')?>
+                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
                         <td>   <?= $this->Html->image("exp" . str_pad($team['img'], 2, "0", STR_PAD_LEFT) . ".png", ['class' => 'img-fluid']); ?></td>
 
                         <td><?= $team['name'] ?></td>
