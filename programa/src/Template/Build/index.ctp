@@ -40,7 +40,22 @@ echo $this->element('navbar');
         <p>
             Cuando todos los equipos hayan sido confirmados, aparecerá abajo “empezar partida”. 
         </p> -->
-         <div>
+
+        <p>
+            Ahora, espera que los equipos entren en la partida y:
+        </p>
+            <ul>
+                <li>
+                    en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.
+                </li>
+                <li>
+                    si no se han configurado con anterioridad, cada equipo tiene que elegir un nombre de equipo y introducir los nombres de todos sus miembros
+                </li>
+        <p>
+            Cuando todos los equipos hayan sido confirmados, aparecerá abajo “empezar partida”. 
+        </p>
+
+        <div>
             <?php
             if ($teams) {
                 echo $this->Html->link(
@@ -49,12 +64,11 @@ echo $this->element('navbar');
             ?>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
             <p class="fs26"><?= __('Menú de administración') ?></p>
 
         </div>
 
-        <!-- Button trigger modals -->
 
         <div>
             <?=
@@ -75,7 +89,7 @@ echo $this->element('navbar');
                         __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin']);
             }
             ?>
-        </div>
+        </div> -->
     </section>
 
 </main>
