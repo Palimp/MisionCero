@@ -16,7 +16,20 @@ echo $this->element('navbar');
         </div>
     </header>
     <section>
-        <p class="fs22">Ahora, crea los equipos si lo deseas.<br> Si prefieres, los equipos se pueden configurar al inicio de la partida, </p>
+
+        <p>
+            Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!
+            </br>
+            </br>
+            Como Jefe de Expedición, puedes formar los equipos antes de la partida y así tener todo preparado.
+            </br>
+            </br>
+            Si no dispones todavía de toda la información para formar los equipos, no te preocupes porque lo podrás hacer al inicio de la partida con los Exploradores (jugadores). En este caso, pulsa abajo en “lo haré más adelante”
+            </br>
+            </br>
+            Si quieres formar los equipos ahora pulsa en ”Crear equipos”
+        </p>
+        <!-- <p class="fs22">Ahora, crea los equipos si lo deseas.<br> Si prefieres, los equipos se pueden configurar al inicio de la partida, </p>
         <ul>
             <li>
                 - en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.
@@ -26,7 +39,7 @@ echo $this->element('navbar');
             </li>
         <p>
             Cuando todos los equipos hayan sido confirmados, aparecerá abajo “empezar partida”. 
-        </p>
+        </p> -->
          <div>
             <?php
             if ($teams) {

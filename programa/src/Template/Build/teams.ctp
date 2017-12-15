@@ -43,25 +43,11 @@ $fila = '<div class="row bloque">
             ¡Competiremos por equipos!
         </p>
         <p>
-            Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!
-            </br>
-            </br>
-            Como Jefe de Expedición, puedes formar los equipos antes de la partida y así tener todo preparado.
-            </br>
-            </br>
-            Si no dispones todavía de toda la información para formar los equipos, no te preocupes porque lo podrás hacer al inicio de la partida con los Exploradores (jugadores).
-            </br>
-            En este caso, pulsa abajo en “lo haré más adelante”
-            </br>
-            </br>
-            Si quieres formar los equipos ahora:
-            </br>
-
-            1. Elije un nombre de equipo
+            1. Elige un nombre de equipo
             </br>
             2. Introduce los nombres de sus miembros, separados por comas (¡importante!)
             </br>
-            3. Repite el proceso hasta formar todos los equipos que participarán a la partida
+            3. Repite el proceso hasta formar todos los equipos que participarán en la partida
         </p>
         <?php
         echo $this->Form->create('Teams', array(
@@ -96,7 +82,6 @@ $fila = '<div class="row bloque">
                 <div class="col">
 
                     <div class="d-inline">
-              <!--          <img class="img-fluid" style="height: 50px; width: 50px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22771%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20771%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ddcba636d%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A39pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ddcba636d%22%3E%3Crect%20width%3D%22771%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.7421875%22%20y%3D%22143%22%3E771x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">-->
                         <?php
                         echo $this->Form->input(
                                 'name[]', [
