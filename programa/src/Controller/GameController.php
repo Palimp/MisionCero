@@ -1214,7 +1214,7 @@ class GameController extends AppController {
         $period = $this->Code->getTime(4);
 
         $session->write('period', $period);
-        $image = $this->Code->getImage($id);
+        
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
@@ -1236,7 +1236,9 @@ class GameController extends AppController {
                 $this->Code->setTime($id, 1, $time2);
                 $this->set('stop', 1);
             }
+            $image = $this->Code->getImageId($sesion['ludico']);
         } else {
+            $image = $this->Code->getImage($id);
             $this->Code->setTime($id);
         }
 
