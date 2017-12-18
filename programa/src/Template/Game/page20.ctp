@@ -15,24 +15,54 @@ if ($admin) {
     </header>
     <section>
         <h4>
+            <?=__('Etapa 3- Preguntas básicas')?>
+            <br>
             <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">
             <?=__('Retos basados en preguntas básicas')?>
         </p>
         <p>
-            <?=__('Los equipos tienen 10 minutos para')?><br>
-            <ol>
-                <li>
-                    <?=__('Identificar momentos, lugares, maneras, razones… relevantes')?>
-                    <br>
-                    <?=__('Pueden pulsar el icono amarilla para ver un ejemplo que ayude a entender e inspirar')?>
-                </li>
-                <li>
-                    <?=__('Transformarlos en retos en forma de “¿Cómo podríamos…?')?>
-                </li>
-            </ol>
+            <?=__('Los equipos tienen 10 minutos para identificar retos basados en preguntas básicas:')?>
         </p>
+        <div class="row fs22 green">
+            <div class="col">
+                <?=__('¿CUÁNDO?')?>
+            </div>
+            <div class="col">
+                <?=__('¿DÓNDE?')?>
+            </div>
+            <div class="col">
+                <?=__('¿CÓMO?')?>
+            </div>
+            <div class="col">
+                <?=__('¿QUIÉN?')?>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <?=__('Paso 1- Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
+            </li>
+            <li>
+                <?=__('Paso 2- Convertir estas respuestas en retos: ¿cómo podríamos…?')?>
+            </li>
+        </ul>
+        <div class="row fs22 green">
+            <div class="col">
+                <?=__('¿POR QUÉ?')?>
+            </div>
+            <div class="col">
+                <?=__('¿PARA QUÉ?')?>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <?=__('Paso 1- Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
+            </li>
+            <li>
+                <?=__('Paso 2- Convertirlos en reto: ¿Cómo podríamos…? ')?>
+            </li>
+        </ul>
 
         <div class="col-12 col-md-auto">
             <p class="fs22">
