@@ -47,7 +47,7 @@
                 </a>
             </div>
         </div>
-     <div>
+        <div>
           <a href="#" data-toggle="modal" data-target="#modal_ex4" class="grey_link">
             <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
             <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>

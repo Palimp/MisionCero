@@ -24,12 +24,12 @@ if ($admin) {
                         <?= __('Los equipos se agrupan por dos: cada equipo se junta con otro.') ?>
                     </p>
                     <p>
-                        <?= __('Los equipos tienen 3 minutos para pensar cómo vender este objeto al otro equipo.') ?>
+                        Los equipos tienen 3 minutos para pensar en cómo vender este objeto al otro equipo, teniendo en cuenta que <b>no puede servir para su uso habitual.</b>
                     </p>
                     <p>
                         <b>Fase 1:</b>
                         </br>
-                        <?= __('- Uno de los 2 equipos tendrá que tratar de vender en 3 minutos el otro el objeto que aparece en la foto (¡teniendo en cuenta la observación que figura!): tendrá que explicarle porque tiene que comprar su objeto.') ?>
+                        <?= __('- Uno de los 2 equipos tendrá que tratar de vender en 3 minutos el otro el objeto que aparece en la foto: tendrá que explicarle porque tiene que comprar su objeto.') ?>
                         </br>
                         <?= __('- El otro equipo escucha la presentación y cuando acaba tiene que comunicar al Jefe de Expedición se le han convencido.') ?>
                         </br>
@@ -92,7 +92,7 @@ if ($admin) {
             </div>
         </div>
         <div class="text-center">
-            <p class="f22 green"><?= __('Para cada objeto sus limitaciones') ?></p>
+            <!-- <p class="f22 green"><?= __('Para cada objeto sus limitaciones') ?></p> -->
 
             <?= $this->Html->image($image, ['class' => 'img-fluid']); ?>
 
@@ -100,10 +100,9 @@ if ($admin) {
         </div>
     </section>
     <?php if ($admin) { ?>
-        <div class="text-center mt-5">
+        <div class="mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <p><?= __('El Jefe de Expedición distribuirá Bikles:') ?></p>
-                </br>
                 <b>
                     <?= __('- Si la venta ha sido neutra, no ganarán ni perderán Bikles') ?>
                 </b>

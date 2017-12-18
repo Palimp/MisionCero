@@ -99,6 +99,8 @@ hr {
 ul{
   list-style-type: none;
   -webkit-padding-start: 0;
+  padding-start: 0;
+  padding: 0;
 }
 .fs12{
   font-size: 0.75rem;
@@ -308,8 +310,8 @@ main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
   padding: 1.5rem 1.5rem 0.5rem 1.5rem !important;
 }
 .mx-10neg {
-  margin-left: -6rem !important;
-  margin-right: -6rem !important;
+  margin-left: -3rem !important;
+  margin-right: -3rem !important;
 }
 
 

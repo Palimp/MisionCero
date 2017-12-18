@@ -160,7 +160,7 @@ if ($admin) {
                         }
                     }
                     if (cont != 3) {
-                        $('#error').html('<?= __('Revise los votos') ?>');
+                        $('#error').html('<?= __('Ups! Explorador, algo no ha ido bien…') ?><i class="fa fa-smile-o fa-rotate-180 text-danger"></i><?= __('Usa tus prismáticos y revisa tus votos') ?>');
                         $('#submitvotos').attr('style', '');
                         return;
                     }

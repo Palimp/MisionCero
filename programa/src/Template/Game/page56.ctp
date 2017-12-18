@@ -74,6 +74,85 @@ if ($admin) {
             </div>
         </div>
         <div id="error"></div>
+        
+        <div class="col-2">
+            <!-- Button trigger modal_ex6 -->
+            <div class="d-inline">
+                <a href="#" data-toggle="modal" data-target="#modal_ex6" class="grey_link">
+                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                    </p>
+                </a>
+                <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+                    <i class="fa fa-check fa-2x"></i>
+                </a>
+            </div>
+            <!-- modal_ex6 -->
+            <div>
+                <div id="modal_ex6" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex6LiveLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header align-items-start">
+                                <div class="example fs26">
+                                    <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                                    <div class="example_wrapper d-inline-block">
+                                        <div class="example_inner text-left py-3 px-4">
+                                            <b><?= __('Ejemplo: ') ?></b>
+                                            <?= __('si nuestra problemática inicial fuera') ?>
+                                            <b><?= __('¿Cómo podríamos mejorar la comunicación interna?') ?></b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <b>
+                                        <?= __('Para la Etapa 9, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave de interacción y en pain points') ?></i> <?= __(' podrían ser:') ?> 
+                                    </b>
+                                </p>
+                                <div class="row py-5 text-center">
+                                    <div class="col">
+                                        <p>
+                                            <i class="fa fa-smile-o fa-3x text-success"></i>
+                                            </br>
+                                            <b>
+                                                <?= __('POSITIVO') ?>
+                                            </b>
+                                            </br>
+                                            </br>
+                                            <?= __('Motivado') ?>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            <?= __('¿Cómo motivar al colectivo sobre nuestro problema?') ?>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p>
+                                            <i class="fa fa-smile-o fa-3x fa-rotate-180 text-danger"></i>
+                                            </br>
+                                            <b>
+                                                <?= __('NEGATIVO') ?>
+                                            </b>
+                                            </br>
+                                            </br>
+                                            <?= __('Pesimista') ?>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            <?= __('¿Cómo podríamos convencernos de que tiene solución?') ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
     <?php if ($admin) { ?>
@@ -144,7 +223,7 @@ if ($admin) {
                     votos.push($(this).attr('id').replace("_", ""));
                 });
                 if (votos.length!=3){
-                    $('#error').html('<b style="color:red"><?=__('Revise los votos')?></b>');
+                    $('#error').html('<?= __('Ups! Explorador, algo no ha ido bien…') ?><i class="fa fa-smile-o fa-rotate-180 text-danger"></i><?= __('Usa tus prismáticos y revisa tus votos') ?>');
                     return;
                 }
                                 $('#submitvotos').attr('style', 'display:none !important');

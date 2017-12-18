@@ -15,31 +15,215 @@ if ($admin) {
     </header>
     <section>
         <h4>
+            <?=__('Etapa 3- Preguntas básicas')?>
+            <br>
             <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">
             <?=__('Retos basados en preguntas básicas')?>
         </p>
         <p>
-            <?=__('Los equipos tienen 10 minutos para')?><br>
-            <ol>
-                <li>
-                    <?=__('Identificar momentos, lugares, maneras, razones… relevantes')?>
-                    <br>
-                    <?=__('Pueden pulsar el icono amarilla para ver un ejemplo que ayude a entender e inspirar')?>
-                </li>
-                <li>
-                    <?=__('Transformarlos en retos en forma de “¿Cómo podríamos…?')?>
-                </li>
-            </ol>
+            <?=__('Los equipos tienen 10 minutos para identificar retos basados en preguntas básicas:')?>
         </p>
+        <div class="row fs22 green">
+            <div class="col">
+                <?=__('¿CUÁNDO?')?>
+            </div>
+            <div class="col">
+                <?=__('¿DÓNDE?')?>
+            </div>
+            <div class="col">
+                <?=__('¿CÓMO?')?>
+            </div>
+            <div class="col">
+                <?=__('¿QUIÉN?')?>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <?=__('Paso 1- Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
+            </li>
+            <li>
+                <?=__('Paso 2- Convertir estas respuestas en retos: ¿cómo podríamos…?')?>
+            </li>
+        </ul>
+        <div class="row fs22 green">
+            <div class="col">
+                <?=__('¿POR QUÉ?')?>
+            </div>
+            <div class="col">
+                <?=__('¿PARA QUÉ?')?>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <?=__('Paso 1- Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
+            </li>
+            <li>
+                <?=__('Paso 2- Convertirlos en reto: ¿Cómo podríamos…? ')?>
+            </li>
+        </ul>
 
         <div class="col-12 col-md-auto">
             <p class="fs22">
                 <?= $trouble ?>
             </p>
+        </div> 
+        <div>
+            <!-- Button trigger modal_ex -->
+            <div class="d-inline">
+                <a href="#" data-toggle="modal" data-target="#modal_ex" class="grey_link">
+                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                    </p>
+                </a>
+            </div>
+            <!-- modal_ex -->
+            <div>
+                <div id="modal_ex" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_exLiveLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header align-items-start">
+                                <div class="example fs26">
+                                    <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                                    <div class="example_wrapper d-inline-block">
+                                        <div class="example_inner text-left py-3 px-4">
+                                            <b><?=__('Ejemplo: ')?></b>
+                                            <?=__('si nuestra problemática inicial fuera')?>
+                                            <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <b>
+                                        <?=__('Para la Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en preguntas básicas')?></i> <?=__(' podrían ser:')?> 
+                                    </b>
+                                </p>
+                                <div class="text-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <i class="fa fa-user fa-2x"></i>
+                                                </br>
+                                                <b>
+                                                    <?= __('QUIÉN') ?>
+                                                </b>
+                                                </br>
+                                                <?= __('El que manda la comunicación') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos conseguir que el que manda la comunicación conozca el colectivo que la recibe?') ?>
+                                            </p>
+                                            <p>
+                                                <?= __('Los que la reciben') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos involucrar a la gente en la comunicación?') ?>
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p>
+                                                <i class="fa fa-clock-o fa-2x"></i>
+                                                </br>
+                                                <b>
+                                                    <?= __('CUÁNDO') ?>
+                                                </b>
+                                                </br>
+                                                <?= __('Cuando hay cambios') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos comunicar bien cuando hay cambios importantes?') ?>
+                                            </p>
+                                            <p>
+                                                <?= __('Cuando hay dudas') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos comunicar en momentos de incertidumbre?') ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <i class="fa fa-map-pin fa-2x"></i>
+                                                </br>
+                                                <b>
+                                                    <?= __('DÓNDE') ?>
+                                                </b>
+                                                </br>
+                                                <?= __('En la fábrica') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos adecuar la comunicación al personal de fábrica?') ?>
+                                            </p>
+                                            <p>
+                                                <?= __('En los espacios donde se comunica') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos optimizar la comunicación en los paneles de los espacios comunes?') ?>
+                                            </p>
+                                            <p>
+                                                <i class="fa fa-question-circle fa-2x"></i>
+                                                </br>
+                                                <b>
+                                                    <?= __('POR QUÉ’S') ?>
+                                                </b>
+                                                </br>
+                                                <?= __('Porque nadie hace caso') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('Cómo podríamos conseguir que la gente haga caso a la comunicación?') ?>
+                                            </p>
+                                            <p>
+                                                <?= __('Porque no nos enteramos de nada') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos conseguir que la comunicación interna nos ayude a conocer mejor lo que nos puede ayudar?') ?>
+                                            </p>
+                                            <p>
+                                                <?= __('Porque queremos que toda la empresa comparta la visión y los valores') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos conseguir una comunicación que involucre a la gente en los valores?') ?>
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p>
+                                                <i class="fa fa-crosshairs fa-2x"></i>
+                                                </br>
+                                                <b>
+                                                    <?= __('PARA QUÉ') ?>
+                                                </b>
+                                                </br>
+                                                <?= __('Para que todos lo entiendan') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿Cómo podríamos conseguir que se entienda a primera vista el objetivo de una comunicación?') ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
         <?php if ($admin) { ?>
             <p>
                 Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.
