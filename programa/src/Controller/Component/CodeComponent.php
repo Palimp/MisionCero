@@ -385,8 +385,7 @@ class CodeComponent extends Component {
                     ->where(['team_id' => $team->id]);
 
             $num = 3 - $query->count();
-            echo $num;
-            die();
+       
             for ($i = 0; $i < $num; $i++) {
                 $row = $table->newEntity();
                 $row->team_id = $team->id;
