@@ -42,7 +42,7 @@ if ($admin) {
                 </div>
                 <?php if ($admin) { ?>
                     <p>
-                        Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
+                        Si el número de equipos es impar, el equipo con más bikles juega contra el Jefe de Expedición
                     </p>
                 <?php } ?>
                 <div class="text-center mt-5">
