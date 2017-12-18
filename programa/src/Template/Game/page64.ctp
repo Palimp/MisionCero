@@ -151,7 +151,7 @@ if ($admin) {
 
             $('#submitvotos').click(function () {
                 if ($(":radio:checked").length != 25) {
-                    alert("Revise los votos");
+                    alert("Ups! Explorador, algo no ha ido bien… Usa tus prismáticos y revisa tus votos");
                     return;
                 }
                 var votos = [];

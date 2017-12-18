@@ -223,7 +223,7 @@ if ($admin) {
                     votos.push($(this).attr('id').replace("_", ""));
                 });
                 if (votos.length!=3){
-                    $('#error').html('<b style="color:red"><?=__('Revise los votos')?></b>');
+                    $('#error').html('<?= __('Ups! Explorador, algo no ha ido bien…') ?><i class="fa fa-smile-o fa-rotate-180 text-danger"></i><?= __('Usa tus prismáticos y revisa tus votos') ?>');
                     return;
                 }
                                 $('#submitvotos').attr('style', 'display:none !important');
