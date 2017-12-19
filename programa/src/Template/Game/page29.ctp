@@ -9,7 +9,7 @@ if ($admin) {
 $trouble = $practical->trouble;
 $answers = [[-1, $practical->answer1], [0, $practical->answer2], [1, $practical->answer3], [2, $practical->answer4]];
 shuffle($answers);
-$solution=$practical->answer1;
+$solution = $practical->answer1;
 ?>
 
 <!-- ** pag p15 ** -->
@@ -49,7 +49,7 @@ $solution=$practical->answer1;
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
         <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
         <?php
-    } else if (!isset($voted) ) {
+    } else if (!isset($voted)) {
         ?>
         <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
             <i class="fa fa-check fa-2x"></i>
@@ -93,10 +93,11 @@ $solution=$practical->answer1;
     ?>", {'bikles': voto}, function (data, status) {
                     $(':radio').attr('disabled', 'disabled');
                     var textos = ['<?= __('Con este reto va a ser muy difícil alcanzar el objetivo planteado… ¡con las preguntas de siempre obtendremos las respuestas de siempre!<br/>Tu equipo pierde -1 Bikle') ?>',
+
                         '<?= __('Bueno….. Los equipos que no arriesgan, ni ganan ni pierden  <br>Tu equipo no gana ni pierde bikles') ?>',
                         '<?= __('Bien… aunque el reto seleccionado no es el mejor reto, es bastante innovador!<br/>Tu equipo ha ganado: 1 Bikle') ?>',
                         '<?= __('¡Felicidades! El reto seleccionado es el que mejor va a ayudar a cumplir con el objetivo! <br/>Tu equipo ha ganado: 2 Bikles') ?>'];
-                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: ' + textos[parseInt(voto)+1]+'<br/>La solución es:<br/><?=$solution?>');
+                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: ' + textos[parseInt(voto) + 1] + '<br/>La solución es:<br/><?= $solution ?>');
                     setTimeout(checkPage, 1000);
                 });
             });
