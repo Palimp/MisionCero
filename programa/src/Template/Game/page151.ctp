@@ -38,7 +38,7 @@ if ($admin) {
         </div>
         <?php if ($admin) { ?>
             <p>
-                Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
+                El Jefe de Expedición seguirá las instrucciones al pie del vídeo para lanzar la pregunta en el momento adecuado
             </p>
         <?php } ?>
         <!-- en el boton de pasar al video poner TXTO: "Pasar al vídeo" -->
