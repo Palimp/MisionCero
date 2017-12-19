@@ -94,7 +94,7 @@ class CodeComponent extends Component {
         $videos = $this->getVideos();
         $video = $videos[rand(0, count($videos) - 1)];
         $this->saveLudico($id, $video->url);
-        return ['url' => $video->url, 'texto' => $video->texto, 'solucion' => $video->solucion];
+        return ['url' => $video->url, 'texto' => $video->texto, 'final' => $video->final, 'solucion' => $video->solucion];
     }
 
     public function getPuzzles() {
