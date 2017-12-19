@@ -772,7 +772,6 @@ class GameController extends AppController {
         $this->set('trouble', $sesion['trouble']);
         $this->set('url', $video['url']);
         $this->set('texto', $video['texto']);
-        $this->set('final', $video['final']);
         $this->set('solucion', $video['solucion']);
     }
 

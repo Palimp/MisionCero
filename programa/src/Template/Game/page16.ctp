@@ -15,11 +15,8 @@ if ($admin) {
     </header>
     <section>
         <?php if ($admin) { ?>
-            <!-- <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="<?= $url ?>" frameborder="0" allowfullscreen></iframe>
-            </div> -->
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="<?= $final ?>" frameborder="0" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="<?= $url ?>" frameborder="0" allowfullscreen></iframe>
             </div>
             <!-- ONLY GM -->
             <div class="video">
