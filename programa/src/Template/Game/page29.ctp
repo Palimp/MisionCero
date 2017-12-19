@@ -9,6 +9,7 @@ if ($admin) {
 $trouble = $practical->trouble;
 $answers = [[-1, $practical->answer1], [0, $practical->answer2], [1, $practical->answer3], [2, $practical->answer4]];
 shuffle($answers);
+$solution = $practical->answer1;
 ?>
 
 <!-- ** pag p15 ** -->
@@ -96,7 +97,7 @@ shuffle($answers);
                         '<?= __('Bueno….. Los equipos que no arriesgan, ni ganan ni pierden  <br>Tu equipo no gana ni pierde bikles') ?>',
                         '<?= __('Bien… aunque el reto seleccionado no es el mejor reto, es bastante innovador!<br/>Tu equipo ha ganado: 1 Bikle') ?>',
                         '<?= __('¡Felicidades! El reto seleccionado es el que mejor va a ayudar a cumplir con el objetivo! <br/>Tu equipo ha ganado: 2 Bikles') ?>'];
-                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: ' + textos[parseInt(voto)+1]);
+                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: ' + textos[parseInt(voto) + 1] + '<br/>La solución es:<br/><?= $solution ?>');
                     setTimeout(checkPage, 1000);
                 });
             });
