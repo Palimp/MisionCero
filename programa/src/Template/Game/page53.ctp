@@ -10,6 +10,8 @@ if ($admin) {
 $trouble = $puzzle->puzzle;
 $answers = [[-1, $puzzle->answer1], [0, $puzzle->answer2], [1, $puzzle->answer3], [2, $puzzle->answer4]];
 shuffle($answers);
+$solution=$puzzle->answer1;
+
 ?>
 
 <!-- ** pag p15 ** -->
@@ -201,7 +203,7 @@ shuffle($answers);
                         '<?= __('Bien.. la respuesta es correcta pero no has sido el primero') ?>',
                         '<?= __('¡Felicidades! Has sido el primero en adivinar la respuesta. Ganas 3 bikles') ?>'];
 
-                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>' + textos[parseInt(data)]);
+                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>' + textos[parseInt(data)]+"<br/>La solución es: <?=$solution ?>");
                     setTimeout(checkPage, 1000);
                 });
             });

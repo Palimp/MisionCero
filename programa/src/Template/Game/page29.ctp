@@ -9,7 +9,7 @@ if ($admin) {
 $trouble = $practical->trouble;
 $answers = [[-1, $practical->answer1], [0, $practical->answer2], [1, $practical->answer3], [2, $practical->answer4]];
 shuffle($answers);
-$solution = $practical->answer1;
+$solution = $practical->answer4;
 ?>
 
 <!-- ** pag p15 ** -->

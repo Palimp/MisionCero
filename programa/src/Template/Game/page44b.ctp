@@ -104,7 +104,7 @@
                 <tr>
                     <td scope="row" class="align-top">
                         <input type="text" id="inter" class="form-control d-inline-block  painpoints" placeholder="<?= __('Introduce aquí la interacción') ?>" >
-                        <a id="addinter" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block">
+                        <a id="addinter" href="javascript:foo()" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block">
                             <i class="fa fa-plus fa-2x"></i>
                         </a>
                     </td>
@@ -246,10 +246,27 @@
 </main>
 
 <script>
+    function foo(){
+        return false;
+    }
+    
     var page = 44;
-    var inter = '<tr><td scope="row" class="align-top"><input type="text" id="inter" class="form-control painpoints" placeholder="<?= __('Introduce aquí la interacción') ?>"><a id="addinter" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a></td><td></td><td></td></tr>';
-    var pain = '<input id="pain" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí el painpoint') ?>"><a id="addpain" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
-    var ppcha = '<input id="ppcha" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí un reto') ?>"><a id="addppcha" href="#" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
+    var inter = '<tr><td scope="row" class="align-top"><input type="text" id="inter" class="form-control painpoints" placeholder="<?= __('Introduce aquí la interacción') ?>"><a  href="javascript:foo()" id="addinter" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a></td><td></td><td></td></tr>';
+    var pain = '<input id="pain" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí el painpoint') ?>"><a  href="javascript:foo()" id="addpain"  data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
+    var ppcha = '<input id="ppcha" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí un reto') ?>"><a  href="javascript:foo()" id="addppcha"  data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
+     function delInter(id) {
+        $.get("<?=
+                                        $this->Url->build([
+                                            "controller" => "Game",
+                                            "action" => "deleteinter"
+                                        ])
+                                        ?>", {'id': id}, function (data, status) {
+            if (status == 'success') {
+
+                $('#bloque' + id).remove();
+            }
+        });
+    }
     function delPpcha(id) {
         $.get("<?=
                                         $this->Url->build([
@@ -293,7 +310,7 @@
 
                         $('#addinter').removeAttr('style');
 
-                        $('#addinter').closest('tr').before('<tr id="bloque' + data + '"><td> <b>' + $('#inter').val() + '</b><a href="#" id="delete' + data + '" onclick="delComment(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + pain + '</td><td></td></tr>');
+                        $('#addinter').closest('tr').before('<tr id="bloque' + data + '"><td> <b>' + $('#inter').val() + '</b><a href="javascript:foo()" id="delete' + data + '" onclick="delInter(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + pain + '</td><td></td></tr>');
                         $('#pain').attr('id', 'pain_' + data);
                         $('#addpain').attr('id', 'addpain_' + data);
                         $('#inter').val('');
@@ -309,7 +326,7 @@
 
                                 if (status == 'success') {
                                     console.log(data)
-                                    $('#addpain_' + id).closest('tr').before('<tr id="pain' + id + '"><td> <b>' + $('#addpain_' + id).closest('tr').find("td:first").find("b").html() + '</b></td><td>' + $('#pain_' + id).val() + '<a href="#" id="delete' + data + '" onclick="delPain(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + ppcha + '</td></tr>');
+                                    $('#addpain_' + id).closest('tr').before('<tr id="pain' + id + '"><td> <b>' + $('#addpain_' + id).closest('tr').find("td:first").find("b").html() + '</b></td><td>' + $('#pain_' + id).val() + '<a href="javascript:foo()" id="delete' + data + '" onclick="delPain(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + ppcha + '</td></tr>');
                                     $('#addpain_' + id).removeAttr('style');
 
                                     $('#pain_' + id).val('');
@@ -328,7 +345,7 @@
 
                                             if (status == 'success') {
                                                 $('#addppcha_' + id).removeAttr('style');
-                                                $('#ppcha_' + id).before('<div id="' + data + '"> <b>' + $('#ppcha_' + id).val() + '</b><a href="#" id="delete' + data + '" onclick="delPpcha(' + data + ')" data-toggle="tooltip" title="<?= __('Haz click para borrar una interacción') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>');
+                                                $('#ppcha_' + id).before('<div id="' + data + '"> <b>' + $('#ppcha_' + id).val() + '</b><a href="javascript:foo()" id="delete' + data + '" onclick="delPpcha(' + data + ')" data-toggle="tooltip" title="<?= __('Haz click para borrar una interacción') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>');
                                                 $('#ppcha_' + id).val('');
 
                                             }
@@ -352,7 +369,7 @@
                                 $('#clock').html(data);
                                 setTimeout(checkTime, 500);
 
-                            } else {
+                            } else if (data != "0"){
                         alert("<?= __('Se acabó el tiempo') ?>");
                         location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
 
