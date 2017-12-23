@@ -53,7 +53,9 @@ header .header-content {
 }
 footer {
 }
-
+button{
+  cursor: pointer;
+}
 
 /* TEXT */
 /* NETEJAR */

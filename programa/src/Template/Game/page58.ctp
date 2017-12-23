@@ -29,7 +29,6 @@ if ($admin) {
         <table class="table table-striped text-center">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th></th>
                     <th><?= __('Equipo') ?></th>
                     <th><?= __('Comentarios') ?></th>
