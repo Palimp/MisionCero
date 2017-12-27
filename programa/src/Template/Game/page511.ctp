@@ -17,7 +17,7 @@ if ($admin) {
         <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
         <div class="col-12 col-md-auto">
             <h4>
-                Etapa 6?- Parada lúdica
+                Etapa 6- Parada lúdica
             </h4>
             <p class="fs22 green">
                 La parada que estabas esperando… ¡CULTURA GENERAL! <i class="fa fa-smile-o"></i>

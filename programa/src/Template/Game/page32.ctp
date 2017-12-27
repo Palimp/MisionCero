@@ -20,7 +20,7 @@ if ($admin) {
             <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">
-            <?=__('¿Cómo ven los Stakeholders el problema, desde su punto de vista?')?>
+            <?=__('¿Cómo ven los actores involucrados el problema, desde su punto de vista?')?>
         </p>
         <p>
             <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
@@ -29,7 +29,7 @@ if ($admin) {
 
         <p class="fs22">
             <i class="fa fa-comment-o"></i>
-            <?=__('Pensar en los diferentes actores, los stakeholders, que intervienen en nuestra problemática.')?>
+            <?=__('Pensar en los diferentes actores involucrados que intervienen en nuestra problemática.')?>
         </p>
         <p>
             <?=__('Un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...)')?>
