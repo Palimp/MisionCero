@@ -25,7 +25,7 @@ if ($admin) {
              Identificar los momentos clave de interacción con los diferentes actores de la problemática y sus <i>pain points</i>: puntos críticos o problemas que se presentan en cada momento.
         </p>
         <p>
-            Convertir los pain points en retos: <i>¿Cómo podríamos…?</i>
+            Convertir los pain points en retos: <i>¿Cómo…?</i>
             <br>
             <i class="fa fa-comment-o"></i>
             Para una interacción se pueden identificar varios <i>pain points</i>
@@ -53,7 +53,7 @@ if ($admin) {
                                 <div class="example_inner text-left py-3 px-4">
                                     <b><?=__('Ejemplo: ')?></b>
                                     <?=__('si nuestra problemática inicial fuera')?>
-                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                    <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
                                 </div>
                             </div>
                         </div>

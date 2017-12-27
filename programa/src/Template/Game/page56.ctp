@@ -99,7 +99,7 @@ if ($admin) {
                                         <div class="example_inner text-left py-3 px-4">
                                             <b><?= __('Ejemplo: ') ?></b>
                                             <?= __('si nuestra problemática inicial fuera') ?>
-                                            <b><?= __('¿Cómo podríamos mejorar la comunicación interna?') ?></b>
+                                            <b><?= __('¿Cómo mejorar la comunicación interna?') ?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@ if ($admin) {
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos convencernos de que tiene solución?') ?>
+                                            <?= __('¿Cómo convencernos de que tiene solución?') ?>
                                         </p>
                                     </div>
                                 </div>

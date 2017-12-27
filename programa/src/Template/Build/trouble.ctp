@@ -24,7 +24,7 @@ echo $this->element('navbar');
                
 
                 <input type="text" name="trouble" id="trouble" class="form-control fs26" placeholder="Introduce aquí la problemática" value="<?=$trouble?>">
-                <b class="fs26"><?= __('La problemática inicial tiene que expresarse de la siguiente manera:') ?><br><?= __('¿Cómo podríamos…?') ?></b>
+                <b class="fs26"><?= __('La problemática inicial tiene que expresarse de la siguiente manera:') ?><br><?= __('¿Cómo…?') ?></b>
             </div>
             <div class="col col-md-auto">
                 <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="Confirma la problematica" class="d-inline-block">
@@ -39,9 +39,9 @@ echo $this->element('navbar');
             <div class="example_wrapper d-inline-block">
                 <div class="example_inner text-left py-3 px-4">
                     Ejemplos:<br>
-                    <i>¿cómo podríamos mejorar nuestra comunicación interna?</i><br>
-                    <i>¿cómo podríamos desarrollar la transformación digital?</i><br>
-                    <i>¿cómo podríamos abrir nuevos mercados?</i><br>
+                    <i>¿cómo mejorar nuestra comunicación interna?</i><br>
+                    <i>¿cómo desarrollar la transformación digital?</i><br>
+                    <i>¿cómo abrir nuevos mercados?</i><br>
                     <i>¿cómo podría mejorar nuestro proceso de compra?</i>
                 </div>
             </div>

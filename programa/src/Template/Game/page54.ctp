@@ -83,7 +83,7 @@ if ($admin) {
 </section>
 <?php if ($admin) { ?>
     <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Ir a Etapa 9') ?></button>
+    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar a Etapa 8') ?></button>
 <?php } ?>
 </main>
 

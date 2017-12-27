@@ -40,7 +40,7 @@ if ($admin) {
                         
                                     <b><?=__('Ejemplo: ')?></b>
                                     <?=__('si nuestra problemática inicial fuera')?>
-                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                    <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
 <td>   <?= $this->Html->image("exp" . str_pad($team['img'], 2, "0", STR_PAD_LEFT) . ".png", ['class' => 'img-fluid']); ?></td>                        <td><?= $team['name'] ?></td>
                         <td><?= $team['num'] ?></td>
                         <td><?= $team['bikles'] ?></td>
@@ -59,7 +59,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 7') ?></button>
     <?php } ?>
 </main>
 

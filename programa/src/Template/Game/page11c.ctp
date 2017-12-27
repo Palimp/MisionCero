@@ -25,7 +25,7 @@
             
             ?><p>
             <b class="fs22">
-                <?= $reto." - ".$ambito?>
+               Cómo <?= $reto." - ".$ambito?>
             </b></p>
 
           

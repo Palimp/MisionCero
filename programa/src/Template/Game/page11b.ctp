@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-10 pl-0">
                     <b class="fs26">¿</b>
-                    <span>Cómo podríamos</span>
+                    <span>Cómo</span>
                     <input type="text" id="reto<?= $i ?>" class="form-control d-inline w-75" placeholder="<?= __('Introduce aquí el reto') ?>">
                     <b class="fs26">?</b>
 
@@ -83,7 +83,7 @@
                                             <div class="example_inner text-left py-3 px-4">
                                                 <b><?=__('Ejemplo: ')?></b>
                                                 <?=__('si nuestra problemática inicial fuera')?>
-                                                <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                                <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
                                             </div>
                                         </div>
                                     </div>
@@ -103,14 +103,14 @@
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos conseguir que la información se adelante a los rumores?') ?>
+                                            <?= __('¿Cómo conseguir que la información se adelante a los rumores?') ?>
                                         </p>
                                         <p>
                                             <?= __('Nadie lee los mails de comunicación interna') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos conseguir que todos abran y lean los mails de comunicación interna?') ?>
+                                            <?= __('¿Cómo conseguir que todos abran y lean los mails de comunicación interna?') ?>
                                         </p>
                                         <p>
                                             <?= __('Mucha gente no entiende los mails de comunicación interna') ?>
@@ -124,42 +124,42 @@
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos conseguir que la comunicación que recibimos sea la que nos interesa?') ?>
+                                            <?= __('¿Cómo conseguir que la comunicación que recibimos sea la que nos interesa?') ?>
                                         </p>
                                         <p>
                                             <?= __('Para los de la fábrica, la información no es relevante') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos conseguir que la información que recibe la gente de la fábrica sea relevante para ellos?') ?>
+                                            <?= __('¿Cómo conseguir que la información que recibe la gente de la fábrica sea relevante para ellos?') ?>
                                         </p>
                                         <p>
                                             <?= __('Los mails de comunicación son muy aburridos') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos conseguir que los mails de comunicación sean amenos?') ?>
+                                            <?= __('¿Cómo conseguir que los mails de comunicación sean amenos?') ?>
                                         </p>
                                         <p>
                                             <?= __('Siempre presentan un mundo perfecto') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos conseguir que la comunicación nos parezca realista ?') ?>
+                                            <?= __('¿Cómo conseguir que la comunicación nos parezca realista ?') ?>
                                         </p>
                                         <p>
                                             <?= __('Los que mandan comunicación están muy lejos y no saben lo que hacemos') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('Cómo podríamos conseguir que todos perciban que los que mandan la comunicación están cerca y entienden nuestro trabajo') ?>
+                                            <?= __('Cómo conseguir que todos perciban que los que mandan la comunicación están cerca y entienden nuestro trabajo') ?>
                                         </p>
                                         <p>
                                             <?= __('Tendríamos que tener a personas de comunicación en cada área  ') ?>
                                             </br>
                                             <i class="fa fa-chevron-down"></i>
                                             </br>
-                                            <?= __('¿Cómo podríamos tener a personas de comunicación o capaces de comunicar en cada área?') ?>
+                                            <?= __('¿Cómo tener a personas de comunicación o capaces de comunicar en cada área?') ?>
                                         </p>
                                     </div>
                                 </div>

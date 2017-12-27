@@ -35,7 +35,7 @@ if ($admin) {
                     <?= __('Se puede introducir más de un ') ?><i><?= __('pain point ') ?></i><?= __('por interracción.')?>
                 </p>
                 <p>
-                    <?=__('Para acabar, lo más importante: transformar los ') ?><i><?= __('pain points ') ?></i><?= __('en retos (¿Cómo podríamos…?). Introducir los retos en la tercera columna.') ?><br>
+                    <?=__('Para acabar, lo más importante: transformar los ') ?><i><?= __('pain points ') ?></i><?= __('en retos (¿Cómo…?). Introducir los retos en la tercera columna.') ?><br>
                     <?= __('Pueden introducir más de un reto por pain point')?>
                 </p>
             </div>
@@ -121,7 +121,7 @@ if ($admin) {
                                     <div class="example_inner text-left py-3 px-4">
                                         <b><?=__('Ejemplo: ')?></b>
                                         <?=__('si nuestra problemática inicial fuera')?>
-                                        <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                        <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
                                     </div>
                                 </div>
                             </div>

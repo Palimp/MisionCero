@@ -94,7 +94,7 @@ if ($admin) {
                                 <div class="example_inner text-left py-3 px-4">
                                     <b><?=__('Ejemplo: ')?></b>
                                     <?=__('si nuestra problemática inicial fuera')?>
-                                    <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                                    <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ if ($admin) {
                             <p>
                                 <?=__('Podremos seguir una simulación de partida sobre la problemática ficticia ')?>
                                 <br>
-                                <b><?=__('“¿Cómo podríamos mejorar la comunicación interna?” ')?></b>
+                                <b><?=__('“¿Cómo mejorar la comunicación interna?” ')?></b>
                                 <br>
                                 <?=__('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ')?>
                             </p>

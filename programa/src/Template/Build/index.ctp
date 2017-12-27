@@ -24,7 +24,7 @@ echo $this->element('navbar');
             Como Jefe de Expedición, puedes formar los equipos antes de la partida y así tener todo preparado.
             </br>
             </br>
-            Si no dispones todavía de toda la información para formar los equipos, no te preocupes porque lo podrás hacer al inicio de la partida con los Exploradores (jugadores). En este caso, pulsa abajo en “lo haré más adelante”
+            Si no dispones todavía de toda la información para formar los equipos, no te preocupes porque lo podrás hacer al inicio de la partida con los Exploradores (jugadores). En este caso, pulsa abajo en “Crear equipos más tarde”
             </br>
             </br>
             Si quieres formar los equipos ahora pulsa en ”Crear equipos”
@@ -52,7 +52,7 @@ echo $this->element('navbar');
                     si no se han configurado con anterioridad, cada equipo tiene que elegir un nombre de equipo y introducir los nombres de todos sus miembros
                 </li>
         <p>
-            Cuando todos los equipos hayan sido confirmados, aparecerá abajo “empezar partida”. 
+            Cuando todos los equipos hayan sido confirmados, aparecerá abajo “EMPEZAR PARTIDA”. 
         </p>
 
         <div>

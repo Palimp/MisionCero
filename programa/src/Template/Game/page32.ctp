@@ -43,7 +43,7 @@ if ($admin) {
                 </br>
                 <b><?=__('Luego expresar las diferentes visiones en forma de reto:')?></b>
                 </br>
-                <em><?=__('¿cómo podríamos…?')?></em>
+                <em><?=__('¿cómo…?')?></em>
             </p>
         </div>
         
@@ -64,7 +64,7 @@ if ($admin) {
                     <div class="example_inner text-left py-3 px-4">
                         <b><?=__('Ejemplo: ')?></b>
                         <?=__('si nuestra problemática inicial fuera')?>
-                        <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                        <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
                     </div>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ if ($admin) {
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que mi comunicación acerque los empleados al cliente?')?>
+                        <?=__('¿Cómo conseguir que mi comunicación acerque los empleados al cliente?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -103,10 +103,10 @@ if ($admin) {
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
+                        <?=__('¿Cómo conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
                         </br>
                         </br>
-                        <?=__('¿Cómo podríamos informarles primero y que no digan nada hasta que sea oficial?')?>
+                        <?=__('¿Cómo informarles primero y que no digan nada hasta que sea oficial?')?>
                       </p>
                     </div>
                   </div>
@@ -121,10 +121,10 @@ if ($admin) {
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que conozcan mejor los diferentes colectivos?')?>
+                        <?=__('¿Cómo conseguir que conozcan mejor los diferentes colectivos?')?>
                         </br>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que formen a la gente?')?>
+                        <?=__('¿Cómo conseguir que formen a la gente?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -138,7 +138,7 @@ if ($admin) {
                         <i class="fa fa-chevron-down"></i>
                         </br>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
+                        <?=__('¿Cómo conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
                       </p>
                     </div>
                   </div>

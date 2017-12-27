@@ -31,14 +31,14 @@
         foreach ($comments as $comment) {
             ?>
             <div id="bloque<?= $comment->id ?>" class="row form-group"><div class="col pl-0"> <b class="fs26">¿</b>
-            <span><?=__('Cómo podríamos')?></span> <b><?= $comment->question ?> ?</b></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="<?=__('Haz click para borrar un comentario')?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
+            <span><?=__('Cómo')?></span> <b><?= $comment->question ?> ?</b></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="<?=__('Haz click para borrar un comentario')?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
             <?php
         }
         ?>
         <div id="bloque" class="row form-group">
             <div class="col pl-0">
                 <b class="fs26">¿</b>
-            <span><?=__('Cómo podríamos')?></span>
+            <span><?=__('Cómo')?></span>
                 <input type="text" name="comment" id="comment" class="form-control d-inline w-75" placeholder="<?=__('Introduzca aquí su reto')?>">
             </div>
             <div class="col col-md-auto">
@@ -75,7 +75,7 @@
                     <div class="example_inner text-left py-3 px-4">
                         <b><?=__('Ejemplo: ')?></b>
                         <?=__('si nuestra problemática inicial fuera')?>
-                        <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
+                        <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
                     </div>
                   </div>
                 </div>
@@ -101,7 +101,7 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que mi comunicación acerque los empleados al cliente?')?>
+                        <?=__('¿Cómo conseguir que mi comunicación acerque los empleados al cliente?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -114,10 +114,10 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
+                        <?=__('¿Cómo conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
                         </br>
                         </br>
-                        <?=__('¿Cómo podríamos informarles primero y que no digan nada hasta que sea oficial?')?>
+                        <?=__('¿Cómo informarles primero y que no digan nada hasta que sea oficial?')?>
                       </p>
                     </div>
                   </div>
@@ -132,10 +132,10 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que conozcan mejor los diferentes colectivos?')?>
+                        <?=__('¿Cómo conseguir que conozcan mejor los diferentes colectivos?')?>
                         </br>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que formen a la gente?')?>
+                        <?=__('¿Cómo conseguir que formen a la gente?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -149,7 +149,7 @@
                         <i class="fa fa-chevron-down"></i>
                         </br>
                         </br>
-                        <?=__('¿Cómo podríamos conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
+                        <?=__('¿Cómo conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
                       </p>
                     </div>
                   </div>
@@ -189,7 +189,7 @@
     ?>", {'comment': $('#comment').val()}, function (data, status) {
                     if (status == 'success') {
                         $('#addcomment').removeAttr('style');
-                        $('#bloque').before('  <div id="bloque' + data + '" class="row form-group"><div class="col pl-0"><b class="fs26">¿</b><span><?=__('Cómo podríamos')?></span> <b>' + $('#comment').val() + ' ?</b></div><div class="col col-md-auto"><a href="#" id="delete' + data + '" onclick="delComment(' + data + ')" data-toggle="tooltip" title="<?=__('Haz click para borrar un reto')?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>');
+                        $('#bloque').before('  <div id="bloque' + data + '" class="row form-group"><div class="col pl-0"><b class="fs26">¿</b><span><?=__('Cómo')?></span> <b>' + $('#comment').val() + ' ?</b></div><div class="col col-md-auto"><a href="#" id="delete' + data + '" onclick="delComment(' + data + ')" data-toggle="tooltip" title="<?=__('Haz click para borrar un reto')?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>');
                         $('#comment').val('');
 
                     }
