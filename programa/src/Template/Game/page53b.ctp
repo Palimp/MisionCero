@@ -94,7 +94,7 @@ if ($admin) {
             </div>
         </div>
         <p>
-            <?= __('El primer equipo en comunicar la solución gana Bikles') ?>
+            <?= __('El primer equipo en marcar la solución correcta gana Bikles') ?>
             </br>
             </br>
             <b><?= __('Enigma') ?></b>

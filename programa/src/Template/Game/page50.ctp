@@ -25,10 +25,10 @@ if ($admin) {
         <table class="table table-striped text-center">
             <thead>
                 <tr>
+                    <th>RANKING GENERAL</th>
                     <th></th>
-                    <th></th>
-                    <th><?=__('Equipo')?></th>
-                    <th><?=__('Bikles')?></th>
+                    <th><?= __('EQUIPOS: CLASIFICACIÓN ETAPA') ?></th>
+                    <th><?= __('TOTAL BIKLES') ?></th>
                     <th></th>
                 </tr>
             </thead>
