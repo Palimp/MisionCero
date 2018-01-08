@@ -81,9 +81,18 @@
                             <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
-                                    <b><?=__('Ejemplo: ')?></b>
-                                    <?=__('si nuestra problemática inicial fuera')?>
-                                    <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
+                                    <p>
+                                        <b>
+                                            <?=__('Podremos seguir una simulación de partida sobre la problemática ficticia ')?>
+                                            <br>
+                                            <i><?=__('“¿Cómo podríamos mejorar la comunicación interna?” ')?></i>
+                                            <br>
+                                            <?=__('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ')?>
+                                        </b>
+                                    </p>
+                                    <p>
+                                        <?=__('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida. Les ayudará a entender cómo aplicar lo mismo a su problemática')?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -92,20 +101,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="alert alert-success d-inline-block">
-                            <p>
-                                <b>
-                                    <?=__('Podremos seguir una simulación de partida sobre la problemática ficticia ')?>
-                                    <br>
-                                    <i><?=__('“¿Cómo podríamos mejorar la comunicación interna?” ')?></i>
-                                    <br>
-                                    <?=__('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ')?>
-                                </b>
-                            </p>
-                            <p>
-                                <?=__('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida. Les ayudará a entender cómo aplicar lo mismo a su problemática')?>
-                            </p>
-                        </div>
                         <p class="green">
                             <b>
                                 <?=__('Ejemplo: si nuestra problemática inicial fuera ')?><i><?=__('“¿Cómo podríamos mejorar la comunicación interna?"')?></i>
