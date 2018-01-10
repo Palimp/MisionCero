@@ -64,7 +64,7 @@
             </div>
         </div>
     </section>
-   <div>
+    <div>
         <div id="modal_ex4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex4LiveLabel" style="display: none;" aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -73,9 +73,9 @@
                   <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                   <div class="example_wrapper d-inline-block">
                     <div class="example_inner text-left py-3 px-4">
-                        <b><?=__('Ejemplo: ')?></b>
-                        <?=__('si nuestra problemática inicial fuera')?>
-                        <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
+                        <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                        <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                        <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
                     </div>
                   </div>
                 </div>
@@ -86,10 +86,25 @@
               <div class="modal-body">
                 <p>
                     <b>
-                        <?=__('Para la Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
+                        <?=__('Para esta Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
                     </b>
                 </p>
                 <div class="text-center">
+                  <div class="row">
+                    <div class="col">
+                      <p class="fs26">
+                        <b>
+                          <?=__('Stakeholder')?>
+                        </b>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        <b>
+                            <?=__('reto visto desde su punto de vista')?>
+                        </b>
+                      </p>
+                    </div>
+                  </div>
                   <div class="row">
                     <div class="col">
                       <p>
@@ -101,7 +116,10 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo conseguir que mi comunicación acerque los empleados al cliente?')?>
+                        <?=__('¿Cómo conseguir que mi comunicación ayude a la gente a conocer mejor a los clientes?')?>
+                        </br>
+                        </br>
+                        ¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?
                       </p>
                     </div>
                     <div class="col">
@@ -114,10 +132,10 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
+                        <?=__('¿Cómo podríamos conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
                         </br>
                         </br>
-                        <?=__('¿Cómo informarles primero y que no digan nada hasta que sea oficial?')?>
+                        <?=__('¿Cómo podríamos informarles primero y que no digan nada hasta que sea oficial?')?>
                       </p>
                     </div>
                   </div>
@@ -132,10 +150,10 @@
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <?=__('¿Cómo conseguir que conozcan mejor los diferentes colectivos?')?>
+                        <?=__('¿Cómo podríamos conseguir que conozcan mejor los diferentes colectivos?')?>
                         </br>
                         </br>
-                        <?=__('¿Cómo conseguir que formen a la gente?')?>
+                        <?=__('¿Cómo conseguir que formen a la gente en comunicación?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -149,7 +167,20 @@
                         <i class="fa fa-chevron-down"></i>
                         </br>
                         </br>
-                        <?=__('¿Cómo conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
+                        <?=__('¿Cómo podríamos conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p>
+                        <i class="fa fa-truck fa-2x"></i>
+                        </br>
+                        <?=__('Mis proveedores')?>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        <?=__('¿Cómo utilizar a mi comunicación interna para involucrar a los proveedores?')?>
                       </p>
                     </div>
                   </div>
@@ -158,8 +189,8 @@
             </div>
           </div>
         </div>
-      </div>
- </main>
+    </div>
+</main>
 
 <script>
     var page = 20;
