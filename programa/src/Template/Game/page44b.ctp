@@ -13,7 +13,7 @@
     <section>
         <div class="col-12 col-md-auto">
             <h4>
-                <?=__('Problemática: '.$trouble)?>
+                <?= __('Problemática: ' . $trouble) ?>
             </h4>
             <p class="fs22 green">
                 <?= __('Retos basados en momentos claves de interacción y en ') ?><i><?= __('pain points') ?></i>
@@ -24,20 +24,20 @@
             </p>
 
             <p>
-                <?=__('Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.')?>
+                <?= __('Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.') ?>
             <p>
             </p>
-            <?=__('Después, para cada uno de estos momentos, listar los ') ?><i><?= __('pain points ') ?></i><?= __('(puntos dolorosos): puntos críticos o problemas. Introducir estos ') ?><i><?= __('pain points ') ?></i><?= __('en la segunda columna.') ?><br>
-                <?= __('Se puede introducir más de un ') ?><i><?= __('pain point ') ?></i><?= __('por interracción.')?>
+            <?= __('Después, para cada uno de estos momentos, listar los ') ?><i><?= __('pain points ') ?></i><?= __('(puntos dolorosos): puntos críticos o problemas. Introducir estos ') ?><i><?= __('pain points ') ?></i><?= __('en la segunda columna.') ?><br>
+            <?= __('Se puede introducir más de un ') ?><i><?= __('pain point ') ?></i><?= __('por interracción.') ?>
             </p>
             <p>
-                <?=__('Para acabar, lo más importante: transformar los ') ?><i><?= __('pain points ') ?></i><?= __('en retos (¿Cómo…?). Introducir los retos en la tercera columna.') ?><br>
-                <?= __('Pueden introducir más de un reto por pain point')?>
+                <?= __('Para acabar, lo más importante: transformar los ') ?><i><?= __('pain points ') ?></i><?= __('en retos (¿Cómo…?). Introducir los retos en la tercera columna.') ?><br>
+                <?= __('Pueden introducir más de un reto por pain point') ?>
             </p>
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
-                <?=__('¡Los equipos con más retos ganarán Bikles, y los equipos con menos retos perderán Bikles!')?>
+                <?= __('¡Los equipos con más retos ganarán Bikles, y los equipos con menos retos perderán Bikles!') ?>
             </div>
         </div>
         <div class="col fs32">
@@ -147,9 +147,9 @@
                             <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
-                                    <b><?=__('Ejemplo: ')?></b>
-                                    <?=__('si nuestra problemática inicial fuera')?>
-                                    <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
+                                    <b><?= __('Ejemplo: ') ?></b>
+                                    <?= __('si nuestra problemática inicial fuera') ?>
+                                    <b><?= __('¿Cómo mejorar la comunicación interna?') ?></b>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                     <div class="modal-body">
                         <p>
                             <b>
-                                <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave de interacción y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                <?= __('Para la Etapa 7, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave de interacción y en pain points') ?></i> <?= __(' podrían ser:') ?> 
                             </b>
                         </p>
                         <table class="table table-striped">
@@ -246,15 +246,15 @@
 </main>
 
 <script>
-    function foo(){
+    function foo() {
         return false;
     }
-    
+
     var page = 44;
     var inter = '<tr><td scope="row" class="align-top"><input type="text" id="inter" class="form-control painpoints" placeholder="<?= __('Introduce aquí la interacción') ?>"><a  href="javascript:foo()" id="addinter" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a></td><td></td><td></td></tr>';
     var pain = '<input id="pain" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí el painpoint') ?>"><a  href="javascript:foo()" id="addpain"  data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
     var ppcha = '<input id="ppcha" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí un reto') ?>"><a  href="javascript:foo()" id="addppcha"  data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
-     function delInter(id) {
+    function delInter(id) {
         $.get("<?=
                                         $this->Url->build([
                                             "controller" => "Game",
@@ -369,10 +369,12 @@
                                 $('#clock').html(data);
                                 setTimeout(checkTime, 500);
 
-                            } else if (data != "0"){
-                        alert("<?= __('Se acabó el tiempo') ?>");
-                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                            } else if (data != "0") {
+                                alert("<?= __('Se acabó el tiempo') ?>");
+                                location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
 
+                            } else {
+                                setTimeout(checkTime, 500);
                             }
 
                         });

@@ -28,7 +28,6 @@
         </div>
         <?php
         for ($i = 0; $i < count($comments); $i++) {
-            
             ?>
             <p class="fs22">
                 <?= $comments[$i]['question'] ?>
@@ -36,7 +35,7 @@
 
             <input type="hidden" id="reto<?= $i ?>" value="<?= $comments[$i]['id'] ?>">
             <b>
-                <?=__('Ámbitos')?>
+                <?= __('Ámbitos') ?>
             </b>
             <div class="fs14 mr-1">
                 <?php foreach ($ambits as $ambit) { ?>
@@ -104,15 +103,14 @@
 
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
-                    } else if (data != "0"){
+                    } else if (data != "0") {
 
-                        alert("<?=__('Se acabó el tiempo')?>");
-                        location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "index"
-    ])
+                        alert("<?= __('Se acabó el tiempo') ?>");
+                        location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"])
     ?>';
+                    }
+                      else {
+                        setTimeout(checkTime, 500);
                     }
                 });
             }

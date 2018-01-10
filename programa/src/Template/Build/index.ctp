@@ -28,7 +28,10 @@ echo $this->element('navbar');
             </br>
             </br>
             Si quieres formar los equipos ahora pulsa en ”Crear equipos”
-        </p>
+        </p><?php
+        echo $this->Html->link(
+                __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams'], ['class' => 'btn btn-primary']);
+        ?>
         <!-- <p class="fs22">Ahora, crea los equipos si lo deseas.<br> Si prefieres, los equipos se pueden configurar al inicio de la partida, </p>
         <ul>
             <li>
@@ -44,52 +47,52 @@ echo $this->element('navbar');
         <p>
             Ahora, espera que los equipos entren en la partida y:
         </p>
-            <ul>
-                <li>
-                    en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.
-                </li>
-                <li>
-                    si no se han configurado con anterioridad, cada equipo tiene que elegir un nombre de equipo y introducir los nombres de todos sus miembros
-                </li>
-        <p>
-            Cuando todos los equipos hayan sido confirmados, aparecerá abajo “EMPEZAR PARTIDA”. 
-        </p>
+        <ul>
+            <li>
+                en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.
+            </li>
+            <li>
+                si no se han configurado con anterioridad, cada equipo tiene que elegir un nombre de equipo y introducir los nombres de todos sus miembros
+            </li>
+            <p>
+                Cuando todos los equipos hayan sido confirmados, aparecerá abajo “EMPEZAR PARTIDA”. 
+            </p>
 
-        <div>
-            <?php
-            if ($teams) {
-                echo $this->Html->link(
-                        __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin', 'class' => 'btn btn-primary']);
-            }
-            ?>
-        </div>
+            <div>
+                <?php
+                if ($teams) {
+                    echo $this->Html->link(
+                            __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin'], ['class' => 'btn btn-primary']);
+                }
+                ?>
+            </div>
 
-        <!-- <div class="form-group">
-            <p class="fs26"><?= __('Menú de administración') ?></p>
-
-        </div>
-
-
-        <div>
+            <!-- <div class="form-group">
+                <p class="fs26"><?= __('Menú de administración') ?></p>
+    
+            </div>
+    
+    
+            <div>
             <?=
             $this->Html->link(
                     __('Introducir/Modificar problemática'), ['controller' => 'Build', 'action' => 'trouble']);
             ?>
-        </div>
-        <div>
+            </div>
+            <div>
             <?=
             $this->Html->link(
                     __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams']);
             ?>
-        </div>
-        <div>
+            </div>
+            <div>
             <?php
             if ($teams) {
                 echo $this->Html->link(
                         __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin']);
             }
             ?>
-        </div> -->
+            </div> -->
     </section>
 
 </main>

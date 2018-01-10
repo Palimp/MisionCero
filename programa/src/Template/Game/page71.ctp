@@ -20,7 +20,7 @@ if ($admin) {
         <div class="text-center mb-10" style="position:relative; width: 637px; margin: auto;">
             <span class="first"><?=$teams[1]['name']?></span>
             <b class="second"><?=$teams[0]['name']?></b>
-            <span class="third"><?=isset($teams[3]['name'])?$teams[3]['name']:''?></span>
+            <span class="third"><?=isset($teams[2]['name'])?$teams[2]['name']:''?></span>
               <?= $this->Html->image("imgp92.svg"); ?>
         </div>
     </section>

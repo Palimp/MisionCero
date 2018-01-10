@@ -14,12 +14,12 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <h4>
-                    <?=__('Problemática: '.$trouble)?>
+                    <?= __('Problemática: ' . $trouble) ?>
                 </h4>
                 <p class="fs22 green">
                     <i class="fa fa-lightbulb-o"></i>
-                    <?=__('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados.')?><br>
-                    <?=__('Los equipos tienen 2 minutos')?>
+                    <?= __('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados.') ?><br>
+                    <?= __('Los equipos tienen 2 minutos') ?>
                 </p>
             </div>
             <div class="col fs32">
@@ -112,6 +112,8 @@
 
                         alert("<?= __('Se acabó el tiempo') ?>");
                         location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                    } else {
+                        setTimeout(checkTime, 500);
                     }
                 });
             }

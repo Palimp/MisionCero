@@ -110,7 +110,8 @@ class GameController extends AppController {
                 } else
                 if ($sesion['page'] == 11) {
                     $comments = $this->Code->getCommentSel($team);
-
+                    $period = $this->Code->getTime(1);
+                    $session->write('period', $period);
                     $ambits = $this->Code->getAmbits();
                     $this->set('id', $id);
                     $this->set('team', $team);
@@ -217,7 +218,7 @@ class GameController extends AppController {
                     $this->viewBuilder()->template('page53');
                 } else
                 if ($sesion['page'] == 41) {
-                    $period = $this->Code->getTime(4);
+                    $period = $this->Code->getTime(2);
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('stop', 1);
@@ -233,6 +234,8 @@ class GameController extends AppController {
                     if ($sesion['page'] == 9) {
                         $comments = $this->Code->getTeamComments($id);
                         $this->set('ranking', $comments);
+                        $teams = $this->Code->getTeams($id);
+                        $this->set('teams', $teams);
                     }
                     if ($sesion['page'] == 16) {
                         $url = $sesion['ludico'];
@@ -633,6 +636,9 @@ class GameController extends AppController {
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
         $this->set('ranking', $comments);
+
+        $teams = $this->Code->getTeams($id);
+        $this->set('teams', $teams);
     }
 
     public function page10() {
@@ -1211,10 +1217,10 @@ class GameController extends AppController {
         $this->Code->setPage($id, 41);
         $this->set('stop', 1);
         $this->set('time', '');
-        $period = $this->Code->getTime(4);
+        $period = $this->Code->getTime(2);
 
         $session->write('period', $period);
-        
+
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();

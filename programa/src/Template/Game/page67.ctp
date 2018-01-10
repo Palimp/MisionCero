@@ -18,8 +18,9 @@ $ambits[-1]->ambit = __('Sin ámbito');
     <section>
 
         <div class="text-right">
-            <a href="#" class="mr-2"><i class="fa fa-download"></i></a>
-            <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
+            
+            <a href="javascript:save()" class="mr-2"><i class="fa fa-download"></i></a>
+            <a href="javascript:window.print()" data-toggle="tooltip" title="Haz click para imprimir">
                 <i class="fa fa-print"></i>
             </a>
             <p>
@@ -133,5 +134,17 @@ $ambits[-1]->ambit = __('Sin ámbito');
             }
 <?php } ?>
     });
+    
+    function save() {
+  var htmlContent = ['<html><head>    <meta charset="utf-8"/> </head><body>'+$('section').html()+'</body></html>'];
+  var bl = new Blob(htmlContent, {type: "text/html"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(bl);
+  a.download = "top-retos.html";
+  a.hidden = true;
+  document.body.appendChild(a);
+  a.innerHTML = "something random - nobody will see this, it doesn't matter what you put here";
+  a.click();
+}
 </script>
 

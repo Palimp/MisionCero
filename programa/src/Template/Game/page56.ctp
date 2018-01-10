@@ -83,9 +83,7 @@ if ($admin) {
                     <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                     </p>
                 </a>
-                <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                    <i class="fa fa-check fa-2x"></i>
-                </a>
+             
             </div>
             <!-- modal_ex6 -->
             <div>
@@ -216,12 +214,13 @@ if ($admin) {
             });
 <?php } else { ?>
             $('#submitvotos').click(function () {
-
+console.log("ww");
                 $('#error').html('');
                 var votos = [];
                 $(':checkbox:checked').each(function () {
                     votos.push($(this).attr('id').replace("_", ""));
                 });
+                console.log(votos);
                 if (votos.length!=3){
                     $('#error').html('<?= __('Ups! Explorador, algo no ha ido bien…') ?><i class="fa fa-smile-o fa-rotate-180 text-danger"></i><?= __('Usa tus prismáticos y revisa tus votos') ?>');
                     return;

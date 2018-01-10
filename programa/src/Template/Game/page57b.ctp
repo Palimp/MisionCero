@@ -207,12 +207,9 @@ $ids = [];
 
                             } else if (data != "0") {
                                 alert("<?= __('Se acabó el tiempo') ?>");
-                                location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "index"
-    ])
-    ?>';
+                                location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
+                            } else {
+                                setTimeout(checkTime, 500);
                             }
 
                         });

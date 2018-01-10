@@ -302,6 +302,9 @@
                         alert("<?= __('Se acabó el tiempo') ?>");
                         location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
                     }
+                    else {
+                        setTimeout(checkTime, 500);
+                    }
 
                 });
 
