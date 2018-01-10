@@ -88,9 +88,9 @@ if ($admin) {
                                     <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                     <div class="example_wrapper d-inline-block">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Ejemplo: ')?></b>
-                                            <?=__('si nuestra problemática inicial fuera')?>
-                                            <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
+                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@ if ($admin) {
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?=__('Para la Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en preguntas básicas')?></i> <?=__(' podrían ser:')?> 
+                                        <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('“retos basados en preguntas básicas”')?></i> <?=__(' podrían ser:')?> 
                                     </b>
                                 </p>
                                 <div class="text-center">
@@ -111,7 +111,7 @@ if ($admin) {
                                                 <i class="fa fa-user fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('QUIÉN') ?>
+                                                    <?= __('QUIÉN: pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
                                                 </b>
                                                 </br>
                                                 <?= __('El que manda la comunicación') ?>
@@ -133,7 +133,7 @@ if ($admin) {
                                                 <i class="fa fa-clock-o fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('CUÁNDO') ?>
+                                                    <?= __('CUÁNDO: pensar en momentos relevantes de la problemática y en posibles retos relacionados con estos momentos') ?>
                                                 </b>
                                                 </br>
                                                 <?= __('Cuando hay cambios') ?>
@@ -147,7 +147,7 @@ if ($admin) {
                                                 </br>
                                                 <i class="fa fa-chevron-down"></i>
                                                 </br>
-                                                <?= __('¿Cómo comunicar en momentos de incertidumbre?') ?>
+                                                <?= __('¿Cómo comunicar mejor en momentos de incertidumbre?') ?>
                                             </p>
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@ if ($admin) {
                                                 <i class="fa fa-map-pin fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('DÓNDE') ?>
+                                                    <?= __('DÓNDE: pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
                                                 </b>
                                                 </br>
                                                 <?= __('En la fábrica') ?>
@@ -167,7 +167,7 @@ if ($admin) {
                                                 <?= __('¿Cómo adecuar la comunicación al personal de fábrica?') ?>
                                             </p>
                                             <p>
-                                                <?= __('En los espacios donde se comunica') ?>
+                                                <?= __('En los espacios físicos donde se comunica') ?>
                                                 </br>
                                                 <i class="fa fa-chevron-down"></i>
                                                 </br>
@@ -177,21 +177,21 @@ if ($admin) {
                                                 <i class="fa fa-question-circle fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('POR QUÉ’S') ?>
+                                                    <?= __('POR QUÉ’S: pensar en las razones que nos llevan a querer encontrar soluciones a nuestro problemática y transformarlas en retos') ?>
                                                 </b>
                                                 </br>
                                                 <?= __('Porque nadie hace caso') ?>
                                                 </br>
                                                 <i class="fa fa-chevron-down"></i>
                                                 </br>
-                                                <?= __('Cómo conseguir que la gente haga caso a la comunicación?') ?>
+                                                <?= __('¿Cómo podríamos conseguir que la genta haga caso a la comunicación?') ?>
                                             </p>
                                             <p>
                                                 <?= __('Porque no nos enteramos de nada') ?>
                                                 </br>
                                                 <i class="fa fa-chevron-down"></i>
                                                 </br>
-                                                <?= __('¿Cómo conseguir que la comunicación interna nos ayude a conocer mejor lo que nos puede ayudar?') ?>
+                                                <?= __(' ¿Cómo conseguir que la comunicación interna nos ayude a entender mejor los objetivos?') ?>
                                             </p>
                                             <p>
                                                 <?= __('Porque queremos que toda la empresa comparta la visión y los valores') ?>
@@ -206,14 +206,21 @@ if ($admin) {
                                                 <i class="fa fa-crosshairs fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('PARA QUÉ') ?>
+                                                    <?= __('PARA QUÉ: pensar en los objetivos que nos llevan a querer encontrar soluciones a nuestro problemática y transformarlos en retos') ?>
                                                 </b>
                                                 </br>
                                                 <?= __('Para que todos lo entiendan') ?>
                                                 </br>
                                                 <i class="fa fa-chevron-down"></i>
                                                 </br>
-                                                <?= __('¿Cómo conseguir que se entienda a primera vista el objetivo de una comunicación?') ?>
+                                                <?= __('¿Cómo podríamos conseguir que se entienda a primera vista el mensaje clave de una comunicación?') ?>
+                                            </p>
+                                            <p>
+                                                <?= __('Para que la comunicación ayude a la gente en su trabajo ') ?>
+                                                </br>
+                                                <i class="fa fa-chevron-down"></i>
+                                                </br>
+                                                <?= __('¿cómo conseguir que la gente perciba que la comunicación les ayuda?') ?>
                                             </p>
                                         </div>
                                     </div>
