@@ -147,9 +147,9 @@
                             <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                             <div class="example_wrapper d-inline-block">
                                 <div class="example_inner text-left py-3 px-4">
-                                    <b><?=__('Ejemplo: ')?></b>
-                                    <?=__('si nuestra problemática inicial fuera')?>
-                                    <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
+                                    <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                    <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                                    <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
                                 </div>
                             </div>
                         </div>
@@ -168,73 +168,84 @@
                                 <tr>
                                     <th class="fs32 fw100 w30" style="position: relative;">
                                         <span>1</span>
-                                        </br>
+                                        <br>
                                         <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
-                                        <?= __('INTERACCIONES') ?>
+                                        INTERACCIONES
                                     </th>
                                     <th class="fs32 fw100 w30" style="position: relative;">
                                         <span>2</span>
-                                        </br>
+                                        <br>
                                         <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
-                                        <?= __('PAINPOINTS') ?>
+                                        PAINPOINTS
                                     </th>
                                     <th class="green fs32 fw100 w30" style="position: relative;">
                                         <span>3</span>
-                                        </br>
-                                        <?= __('RETOS') ?>
+                                        <br>
+                                        RETOS
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="fs16">
                                 <tr>
-                                    <td scope="row" class="align-top">
-                                        <?= __('Hay algo que comunicar') ?>
+                                    <td scope="row" class="align-top" rowspan="3">
+                                        Hay algo que comunicar
                                     </td>
-                                    <td>
-                                        <?= __('Los cambios no se explican bien') ?>
-                                        </br>
-                                        <?= __('No tenemos la información oficial completa a la hora de comunicar') ?>
+                                    <td rowspan="2">No se puede decir todo
                                     </td>
-                                    <td class="green">
-                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
-                                        </br>
-                                        <?= __('¿Cómo conseguir tener toda la info a tiempo antes de tener que comunicar?') ?>
-                                        </br>
-                                        <?= __('¿Cómo comunicar bien sin tener toda la información?') ?>
+                                    <td class="green">¿Cómo comunicar cuando no se puede decir todo?
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td scope="row" class="align-top">
-                                        <?= __('Hay algo que comunicar') ?>
+
+                                    <td class="green">¿Cómo conseguir que la gente entienda que no se puede decir todo?
                                     </td>
-                                    <td>
-                                        <?= __('Los cambios no se explican bien') ?>
+
+                                </tr>
+                                <tr>
+
+                                    <td>No es una buena noticia
                                     </td>
-                                    <td class="green">
-                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
+                                    <td class="green">¿Cómo comunicar malas noticias?
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td scope="row" class="align-top">
-                                        <?= __('Hay algo que comunicar') ?>
+                                    <td scope="row" class="align-top" rowspan="4">Se envía la comunicación
                                     </td>
-                                    <td>
-                                        <?= __('Los cambios no se explican bien') ?>
+                                    <td>No todos tienen mail
                                     </td>
-                                    <td class="green">
-                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
+                                    <td class="green">¿Cómo hacer llegar la comunicación al mismo tiempo a los que no tienen mail?
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td scope="row" class="align-top">
-                                        <?= __('Hay algo que comunicar') ?>
-                                    </td>
-                                    <td>
-                                        <?= __('Los cambios no se explican bien') ?>
-                                    </td>
-                                    <td class="green">
-                                        <?= __('¿Cómo explicar mejor los cambios?') ?>
-                                    </td>
+                                    <td>Algunos se han enterado antes</td>
+                                    <td class="green">¿Cómo comunicar cuando algunos ya se han enterado por otra vía?</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Hay rumores</td>
+                                    <td class="green">¿Cómo comunicar cuando ha habido rumores?</td>
+                                </tr>
+                                <tr>
+                                    <td class="green">¿Cómo comunicar antes de que haya rumores?</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">Se recibe la comunicación</td>
+                                    <td rowspan="2">Hay malentendidos</td>
+                                    <td class="green">¿Cómo asegurarse de que no habrán malentendidos?</td>
+                                </tr>
+                                <tr>
+                                    <td class="green"> ¿Cómo enterarse de los malentendidos para poder contrarrestarlos?</td>
+                                </tr>
+                                <tr>
+                                    <td>La gente ni siquiera la abre</td>
+                                    <td class="green">¿Cómo conseguir que la gente tenga ganas de abrirla?</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Se habla de la comunicación</td>
+                                    <td rowspan="2">Hay comentarios negativos</td>
+                                    <td class="green">¿Cómo contrarrestar los comentarios negativos?</td>
+                                </tr>
+                                <tr>
+                                    <td class="green">¿Cómo conseguir que los comentarios negativos no hagan daño?</td>
                                 </tr>
                             </tbody>
                         </table>
