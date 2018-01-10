@@ -97,9 +97,9 @@ if ($admin) {
                                     <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                     <div class="example_wrapper d-inline-block">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?= __('Ejemplo: ') ?></b>
-                                            <?= __('si nuestra problemática inicial fuera') ?>
-                                            <b><?= __('¿Cómo mejorar la comunicación interna?') ?></b>
+                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -110,43 +110,42 @@ if ($admin) {
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?= __('Para la Etapa 9, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave de interacción y en pain points') ?></i> <?= __(' podrían ser:') ?> 
+                                        <?= __('Para la Etapa 9, algunos ejemplos de ') ?><i><?= __('retos basados en estados de ánimo') ?></i> <?= __(' podrían ser:') ?> 
                                     </b>
                                 </p>
-                                <div class="row py-5 text-center">
-                                    <div class="col">
-                                        <p>
-                                            <i class="fa fa-smile-o fa-3x text-success"></i>
-                                            </br>
-                                            <b>
-                                                <?= __('POSITIVO') ?>
-                                            </b>
-                                            </br>
-                                            </br>
-                                            <?= __('Motivado') ?>
-                                            </br>
-                                            <i class="fa fa-chevron-down"></i>
-                                            </br>
-                                            <?= __('¿Cómo motivar al colectivo sobre nuestro problema?') ?>
-                                        </p>
-                                    </div>
-                                    <div class="col">
-                                        <p>
-                                            <i class="fa fa-smile-o fa-3x fa-rotate-180 text-danger"></i>
-                                            </br>
-                                            <b>
-                                                <?= __('NEGATIVO') ?>
-                                            </b>
-                                            </br>
-                                            </br>
-                                            <?= __('Pesimista') ?>
-                                            </br>
-                                            <i class="fa fa-chevron-down"></i>
-                                            </br>
-                                            <?= __('¿Cómo convencernos de que tiene solución?') ?>
-                                        </p>
-                                    </div>
-                                </div>
+                                <table class="table table-striped">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th class="fs32 fw100 w30" style="position: relative;">
+                                                <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem;position: absolute;bottom: 0.6rem;"></i>
+                                                ESTADO DE ÁNIMO
+                                            </th>
+                                            <th class="fs32 fw100 w30" style="position: relative;">
+                                                PAINPOINTS
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="fs16">
+                                        <tr>
+                                            <td scope="row">Motivado</td>
+                                            <td>¿Cómo conseguir que todo el equipo tenga nuestro nivel de motivación?</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">Enfadado</td>
+                                            <td>¿Cómo conseguir que el enfado no se comunique?</td>
+                                        </tr>
+                                        <tr>
+                                            <td>¿Cómo pasar cuanto antes del enfado a un ánimo más constructivo?</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" rowspan="2">Pesimista</td>
+                                            <td>¿Cómo conseguir transformar nuestro pesimismo en optimismo?</td>
+                                        </tr>
+                                        <tr>
+                                            <td> ¿Cómo conseguir que sea un éxito a pesar de nuestro pesimismo?</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
