@@ -156,6 +156,113 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>
+                    <b>
+                        <?=__('Para esta Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
+                    </b>
+                </p>
+                <div class="text-center">
+                  <div class="row">
+                    <div class="col">
+                      <p class="fs26">
+                        <b>
+                          <?=__('Stakeholder')?>
+                        </b>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        <b>
+                            <?=__('reto visto desde su punto de vista')?>
+                        </b>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p>
+                        <i class="fa fa-shopping-cart fa-2x"></i>
+                        </br>
+                        <b>
+                          <?=__('Mis clientes')?>
+                        </b>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        <?=__('¿Cómo conseguir que mi comunicación ayude a la gente a conocer mejor a los clientes?')?>
+                        </br>
+                        </br>
+                        ¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?
+                      </p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        <i class="fa fa-user-o fa-2x"></i>
+                        </br>
+                        <b>
+                          <?=__('Los jefes')?>
+                        </b>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        <?=__('¿Cómo podríamos conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
+                        </br>
+                        </br>
+                        <?=__('¿Cómo podríamos informarles primero y que no digan nada hasta que sea oficial?')?>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p>
+                        <i class="fa fa-handshake-o fa-2x"></i>
+                        </br>
+                        <b>
+                          <?=__('Los responsables de comunicación')?>
+                        </b>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        <?=__('¿Cómo podríamos conseguir que conozcan mejor los diferentes colectivos?')?>
+                        </br>
+                        </br>
+                        <?=__('¿Cómo conseguir que formen a la gente en comunicación?')?>
+                      </p>
+                    </div>
+                    <div class="col">
+                      <p>
+                        <i class="fa fa-crosshairs fa-2x"></i>
+                        </br>
+                        <b>
+                          <?=__('El entorno de los trabajadores')?>
+                        </b>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        </br>
+                        <?=__('¿Cómo podríamos conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <p>
+                        <i class="fa fa-truck fa-2x"></i>
+                        </br>
+                        <?=__('Mis proveedores')?>
+                        </br>
+                        <i class="fa fa-chevron-down"></i>
+                        </br>
+                        <?=__('¿Cómo utilizar a mi comunicación interna para involucrar a los proveedores?')?>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </div>

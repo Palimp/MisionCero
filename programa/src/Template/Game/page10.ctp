@@ -76,9 +76,9 @@ if ($admin) {
                                     <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                     <div class="example_wrapper d-inline-block">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Ejemplo: ')?></b>
-                                            <?=__('si nuestra problemática inicial fuera')?>
-                                            <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
+                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso (transformar comentarios en retos) ')?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@ if ($admin) {
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?= __('Transformar los comentarios elegidos en retos:') ?>
+                                        <?= __('Para este paso, algunos ejemplos de “comentarios informales convertidos en retos”  de nuestra problemática ficticia “¿Cómo podríamos mejorar la comunicación interna?”, podrían ser:') ?>
                                     </b>
                                 </p>
                                 <div class="text-center">

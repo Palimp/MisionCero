@@ -153,7 +153,13 @@ th {
 }
 .table td, .table th{
   vertical-align: inherit;
-  border-top: none;
+  border: 3px solid #fff;
+}
+.table-striped tbody td:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.08);
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: white !important;
 }
 td.fs32{
   padding: 0;
