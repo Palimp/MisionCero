@@ -13,6 +13,14 @@ if ($admin) {
         <p class="fs22">
             <?=__('Misión 0 es el serious game que permite convertir una problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas soluciones')?>
         </p>
+        <div class="fs22 alert d-inline-block" style="color: #fff;  background-color: #2b2b2b;  border-color: transparent;">
+            <img src="/img/lupa.gif" class="pull-left mr-3" alt="">
+            <b>
+                <?=__('¿Cómo?')?>
+            </b>
+            </br>
+            <?=__('Enfocando la problemática desde sus diferentes perspectivas, con una metodología que nos permitirá plantear nuevas preguntas que convertiremos en retos concretos y bien formulados')?>
+        </div>
         <div class="py-20 text-center">
 
             <?= $this->Html->image("imgp7.gif", ['class' => 'img-fluid']); ?>

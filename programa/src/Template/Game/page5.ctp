@@ -9,9 +9,10 @@ if ($admin) {
 ?>
  <main>
       <section>
-
-        <div class="alert alert-success d-inline-block">
-          <?=__('Al finalizar la partida de Misión 0 obtendrás una ')?><b><?=__('lista de retos concretos, priorizados y clasificados por ámbito, ')?></b> <?=__(' que te permitirá trabajar la problemática de manera concreta y enfocada, optimizando la búsqueda posterior de soluciones innovadoras')?></b>
+        <div class="fs22 alert d-inline-block" style="color: #fff;  background-color: #2b2b2b;  border-color: transparent;">
+            <h4 style="color: #fff;">
+                Resultado de la partida
+            </h4>
         </div>
 
         <div class="text-right">
