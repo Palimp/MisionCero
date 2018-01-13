@@ -19,7 +19,7 @@ if ($admin) {
             <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">
-            <?=__('Puntos de Vista')?>
+            <?=__('Actores')?>
         </p>
         <p>
             <i class="fa fa-lightbulb-o"></i>

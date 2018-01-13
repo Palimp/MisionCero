@@ -16,7 +16,7 @@ if ($admin) {
     </header>
     <section>
         <h4>
-            <?=__('Etapa 5- Puntos de vista')?><br>
+            <?=__('Etapa 5- Actores')?><br>
             <?=__('Problemática: '.$trouble)?>
         </h4>
         <p class="fs22 green">

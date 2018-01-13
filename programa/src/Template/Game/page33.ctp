@@ -20,7 +20,7 @@ if ($admin) {
                 <?=__('Problemática: '.$trouble)?>
             </h4>
             <p class="fs22 green">
-                <?=__('Retos basados en puntos de vista')?>
+                <?=__('Retos basados en actores')?>
             </p>
             <p>
                 <?=__('Los equipos tienen 10 minutos para introducir todos los retos posibles, basados en los puntos de vista de los Stakeholders:')?><br>
@@ -114,7 +114,7 @@ if ($admin) {
               <div class="modal-body">
                 <p>
                     <b>
-                        <?=__('Para esta Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
+                        <?=__('Para esta Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en actores')?></i> <?=__(' podrían ser:')?> 
                     </b>
                 </p>
                 <div class="text-center">
