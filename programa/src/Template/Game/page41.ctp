@@ -21,22 +21,24 @@ if ($admin) {
 
                 <?php if ($admin) { ?>
                     <p class="fs22">
-                        <?= __('Los equipos se agrupan por dos: cada equipo se junta con otro.') ?>
+                        <?= __('2 equipos trabajan juntos: ') ?>
                     </p>
                     <p>
-                        Los equipos tienen 3 minutos para pensar en cómo vender este objeto al otro equipo, teniendo en cuenta que <b>no puede servir para su uso habitual.</b>
+                        <b>Fase 1-</b>
+                        </br>
+                        Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo
+                        </br>
+                        Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
+                        </br>
+                        </br>
+                        <b><?= __('Fase 2-') ?></b>
+                        </br>
+                        Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
+                        </br>
+                        </br>
                     </p>
-                    <p>
-                        <b>Fase 1:</b>
-                        </br>
-                        <?= __('- Uno de los 2 equipos tendrá que tratar de vender en 3 minutos el otro el objeto que aparece en la foto: tendrá que explicarle porque tiene que comprar su objeto.') ?>
-                        </br>
-                        <?= __('- El otro equipo escucha la presentación y cuando acaba tiene que comunicar al Jefe de Expedición se le han convencido.') ?>
-                        </br>
-                        </br>
-                        <b><?= __('Fase 2:') ?></b>
-                        </br>
-                        <?= __('- se repite el proceso intercambiando los equipos: los que presentaron escuchan y viceversa') ?>
+                    <p class="fs22">
+                        <b>Prepara la venta: ¡El objeto no puede servir para su uso habitual!</b>
                     </p>
                 <?php } ?>
             </div>

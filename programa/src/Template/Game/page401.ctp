@@ -31,9 +31,9 @@ if ($admin) {
                     </p>
                     <ul>
                         <li>
-                            Fase 1- El primer equipo tiene 3 minutos para convencer al segundo equipo que le compre su objeto. 
+                            Fase 1- Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo
                             <br>
-                            Finalizado el tiempo, el segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
+                            Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
                         </li>
                         <li>
                             Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
