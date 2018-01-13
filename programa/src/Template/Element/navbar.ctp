@@ -17,6 +17,9 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right pt-2">
                     <li>
+                        <a href="http://misioncero.binnakle.com/">Inicio</a>
+                    </li>
+                    <li>
                         <?=
                         $this->Html->link(
                                 __('Introducir problemática'), ['controller' => 'Build', 'action' => 'trouble']
