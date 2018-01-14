@@ -34,7 +34,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
    <?= $this->Html->script('scripts.js') ?>
    <?= $this->Html->script('ie10-viewport-bug-workaround.js') ?>
 <body>
-  
+  <button id="refrescar" onclick="location.href=location.href" class="btn btn-primary"><?= __('Refrescar') ?></button>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
