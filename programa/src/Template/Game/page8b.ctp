@@ -13,7 +13,7 @@
     <section>
         <div class="col-12 col-md-auto">
             <h4>
-                <?=__('Problemática: '.$trouble)?>
+                <?= __('Problemática: ' . $trouble) ?>
             </h4>
             <p class="fs22 green">
                 <?= __('Comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
@@ -50,7 +50,7 @@
                 <input type="text" name="comment" id="comment" class="form-control" placeholder="Introduzca aquí su comentario">
             </div>
             <div class="col col-md-auto">
-                <a id="addcomment" href="#" data-toggle="tooltip" title="<?=('Haz click para añadir un comentario')?>" class="d-inline-block">
+                <a id="addcomment" href="#" data-toggle="tooltip" title="<?= ('Haz click para añadir un comentario') ?>" class="d-inline-block">
                     <i class="fa fa-plus fa-2x"></i>
                 </a>
             </div>
@@ -58,17 +58,17 @@
         <div>
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
                 <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
+                <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                 </p>
             </a>
         </div>
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
+                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
                 </b>
                 </br>
-                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
+                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
             </div>
         </div>
     </section>
@@ -83,15 +83,15 @@
                                 <div class="example_inner text-left py-3 px-4">
                                     <p>
                                         <b>
-                                            <?=__('Podremos seguir una simulación de partida sobre la problemática ficticia ')?>
+                                            <?= __('Podremos seguir una simulación de partida sobre la problemática ficticia ') ?>
                                             <br>
-                                            <i><?=__('“¿Cómo podríamos mejorar la comunicación interna?” ')?></i>
+                                            <i><?= __('“¿Cómo podríamos mejorar la comunicación interna?” ') ?></i>
                                             <br>
-                                            <?=__('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ')?>
+                                            <?= __('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ') ?>
                                         </b>
                                     </p>
                                     <p>
-                                        <?=__('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida. Les ayudará a entender cómo aplicar lo mismo a su problemática')?>
+                                        <?= __('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida. Les ayudará a entender cómo aplicar lo mismo a su problemática') ?>
                                     </p>
                                 </div>
                             </div>
@@ -103,41 +103,41 @@
                     <div class="modal-body">
                         <p class="green">
                             <b>
-                                <?=__('Ejemplo: si nuestra problemática inicial fuera ')?><i><?=__('“¿Cómo podríamos mejorar la comunicación interna?"')?></i>
+                                <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
                             </b>
                         </p>
                         <p>
                             <b>
-                                <?=__('Para esta Etapa 1, algunos ejemplos de ')?><i><?=__('comentarios informales')?></i> <?=__('sobre la problemática podrían ser:')?> 
+                                <?= __('Para esta Etapa 1, algunos ejemplos de ') ?><i><?= __('comentarios informales') ?></i> <?= __('sobre la problemática podrían ser:') ?> 
                             </b>
                         </p>
                         <ul>
                             <li>
-                                <?=__('Los rumores siempre van más rápido que la información interna')?>
+                                <?= __('Los rumores siempre van más rápido que la información interna') ?>
                             </li>
                             <li>
-                                <?=__('Nadie lee los mails de comunicación interna')?> 
+                                <?= __('Nadie lee los mails de comunicación interna') ?> 
                             </li>
                             <li>
-                                <?=__('Mucha gente no entiende los mails de comunicación interna')?>
+                                <?= __('Mucha gente no entiende los mails de comunicación interna') ?>
                             </li>
                             <li>
-                                <?=__('No tocan lo que nos gustaría realmente saber')?>
+                                <?= __('No tocan lo que nos gustaría realmente saber') ?>
                             </li>
                             <li>
-                                <?=__('Para los de la fábrica, la información no es relevante')?>
+                                <?= __('Para los de la fábrica, la información no es relevante') ?>
                             </li>
                             <li>
-                                <?=__('Los mails de comunicación son muy aburridos')?>
+                                <?= __('Los mails de comunicación son muy aburridos') ?>
                             </li>
                             <li>
-                                <?=__('Siempre presentan un mundo perfecto')?>
+                                <?= __('Siempre presentan un mundo perfecto') ?>
                             </li>
                             <li>
-                                <?=__('Los que mandan comunicación están muy lejos y no saben lo que hacemos')?>
+                                <?= __('Los que mandan comunicación están muy lejos y no saben lo que hacemos') ?>
                             </li>
                             <li>
-                                <?=__('Tendríamos que tener a personas de comunicación en cada área ')?>
+                                <?= __('Tendríamos que tener a personas de comunicación en cada área ') ?>
                             </li>
                         </ul>
                     </div>
@@ -151,11 +151,11 @@
     var page = 8;
     function delComment(id) {
         $.get("<?=
-        $this->Url->build([
-            "controller" => "Game",
-            "action" => "deletecomment"
-        ])
-        ?>", {'id': id}, function (data, status) {
+                                $this->Url->build([
+                                    "controller" => "Game",
+                                    "action" => "deletecomment"
+                                ])
+                                ?>", {'id': id}, function (data, status) {
             if (status == 'success') {
 
                 $('#bloque' + id).remove();
@@ -164,7 +164,11 @@
     }
     $(function () {
 <?php if (!$admin) { ?>
-
+            $("#comment").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#addcomment").click();
+                }
+            });
             $('#addcomment').click(function () {
                 $('#addcomment').attr('style', 'display: none !important');
                 $.get("<?=
@@ -173,7 +177,7 @@
         "action" => "addcomment"
     ])
     ?>", {'comment': $('#comment').val()}, function (data, status) {
-            
+
                     if (status == 'success') {
                         $('#addcomment').removeAttr('style');
                         $('#bloque').before('  <div id="bloque' + data + '" class="row form-group"><div class="col pl-0"><b>' + $('#comment').val() + '</b></div><div class="col col-md-auto"><a href="#" id="delete' + data + '" onclick="delComment(' + data + ')" data-toggle="tooltip" title="Haz click para borrar un comentario" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>');
@@ -191,23 +195,22 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-        
-                    if (data != "0" && data!="00:00") {
+
+                    if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
 
                     } else if (data != "0") {
-                        alert("<?=__('Se acabó el tiempo')?>");
+                        alert("<?= __('Se acabó el tiempo') ?>");
                         location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
         "action" => "index"
     ])
     ?>';
+                    } else {
+                        setTimeout(checkTime, 500);
                     }
-                    else{
-                          setTimeout(checkTime, 500);
-                      }
 
                 });
 

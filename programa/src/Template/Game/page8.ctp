@@ -16,7 +16,7 @@ if ($admin) {
     <section>
         <div class="col-12 col-md-auto">
             <h4>
-                <?=__('Problemática: '.$trouble)?>
+                <?= __('Problemática: ' . $trouble) ?>
             </h4>
             <p class="fs22 green">
                 <?= __('Comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
@@ -29,7 +29,7 @@ if ($admin) {
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
-                    <?=__('Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.')?>
+                    <?= __('Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.') ?>
                     <h1><time id="clock"><?= $time ?></time></h1>
                     <i class="fa fa-clock-o"></i>
                     <?php
@@ -39,7 +39,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="stop" value="1">
-                        <button class="btn btn-primary"><?= __('Parar tiempo')?></button>
+                        <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
                         <?php
                     } else {
                         echo $this->Form->create('Begin', array(
@@ -47,10 +47,11 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="start" value="1">
-                        <button class="btn btn-primary"><?= __('Reanudar tiempo')?></button>
+                        <button class="btn btn-primary"><?= __('Reanudar tiempo') ?></button>
                     <?php } ?>
 
                     </form>
+                    <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
                 </div>
                 <div>
                     <time>00:30</time>
@@ -60,7 +61,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=('Haz click para añadir tiempo')?>" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para añadir tiempo') ?>" class="d-inline-block grey_link">
                         <i class="fa fa-plus"></i>
                     </a>
                     </form>
@@ -70,7 +71,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="-30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=('Haz click para restar tiempo')?>" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block grey_link">
                         <i class="fa fa-minus"></i>
                     </a>
                     </form>
@@ -80,7 +81,7 @@ if ($admin) {
         <div>
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
                 <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
+                <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                 </p>
             </a>
         </div>
@@ -94,15 +95,15 @@ if ($admin) {
                                 <div class="example_inner text-left py-3 px-4">
                                     <p>
                                         <b>
-                                            <?=__('Podremos seguir una simulación de partida sobre la problemática ficticia ')?>
+                                            <?= __('Podremos seguir una simulación de partida sobre la problemática ficticia ') ?>
                                             <br>
-                                            <i><?=__('“¿Cómo podríamos mejorar la comunicación interna?” ')?></i>
+                                            <i><?= __('“¿Cómo podríamos mejorar la comunicación interna?” ') ?></i>
                                             <br>
-                                            <?=__('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ')?>
+                                            <?= __('para que los exploradores puedan comprender mejor el trabajo a realizar en cada etapa. ') ?>
                                         </b>
                                     </p>
                                     <p>
-                                        <?=__('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida. Les ayudará a entender cómo aplicar lo mismo a su problemática')?>
+                                        <?= __('Al abrir el cuadro ‘Ejemplo’ en cada una de las etapas los equipos podrán leer o consultar los contenidos que se podrían haber generado sobre esta problemática, en cada momento de la partida. Les ayudará a entender cómo aplicar lo mismo a su problemática') ?>
                                     </p>
                                 </div>
                             </div>
@@ -114,41 +115,41 @@ if ($admin) {
                     <div class="modal-body">
                         <p class="green">
                             <b>
-                                <?=__('Ejemplo: si nuestra problemática inicial fuera ')?><i><?=__('“¿Cómo podríamos mejorar la comunicación interna?"')?></i>
+                                <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
                             </b>
                         </p>
                         <p>
                             <b>
-                                <?=__('Para esta Etapa 1, algunos ejemplos de ')?><i><?=__('comentarios informales')?></i> <?=__('sobre la problemática podrían ser:')?> 
+                                <?= __('Para esta Etapa 1, algunos ejemplos de ') ?><i><?= __('comentarios informales') ?></i> <?= __('sobre la problemática podrían ser:') ?> 
                             </b>
                         </p>
                         <ul>
                             <li>
-                                <?=__('Los rumores siempre van más rápido que la información interna')?>
+                                <?= __('Los rumores siempre van más rápido que la información interna') ?>
                             </li>
                             <li>
-                                <?=__('Nadie lee los mails de comunicación interna')?> 
+                                <?= __('Nadie lee los mails de comunicación interna') ?> 
                             </li>
                             <li>
-                                <?=__('Mucha gente no entiende los mails de comunicación interna')?>
+                                <?= __('Mucha gente no entiende los mails de comunicación interna') ?>
                             </li>
                             <li>
-                                <?=__('No tocan lo que nos gustaría realmente saber')?>
+                                <?= __('No tocan lo que nos gustaría realmente saber') ?>
                             </li>
                             <li>
-                                <?=__('Para los de la fábrica, la información no es relevante')?>
+                                <?= __('Para los de la fábrica, la información no es relevante') ?>
                             </li>
                             <li>
-                                <?=__('Los mails de comunicación son muy aburridos')?>
+                                <?= __('Los mails de comunicación son muy aburridos') ?>
                             </li>
                             <li>
-                                <?=__('Siempre presentan un mundo perfecto')?>
+                                <?= __('Siempre presentan un mundo perfecto') ?>
                             </li>
                             <li>
-                                <?=__('Los que mandan comunicación están muy lejos y no saben lo que hacemos')?>
+                                <?= __('Los que mandan comunicación están muy lejos y no saben lo que hacemos') ?>
                             </li>
                             <li>
-                                <?=__('Tendríamos que tener a personas de comunicación en cada área ')?>
+                                <?= __('Tendríamos que tener a personas de comunicación en cada área ') ?>
                             </li>
                         </ul>
                     </div>
@@ -158,14 +159,14 @@ if ($admin) {
         <div class="text-center mt-5">
             <div class="alert alert-danger d-inline-block" role="alert">
                 <b>
-                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
+                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
                 </b>
                 </br>
-                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
+                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
             </div>
         </div>
         <p>
-            <?=__('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”')?>
+            <?= __('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”') ?>
         </p>
     </section>
     <?php if ($admin) { ?>
@@ -179,7 +180,9 @@ if ($admin) {
     var stop =<?= $stop ?>;
     $(function () {
 <?php if ($admin) { ?>
-
+            $('#finalizar').click(function () {
+                $('#siguiente').click();
+            });
             setTimeout(checkTime, 500);
             function checkTime() {
 
@@ -206,12 +209,7 @@ if ($admin) {
                 });
             }
             $('#siguiente').click(function () {
-                location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "page9"
-    ])
-    ?>';
+                location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page9"]) ?>';
             });
             $('#anterior').click(function () {
                 location.href = '<?=

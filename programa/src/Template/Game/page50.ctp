@@ -37,7 +37,7 @@ if ($admin) {
                 for ($i = 0; $i < count($teams); $i++) {
                     ?>
                     <tr>
-                        <td scope="row" class="fs32"><?= $teams[$i]['team'] ?></td>
+                        <td scope="row" class="fs32"><?= $i+1 ?></td>
                         <td>   <?= $this->Html->image("exp" . str_pad($teams[$i]['img'], 2, "0", STR_PAD_LEFT) . ".png", ['class' => 'img-fluid']); ?>
                         </td>
 

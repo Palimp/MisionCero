@@ -230,6 +230,19 @@ class GameController extends AppController {
                     $this->set('time', '');
                     $this->viewBuilder()->template('page41b');
                 } else
+                      if ($sesion['page'] == 411) {
+                    $period = $this->Code->getTime(2);
+                    $this->set('id', $id);
+                    $this->set('team', $team);
+                    $this->set('stop', 1);
+                    $image = $this->Code->getImageId($sesion['ludico']);
+                    $this->set('image', $image->name);
+
+                    $session = $this->request->session();
+                    $session->write('period', $period);
+                    $this->set('time', '');
+                    $this->viewBuilder()->template('page411b');
+                } else
                 if ($sesion['page'] > 1) {
                     if ($sesion['page'] == 9) {
                         $comments = $this->Code->getTeamComments($id);
@@ -1250,10 +1263,50 @@ class GameController extends AppController {
 
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
+        $this->set('image', $image->name);
+    }
+public function page411() {
+        $sesion = $this->Code->loadSesion();
+        $session = $this->request->session();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 41);
+        $this->set('stop', 1);
+        $this->set('time', '');
+        $period = $this->Code->getTime(2);
+
+        $session->write('period', $period);
+
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $datos = $this->request->getData();
+            if (!empty($datos['time'])) {
+                $this->Code->addTime($id, $datos['time']);
+            }
+            if (!empty($datos['stop'])) {
+                $time2 = new Time($sesion['time1']);
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
+                $this->Code->setTime($id, -1);
+                $session->write('seconds', $sec);
+                $this->set('stop', 0);
+                $this->set('time', gmdate("i:s", $sec));
+            }
+            if (!empty($datos['start'])) {
+                $time2 = Time::now();
+                $sec = $session->read('seconds');
+                $time2->subSecond($period - $sec);
+                $this->Code->setTime($id, 1, $time2);
+                $this->set('stop', 1);
+            }
+            $image = $this->Code->getImageId($sesion['ludico']);
+        } else {
+            $image = $this->Code->getImageId($sesion['ludico']);
+            $this->Code->setTime($id);
+        }
+
+        $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
         $this->set('image', $image->name);
     }
-
     public function page42() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
@@ -1864,6 +1917,7 @@ class GameController extends AppController {
 
                             $team = $this->Teams->newEntity();
                             $team->name = $names[$datos['name']];
+                            $team->img=$this->Code->getTeamIdByName($team->name);
                             $team->members = $datos['member'];
                             $team->taken = 1;
                             $team->bikles = 20;

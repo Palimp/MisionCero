@@ -124,7 +124,7 @@ if ($admin) {
         </div>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
         <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Seguir etapa') ?></button>
-        <button  id="otro" type="button" class="btn btn-primary mb-10"><?= __('Cambiar de objeto') ?></button>
+        <button  id="otro" type="button" class="btn btn-primary mb-10"><?= __('Empezar con otro objeto') ?></button>
 
     <?php } ?>
 </main>
@@ -153,7 +153,7 @@ if ($admin) {
 
                         if (stop) {
                             alert("<?= __('Se acabó el tiempo') ?>");
-                            location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page411"]) ?>';
+                            location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page42"]) ?>';
                         }
 
                     }
@@ -171,7 +171,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page411"
+        "action" => "page42"
     ])
     ?>';
             });
@@ -179,7 +179,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page401"
+        "action" => "page41"
     ])
     ?>';
             });

@@ -122,7 +122,7 @@ class BuildController extends AppController {
                 $this->Teams->deleteAll(['game_id' => $id, 'id NOT IN' => $datos['ids']]);
             }
             $datos['names'] = unserialize($datos['names']);
-            print_r($datos);
+            //print_r($datos);
             for ($i = 0; $i < count($datos['name']); $i++) {
                 echo "#" . $i;
                 if (isset($datos['name'][$i]) && !empty($datos['members'][$i])) {

@@ -14,7 +14,7 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    <?= __('Los equipos disponen de 2’ para pensar cómo vender el objeto de la foto al otro equipo') ?>
+                    <?= __('Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo') ?>
                 </p>
                 <p>
                     <?= __('Después, cada equipo presentará en 2 minutos su propuesta a otro equipo. El equipo audiente comunica su veredicto.En seguida se inversan los roles.') ?>

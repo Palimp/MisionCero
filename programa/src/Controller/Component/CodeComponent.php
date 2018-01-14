@@ -206,7 +206,11 @@ class CodeComponent extends Component {
         $game->page = $page;
         $games->save($game);
     }
-
+public function getTeamIdByName($name){
+       $query = $conn->execute("select id from names where name='" . $name."'");
+        $res = $query->fetchAll('assoc');
+        return $res[0]['id'];
+}
     public function getTeamComments($id) {
         $conn = ConnectionManager::get('default');
 
