@@ -26,10 +26,12 @@ if ($admin) {
                 <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
             </p>
         </div>
-        <div class="col fs32">
+        <div class="col">
             <div class="d-flex align-items-end flex-column">
                 <div>
                     <?= __('Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.') ?>
+                </div>
+                <div class="fs32">
                     <h1><time id="clock"><?= $time ?></time></h1>
                     <i class="fa fa-clock-o"></i>
                     <?php
@@ -53,7 +55,7 @@ if ($admin) {
                     </form>
                     <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
                 </div>
-                <div>
+                <div class="fs32">
                     <time>00:30</time>
                     <?php
                     echo $this->Form->create('Begin', array(
