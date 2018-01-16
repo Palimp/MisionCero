@@ -507,7 +507,7 @@ body {
 
 #refrescar{
  position:fixed;
- top:0;
+ top:30px;
  left:0;
  z-index:5000;
 }

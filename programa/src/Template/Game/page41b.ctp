@@ -14,10 +14,24 @@
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
                 <p class="fs22">
-                    <?= __('Los equipos disponen de 2’ para pensar cómo vender el objeto de la foto al otro equipo') ?>
+                    <?= __('2 equipos trabajan juntos: ') ?>
                 </p>
                 <p>
-                    <?= __('Después, cada equipo presentará en 2 minutos su propuesta a otro equipo. El equipo audiente comunica su veredicto.En seguida se inversan los roles.') ?>
+                    <b>Fase 1-</b>
+                    </br>
+                    Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo
+                    </br>
+                    Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
+                    </br>
+                    </br>
+                    <b><?= __('Fase 2-') ?></b>
+                    </br>
+                    Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
+                    </br>
+                    </br>
+                </p>
+                <p class="fs22">
+                    <b>Prepara la venta: ¡El objeto no puede servir para su uso habitual!</b>
                 </p>
             </div>
             <div class="col fs32">
