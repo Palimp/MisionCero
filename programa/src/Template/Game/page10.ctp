@@ -15,21 +15,21 @@ if ($admin) {
     </header> 
     <section>
         <h4>
-            Problemática: ¿Cómo…?
+            <?=__('Problemática: ¿Cómo…?')?>
         </h4>
         <p class="fs22 green">
-            Insights Espontáneos
+            <?=__('Insights Espontáneos')?>
         </p>
         <p>
             <i class="fa fa-lightbulb-o"></i>
-            Entre todos los comentarios generados,
-            <b>ahora cada equipo selecciona los 3 más relevantes</b>
+            <?=__('Entre todos los comentarios generados,')?>
+            <b><?=__('ahora cada equipo selecciona los 3 más relevantes')?></b>
             <br>
-            (Un reto es relevante si abre una nueva vía o ¡si es diferente a lo que trabajamos habitualmente!)
+            <?=__('(Un reto es relevante si abre una nueva vía o ¡si es diferente a lo que trabajamos habitualmente!)')?>
         </p>
         <?php if ($admin) { ?>
             <p>
-                Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
+                <?=__('Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”')?>
             </p>
             <div id="hasvoted"></div>
         <?php } else { ?>
