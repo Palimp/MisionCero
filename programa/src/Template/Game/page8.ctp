@@ -47,7 +47,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="start" value="1">
-                        <button class="btn btn-primary"><?= __('Reanudar tiempo') ?></button>
+                        <button class="btn btn-primary"><?= __('Activar tiempo') ?></button>
                     <?php } ?>
 
                     </form>

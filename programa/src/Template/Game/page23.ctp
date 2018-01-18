@@ -15,12 +15,12 @@ if ($admin) {
     </header>
     <section>
         <h4>
-            <?=__('Problemática: '.$trouble)?>
+            <?= __('Problemática: ' . $trouble) ?>
         </h4>
         <p class="fs22 green">
             <i class="fa fa-lightbulb-o"></i>
-            <?=__('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados por el equipo.')?>
-            <br> <?=__('Los equipos tienen 2 minutos')?>
+            <?= __('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados por el equipo.') ?>
+            <br> <?= __('Los equipos tienen 2 minutos') ?>
         </p>
 
         <div class="col fs32">
@@ -47,6 +47,7 @@ if ($admin) {
                     <?php } ?>
 
                     </form>
+                    <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
                 </div>
                 <div>
                     <time>00:30</time>
@@ -87,7 +88,9 @@ if ($admin) {
 
     $(function () {
 <?php if ($admin) { ?>
-
+            $('#finalizar').click(function () {
+                $('#siguiente').click();
+            });
             setTimeout(checkTime, 500);
             function checkTime() {
 

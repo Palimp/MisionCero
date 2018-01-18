@@ -16,13 +16,13 @@ if ($admin) {
     <section>
         <div class="col-12 col-md-auto">
             <h4>
-                <?=__('Problemática: '.$trouble)?>
+                <?= __('Problemática: ' . $trouble) ?>
             </h4>
             <p class="fs22 green">
-                <?=__('Retos basados en estados de ánimo')?>
+                <?= __('Retos basados en estados de ánimo') ?>
             </p>
             <p>
-                <?=__('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados')?>
+                <?= __('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados') ?>
             </p>
         </div>
         <div class="col fs32">
@@ -37,7 +37,7 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="stop" value="1">
-                        <button class="btn btn-primary"><?=__('Parar tiempo')?></button>
+                        <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
                         <?php
                     } else {
                         echo $this->Form->create('Begin', array(
@@ -45,10 +45,12 @@ if ($admin) {
                         ));
                         ?>
                         <input type="hidden" name="start" value="1">
-                        <button class="btn btn-primary"><?=__('Reanudar tiempo')?></button>
+                        <button class="btn btn-primary"><?= __('Reanudar tiempo') ?></button>
                     <?php } ?>
 
                     </form>
+                    <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
+
                 </div>
                 <div>
                     <time>00:30</time>
@@ -58,7 +60,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para añadir tiempo')?>" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para añadir tiempo') ?>" class="d-inline-block grey_link">
                         <i class="fa fa-plus"></i>
                     </a>
                     </form>
@@ -68,7 +70,7 @@ if ($admin) {
                     ));
                     ?>
                     <input type="hidden" name="time" value="-30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?=__('Haz click para restar tiempo')?>" class="d-inline-block grey_link">
+                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para restar tiempo') ?>" class="d-inline-block grey_link">
                         <i class="fa fa-minus"></i>
                     </a>
                     </form>
@@ -97,9 +99,9 @@ if ($admin) {
                                     <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                     <div class="example_wrapper d-inline-block">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                            <b><?= __('Siguiendo nuestra simulación de partida sobre la problemática ficticia ') ?></b>
+                                            <?= __('“¿Cómo podríamos mejorar la comunicación interna?”,') ?>
+                                            <b><?= __('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso') ?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +172,9 @@ if ($admin) {
 
     $(function () {
 <?php if ($admin) { ?>
-
+            $('#finalizar').click(function () {
+                $('#siguiente').click();
+            });
             setTimeout(checkTime, 500);
             function checkTime() {
 
@@ -186,7 +190,7 @@ if ($admin) {
                         setTimeout(checkTime, 500);
                     } else {
                         if (stop) {
-                            alert("<?=__('Se acabó el tiempo')?>");
+                            alert("<?= __('Se acabó el tiempo') ?>");
                             location.href = '<?=
     $this->Url->build([
         "controller" => "Game",

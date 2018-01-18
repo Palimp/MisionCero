@@ -12,50 +12,50 @@
     </header>
     <section>
         <h4>
-            <?=__('Problemática: '.$trouble)?>
+            <?= __('Problemática: ' . $trouble) ?>
         </h4>
         <p class="fs22 green">
-            <?=__('Retos basados en preguntas básicas')?>
+            <?= __('Retos basados en preguntas básicas') ?>
         </p>
         <p>
-            <?=__('Los equipos tienen 10 minutos para identificar retos basados en preguntas básicas:')?>
+            <?= __('Los equipos tienen 10 minutos para identificar retos basados en preguntas básicas:') ?>
         </p>
         <div class="row fs22 green">
             <div class="col">
-                <?=__('¿CUÁNDO?')?>
+                <?= __('¿CUÁNDO?') ?>
             </div>
             <div class="col">
-                <?=__('¿DÓNDE?')?>
+                <?= __('¿DÓNDE?') ?>
             </div>
             <div class="col">
-                <?=__('¿CÓMO?')?>
+                <?= __('¿CÓMO?') ?>
             </div>
             <div class="col">
-                <?=__('¿QUIÉN?')?>
+                <?= __('¿QUIÉN?') ?>
             </div>
         </div>
         <ul>
             <li>
-                <?=__('Paso 1- Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
+                <?= __('Paso 1- Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)') ?>
             </li>
             <li>
-                <?=__('Paso 2- Convertir estas respuestas en retos: ¿cómo…?')?>
+                <?= __('Paso 2- Convertir estas respuestas en retos: ¿cómo…?') ?>
             </li>
         </ul>
         <div class="row fs22 green">
             <div class="col">
-                <?=__('¿POR QUÉ?')?>
+                <?= __('¿POR QUÉ?') ?>
             </div>
             <div class="col">
-                <?=__('¿PARA QUÉ?')?>
+                <?= __('¿PARA QUÉ?') ?>
             </div>
         </div>
         <ul>
             <li>
-                <?=__('Paso 1- Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
+                <?= __('Paso 1- Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ') ?>
             </li>
             <li>
-                <?=__('Paso 2- Convertirlos en reto: ¿Cómo…? ')?>
+                <?= __('Paso 2- Convertirlos en reto: ¿Cómo…? ') ?>
             </li>
         </ul>
 
@@ -122,9 +122,9 @@
                                     <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
                                     <div class="example_wrapper d-inline-block">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                            <b><?= __('Siguiendo nuestra simulación de partida sobre la problemática ficticia ') ?></b>
+                                            <?= __('“¿Cómo podríamos mejorar la comunicación interna?”,') ?>
+                                            <b><?= __('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso') ?></b>
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('“retos basados en preguntas básicas”')?></i> <?=__(' podrían ser:')?> 
+                                        <?= __('Para esta Etapa 3, algunos ejemplos de ') ?><i><?= __('“retos basados en preguntas básicas”') ?></i> <?= __(' podrían ser:') ?> 
                                     </b>
                                 </p>
                                 <div class="text-center">
@@ -272,11 +272,11 @@
     var page = 20;
     function delComment(id) {
         $.get("<?=
-                                        $this->Url->build([
-                                            "controller" => "Game",
-                                            "action" => "deletequestion"
-                                        ])
-                                        ?>", {'id': id}, function (data, status) {
+                                                $this->Url->build([
+                                                    "controller" => "Game",
+                                                    "action" => "deletequestion"
+                                                ])
+                                                ?>", {'id': id}, function (data, status) {
             if (status == 'success') {
 
                 $('#bloque' + id).remove();
@@ -285,7 +285,11 @@
     }
     $(function () {
 <?php if (!$admin) { ?>
-
+            $("#comment").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#addcomment").click();
+                }
+            });
             $('#addcomment').click(function () {
                 $('#addcomment').attr('style', 'display: none !important');
                 $.get("<?=
@@ -311,7 +315,7 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-        
+
                     if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
@@ -319,8 +323,7 @@
                     } else if (data != "0") {
                         alert("<?= __('Se acabó el tiempo') ?>");
                         location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "index"]) ?>';
-                    }
-                    else {
+                    } else {
                         setTimeout(checkTime, 500);
                     }
 

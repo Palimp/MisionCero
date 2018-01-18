@@ -66,6 +66,8 @@ if ($admin) {
                         <?php } ?>
 
                         </form>
+                        <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
+
                     </div>
                     <div>
                         <time>00:30</time>
@@ -135,7 +137,9 @@ if ($admin) {
 
     $(function () {
 <?php if ($admin) { ?>
-
+            $('#finalizar').click(function () {
+                $('#siguiente').click();
+            });
             setTimeout(checkTime, 1000);
             function checkTime() {
 
