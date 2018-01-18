@@ -16,31 +16,26 @@ if ($admin) {
     <section>
         <div class="row no-gutters mb-5">
             <div class="col-12 col-md-auto">
-
-
-
-                <?php if ($admin) { ?>
-                    <p class="fs22">
-                        <?= __('2 equipos trabajan juntos: ') ?>
-                    </p>
-                    <p>
-                        <b>Fase 1-</b>
-                        </br>
-                        Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo
-                        </br>
-                        Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
-                        </br>
-                        </br>
-                        <b><?= __('Fase 2-') ?></b>
-                        </br>
-                        Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
-                        </br>
-                        </br>
-                    </p>
-                    <p class="fs22">
-                        <b>Prepara la venta: ¡El objeto no puede servir para su uso habitual!</b>
-                    </p>
-                <?php } ?>
+                <p class="fs22">
+                    <?= __('2 equipos trabajan juntos: ') ?>
+                </p>
+                <p>
+                    <b>Fase 1-</b>
+                    </br>
+                    Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo
+                    </br>
+                    Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
+                    </br>
+                    </br>
+                    <b><?= __('Fase 2-') ?></b>
+                    </br>
+                    Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
+                    </br>
+                    </br>
+                </p>
+                <p class="fs22">
+                    <b>Prepara la venta: ¡El objeto no puede servir para su uso habitual!</b>
+                </p>
             </div>
             <div class="col fs32">
                 <div class="d-flex align-items-end flex-column">
@@ -119,9 +114,9 @@ if ($admin) {
                     <?= __('- Ganarán 2 Bikles los equipos capaces de convencer al equipo rival') ?>
                 </b>
                 </br>
-                <b>
+                <p>
                     <?= __('Apunta los Bikles ganados o perdidos por cada equipo: los distribuirás en la siguiente pantalla') ?>
-                </b>
+                </p>
             </div>
         </div>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>

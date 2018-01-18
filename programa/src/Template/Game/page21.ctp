@@ -24,15 +24,6 @@ if ($admin) {
             <?=__('¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!')?>
         </p>
 
-        <?php if ($admin) { ?>
-            <p>
-                Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.
-                <br>
-                Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”
-            </p>  
-        <?php } ?>
-
-
         <table class="table table-striped text-center">
             <thead>
                 <tr>
@@ -47,10 +38,6 @@ if ($admin) {
                 foreach ($ranking as $team) {
                     ?>
                     <tr>
-                        
-                                    <b><?=__('Ejemplo: ')?></b>
-                                    <?=__('si nuestra problemática inicial fuera')?>
-                                    <b><?=__('¿Cómo mejorar la comunicación interna?')?></b>
                         <td>   <?= $this->Html->image("exp" . str_pad($team['img'], 2, "0", STR_PAD_LEFT) . ".png", ['class' => 'img-fluid']); ?></td>
 
                         <td><?= $team['name'] ?></td>

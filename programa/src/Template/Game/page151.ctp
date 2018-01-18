@@ -18,27 +18,27 @@ if ($admin) {
          <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
         <div class="col-12 col-md-auto">
             <h4>
-                Etapa 2- Parada lúdica
+                <?= __('Etapa 2- Parada lúdica') ?>
             </h4>
             <p class="fs22 green">
-                ATENCIÓN exploradores! 
+                <?= __('ATENCIÓN exploradores! ') ?>
                 <i class="fa fa-smile-o"></i>
             </p>
             <p>
                 <i class="fa fa-comment-o"></i>
-                En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación. 
+                <?= __('En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación. ') ?>
                 <br>
-                El Jefe de Expedición realizará algunas preguntas al terminar…
+                <?= __('El Jefe de Expedición realizará algunas preguntas al terminar…') ?>
                 <br>
-                ¡Los equipos que respondan correctamente ganarán Bikles!
+                <?= __('¡Los equipos que respondan correctamente ganarán Bikles!') ?>
                 <b>
-                    No pierdas ningún detalle!
+                    <?= __('No pierdas ningún detalle!') ?>
                 </b>
             </p>
         </div>
         <?php if ($admin) { ?>
             <p>
-                El Jefe de Expedición seguirá las instrucciones al pie del vídeo para lanzar la pregunta en el momento adecuado
+                <?= __('El Jefe de Expedición seguirá las instrucciones al pie del vídeo para lanzar la pregunta en el momento adecuado') ?>
             </p>
         <?php } ?>
         <!-- en el boton de pasar al video poner TXTO: "Pasar al vídeo" -->

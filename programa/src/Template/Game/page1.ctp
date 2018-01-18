@@ -16,7 +16,7 @@ if ($admin) {
     <section>
         <h4><?=__('Misión 0 -¿Por qué?')?></h4>
         <div class="alert alert-success d-inline-block">
-            ¡Ganarán Bikles los equipos con más votos!
+            <?=__('¡Ganarán Bikles los equipos con más votos!')?>
         </div>
         <div class="fs22 alert alert-success d-inline-block">
             <?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?>
