@@ -7,9 +7,8 @@ echo $this->element('navbar');
 ?>
 
 <main>
-    <header class="text-center m-5 mb-10">
-        
-        <?= $this->Html->image('breadp12.svg');?>
+    <header class="text-center">
+        <?= $this->Html->image('breadp12.svg', ['class' => 'img-fluid']); ?>
     </header>
     <section class="text-center">
         <?php
@@ -17,7 +16,12 @@ echo $this->element('navbar');
             'url' => array('controller' => 'Build', 'action' => 'trouble'),
         ));
         ?>
-        <p class="fs26"><?= __('La problemática inicial de la partida') ?></p>
+        <div class="title_wrap mb-5">
+            <span class="title">
+                <?= __('La problemática inicial de la partida') ?>
+            </span>
+        </div>
+
         <p><?= __('El objetivo de la partida consistirá en transformar esta problemática en una serie de retos concretos') ?></p>
         <div class="row mx-5 form-group">
             <div class="col">

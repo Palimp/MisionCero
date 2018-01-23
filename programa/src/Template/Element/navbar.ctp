@@ -6,16 +6,16 @@
 ?>
 <nav id="mainNav" class="navbar fixed-top">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="justify-content-end">
-        <div class="float-right bg-white pt-0 p-3" style="box-shadow: 0 0 6px 3px lightgrey">
-            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+    <div style="margin-top: 10px;">
+        <div class="float-right">
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"style="margin-bottom: 20px;">
                 <span class="sr-only">Toggle navigation</span>
                 <i class="fa fa-bars mr-2"></i>
                 Menú Jefe de Expedición
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right pt-2">
+            <div class="bg-white p-3 collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="http://misioncero.binnakle.com/">Inicio</a>
                     </li>

@@ -33,11 +33,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
    <?= $this->Html->script('bootstrap.min.js') ?>
    <?= $this->Html->script('scripts.js') ?>
    <?= $this->Html->script('ie10-viewport-bug-workaround.js') ?>
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
 <body>
-  <button id="refrescar" onclick="location.href=location.href" class="btn btn-primary"><?= __('Refrescar') ?></button>
+
+  <div>
+      <button id="refrescar" onclick="location.href=location.href" class="btn btn-primary"><?= __('Refrescar') ?></button>
+      <img src="/img/logo_m0_es_sm.svg" alt="" class="mx-auto d-block" style="height: 4rem">
+  </div>
+  
     <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
+    <div>
+      <?= $this->fetch('content') ?>
     </div>
     <footer>
     </footer>

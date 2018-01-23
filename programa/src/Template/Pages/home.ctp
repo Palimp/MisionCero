@@ -51,16 +51,21 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
    <?= $this->Html->script('scripts.js') ?>
    <?= $this->Html->script('ie10-viewport-bug-workaround.js') ?>
 
-        <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
     </head>
     <body class="home">
         <main>
-            <header class="text-center mb-10" style="padding-top: 10rem;">
+            <header class="text-center my-5">
                 <div>
-                    <img src="img/logo_binnakle_es.png" alt="">
+                    <?=__('BIENVENIDOS A')?>
                 </div>
                 <div>
-                    <img src="img/logo_m0_es.svg" alt="">
+                    <img src="img/logo_m0_es.svg" alt="" style="width: 24rem">
+                </div>
+                <div>
+                    <?=__('Un juego que te ayudará a identificar tus retos…')?>
+                    <br>
+                    <?=__('¡ Y A FIJAR EL RUMBO DE TU EXPEDICIÓN!')?>
                 </div>
             </header>
             <section class="text-center">
@@ -70,18 +75,17 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 ));
                 ?>
                 <div class="form-group">
-                    <p class="fs26"><?=__('Introduce el código')?></p>
-                    <div class="row mx-5">
-                        <div class="col">
-                            <input id="code" name="code" type="password" class="form-control fs26" aria-describedby="codeHelp" placeholder="Introduce aquí el código">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <input id="code" name="code" type="password" class="form-control fs26" aria-describedby="codeHelp" placeholder="Introduce el código">
                         </div>
-                        <div class="col-12 col-md-auto">
+                        <!-- <div>
                             <i class="fa fa-wpforms fa-3x example_ic align-middle mr-3"></i>
                             <span id="codeHelp" class="text-muted"><?=__('Ejemplo 9P8674')?></span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary mb-10"><?=__('Empezar partida')?></button>
+                <button type="submit" class="btn btn-primary mb-5"><?=__('Empezar')?><br><?=__('partida')?></button>
                 </form>
 
                 <!-- Button trigger modals -->
