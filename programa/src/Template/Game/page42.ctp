@@ -19,7 +19,7 @@ if ($admin) {
                 <?=__('¡El Jefe de Expedición distribuye los Bikles ganados o perdidos por los equipos!')?>
             </p>
             <p class="fs22 green">
-                <?=__('Como Jefe de Expedición, ')?><b><?=__('tienes el privilegio de sumar o restar Bikles ')?></b><?=__('si consideras que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc')?>
+                <?= __('El Jefe de Expedición, ') ?><b><?= __('tiene el privilegio de sumar o restar Bikles ') ?></b><?= __('si considera que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc') ?>
             </p>
         <?php } ?>
         <p class="fs22">

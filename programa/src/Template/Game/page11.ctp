@@ -34,7 +34,7 @@ if ($admin) {
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
                 <div>
-                    <?=__('Como Jefe de Expedición, puedes ampliar, reducir o pausar el tiempo desde tu cronómetro.')?>
+                    <?=__('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.')?>
                     <h1><time id="clock"><?= $time ?></time></h1>
                     <i class="fa fa-clock-o"></i>
                     <?php
