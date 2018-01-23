@@ -19,7 +19,7 @@ if ($admin) {
                 <?=__('¿Cómo?')?>
             </b>
             </br>
-            <?=__('Enfocando la problemática desde sus diferentes perspectivas, con una metodología que nos permitirá plantear nuevas preguntas que convertiremos en retos concretos y bien formulados')?>
+            <?=__('Con una metodología que nos permite enfocar la problemática desde sus diferentes puntos de vista.')?>
         </div>
         <div class="py-20 text-center">
 
