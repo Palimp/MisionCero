@@ -22,13 +22,13 @@ if ($admin) {
 
         <p class="fs22 green">
             <i class="fa fa-lightbulb-o"></i>
-             Identificar los momentos clave de interacción con los diferentes actores de la problemática y sus <i>pain points</i>: puntos críticos o problemas que se presentan en cada momento.
+             Identificar los momentos clave con los diferentes actores de la problemática y sus <i>pain points</i>: puntos críticos o problemas que se presentan en cada momento.
         </p>
         <p>
             Convertir los pain points en retos: <i>¿Cómo…?</i>
             <br>
             <i class="fa fa-comment-o"></i>
-            Para una interacción se pueden identificar varios <i>pain points</i>
+            Para un momento clave se pueden identificar varios <i>pain points</i>
             <br>
             <i class="fa fa-comment-o"></i>
             Los Exploradores pueden introducir más de un reto por <i>pain point</i>
@@ -65,7 +65,7 @@ if ($admin) {
                         <div class="modal-body">
                             <p>
                                 <b>
-                                    <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave de interacción y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                    <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
                                 </b>
                             </p>
 

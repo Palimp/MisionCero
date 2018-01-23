@@ -16,7 +16,7 @@
                 <?= __('Problemática: ' . $trouble) ?>
             </h4>
             <p class="fs22 green">
-                <?= __('Retos basados en momentos claves de interacción y en ') ?><i><?= __('pain points') ?></i>
+                <?= __('Retos basados en momentos claves y en ') ?><i><?= __('pain points') ?></i>
             </p>
             <p>
                 <?= __('Los equipos tienen 10 minutos para introducir todos los retos posibles, basados en basados en los ') ?><i><?= __('pain points ') ?></i><?= __('identificados') ?><br>
@@ -24,7 +24,7 @@
             </p>
 
             <p>
-                <?= __('Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.') ?>
+                <?= __('Identificar momentos claves con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.') ?>
             <p>
             </p>
             <?= __('Después, para cada uno de estos momentos, listar los ') ?><i><?= __('pain points ') ?></i><?= __('(puntos dolorosos): puntos críticos o problemas. Introducir estos ') ?><i><?= __('pain points ') ?></i><?= __('en la segunda columna.') ?><br>
@@ -88,7 +88,7 @@
                 foreach ($comments as $comment) {
                     foreach ($comment->pain as $pain) {
                         ?>
-                        <tr id="pain<?= $pain->id ?>"><td> <b><?= $comment->question ?></b></td><td><?= $pain->question ?><a href="#" id="delete<?= $pain->id ?>" onclick="delPain(<?= $pain->id ?>)" data-toggle="tooltip" title="<?= __('Haz click para borrar una interacción') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>
+                        <tr id="pain<?= $pain->id ?>"><td> <b><?= $comment->question ?></b></td><td><?= $pain->question ?><a href="#" id="delete<?= $pain->id ?>" onclick="delPain(<?= $pain->id ?>)" data-toggle="tooltip" title="<?= __('Haz click para borrar un momento clave') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>
                                 <?php
                                 foreach ($pain->ppchan as $chan) {
                                     ?>
@@ -103,8 +103,8 @@
                 ?>
                 <tr>
                     <td scope="row" class="align-top">
-                        <input type="text" id="inter" class="form-control d-inline-block  painpoints" placeholder="<?= __('Introduce aquí la interacción') ?>" >
-                        <a id="addinter" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block">
+                        <input type="text" id="inter" class="form-control d-inline-block  painpoints" placeholder="<?= __('Introduce aquí el momento clave') ?>" >
+                        <a id="addinter" data-toggle="tooltip" title="<?= __('Haz click para añadir un momento clave') ?>" class="d-inline-block">
                             <i class="fa fa-plus fa-2x"></i>
                         </a>
                     </td>
@@ -163,7 +163,7 @@
                     <div class="modal-body">
                         <p>
                             <b>
-                                <?= __('Para la Etapa 7, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave de interacción y en pain points') ?></i> <?= __(' podrían ser:') ?> 
+                                <?= __('Para la Etapa 7, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave y en pain points') ?></i> <?= __(' podrían ser:') ?> 
                             </b>
                         </p>
 
@@ -267,9 +267,9 @@
     }
 
     var page = 44;
-    var inter = '<tr><td scope="row" class="align-top"><input type="text" id="inter" class="form-control painpoints" placeholder="<?= __('Introduce aquí la interacción') ?>"><a   id="addinter" data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a></td><td></td><td></td></tr>';
-    var pain = '<input id="pain" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí el painpoint') ?>"><a   id="addpain"  data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
-    var ppcha = '<input id="ppcha" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí un reto') ?>"><a   id="addppcha"  data-toggle="tooltip" title="<?= __('Haz click para añadir una interacción') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
+    var inter = '<tr><td scope="row" class="align-top"><input type="text" id="inter" class="form-control painpoints" placeholder="<?= __('Introduce aquí un momento clave') ?>"><a   id="addinter" data-toggle="tooltip" title="<?= __('Haz click para añadir un momento clave') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a></td><td></td><td></td></tr>';
+    var pain = '<input id="pain" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí el painpoint') ?>"><a   id="addpain"  data-toggle="tooltip" title="<?= __('Haz click para añadir un momento clave') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
+    var ppcha = '<input id="ppcha" type="text" class="form-control form-group painpoints" placeholder="<?= __('Introduce aquí un reto') ?>"><a   id="addppcha"  data-toggle="tooltip" title="<?= __('Haz click para añadir un momento clave') ?>" class="d-inline-block"><i class="fa fa-plus fa-2x"></i></a>';
     function delInter(id) {
         $.get("<?=
                                         $this->Url->build([
@@ -326,7 +326,7 @@
 
                         $('#addinter').removeAttr('style');
 
-                        $('#addinter').closest('tr').before('<tr id="bloque' + data + '"><td> <b>' + $('#inter').val() + '</b><a  id="delete' + data + '" onclick="delInter(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + pain + '</td><td></td></tr>');
+                        $('#addinter').closest('tr').before('<tr id="bloque' + data + '"><td> <b>' + $('#inter').val() + '</b><a  id="delete' + data + '" onclick="delInter(' + data + ')" data-toggle="tooltip" title="Haz click para borrar un momento clave" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + pain + '</td><td></td></tr>');
                         $('#pain').attr('id', 'pain_' + data);
                         $('#addpain').attr('id', 'addpain_' + data);
                         $('#inter').val('');
@@ -342,7 +342,7 @@
 
                                 if (status == 'success') {
                                     console.log(data)
-                                    $('#addpain_' + id).closest('tr').before('<tr id="pain' + id + '"><td> <b>' + $('#addpain_' + id).closest('tr').find("td:first").find("b").html() + '</b></td><td>' + $('#pain_' + id).val() + '<a  id="delete' + data + '" onclick="delPain(' + data + ')" data-toggle="tooltip" title="Haz click para borrar una interacción" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + ppcha + '</td></tr>');
+                                    $('#addpain_' + id).closest('tr').before('<tr id="pain' + id + '"><td> <b>' + $('#addpain_' + id).closest('tr').find("td:first").find("b").html() + '</b></td><td>' + $('#pain_' + id).val() + '<a  id="delete' + data + '" onclick="delPain(' + data + ')" data-toggle="tooltip" title="Haz click para borrar un momento clave" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></td><td>' + ppcha + '</td></tr>');
                                     $('#addpain_' + id).removeAttr('style');
 
                                     $('#pain_' + id).val('');
@@ -361,7 +361,7 @@
 
                                             if (status == 'success') {
                                                 $('#addppcha_' + id).removeAttr('style');
-                                                $('#ppcha_' + id).before('<div id="' + data + '"> <b>' + $('#ppcha_' + id).val() + '</b><a  id="delete' + data + '" onclick="delPpcha(' + data + ')" data-toggle="tooltip" title="<?= __('Haz click para borrar una interacción') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>');
+                                                $('#ppcha_' + id).before('<div id="' + data + '"> <b>' + $('#ppcha_' + id).val() + '</b><a  id="delete' + data + '" onclick="delPpcha(' + data + ')" data-toggle="tooltip" title="<?= __('Haz click para borrar un momento clave') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div>');
                                                 $('#ppcha_' + id).val('');
 
                                             }

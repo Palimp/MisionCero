@@ -20,7 +20,7 @@ if ($admin) {
                     <?= __('Problemática: ' . $trouble) ?>
                 </h4>
                 <p class="fs22 green">
-                    <?= __('Retos basados en momentos claves de interacción y en ') ?><i><?= __('pain points') ?></i>
+                    <?= __('Retos basados en momentos claves y en ') ?><i><?= __('pain points') ?></i>
                 </p>
                 <p>
                     <?= __('Los equipos tienen 10 minutos para introducir todos los retos posibles, basados en basados en los ') ?><i><?= __('pain points ') ?></i><?= __('identificados') ?><br>
@@ -28,7 +28,7 @@ if ($admin) {
                 </p>
 
                 <p>
-                    <?= __('Identificar momentos claves de interacción con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.') ?>
+                    <?= __('Identificar momentos claves con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.') ?>
                 <p>
                 </p>
                 <?= __('Después, para cada uno de estos momentos, listar los ') ?><i><?= __('pain points ') ?></i><?= __('(puntos dolorosos): puntos críticos o problemas. Introducir estos ') ?><i><?= __('pain points ') ?></i><?= __('en la segunda columna.') ?><br>
@@ -135,7 +135,7 @@ if ($admin) {
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?= __('Para la Etapa 7, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave de interacción y en pain points') ?></i> <?= __(' podrían ser:') ?> 
+                                        <?= __('Para la Etapa 7, algunos ejemplos de ') ?><i><?= __('retos basados en momentos clave y en pain points') ?></i> <?= __(' podrían ser:') ?> 
                                     </b>
                                 </p>
 
