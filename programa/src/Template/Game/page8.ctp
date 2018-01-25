@@ -10,15 +10,17 @@ if ($admin) {
 
 <!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="col-12 col-md-auto">
-            <h4>
-                <?= __('Problemática: ' . $trouble) ?>
-            </h4>
-            <p class="fs22 green">
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática inicial: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <div>
+            <p class="h_green">
                 <?= __('Comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
             </p>
             <p>
@@ -26,74 +28,68 @@ if ($admin) {
                 <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
             </p>
         </div>
-        <div class="col">
-            <div class="d-flex align-items-end flex-column">
-                <div>
-                    <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
-                </div>
-                <div class="fs32">
-                    <h1><time id="clock"><?= $time ?></time></h1>
-                    <i class="fa fa-clock-o"></i>
-                    <?php
-                    if ($stop) {
-                        echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
-                        ));
-                        ?>
-                        <input type="hidden" name="stop" value="1">
-                        <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
-                        <?php
-                    } else {
-                        echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
-                        ));
-                        ?>
-                        <input type="hidden" name="start" value="1">
-                        <button class="btn btn-primary"><?= __('Activar tiempo') ?></button>
-                    <?php } ?>
-
-                    </form>
-                    <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
-                </div>
-                <div class="fs32">
-                    <time>00:30</time>
-                    <?php
-                    echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
-                    ));
-                    ?>
-                    <input type="hidden" name="time" value="30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para añadir tiempo') ?>" class="d-inline-block grey_link">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                    </form>
-                    <?php
-                    echo $this->Form->create('Begin', array(
-                        'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
-                    ));
-                    ?>
-                    <input type="hidden" name="time" value="-30">
-                    <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block grey_link">
-                        <i class="fa fa-minus"></i>
-                    </a>
-                    </form>
-                </div>
-            </div>
+        <div>
+            <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
         </div>
         <div>
+            <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
+            <?php
+            echo $this->Form->create('Begin', array(
+                'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+            ));
+            ?>
+            <input type="hidden" name="time" value="30">
+            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para añadir tiempo') ?>" class="d-inline-block btn btn-primary btn-red">
+                <i class="fa fa-plus"></i><time> 00:30</time>
+            </a>
+            </form>
+            <?php
+            if ($stop) {
+                echo $this->Form->create('Begin', array(
+                    'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                ));
+                ?>
+                <input type="hidden" name="stop" value="1">
+                <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
+                <?php
+            } else {
+                echo $this->Form->create('Begin', array(
+                    'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+                ));
+                ?>
+                <input type="hidden" name="start" value="1">
+                <button class="btn btn-primary"><?= __('Activar tiempo') ?></button>
+            <?php } ?>
+
+            </form>
+            <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
+
+            <?php
+            echo $this->Form->create('Begin', array(
+                'url' => array('controller' => 'Game', 'action' => 'page8'), 'class' => 'd-inline-block'
+            ));
+            ?>
+            <input type="hidden" name="time" value="-30">
+            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block btn btn-primary btn-green">
+                <i class="fa fa-minus"></i><time> 00:30</time>
+            </a>
+            </form>
+        </div>
+        <div class="py-3">
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
-                <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                </p>
+                <i class="fa fa fa-file-text-o fa-2x example_ic mr-2"></i>
+                <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                </div>
             </a>
         </div>
+
         <div id="modal_ex1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header align-items-start">
-                        <div class="example fs26">
-                            <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                            <div class="example_wrapper d-inline-block">
+                        <div class="example row">
+                            <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                            <div class="example_wrapper col mr-4">
                                 <div class="example_inner text-left py-3 px-4">
                                     <p>
                                         <b>
@@ -115,6 +111,7 @@ if ($admin) {
                         </button>
                     </div>
                     <div class="modal-body">
+
                         <p class="green">
                             <b>
                                 <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
@@ -154,12 +151,15 @@ if ($admin) {
                                 <?= __('Tendríamos que tener a personas de comunicación en cada área ') ?>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+
+
+        <div class="text-center">
+            <div class="alert d-inline-block" role="alert">
                 <b>
                     <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
                 </b>
@@ -170,11 +170,13 @@ if ($admin) {
         <p>
             <?= __('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”') ?>
         </p>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 1') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 1') ?></button>
-    <?php } ?>
 </main>
 
 <script>

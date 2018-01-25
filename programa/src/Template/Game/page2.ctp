@@ -8,17 +8,13 @@ if ($admin) {
 }
 ?>
 <main>
-    <header class="mb-5">
-        <div class="text-center">
-            <?= $this->Html->image("logo_m0_es_sm.svg", ['class' => 'img-fluid']); ?>
-
-
-        </div>
-    </header>
-    <section>
-        <p class="fs26 green">
+    <div class="text-center mb-5">
+        <p class="title_first py-4">
             <?=__('Se organizan multitud de reuniones para tratar estas problemáticas, pero…')?>
         </p>
+        <h4 class="title_alt"><?=__('Misión 0 -¿Por qué?')?></h4>
+    </div>
+    <section class="container">
         <div class="row">
             <div class="col-7">
                 <p>
@@ -33,11 +29,13 @@ if ($admin) {
                 <?= $this->Html->image("img3.jpg", ['class' => 'img-fluid']); ?>
             </div>
         </div>
+        <?php if ($admin) { ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+            </div>
+        <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <?php } ?>
 </main>
 
 <script>

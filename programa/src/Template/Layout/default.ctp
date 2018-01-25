@@ -39,7 +39,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
   <div>
       <button id="refrescar" onclick="location.href=location.href" class="btn btn-primary"><?= __('Refrescar') ?></button>
-      <img src="/img/logo_m0_es_sm.svg" alt="" class="mx-auto d-block" style="height: 4rem">
+      <img src="/img/logo_m0_es_sm.svg" alt="" class="mx-auto d-block" style="  height: 3.6rem; margin: .2rem;">
   </div>
   
     <?= $this->Flash->render() ?>

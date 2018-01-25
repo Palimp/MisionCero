@@ -7,16 +7,11 @@
 ?>
 
 <main>
-    <header class="text-center m-5 mb-10">
+    <section style="background-color: #E3E3E3;" class="text-center py-5">
 
-        <?= $this->Html->image('breadp12.svg'); ?>
-    </header>
-    <section class="text-center">
-
-        <p></p>
         <p class="fs26"><?= __('La partida ya ha comenzado') ?></p>
         <p class="fs26"><?= __('Todos los equipos están seleccionados') ?></p>
-        <p class="fs26"><?= __('Contacte con el Jefe de Expedición') ?></p>
+        <p class="fs32"><?= __('Contacte con el Jefe de Expedición') ?></p>
 
         
      

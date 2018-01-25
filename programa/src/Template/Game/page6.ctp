@@ -9,13 +9,23 @@ if ($admin) {
 ?>
 
 <main>
-    <section>
-      <div class="fs22 alert d-inline-block" style="color: #fff;  background-color: #2b2b2b;  border-color: transparent;">
-          <h4 style="color: #fff;">
-              Resultado de la partida
-          </h4>
-      </div>
+  <div class="text-center">
+    <p class="title_first py-4">
+      <?=__('Resultado de la partida') ?>
+    </p>
+    <header>
+      <span>
+        <?=__('Problemática inicial:')?>
+      </span>
+    </header>
+    <div class="title_wrap">
+      <span class="title">
+        <?=__('¿Cómo………………………………?')?>
+      </span>
+    </div>
+  </div>
 
+  <section class="container">
       <div class="text-right">
         <a href="#" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
         <a href="#" data-toggle="tooltip" title="<?=__('Haz click para imprimir')?>">
@@ -23,12 +33,6 @@ if ($admin) {
         </a>          
       </div>
       <p class="fs22">
-        <?=__('Problemática inicial:')?>
-      </p>
-      <h2 class="text-center green">
-        <?=__('¿Cómo………………………………?')?>
-      </h2>
-      <p class="fs22 mt-5">
         <?=__('Tabla resumen de los retos')?>
       </p>
       <article class="row mt-2">
@@ -373,11 +377,13 @@ if ($admin) {
           </div>
         </div>
       </article>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <?php } ?>
 </main>
 
 <script>

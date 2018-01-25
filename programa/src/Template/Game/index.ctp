@@ -7,11 +7,9 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main>
-    <header class="mb-5">
-        <div class="text-center">
-            <img src="img/logo_m0_es_sm.svg" alt="">
-        </div>
+<main class="text-center">
+    <header>
+        <?= $this->Html->image('breadp12.svg', ['class' => 'img-fluid']); ?>
     </header>
     <section>
         <h4><?=__('Misión 0 -¿Por qué?')?></h4>

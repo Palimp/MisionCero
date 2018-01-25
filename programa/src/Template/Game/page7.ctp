@@ -8,15 +8,21 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <h4>
-            <?=__('Etapa 1- Insights espontáneos')?><br><?=__('Problemática inicial: '.$trouble)?>
-        </h4>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática inicial: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container">
+        <div class="text-center">
+            <p class="title_first pb-4">
+              <?=__('Etapa 1- Insights espontáneos')?>
+            </p>
+        </div>
         <p>
             <i class="fa fa-lightbulb-o"></i>
             <?=__('Pensar en los comentarios internos más habituales sobre la problemática, positivos o negativos, expresados de forma natural')?>
@@ -48,7 +54,7 @@ if ($admin) {
         
         <div>
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
-                <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
                 <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
                 </p>
             </a>
@@ -57,9 +63,9 @@ if ($admin) {
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header align-items-start">
-                        <div class="example fs26">
-                            <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                            <div class="example_wrapper d-inline-block">
+                        <div class="example row">
+                            <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                            <div class="example_wrapper col mr-4">
                                 <div class="example_inner text-left py-3 px-4">
                                     <p>
                                         <b>
@@ -124,11 +130,13 @@ if ($admin) {
                 </div>
             </div>
         </div>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar etapa 1') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar etapa 1') ?></button>
-    <?php } ?>
 </main>
 
 <script>

@@ -4,17 +4,17 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 ?>
-<nav id="mainNav" class="navbar fixed-top">
+<nav id="mainNav" class="navbar" style="position: absolute; top: 0.5rem; right: 1rem;  z-index: 50;">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div style="margin-top: 10px;">
+    <div>
         <div class="float-right">
-            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"style="margin-bottom: 20px;">
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"style="margin-bottom: 18px;">
                 <span class="sr-only">Toggle navigation</span>
                 <i class="fa fa-bars mr-2"></i>
                 Menú Jefe de Expedición
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="bg-white p-3 collapse navbar-collapse" id="navbar-collapse-1">
+            <div class="bg-colors collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="http://misioncero.binnakle.com/">Inicio</a>
@@ -46,9 +46,6 @@
                                 __('Otro código'), ['controller' => 'Build', 'action' => 'reset']
                         )
                         ?>
-                    </li>
-                    <li>
-                        <hr/>
                     </li>
                     <li>
                         <a class="" href="#">Ranking bikles</a>

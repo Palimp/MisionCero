@@ -6,28 +6,25 @@
 echo $this->element('navbar');
 ?>
 
-<main>
-    <header class="text-center m-5 mb-10">
-
-        <?= $this->Html->image('breadp12.svg'); ?>
+<main class="text-center">
+    <p class="title_first py-4"><?= __('El reto de la partida') ?></p>
+    <header class="title_black py-2">
+        <span><?= $game->trouble ?></span>
     </header>
-    <section class="text-center">
-        <p class="fs26"><?= __('El reto de la partida') ?></p>
-        <div class="row mx-5 form-group">
-            <div class="col">
-                <b class="fs26"><?= $game->trouble ?></b>
-            </div>
-
-        </div>
-        <p class="fs26"><?= ($game->active) ? __('Partida empezada') : __('Partida sin empezar') ?></p>
-        <?php
-        echo $this->Form->create('Begin', array(
-            'url' => array('controller' => 'Build', 'action' => 'estado'),
-        ));
-        ?>
-        <input type="hidden" name="begin" value="<?=$game->active?>"/>
-        <button type="submit" class="btn btn-primary mb-2"><?= ($game->active) ? __('Detener partida') : __('Empezar partida') ?></button>
-        </form>
+    <div class="title_wrap">
+        <span class="title">
+            <?= ($game->active) ? __('Partida empezada') : __('Partida sin empezar') ?>
+        </span>
+    </div>
+    <?php
+    echo $this->Form->create('Begin', array(
+        'url' => array('controller' => 'Build', 'action' => 'estado'),
+    ));
+    ?>
+    <input type="hidden" name="begin" value="<?=$game->active?>"/>
+    <button type="submit" class="btn btn-primary mb-2"><?= ($game->active) ? __('Detener partida') : __('Empezar partida') ?></button>
+    </form>
+    <section class="container">
         <p class="fs26"><?= __('Equipos') ?></p>
         <table class="table table-striped text-center">
             <thead>
@@ -57,11 +54,8 @@ echo $this->element('navbar');
         ));
         ?>
         <button type="submit" class="btn btn-primary mb-2"><?= __('Desbloquear equipos') ?></button>
-        <p class="fs26"><?= __('Al desbloquear los equipos todos tendrán que volver a seleccionarlos') ?></p>
+        <p class="fs22"><?= __('Al desbloquear los equipos todos tendrán que volver a seleccionarlos') ?></p>
         <input type="hidden" name="ok" value="1">
         </form>
-
-
-
     </section>
 </main>

@@ -25,11 +25,14 @@
 /*title*/
 /*examples*/
 /*tooltip overwrites*/
+/*message*/
+/*lists*/
 
-/* OTHER
+/* OTHER*/
 
-/* RESPONSIVE
- */
+/* RESPONSIVE*/
+
+
 html{
   font-size: calc(1.075em + 0.25 * (100vw - 80em) / 40); /* 0.875em */
   /*font-size: -webkit-calc(107,5% + 0.25 * (100vw - 8000%) / 40);  /* per Safari */
@@ -57,6 +60,8 @@ aside {
 }
 header {
   background-color: #2b2b2b;
+  color: white;
+  text-transform: uppercase;
 }
 .home header{
   background-color: transparent;
@@ -217,7 +222,7 @@ td.fs32{
 }
 
 .custom-select{  
-  margin-top: -0.9rem;
+  /*margin-top: -0.9rem;*/
 }
 /*checkboxes*/
 /*x fer que el tick surti del cuadrat https://codepen.io/visualiaBCN/pen/JyrENK*/
@@ -349,11 +354,46 @@ main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
 
 #mainNav li a:hover {
   font-size: 1.2rem;
-  /*background: #f6f6f6;*/
 }
-.navbar-collapse.bg-white{
-  background-color: rgba(255,255,255,0.9)!important;
+.navbar-collapse.bg-colors{
+  box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.5);
 }
+.bg-colors li{
+  padding: .9rem;
+  /*border-bottom: .2rem solid #2b2b2b;*/
+  box-shadow: inset 0 3px 6px -4px rgba(43, 43, 43, 0.5);
+}
+.bg-colors li .fa-lg {
+  /*line-height: 1;*/
+}
+.bg-colors li:nth-child(1){
+  background-color: #ebfa94;
+}
+.bg-colors li:nth-child(2){
+  background-color: #f2e500;
+}
+.bg-colors li:nth-child(3){
+  background-color: #d1d600;
+}
+.bg-colors li:nth-child(4){
+  background-color: #a1c41f;
+}
+.bg-colors li:nth-child(5){
+  background-color: #55ac2c;
+}
+.bg-colors li:nth-child(6){
+  background-color: #0a9438;
+}
+.bg-colors li:nth-child(7){
+  background-color: #107a30;
+}
+.bg-colors li:nth-child(8){
+  background-color: #1a4a21;
+}
+.bg-colors li:nth-child(8) a{
+  color: white !important;
+}
+
 .navbar-toggler:focus, .navbar-toggler:hover {
   outline: none;
 }
@@ -400,7 +440,7 @@ main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
 /*title*/
 .title_wrap{
   border-top: 0.5rem solid #b0b0b0;
-
+  margin-bottom: 2rem;
 }
 .title{
   background-color: #b0b0b0;
@@ -409,6 +449,19 @@ main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
   border-bottom-left-radius: 1rem;
   text-transform: uppercase;
 }
+.title_band{
+  background-color: #706f6f;
+  color: white;
+  text-transform: uppercase;
+}
+.title_alt{
+  background-color: #706f6f;
+  padding: 1rem;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2rem;
+}
+
 /*examples*/
 .example_ic{
   color: #FBB03B;
@@ -452,9 +505,51 @@ main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
   background: #fff;
   color: #666;
 }
-.tooltip-inner::before{
+.tooltip-inner::before, .tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-top .arrow::before{
   border-top-color: #fff !important;
 }
+/*message*/
+.message.success{
+  background-color: #E3E3E3;
+  text-transform: uppercase;
+  margin: 0;
+}
+/*lists*/
+.list-numbered {
+  list-style: none;
+  counter-reset: line;
+}
+
+.list-numbered > li {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.list-numbered > li:before {
+  position: absolute;
+  left: -1.65rem;
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.5rem;
+  background-color: #a3ba45;
+  border-radius: 50%;
+  color: #fff;
+  text-align:center;
+  line-height: 1.25rem;
+  counter-increment: line;
+  content: counter(line);
+  top: .1rem;
+}
+
+.list-green > li{
+  border-bottom: 1px solid #a1c41f;
+  color: #1a4a21;
+}
+.list-green > li:nth-child(odd){
+  color: #33a358;
+}
+
 
 /* OTHER */
 

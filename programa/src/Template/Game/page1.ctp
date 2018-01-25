@@ -8,52 +8,54 @@ if ($admin) {
 }
 ?>
 <main>
-    <header class="mb-5">
-        <div class="text-center">
-            <img src="img/logo_m0_es_sm.svg" alt="">
-        </div>
-    </header>
-    <section>
-        <h4><?=__('Misión 0 -¿Por qué?')?></h4>
-        <div class="alert alert-success d-inline-block">
+    <div class="text-center mb-5">
+        <p class="message success fs26 py-4">
+            <?=__('LA PARTIDA HA EMPEZADO')?>
+        </p>
+        <h4 class="title_alt"><?=__('Misión 0 -¿Por qué?')?></h4>
+    </div>
+    <section class="container">
+        <div class="fs22 text-center">
             <?=__('¡Ganarán Bikles los equipos con más votos!')?>
         </div>
-        <div class="fs22 alert alert-success d-inline-block">
-            <?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?>
+        <div class="text-center mb-4">
+            <b>
+                <?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?>
+            </b>
         </div>
-        <?= $this->Html->image("img1.jpg", ['class' => 'float-right']); ?>
-        
-        <div>
-            <p><?=__('Por ejemplo:')?></p>
-            <ul style="line-height: 3rem;">
-                <li>
-                    <?=__('Tengo un problema de comunicación interna')?>
-                </li>
-                <li>
-                    <?=__('Tengo que integrar a los millenials')?>
-                </li>
-                <li>
-                    <?=__('Quiero reducir costes')?>
-                </li>
-                <li>
-                    <?=__('Quiero relanzar mi producto')?>
-                </li>
-                <li>
-                    <?=__('Tengo que optimizar mi logística')?>
-                </li>
-                <li>
-                    <?=__('Quiero impulsar la transformación digital')?>
-                </li>
-                <li>
-                    <?=__('Quiero entrar en un nuevo mercado')?>
-                </li>
-                <li>
-                    <?=__('Tengo que adaptar la estructura de ventas al nuevo entorno')?>
-                </li>
-                <li>
-                    …
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col">
+                <p><?=__('Por ejemplo:')?></p>
+                <ul class="list-green" style="line-height: 3rem;">
+                    <li>
+                        <?=__('Tengo un problema de comunicación interna')?>
+                    </li>
+                    <li>
+                        <?=__('Tengo que integrar a los millenials')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero reducir costes')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero relanzar mi producto')?>
+                    </li>
+                    <li>
+                        <?=__('Tengo que optimizar mi logística')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero impulsar la transformación digital')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero entrar en un nuevo mercado')?>
+                    </li>
+                    <li>
+                        <?=__('Tengo que adaptar la estructura de ventas al nuevo entorno')?>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <?= $this->Html->image("img1.jpg", ['class' => 'img-fluid']); ?>
+            </div>
         </div>
         <?php if ($admin) { ?>
             <button style="display:none" id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>

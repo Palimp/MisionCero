@@ -6,16 +6,15 @@
 
 ?>
 
-<main>
-    <header class="text-center m-5 mb-10">
+<main class="text-center">
+    <p class="title_first py-4">
+        <?= __('Bienvenido a Misión 0, Explorador') ?>
+    </p>
+    <div class="title_band py-2 mb-3">
+        <?= __('¡Competiremos por equipos!') ?>
+    </div>
 
-        <?= $this->Html->image('breadp12.svg'); ?>
-    </header>
-    <section class="text-center">
-
-        <p></p>
-        <p class="fs26"><?= __(' ') ?></p>
-        <p class="fs26"><?= __(' ') ?></p>
+    <section class="container">
 
         <?php foreach ($teams as $team) {
             ?>
@@ -41,8 +40,6 @@
                 ?>
             </div>
         <?php } ?>
-        <p class="fs26"><?= __('Bienvenido a Misión 0, Explorador') ?></p>
-        <p class="fs22"><?= __('¡Competiremos por equipos!') ?></p>
         <p><?= __('Si tu Jefe de Expedición ha formado los equipos con antelación, solo tienes que confirmar cuál es tu equipo pulsando “seleccionar equipo” al lado de tu equipo.')?>
             <br>
             <?= __('Aparecerá “Equipo seleccionado” y el equipo estará listo para esperar las instrucciones del Jefe de Expedición (¡no debes pulsar “guardar equipo abajo!)')?>
@@ -54,6 +51,21 @@
             <?= __('Si te has equivocado al introducir tu equipo puedes cambiarlo seleccionando otro nombre de explorador y añadiendo de nuevo los nombres de los participantes.')?>
         </p>
 
+        <div class="row text-left">
+            <div class="col pl-4">
+                <p class="fs22 pl-2">
+                    Equipo
+                </p>
+
+            </div>
+            <div class="col-8 pl-0">
+                <p class="fs22">
+                    Jugadores
+                </p>
+
+
+            </div>
+        </div>
         <?php
         echo $this->Form->create('Teams', array(
             'url' => array('controller' => 'Game', 'action' => 'selectteam'),
@@ -72,7 +84,7 @@
                         'options' => $names,
                         'empty' => __('Selecciona el nombre del equipo'),
                         'label' => '',
-                        'class' => 'custom-select ml-2',
+                        'class' => 'custom-select',
                                  'default' => null
                     ]);
                     ?>

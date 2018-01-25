@@ -8,39 +8,36 @@ if ($admin) {
 }
 ?>
  <main>
-      <section>
-          <div class="fs22 alert d-inline-block" style="color: #fff;  background-color: #2b2b2b;  border-color: transparent;">
-              <h4 style="color: #fff;">
-                  La metodología
-              </h4>
-          </div>
-          <!-- <div class="py-20 mx-10neg">
-              <?= $this->Html->image("imgp14.svg", ['class' => 'img-fluid']); ?>
-          </div> -->
-
-          <img src="/img/ruta.gif" class="rounded mx-auto d-block img-fluid" alt="">
-
-          <div class="fs22 alert d-inline-block" style="color: #fff;  background-color: #2b2b2b;  border-color: transparent;">
-              
-              <ul style="list-style-type: bullet;">
-                  <li>
-                      Partimos de una problemática inicial.
-                  </li>
-                  <li>
-                      Los exploradores deberán superar 5 etapas en las que analizarán la problemática desde diferentes puntos de vista, para obtener retos concretos complementarios entre ellos.  
-                  </li>
-                  <li>
-                      Entre las 5 etapas los equipos encontrarán paradas lúdicas en las también podrán ganar o perder Bikles, la moneda oficial de la expedición
-                  </li>
-                  <li>
-                      Al finalizar la partida de Misión 0 se obtiene una lista de retos concretos, priorizados y clasificados por ámbito, que permitirá trabajar la problemática de manera concreta y enfocada, optimizando la búsqueda posterior de soluciones innovadoras .
-                  </li>
-          </div>
-      </section>
+      <p class="title_first py-4 text-center">
+        <?=__('La metodología') ?>
+      </p>
+      <div>
+          <?= $this->Html->image("breadp12.svg", ['class' => 'img-fluid']); ?>
+      </div>
+      <section class="container pt-4">
+        <div class="fs22">
+            <ul class="circle">
+              <li>
+                  <?=__('Partimos de una problemática inicial.') ?>
+              </li>
+              <li>
+                  <?=__('Los exploradores deberán superar 5 etapas en las que analizarán la problemática desde diferentes puntos de vista, para obtener retos concretos complementarios entre ellos.  ') ?>
+              </li>
+              <li>
+                  <?=__('Entre las 5 etapas los equipos encontrarán paradas lúdicas en las también podrán ganar o perder Bikles, la moneda oficial de la expedición') ?>
+              </li>
+              <li>
+                  <?=__('Al finalizar la partida de Misión 0 se obtiene una lista de retos concretos, priorizados y clasificados por ámbito, que permitirá trabajar la problemática de manera concreta y enfocada, optimizando la búsqueda posterior de soluciones innovadoras .') ?>
+              </li>
+            </ul>
+        </div>
         <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <?php } ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+            </div>
+        <?php } ?>
+      </section>
     </main>
 <script>
     var page = 5;

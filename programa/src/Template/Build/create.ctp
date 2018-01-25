@@ -7,30 +7,30 @@ echo $this->element('navbar');
 ?>
 
 <main>
-    <header class="text-center mb-10" style="padding-top: 10rem;">
-        <div>
-            <img src="img/logo_binnakle_es.png" alt="">
-        </div>
-        <div>
-            <img src="img/logo_m0_es.svg" alt="">
-        </div>
+    <header class="py-2 text-center fs26">
+        <span>
+            <?= __('Creación de juego') ?>
+        </span>
     </header>
-    <section class="text-center">
-
-        <div class="form-group">
-            <p class="fs26"><?= __('Creación de juego') ?></p>
-
+    <section style="background-color: #E3E3E3;" class="text-center">
+        <div class="title_wrap">
+            <span class="title">
+                <?php
+                if (empty($codes)) {
+                    echo __("No se ha creado el juego");
+                } else {
+                    ?>
+                    <?= __('Juego creado') ?>
+                    <?php
+                }
+                ?>
+            </span>
         </div>
-
-        <!-- Button trigger modals -->
-
         <div>
             <?php
-            if (empty($codes)) {
-                echo __("No se ha creado el juego");
+            if (empty($codes)) {               
             } else {
                 ?>
-                <h1 class="fs26"><?= __('Juego creado') ?></h1>
                 <h1 class="fs26"><?= __('Código administrador: ') . $codes[0] ?></h1>
                 <h1 class="fs26"><?= __('Código usuario: ') . $codes[1] ?></h1>
                 <?php
@@ -38,5 +38,4 @@ echo $this->element('navbar');
             ?>
         </div>
     </section>
-
 </main>

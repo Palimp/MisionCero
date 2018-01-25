@@ -9,28 +9,24 @@ if ($admin) {
 ?>
 
 <main>
-    <header class="mb-5">
-        <div class="text-center">
-            <?= $this->Html->image("logo_m0_es_sm.svg", ['class' => 'img-fluid']); ?>
-
-        </div>
-    </header>
-    <section>
-        <p class="fs22 text-center">
-            <?= __('Si siempre observamos nuestro problema desde el mismo punto de vista…')?>
-            <br>
-            <?= __('…¡podemos perdernos soluciones simples y nuevas!')?>
-        </p>
+    <p class="title_first py-4 text-center">
+        <?= __('Si siempre observamos nuestro problema desde el mismo punto de vista…')?>
+        <br>
+        <?= __('…¡podemos perdernos soluciones simples y nuevas!')?>
+    </p>
+    <section class="container">
         <div class="text-center">
 
             <?= $this->Html->image("img4.jpg", ['class' => 'img-fluid']);?>
 
         </div>
+        <?php if ($admin) { ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+            </div>
+        <?php } ?>
     </section>
-     <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <?php } ?>
 </main>
 <script>
     var page = 3;

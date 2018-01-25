@@ -7,15 +7,17 @@
 
 <!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="col-12 col-md-auto">
-            <h4>
-                <?= __('Problemática: ' . $trouble) ?>
-            </h4>
-            <p class="fs22 green">
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?= __('Problemática: ' . $trouble) ?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <div>
+            <p class="h_green">
                 <?= __('Comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
             </p>
             <p>
@@ -23,20 +25,8 @@
                 <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
             </p>
         </div>
-        <div class="col-12 col-md-auto">
-            <p class="fs22">
-                <?= $trouble ?>
-            </p>
-        </div>
-        <div class="col fs32">
-            <div class="d-flex align-items-end flex-column">
-                <div>
-                    <h1><time id="clock"><?= $time ?></time></h1>
-                    <i class="fa fa-clock-o"></i>
-
-                </div>
-
-            </div>
+        <div class="fs32">
+            <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
         </div>
         <?php
         foreach ($comments as $comment) {
@@ -55,31 +45,22 @@
                 </a>
             </div>
         </div>
-        <div>
+        
+        <div class="py-3">
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
-                <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                </p>
+                <i class="fa fa fa-file-text-o fa-2x example_ic mr-2"></i>
+                <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                </div>
             </a>
         </div>
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
-                <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
-                </b>
-                </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
-            </div>
-        </div>
-    </section>
-    <div>
+
         <div id="modal_ex1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header align-items-start">
-                        <div class="example fs26">
-                            <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                            <div class="example_wrapper d-inline-block">
+                        <div class="example row">
+                            <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                            <div class="example_wrapper col mr-4">
                                 <div class="example_inner text-left py-3 px-4">
                                     <p>
                                         <b>
@@ -101,6 +82,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
+
                         <p class="green">
                             <b>
                                 <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
@@ -140,11 +122,19 @@
                                 <?= __('Tendríamos que tener a personas de comunicación en cada área ') ?>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="alert d-inline-block" role="alert">
+            <b>
+                <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
+            </b>
+            </br>
+            <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
+        </div>
+    </section>
 </main>
 
 <script>
