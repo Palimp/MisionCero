@@ -8,19 +8,22 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
-<main>
-      <header class="text-center m-5 mb-10">
+<main class="text-center">
+    <header>
         <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        
-         <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
-        <div class="col-12 col-md-auto">
-            <h4>
-                <?= __('Etapa 2- Parada lúdica') ?>
-            </h4>
-            <p class="fs22 green">
+    <div class="title_wrap">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div>
+        <p class="title_first pb-4">
+            <?= __('Etapa 2- Parada lúdica') ?>
+        </p>
+    </div>
+    <section class="container">
+            <p class="h_green">
                 <?= __('ATENCIÓN exploradores! ') ?>
                 <i class="fa fa-smile-o"></i>
             </p>
@@ -35,20 +38,18 @@ if ($admin) {
                     <?= __('No pierdas ningún detalle!') ?>
                 </b>
             </p>
-        </div>
         <?php if ($admin) { ?>
             <p>
                 <?= __('El Jefe de Expedición seguirá las instrucciones al pie del vídeo para lanzar la pregunta en el momento adecuado') ?>
             </p>
         <?php } ?>
-        <!-- en el boton de pasar al video poner TXTO: "Pasar al vídeo" -->
-        <!-- end ESTO VA EN UNA PAGINA PREVIA NUEVA-->
+        <?php if ($admin) { ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Pasar al vídeo') ?></button>
+            </div>
+        <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Pasar al vídeo') ?></button>
-<?php } ?>
 </main>
 
 <script>

@@ -11,16 +11,17 @@ $ambits[-1]->ambit = __('Sin ámbito');
 
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('Problemática: '.$trouble)?>
-        </h4>
-        <p class="fs22 green">
+    <header>
+        <?= $this->Html->image("breadp331.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <p class="h_green">
             <?=__('Listado completo de retos (3 retos por equipo).')?>
         </p>
         <p>
@@ -52,7 +53,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
         <table class="reduced table table-striped text-center">
             <thead>
                 <tr>
-                    <td></td>
+                    <th><?= __('Reto') ?></th>
                     <?php foreach ($users as $user) { ?>
                         <td><?= str_replace("_", " ", $user) ?></td>
 
@@ -84,17 +85,19 @@ $ambits[-1]->ambit = __('Sin ámbito');
         <div id="hasvoted"></div>
         <div id="error"></div>
 
+        <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 3') ?></button>
+          </div>
+        <?php } else { ?>
+            <div class="text-right mt-5">
+                <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
+                    <i class="fa fa-check fa-2x"></i>
+                </a>
+            </div>
+        <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 3') ?></button>
-    <?php } else { ?>
-        <div class="text-right mt-5">
-            <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
-                <i class="fa fa-check fa-2x"></i>
-            </a>
-        </div>
-    <?php } ?>
 </main>
 
 <script>

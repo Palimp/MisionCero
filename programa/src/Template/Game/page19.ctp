@@ -8,25 +8,24 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <section>
-        <header class="text-center m-5 mb-10">
-
-            <?= $this->Html->image("breadp33.svg", ['class' => 'w-100']); ?>
-        </header>
-            <h4>
-                <?=__('Etapa 3- Preguntas básicas')?>
-                <br>
-                <?=__('Problemática: '.$trouble)?>
-            </h4>
-            <p class="fs22 green">
+    <header>
+        <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <div>
+            <p class="h_green">
                 <?=__('Utilizar las preguntas básicas para identificar retos más concretos y, si es posible, no habituales, sobre la problemática.')?>
             </p>
             <p class="fs22">
                 <?=__('Pensar en las preguntas más básicas para identificar retos:')?>
             </p>
-            <div class="row fs22 green">
+            <div class="row fs22 green mb-2" style="background-color: white;">
                 <div class="col">
                     <?=__('¿CUÁNDO?')?>
                 </div>
@@ -40,15 +39,15 @@ if ($admin) {
                     <?=__('¿QUIÉN?')?>
                 </div>
             </div>
-            <ul>
+            <ul class="list-numbered text-left">
                 <li>
-                    <?=__('Paso 1- Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
+                    <?=__('Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
                 </li>
                 <li>
-                    <?=__('Paso 2- Convertir estas respuestas en retos: ¿cómo…?')?>
+                    <?=__('Convertir estas respuestas en retos: ¿cómo…?')?>
                 </li>
             </ul>
-            <div class="row fs22 green">
+            <div class="row fs22 green mb-2" style="background-color: white;">
                 <div class="col">
                     <?=__('¿POR QUÉ?')?>
                 </div>
@@ -56,33 +55,35 @@ if ($admin) {
                     <?=__('¿PARA QUÉ?')?>
                 </div>
             </div>
-            <ul>
+            <ul class="list-numbered text-left">
                 <li>
-                    <?=__('Paso 1- Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
+                    <?=__('Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
                 </li>
                 <li>
-                    <?=__('Paso 2- Convertirlos en reto: ¿Cómo…? ')?>
+                    <?=__('Convertirlos en reto: ¿Cómo…? ')?>
                 </li>
             </ul>
             
         <div>
             <!-- Button trigger modal_ex -->
-            <div class="d-inline">
+
+            <div class="py-3">
                 <a href="#" data-toggle="modal" data-target="#modal_ex" class="grey_link">
-                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                    </p>
+                    <i class="fa fa fa-file-text-o fa-2x example_ic mr-2"></i>
+                    <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                    </div>
                 </a>
             </div>
+
             <!-- modal_ex -->
             <div>
                 <div id="modal_ex" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_exLiveLabel" style="display: none;" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header align-items-start">
-                                <div class="example fs26">
-                                    <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                                    <div class="example_wrapper d-inline-block">
+                                <div class="example row">
+                                    <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                                    <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
                                             <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
@@ -107,8 +108,12 @@ if ($admin) {
                                                 <i class="fa fa-user fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('QUIÉN: pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
+                                                    <?= __('QUIÉN:') ?>
                                                 </b>
+                                                </br>
+                                                <span class="h_green">
+                                                    <?= __(' pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
+                                                </span>
                                                 </br>
                                                 <?= __('El que manda la comunicación') ?>
                                                 </br>
@@ -129,8 +134,12 @@ if ($admin) {
                                                 <i class="fa fa-clock-o fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('CUÁNDO: pensar en momentos relevantes de la problemática y en posibles retos relacionados con estos momentos') ?>
+                                                    <?= __('CUÁNDO:') ?>
                                                 </b>
+                                                </br>
+                                                <span class="h_green">
+                                                    <?= __(' pensar en momentos relevantes de la problemática y en posibles retos relacionados con estos momentos') ?>
+                                                </span>
                                                 </br>
                                                 <?= __('Cuando hay cambios') ?>
                                                 </br>
@@ -153,8 +162,12 @@ if ($admin) {
                                                 <i class="fa fa-map-pin fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('DÓNDE: pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
+                                                    <?= __('DÓNDE: ') ?>
                                                 </b>
+                                                </br>
+                                                <span class="h_green">
+                                                    <?= __('pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
+                                                </span>
                                                 </br>
                                                 <?= __('En la fábrica') ?>
                                                 </br>
@@ -173,8 +186,12 @@ if ($admin) {
                                                 <i class="fa fa-question-circle fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('POR QUÉ’S: pensar en las razones que nos llevan a querer encontrar soluciones a nuestro problemática y transformarlas en retos') ?>
+                                                    <?= __('POR QUÉ’S: ') ?>
                                                 </b>
+                                                </br>
+                                                <span class="h_green">
+                                                    <?= __('pensar en las razones que nos llevan a querer encontrar soluciones a nuestro problemática y transformarlas en retos') ?>
+                                                </span>
                                                 </br>
                                                 <?= __('Porque nadie hace caso') ?>
                                                 </br>
@@ -202,8 +219,12 @@ if ($admin) {
                                                 <i class="fa fa-crosshairs fa-2x"></i>
                                                 </br>
                                                 <b>
-                                                    <?= __('PARA QUÉ: pensar en los objetivos que nos llevan a querer encontrar soluciones a nuestro problemática y transformarlos en retos') ?>
+                                                    <?= __('PARA QUÉ: ') ?>
                                                 </b>
+                                                </br>
+                                                <span class="h_green">
+                                                    <?= __(' pensar en los objetivos que nos llevan a querer encontrar soluciones a nuestro problemática y transformarlos en retos') ?>
+                                                </span>
                                                 </br>
                                                 <?= __('Para que todos lo entiendan') ?>
                                                 </br>
@@ -227,11 +248,13 @@ if ($admin) {
                 </div>
             </div>
         </div>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 3') ?></button>
+          </div>
+      <?php } ?>
     </section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 3') ?></button>
-<?php } ?>
 </main>
 
 <script>

@@ -9,9 +9,6 @@ if ($admin) {
 ?>
 <main>
     <div class="text-center mb-5">
-        <p class="message success fs26 py-4">
-            <?=__('LA PARTIDA HA EMPEZADO')?>
-        </p>
         <h4 class="title_alt"><?=__('Misión 0 -¿Por qué?')?></h4>
     </div>
     <section class="container">

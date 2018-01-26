@@ -8,19 +8,20 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('Problemática: '.$trouble)?>
-        </h4>
-        <p class="fs22 green">
-            <?=__('Etapa 2- Ranking de retos')?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <p class="title_first pb-4">
+            <?=__('Etapa 3- Preguntas básicas')?>
         </p>
-        <p>
+        <p class="h_green">
             <?=__('¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!')?>
         </p>
 
@@ -50,11 +51,13 @@ if ($admin) {
             </tbody>
         </table>
 
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 3') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 3') ?></button>
-    <?php } ?>
 </main>
 
 <script>

@@ -5,7 +5,6 @@
  */
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
     <header>
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
@@ -54,7 +53,7 @@
             </a>
         </div>
 
-        <div id="modal_ex1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
+        <div id="modal_ex1" class="modal fade text-left" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header align-items-start">

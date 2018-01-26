@@ -8,14 +8,13 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
     <header>
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
     </header>
     <div class="title_wrap text-center">
       <span class="title">
-        <?=__('Problemática inicial: '.$trouble)?>
+        <?=__('Problemática: '.$trouble)?>
       </span>
     </div>
     <section class="container text-center">
@@ -25,13 +24,10 @@ if ($admin) {
             </p>
             <p>
                 <?= __('Los equipos tienen 10 minutos para introducir todos los comentarios posibles.') ?><br>
-                <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
             </p>
         </div>
         <div>
             <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
-        </div>
-        <div>
             <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
             <?php
             echo $this->Form->create('Begin', array(
@@ -83,7 +79,7 @@ if ($admin) {
             </a>
         </div>
 
-        <div id="modal_ex1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
+        <div id="modal_ex1" class="modal fade text-left" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header align-items-start">

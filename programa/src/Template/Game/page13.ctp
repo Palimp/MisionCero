@@ -8,20 +8,26 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
-<main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
+<main class="text-center">
+    <header>
+        <?= $this->Html->image("breadp152.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div>
+        <p class="title_first pb-4">
             <?=__('ETAPA 1- Clasificación Retos / Votos / Ámbitos')?>
-        </h4>
-        <p class="fs22 green">
+        </p>
+    </div>
+    <section class="container">
+        <p class="h_green">
             <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 1')?>
         </p>
         <p>
-            <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
+            <?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?>
         </p>
 
         <table class="reduced table table-striped text-center">
@@ -54,16 +60,17 @@ if ($admin) {
         </table>
 
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
             </div>
         </div>
+        <?php if ($admin) { ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar Etapa 1') ?></button>
+            </div>
+        <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar Etapa 1') ?></button>
-<?php } ?>
 </main>
 
 <script>

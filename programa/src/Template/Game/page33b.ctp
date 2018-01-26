@@ -196,7 +196,7 @@
                                 <?= __('¿Cómo conseguir que mi comunicación ayude a la gente a conocer mejor a los clientes?') ?>
                                 </br>
                                 </br>
-                                ¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?
+                                <?= __('¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?') ?>
                             </p>
                         </div>
                         <div class="col">

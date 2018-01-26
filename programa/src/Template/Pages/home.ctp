@@ -55,7 +55,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     </head>
     <body class="home">
         <main>
-            <header class="text-center my-5">
+            <header class="text-center my-4">
                 <div>
                     <?=__('BIENVENIDOS A')?>
                 </div>
@@ -91,10 +91,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <!-- Button trigger modals -->
 
                 <div>
-                    <a href="#" data-toggle="modal" data-target="#modal_buy"><?=__('Compra tu código para poder jugar')?></a>
+                    <a href="#" data-toggle="modal" data-target="#modal_buy" class="black_link"><?=__('Compra tu código para poder jugar')?></a>
                 </div>
                 <div>
-                    <a href="#" data-toggle="modal" data-target="#modal_contact"><?=__('Contacta con nosotros')?></a>
+                    <a href="#" data-toggle="modal" data-target="#modal_contact" class="black_link"><?=__('Contacta con nosotros')?></a>
                 </div>
             </section>
             <div>

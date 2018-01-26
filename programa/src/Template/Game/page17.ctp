@@ -8,20 +8,27 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
-<main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
+
+<main class="text-center">
+    <header>
+        <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div>
+        <p class="title_first pb-4">
+            <?= __('Ranking de Bikles al acabar la etapa 2') ?>
+        </p>
+    </div>
+    <section class="container">
         <?php if ($admin) { ?>
-            <p class="fs22 green">
+            <p class="green">
                 <?= __('El Jefe de Expedición, ') ?><b><?= __('tiene el privilegio de sumar o restar Bikles ') ?></b><?= __('si considera que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc') ?>
             </p>
         <?php } ?>
-        <p class="fs22">
-            <?= __('Ranking de Bikles al acabar la etapa 2') ?>
-        </p>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
@@ -74,13 +81,14 @@ if ($admin) {
             </tbody>
         </table>
 
+        <?php if ($admin) { ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Ir a Etapa 3') ?></button>
+            </div>
+        <?php } ?>
 
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Ir a Etapa 3') ?></button>
-<?php } ?>
 </main>
 
 <script>

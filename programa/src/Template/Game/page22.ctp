@@ -8,31 +8,32 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            Problemática: ¿Cómo…?
-        </h4>
-        <p class="fs22 green">
-            Preguntas Básicas
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <p class="h_green">
+            <?=__('Preguntas Básicas')?>
         </p>
         <p>
             <i class="fa fa-lightbulb-o"></i>
-            Entre todos los retos generados, ahora cada equipo selecciona 
-            <b>los 3 más relevantes y novedosos</b>
+            <?=__('Entre todos los retos generados, ahora cada equipo selecciona ')?>
+            <b><?=__('los 3 más relevantes y novedosos')?></b>
             <br>
-            para explorar nuevas líneas de trabajo de la problemática
+            <?=__('para explorar nuevas líneas de trabajo de la problemática')?>
         </p>
         <?php if ($admin) { ?>
             
             <p>
-                Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”
+                <?=__('Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”')?>
             </p>
- <div id="hasvoted"></div>
+            <div id="hasvoted"></div>
         <?php } else { ?>
             <table class="reduced table table-striped">
                 <tbody>
@@ -57,11 +58,13 @@ if ($admin) {
                 </a>
             </div>
         <?php } ?>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 3') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 3') ?></button>
-    <?php } ?>
 </main>
 
 <script>

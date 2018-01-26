@@ -8,21 +8,30 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
-<main>
-    <header class="text-center m-5 mb-10">
+<main class="text-center">
+    <header>
         <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
+    <div class="title_wrap">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div>
+        <p class="title_first pb-4">
+            <?= __('Etapa 2- Parada lúdica') ?>
+        </p>
+    </div>
+    <section class="container">
         <?php if ($admin) { ?>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="<?= $url ?>" frameborder="0" allowfullscreen></iframe>
             </div>
-            <!-- ONLY GM -->
+            
             <div class="video">
                 <?= __($texto) ?>
             </div>
-            <!-- ONLY GM -->
+            
             <div class="text-left mt-5 row">
                 <div class="col-3">
                     <a href="#" data-toggle="modal" data-target="#modal_video_1" class="grey_link">
@@ -89,8 +98,6 @@ if ($admin) {
                 </div>
             </div>
         <?php } else { ?>
-            <!-- ONLY PLAYER -->
-
             <div class="text-center mt-5">
                 <div class="alert alert-danger d-inline-block" role="alert">
                     <b>
@@ -100,13 +107,14 @@ if ($admin) {
                     <?= __('El Jefe de Expedición hará preguntas al acabar…') ?>
                 </div>
             </div>
-            <!-- ONLY PLAYER -->
         <?php } ?>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 2') ?></button>
-        <button  id="otro" type="button" class="btn btn-primary mb-10"><?= __('Cambiar de vídeo') ?></button>
-    <?php } ?>
+        <?php if ($admin) { ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
+                <button  id="otro" type="button" class="btn btn-primary"><?= __('Cambiar de vídeo') ?></button>
+            </div>
+        <?php } ?>
     </section>
 </main>
 

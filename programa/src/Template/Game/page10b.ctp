@@ -8,18 +8,21 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('Problemática: '.$trouble)?>
-        </h4>
-        <p class="fs22 green">
-            <?= __('Insights Espontáneos') ?>
+    <header>
+        <?= $this->Html->image("breadp151.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('Insights Espontáneos')?>
         </p>
+    </div>
+    <section class="container">
         <p>
             <?= __('Los 3 comentarios seleccionados por tu equipo:') ?>
         </p>
@@ -41,11 +44,12 @@ if ($admin) {
 
         <?php } ?>
         
+        
         <div class="col-2">
             <!-- Button trigger modal_ex2 -->
             <div class="d-inline">
                 <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">
-                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
                     <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                     </p>
                 </a>
@@ -56,9 +60,9 @@ if ($admin) {
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header align-items-start">
-                                <div class="example fs26">
-                                    <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                                    <div class="example_wrapper d-inline-block">
+                                <div class="example row">
+                                    <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                                    <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
                                             <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>

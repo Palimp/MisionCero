@@ -8,18 +8,21 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('Problemática: ¿Cómo…?')?>
-        </h4>
-        <p class="fs22 green">
+    <header>
+        <?= $this->Html->image("breadp151.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
             <?=__('Insights Espontáneos')?>
         </p>
+    </div>
+    <section class="container">
         <p>
             <i class="fa fa-lightbulb-o"></i>
             <?=__('Entre todos los comentarios generados,')?>
@@ -33,7 +36,7 @@ if ($admin) {
             </p>
             <div id="hasvoted"></div>
         <?php } else { ?>
-            <table class="reduced table table-striped">
+            <table class="table table-striped">
                 <tbody>
                     <?php foreach ($comments as $comment) { ?>
                         <tr>
@@ -61,7 +64,7 @@ if ($admin) {
             <!-- Button trigger modal_ex2 -->
             <div class="d-inline">
                 <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">
-                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
                     <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                     </p>
                 </a>
@@ -72,9 +75,9 @@ if ($admin) {
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header align-items-start">
-                                <div class="example fs26">
-                                    <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                                    <div class="example_wrapper d-inline-block">
+                                <div class="example row">
+                                    <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                                    <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
                                             <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
@@ -163,11 +166,13 @@ if ($admin) {
                 </div>
             </div>
         </div>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 1') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 1') ?></button>
-    <?php } ?>
 </main>
 
 <script>

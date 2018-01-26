@@ -5,81 +5,76 @@
  */
 ?>
 
-<!-- ** pag p15 ** -->
-<main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid']); ?>
-    </header>
-    <section>
-        <div class="row no-gutters mb-5">
-            <div class="col-12 col-md-auto">
-                <h4>
-                    <?=__('Problemática: '.$trouble)?>
-                </h4>
-                <p class="fs22 green">
-                    <i class="fa fa-lightbulb-o"></i>
-                    <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?><br>
-                    <b><?= __('Los equipos tienen 5 minutos') ?>
-                </p>
-            </div>
-            <div class="col fs32">
-                <div class="d-flex align-items-end flex-column">
-                    <div>
-                        <h1><time id="clock"><?= $time ?></time> <i class="fa fa-clock-o"></i></h1>
 
-                    </div>
-                </div>
+<main>
+    <header>
+        <?= $this->Html->image("breadp151.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('Insights Espontáneos')?>
+        </p>
+    </div>
+    <section class="container">
+        <div class="no-gutters mb-5">
+            <p class="h_green">
+                <i class="fa fa-lightbulb-o"></i>
+                <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?><br>
+                <b><?= __('Los equipos tienen 5 minutos') ?></b>
+            </p>
+            <div class="fs32 text-center">
+                <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
             </div>
         </div>
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             ?>
-            <b class="fs22" id="c<?=$i?>">
-                <?= $comments[$i]['comment'] ?>
-            </b>
+            <div class="striped rounded mb-2">
+                <b id="c<?=$i?>">
+                    <?= $comments[$i]['comment'] ?>
+                </b>
 
-            <div class="row">
-                <div class="col-10 pl-0">
-                    <b class="fs26">¿</b>
-                    <span>Cómo</span>
-                    <input type="text" id="reto<?= $i ?>" class="form-control d-inline w-75" placeholder="<?= __('Introduce aquí el reto') ?>">
-                    <b class="fs26">?</b>
+                <div>
+                    <div class="col-10 pl-0">
+                        <span>¿ Cómo</span>
+                        <input type="text" id="reto<?= $i ?>" class="form-control d-inline w-75" placeholder="<?= __('Introduce aquí el reto') ?>">
+
+                    </div>
+                </div>
+                <div class="fs14 py-2">
+                    <?php foreach ($ambits as $ambit) { ?>
+                        <label class="custom-control custom-radio">
+                            <input name="radio<?= $i ?>" type="radio" class="custom-control-input" value="<?= $ambit->id ?>">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description"><?= $ambit->ambit ?></span>
+                        </label>
+                    <?php } ?>
 
                 </div>
-            </div>
-            <b>
-                <?= __('Ámbito') ?>
-            </b>
-            <div class="fs14 mr-1">
-                <?php foreach ($ambits as $ambit) { ?>
-                    <label class="custom-control custom-radio">
-                        <input name="radio<?= $i ?>" type="radio" class="custom-control-input" value="<?= $ambit->id ?>">
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description"><?= $ambit->ambit ?></span>
-                    </label>
-                <?php } ?>
-
             </div>
         <?php } ?>
-        <div class="text-right mt-5">
-            <div class="col-2">
+        
                 <!-- Button trigger modal_ex2 -->
-                <div class="d-inline">
-                    <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">
-                        <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                        <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                        </p>
-                    </a>
-                </div>
+            <div class="py-3">
+                <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-2"></i>
+                    <p class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                    </p>
+                </a>
                 <!-- modal_ex2 -->
                 <div>
                     <div id="modal_ex2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex2LiveLabel" style="display: none;" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header align-items-start">
-                                    <div class="example fs26">
-                                        <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                                        <div class="example_wrapper d-inline-block">
+                                    <div class="example row">
+                                        <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                                        <div class="example_wrapper col mr-4">
                                             <div class="example_inner text-left py-3 px-4">
                                                 <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
                                                 <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
@@ -168,6 +163,7 @@
                     </div>
                 </div>
             </div>
+        <div class="text-right mt-5">
             <?php
             echo $this->Form->create('Teams', array(
                 'url' => array('controller' => 'Game', 'action' => 'page11b'),

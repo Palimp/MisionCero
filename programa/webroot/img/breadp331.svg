@@ -579,7 +579,7 @@
 		<clipPath id="SVGID_6_">
 			<use xlink:href="#SVGID_5_"  overflow="visible"/>
 		</clipPath>
-		<rect x="750.402" y="71.916" clip-path="url(#SVGID_6_)" fill="#9EB80D" width="68" height="15.084"/>
+		<rect x="750.402" y="54.211" clip-path="url(#SVGID_6_)" fill="#9EB80D" width="68" height="32.789"/>
 	</g>
 	<path fill="#706F6F" d="M1023.605,61.987c0,8.921-7.232,16.153-16.155,16.153c-8.921,0-16.149-7.232-16.149-16.153
 		c0-8.922,7.229-16.154,16.149-16.154S1023.605,53.065,1023.605,61.987 M1028.448,61.987c0-11.598-9.398-21-21.001-21

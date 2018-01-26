@@ -97,7 +97,7 @@ if ($admin) {
                                 <?=__('Para esta Etapa 1, algunos ejemplos de ')?><i><?=__('comentarios informales')?></i> <?=__('sobre la problemática podrían ser:')?> 
                             </b>
                         </p>
-                        <ul>
+                        <ul class="circle">
                             <li>
                                 <?=__('Los rumores siempre van más rápido que la información interna')?>
                             </li>
