@@ -11,16 +11,22 @@ $ambits[-1]->ambit=__('Sin ámbito');
 
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('ETAPA 5- Clasificación Retos / Votos / Ámbitos')?>
-        </h4>
-        <p class="fs22 green">
+    <header>
+        <?= $this->Html->image("breadp491.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container">
+        <div>
+            <p class="title_first pb-4">
+                <?=__('ETAPA 5- Clasificación Retos / Votos / Ámbitos')?>
+            </p>
+        </div>
+        <p class="h_green text-center">
             <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 5')?>
         </p>
         <p>
@@ -55,17 +61,18 @@ $ambits[-1]->ambit=__('Sin ámbito');
             </tbody>
         </table>
 
-        <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+        <div class="text-center mt-2">
+            <div class="alert d-inline-block" role="alert">
                 <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
             </div>
         </div>
-    </section>
+        <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar a Etapa 5') ?></button>
+          </div>
+        <?php } ?>
 </section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar Etapa 5') ?></button>
-<?php } ?>
 </main>
 
 <script>

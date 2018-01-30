@@ -8,94 +8,82 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="row no-gutters mb-5">
-            <div class="col-12 col-md-auto">
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+            <?php if ($admin) { ?>
+                <p class="h_green">
+                    <?= __('2 equipos trabajan juntos: ') ?>
+                </p>
+                <ul>
+                    <li>
+                        <?= __('Fase 1- Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo') ?>
+                        <br>
+                        <?= __('Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. ') ?>
+                    </li>
+                    <li>
+                        <?= __('Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. ') ?>
+                    </li>
+                </ul>
+                <p>
+                    <?= __('Prepara la venta: ¡El objeto no puede servir para su uso habitual! ') ?></p>
+                </p>
+            <?php } ?>
+        <div>
+            <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
+            <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
+            <?php
+            echo $this->Form->create('Begin', array(
+                'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
+            ));
+            ?>
+            <input type="hidden" name="time" value="30">
+            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para añadir tiempo') ?>" class="d-inline-block btn btn-primary btn-red">
+                <i class="fa fa-plus"></i><time> 00:30</time>
+            </a>
+            </form>
+            <?php
+            if ($stop) {
+                echo $this->Form->create('Begin', array(
+                    'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
+                ));
+                ?>
+                <input type="hidden" name="stop" value="1">
+                <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
+                <?php
+            } else {
+                echo $this->Form->create('Begin', array(
+                    'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
+                ));
+                ?>
+                <input type="hidden" name="start" value="1">
+                <button class="btn btn-primary"><?= __('Activar tiempo') ?></button>
+            <?php } ?>
 
+            </form>
+            <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
 
-
-                <?php if ($admin) { ?>
-                    <p class="fs22">
-                        <?= __('2 equipos trabajan juntos: ') ?>
-                    </p>
-                    <p>
-                        <b>Fase 1-</b>
-                        </br>
-                        Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo
-                        </br>
-                        Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
-                        </br>
-                        </br>
-                        <b><?= __('Fase 2-') ?></b>
-                        </br>
-                        Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
-                        </br>
-                        </br>
-                    </p>
-                    <p class="fs22">
-                        <b>Prepara la venta: ¡El objeto no puede servir para su uso habitual!</b>
-                    </p>
-                <?php } ?>
-            </div>
-            <div class="col fs32">
-                <div class="d-flex align-items-end flex-column">
-                    <div>
-                        <h1><time id="clock"><?= $time ?></time></h1>
-                        <i class="fa fa-clock-o"></i>
-                        <?php
-                        if ($stop) {
-                            echo $this->Form->create('Begin', array(
-                                'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
-                            ));
-                            ?>
-                            <input type="hidden" name="stop" value="1">
-                            <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
-                            <?php
-                        } else {
-                            echo $this->Form->create('Begin', array(
-                                'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
-                            ));
-                            ?>
-                            <input type="hidden" name="start" value="1">
-                            <button class="btn btn-primary"><?= __('Reanudar tiempo') ?></button>
-                        <?php } ?>
-
-                        </form>
-                        <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
-
-                    </div>
-                    <div>
-                        <time>00:30</time>
-                        <?php
-                        echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
-                        ));
-                        ?>
-                        <input type="hidden" name="time" value="30">
-                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para añadir tiempo') ?>" class="d-inline-block grey_link">
-                            <i class="fa fa-plus"></i>
-                        </a>
-                        </form>
-                        <?php
-                        echo $this->Form->create('Begin', array(
-                            'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
-                        ));
-                        ?>
-                        <input type="hidden" name="time" value="-30">
-                        <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para restar tiempo') ?>" class="d-inline-block grey_link">
-                            <i class="fa fa-minus"></i>
-                        </a>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <?php
+            echo $this->Form->create('Begin', array(
+                'url' => array('controller' => 'Game', 'action' => 'page41'), 'class' => 'd-inline-block'
+            ));
+            ?>
+            <input type="hidden" name="time" value="-30">
+            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block btn btn-primary btn-green">
+                <i class="fa fa-minus"></i><time> 00:30</time>
+            </a>
+            </form>
         </div>
-        <div class="text-center">
+
+
+        <div class="mt-4">
             <!-- <p class="f22 green"><?= __('Para cada objeto sus limitaciones') ?></p> -->
 
             <?= $this->Html->image($image, ['class' => 'img-fluid']); ?>
@@ -105,7 +93,7 @@ if ($admin) {
     </section>
     <?php if ($admin) { ?>
         <div class="mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <p><?= __('El Jefe de Expedición distribuirá Bikles:') ?></p>
                 <b>
                     <?= __('- Si la venta ha sido neutra, no ganarán ni perderán Bikles') ?>

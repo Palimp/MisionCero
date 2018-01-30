@@ -5,42 +5,42 @@
  */
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="row no-gutters mb-5">
-            <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('ELIMINAR TEXTO? Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo') ?>
-                </p>
-                <p>
-                    <?= __('Después, cada equipo presentará en 2 minutos su propuesta a otro equipo. El equipo audiente comunica su veredicto.En seguida se inversan los roles.') ?>
-                </p>
-            </div>
-            <div class="col fs32">
-                <div class="d-flex align-items-end flex-column">
-                    <div>
-                        <h1><time id="clock"><?= $time ?></time></h1>
-                        <i class="fa fa-clock-o"></i>
-
-                    </div>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <p class="green">
+            <?= __('ELIMINAR TEXTO? Los equipos disponen de 3’ para pensar cómo vender el objeto de la foto al otro equipo') ?>
+        </p>
+        <p>
+            <?= __('Después, cada equipo presentará en 2 minutos su propuesta a otro equipo. El equipo audiente comunica su veredicto.En seguida se inversan los roles.') ?>
+        </p>
+        <div class="col fs32">
+            <div class="d-flex align-items-end flex-column">
+                <div>
+                    <h1><time id="clock"><?= $time ?></time></h1>
+                    <i class="fa fa-clock-o"></i>
 
                 </div>
+
             </div>
         </div>
         <div class="text-center">
             <?= $this->Html->image($image, ['class' => 'img-fluid']); ?>
         </div>
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <b>
-                    <?= __('nos han convencido + 2 Bikles') ?>
+                    <?= __('Nos han convencido + 2 Bikles') ?>
                 </b>
-                </br><?= __(' neutro 0 Bikles') ?>
-                </br><?= __(' no nos convence nada - 2 Bikles') ?>
+                </br><?= __('Neutro 0 Bikles') ?>
+                </br><?= __('No nos convence nada - 2 Bikles') ?>
             </div>
         </div>
     </section>

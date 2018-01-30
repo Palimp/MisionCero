@@ -64,7 +64,7 @@ class BuildController extends AppController {
             if ($datos['ok']) {
                 $game->active = 1;
                 if ($this->Games->save($game)) {
-                    $this->Flash->success(__('La partida ha empezado.'));
+                    $this->Flash->success(__('La partida ha empezado'));
 
                     return $this->redirect(['controller' => 'game', 'action' => 'index']);
                 }
@@ -93,7 +93,7 @@ class BuildController extends AppController {
 
             $game = $this->Games->patchEntity($game, $this->request->getData());
             if ($this->Games->save($game)) {
-                $this->Flash->success(__('La problemática se ha guardado.'));
+                $this->Flash->success(__('La problemática se ha guardado'));
 
                 return $this->redirect(['action' => 'index']);
             }

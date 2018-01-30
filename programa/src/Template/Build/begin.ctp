@@ -33,7 +33,7 @@ echo $this->element('navbar');
             </div>
         <?php } ?>
         <p class="fs22 mt-4"><?= __('Al empezar la partida ya no podrás editar los equipos ni la problemática. ¡Revisa todo bien!') ?></p>
-        <p><?= __('Si necesitas modificar algo, puedes utilizar el MenÚ Jefe de Expedición arriba:') ?></p>
+        <p><?= __('Si necesitas modificar algo, puedes utilizar el Menú Jefe de Expedición arriba') ?></p>
         <input type="hidden" name="ok" value="1">
         <button type="submit" class="btn btn-primary mb-10"><?= __('Empezar partida') ?></button>
         </form>

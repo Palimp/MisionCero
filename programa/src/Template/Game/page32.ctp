@@ -8,18 +8,22 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp49.svg", ['class' => 'w-100']); ?>
+    <header>
+        <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <h4>
-            <?=__('Etapa 5- Actores')?><br>
-            <?=__('Problemática: '.$trouble)?>
-        </h4>
-        <p class="fs22 green">
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <div>
+            <p class="title_first pb-4">
+                <?=__('Etapa 5- Actores')?>                
+            </p>
+        </div>
+        <p class="h_green">
             <?=__('¿Cómo ven los actores involucrados el problema, desde su punto de vista?')?>
         </p>
         <p>
@@ -27,7 +31,7 @@ if ($admin) {
         </p>
 
 
-        <p class="fs22">
+        <p>
             <i class="fa fa-comment-o"></i>
             <?=__('Pensar en los diferentes actores involucrados que intervienen en nuestra problemática.')?>
         </p>
@@ -35,7 +39,7 @@ if ($admin) {
             <?=__('Un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...)')?>
         </p>
 
-        <div class="text-center green fs26">
+        <div class="text-center green fs22">
             <p>
                 <?=__('¿cómo ven el reto desde su punto de vista?')?>
                 </br>
@@ -49,8 +53,8 @@ if ($admin) {
         
         <div>
           <a href="#" data-toggle="modal" data-target="#modal_ex4" class="grey_link">
-            <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-            <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
+            <i class="fa fa-file-text-o fa-2x example_ic mr-2"></i>
+            <p class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
             </p>
           </a>
         </div>
@@ -58,10 +62,10 @@ if ($admin) {
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header align-items-start">
-                <div class="example fs26">
-                  <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                  <div class="example_wrapper d-inline-block">
-                    <div class="example_inner text-left py-3 px-4">
+                <div class="example row">
+                    <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                    <div class="example_wrapper col mr-4">
+                       <div class="example_inner text-left py-3 px-4">
                         <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
                         <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
                         <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
@@ -88,9 +92,7 @@ if ($admin) {
                         </br>
                         <i class="fa fa-chevron-down"></i>
                         </br>
-                        <b>
                             <?=__('reto visto desde su punto de vista')?>
-                        </b>
                       </p>
                     </div>
                   </div>
@@ -108,7 +110,7 @@ if ($admin) {
                         <?=__('¿Cómo conseguir que mi comunicación ayude a la gente a conocer mejor a los clientes?')?>
                         </br>
                         </br>
-                        ¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?
+                        <?=__('¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?')?>
                       </p>
                     </div>
                     <div class="col">
@@ -179,13 +181,14 @@ if ($admin) {
           </div>
         </div>
 
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar a Etapa 5') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Etapa 5') ?></button>
-    <?php } ?>
 </main>
-
 <script>
     var page = 32;
     $(function () {

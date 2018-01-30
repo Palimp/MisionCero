@@ -12,17 +12,19 @@ shuffle($answers);
 $solution = $practical->answer4;
 ?>
 
-<!-- ** pag p15 ** -->
-<main>
-
-
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp45.svg", ['class' => 'w-100']); ?>
+<main class="text-center">
+    <header>
+        <?= $this->Html->image("breadp45.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-
-        <?= __($trouble) ?>
-
+    <section class="container">
+        <div>
+            <p class="title_first py-4">
+                <?= __('Etapa 4- Parada lúdica') ?>
+            </p>
+            <div class="green">
+                <?= __($trouble) ?>
+            </p>
+        </div>
         <table class="reduced table table-striped">
             <tbody>
                 <?php
@@ -44,17 +46,19 @@ $solution = $practical->answer4;
             </tbody>
         </table>
         <p id="error"></p>
+        <div class="my-4 text-right">
+            <?php if ($admin) { ?>
+                  <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                  <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 4') ?></button>
+                <?php
+            } else if (!isset($voted)) {
+                ?>
+                <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+                    <i class="fa fa-check fa-2x"></i>
+                </a>
+            <?php } ?>
+        </div>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 4') ?></button>
-        <?php
-    } else if (!isset($voted)) {
-        ?>
-        <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-            <i class="fa fa-check fa-2x"></i>
-        </a>
-    <?php } ?>
 </main>
 
 <script>

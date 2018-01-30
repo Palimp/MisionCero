@@ -8,20 +8,20 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
+    <header>
+        <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container">
         <?php if ($admin) { ?>
 
         <?php } else { ?>
-
-            <h4>
-                <?=__('Problemática: '.$trouble)?>
-            </h4>
-            <p class="fs22 green">
+            <p class="h_green">
                 <?=__('Actores')?>
             </p>
             <p>
@@ -42,10 +42,6 @@ if ($admin) {
 
         <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 5') ?></button>
-    <?php } ?>
 </main>
 
 <script>

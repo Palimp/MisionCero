@@ -4,57 +4,51 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="row no-gutters mb-5">
-            <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('2 equipos trabajan juntos: ') ?>
-                </p>
-                <p>
-                    <b>Fase 1-</b>
-                    </br>
-                    Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo
-                    </br>
-                    Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. 
-                    </br>
-                    </br>
-                    <b><?= __('Fase 2-') ?></b>
-                    </br>
-                    Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. 
-                    </br>
-                    </br>
-                </p>
-                <p class="fs22">
-                    <b>Prepara la venta: ¡El objeto no puede servir para su uso habitual!</b>
-                </p>
-            </div>
-            <div class="col fs32">
-                <div class="d-flex align-items-end flex-column">
-                    <div>
-                        <h1><time id="clock"><?= $time ?></time></h1>
-                        <i class="fa fa-clock-o"></i>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <p class="h_green">
+            <?= __('2 equipos trabajan juntos: ') ?>
+        </p>
+        <p>
+            <b><?= __('Fase 1-') ?></b>
+            </br> 
+            <?= __('Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo') ?>
+            </br>
+            <?= __('Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación.') ?> 
+            </br>
+            </br>
+            <b><?= __('Fase 2-') ?></b>
+            </br>
+            <?= __('Los equipos intercambian los roles: el equipo 2 presenta al equipo 1') ?>
+            </br>
+            </br>
+        </p>
+        <p>
+            <b><?= __('Prepara la venta: ¡El objeto no puede servir para su uso habitual!') ?></b>
+        </p>
 
-                    </div>
-
-                </div>
-            </div>
+        <div class="fs32">
+            <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
         </div>
+
         <div class="text-center">
             <?= $this->Html->image($image, ['class' => 'img-fluid']); ?>
         </div>
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <b>
-                    <?= __('nos han convencido + 2 Bikles') ?>
+                    <?= __('Nos han convencido + 2 Bikles') ?>
                 </b>
-                </br><?= __(' neutro 0 Bikles') ?>
-                </br><?= __(' no nos convence nada - 2 Bikles') ?>
+                </br><?= __('Neutro 0 Bikles') ?>
+                </br><?= __('No nos convence nada - 2 Bikles') ?>
             </div>
         </div>
     </section>

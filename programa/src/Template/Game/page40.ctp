@@ -8,19 +8,19 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <section>
-     <div class="py-20 mx-10neg">
-            <?= $this->Html->image("imgp59.svg", ['class' => 'w-100']); ?>
-        </div>
-    </section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Etapa 6') ?></button>
-<?php } ?>
-</main>
+    <section style="background-color: #2b2b2b;">
+        <?= $this->Html->image("imgp59.svg", ['class' => 'img-fluid py-20']); ?>
 
+        <?php if ($admin) { ?>
+            <div class="py-4 text-right pr-4">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Etapa 6') ?></button>
+            </div>
+        <?php } ?>
+    </section>
+
+</main>
 <script>
     var page = 40;
     $(function () {

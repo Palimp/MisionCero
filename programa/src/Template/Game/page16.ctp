@@ -99,7 +99,7 @@ if ($admin) {
             </div>
         <?php } else { ?>
             <div class="text-center mt-5">
-                <div class="alert alert-danger d-inline-block" role="alert">
+                <div class="alert d-inline-block" role="alert">
                     <b>
                         <?= __('¡Observar bien el video!') ?>
                     </b>

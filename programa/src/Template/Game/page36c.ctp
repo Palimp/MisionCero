@@ -5,35 +5,25 @@
  */
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="row no-gutters mb-5">
-            <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Los retos y ámbitos seleccionados por tu equipo:') ?>
-                </p>
-            </div>
-
-        </div>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container">
+        <p class="h_green">
+            <?= __('Los retos y ámbitos seleccionados por tu equipo:') ?>
+        </p>
         <?php
         for ($i = 0; $i < count($comments); $i++) {
-            ?><p>
-                <b class="fs22">
-                    <?= $comments[$i]->question ?>
-                </b>
-
-
-                <b>
-                    <?= __('Ámbito: ') ?>
-
-
-                    <?= $ambits[$comments[$i]->ambit - 1]->ambit ?>
-                </b>
-            </p>
+            ?>
+                <div class="striped rounded mb-2">
+                    ¿ Cómo <?= $comments[$i]->question ?> - <span class="green"><?= __('Ámbito: ') ?><?= $ambits[$comments[$i]->ambit - 1]->ambit ?></span>
+                </div>
         <?php } ?>
 
     </section>
