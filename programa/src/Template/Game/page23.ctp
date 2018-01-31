@@ -21,53 +21,7 @@ if ($admin) {
         <p class="green">
             <i class="fa fa-lightbulb-o"></i>
             <?= __('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados por el equipo.') ?>
-            <br> <?= __('Los equipos tienen 2 minutos') ?>
         </p>
-        <div>
-            <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
-            <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
-            <?php
-            echo $this->Form->create('Begin', array(
-                'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
-            ));
-            ?>
-            <input type="hidden" name="time" value="30">
-            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para añadir tiempo') ?>" class="d-inline-block btn btn-primary btn-red">
-                <i class="fa fa-plus"></i><time> 00:30</time>
-            </a>
-            </form>
-            <?php
-            if ($stop) {
-                echo $this->Form->create('Begin', array(
-                    'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
-                ));
-                ?>
-                <input type="hidden" name="stop" value="1">
-                <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
-                <?php
-            } else {
-                echo $this->Form->create('Begin', array(
-                    'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
-                ));
-                ?>
-                <input type="hidden" name="start" value="1">
-                <button class="btn btn-primary"><?= __('Activar tiempo') ?></button>
-            <?php } ?>
-
-            </form>
-            <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
-
-            <?php
-            echo $this->Form->create('Begin', array(
-                'url' => array('controller' => 'Game', 'action' => 'page23'), 'class' => 'd-inline-block'
-            ));
-            ?>
-            <input type="hidden" name="time" value="-30">
-            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block btn btn-primary btn-green">
-                <i class="fa fa-minus"></i><time> 00:30</time>
-            </a>
-            </form>
-        </div>
 
 
       <?php if ($admin) { ?>

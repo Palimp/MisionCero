@@ -41,7 +41,7 @@ $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9',
                 <?= __('Descarga o imprime el resumen de la partida') ?>
             </p>
         </div>
-        
+
         <article>
             <p class="h_green">
                 Ámbitos
@@ -50,8 +50,8 @@ $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9',
                 <?php
                 for ($i = 0; $i <= 10; $i++) {
                     ?>
-                    <div class="card">
-                        <?php if (isset($retos[$i])) { ?>
+                    <?php if (isset($retos[$i])) { ?>
+                        <div class="card">
                             <div class="progressa" role="tab" id="h_a<?= $i ?>">
                                 <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a<?= $i ?>" aria-expanded="true" aria-controls="c_a<?= $i ?>" class="w-100">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?= count($retos[$i]) * 100 / $max ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= count($retos[$i]) * 100 / $max ?>%; background-color: #<?= $colors[$i] ?>;">
@@ -75,8 +75,8 @@ $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9',
 
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
 
                 <?php } ?>
             </div>

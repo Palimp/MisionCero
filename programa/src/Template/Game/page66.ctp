@@ -10,7 +10,7 @@ $ambits[-1] = new \stdClass();
 $ambits[-1]->ambit = __('Sin ámbito');
 
 function getTipo($a, $b, $c) {
-    $types = ['Ambicioso', 'Normal', 'Quick win'];
+    $types = ['Ambicioso', 'Quick win'];
     if ($c >= $b and $c >= $a) {
         return $types[2];
     }

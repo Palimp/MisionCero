@@ -15,7 +15,7 @@ foreach ($retos as $reto) {
     }
 }
 $colors=['D9E095','FEFBC5','E1F5EC','FEE4BD','FFE1FF','E1F5FF','FFD8D9','D9E095','FEFBC5','E1F5EC','FEE4BD'];
-$tipos=[__('Ambicioso'),__('Normal'),__('Quick win')]
+$tipos=[__('Ambicioso'),__('Quick win')]
 ?>
 <main>
     <header>

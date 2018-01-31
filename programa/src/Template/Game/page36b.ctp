@@ -19,10 +19,6 @@
             <?= __('Selección de Retos / Ámbitos de tu equipo:') ?>
         </p>
 
-        <div class="fs32 text-center">
-            <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
-        </div>
-
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             ?>

@@ -38,10 +38,6 @@ if ($admin) {
             </li>
             <li>
                 <i class="fa fa-comment-o"></i>
-                <?=__('NORMAL: los retos normales nos llevan a todo tipo de ideas')?>
-            </li>
-            <li>
-                <i class="fa fa-comment-o"></i>
                 <?=__('QUICK WIN: Un reto quick win nos llevará a ideas más operativas, implementables sin necesidad de elevados recursos')?>
             </li>
         </ul>
@@ -57,9 +53,6 @@ if ($admin) {
                                 </div>
                                 <div class="col py-1">
                                     <?=__('Ambicioso')?>
-                                </div>
-                                <div class="col py-1">
-                                    <?=__('Normal')?>
                                 </div>
                                 <div class="col py-1">
                                     <?=__('Quick win')?>
@@ -80,12 +73,6 @@ if ($admin) {
                                     <div class="col">
                                         <label class="custom-control custom-radio">
                                             <input name="radio_<?= $top->id ?>" value="1" type="radio" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="custom-control custom-radio">
-                                            <input name="radio_<?= $top->id ?>"  value="2" type="radio" class="custom-control-input">
                                             <span class="custom-control-indicator"></span>
                                         </label>
                                     </div>
