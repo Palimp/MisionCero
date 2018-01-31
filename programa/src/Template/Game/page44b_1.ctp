@@ -122,7 +122,7 @@
             <div class="col">
                 <!-- Button trigger modal_ex5 -->
                 <a href="#" data-toggle="modal" data-target="#modal_ex5" class="grey_link">
-                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
                     <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                     </p>
                 </a>

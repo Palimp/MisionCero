@@ -53,7 +53,7 @@ if ($admin) {
                             <div class="modal-content">
                                 <div class="modal-header align-items-start">
                                     <div class="example fs26">
-                                        <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                                        <i class="fa fa-file-text-o fa-3x example_ic align-top mr-3"></i>
                                         <div class="example_wrapper d-inline-block">
                                             <div class="example_inner text-left py-3 px-4">
                                                 <b><?= __('Pregunta') ?></b>
@@ -78,7 +78,7 @@ if ($admin) {
                             <div class="modal-content">
                                 <div class="modal-header align-items-start">
                                     <div class="example fs26">
-                                        <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                                        <i class="fa fa-file-text-o fa-3x example_ic align-top mr-3"></i>
                                         <div class="example_wrapper d-inline-block">
                                             <div class="example_inner text-left py-3 px-4">
                                                 <b><?= __('Solución') ?></b>
