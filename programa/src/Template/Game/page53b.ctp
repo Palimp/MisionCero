@@ -13,7 +13,7 @@ if ($admin) {
     </header>
     <section class="container">
         <p class="title_first pb-4">
-            <?= __('Etapa 8?- Parada lúdica') ?>
+            <?= __('Parada lúdica 4') ?>
         </p>
         <p class="h_green">
             <?= __('Enigmas') ?>

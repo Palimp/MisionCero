@@ -38,7 +38,7 @@ function getTipo($a, $b, $c) {
     </div>
     <section class="container">
         <p class="h_green">
-            <?=__('¡Enhorabuena exploradores! Hemos terminado la Misión 0 con éxito.')?>
+            <?=__('¡Enhorabuena exploradores! Hemos terminado la Binnakle Mission 0 con éxito.')?>
         </p>
         <p>
             <?= __('Esta es la clasificación final de los retos finalistas') ?>

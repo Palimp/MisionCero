@@ -24,7 +24,7 @@ $solution = $practical->answer4;
     <section class="container">
         <div>
             <p class="title_first py-4">
-                <?= __('Etapa 4- Parada lúdica') ?>
+                <?= __('Parada lúdica 2') ?>
             </p>
         </div>
         <table class="reduced table table-striped">
@@ -51,12 +51,12 @@ $solution = $practical->answer4;
         <div class="my-4 text-right">
             <?php if ($admin) { ?>
                   <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                  <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 4') ?></button>
+                  <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Parada lúdica 2') ?></button>
                 <?php
             } else if (!isset($voted)) {
                 ?>
                 <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                    <i class="fa fa-check fa-2x"></i>
+                    <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
                 </a>
             <?php } ?>
         </div>

@@ -15,7 +15,7 @@ if ($admin) {
         <?php if ($admin) { ?>
             <div class="py-4 text-right pr-4">
                 <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Etapa 6') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Parada lúdica 3') ?></button>
             </div>
         <?php } ?>
     </section>

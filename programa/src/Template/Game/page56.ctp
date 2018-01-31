@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?=__('Etapa 9- Me siento')?>
+            <?=__('Etapa 5- Me siento')?>
         </p>
     </div>
     <section class="container text-center">
@@ -113,7 +113,7 @@ if ($admin) {
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?= __('Para la Etapa 9, algunos ejemplos de ') ?><i><?= __('retos basados en estados de ánimo') ?></i> <?= __(' podrían ser:') ?> 
+                                        <?= __('Para la Etapa 5, algunos ejemplos de ') ?><i><?= __('retos basados en estados de ánimo') ?></i> <?= __(' podrían ser:') ?> 
                                     </b>
                                 </p>
                                 <table class="table table-striped">
@@ -161,12 +161,12 @@ if ($admin) {
             <p><?= __('Cuando todos los equipos hayan finalizado su votación, pulsa ”Continuar Etapa”') ?></p>
               <div class="my-4 text-right">
                   <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                  <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Etapa 9') ?></button>
+                  <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Etapa 5') ?></button>
               </div>
         <?php } else { ?>
             <div class="text-right mt-5">
                 <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
-                    <i class="fa fa-check fa-2x"></i>
+                    <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
                 </a>
             </div>
         <?php } ?>

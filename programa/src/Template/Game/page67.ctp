@@ -21,7 +21,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?=__('RESUMEN FINAL DE LA Misión 0')?>
+            <?=__('RESUMEN FINAL DE LA Binnakle Mission 0')?>
         </p>
     </div>
     <section class="container">

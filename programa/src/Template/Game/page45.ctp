@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?= __('Etapa 7- Ranking de retos') ?>
+            <?= __('Etapa 4- Ranking de retos') ?>
         </p>
     </div>
     <section class="container">
@@ -58,7 +58,7 @@ if ($admin) {
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 7') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 4') ?></button>
           </div>
       <?php } ?>
     </section>

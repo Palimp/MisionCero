@@ -27,7 +27,7 @@ $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9',
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?=__('RESUMEN FINAL DE LA Misión 0')?>
+            <?=__('RESUMEN FINAL DE LA Binnakle Mission 0')?>
         </p>
     </div>
     <section class="container">

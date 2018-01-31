@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?= __('Etapa 7- ')?><i><?= __('Pain points')?></i>
+            <?= __('Etapa 4- Pain points')?></i>
         </p>
     </div>
     <section class="container">
@@ -68,7 +68,7 @@ if ($admin) {
                         <div class="modal-body">
                             <p>
                                 <b>
-                                    <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                    <?=__('Para la Etapa 4, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
                                 </b>
                             </p>
 
@@ -169,7 +169,7 @@ if ($admin) {
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Empezar Etapa 7') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Empezar Etapa 4') ?></button>
           </div>
       <?php } ?>
     </section>

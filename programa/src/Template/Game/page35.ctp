@@ -53,7 +53,7 @@ if ($admin) {
             </table>
             <div class="text-right mt-2">
                 <a href="#" id="submitcomment" data-toggle="tooltip" title="<?=__('Haz click para enviar')?>" class="d-inline-block">
-                    <i class="fa fa-check fa-2x"></i>
+                    <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
                 </a>
             </div>
         <?php } ?>
@@ -61,7 +61,7 @@ if ($admin) {
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar a Etapa 5') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar a Etapa 3') ?></button>
           </div>
       <?php } ?>
     </section>

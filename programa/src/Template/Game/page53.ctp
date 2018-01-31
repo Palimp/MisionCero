@@ -113,7 +113,7 @@ $solution=$puzzle->answer1;
         } else if (!isset($voted)) {
             ?>
             <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                <i class="fa fa-check fa-2x"></i>
+                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
             </a>
         <?php } ?>
     </section>

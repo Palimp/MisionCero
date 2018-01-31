@@ -45,7 +45,7 @@ if ($admin) {
         <?php } ?>
         
         
-        <div class="col-2">
+        <div>
             <!-- Button trigger modal_ex2 -->
             <div class="d-inline">
                 <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">

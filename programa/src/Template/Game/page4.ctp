@@ -9,7 +9,7 @@ if ($admin) {
 ?>
 <main style="background-color: #e3e3e3;">
     <p class="fs22 text-center py-4">
-        <?=__('Misión 0 es el serious game que permite convertir una problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas soluciones')?>
+        <?=__('Binnakle Mission 0 es el serious game que permite convertir una problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas soluciones')?>
     </p>
     <div class="text-center">
         <div class="alert d-inline-block" role="alert">

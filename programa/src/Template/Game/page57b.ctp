@@ -17,7 +17,7 @@ $ids = [];
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?=__('Etapa 9- Me siento')?>
+            <?=__('Etapa 5- Me siento')?>
         </p>
     </div>
     <section class="container">
@@ -93,7 +93,7 @@ $ids = [];
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?= __('Para la Etapa 9, algunos ejemplos de ') ?><i><?= __('retos basados en estados de ánimo') ?></i> <?= __(' podrían ser:') ?> 
+                                        <?= __('Para la Etapa 5, algunos ejemplos de ') ?><i><?= __('retos basados en estados de ánimo') ?></i> <?= __(' podrían ser:') ?> 
                                     </b>
                                 </p>
                                 <table class="table table-striped">
@@ -141,7 +141,7 @@ $ids = [];
         </div>
         <div class="text-right mt-5">
             <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                <i class="fa fa-check fa-2x"></i>
+                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
             </a>
         </div>
     </section>

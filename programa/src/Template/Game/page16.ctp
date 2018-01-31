@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <div>
         <p class="title_first pb-4">
-            <?= __('Etapa 2- Parada lúdica') ?>
+            <?= __('Parada lúdica 1') ?>
         </p>
     </div>
     <section class="container">
@@ -111,7 +111,7 @@ if ($admin) {
         <?php if ($admin) { ?>
             <div class="my-4 text-right">
                 <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Parada lúdica 1') ?></button>
                 <button  id="otro" type="button" class="btn btn-primary"><?= __('Cambiar de vídeo') ?></button>
             </div>
         <?php } ?>

@@ -23,11 +23,11 @@ $ambits[-1]->ambit=__('Sin ámbito');
     <section class="container text-center">
         <div>
             <p class="title_first pb-4">
-                <?=__('ETAPA 5- Clasificación Retos / Votos / Ámbitos')?>
+                <?=__('Etapa 3- Clasificación Retos / Votos / Ámbitos')?>
             </p>
         </div>
         <p class="h_green text-center">
-            <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 5')?>
+            <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 3')?>
         </p>
         <p>
             <b><?= __('Los 5 retos más votados por todos los equipos pasan al Final del Viaje') ?></b>
@@ -69,7 +69,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
         <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar a Etapa 5') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar Etapa 3') ?></button>
           </div>
         <?php } ?>
 </section>

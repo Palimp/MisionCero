@@ -169,7 +169,7 @@
                         <div class="modal-body">
                             <p>
                                 <b>
-                                    <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                    <?=__('Para la Etapa 4, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
                                 </b>
                             </p>
 
