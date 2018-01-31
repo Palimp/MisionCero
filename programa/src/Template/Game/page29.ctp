@@ -16,13 +16,15 @@ $solution = $practical->answer4;
     <header>
         <?= $this->Html->image("breadp45.svg", ['class' => 'img-fluid']); ?>
     </header>
+    <div class="title_wrap">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
     <section class="container">
         <div>
             <p class="title_first py-4">
                 <?= __('Etapa 4- Parada lúdica') ?>
-            </p>
-            <div class="green">
-                <?= __($trouble) ?>
             </p>
         </div>
         <table class="reduced table table-striped">

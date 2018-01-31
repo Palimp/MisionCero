@@ -7,28 +7,33 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
+    <header>
+        <?= $this->Html->image("breadp781.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('Ranking de Bikles')?>
+        </p>
+    </div>
+    <section class="container text-center">
         <?php if ($admin) { ?>
-            <p class="fs22 green">
+            <p class="green">
                 <?= __('El Jefe de Expedición, ') ?><b><?= __('tiene el privilegio de sumar o restar Bikles ') ?></b><?= __('si considera que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc') ?>
             </p>
         <?php } ?>
-        <p class="fs22">
-            <?=__('Ranking de Bikles')?>
-        </p>
         <p>
             <?=__('¡Ganaron Bikles los equipos con más votos a sus retos!')?>
         </p>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
-                    <th>RANKING GENERAL</th>
+                    <th><?= __('RANKING GENERAL') ?></th>
                     <th></th>
                     <th><?= __('EQUIPOS: CLASIFICACIÓN ETAPA') ?></th>
                     <th><?= __('TOTAL BIKLES') ?></th>
@@ -78,13 +83,13 @@ if ($admin) {
             </tbody>
         </table>
 
-
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Ir a Final del Viaje') ?></button>
+          </div>
+      <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Ir a Final del Viaje') ?></button>
-<?php } ?>
 </main>
 
 <script>

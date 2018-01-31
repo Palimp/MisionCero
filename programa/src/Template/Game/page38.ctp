@@ -20,7 +20,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
         <?=__('Problemática: '.$trouble)?>
       </span>
     </div>
-    <section class="container">
+    <section class="container text-center">
         <div>
             <p class="title_first pb-4">
                 <?=__('ETAPA 5- Clasificación Retos / Votos / Ámbitos')?>

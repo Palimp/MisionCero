@@ -6,77 +6,69 @@
 $ids = [];
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="col-12 col-md-auto">
-            <h4>
-                <?= __('Problemática: ' . $trouble) ?>
-            </h4>
-            <p class="fs22 green">
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('Etapa 9- Me siento')?>
+        </p>
+    </div>
+    <section class="container">
+        <p class="h_green">
                 <?= __('Retos basados en estados de ánimo') ?>
-            </p>
-            <p>
-                <?= __('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados') ?>
-            </p>
+        </p>
+        <p>
+            <?= __('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados') ?>
+        </p>
+
+
+        <div class="fs32 text-center">
+            <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
         </div>
 
-        <div class="col fs32">
-            <div class="d-flex align-items-end flex-column">
-                <div>
-                    <h1><time id="clock"><?= $time ?></time></h1>
-                    <i class="fa fa-clock-o"></i>
-
-                </div>
-
-            </div>
-        </div>
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             $ids[] = $comments[$i]->id;
             ?>
+            <div class="striped rounded mb-2">
+                <b id="c<?= $i ?>">
+                    <?= $comments[$i]->feeling ?>
+                </b>
 
-            <b class="fs22" id="c<?= $i ?>">
-                <?= $comments[$i]->feeling ?>
-            </b>
-
-            <div class="row">
-                <div class="col-10 pl-0">
+                <div class="col-10 pl-0 mb-2">
                     <input type="text" id="com<?= $i ?>" class="form-control d-inline w-75" placeholder="<?= __('Introduce aquí el reto') ?>" value="<?= $comments[$i]->question ?>">
 
                 </div>
-            </div>
-            <b>
-                <?= __('Ámbito') ?>
-            </b>
-            <div class="fs14 mr-1">
-                <?php foreach ($ambits as $ambit) { ?>
-                    <label class="custom-control custom-radio">
-                        <input name="radio<?= $i ?>" type="radio" class="custom-control-input" value="<?= $ambit->id ?>">
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description"><?= $ambit->ambit ?></span>
-                    </label>
-                <?php } ?>
+                <div class="fs14 mr-1">
+                    <?php foreach ($ambits as $ambit) { ?>
+                        <label class="custom-control custom-radio">
+                            <input name="radio<?= $i ?>" type="radio" class="custom-control-input" value="<?= $ambit->id ?>">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description"><?= $ambit->ambit ?></span>
+                        </label>
+                    <?php } ?>
 
+                </div>
             </div>
+            <?php } ?>
+        
 
-            <?php
-        }
-        ?>
-        <div class="col-2">
+        <div>
             <!-- Button trigger modal_ex6 -->
-            <div class="d-inline">
+            <div class="py-3">
                 <a href="#" data-toggle="modal" data-target="#modal_ex6" class="grey_link">
-                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
-                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                    </p>
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-2"></i>
+                    <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                    </div>
                 </a>
-                <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                    <i class="fa fa-check fa-2x"></i>
-                </a>
+             
             </div>
             <!-- modal_ex6 -->
             <div>
@@ -84,9 +76,9 @@ $ids = [];
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header align-items-start">
-                                <div class="example fs26">
-                                    <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
-                                    <div class="example_wrapper d-inline-block">
+                                <div class="example row">
+                                    <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                                    <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
                                             <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
@@ -107,33 +99,34 @@ $ids = [];
                                 <table class="table table-striped">
                                     <thead class="text-center">
                                         <tr>
-                                            <th class="fs32 fw100 w30" style="position: relative;">
-                                                <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem;position: absolute;bottom: 0.6rem;"></i>
-                                                ESTADO DE ÁNIMO
+                                            <th class="fs22 fw100 w30" style="position: relative;">
+                                                <i class="fa fa-chevron-right " style="right: -0.8rem;position: absolute;bottom: 1.1rem;"></i>
+
+                                                <?= __('ESTADO DE ÁNIMO') ?> 
                                             </th>
-                                            <th class="fs32 fw100 w30" style="position: relative;">
-                                                PAINPOINTS
+                                            <th class="fs22 fw100 w30" style="position: relative;">
+                                                <?= __('PAINPOINTS') ?> 
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody class="fs16">
                                         <tr>
-                                            <td scope="row">Motivado</td>
-                                            <td>¿Cómo conseguir que todo el equipo tenga nuestro nivel de motivación?</td>
+                                            <td scope="row"><?= __(' Motivado') ?></td>
+                                            <td><?= __('¿Cómo conseguir que todo el equipo tenga nuestro nivel de motivación?') ?></td>
                                         </tr>
                                         <tr>
-                                            <td rowspan="2">Enfadado</td>
-                                            <td>¿Cómo conseguir que el enfado no se comunique?</td>
+                                            <td rowspan="2"><?= __('Enfadado') ?></td>
+                                            <td><?= __('¿Cómo conseguir que el enfado no se comunique?') ?></td>
                                         </tr>
                                         <tr>
-                                            <td>¿Cómo pasar cuanto antes del enfado a un ánimo más constructivo?</td>
+                                            <td><?= __('¿Cómo pasar cuanto antes del enfado a un ánimo más constructivo?') ?></td>
                                         </tr>
                                         <tr>
-                                            <td scope="row" rowspan="2">Pesimista</td>
-                                            <td>¿Cómo conseguir transformar nuestro pesimismo en optimismo?</td>
+                                            <td scope="row" rowspan="2"><?= __('Pesimista') ?></td>
+                                            <td><?= __('¿Cómo conseguir transformar nuestro pesimismo en optimismo?') ?></td>
                                         </tr>
                                         <tr>
-                                            <td> ¿Cómo conseguir que sea un éxito a pesar de nuestro pesimismo?</td>
+                                            <td><?= __(' ¿Cómo conseguir que sea un éxito a pesar de nuestro pesimismo?') ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -145,6 +138,11 @@ $ids = [];
         </div>
         <div class="text-center mt-5">
             <p id="mensaje"></p>
+        </div>
+        <div class="text-right mt-5">
+            <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+                <i class="fa fa-check fa-2x"></i>
+            </a>
         </div>
     </section>
     <div>

@@ -13,7 +13,7 @@ if ($admin) {
     <p class="title_first py-4">
       <?=__('Resultado de la partida') ?>
     </p>
-    <header>
+    <header class="py-2">
       <span>
         <?=__('Problemática inicial:')?>
       </span>

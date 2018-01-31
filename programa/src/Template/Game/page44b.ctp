@@ -47,19 +47,19 @@
         <table class="table table-striped">
             <thead class="text-center">
                 <tr>
-                    <th class="fs32 fw100" style="position: relative;">
+                    <th class="fs22 fw100" style="position: relative;">
                         <span>1</span>
                         </br>
-                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                        <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                         <?= __('INTERACCIONES') ?>
                     </th>
-                    <th class="fs32 fw100" style="position: relative;">
+                    <th class="fs22 fw100" style="position: relative;">
                         <span>2</span>
                         </br>
-                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                        <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                         <?= __('PAINPOINTS') ?>
                     </th>
-                    <th class="green fs32 fw100" style="position: relative;">
+                    <th class="green fs22 fw100" style="position: relative;">
                         <span>3</span>
                         </br>
                         <?= __('RETOS') ?>
@@ -113,13 +113,6 @@
         </table>
 
 
-        <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
-                <b>
-                    <?= __('¡Los equipos con más retos ganarán Bikles, y los equipos con menos retos perderán Bikles!') ?>
-                </b>
-            </div>
-        </div>
         <div class="col">
             <!-- Button trigger modal_ex5 -->
             <a href="#" data-toggle="modal" data-target="#modal_ex5" class="grey_link">
@@ -162,13 +155,13 @@
                                      <th class="fs32 fw100 w30" style="position: relative;">
                                         <span><?=__('1') ?></span>
                                         <br>
-                                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                                        <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                                         <?=__('INTERACCIONES') ?>
                                      </th>
                                      <th class="fs32 fw100 w30" style="position: relative;">
                                         <span><?=__('2') ?></span>
                                         <br>
-                                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                                        <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                                         <?=__('PAINPOINTS') ?>
                                      </th>
                                      <th class="green fs32 fw100 w30" style="position: relative;">

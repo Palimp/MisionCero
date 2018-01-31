@@ -7,18 +7,19 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-
-<main>
-    <p class="title_first py-4 text-center">
+<main style="background-color: #e3e3e3;">
+    <p class="fs22 text-center py-4">
         <?=__('Misión 0 es el serious game que permite convertir una problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas soluciones')?>
     </p>
-    <div class="fs22" style="color: #fff;  background-color: #2b2b2b;  padding: .75rem 1.25rem; margin-bottom: 1rem;">
-        <img src="/img/lupa.gif" class="pull-left mr-3" alt="">
-        <b>
-            <?=__('¿Cómo?')?>
-        </b>
-        </br>
-        <?=__('Con una metodología que nos permite enfocar la problemática desde sus diferentes puntos de vista.')?>
+    <div class="text-center">
+        <div class="alert d-inline-block" role="alert">
+            <img src="/img/lupa.svg" class="pull-left mr-3" alt="">
+            <b>
+                <?=__('¿Cómo?')?>
+            </b>
+            </br>
+            <?=__('Con una metodología que nos permite enfocar la problemática desde sus diferentes puntos de vista.')?>
+        </div>
     </div>
     <section class="container">
 

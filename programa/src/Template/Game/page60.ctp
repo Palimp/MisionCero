@@ -8,16 +8,17 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('Problemática: '.$trouble)?>
-        </h4>
-        <p class="fs22 green">
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <p class="h_green">
             <?=__('Listado completo de retos (3 retos por equipo).')?>
         </p>
         <p>
@@ -40,7 +41,7 @@ if ($admin) {
                 <?=__('Este voto es personal')?>
             </li>
         </ul>
-        <table class="reduced table table-striped text-center">
+        <table class="reduced table table-striped">
             <thead>
                 <tr>
                     <td></td>
@@ -75,17 +76,20 @@ if ($admin) {
         <div id="hasvoted"></div>
         <div id="error"></div>
 
+
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 9') ?></button>
+          </div>
+        <?php } else { ?>
+            <div class="text-right mt-5">
+                <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
+                    <i class="fa fa-check fa-2x"></i>
+                </a>
+            </div>
+        <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 9') ?></button>
-    <?php } else { ?>
-        <div class="text-right mt-5">
-            <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
-                <i class="fa fa-check fa-2x"></i>
-            </a>
-        </div>
-    <?php } ?>
 </main>
 
 <script>

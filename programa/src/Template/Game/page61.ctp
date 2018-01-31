@@ -11,22 +11,29 @@ $ambits[-1]->ambit=__('Sin ámbito');
 
 ?>
 
-<!-- ** pag p15 ** -->
+
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('ETAPA 1- Clasificación Retos / Votos / Ámbitos')?>
-        </h4>
-        <p class="fs22 green">
-            <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 1')?>
+    <header>
+        <?= $this->Html->image("breadp781.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('ETAPA 9- Clasificación Retos / Votos / Ámbitos')?>
+        </p>
+    </div>
+    <section class="container text-center">
+        <p class="h_green">
+            <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 9')?>
         </p>
         <p>
             <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
         </p>
-        <table class="reduced table table-striped text-center">
+        <table class="reduced table table-striped">
             <thead>
                 <tr>
                     <td></td>
@@ -40,7 +47,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
                 foreach ($ranking as $team) {
                     $cont++;
                     ?>
-                    <tr <?=$cont<=5?'class="green"':''?>>
+                    <tr <?=$cont<=5?'class="green fs16"':''?>>
                         <td scope="row" class="text-left">
                             <?=$team['question']?>
                         </td>
@@ -56,16 +63,18 @@ $ambits[-1]->ambit=__('Sin ámbito');
         </table>
 
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
             </div>
         </div>
+
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar Etapa 9') ?></button>
+          </div>
+      <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar Etapa 9') ?></button>
-<?php } ?>
 </main>
 
 <script>

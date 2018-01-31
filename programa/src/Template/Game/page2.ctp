@@ -7,14 +7,14 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main>
-    <div class="text-center mb-5">
-        <p class="title_first py-4">
-            <?=__('Se organizan multitud de reuniones para tratar estas problemáticas, pero…')?>
-        </p>
+<main style="background-color: #e3e3e3;">
+    <div class="text-center">
         <h4 class="title_alt"><?=__('Misión 0 -¿Por qué?')?></h4>
     </div>
     <section class="container">
+        <div class="fs22 text-center py-4">
+            <?=__('Se organizan multitud de reuniones para tratar estas problemáticas, pero…')?>
+        </div>
         <div class="row">
             <div class="col-7">
                 <p>
@@ -79,7 +79,7 @@ if ($admin) {
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "index"
+        "action" => "page1"
     ])
     ?>';
             });

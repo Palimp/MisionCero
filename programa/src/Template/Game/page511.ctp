@@ -8,34 +8,35 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
-<main>
-    <header class="text-center m-5 mb-10">
+<main class="text-center">
+    <header>
         <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <!-- start ESTO VA EN UNA PAGINA PREVIA NUEVA-->
-        <div class="col-12 col-md-auto">
-            <h4>
-                Etapa 6- Parada lúdica
-            </h4>
-            <p class="fs22 green">
-                La parada que estabas esperando… ¡CULTURA GENERAL! <i class="fa fa-smile-o"></i>
-            </p>
-            <p>
-                <i class="fa fa-comment-o"></i>
-                En esta etapa los Exploradores tendrán que demostrar sus conocimientos respondiendo a preguntas
-                <br>
-                ¡Ganaran Bikles los equipos que responden correctamente!
-            </p>
-        </div>
+    <div class="title_wrap">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div>
+        <p class="title_first pb-4">
+            <?= __('Etapa 6- Parada lúdica') ?>
+        </p>
+    </div>
+    <section class="container">
+        <p class="h_green">
+            <?= __('La parada que estabas esperando… ¡CULTURA GENERAL!') ?> <i class="fa fa-smile-o"></i>
+        </p>
+        <p>
+            <i class="fa fa-comment-o"></i>
+            <?= __('En esta etapa los Exploradores tendrán que demostrar sus conocimientos respondiendo a preguntas') ?>
+            <br>
+            <?= __('¡Ganaran Bikles los equipos que responden correctamente!') ?>
+        </p>
         <?php if ($admin) { ?>
             <p>
-                Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado
+                <?= __('Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado') ?>
             </p>
         <?php } ?>
-        <!-- en el boton de pasar al video poner TXTO: "Pasar a enigmas" -->
-        <!-- end ESTO VA EN UNA PAGINA PREVIA NUEVA-->
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>

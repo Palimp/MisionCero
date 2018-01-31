@@ -25,9 +25,9 @@
             ?>
             <div class="striped rounded mb-2">
                 <?= $comments[$i]->question ?>
-                 - <span class="green">
+                 - <b class="green">
                     <?= $ambits[$comments[$i]->ambit-1]->ambit ?>
-                </span>
+                </b>
             </div>
         <?php } ?>
         <div class="text-right mt-3">

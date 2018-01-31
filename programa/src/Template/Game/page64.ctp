@@ -8,36 +8,41 @@ if ($admin) {
 }
 //print_r($tops);
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            Final del Viaje- Los 25 retos finalistas
-        </h4>
-        <p class="fs22 green">
-            Exploradores, hemos llegado al Final del Viaje<br>
-            Estamos a punto de conocer los mejores retos para resolver la problemática planteada.
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('Final del Viaje- Los 25 retos finalistas')?>
+        </p>
+    </div>
+    <section class="container">
+        <p class="h_green">
+            <?=__('Exploradores, hemos llegado al Final del Viaje')?><br>
+            <?=__('Estamos a punto de conocer los mejores retos para resolver la problemática planteada.')?>
         </p>
         <p>
             <i class="fa fa-lightbulb-o"></i>
-            Cada equipo tiene que indicar, para cada retos, si lo considera un reto:
+            <?=__('Cada equipo tiene que indicar, para cada reto, si lo considera un reto:')?>
         </p>
         <ul>
             <li>
                 <i class="fa fa-comment-o"></i>
-                AMBICIOSO: los retos ambiciosos nos llevan, a priori, a proyectos complejos, con impacto
+                <?=__('AMBICIOSO: los retos ambiciosos nos llevan, a priori, a proyectos complejos, con impacto')?>
             </li>
             <li>
                 <i class="fa fa-comment-o"></i>
-                NORMAL: los retos normales nos llevan a todo tipo de ideas
+                <?=__('NORMAL: los retos normales nos llevan a todo tipo de ideas')?>
             </li>
             <li>
                 <i class="fa fa-comment-o"></i>
-                QUICK WIN: Un reto quick win nos llevará a ideas más operativas, implementables sin necesidad de elevados recursos
+                <?=__('QUICK WIN: Un reto quick win nos llevará a ideas más operativas, implementables sin necesidad de elevados recursos')?>
             </li>
         </ul>
         <table class="reduced table table-striped">
@@ -48,16 +53,16 @@ if ($admin) {
                         <td style="padding-top: 0; padding-bottom: 0;">
                             <div class="row text-center">
                                 <div class="w-100 mr-1 py-1" style="background-color: rgba(0, 0, 0, 0.04);">
-                                    <b>Tipologia</b>
+                                    <b><?=__('Tipologia')?></b>
                                 </div>
                                 <div class="col py-1">
-                                    Ambicioso
+                                    <?=__('Ambicioso')?>
                                 </div>
                                 <div class="col py-1">
-                                    Normal
+                                    <?=__('Normal')?>
                                 </div>
                                 <div class="col py-1">
-                                    Quick win
+                                    <?=__('Quick win')?>
                                 </div>
                             </div>
                         </td><?php } ?>
@@ -99,10 +104,11 @@ if ($admin) {
         </table>
         <div id="error"></div>
 
-    </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Final del Viaje') ?></button>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Final del Viaje') ?></button>
+          </div>
     <?php } else { ?>
         <div class="text-right mt-5">
             <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
@@ -110,6 +116,7 @@ if ($admin) {
             </a>
         </div>
     <?php } ?>
+    </section>
 </main>
 
 <script>

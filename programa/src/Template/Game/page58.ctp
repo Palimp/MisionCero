@@ -8,17 +8,23 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <div class="row no-gutters mb-5">
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?= __('Ranking de comentarios') ?>
+        </p>
+    </div>
+    <section class="container">
+        <div class="row no-gutters mb-2">
             <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Ranking de comentarios') ?>
-                </p>
                 <p>
                     <?= __(' ¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!') ?>
 
@@ -52,7 +58,7 @@ if ($admin) {
         </table>
 
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <b>
                     <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
                 </b>
@@ -60,11 +66,13 @@ if ($admin) {
                 <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
             </div>
         </div>
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 9') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 9') ?></button>
-    <?php } ?>
 </main>
 
 <script>

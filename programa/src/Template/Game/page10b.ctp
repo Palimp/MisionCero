@@ -152,10 +152,6 @@ if ($admin) {
             </div>
         </div>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 1') ?></button>
-    <?php } ?>
 </main>
 
 <script>

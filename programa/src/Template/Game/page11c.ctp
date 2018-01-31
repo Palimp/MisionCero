@@ -20,7 +20,7 @@
             
             ?>
             <div class="striped rounded mb-2">
-               Cómo <?= $reto?> - <span class="green"><?= $ambito?></span>
+               Cómo <?= $reto?> - <b class="green"><?= $ambito?></b>
             </div>
 
           

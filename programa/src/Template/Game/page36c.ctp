@@ -22,7 +22,7 @@
         for ($i = 0; $i < count($comments); $i++) {
             ?>
                 <div class="striped rounded mb-2">
-                    ¿ Cómo <?= $comments[$i]->question ?> - <span class="green"><?= __('Ámbito: ') ?><?= $ambits[$comments[$i]->ambit - 1]->ambit ?></span>
+                    ¿ Cómo <?= $comments[$i]->question ?> - <b class="green"><?= $ambits[$comments[$i]->ambit - 1]->ambit ?></b>
                 </div>
         <?php } ?>
 

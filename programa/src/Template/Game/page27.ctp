@@ -7,8 +7,8 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main>
-    <section style="background-color: #2b2b2b;">
+<main style="background-color: #2b2b2b;">
+    <section>
         <?= $this->Html->image("imgp44.svg", ['class' => 'img-fluid py-20']); ?>
 
         <?php if ($admin) { ?>
