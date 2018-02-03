@@ -11,7 +11,9 @@
         "cakephp/migrations": "~1.0",
          "lib-ICU": ">=4.8",
         "cakephp/plugin-installer": "~1.0",
-        "josegonzalez/dotenv": "2.*"
+        "josegonzalez/dotenv": "2.*",
+        "friendsofcake/CakePdf": "^3.3",
+        "tecnickcom/tcpdf": "^6.2.13"
     },
     "require-dev": {
         "psy/psysh": "@stable",
