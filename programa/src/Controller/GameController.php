@@ -254,7 +254,12 @@ class GameController extends AppController {
                     }
                     if ($sesion['page'] == 16) {
                         $url = $sesion['ludico'];
-                        $this->set('url', $url);
+                        $url = split("$", $url);
+                        $this->set('url', $url[0]);
+                    }
+                    if ($sesion['page'] == 161) {
+                        $video = $this->Code->getVideoId($sesion['ludico']);
+                        $this->set('url', $video->url2);
                     }
                     if ($sesion['page'] == 29) {
                         $idp = $sesion['ludico'];
@@ -803,6 +808,18 @@ class GameController extends AppController {
         $this->set('solucion', $video['solucion']);
     }
 
+    public function page161() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $video = $this->Code->getVideoId($sesion['ludico']);
+        $this->Code->setPage($id, 161);
+        $this->set('admin', $sesion['admin']);
+        $this->set('trouble', $sesion['trouble']);
+        $this->set('url', $video['url']);
+        $this->set('texto', $video['texto']);
+        $this->set('solucion', $video['solucion']);
+    }
+
     public function page17() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
@@ -868,7 +885,7 @@ class GameController extends AppController {
                 $this->set('stop', 1);
             }
         } else {
-           $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));
@@ -932,7 +949,7 @@ class GameController extends AppController {
                 $this->set('stop', 1);
             }
         } else {
-             $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));
@@ -1094,7 +1111,7 @@ class GameController extends AppController {
                 $this->set('stop', 1);
             }
         } else {
-           $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));
@@ -1160,7 +1177,7 @@ class GameController extends AppController {
                 $this->set('stop', 1);
             }
         } else {
-             $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));
@@ -1281,7 +1298,7 @@ class GameController extends AppController {
             $image = $this->Code->getImageId($sesion['ludico']);
         } else {
             $image = $this->Code->getImage($id);
-          $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));
@@ -1327,7 +1344,7 @@ class GameController extends AppController {
             $image = $this->Code->getImageId($sesion['ludico']);
         } else {
             $image = $this->Code->getImageId($sesion['ludico']);
-             $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));
@@ -1405,7 +1422,7 @@ class GameController extends AppController {
                 $this->set('stop', 1);
             }
         } else {
-             $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));
@@ -1637,7 +1654,7 @@ class GameController extends AppController {
             $idp = $sesion['ludico'];
             $puzzle = $this->Code->getPuzzleId($idp);
         } else {
-           $this->Code->setTime($id, -1);
+            $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);
             $this->set('time', gmdate("i:s", $period));

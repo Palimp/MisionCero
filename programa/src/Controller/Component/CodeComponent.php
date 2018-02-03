@@ -93,8 +93,13 @@ class CodeComponent extends Component {
     public function getVideo($id) {
         $videos = $this->getVideos();
         $video = $videos[rand(0, count($videos) - 1)];
-        $this->saveLudico($id, $video->url);
+        $this->saveLudico($id, $video->id);
         return ['url' => $video->url, 'texto' => $video->texto, 'solucion' => $video->solucion];
+    }
+
+    public function getVideoId($id) {
+        $games = TableRegistry::get('Puzzles');
+        return $games->get($id);
     }
 
     public function getPuzzles() {
@@ -206,11 +211,14 @@ class CodeComponent extends Component {
         $game->page = $page;
         $games->save($game);
     }
-public function getTeamIdByName($name){
-       $query = $conn->execute("select id from names where name='" . $name."'");
+
+    public function getTeamIdByName($name) {
+        $conn = ConnectionManager::get('default');
+        $query = $conn->execute("select id from names where name='" . $name . "'");
         $res = $query->fetchAll('assoc');
         return $res[0]['id'];
-}
+    }
+
     public function getTeamComments($id) {
         $conn = ConnectionManager::get('default');
 
@@ -389,7 +397,7 @@ public function getTeamIdByName($name){
                     ->where(['team_id' => $team->id]);
 
             $num = 3 - $query->count();
-       
+
             for ($i = 0; $i < $num; $i++) {
                 $row = $table->newEntity();
                 $row->team_id = $team->id;
@@ -407,14 +415,13 @@ public function getTeamIdByName($name){
         $table = TableRegistry::get($table);
         foreach ($teams as $team) {
             $query = $table->find('all')
-                    ->where(['team_id' => $team->id, $field.' is ' => null]);
-            
+                    ->where(['team_id' => $team->id, $field . ' is ' => null]);
+
             foreach ($query as $row) {
                 $row->$field = $this->frases[$cont++];
-                
+
                 $table->save($row);
             }
-            
         }
     }
 

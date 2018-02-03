@@ -9,9 +9,9 @@
         <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
     </header>
     <div class="title_wrap text-center">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
+        <span class="title">
+            <?= __('Problemática: ' . $trouble) ?>
+        </span>
     </div>
     <section class="container text-center">
         <p class="h_green">
@@ -71,7 +71,11 @@
     }
     $(function () {
 <?php if (!$admin) { ?>
-
+            $("#comment").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#addcomment").click();
+                }
+            });
             $('#addcomment').click(function () {
                 $('#addcomment').attr('style', 'display: none !important');
                 $.get("<?=

@@ -159,6 +159,9 @@
                 }
             });
             $('#addcomment').click(function () {
+                if ($('#comment').val()===""){
+                    return;
+                }
                 $('#addcomment').attr('style', 'display: none !important');
                 $.get("<?=
     $this->Url->build([
