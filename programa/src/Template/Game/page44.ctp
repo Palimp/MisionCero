@@ -120,7 +120,7 @@ if ($admin) {
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                        <?=__('Para la Etapa 4, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
                                     </b>
                                 </p>
 
@@ -128,19 +128,19 @@ if ($admin) {
                                 <table class="table table-striped">
                                    <thead class="text-center">
                                       <tr>
-                                         <th class="fs32 fw100 w30" style="position: relative;">
+                                         <th class="fs22 fw100 w30" style="position: relative;">
                                             <span><?=__('1') ?></span>
                                             <br>
-                                            <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                                            <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                                             <?=__('INTERACCIONES') ?>
                                          </th>
-                                         <th class="fs32 fw100 w30" style="position: relative;">
+                                         <th class="fs22 fw100 w30" style="position: relative;">
                                             <span><?=__('2') ?></span>
                                             <br>
-                                            <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                                            <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                                             <?=__('PAINPOINTS') ?>
                                          </th>
-                                         <th class="green fs32 fw100 w30" style="position: relative;">
+                                         <th class="green fs22 fw100 w30" style="position: relative;">
                                             <span><?=__('3') ?></span>
                                             <br>
                                             <?=__('RETOS') ?>
@@ -222,7 +222,7 @@ if ($admin) {
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 7') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 4') ?></button>
           </div>
       <?php } ?>
     </section>

@@ -10,7 +10,7 @@ $ambits[-1] = new \stdClass();
 $ambits[-1]->ambit = __('Sin ámbito');
 
 function getTipo($a, $b, $c) {
-    $types = ['Ambicioso', 'Normal', 'Quick win'];
+    $types = ['Ambicioso', 'Quick win'];
     if ($c >= $b and $c >= $a) {
         return $types[2];
     }
@@ -22,18 +22,23 @@ function getTipo($a, $b, $c) {
     }
 }
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
             <?=__('FINAL DEL VIAJE- Clasificación Retos / Votos / Ámbitos / Alcance')?>
-        </h4>
-        <p class="fs22 green">
-            <?=__('¡Enhorabuena exploradores! Hemos terminado la Misión 0 con éxito.')?>
+        </p>
+    </div>
+    <section class="container">
+        <p class="h_green">
+            <?=__('¡Enhorabuena exploradores! Hemos terminado la Binnakle Mission 0 con éxito.')?>
         </p>
         <p>
             <?= __('Esta es la clasificación final de los retos finalistas') ?>
@@ -75,16 +80,18 @@ function getTipo($a, $b, $c) {
         </table>
 
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <?= __('¡Los equipos que hayan obtenido más votos ganan Bikles!') ?>
             </div>
         </div>
+
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Final del Viaje') ?></button>
+          </div>
+      <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Final del Viaje') ?></button>
-<?php } ?>
 </main>
 
 <script>

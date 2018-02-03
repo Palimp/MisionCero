@@ -7,24 +7,29 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <div>
+            <p class="title_first pb-4">
+               <?=__('Ranking de Bikles al acabar la Parada lúdica 4')?>
+            </p>
+        </div>
         <?php if ($admin) { ?>
-            <p class="fs22 green">
+            <p>
+                <?=__('¡El Jefe de Expedición distribuye los Bikles ganados o perdidos por los equipos!')?>
+            </p>
+            <p class="green">
                 <?= __('El Jefe de Expedición, ') ?><b><?= __('tiene el privilegio de sumar o restar Bikles ') ?></b><?= __('si considera que alguno de los equipos lo merece: por haber sido el más rápido o el más lento, por haber aportado algo de valor o haber criticado cuando no toca, etc') ?>
             </p>
-            <p>
-                <?=__('¡El Jefe de Expedición añadirá ahora los 3 Bikles al equipo que ha contestado primero a cada enigma!')?>
-            </p>
         <?php } ?>
-        <p class="fs22">
-            <?=__('Ranking de Bikles al acabar la etapa 8')?>
-        </p>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
@@ -79,12 +84,13 @@ if ($admin) {
         </table>
 
 
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar Parada lúdica 4') ?></button>
+          </div>
+      <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar a Etapa 8') ?></button>
-<?php } ?>
 </main>
 
 <script>

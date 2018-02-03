@@ -8,19 +8,23 @@ if ($admin) {
 }
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp78.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <p>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <p class="h_green">
             <?=__('Retos seleccionados:')?>
         </p>
         <?php if ($admin) { ?>
 
         <?php } else { ?>
-            <table class="reduced table table-striped">
+            <table class="reduced table table-striped text-left">
                 <tbody>
                     <?php foreach ($comments as $comment) { ?>
                         <tr>
@@ -34,11 +38,14 @@ if ($admin) {
             </table>
 
         <?php } ?>
+    
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 5') ?></button>
+          </div>
+      <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 9') ?></button>
-    <?php } ?>
 </main>
 
 <script>

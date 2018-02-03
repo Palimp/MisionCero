@@ -7,18 +7,17 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-
-<!-- ** pag p15 ** -->
-<main>
+<main style="background-color: #2b2b2b;">
     <section>
-     <div class="py-20 mx-10neg">
-            <?= $this->Html->image("imgp73.svg", ['class' => 'w-100']); ?>
-        </div>
+        <?= $this->Html->image("imgp73.svg", ['class' => 'img-fluid py-20']); ?>
+
+      <?php if ($admin) { ?>
+          <div class="py-4 text-right pr-4">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Parada lúdica 4') ?></button>
+          </div>
+      <?php } ?>
     </section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Iniciar Etapa 8') ?></button>
-<?php } ?>
 </main>
 
 <script>

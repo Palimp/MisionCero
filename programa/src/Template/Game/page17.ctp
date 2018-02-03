@@ -20,7 +20,7 @@ if ($admin) {
     </div>
     <div>
         <p class="title_first pb-4">
-            <?= __('Ranking de Bikles al acabar la etapa 2') ?>
+            <?= __('Ranking de Bikles al acabar la Parada lúdica 1') ?>
         </p>
     </div>
     <section class="container">
@@ -84,7 +84,7 @@ if ($admin) {
         <?php if ($admin) { ?>
             <div class="my-4 text-right">
                 <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Ir a Etapa 3') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Ir a Parada lúdica 2') ?></button>
             </div>
         <?php } ?>
 

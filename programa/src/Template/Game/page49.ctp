@@ -11,17 +11,23 @@ $ambits[-1]->ambit=__('Sin ámbito');
 
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp63.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            <?=__('ETAPA 7- Clasificación Retos / Votos / Ámbitos')?>
-        </h4>
-        <p class="fs22 green">
-            <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 7')?>
+    <header>
+        <?= $this->Html->image("breadp632.svg", ['class' => 'img-fluid']); ?>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container text-center">
+        <div>
+            <p class="title_first pb-4  text-center">
+                <?=__('Etapa 4- Clasificación Retos / Votos / Ámbitos')?>
+            </p>
+        </div>
+        <p class="h_green text-center">
+            <?=__('¡Enhorabuena exploradores! Hemos terminado la Etapa 4')?>
         </p>
         <p>
             <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
@@ -56,16 +62,18 @@ $ambits[-1]->ambit=__('Sin ámbito');
         </table>
 
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
             </div>
         </div>
+    
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar Etapa 4') ?></button>
+          </div>
+      <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Finalizar Etapa 7') ?></button>
-<?php } ?>
 </main>
 
 <script>

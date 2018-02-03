@@ -7,24 +7,29 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-        <h4>
-            Final del Viaje- Los 25 retos finalistas
-        </h4>
-        <p class="fs22 green">
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('Final del Viaje- Los 25 retos finalistas')?>
+        </p>
+    </div>
+    <section class="container">
+        <p class="h_green">
             <i class="fa fa-lightbulb-o"></i>
-            Selección final: Cada explorador selecciona los 5 retos más relevantes y novedosos entre los 25 finalistas (5 por etapa)
+            <?=__('Selección final: Cada explorador selecciona los 5 retos más relevantes y novedosos entre los 25 finalistas (5 por etapa)')?>
         </p>
         <ul>
             <li>
                 <i class="fa fa-comment-o"></i>
-                Este voto es personal.
+                <?=__('Este voto es personal')?>
             </li>
         </ul>
         <table class="reduced table table-striped text-center">
@@ -62,17 +67,20 @@ if ($admin) {
         <div id="hasvoted"></div>
         <div id="error"></div>
 
+
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Final del Viaje') ?></button>
+        <?php } else { ?>
+            <div class="text-right mt-5">
+                <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
+                    <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Final del Viaje') ?></button>
-    <?php } else { ?>
-        <div class="text-right mt-5">
-            <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
-                <i class="fa fa-check fa-2x"></i>
-            </a>
-        </div>
-    <?php } ?>
 </main>
 
 <script>

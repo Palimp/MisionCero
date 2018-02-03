@@ -17,12 +17,7 @@
         <p class="green">
             <i class="fa fa-lightbulb-o"></i>
             <?=__('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados por el equipo.')?>
-            <br> <?=__('Los equipos tienen 2 minutos')?>
         </p>
-
-        <div class="fs32 text-center">
-            <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
-        </div>
 
         <?php
         for ($i = 0; $i < count($comments); $i++) {
@@ -58,7 +53,7 @@
             ]);
             ?>
             <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                <i class="fa fa-check fa-2x"></i>
+                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
             </a>
             </form>
         </div>

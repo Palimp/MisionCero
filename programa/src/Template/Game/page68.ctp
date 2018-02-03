@@ -16,46 +16,42 @@ foreach ($retos as $reto) {
 }
 $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9', 'D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD'];
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('RESUMEN FINAL DE LA Binnakle Mission 0')?>
+        </p>
+    </div>
+    <section class="container">
 
         <div class="text-right">
-            <a href="#" class="mr-2"><i class="fa fa-download"></i></a>
+            <a href="#" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
             <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
                 <i class="fa fa-print"></i>
             </a>
-            <p>
+            <p class="fs14">
                 <?= __('Descarga o imprime el resumen de la partida') ?>
             </p>
         </div>
-        
-        <h4>
-            <?=__('RESUMEN FINAL DE LA Misión 0')?>
-        </h4>
-        <p class="fs22">
-            <?=__('Problemática inicial: '.$trouble)?>
-        </p>
-        <h2 class="text-center green">
-            <?= $trouble ?>
-        </h2>
+
         <article>
-
-
-
-            <p class="fs22">
+            <p class="h_green">
                 Ámbitos
             </p>
             <div id="accordion_a" role="tablist" aria-multiselectable="true">
                 <?php
                 for ($i = 0; $i <= 10; $i++) {
                     ?>
-                    <div class="card">
-                        <?php if (isset($retos[$i])) { ?>
+                    <?php if (isset($retos[$i])) { ?>
+                        <div class="card">
                             <div class="progressa" role="tab" id="h_a<?= $i ?>">
                                 <a data-toggle="collapse" data-parent="#accordion_a" href="#c_a<?= $i ?>" aria-expanded="true" aria-controls="c_a<?= $i ?>" class="w-100">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?= count($retos[$i]) * 100 / $max ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= count($retos[$i]) * 100 / $max ?>%; background-color: #<?= $colors[$i] ?>;">
@@ -79,21 +75,20 @@ $colors = ['D9E095', 'FEFBC5', 'E1F5EC', 'FEE4BD', 'FFE1FF', 'E1F5FF', 'FFD8D9',
 
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
 
                 <?php } ?>
             </div>
         </article>
+
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+          </div>
+      <?php } ?>
     </section>
-
-
-
-
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <?php } ?>
 </main>
 
 <script>

@@ -13,7 +13,7 @@ if ($admin) {
     <p class="title_first py-4">
       <?=__('Resultado de la partida') ?>
     </p>
-    <header>
+    <header class="py-2">
       <span>
         <?=__('Problemática inicial:')?>
       </span>
@@ -293,37 +293,6 @@ if ($admin) {
                 </a>
               </div>
               <div id="c_t1_ex" class="collapse" role="tabpanel" aria-labelledby="h_t1_ex">
-                <div class="card-block">
-                  <p>
-                    <?=__('¿Cómo………………………………?')?>
-                  </p>
-                  <p>
-                    <?=__('¿Cómo………………………………?')?>
-                  </p>
-                  <p>
-                    <?=__('¿Cómo………………………………?')?>
-                  </p>
-                  <p>
-                    <?=__('¿Cómo………………………………?')?>
-                  </p>
-                  <p>
-                    <?=__('¿Cómo………………………………?')?>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="progressa" role="tab" id="h_t2_ex">
-                <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t2_ex" aria-expanded="false" aria-controls="c_t2_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FEFBC5;">
-                    <p class="mb-0">
-                      <?=__('Normal')?>
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div id="c_t2_ex" class="collapse" role="tabpanel" aria-labelledby="h_t2_ex">
                 <div class="card-block">
                   <p>
                     <?=__('¿Cómo………………………………?')?>

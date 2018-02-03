@@ -15,40 +15,39 @@ foreach ($retos as $reto) {
     }
 }
 $colors=['D9E095','FEFBC5','E1F5EC','FEE4BD','FFE1FF','E1F5FF','FFD8D9','D9E095','FEFBC5','E1F5EC','FEE4BD'];
-$tipos=[__('Ambicioso'),__('Normal'),__('Quick win')]
+$tipos=[__('Ambicioso'),__('Quick win')]
 ?>
-
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('RESUMEN FINAL DE LA Binnakle Mission 0')?>
+        </p>
+    </div>
+    <section class="container">
 
         <div class="text-right">
-            <a href="#" class="mr-2"><i class="fa fa-download"></i></a>
-            <a href="#" data-toggle="tooltip" title="Haz click para imprimir">
-                <i class="fa fa-print"></i>
+            <a href="#" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
+            <a href="#" data-toggle="tooltip" title="<?=__('Haz click para imprimir')?>">
+              <i class="fa fa-print"></i>
             </a>
-            <p>
+            <p class="fs14">
                 <?= __('Descarga o imprime el resumen de la partida') ?>
             </p>
         </div>
-        <h4>
-            <?=__('RESUMEN FINAL DE LA Misión 0')?>
-        </h4>
-        <p class="fs22">
-            <?=__('Problemática inicial: '.$trouble)?>
-        </p>
-        <h2 class="text-center green">
-            <?= $trouble ?>
-        </h2>
         <article>
 
 
 
-            <p class="fs22">
-                Ámbitos
+            <p class="h_green">
+                Tipología
             </p>
             <div id="accordion_a" role="tablist" aria-multiselectable="true">
                 <?php
@@ -85,17 +84,15 @@ $tipos=[__('Ambicioso'),__('Normal'),__('Quick win')]
                 <?php } ?>
             </div>
         </article>
+
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+          </div>
+      <?php } ?>
     </section>
-
-
-
-
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <?php } ?>
 </main>
-
 <script>
     var page = 69;
     $(function () {
@@ -114,7 +111,7 @@ $tipos=[__('Ambicioso'),__('Normal'),__('Quick win')]
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page71"
+        "action" => "page69"
     ])
     ?>';
             });

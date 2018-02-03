@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <div>
         <p class="title_first pb-4">
-            <?= __('Etapa 2- Parada lúdica') ?>
+            <?= __('Parada lúdica 1') ?>
         </p>
     </div>
     <section class="container">
@@ -53,7 +53,7 @@ if ($admin) {
                             <div class="modal-content">
                                 <div class="modal-header align-items-start">
                                     <div class="example fs26">
-                                        <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                                        <i class="fa fa-file-text-o fa-3x example_ic align-top mr-3"></i>
                                         <div class="example_wrapper d-inline-block">
                                             <div class="example_inner text-left py-3 px-4">
                                                 <b><?= __('Pregunta') ?></b>
@@ -78,7 +78,7 @@ if ($admin) {
                             <div class="modal-content">
                                 <div class="modal-header align-items-start">
                                     <div class="example fs26">
-                                        <i class="fa fa-wpforms fa-3x example_ic align-top mr-3"></i>
+                                        <i class="fa fa-file-text-o fa-3x example_ic align-top mr-3"></i>
                                         <div class="example_wrapper d-inline-block">
                                             <div class="example_inner text-left py-3 px-4">
                                                 <b><?= __('Solución') ?></b>
@@ -111,7 +111,7 @@ if ($admin) {
         <?php if ($admin) { ?>
             <div class="my-4 text-right">
                 <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Parada lúdica 1') ?></button>
                 <button  id="otro" type="button" class="btn btn-primary"><?= __('Cambiar de vídeo') ?></button>
             </div>
         <?php } ?>

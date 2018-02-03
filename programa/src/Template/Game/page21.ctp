@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <section class="container text-center">
         <p class="title_first pb-4">
-            <?=__('Etapa 3- Preguntas básicas')?>
+            <?=__('Etapa 2- Preguntas básicas')?>
         </p>
         <p class="h_green">
             <?=__('¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!')?>
@@ -54,7 +54,7 @@ if ($admin) {
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 3') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
           </div>
       <?php } ?>
     </section>

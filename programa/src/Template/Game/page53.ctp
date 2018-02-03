@@ -13,87 +13,72 @@ shuffle($answers);
 $solution=$puzzle->answer1;
 
 ?>
-
-<!-- ** pag p15 ** -->
-<main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
+<main class="text-center">
+    <header>
+        <?= $this->Html->image("breadp45.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="row no-gutters mb-5">
-            <div class="col-12 col-md-auto">
-                <p class="fs22">
-                    <?= __('Cada equipo tendrá que leer el enigma') ?>
-                </p>
-            </div>
+    <section class="container">
+        <p class="h_green mt-3">
+            <?= __('Cada equipo tendrá que leer el enigma') ?>
+        </p>
 
-            <div class="col fs32">
-                <div class="d-flex align-items-end flex-column">
-                    <div>
-                        <h1><time id="clock"><?= $time ?></time></h1>
-                        <i class="fa fa-clock-o"></i>
-                        <?php
-                        if ($admin) {
-                            if ($stop) {
-                                echo $this->Form->create('Begin', array(
-                                    'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
-                                ));
-                                ?>
-                                <input type="hidden" name="stop" value="1">
-                                <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
-                                <?php
-                            } else {
-                                echo $this->Form->create('Begin', array(
-                                    'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
-                                ));
-                                ?>
-                                <input type="hidden" name="start" value="1">
-                                <button class="btn btn-primary"><?= __('Reanudar tiempo') ?></button>
-                                <?php
-                            }
-                        }
-                        ?>
+        <div>
+            <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
+            <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
+            <?php
+            echo $this->Form->create('Begin', array(
+                'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+            ));
+            ?>
+            <input type="hidden" name="time" value="30">
+            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para añadir tiempo') ?>" class="d-inline-block btn btn-primary btn-red">
+                <i class="fa fa-plus"></i><time> 00:30</time>
+            </a>
+            </form>
+            <?php
+            if ($stop) {
+                echo $this->Form->create('Begin', array(
+                    'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+                ));
+                ?>
+                <input type="hidden" name="stop" value="1">
+                <button class="btn btn-primary"><?= __('Parar tiempo') ?></button>
+                <?php
+            } else {
+                echo $this->Form->create('Begin', array(
+                    'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+                ));
+                ?>
+                <input type="hidden" name="start" value="1">
+                <button class="btn btn-primary"><?= __('Activar tiempo') ?></button>
+            <?php } ?>
 
-                        </form>
-                    </div>
-                    <div>
+            </form>
+            <button id="finalizar" class="btn btn-primary"><?= __('Finalizar tiempo') ?></button>
 
-                        <?php
-                        if ($admin) {
-
-                            echo $this->Form->create('Begin', array(
-                                'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
-                            ));
-                            ?>
-                            <input type="hidden" name="time" value="30">
-                            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para añadir tiempo') ?>" class="d-inline-block grey_link">
-                                <i class="fa fa-plus"></i>
-                            </a>
-                            </form>
-                            <?php
-                            echo $this->Form->create('Begin', array(
-                                'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'
-                            ));
-                            ?>
-                            <input type="hidden" name="time" value="-30">
-                            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= __('Haz click para restar tiempo') ?>" class="d-inline-block grey_link">
-                                <i class="fa fa-minus"></i>
-                            </a>
-                            </form>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
+            <?php
+            echo $this->Form->create('Begin', array(
+                'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
+            ));
+            ?>
+            <input type="hidden" name="time" value="-30">
+            <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block btn btn-primary btn-green">
+                <i class="fa fa-minus"></i><time> 00:30</time>
+            </a>
+            </form>
         </div>
+
         <p>
             <?= __('El primer equipo en marcar la solución correcta gana Bikles') ?>
             </br>
             </br>
             <b><?= __('Enigma') ?></b>
             </br>
-            <?= __($trouble) ?>
+            <div class="title_first">
+                <?= __($trouble) ?>
+            </div>
         </p>
-        <table class="reduced table table-striped">
+        <table class="reduced table table-striped text-left">
             <tbody>
                 <?php
                 for ($i = 0; $i < count($answers); $i++) {
@@ -115,21 +100,23 @@ $solution=$puzzle->answer1;
         </table>
          <p id="error"></p>
         <div class="text-center mt-5">
-            <div class="alert alert-danger d-inline-block" role="alert">
+            <div class="alert d-inline-block" role="alert">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>
+        <?php if ($admin) { ?>
+              <div class="my-4 text-right">
+                  <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                  <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Acabar fase retos') ?></button>
+              </div>
+            <?php
+        } else if (!isset($voted)) {
+            ?>
+            <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
+            </a>
+        <?php } ?>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Acabar fase retos') ?></button>
-        <?php
-    } else if (!isset($voted)) {
-        ?>
-        <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-            <i class="fa fa-check fa-2x"></i>
-        </a>
-    <?php } ?>
 </main>
 
 <script>

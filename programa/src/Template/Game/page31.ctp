@@ -7,14 +7,14 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main>
-    <section style="background-color: #2b2b2b;">
+<main style="background-color: #2b2b2b;">
+    <section>
         <?= $this->Html->image("imgp48.svg", ['class' => 'img-fluid py-20']); ?>
 
         <?php if ($admin) { ?>
             <div class="py-4 text-right pr-4">
                 <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Etapa 4') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar Parada lúdica 2') ?></button>
             </div>
         <?php } ?>
     </section>

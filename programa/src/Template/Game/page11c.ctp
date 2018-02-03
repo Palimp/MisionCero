@@ -10,7 +10,7 @@
         <?= $this->Html->image("breadp151.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section class="container">
-        <p class="h_green">
+        <p class="h_green mt-5">
             <?=__('Selección de Retos / Ámbitos de tu equipo:')?>
         </p>
         <?php
@@ -20,7 +20,7 @@
             
             ?>
             <div class="striped rounded mb-2">
-               Cómo <?= $reto?> - <span class="green"><?= $ambito?></span>
+               Cómo <?= $reto?> - <b class="green"><?= $ambito?></b>
             </div>
 
           

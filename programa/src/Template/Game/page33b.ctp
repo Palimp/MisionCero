@@ -81,7 +81,7 @@
                   <div class="modal-body">
                     <p>
                         <b>
-                            <?=__('Para esta Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
+                            <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
                         </b>
                     </p>
                     <div class="text-center">

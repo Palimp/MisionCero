@@ -19,10 +19,6 @@
             <?= __('Selección de Retos / Ámbitos de tu equipo:') ?>
         </p>
 
-        <div class="fs32 text-center">
-            <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
-        </div>
-
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             ?>
@@ -58,7 +54,7 @@
             ]);
             ?>
             <a href="#" id="sendretos" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block">
-                <i class="fa fa-check fa-2x"></i>
+                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
             </a>
             </form>
         </div>

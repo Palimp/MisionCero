@@ -5,51 +5,38 @@
  */
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
-        <?= $this->Html->image("breadp63.svg", ['class' => 'img-fluid']); ?>
+    <header>
+        <?= $this->Html->image("breadp631.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <section>
-        <div class="row no-gutters mb-5">
-            <div class="col-12 col-md-auto">
-                <h4>
-                    <?= __('Problemática: ' . $trouble) ?>
-                </h4>
-                <p class="fs22 green">
-                    <i class="fa fa-lightbulb-o"></i>
-                    <?= __('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados.') ?><br>
-                    <?= __('Los equipos tienen 2 minutos') ?>
-                </p>
-            </div>
-            <div class="col fs32">
-                <div class="d-flex align-items-end flex-column">
-                    <div>
-                        <h1><time id="clock"><?= $time ?></time> <i class="fa fa-clock-o"></i></h1>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <section class="container">
+        <p class="h_green">
+            <i class="fa fa-lightbulb-o"></i>
+            <?= __('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados.') ?>
+        </p>
         <?php
         for ($i = 0; $i < count($comments); $i++) {
             ?>
-            <p class="fs22">
-                <?= $comments[$i]['question'] ?>
-            </p>
+            <div class="striped rounded mb-2">
+                <b>
+                    <?= $comments[$i]['question'] ?>
+                </b>
 
-            <input type="hidden" id="reto<?= $i ?>" value="<?= $comments[$i]['id'] ?>">
-            <b>
-                Ámbitos
-            </b>
-            <div class="fs14 mr-1">
-                <?php foreach ($ambits as $ambit) { ?>
-                    <label class="custom-control custom-radio">
-                        <input name="radio<?= $i ?>" type="radio" class="custom-control-input" value="<?= $ambit->id ?>">
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description"><?= $ambit->ambit ?></span>
-                    </label>
-                <?php } ?>
+                <input type="hidden" id="reto<?= $i ?>" value="<?= $comments[$i]['id'] ?>">
+                <div class="fs14">
+                    <?php foreach ($ambits as $ambit) { ?>
+                        <label class="custom-control custom-radio">
+                            <input name="radio<?= $i ?>" type="radio" class="custom-control-input" value="<?= $ambit->id ?>">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description"><?= $ambit->ambit ?></span>
+                        </label>
+                    <?php } ?>
+                </div>
 
             </div>
         <?php } ?>
@@ -67,7 +54,7 @@
             ]);
             ?>
             <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                <i class="fa fa-check fa-2x"></i>
+                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
             </a>
             </form>
         </div>

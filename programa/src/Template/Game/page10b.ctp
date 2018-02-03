@@ -45,7 +45,7 @@ if ($admin) {
         <?php } ?>
         
         
-        <div class="col-2">
+        <div>
             <!-- Button trigger modal_ex2 -->
             <div class="d-inline">
                 <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">
@@ -152,10 +152,6 @@ if ($admin) {
             </div>
         </div>
     </section>
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Continuar Etapa 1') ?></button>
-    <?php } ?>
 </main>
 
 <script>

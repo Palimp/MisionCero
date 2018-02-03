@@ -52,19 +52,19 @@
         <table class="table table-striped">
             <thead class="text-center">
                 <tr>
-                    <th class="fs32 fw100" style="position: relative;">
+                    <th class="fs22 fw100" style="position: relative;">
                         <span>1</span>
                         </br>
-                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                        <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                         <?= __('INTERACCIONES') ?>
                     </th>
-                    <th class="fs32 fw100" style="position: relative;">
+                    <th class="fs22 fw100" style="position: relative;">
                         <span>2</span>
                         </br>
-                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                        <i class="fa fa-chfa-2xevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                         <?= __('PAINPOINTS') ?>
                     </th>
-                    <th class="green fs32 fw100" style="position: relative;">
+                    <th class="green fs22 fw100" style="position: relative;">
                         <span>3</span>
                         </br>
                         <?= __('RETOS') ?>
@@ -122,7 +122,7 @@
             <div class="col">
                 <!-- Button trigger modal_ex5 -->
                 <a href="#" data-toggle="modal" data-target="#modal_ex5" class="grey_link">
-                    <i class="fa fa-wpforms fa-2x example_ic mr-3 pull-left"></i>
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
                     <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
                     </p>
                 </a>
@@ -169,7 +169,7 @@
                         <div class="modal-body">
                             <p>
                                 <b>
-                                    <?=__('Para la Etapa 7, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
+                                    <?=__('Para la Etapa 4, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
                                 </b>
                             </p>
 
@@ -177,19 +177,19 @@
                             <table class="table table-striped">
                                <thead class="text-center">
                                   <tr>
-                                     <th class="fs32 fw100 w30" style="position: relative;">
+                                     <th class="fs22 fw100 w30" style="position: relative;">
                                         <span><?=__('1') ?></span>
                                         <br>
-                                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                                        <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                                         <?=__('INTERACCIONES') ?>
                                      </th>
-                                     <th class="fs32 fw100 w30" style="position: relative;">
+                                     <th class="fs22 fw100 w30" style="position: relative;">
                                         <span><?=__('2') ?></span>
                                         <br>
-                                        <i class="fa fa-chevron-right fa-2x" style="right: -1.6rem; position: absolute;  bottom: 1.6rem;"></i>
+                                        <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
                                         <?=__('PAINPOINTS') ?>
                                      </th>
-                                     <th class="green fs32 fw100 w30" style="position: relative;">
+                                     <th class="green fs22 fw100 w30" style="position: relative;">
                                         <span><?=__('3') ?></span>
                                         <br>
                                         <?=__('RETOS') ?>

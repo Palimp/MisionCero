@@ -7,9 +7,9 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main>
-    <div class="text-center mb-5">
-        <h4 class="title_alt"><?=__('Misión 0 -¿Por qué?')?></h4>
+<main style="background-color: #e3e3e3;">
+    <div class="text-center">
+        <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
     </div>
     <section class="container">
         <div class="fs22 text-center">

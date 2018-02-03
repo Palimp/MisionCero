@@ -7,13 +7,16 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-
-<!-- ** pag p15 ** -->
-<main>
-    <section>
-        <p class="fs22">
-            <?=__('Ranking de Bikles final')?>
-        </p>
+<main style="background-color: #e3e3e3;">
+    <div class="title_alt text-center">
+        <?=__('Problemática: '.$trouble)?>
+    </div>
+    <section class="container text-center">
+        <div>
+            <p class="title_first py-4">
+                <?=__('Ranking de Bikles final')?>
+            </p>
+        </div>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
@@ -68,12 +71,13 @@ if ($admin) {
         </table>
 
 
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+          </div>
+      <?php } ?>
     </section>
-</section>
-<?php if ($admin) { ?>
-    <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-    <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-<?php } ?>
 </main>
 
 <script>

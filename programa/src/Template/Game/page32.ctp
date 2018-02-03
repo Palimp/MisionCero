@@ -1,4 +1,5 @@
 <?php
+<?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
@@ -20,7 +21,7 @@ if ($admin) {
     <section class="container text-center">
         <div>
             <p class="title_first pb-4">
-                <?=__('Etapa 5- Actores')?>                
+                <?=__('Etapa 3- Actores')?>                
             </p>
         </div>
         <p class="h_green">
@@ -79,7 +80,7 @@ if ($admin) {
               <div class="modal-body">
                 <p>
                     <b>
-                        <?=__('Para esta Etapa 5, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
+                        <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
                     </b>
                 </p>
                 <div class="text-center">
@@ -184,7 +185,7 @@ if ($admin) {
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar a Etapa 5') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Iniciar a Etapa 3') ?></button>
           </div>
       <?php } ?>
     </section>

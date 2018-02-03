@@ -88,12 +88,12 @@ $ambits[-1]->ambit = __('Sin ámbito');
         <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 3') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
           </div>
         <?php } else { ?>
             <div class="text-right mt-5">
                 <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
-                    <i class="fa fa-check fa-2x"></i>
+                    <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
                 </a>
             </div>
         <?php } ?>

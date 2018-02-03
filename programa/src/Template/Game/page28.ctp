@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <div>
         <p class="title_first pb-4">
-            <?= __('Etapa 4- Parada lúdica') ?>
+            <?= __('Parada lúdica 2') ?>
         </p>
     </div>
     <section class="container">

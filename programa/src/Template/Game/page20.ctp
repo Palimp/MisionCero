@@ -20,7 +20,7 @@ if ($admin) {
     </div>
     <section class="container text-center">
         <p class="title_first pb-4">
-            <?=__('Etapa 3- Preguntas básicas')?>
+            <?=__('Etapa 2- Preguntas básicas')?>
         </p>
         <p class="h_green">
             <?=__('Retos basados en preguntas básicas')?>
@@ -101,7 +101,7 @@ if ($admin) {
                             <div class="modal-body">
                                 <p>
                                     <b>
-                                        <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('“retos basados en preguntas básicas”')?></i> <?=__(' podrían ser:')?> 
+                                        <?=__('Para esta Etapa 2, algunos ejemplos de ')?><i><?=__('“retos basados en preguntas básicas”')?></i> <?=__(' podrían ser:')?> 
                                     </b>
                                 </p>
                                 <div class="text-center">
@@ -310,7 +310,7 @@ if ($admin) {
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 3') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
           </div>
       <?php } ?>
     </section>

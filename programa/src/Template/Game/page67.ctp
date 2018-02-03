@@ -10,39 +10,37 @@ $ambits[-1] = new \stdClass();
 $ambits[-1]->ambit = __('Sin ámbito');
 ?>
 
-<!-- ** pag p15 ** -->
 <main>
-    <header class="text-center m-5 mb-10">
+    <header>
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
-    </header> 
-    <section>
-
+    </header>
+    <div class="title_wrap text-center">
+      <span class="title">
+        <?=__('Problemática: '.$trouble)?>
+      </span>
+    </div>
+    <div class="text-center">
+        <p class="title_first pb-4">
+            <?=__('RESUMEN FINAL DE LA Binnakle Mission 0')?>
+        </p>
+    </div>
+    <section class="container">
         <div class="text-right">
             
-            <a href="javascript:save()" class="mr-2"><i class="fa fa-download"></i></a>
+            <a href="javascript:save()" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
             <a href="javascript:window.print()" data-toggle="tooltip" title="Haz click para imprimir">
                 <i class="fa fa-print"></i>
             </a>
-            <p>
+            <p class="fs14">
                 <?= __('Descarga o imprime el resumen de la partida') ?>
             </p>
         </div>
-
-        <h4>
-            <?=__('RESUMEN FINAL DE LA Misión 0')?>
-        </h4>
-        <p class="fs22">
-            <?=__('Problemática inicial: '.$trouble)?>
-        </p>
-        <h2 class="text-center green">
-            <?= $trouble ?>
-        </h2>
-        <p class="fs22 mt-5">
+        <p class="h_green">
             <?= __('Tabla resumen de los retos') ?>
         </p>
         <article class="row mt-2">
             <div class="col mr-4 pz-4 t5_p">
-                <h4 class><?= __('TOP 5 RETOS PRIORITARIOS') ?></h4>
+                <h5 class><?= __('TOP 5 RETOS PRIORITARIOS') ?></h5>
                 <?php
                 $cont = 0;
                 $ant = 0;
@@ -60,7 +58,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
                 ?>
             </div>
             <div class="col ml-4 pz-4 t5_qw">
-                <h4><?= __('TOP 5 RETOS OPERATIVOS (QUICK WINS)') ?></h4>
+                <h5><?= __('TOP 5 RETOS OPERATIVOS (QUICK WINS)') ?></h5>
                 <?php
                 $cont = 0;
                 $ant = 0;
@@ -78,16 +76,14 @@ $ambits[-1]->ambit = __('Sin ámbito');
                 ?>
             </div>
         </article>
+
+      <?php if ($admin) { ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+          </div>
+      <?php } ?>
     </section>
-
-
-
-
-
-    <?php if ($admin) { ?>
-        <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>
-        <button  id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
-    <?php } ?>
 </main>
 
 <script>
