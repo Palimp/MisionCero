@@ -98,7 +98,7 @@ class CodeComponent extends Component {
     }
 
     public function getVideoId($id) {
-        $games = TableRegistry::get('Puzzles');
+        $games = TableRegistry::get('Videos');
         return $games->get($id);
     }
 

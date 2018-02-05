@@ -253,9 +253,8 @@ class GameController extends AppController {
                         $this->set('teams', $teams);
                     }
                     if ($sesion['page'] == 16) {
-                        $url = $sesion['ludico'];
-                        $url = split("$", $url);
-                        $this->set('url', $url[0]);
+                        $video = $this->Code->getVideoId($sesion['ludico']);
+                        $this->set('url', $video->url);
                     }
                     if ($sesion['page'] == 161) {
                         $video = $this->Code->getVideoId($sesion['ludico']);
@@ -812,10 +811,11 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $video = $this->Code->getVideoId($sesion['ludico']);
+        
         $this->Code->setPage($id, 161);
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
-        $this->set('url', $video['url']);
+        $this->set('url', $video['url2']);
         $this->set('texto', $video['texto']);
         $this->set('solucion', $video['solucion']);
     }
