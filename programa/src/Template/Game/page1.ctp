@@ -12,18 +12,13 @@ if ($admin) {
         <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
     </div>
     <section class="container">
-        <div class="fs22 text-center">
-            <?=__('¡Ganarán Bikles los equipos con más votos!')?>
-        </div>
-        <div class="text-center mb-4">
-            <b>
-                <?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?>
-            </b>
+        <div class="fs22 text-center mb-4">
+            <?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?>
         </div>
         <div class="row">
             <div class="col">
                 <p><?=__('Por ejemplo:')?></p>
-                <ul class="list-green" style="line-height: 3rem;">
+                <ul>
                     <li>
                         <?=__('Tengo un problema de comunicación interna')?>
                     </li>
@@ -50,12 +45,14 @@ if ($admin) {
                     </li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col-4">
                 <?= $this->Html->image("img1.jpg", ['class' => 'img-fluid']); ?>
             </div>
         </div>
         <?php if ($admin) { ?>
-            <button style="display:none" id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+            <div class="my-4 text-right">
+                <button style="display:none" id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+            </div>
         <?php } ?>
     </section>
 </main>

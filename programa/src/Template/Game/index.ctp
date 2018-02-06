@@ -7,58 +7,55 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main class="text-center">
-    <header>
-        <?= $this->Html->image('breadp12.svg', ['class' => 'img-fluid']); ?>
-    </header>
-    <section>
-        <h4><?=__('Misión 0 -¿Por qué?')?></h4>
-        <div class="alert alert-success d-inline-block">
-            ¡Ganarán Bikles los equipos con más votos!
-        </div>
-        <div class="fs22 alert alert-success d-inline-block">
+<main style="background-color: #e3e3e3;">
+    <div class="text-center">
+        <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
+    </div>
+    <section class="container">
+        <div class="fs22 text-center mb-4">
             <?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?>
         </div>
-        <?= $this->Html->image("img1.jpg", ['class' => 'float-right']); ?>
-        
-        <div>
-            <p><?=__('Por ejemplo:')?></p>
-            <ul style="line-height: 3rem;">
-                <li>
-                    <?=__('Tengo un problema de comunicación interna')?>
-                </li>
-                <li>
-                    <?=__('Tengo que integrar a los millenials')?>
-                </li>
-                <li>
-                    <?=__('Quiero reducir costes')?>
-                </li>
-                <li>
-                    <?=__('Quiero relanzar mi producto')?>
-                </li>
-                <li>
-                    <?=__('Tengo que optimizar mi logística')?>
-                </li>
-                <li>
-                    <?=__('Quiero impulsar la transformación digital')?>
-                </li>
-                <li>
-                    <?=__('Quiero entrar en un nuevo mercado')?>
-                </li>
-                <li>
-                    <?=__('Tengo que adaptar la estructura de ventas al nuevo entorno')?>
-                </li>
-                <li>
-                    …
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col">
+                <p><?=__('Por ejemplo:')?></p>
+                <ul>
+                    <li>
+                        <?=__('Tengo un problema de comunicación interna')?>
+                    </li>
+                    <li>
+                        <?=__('Tengo que integrar a los millenials')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero reducir costes')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero relanzar mi producto')?>
+                    </li>
+                    <li>
+                        <?=__('Tengo que optimizar mi logística')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero impulsar la transformación digital')?>
+                    </li>
+                    <li>
+                        <?=__('Quiero entrar en un nuevo mercado')?>
+                    </li>
+                    <li>
+                        <?=__('Tengo que adaptar la estructura de ventas al nuevo entorno')?>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <?= $this->Html->image("img1.jpg", ['class' => 'img-fluid']); ?>
+            </div>
         </div>
         <?php if ($admin) { ?>
-            <button style="display:none" id="siguiente" type="button" class="btn btn-primary mb-10"><?= __('Siguiente') ?></button>
+            <div class="my-4 text-right">
+                <button style="display:none" id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+            </div>
         <?php } ?>
     </section>
 </main>
-
 <script>
     var page = 1;
 <?php if ($admin) { ?>

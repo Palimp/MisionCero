@@ -8,11 +8,11 @@ if ($admin) {
 }
 ?>
 <main style="background-color: #e3e3e3;">
-    <p class="fs22 text-center py-4">
-        <?=__('Binnakle Mission 0 es el serious game que permite convertir una problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas soluciones')?>
-    </p>
     <div class="text-center">
-        <div class="alert d-inline-block" role="alert">
+        <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
+    </div>
+    <section class="container">
+        <div class="fs22 mb-4 py-4">
             <img src="/img/lupa.svg" class="pull-left mr-3" alt="">
             <b>
                 <?=__('¿Cómo?')?>
@@ -20,10 +20,11 @@ if ($admin) {
             </br>
             <?=__('Con una metodología que nos permite enfocar la problemática desde sus diferentes puntos de vista.')?>
         </div>
-    </div>
-    <section class="container">
+        <div class="fs22 mb-4">
+            <?=__('Binnakle Mission 0 es el serious game que permite convertir una problemática inicial en ')?><b><?=__('retos concretos, ')?></b><?=__('novedosos y diversos, para optimizar la búsqueda posterior de nuevas soluciones')?>
+        </div>
 
-        <div class="py-5 Xpy-20 text-center">
+        <div class="py-5 Xpy-20">
 
             <?= $this->Html->image("imgp7.gif", ['class' => 'img-fluid']); ?>
 

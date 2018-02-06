@@ -7,14 +7,17 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
- <main>
-      <p class="title_first py-4 text-center">
-        <?=__('La metodología') ?>
-      </p>
-      <div>
+<main style="background-color: #e3e3e3;">
+    <div class="text-center">
+        <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
+    </div>
+      <div style="margin: -0.5em;">
           <?= $this->Html->image("breadp12.svg", ['class' => 'img-fluid']); ?>
       </div>
-      <section class="container pt-4">
+    <section class="container">
+      <div class="fs22 text-center mb-4 mt-4">
+        <?=__('Metodología') ?>
+      </div>
         <div class="fs22">
             <ul class="circle">
               <li>

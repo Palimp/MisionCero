@@ -54,9 +54,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
     </head>
-    <body class="home">
+    <body class="home container">
         <main>
-            <header class="text-center my-4">
+            <header class="text-center py-4">
                 <div>
                     <?=__('BIENVENIDOS A')?>
                 </div>
@@ -77,7 +77,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 ?>
                 <div class="form-group">
                     <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-5">
                             <input id="code" name="code" type="password" class="form-control fs26" aria-describedby="codeHelp" placeholder="Introduce el código">
                         </div>
                         <!-- <div>
@@ -171,9 +171,9 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                                     </li>
                                 </ul>
                                 <br>
-                                <p>Precio de licencia para una partida de Misión 0: 500€ (+ IVA en España)</p>
+                                <p>Precio de licencia para una partida de Misión 0: <b>500€ (+ IVA en España)</b></p>
                                 <br>
-                                <p>
+                                <p class="green">
                                     Para comprar tu licencia y obtener tu código:
                                 </p>
                                     

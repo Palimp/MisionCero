@@ -8,13 +8,16 @@ if ($admin) {
 }
 ?>
 
-<main>
-    <p class="title_first py-4 text-center">
-        <?= __('Si siempre observamos nuestro problema desde el mismo punto de vista…')?>
-        <br>
-        <?= __('…¡podemos perdernos soluciones simples y nuevas!')?>
-    </p>
+<main style="background-color: #e3e3e3;">
+    <div class="text-center">
+        <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
+    </div>
     <section class="container">
+        <div class="fs22 text-center mb-4">
+            <?= __('Si siempre observamos nuestro problema desde el mismo punto de vista…')?>
+            <br>
+            <?= __('…¡podemos perdernos soluciones simples y nuevas!')?>
+            </div>
         <div class="text-center">
 
             <?= $this->Html->image("img4.jpg", ['class' => 'img-fluid']);?>

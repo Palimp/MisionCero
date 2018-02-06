@@ -40,7 +40,7 @@ $fila = '<div class="row bloque">
 <main>
     <section style="background-color: #E3E3E3;">
         <div class="title_band text-center py-2">
-            <?= __('¡Competiremos por equipos!') ?>0
+            <?= __('¡Competiremos por equipos!') ?>
         </div>
         <div class="container py-5">
             <ol class="list-numbered">

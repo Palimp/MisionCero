@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 ?>
-<nav id="mainNav" class="navbar" style="position: absolute; top: 0.5rem; right: 1rem;  z-index: 50;">
+<nav id="mainNav" class="navbar" style="position: absolute; top: 4px; right: 1rem;  z-index: 50;">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div>
         <div class="float-right">

@@ -8,36 +8,22 @@ if ($admin) {
 }
 ?>
 
-<main>
-  <div class="text-center">
-    <p class="title_first py-4">
-      <?=__('Resultado de la partida') ?>
-    </p>
-    <header class="py-2">
-      <span>
-        <?=__('Problemática inicial:')?>
-      </span>
-    </header>
-    <div class="title_wrap">
-      <span class="title">
-        <?=__('¿Cómo………………………………?')?>
-      </span>
+<main style="background-color: #e3e3e3;">
+    <div class="text-center">
+        <h4 class="title_alt"><?=__('Binnakle Mission 0 -Resultado de la partida') ?></h4>
     </div>
   </div>
 
   <section class="container">
-      <div class="text-right">
-        <a href="#" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
-        <a href="#" data-toggle="tooltip" title="<?=__('Haz click para imprimir')?>">
-          <i class="fa fa-print"></i>
-        </a>          
-      </div>
-      <p class="fs22">
+      <p class="fs22 text-center">
+        <?=__('Problemática inicial: ¿Cómo………………………………?')?>
+      </p>
+      <p class="fs22 text-center">
         <?=__('Tabla resumen de los retos')?>
       </p>
-      <article class="row mt-2">
+      <article class="row">
         <div class="col mr-4 pz-4 t5_p">
-          <h4 class><?=__('TOP 5 RETOS PRIORITARIOS')?></h4>
+          <h5 class><?=__('TOP 5 RETOS PRIORITARIOS')?></h5>
           <p><?=__('¿Cómo………………………………?')?></p>
           <p><?=__('¿Cómo………………………………?')?></p>
           <p><?=__('¿Cómo………………………………?')?></p>
@@ -45,7 +31,7 @@ if ($admin) {
           <p><?=__('¿Cómo………………………………?')?></p>
         </div>
         <div class="col ml-4 pz-4 t5_qw">
-          <h4><?=__('TOP 5 RETOS OPERATIVOS (QUICK WINS)')?></h4>
+          <h5><?=__('TOP 5 RETOS OPERATIVOS (QUICK WINS)')?></h5>
           <p><?=__('¿Cómo………………………………?')?></p>
           <p><?=__('¿Cómo………………………………?')?></p>
           <p><?=__('¿Cómo………………………………?')?></p>
@@ -53,16 +39,16 @@ if ($admin) {
           <p><?=__('¿Cómo………………………………?')?></p>
         </div>
       </article>
-      <article class="row mt-5">
+      <article class="row mt-3">
         <div class="col">
           <p class="fs22">
-            <?=__('Ámbitos')?>
+            <?=__('ÁMBITOS')?>
           </p>
           <div id="accordion_a_ex" role="tablist" aria-multiselectable="true">
             <div class="card">
               <div class="progressa" role="tab" id="h_a1_ex">
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a1_ex" aria-expanded="true" aria-controls="c_a1_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #D9E095;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%; background-color: #ebfa94;">
                     <p class="mb-0">
                       <?=__('Proceso interno')?>
                     </p>
@@ -93,7 +79,7 @@ if ($admin) {
             <div class="card">
               <div class="progressa" role="tab" id="h_a2_ex">
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a2_ex" aria-expanded="false" aria-controls="c_a2_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FEFBC5;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%; background-color: #f3ed48;">
                     <p class="mb-0">
                       <?=__('Recursos')?>
                     </p>
@@ -124,7 +110,7 @@ if ($admin) {
             <div class="card">
               <div class="progressa" role="tab" id="h_a3_ex">
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a3_ex" aria-expanded="false" aria-controls="c_a3_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #E1F5EC;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%; background-color: #f2e500;">
                     <p class="mb-0">
                       <?=__('Comercial')?>
                     </p>
@@ -155,7 +141,7 @@ if ($admin) {
             <div class="card">
               <div class="progressa" role="tab" id="h_a4_ex">
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a4_ex" aria-expanded="false" aria-controls="c_a4_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FEE4BD;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%; background-color: #e5da00;">
                     <p class="mb-0">
                       <?=__('Comunicación')?>
                     </p>
@@ -186,7 +172,7 @@ if ($admin) {
             <div class="card">
               <div class="progressa" role="tab" id="h_a5_ex">
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a5_ex" aria-expanded="false" aria-controls="c_a5_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FFE1FF;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%; background-color: #d1d600;">
                     <p class="mb-0">
                       <?=__('Organización')?>
                     </p>
@@ -217,7 +203,7 @@ if ($admin) {
             <div class="card">
               <div class="progressa" role="tab" id="h_a6_ex">
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a6_ex" aria-expanded="false" aria-controls="c_a6_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #E1F5FF;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%; background-color: #bcca00;">
                     <p class="mb-0">
                       <?=__('Supply')?>
                     </p>
@@ -248,7 +234,7 @@ if ($admin) {
             <div class="card">
               <div class="progressa" role="tab" id="h_a7_ex">
                 <a data-toggle="collapse" data-parent="#accordion_a_ex" href="#c_a7_ex" aria-expanded="false" aria-controls="c_a7_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #FFD8D9;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%; background-color: #a1c41f;">
                     <p class="mb-0">
                       <?=__('Otros')?>
                     </p>
@@ -279,13 +265,13 @@ if ($admin) {
         </div>
         <div class="col">
           <p class="fs22">
-            <?=__('Tipologia')?>
+            <?=__('TIPOLOGÍA')?>
           </p>
           <div id="accordion_t_ex" role="tablist" aria-multiselectable="true">
             <div class="card">
               <div class="progressa" role="tab" id="h_t1_ex">
                 <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t1_ex" aria-expanded="true" aria-controls="c_t1_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #D9E095;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%; background-color: #ebfa94;">
                     <p class="mb-0">
                       <?=__('Ambicioso')?>
                     </p>
@@ -316,7 +302,7 @@ if ($admin) {
             <div class="card">
               <div class="progressa" role="tab" id="h_t3_ex">
                 <a data-toggle="collapse" data-parent="#accordion_t_ex" href="#c_t3_ex" aria-expanded="false" aria-controls="c_t3_ex" class="w-100">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #E1F5EC;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; background-color: #f2e500;">
                     <p class="mb-0">
                       <?=__('Quick Win')?>
                     </p>
