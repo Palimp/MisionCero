@@ -12,21 +12,17 @@ shuffle($answers);
 $solution = $practical->answer4;
 ?>
 
-<main class="text-center">
+<main>
     <header>
         <?= $this->Html->image("breadp45.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
     <section class="container">
         <div>
-            <p class="title_first py-4">
+            <p class="title_first mt-3 pb-2 text-center">
                 <?= __('Parada lúdica 2') ?>
             </p>
         </div>
+        <p><?=__($trouble)?></p>
         <table class="reduced table table-striped">
             <tbody>
                 <?php
@@ -47,7 +43,10 @@ $solution = $practical->answer4;
 
             </tbody>
         </table>
-        <p id="error"></p>
+        <div class="text-center">
+            <div id="sended"></div>
+            <div id="error"></div>
+        </div>
         <div class="my-4 text-right">
             <?php if ($admin) { ?>
                   <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
@@ -99,10 +98,11 @@ $solution = $practical->answer4;
     ?>", {'bikles': voto}, function (data, status) {
                     $(':radio').attr('disabled', 'disabled');
                     var textos = ['<?= __('Con este reto va a ser muy difícil alcanzar el objetivo planteado… ¡con las preguntas de siempre obtendremos las respuestas de siempre!<br/>Tu equipo pierde -1 Bikle') ?>',
-                        '<?= __('Bueno….. Los equipos que no arriesgan, ni ganan ni pierden  <br>Tu equipo no gana ni pierde bikles') ?>',
-                        '<?= __('Bien… aunque el reto seleccionado no es el mejor reto, es bastante innovador!<br/>Tu equipo ha ganado: 1 Bikle') ?>',
-                        '<?= __('¡Felicidades! El reto seleccionado es el que mejor va a ayudar a cumplir con el objetivo! <br/>Tu equipo ha ganado: 2 Bikles') ?>'];
-                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>Bikles: ' + textos[parseInt(voto) + 1] + '<br/>La solución es:<br/><?= $solution ?>');
+                        '<?= __('Bueno… Los equipos que no arriesgan, ni ganan ni pierden') ?><br/><div class="alert alert_bikles float-right text-center m-3" role="alert"><img src="/img/bikles.png" class="mb-1 img-fluid" alt=""></br><?= __('Tu equipo no gana ni pierde bikles') ?></div>',
+                        '<?= __('Bien… aunque el reto seleccionado no es el mejor reto, es bastante innovador!') ?><br/><div class="alert alert_bikles float-right text-center m-3" role="alert"><img src="/img/bikles.png" class="mb-1 img-fluid" alt=""></br><?= __('Tu equipo ha ganado: ') ?><b><?= __('1 Bikle') ?></b></div>',
+                        '<?= __('¡Felicidades! El reto seleccionado es el que mejor va a ayudar a cumplir con el objetivo!') ?><br/><div class="alert alert_bikles float-right text-center m-3" role="alert"><img src="/img/bikles.png" class="mb-1 img-fluid" alt=""></br><?= __('Tu equipo ha ganado: ') ?><b><?= __('2 Bikles') ?></b></div>'];
+                    $('#sended').html('<div class="mb-3"><?= __('El Jefe de Expedición ha recibido tu selección') ?></div>');
+                    $('#error').html('<div class="alert alert_solution d-inline-block text-left"><h4 class="white"><i class="fa fa-check-circle-o mr-2"></i><?= __('Solución') ?></h4>' + textos[parseInt(voto) + 1] + '<br/>La solución es:<br/><b><?= $solution ?></b>');
                     setTimeout(checkPage, 1000);
                 });
             });

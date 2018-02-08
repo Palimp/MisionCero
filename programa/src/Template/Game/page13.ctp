@@ -60,7 +60,7 @@ if ($admin) {
         </table>
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
-                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                 <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
             </div>
         </div>

@@ -37,7 +37,7 @@ if ($admin) {
                 </div>
                 <div class="col-2">
                     <a href="#" data-toggle="modal" data-target="#modal_video_2" class="grey_link">
-                        <i class="fa fa-check-square-o fa-2x green mr-3 pull-left"></i>
+                        <i class="fa fa-check-circle-o fa-2x green mr-3 pull-left"></i>
                         <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver solución') ?>
                         </p>
                     </a>
@@ -54,9 +54,9 @@ if ($admin) {
                             <div class="modal-content">
                                 <div class="modal-header align-items-start">
                                     <div class="example fs26">
-                                        <i class="fa fa-file-text-o fa-3x example_ic align-top mr-3"></i>
+                                        <i class="fa fa-question-circle-o fa-3x example_ic align-top mr-3"></i>
                                         <div class="example_wrapper d-inline-block">
-                                            <div class="example_inner text-left py-3 px-4">
+                                            <div class="example_innerX text-left py-3 px-4">
                                                 <b><?= __('Pregunta') ?></b>
                                             </div>
                                         </div>
@@ -72,19 +72,19 @@ if ($admin) {
                                     <?= __('Cuando todos los equipos hayan respondido, el Jefe de Expedición reproducirá el video para conocer la solución. ') ?>
                                     <br>
                                     <br>
-                                    <?= __('Luego hará click en el icono ') ?><i class="fa fa-check-square-o fa-lg green"></i> <?= __('para ver cuántos Bikles ganará cada equipo') ?>
+                                    <?= __('Luego hará click en el icono ') ?><i class="fa fa-check-circle-o fa-lg green"></i> <?= __('para ver cuántos Bikles ganará cada equipo') ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="modal_video_2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_video_2LiveLabel" style="display: none;" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
+                            <div class="modal-content" style="background-color: #f2e500;">
                                 <div class="modal-header align-items-start">
-                                    <div class="example fs26">
-                                        <i class="fa fa-file-text-o fa-3x example_ic align-top mr-3"></i>
+                                    <div class="example fs26 white">
+                                        <i class="fa fa-check-circle-o fa-3x example_ic align-top white"></i>
                                         <div class="example_wrapper d-inline-block">
-                                            <div class="example_inner text-left py-3 px-4">
+                                            <div class="example_innerX text-left py-3 px-4">
                                                 <b><?= __('Solución') ?></b>
                                             </div>
                                         </div>
@@ -93,8 +93,21 @@ if ($admin) {
                                         <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
-                                    <p class="video_solution"> <?= __($solucion) ?></p>
+                                <div class="modal-body pt-0">
+                                    <p class="video_solution"><?= __($solucion) ?></p>
+                                    <div class="alert alert_bikles float-right text-center col-5" role="alert">
+                                        <img src="/img/bikles.png" class="mb-1 img-fluid" alt="">
+                                        <br>
+                                        <b><?= __('+ 2 Bikles ') ?></b>
+                                        <?= __('para el equipo que haya detectado que algo en la calle ha cambiado') ?>
+                                        <br>
+                                        <b><?= __('+ 4 Bikles ') ?></b>
+                                        <?= __('para el equipo capaz de enumerar elementos que han cambiado') ?>
+                                    </div>
+                                    <p class="fs22">
+                                        <?= __('La calle entera ha cambiado completamente!') ?>
+                                        <i class="fa fa-smile-o ml-1"></i>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +117,7 @@ if ($admin) {
         <?php } else { ?>
             <div class="text-center mt-5">
                 <div class="alert alert_bikles d-inline-block" role="alert">
-                    <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                    <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                     <b>
                         <?= __('¡Observar bien el video!') ?>
                     </b>

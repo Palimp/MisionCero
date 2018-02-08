@@ -14,7 +14,7 @@ if ($admin) {
     </header>
     <section class="container">
         <p class="title_first mt-3 pb-2">
-            <?= __('Parada lúdica 3') ?>
+            <?= __('Parada lúdica 4') ?>
         </p>
         <p class="h_green">
             <?= __('La parada que estabas esperando… ¡CULTURA GENERAL!') ?> <i class="fa fa-smile-o"></i>

@@ -29,7 +29,7 @@ if ($admin) {
                     <th></th>
                     <th><?= __('Equipo') ?></th>
                     <th><?= __('Comentarios') ?></th>
-                    <th><img src="/img/bikles.jpg" class="img-fluid bikles_table" alt=""></th>
+                    <th><img src="/img/bikles.png" class="img-fluid bikles_table" alt=""></th>
                 </tr>
             </thead>
             <tbody>
@@ -50,7 +50,7 @@ if ($admin) {
 
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
-                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                 <?= __('Escribe el máximo de comentarios posibles.') ?>
                 </br>
                 <?= __('¡Los equipos') ?>

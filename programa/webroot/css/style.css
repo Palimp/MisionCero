@@ -99,6 +99,9 @@ hr {
 .green {
   color: #6E8C1A;
 }
+.white {
+  color: #fff !important;
+}
 /*
 .darkgreen {
   color: #8DAD30;
@@ -180,6 +183,7 @@ td.fs32{
 }
 .table td, .table th {
   vertical-align: middle;
+  border: none !important;
 }
 
 .bikles_table{
@@ -619,7 +623,7 @@ ul:not(.unstyled) > li {
   position: relative;
 }
 ul:not(.unstyled) > li:before, ol > li:before {
-  position: absolute;
+  position: relative;
   display: inline-block;
   content: '';
   /*line-height: 1.25rem;*/
@@ -694,6 +698,16 @@ ul:not(.nav) > li:before {
 }
 .alert_bikles img{max-height: 40px; margin-top: -.5rem; margin-bottom: -.5rem;
 }
+.alert_solution{
+  padding-top: 1.5rem;
+  background-color: #f2e500;
+  border-color: transparent;
+
+}
+.alert_solution img{
+
+}
+
 /*video*/
 .embed-responsive{
   max-width: calc(32em + 0.25 * (100vw - 80em) / 40);

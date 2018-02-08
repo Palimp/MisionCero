@@ -47,7 +47,7 @@ if ($admin) {
                 <?php } ?>
                 <div class="text-center mt-5">
                     <div class="alert alert_bikles d-inline-block" role="alert">
-                        <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                        <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                             <?= __('¡Los equipos que mejor vendan los objetos ganarán Bikles!') ?>
                             </br>
                             <?= __('Los equipos que no logren convencer al rival, perderán Bikles.') ?>

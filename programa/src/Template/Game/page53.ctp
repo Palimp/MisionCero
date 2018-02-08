@@ -11,17 +11,21 @@ $trouble = $puzzle->puzzle;
 $answers = [[-1, $puzzle->answer1], [0, $puzzle->answer2], [1, $puzzle->answer3], [2, $puzzle->answer4]];
 shuffle($answers);
 $solution=$puzzle->answer1;
-
 ?>
 <main class="text-center">
     <header>
-        <?= $this->Html->image("breadp45.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section class="container">
-        <p class="h_green mt-3">
+        <p class="title_first mt-3 pb-2">
+            <?= __('Parada lúdica 4') ?>
+        </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>1'</time>
+        </div>
+        <p class="h_green">
             <?= __('Cada equipo tendrá que leer el enigma') ?>
         </p>
-
         <div>
             <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
             <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
@@ -100,24 +104,33 @@ $solution=$puzzle->answer1;
         </table>
          <p id="error"></p>
 
+    <?php if ($admin) { ?>
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
-                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>
-        <?php if ($admin) { ?>
-              <div class="my-4 text-right">
-                  <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                  <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Acabar fase retos') ?></button>
-              </div>
-            <?php
-        } else if (!isset($voted)) {
-            ?>
+          <div class="my-4 text-right">
+              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Acabar fase retos') ?></button>
+          </div>
+        <?php
+    } else if (!isset($voted)) {
+        ?>
+        <div class="text-right">
             <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
                 <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
             </a>
-        <?php } ?>
+        </div>
+
+        <div class="text-center mt-5">
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
+                <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
+            </div>
+        </div>
+    <?php } ?>
     </section>
 </main>
 

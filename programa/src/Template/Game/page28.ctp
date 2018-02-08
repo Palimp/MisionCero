@@ -32,7 +32,7 @@ if ($admin) {
 
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
-                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                  <?= __('La distribución de Bikles dependerá de la respuesta elegida: si seleccionan retos que pueden abrir nuevas vías de trabajo, ganarán Bikles! (según el criterio de Binnakle ') ?><i class="fa fa-smile-o"></i><?= __('). En caso contrario, perderán Bikles.') ?>
             </div>
         </div>

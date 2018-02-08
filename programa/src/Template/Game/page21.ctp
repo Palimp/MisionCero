@@ -27,7 +27,7 @@ if ($admin) {
                     <th></th>
                     <th><?= __('Equipo') ?></th>
                     <th><?= __('Comentarios') ?></th>
-                    <th><img src="/img/bikles.jpg" class="img-fluid bikles_table" alt=""></th>
+                    <th><img src="/img/bikles.png" class="img-fluid bikles_table" alt=""></th>
                 </tr>
             </thead>
             <tbody>

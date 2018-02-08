@@ -18,7 +18,7 @@ $solution=$puzzle->answer1;
     </header>
     <section class="container">
         <p class="title_first mt-3 pb-2">
-            <?= __('Parada lúdica 3') ?>
+            <?= __('Parada lúdica 4') ?>
         </p>
         <div class="clock-c">
             <i class="fa fa-clock-o mr-2"></i><time>1'</time>
@@ -105,7 +105,7 @@ $solution=$puzzle->answer1;
     <?php if ($admin) { ?>
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
-                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>
@@ -116,13 +116,15 @@ $solution=$puzzle->answer1;
         <?php
     } else if (!isset($voted)) {
         ?>
-        <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-            <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
-        </a>
+        <div class="text-right">
+            <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
+            </a>
+        </div>
 
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
-                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>

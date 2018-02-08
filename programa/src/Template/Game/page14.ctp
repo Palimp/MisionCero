@@ -36,7 +36,6 @@ if ($admin) {
                     <th></th>
                     <th><?= __('EQUIPOS: CLASIFICACIÓN ETAPA') ?></th>
                     <th><?= __('TOTAL BIKLES') ?></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>

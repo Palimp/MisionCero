@@ -12,14 +12,9 @@ if ($admin) {
     <header>
         <?= $this->Html->image("breadp332.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap text-center">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
-    <section class="container text-center">
+    <section class="container">
         <div>
-            <p class="title_first pb-4">
+            <p class="title_first py-4 text-center">
                 <?= __('Ranking de Bikles al acabar la Parada lúdica 2') ?>
             </p>
         </div>
@@ -33,11 +28,10 @@ if ($admin) {
         <table class="table table-striped text-center">
             <thead>
                 <tr>
-                    <th>RANKING GENERAL</th>
+                    <th><?= __('RANKING GENERAL') ?></th>
                     <th></th>
                     <th><?= __('EQUIPOS: CLASIFICACIÓN ETAPA') ?></th>
                     <th><?= __('TOTAL BIKLES') ?></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
