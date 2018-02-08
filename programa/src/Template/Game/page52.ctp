@@ -101,7 +101,11 @@ $solution=$puzzle->answer1;
 
             </tbody>
         </table>
-         <p id="error"></p>
+        
+        <div class="text-center">
+            <div id="sended"></div>
+            <div id="error"></div>
+        </div>
     <?php if ($admin) { ?>
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
@@ -199,11 +203,12 @@ $solution=$puzzle->answer1;
     ?>", {'bikles': voto, 'puzzle': 1}, function (data, status) {
                     console.log(data);
                     $(':radio').attr('disabled', 'disabled');
-                    var textos = ['<?= __('La respuesta es incorrecta, lo sentimos mucho.') ?>',
-                        '<?= __('Bien.. la respuesta es correcta pero no has sido el primero') ?>',
-                        '<?= __('¡Felicidades! Has sido el primero en adivinar la respuesta. Ganas 3 bikles') ?>'];
+                    var textos = ['<?= __('La respuesta es incorrecta, lo sentimos mucho.') ?><br/><div class="alert alert_bikles float-right text-center m-3" role="alert"><img src="/img/bikles.png" class="mb-1 img-fluid" alt=""></br><?= __('Tu equipo no gana ni pierde bikles') ?></div>',
+                        '<?= __('Bien.. la respuesta es correcta pero no has sido el primero') ?><br/><div class="alert alert_bikles float-right text-center m-3" role="alert"><img src="/img/bikles.png" class="mb-1 img-fluid" alt=""></br><?= __('Tu equipo no gana ni pierde bikles') ?></div>',
+                        '<?= __('¡Felicidades! Has sido el primero en adivinar la respuesta.') ?><br/><div class="alert alert_bikles float-right text-center m-3" role="alert"><img src="/img/bikles.png" class="mb-1 img-fluid" alt=""></br><?= __('Tu equipo ha ganado: ') ?><b><?= __('3 Bikles') ?></b></div>'];
 
-                    $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>' + textos[parseInt(data)]+"<br/>La solución es: <?=$solution ?>");
+                    $('#sended').html('<div class="mb-3"><?= __('El Jefe de Expedición ha recibido tu selección') ?></div>');
+                    $('#error').html('<div class="alert alert_solution d-inline-block text-left rounded"><h4 class="green"><i class="fa fa-check-circle-o mr-2"></i><?= __('Solución') ?></h4>' + textos[parseInt(voto) + 1] + '<br/>La solución es:<br/><b><?= $solution ?></b>');
                     setTimeout(checkPage, 1000);
                 });
             });

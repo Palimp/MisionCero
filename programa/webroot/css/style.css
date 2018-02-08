@@ -630,8 +630,10 @@ ul:not(.unstyled) > li:before, ol > li:before {
 }
 
 ul:not(.nav) > li:before {
-  left: 0.3em;
-  top: 0.35em;
+  left: 0;
+  /*left: 0.3em;*/
+  top: 0;
+  /*top: 0.35em;*/
   width: 0.7em;
   height: 0.7em;
   border: .15em solid #83A521;
