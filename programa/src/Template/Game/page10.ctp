@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?=__('Insights Espontáneos')?>
+            <?=__('Etapa 1- Insights espontáneos')?>
         </p>
     </div>
     <section class="container">
@@ -36,7 +36,7 @@ if ($admin) {
             </p>
             <div id="hasvoted"></div>
         <?php } else { ?>
-            <table class="table table-striped">
+            <table class="reduced table table-striped">
                 <tbody>
                     <?php foreach ($comments as $comment) { ?>
                         <tr>
@@ -60,13 +60,13 @@ if ($admin) {
             </div>
         <?php } ?>
         
-        <div class="col-2">
+        <div>
             <!-- Button trigger modal_ex2 -->
             <div class="d-inline">
                 <a href="#" data-toggle="modal" data-target="#modal_ex2" class="grey_link">
-                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
-                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                    </p>
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 mr-2"></i>
+                    <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                    </div>
                 </a>
             </div>
             <!-- modal_ex2 -->
@@ -79,9 +79,11 @@ if ($admin) {
                                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                     <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?>
+                                            </br>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso (transformar comentarios en retos) ')?></b>
+                                            </br>
+                                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                         </div>
                                     </div>
                                 </div>
@@ -89,13 +91,11 @@ if ($admin) {
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body text-center">
                                 <p>
-                                    <b>
                                         <?= __('Para este paso, algunos ejemplos de “comentarios informales convertidos en retos”  de nuestra problemática ficticia “¿Cómo podríamos mejorar la comunicación interna?”, podrían ser:') ?>
-                                    </b>
                                 </p>
-                                <div class="text-center">
+                                <div>
                                     <p>
                                         <?= __('Los rumores siempre van más rápido que la información interna') ?>
                                         </br>

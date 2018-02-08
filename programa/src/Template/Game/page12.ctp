@@ -20,22 +20,14 @@ $ambits[-1]->ambit = __('Sin ámbito');
         <?=__('Problemática: '.$trouble)?>
       </span>
     </div>
-    <div>
-        <p class="title_first pb-4">
-            <?=__('Insights Espontáneos')?>
-        </p>
-    </div>
     <section class="container">
-        <p class="h_green">
-            <?= __('Listado completo de los retos elegidos por los equipos (3 retos por equipo).') ?><br>
-        </p>
         <p>
             <i class="fa fa-lightbulb-o"></i>
             <?= __('Ahora, cada ') ?><b><?= __('explorador, INDIVIDUALMENTE,') ?></b><?= __(' votará los 3 retos que le parecen más relevantes') ?>
             <br>
             <?= __('Cada miembro del equipo debe marcar su selección de 3 retos en la columna que lleva su nombre') ?>
         </p>
-        <ul>
+        <ul class="unstyled">
             <li>
                 <i class="fa fa-comment-o"></i>
                 <?=__('Los retos elegidos por tu equipo son los 3 primeros.')?>
@@ -49,13 +41,15 @@ $ambits[-1]->ambit = __('Sin ámbito');
                 <?=__('Este voto es personal')?>
             </li>
         </ul>
-        <p>
-            <?= __('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”') ?><br>
-        </p>
-        <table class="reduced table table-striped text-center">
+        <?php if ($admin) { ?>
+            <p>
+                <?= __('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”') ?>
+            </p>
+        <?php } ?>
+        <table class="reduced table table-striped text-left">
             <thead>
                 <tr>
-                    <td></td>
+                    <th class="text-left"><?= __('Listado completo de los retos elegidos por los equipos (3 retos por equipo).') ?></th>
                     <?php foreach ($users as $user) { ?>
                         <td><?= str_replace("_", " ", $user) ?></td>
 

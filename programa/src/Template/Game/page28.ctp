@@ -12,30 +12,28 @@ if ($admin) {
     <header>
         <?= $this->Html->image("breadp45.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
+
     <div>
-        <p class="title_first pb-4">
+        <p class="title_first mt-3 pb-2">
             <?= __('Parada lúdica 2') ?>
         </p>
     </div>
     <section class="container">
         <p class="h_green">
-            Casos prácticos
+            <?= __('Casos prácticos') ?>
         </p>
-        <ul>
+        <ul class="unstyled">
             <li>
                 <i class="fa fa-comment-o"></i>
-                A continuación se presentará el caso de una empresa a los exploradores<br>
-                Deberán seleccionar el reto que mejor podrá ayudarles a cumplir el objetivo planteado
+                <?= __('A continuación se presentará el caso de una empresa a los exploradores') ?><br>
+                <?= __('Deberán seleccionar el reto que mejor podrá ayudarles a cumplir el objetivo planteado') ?>
             </li>
         </ul>
+
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
-                 La distribución de Bikles dependerá de la respuesta elegida: si seleccionan retos que pueden abrir nuevas vías de trabajo, ganarán Bikles! (según el criterio de Binnakle <i class="fa fa-smile-o"></i>). En caso contrario, perderán Bikles.
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                 <?= __('La distribución de Bikles dependerá de la respuesta elegida: si seleccionan retos que pueden abrir nuevas vías de trabajo, ganarán Bikles! (según el criterio de Binnakle ') ?><i class="fa fa-smile-o"></i><?= __('). En caso contrario, perderán Bikles.') ?>
             </div>
         </div>
 

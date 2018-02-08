@@ -18,13 +18,12 @@ if ($admin) {
       </span>
     </div>
     <section class="container text-center">
-        <div>
-            <p class="h_green">
-                <?= __('Comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
-            </p>
-            <p>
-                <?= __('Los equipos tienen 10 minutos para introducir todos los comentarios posibles.') ?><br>
-            </p>
+        <p class="h_green">
+            <i class="fa fa-lightbulb-o"></i>
+            <?= __('Introducir comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
+        </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>10'</time>
         </div>
         <div>
             <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
@@ -109,14 +108,10 @@ if ($admin) {
                     <div class="modal-body">
 
                         <p class="green">
-                            <b>
                                 <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
-                            </b>
                         </p>
                         <p>
-                            <b>
                                 <?= __('Para esta Etapa 1, algunos ejemplos de ') ?><i><?= __('comentarios informales') ?></i> <?= __('sobre la problemática podrían ser:') ?> 
-                            </b>
                         </p>
                         <ul>
                             <li>
@@ -153,20 +148,21 @@ if ($admin) {
             </div>
         </div>
 
-
         <div class="text-center">
-            <div class="alert d-inline-block" role="alert">
-                <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
-                </b>
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <?= __('Escribe el máximo de comentarios posibles.') ?>
                 </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
+                <?= __('¡Los equipos') ?>
+                <b>
+                    <?= __('ganarán o perderán Bikles!') ?>
+                </b>
             </div>
         </div>
-        <p>
-            <?= __('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”') ?>
-        </p>
       <?php if ($admin) { ?>
+            <p>
+                <?= __('Cuando todos los equipos hayan finalizado pulsa ”Continuar Etapa”') ?>
+            </p>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
               <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar etapa 1') ?></button>

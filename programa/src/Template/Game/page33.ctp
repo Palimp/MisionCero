@@ -19,10 +19,13 @@ if ($admin) {
     </div>
     <section class="container text-center">
         <p class="h_green">
-            <?= __('Retos basados en actores') ?>
+                <i class="fa fa-lightbulb-o"></i>
+            <?= __('Introducir retos basados en actores') ?>
         </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>10'</time>
+        </div>
         <p>
-            <?= __('Los equipos tienen 10 minutos para introducir todos los retos posibles, basados en los puntos de vista de los Stakeholders:') ?><br>
             <?= __('Cada equipo se pondrá en el punto de vista de varios de ellos (un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...) para generar retos:') ?><br>
         <ol class="list-numbered">
             <li>
@@ -95,9 +98,11 @@ if ($admin) {
                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                     <div class="example_wrapper col mr-4">
                        <div class="example_inner text-left py-3 px-4">
-                        <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                        <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                        <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                          <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?>
+                          </br>
+                          <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                          </br>
+                          <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                     </div>
                   </div>
                 </div>
@@ -105,13 +110,11 @@ if ($admin) {
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body text-center">
                 <p>
-                    <b>
                         <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
-                    </b>
                 </p>
-                <div class="text-center">
+                <div>
                   <div class="row">
                     <div class="col">
                       <p class="fs26">
@@ -210,11 +213,16 @@ if ($admin) {
           </div>
         </div>
 
+
         <div class="text-center">
-            <div class="alert d-inline-block" role="alert">
-                <?= __('¡Los equipos con más retos ganarán Bikles, ') ?>
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <?= __('Escribe el máximo de retos posibles.') ?>
                 </br>
-                <?= __('y los equipos con menos retos perderán Bikles!') ?>
+                <?= __('¡Los equipos') ?>
+                <b>
+                    <?= __('ganarán o perderán Bikles!') ?>
+                </b>
             </div>
         </div>
     

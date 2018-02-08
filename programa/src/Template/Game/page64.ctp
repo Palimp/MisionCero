@@ -31,7 +31,7 @@ if ($admin) {
             <i class="fa fa-lightbulb-o"></i>
             <?=__('Cada equipo tiene que indicar, para cada reto, si lo considera un reto:')?>
         </p>
-        <ul>
+        <ul class="unstyled">
             <li>
                 <i class="fa fa-comment-o"></i>
                 <?=__('AMBICIOSO: los retos ambiciosos nos llevan, a priori, a proyectos complejos, con impacto')?>

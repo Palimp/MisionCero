@@ -33,23 +33,24 @@ if ($admin) {
 
 
         <p>
-            <i class="fa fa-comment-o"></i>
+            <i class="fa fa-lightbulb-o"></i>
             <?=__('Pensar en los diferentes actores involucrados que intervienen en nuestra problemática.')?>
         </p>
         <p>
-            <?=__('Un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...)')?>
+            <i class="fa fa-comment-o"></i>
+            <?=__('Un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...')?>
         </p>
 
-        <div class="text-center green fs22">
-            <p>
-                <?=__('¿cómo ven el reto desde su punto de vista?')?>
-                </br>
-                <i class="fa fa-chevron-down"></i>
-                </br>
-                <b><?=__('Luego expresar las diferentes visiones en forma de reto:')?></b>
-                </br>
-                <em><?=__('¿cómo…?')?></em>
-            </p>
+        <div class="text-center green">
+          <p>
+              <?=__('¿cómo ven el reto desde su punto de vista?')?>
+              </br>
+              <i class="fa fa-chevron-down"></i>
+              </br>
+              <?=__('Luego expresar las diferentes visiones en forma de reto:')?>
+              </br>
+              <em><?=__('¿cómo…?')?></em>
+          </p>
         </div>
         
         <div>
@@ -64,12 +65,14 @@ if ($admin) {
             <div class="modal-content">
               <div class="modal-header align-items-start">
                 <div class="example row">
-                    <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
-                    <div class="example_wrapper col mr-4">
-                       <div class="example_inner text-left py-3 px-4">
-                        <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                        <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                        <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                  <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                  <div class="example_wrapper col mr-4">
+                    <div class="example_inner text-left py-3 px-4">
+                      <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?>
+                      </br>
+                      <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                      </br>
+                      <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                     </div>
                   </div>
                 </div>
@@ -77,13 +80,11 @@ if ($admin) {
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body text-center">
                 <p>
-                    <b>
                         <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
-                    </b>
                 </p>
-                <div class="text-center">
+                <div>
                   <div class="row">
                     <div class="col">
                       <p class="fs26">

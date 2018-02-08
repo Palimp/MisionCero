@@ -12,17 +12,10 @@ if ($admin) {
     <header>
         <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap text-center">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
-    <div class="text-center">
-        <p class="title_first pb-4">
+    <section class="container text-center">
+        <p class="title_first mt-3 pb-2">
             <?= __('Parada lúdica 3') ?>
         </p>
-    </div>
-    <section class="container">
                     <p class="h_green">
                         <?= __('Eres bueno vendiendo?') ?>
                         <i class="fa fa-smile-o"></i>
@@ -33,14 +26,18 @@ if ($admin) {
                         <br>
                         <?= __('2 equipos trabajan juntos: ') ?>
                     </p>
-                    <ul>
+                    <ul class="unstyled">
                         <li>
-                            <?= __('Fase 1- Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo') ?>
+                            <b><?= __('Fase 1- ') ?></b>
+                            </br> 
+                            <?= __('Los equipos tienen 2 minutos para preparar la venta del objeto al otro equipo') ?>
                             <br>
                             <?= __('Finalizado el tiempo, un equipo dispondrá de 2 minutos para convencer al segundo equipo que le compre su objeto. El segundo equipo comunicará al Jefe de Expedición si le ha convencido la presentación. ') ?>
                         </li>
                         <li>
-                            <?= __('Fase 2- Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. ') ?>
+                            <b><?= __('Fase 2- ') ?></b>
+                            </br> 
+                            <?= __('Los equipos intercambian los roles: el equipo 2 presenta al equipo 1. ') ?>
                         </li>
                     </ul>
                 <?php if ($admin) { ?>
@@ -49,10 +46,11 @@ if ($admin) {
                     </p>
                 <?php } ?>
                 <div class="text-center mt-5">
-                    <div class="alert d-inline-block" role="alert">
-                        <?= __('¡Los equipos que mejor vendan los objetos ganarán Bikles!') ?>
-                        </br>
-                        <?= __('Los equipos que no logren convencer al rival, perderán Bikles.') ?>
+                    <div class="alert alert_bikles d-inline-block" role="alert">
+                        <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                            <?= __('¡Los equipos que mejor vendan los objetos ganarán Bikles!') ?>
+                            </br>
+                            <?= __('Los equipos que no logren convencer al rival, perderán Bikles.') ?>
                     </div>
                 </div>
         <?php if ($admin) { ?>

@@ -42,13 +42,16 @@
                 </a>
             </div>
         </div>
+
         <div class="text-center">
-            <div class="alert d-inline-block" role="alert">
-                <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
-                </b>
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <?= __('Escribe el máximo de comentarios posibles.') ?>
                 </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
+                <?= __('¡Los equipos') ?>
+                <b>
+                    <?= __('ganarán o perderán Bikles!') ?>
+                </b>
             </div>
         </div>
         <div>
@@ -68,9 +71,9 @@
                         <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                         <div class="example_wrapper col mr-4">
                            <div class="example_inner text-left py-3 px-4">
-                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></br>
+                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?></br>
+                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                         </div>
                       </div>
                     </div>
@@ -78,13 +81,11 @@
                       <span aria-hidden="true">×</span>
                     </button>
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body text-center">
                     <p>
-                        <b>
                             <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
-                        </b>
                     </p>
-                    <div class="text-center">
+                    <div>
                       <div class="row">
                         <div class="col">
                           <p class="fs26">

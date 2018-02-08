@@ -18,20 +18,14 @@ if ($admin) {
         <?=__('Problemática: '.$trouble)?>
       </span>
     </div>
-    <div>
-        <p class="title_first pb-4">
-            <?=__('Insights Espontáneos')?>
-        </p>
-    </div>
     <section class="container">
         <p class="h_green">
             <i class="fa fa-lightbulb-o"></i>
             <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?>
         </p>
-        <p>
-            <b><?= __('Los equipos tienen 5 minutos') ?>
-            </b>
-        </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>5'</time>
+        </div>
         <div>
             <div>
                 <?=__('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.')?>
@@ -100,9 +94,11 @@ if ($admin) {
                                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                     <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?>
+                                            </br>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso (transformar comentarios en retos) ')?></b>
+                                            </br>
+                                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                         </div>
                                     </div>
                                 </div>
@@ -110,13 +106,11 @@ if ($admin) {
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body text-center">
                                 <p>
-                                    <b>
                                         <?= __('Para este paso, algunos ejemplos de “comentarios informales convertidos en retos”  de nuestra problemática ficticia “¿Cómo podríamos mejorar la comunicación interna?”, podrían ser:') ?>
-                                    </b>
                                 </p>
-                                <div class="text-center">
+                                <div>
                                     <p>
                                         <?= __('Los rumores siempre van más rápido que la información interna') ?>
                                         </br>

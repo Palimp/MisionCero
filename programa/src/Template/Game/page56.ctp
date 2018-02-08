@@ -35,9 +35,9 @@ if ($admin) {
             <?= __('Pueden ser positivos y/o negativos: pueden ser de columnas diferentes') ?>
         </p>
         <div class="m-auto text-left">
-            <div class="row justify-content-center top6">
-                <div class="col-4 offset-sm-1">
-                    <ul>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <ul class="unstyled">
                         <li class="ml-3">
                             <i class="fa fa-smile-o fa-3x text-success ml-4"></i>
                             </br>
@@ -56,8 +56,8 @@ if ($admin) {
 
                     </ul>
                 </div>
-                <div class="col-4">
-                    <ul>
+                <div class="col-2">
+                    <ul class="unstyled">
                         <li class="ml-3">
                             <i class="fa fa-smile-o fa-3x fa-rotate-180 text-danger ml-4"></i>
                             </br>
@@ -100,9 +100,9 @@ if ($admin) {
                                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                     <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></br>
+                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?></br>
+                                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                         </div>
                                     </div>
                                 </div>
@@ -112,11 +112,9 @@ if ($admin) {
                             </div>
                             <div class="modal-body">
                                 <p>
-                                    <b>
                                         <?= __('Para la Etapa 5, algunos ejemplos de ') ?><i><?= __('retos basados en estados de ánimo') ?></i> <?= __(' podrían ser:') ?> 
-                                    </b>
                                 </p>
-                                <table class="table table-striped">
+                                <table class="reduced table table-striped">
                                     <thead class="text-center">
                                         <tr>
                                             <th class="fs22 fw100 w30" style="position: relative;">

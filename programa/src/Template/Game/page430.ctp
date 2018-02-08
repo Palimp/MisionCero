@@ -23,7 +23,7 @@ if ($admin) {
         </p>
     </div>
     <section class="container">
-        <p class="green">
+        <p>
             <i class="fa fa-lightbulb-o"></i>
              <?= __('Identificar los momentos clave con los diferentes actores de la problemática y sus ')?><i><?= __('pain points')?></i><?= __(': puntos críticos o problemas que se presentan en cada momento.')?>
         </p>
@@ -40,9 +40,9 @@ if ($admin) {
         <div class="col">
             <!-- Button trigger modal_ex5 -->
             <a href="#" data-toggle="modal" data-target="#modal_ex5" class="grey_link">
-                <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                </p>
+                <i class="fa fa-file-text-o fa-2x example_ic mr-3 mr-2"></i>
+                <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                </div>
             </a>
         </div>
         
@@ -55,9 +55,9 @@ if ($admin) {
                                 <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                 <div class="example_wrapper col mr-4">
                                    <div class="example_inner text-left py-3 px-4">
-                                        <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                                        <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                        <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                        <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></br>
+                                        <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?></br>
+                                        <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                     </div>
                                 </div>
                             </div>
@@ -67,13 +67,11 @@ if ($admin) {
                         </div>
                         <div class="modal-body">
                             <p>
-                                <b>
                                     <?=__('Para la Etapa 4, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
-                                </b>
                             </p>
 
 
-                            <table class="table table-striped">
+                            <table class="reduced table table-striped">
                                <thead class="text-center">
                                   <tr>
                                      <th class="fs22 fw100 w30" style="position: relative;">

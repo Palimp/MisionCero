@@ -34,8 +34,10 @@
         <div class="text-center">
             <?= $this->Html->image($image, ['class' => 'img-fluid']); ?>
         </div>
+
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
                 <b>
                     <?= __('Nos han convencido + 2 Bikles') ?>
                 </b>

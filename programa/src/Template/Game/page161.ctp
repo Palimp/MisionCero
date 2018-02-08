@@ -13,14 +13,9 @@ echo $url;
     <header>
         <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
     <div>
-        <p class="title_first pb-4">
-            <?= __('Etapa 2- Parada lúdica') ?>
+        <p class="title_first mt-3 pb-2">
+            <?= __('Parada lúdica 1') ?>
         </p>
     </div>
     <section class="container">
@@ -34,19 +29,24 @@ echo $url;
             </div>
             
             <div class="text-left mt-5 row">
-                <div class="col-3">
+                <div class="col-2">
                     <a href="#" data-toggle="modal" data-target="#modal_video_1" class="grey_link">
                         <i class="fa fa-question-circle-o fa-2x example_ic mr-3 pull-left"></i>
                         <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver pregunta') ?>
                         </p>
                     </a>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <a href="#" data-toggle="modal" data-target="#modal_video_2" class="grey_link">
                         <i class="fa fa-check-square-o fa-2x green mr-3 pull-left"></i>
                         <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver solución') ?>
                         </p>
                     </a>
+                </div>
+                <div class="col-8 text-right">
+                    <button  id="otro" type="button" class="btn btn-primary"><?= __('Cambiar de vídeo') ?></button>
+                    <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                    <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
                 </div>
                 <div>
                     <div id="modal_video_1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_video_1LiveLabel" style="display: none;" aria-hidden="true">
@@ -66,10 +66,13 @@ echo $url;
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <h3>¿Alguien ha observado algo extraño en la escena?</h3>
-                                    Cuando hayan respondido todos los equipos el JE dará play al video para conocer la solución.
+                                    <p class="fs22"><?= __('¿Alguien ha observado algo extraño en la escena?') ?></p>
                                     <br>
-                                    Luego el Jefe de Exploradores hará click en el icono <i class="fa fa-check-square-o green"></i> para ver cuantos Bikles ganará cada equipo
+                                    <br>
+                                    <?= __('Cuando todos los equipos hayan respondido, el Jefe de Expedición reproducirá el video para conocer la solución. ') ?>
+                                    <br>
+                                    <br>
+                                    <?= __('Luego hará click en el icono ') ?><i class="fa fa-check-square-o fa-lg green"></i> <?= __('para ver cuántos Bikles ganará cada equipo') ?>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +94,7 @@ echo $url;
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="video"> <?= __($solucion) ?></p>
+                                    <p class="video_solution"> <?= __($solucion) ?></p>
                                 </div>
                             </div>
                         </div>
@@ -100,20 +103,14 @@ echo $url;
             </div>
         <?php } else { ?>
             <div class="text-center mt-5">
-                <div class="alert d-inline-block" role="alert">
+                <div class="alert alert_bikles d-inline-block" role="alert">
+                    <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
                     <b>
                         <?= __('¡Observar bien el video!') ?>
                     </b>
                     </br>
                     <?= __('El Jefe de Expedición hará preguntas al acabar…') ?>
                 </div>
-            </div>
-        <?php } ?>
-        <?php if ($admin) { ?>
-            <div class="my-4 text-right">
-                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
-                <button  id="otro" type="button" class="btn btn-primary"><?= __('Cambiar de vídeo') ?></button>
             </div>
         <?php } ?>
     </section>
@@ -128,7 +125,7 @@ echo $url;
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page16"
+        "action" => "page161"
     ])
     ?>';
             });

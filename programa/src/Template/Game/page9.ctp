@@ -23,21 +23,13 @@ if ($admin) {
         </p>
     </div>
     <section class="container">
-        <div class="no-gutters mb-2">
-            <p>
-                <?= __('¡Los equipos con más comentarios ganaron Bikles y los equipos con menos perdieron!') ?>
-            </p>
-            <b><?=__('Ejemplo: ')?></b>
-            <?=__('si nuestra problemática inicial fuera')?>
-            <b><?=__('¿Cómo podríamos mejorar la comunicación interna?')?></b>
-        </div>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
                     <th></th>
                     <th><?= __('Equipo') ?></th>
                     <th><?= __('Comentarios') ?></th>
-                    <th><?= __('Bikles') ?></th>
+                    <th><img src="/img/bikles.jpg" class="img-fluid bikles_table" alt=""></th>
                 </tr>
             </thead>
             <tbody>

@@ -19,53 +19,54 @@ if ($admin) {
       </span>
     </div>
     <section class="container text-center">
-        <p class="title_first pb-4">
-            <?=__('Etapa 2- Preguntas básicas')?>
-        </p>
         <p class="h_green">
-            <?=__('Retos basados en preguntas básicas')?>
+            <i class="fa fa-lightbulb-o"></i>
+            <?=__('Identificar retos basados en preguntas básicas')?>
         </p>
-        <p>
-            <?=__('Los equipos tienen 10 minutos para identificar retos basados en preguntas básicas:')?>
-        </p>
-        <div class="row fs22 green mb-2" style="background-color: white;">
-            <div class="col">
-                <?=__('¿CUÁNDO?')?>
-            </div>
-            <div class="col">
-                <?=__('¿DÓNDE?')?>
-            </div>
-            <div class="col">
-                <?=__('¿CÓMO?')?>
-            </div>
-            <div class="col">
-                <?=__('¿QUIÉN?')?>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>10'</time>
+        </div>
+        <div class="text-left">
+            <div class="pr-3 d-inline-block" style="background-color: #ebfa94;">
+                <span class="mx-2">
+                    <?=__('¿QUIÉN?')?>
+                </span>
+                <span class="mr-2">
+                    <?=__('¿DÓNDE?')?>
+                </span>
+                <span>
+                    <?=__('¿CUÁNDO?')?>
+                </span>
             </div>
         </div>
-        <ul class="list-numbered text-left">
+        <ol class="mt-2 list-numbered text-left">
             <li>
-                <?=__('Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
+                <?=__('Pensar en públicos objetivos (internos o externos), lugares y momentos relevantes asociados con la problemática')?>
             </li>
             <li>
                 <?=__('Convertir estas respuestas en retos: ¿cómo…?')?>
             </li>
-        </ul>
-        <div class="row fs22 green mb-2" style="background-color: white;">
-            <div class="col">
-                <?=__('¿POR QUÉ?')?>
-            </div>
-            <div class="col">
-                <?=__('¿PARA QUÉ?')?>
+        </ol>
+        
+        <div class="text-left">
+            <div class="pr-3 d-inline-block" style="background-color: #f3ed48;">
+                <span class="mx-2">
+                    <?=__('¿POR QUÉ?')?>
+                </span>
+                <span>
+                    <?=__('¿PARA QUÉ?')?>
+                </span>
             </div>
         </div>
-        <ul class="list-numbered text-left">
+        <ol class="mt-2 list-numbered text-left">
             <li>
-                <?=__('Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
+                <?=__('Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto.')?>
             </li>
             <li>
                 <?=__('Convertirlos en reto: ¿Cómo…? ')?>
             </li>
-        </ul>
+        </ol>
+            
 
         <div>
             <!-- Button trigger modal_ex -->
@@ -88,9 +89,11 @@ if ($admin) {
                                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                     <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?>
+                                            </br>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                            </br>
+                                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                         </div>
                                     </div>
                                 </div>
@@ -98,11 +101,9 @@ if ($admin) {
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body text-center">
                                 <p>
-                                    <b>
                                         <?=__('Para esta Etapa 2, algunos ejemplos de ')?><i><?=__('“retos basados en preguntas básicas”')?></i> <?=__(' podrían ser:')?> 
-                                    </b>
                                 </p>
                                 <div class="text-center">
                                     <div class="row">
@@ -169,7 +170,7 @@ if ($admin) {
                                                 </b>
                                                 </br>
                                                 <span class="h_green">
-                                                    <?= __('pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
+                                                    <?= __('PENSAR EN LUGARES RELEVANTES RELACIONADOS CON LA PROBLEMÁTICA Y EN POSIBLES RETOS RELACIONADOS CON ESTOS LUGARES') ?>
                                                 </span>
                                                 </br>
                                                 <?= __('En la fábrica') ?>
@@ -299,12 +300,14 @@ if ($admin) {
         </div>
 
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
-                <b>
-                    <?=__('¡Ganarán Bikles los equipos con más retos!')?>
-                </b>
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <?= __('Escribe el máximo de retos posibles.') ?>
                 </br>
-                <?=__('¡Perderán Bikles los equipos con menos retos!')?>
+                <?= __('¡Los equipos') ?>
+                <b>
+                    <?= __('ganarán o perderán Bikles!') ?>
+                </b>
             </div>
         </div>
       <?php if ($admin) { ?>

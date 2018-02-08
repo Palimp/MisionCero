@@ -15,18 +15,14 @@ $ids = [];
         <?=__('Problemática: '.$trouble)?>
       </span>
     </div>
-    <div class="text-center">
-        <p class="title_first pb-4">
-            <?=__('Etapa 5- Me siento')?>
-        </p>
-    </div>
     <section class="container">
         <p class="h_green">
-                <?= __('Retos basados en estados de ánimo') ?>
+            <i class="fa fa-lightbulb-o"></i>
+                <?= __('Convertir en retos basados en estados de ánimo') ?>
         </p>
-        <p>
-            <?= __('Los equipos tienen 5 minutos para convertir en retos los 3 estados de ánimo seleccionados') ?>
-        </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>5'</time>
+        </div>
 
 
         <div class="fs32 text-center">
@@ -80,9 +76,9 @@ $ids = [];
                                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                     <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></br>
+                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?></br>
+                                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                         </div>
                                     </div>
                                 </div>
@@ -92,11 +88,9 @@ $ids = [];
                             </div>
                             <div class="modal-body">
                                 <p>
-                                    <b>
                                         <?= __('Para la Etapa 5, algunos ejemplos de ') ?><i><?= __('retos basados en estados de ánimo') ?></i> <?= __(' podrían ser:') ?> 
-                                    </b>
                                 </p>
-                                <table class="table table-striped">
+                                <table class="reduced table table-striped">
                                     <thead class="text-center">
                                         <tr>
                                             <th class="fs22 fw100 w30" style="position: relative;">

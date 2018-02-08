@@ -27,7 +27,7 @@ if ($admin) {
             <i class="fa fa-lightbulb-o"></i>
             <?=__('Pensar en los comentarios internos más habituales sobre la problemática, positivos o negativos, expresados de forma natural')?>
         </p>
-        <ul>
+        <ul class="unstyled">
             <li>
                 <i class="fa fa-comment-o"></i>
                 <?=__('Es lo que se comenta en reuniones, en la máquina del café…')?>
@@ -54,9 +54,9 @@ if ($admin) {
         
         <div>
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
-                <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12"><?=__('click aquí para')?><br><?=__(' ver ejemplo')?>
-                </p>
+                <i class="fa fa-file-text-o fa-2x example_ic mr-3 mr-2"></i>
+                <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                </div>
             </a>
         </div>
         <div id="modal_ex1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex1LiveLabel" style="display: none;" aria-hidden="true">
@@ -88,14 +88,10 @@ if ($admin) {
                     </div>
                     <div class="modal-body">
                         <p class="green">
-                            <b>
                                 <?=__('Ejemplo: si nuestra problemática inicial fuera ')?><i><?=__('“¿Cómo podríamos mejorar la comunicación interna?"')?></i>
-                            </b>
                         </p>
                         <p>
-                            <b>
                                 <?=__('Para esta Etapa 1, algunos ejemplos de ')?><i><?=__('comentarios informales')?></i> <?=__('sobre la problemática podrían ser:')?> 
-                            </b>
                         </p>
                         <ul class="circle">
                             <li>

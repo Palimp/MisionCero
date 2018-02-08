@@ -12,17 +12,10 @@ if ($admin) {
     <header>
         <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
-    <div>
-        <p class="title_first pb-4">
+    <section class="container">
+        <p class="title_first mt-3 pb-2">
             <?= __('Parada lúdica 3') ?>
         </p>
-    </div>
-    <section class="container">
         <p class="h_green">
             <?= __('La parada que estabas esperando… ¡CULTURA GENERAL!') ?> <i class="fa fa-smile-o"></i>
         </p>

@@ -29,7 +29,7 @@ if ($admin) {
                     <th></th>
                     <th><?= __('Equipo') ?></th>
                     <th><?= __('Comentarios') ?></th>
-                    <th><?= __('Bikles') ?></th>
+                    <th><img src="/img/bikles.jpg" class="img-fluid bikles_table" alt=""></th>
                 </tr>
             </thead>
             <tbody>
@@ -49,9 +49,9 @@ if ($admin) {
                 ?>
             </tbody>
         </table>
-
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
                 <?=__('¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!')?>
             </div>
         </div>

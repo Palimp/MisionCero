@@ -19,26 +19,17 @@ if ($admin) {
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?= __('Ranking de comentarios') ?>
+            <?= __('Etapa 5- Ranking de comentarios') ?>
         </p>
     </div>
     <section class="container">
-        <div class="row no-gutters mb-2">
-            <div class="col-12 col-md-auto">
-                <p>
-                    <?= __(' ¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!') ?>
-
-                </p>
-            </div>
-
-        </div>
         <table class="table table-striped text-center">
             <thead>
                 <tr>
                     <th></th>
                     <th><?= __('Equipo') ?></th>
                     <th><?= __('Comentarios') ?></th>
-                    <th><?= __('Bikles') ?></th>
+                    <th><img src="/img/bikles.jpg" class="img-fluid bikles_table" alt=""></th>
                 </tr>
             </thead>
             <tbody>
@@ -58,14 +49,17 @@ if ($admin) {
         </table>
 
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
-                <b>
-                    <?=__('¡Ganarán Bikles los equipos con más comentarios!')?>
-                </b>
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <?= __('Escribe el máximo de comentarios posibles.') ?>
                 </br>
-                <?=__('¡Perderán Bikles los equipos con menos comentarios!')?>
+                <?= __('¡Los equipos') ?>
+                <b>
+                    <?= __('ganarán o perderán Bikles!') ?>
+                </b>
             </div>
         </div>
+        
       <?php if ($admin) { ?>
           <div class="my-4 text-right">
               <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>

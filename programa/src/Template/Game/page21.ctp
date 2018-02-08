@@ -21,17 +21,13 @@ if ($admin) {
         <p class="title_first pb-4">
             <?=__('Etapa 2- Preguntas básicas')?>
         </p>
-        <p class="h_green">
-            <?=__('¡Los equipos con más retos ganaron Bikles y los equipos con menos perdieron!')?>
-        </p>
-
         <table class="table table-striped text-center">
             <thead>
                 <tr>
                     <th></th>
                     <th><?= __('Equipo') ?></th>
                     <th><?= __('Comentarios') ?></th>
-                    <th><?= __('Bikles') ?></th>
+                    <th><img src="/img/bikles.jpg" class="img-fluid bikles_table" alt=""></th>
                 </tr>
             </thead>
             <tbody>

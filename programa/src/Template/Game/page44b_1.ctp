@@ -15,29 +15,25 @@
     </div>
     <section class="container">
             <p class="h_green">
-                <?= __('Retos basados en momentos claves y en ') ?><i><?= __('pain points') ?></i>
+                <i class="fa fa-lightbulb-o"></i>
+                <?= __('Introducir retos basados en momentos claves y en ') ?><i><?= __('pain points') ?></i>
             </p>
+            <div class="clock-c">
+                <i class="fa fa-clock-o mr-2"></i><time>10'</time>
+            </div>
             <p>
-                <?= __('Los equipos tienen 10 minutos para introducir todos los retos posibles, basados en basados en los ') ?><i><?= __('pain points ') ?></i><?= __('identificados') ?><br>
                 <?= __('Para ello, procederán en 3 fases:') ?>
-            </p>
-
-            <p>
+                <br>
                 <?=__('Identificar momentos claves con clientes internos/externos, usuarios/consumidores, otros actores claves en relación en nuestra problemática. Introducirlos en la columna izquierda.')?>
-            <p>
             </p>
-            <?=__('Después, para cada uno de estos momentos, listar los ') ?><i><?= __('pain points ') ?></i><?= __('(puntos dolorosos): puntos críticos o problemas. Introducir estos ') ?><i><?= __('pain points ') ?></i><?= __('en la segunda columna.') ?><br>
-                <?= __('Se puede introducir más de un ') ?><i><?= __('pain point ') ?></i><?= __('por interracción.')?>
+            <p>
+              <?=__('Después, para cada uno de estos momentos, listar los ') ?><i><?= __('pain points ') ?></i><?= __('(puntos dolorosos): puntos críticos o problemas. Introducir estos ') ?><i><?= __('pain points ') ?></i><?= __('en la segunda columna.') ?><br>
+                  <?= __('Se puede introducir más de un ') ?><i><?= __('pain point ') ?></i><?= __('por interracción.')?>
             </p>
             <p>
                 <?=__('Para acabar, lo más importante: transformar los ') ?><i><?= __('pain points ') ?></i><?= __('en retos (¿Cómo…?). Introducir los retos en la tercera columna.') ?><br>
                 <?= __('Pueden introducir más de un reto por pain point')?>
             </p>
-        <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
-                <?=__('¡Los equipos con más retos ganarán Bikles, y los equipos con menos retos perderán Bikles!')?>
-            </div>
-        </div>
 
         <div class="col fs32">
             <div class="d-flex align-items-end flex-column">
@@ -122,28 +118,29 @@
             <div class="col">
                 <!-- Button trigger modal_ex5 -->
                 <a href="#" data-toggle="modal" data-target="#modal_ex5" class="grey_link">
-                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
-                    <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                    </p>
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-3 mr-2"></i>
+                    <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?></div>
                 </a>
             </div>
 
         </div>
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
-                <b>
-                    <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
-                </b>
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                <?= __('Escribe el máximo de comentarios posibles.') ?>
                 </br>
-                <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
+                <?= __('¡Los equipos') ?>
+                <b>
+                    <?= __('ganarán o perderán Bikles!') ?>
+                </b>
             </div>
         </div>
         <div class="col">
             <!-- Button trigger modal_ex5 -->
             <a href="#" data-toggle="modal" data-target="#modal_ex5" class="grey_link">
-                <i class="fa fa-file-text-o fa-2x example_ic mr-3 pull-left"></i>
-                <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                </p>
+                <i class="fa fa-file-text-o fa-2x example_ic mr-3 mr-2"></i>
+                <div class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                </div>
             </a>
         </div>
         
@@ -156,9 +153,9 @@
                                 <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                 <div class="example_wrapper col mr-4">
                                    <div class="example_inner text-left py-3 px-4">
-                                        <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
-                                        <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                        <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                        <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></br>
+                                        <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?></br>
+                                        <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                     </div>
                                 </div>
                             </div>
@@ -168,13 +165,11 @@
                         </div>
                         <div class="modal-body">
                             <p>
-                                <b>
                                     <?=__('Para la Etapa 4, algunos ejemplos de ')?><i><?=__('retos basados en momentos clave y en pain points')?></i> <?=__(' podrían ser:')?> 
-                                </b>
                             </p>
 
 
-                            <table class="table table-striped">
+                            <table class="reduced table table-striped">
                                <thead class="text-center">
                                   <tr>
                                      <th class="fs22 fw100 w30" style="position: relative;">

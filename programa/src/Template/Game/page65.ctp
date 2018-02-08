@@ -26,7 +26,7 @@ if ($admin) {
             <i class="fa fa-lightbulb-o"></i>
             <?=__('Selección final: Cada explorador selecciona los 5 retos más relevantes y novedosos entre los 25 finalistas (5 por etapa)')?>
         </p>
-        <ul>
+        <ul class="unstyled">
             <li>
                 <i class="fa fa-comment-o"></i>
                 <?=__('Este voto es personal')?>

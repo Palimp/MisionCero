@@ -17,7 +17,13 @@ $solution=$puzzle->answer1;
         <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
     </header>
     <section class="container">
-        <p class="h_green mt-3">
+        <p class="title_first mt-3 pb-2">
+            <?= __('Parada lúdica 3') ?>
+        </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>1'</time>
+        </div>
+        <p class="h_green">
             <?= __('Cada equipo tendrá que leer el enigma') ?>
         </p>
         <div>
@@ -97,9 +103,9 @@ $solution=$puzzle->answer1;
         </table>
          <p id="error"></p>
     <?php if ($admin) { ?>
-
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>
@@ -115,7 +121,8 @@ $solution=$puzzle->answer1;
         </a>
 
         <div class="text-center mt-5">
-            <div class="alert d-inline-block" role="alert">
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
                 <?= __('¡3 Bikles para el primer equipo que da la respuesta correcta!') ?>
             </div>
         </div>

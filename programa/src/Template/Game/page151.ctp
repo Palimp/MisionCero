@@ -12,32 +12,27 @@ if ($admin) {
     <header>
         <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
     <div>
-        <p class="title_first pb-4">
+        <p class="title_first mt-3 pb-2">
             <?= __('Parada lúdica 1') ?>
         </p>
     </div>
     <section class="container">
-            <p class="h_green">
-                <?= __('ATENCIÓN exploradores! ') ?>
-                <i class="fa fa-smile-o"></i>
-            </p>
-            <p>
-                <i class="fa fa-comment-o"></i>
-                <?= __('En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación. ') ?>
-                <br>
-                <?= __('El Jefe de Expedición realizará algunas preguntas al terminar…') ?>
-                <br>
-                <?= __('¡Los equipos que respondan correctamente ganarán Bikles!') ?>
-                <b>
-                    <?= __('No pierdas ningún detalle!') ?>
-                </b>
-            </p>
+        <p class="h_green">
+            <?= __('ATENCIÓN exploradores! ') ?>
+            <i class="fa fa-smile-o"></i>
+        </p>
+        <p>
+            <i class="fa fa-comment-o"></i>
+            <?= __('En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación. ') ?>
+            <br>
+            <?= __('El Jefe de Expedición realizará algunas preguntas al terminar…') ?>
+            <br>
+            <?= __('¡Los equipos que respondan correctamente ganarán Bikles!') ?>
+            <b>
+                <?= __('No pierdas ningún detalle!') ?>
+            </b>
+        </p>
         <?php if ($admin) { ?>
             <p>
                 <?= __('El Jefe de Expedición seguirá las instrucciones al pie del vídeo para lanzar la pregunta en el momento adecuado') ?>

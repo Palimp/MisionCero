@@ -15,14 +15,12 @@
       </span>
     </div>
     <section class="container text-center">
-        <div>
-            <p class="h_green">
-                <?= __('Comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
-            </p>
-            <p>
-                <?= __('Los equipos tienen 10 minutos para introducir todos los comentarios posibles.') ?><br>
-                <b><?= __('¡Los equipos con más comentarios ganarán Bikles, y los equipos con menos comentarios perderán Bikles!') ?></b>
-            </p>
+        <p class="h_green">
+            <i class="fa fa-lightbulb-o"></i>
+            <?= __('Introducir comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
+        </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>10'</time>
         </div>
         <div class="fs32">
             <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
@@ -83,9 +81,7 @@
                     <div class="modal-body">
 
                         <p class="green">
-                            <b>
                                 <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
-                            </b>
                         </p>
                         <p>
                             <b>
@@ -126,12 +122,14 @@
                 </div>
             </div>
         </div>
-        <div class="alert d-inline-block" role="alert">
-            <b>
-                <?= __('¡Ganarán Bikles los equipos con más comentarios!') ?>
-            </b>
+        <div class="alert alert_bikles d-inline-block" role="alert">
+            <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+            <?= __('Escribe el máximo de comentarios posibles.') ?>
             </br>
-            <?= __('¡Perderán Bikles los equipos con menos comentarios!') ?>
+            <?= __('¡Los equipos') ?>
+            <b>
+                <?= __('ganarán o perderán Bikles!') ?>
+            </b>
         </div>
     </section>
 </main>

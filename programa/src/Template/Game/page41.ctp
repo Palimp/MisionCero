@@ -11,15 +11,16 @@ if ($admin) {
     <header>
         <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
     </header>
-    <div class="title_wrap text-center">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
-    </div>
     <section class="container text-center">
+        <p class="title_first mt-3 pb-2">
+            <?= __('Parada lúdica 3') ?>
+        </p>
         <p class="h_green">
             <?= __('2 equipos trabajan juntos: ') ?>
         </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>2'</time>
+        </div>
         <p>
             <b><?= __('Fase 1-') ?></b>
             </br> 
@@ -90,8 +91,11 @@ if ($admin) {
 
         </div>
         <?php if ($admin) { ?>
+
             <div class="mt-5">
-                <div class="alert d-inline-block" role="alert">
+                <div class="alert alert_bikles d-inline-block" role="alert">
+                    <img src="/img/bikles.jpg" class="float-left mr-3 img-fluid" alt="">
+                    
                     <p><?= __('El Jefe de Expedición distribuirá Bikles:') ?></p>
                     <b>
                         <?= __('- Si la venta ha sido neutra, no ganarán ni perderán Bikles') ?>

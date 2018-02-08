@@ -13,7 +13,7 @@ if ($admin) {
     </div>
     <section class="container">
         <div class="fs22 mb-4 py-4">
-            <img src="/img/lupa.svg" class="pull-left mr-3" alt="">
+            <img src="/img/lupa.svg" class="float-left mr-3" alt="">
             <b>
                 <?=__('¿Cómo?')?>
             </b>

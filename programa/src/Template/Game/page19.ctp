@@ -17,52 +17,58 @@ if ($admin) {
         <?=__('Problemática: '.$trouble)?>
       </span>
     </div>
-    <section class="container text-center">
-        <div>
-            <p class="h_green">
-                <?=__('Utilizar las preguntas básicas para identificar retos más concretos y, si es posible, no habituales, sobre la problemática.')?>
+    <section class="container">
+        <div class="text-center">
+            <p class="title_first pb-4">
+              <?=__('Etapa 2- Preguntas Básicas')?>
             </p>
-            <p class="fs22">
-                <?=__('Pensar en las preguntas más básicas para identificar retos:')?>
-            </p>
-            <div class="row fs22 green mb-2" style="background-color: white;">
-                <div class="col">
-                    <?=__('¿CUÁNDO?')?>
-                </div>
-                <div class="col">
-                    <?=__('¿DÓNDE?')?>
-                </div>
-                <div class="col">
-                    <?=__('¿CÓMO?')?>
-                </div>
-                <div class="col">
+        </div>
+        <p>
+            <i class="fa fa-lightbulb-o"></i>
+            <?=__('Utilizar las preguntas básicas para identificar retos más concretos y, si es posible, no habituales, sobre la problemática.')?>
+        </p>
+        <p>
+            <?=__('Pensar en las preguntas más básicas para identificar retos:')?>
+        </p>
+        <div class="text-left">
+            <div class="pr-3 d-inline-block" style="background-color: #ebfa94;">
+                <span class="mx-2">
                     <?=__('¿QUIÉN?')?>
-                </div>
+                </span>
+                <span class="mr-2">
+                    <?=__('¿DÓNDE?')?>
+                </span>
+                <span>
+                    <?=__('¿CUÁNDO?')?>
+                </span>
             </div>
-            <ul class="list-numbered text-left">
-                <li>
-                    <?=__('Pensar en momentos relevantes, lugares relevantes (de uso, de compra, donde ocurre…), formas de hacer las cosas, públicos objetivos (internos o externos)')?>
-                </li>
-                <li>
-                    <?=__('Convertir estas respuestas en retos: ¿cómo…?')?>
-                </li>
-            </ul>
-            <div class="row fs22 green mb-2" style="background-color: white;">
-                <div class="col">
-                    <?=__('¿POR QUÉ?')?>
-                </div>
-                <div class="col">
+        </div>
+        <ol class="mt-2 list-numbered text-left">
+            <li>
+                <?=__('Pensar en públicos objetivos (internos o externos), lugares y momentos relevantes asociados con la problemática')?>
+            </li>
+            <li>
+                <?=__('Convertir estas respuestas en retos: ¿cómo…?')?>
+            </li>
+        </ol>
+        <div class="text-left">
+            <div class="pr-3 d-inline-block" style="background-color: #f3ed48;">
+                <span class="mx-2">
+                    <?=__('¿POR QUÉ? · ')?>
+                </span>
+                <span>
                     <?=__('¿PARA QUÉ?')?>
-                </div>
+                </span>
             </div>
-            <ul class="list-numbered text-left">
-                <li>
-                    <?=__('Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto. Escribir estos “¿por qué?/¿para qué?” ')?>
-                </li>
-                <li>
-                    <?=__('Convertirlos en reto: ¿Cómo…? ')?>
-                </li>
-            </ul>
+        </div>
+        <ol class="mt-2 list-numbered text-left">
+            <li>
+                <?=__('Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto.')?>
+            </li>
+            <li>
+                <?=__('Convertirlos en reto: ¿Cómo…? ')?>
+            </li>
+        </ol>
             
         <div>
             <!-- Button trigger modal_ex -->
@@ -85,9 +91,11 @@ if ($admin) {
                                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                     <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <b><?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></b>
+                                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?>
+                                            </br>
                                             <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
-                                            <b><?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?></b>
+                                            </br>
+                                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
                                         </div>
                                     </div>
                                 </div>
@@ -95,13 +103,11 @@ if ($admin) {
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body text-center">
                                 <p>
-                                    <b>
                                         <?=__('Para esta Etapa 2, algunos ejemplos de ')?><i><?=__('“retos basados en preguntas básicas”')?></i> <?=__(' podrían ser:')?> 
-                                    </b>
                                 </p>
-                                <div class="text-center">
+                                <div>
                                     <div class="row">
                                         <div class="col">
                                             <p>
@@ -166,7 +172,7 @@ if ($admin) {
                                                 </b>
                                                 </br>
                                                 <span class="h_green">
-                                                    <?= __('pensar en actores relevantes de la problemática y cómo estos expresarían el reto') ?>
+                                                    <?= __('PENSAR EN LUGARES RELEVANTES RELACIONADOS CON LA PROBLEMÁTICA Y EN POSIBLES RETOS RELACIONADOS CON ESTOS LUGARES') ?>
                                                 </span>
                                                 </br>
                                                 <?= __('En la fábrica') ?>
