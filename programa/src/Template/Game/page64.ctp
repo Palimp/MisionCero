@@ -144,7 +144,7 @@ if ($admin) {
 
 
             $('#submitvotos').click(function () {
-                if ($(":radio:checked").length != 25) {
+                if ($(":radio:checked").length != $(":radio").length/2) {
                     alert("Ups! Explorador, algo no ha ido bien… Usa tus prismáticos y revisa tus votos");
                     return;
                 }

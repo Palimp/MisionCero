@@ -15,39 +15,42 @@ $ambits[-1]->ambit = __('Sin ámbito');
         <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
     </header>
     <div class="title_wrap text-center">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
+        <span class="title">
+            <?= __('Problemática: ' . $trouble) ?>
+        </span>
     </div>
     <div class="text-center">
         <p class="title_first pb-4">
-            <?=__('RESUMEN FINAL DE LA Binnakle Mission 0')?>
+            <?= __('RESUMEN FINAL DE LA Binnakle Mission 0') ?>
         </p>
     </div>
     <section class="container">
         <div class="text-right">
+
+            <?=
+            $this->Html->link(
+                    '<i class="fa fa-download"></i>', ['controller' => 'Game', 'action' => 'resumen.pdf'],
+                    ['escape' => false,"class"=>"mr-2","data-toggle"=>"tooltip","title"=>"Haz click para descargar"]
+            )
+            ?>
             
-            <a href="javascript:save()" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
-            <a href="javascript:window.print()" data-toggle="tooltip" title="Haz click para imprimir">
-                <i class="fa fa-print"></i>
-            </a>
             <p class="fs14">
-                <?= __('Descarga o imprime el resumen de la partida') ?>
+<?= __('Descarga el resumen de la partida') ?>
             </p>
         </div>
         <p class="h_green">
-            <?= __('Tabla resumen de los retos') ?>
+<?= __('Tabla resumen de los retos') ?>
         </p>
         <article class="row mt-2">
             <div class="col mr-4 pz-4 t5_p">
                 <h5 class><?= __('TOP 5 RETOS PRIORITARIOS') ?></h5>
-                <?php
-                $cont = 0;
-                $ant = 0;
-                foreach ($ranking as $team) {
-                    $cont++;
-                    if ($cont <= 5 || $ant == $team['votes']) {
-                        ?>
+<?php
+$cont = 0;
+$ant = 0;
+foreach ($ranking as $team) {
+    $cont++;
+    if ($cont <= 5 || $ant == $team['votes']) {
+        ?>
                         <p>                           <?= $team['question'] ?> </p>
                         <?php
                     }
@@ -59,13 +62,13 @@ $ambits[-1]->ambit = __('Sin ámbito');
             </div>
             <div class="col ml-4 pz-4 t5_qw">
                 <h5><?= __('TOP 5 RETOS OPERATIVOS (QUICK WINS)') ?></h5>
-                <?php
-                $cont = 0;
-                $ant = 0;
-                foreach ($quick as $team) {
-                    $cont++;
-                    if ($cont <= 5 || $ant == $team['votes']) {
-                        ?>
+<?php
+$cont = 0;
+$ant = 0;
+foreach ($quick as $team) {
+    $cont++;
+    if ($cont <= 5 || $ant == $team['votes']) {
+        ?>
                         <p>                           <?= $team['question'] ?> </p>
                         <?php
                     }
@@ -77,12 +80,12 @@ $ambits[-1]->ambit = __('Sin ámbito');
             </div>
         </article>
 
-      <?php if ($admin) { ?>
-          <div class="my-4 text-right">
-              <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-              <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
-          </div>
-      <?php } ?>
+<?php if ($admin) { ?>
+            <div class="my-4 text-right">
+                <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+            </div>
+<?php } ?>
     </section>
 </main>
 
@@ -130,17 +133,17 @@ $ambits[-1]->ambit = __('Sin ámbito');
             }
 <?php } ?>
     });
-    
+
     function save() {
-  var htmlContent = ['<html><head>    <meta charset="utf-8"/> </head><body>'+$('section').html()+'</body></html>'];
-  var bl = new Blob(htmlContent, {type: "text/html"});
-  var a = document.createElement("a");
-  a.href = URL.createObjectURL(bl);
-  a.download = "top-retos.html";
-  a.hidden = true;
-  document.body.appendChild(a);
-  a.innerHTML = "something random - nobody will see this, it doesn't matter what you put here";
-  a.click();
-}
+        var htmlContent = ['<html><head>    <meta charset="utf-8"/> </head><body>' + $('section').html() + '</body></html>'];
+        var bl = new Blob(htmlContent, {type: "text/html"});
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(bl);
+        a.download = "top-retos.html";
+        a.hidden = true;
+        document.body.appendChild(a);
+        a.innerHTML = "something random - nobody will see this, it doesn't matter what you put here";
+        a.click();
+    }
 </script>
 

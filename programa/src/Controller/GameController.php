@@ -21,6 +21,25 @@ class GameController extends AppController {
         $this->loadComponent('RequestHandler');
     }
 
+    public function resumen() {
+        $sesion = $this->Code->loadSesion();
+        $id = $sesion['id'];
+        $teams = $this->Code->getTeams($id);
+        $comments = $this->Code->getTopsOrder($id);
+        $quick = $this->Code->getTopsQuick($id);
+        $con = $this->Code->getTopsOrderCon($id);
+        $sin = $this->Code->getTopsOrderSin($id);
+        $this->set('sesion', $sesion);
+        $this->set('teams', $teams);
+        $this->set('comments', $comments);
+        $this->set('quick', $quick);
+        $this->set('con', $con);
+        $this->set('sin', $sin);
+        $this->pdfConfig = array(
+            'filename' => 'resumen.pdf'
+        );
+    }
+
     /**
      * Index method
      *
@@ -811,7 +830,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $video = $this->Code->getVideoId($sesion['ludico']);
-        
+
         $this->Code->setPage($id, 161);
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
@@ -1756,6 +1775,8 @@ class GameController extends AppController {
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
         $this->set('ranking', $comments);
+        $teams = $this->Code->getTeams($id);
+        $this->set('teams', $teams);
     }
 
     public function page59() {

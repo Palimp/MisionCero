@@ -216,5 +216,20 @@ if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
 
+ 	
+Plugin::load('CakePdf', ['bootstrap' => true]);
 
+ 	
+Configure::write('CakePdf', [
+    'engine' => [
+        'className' => 'CakePdf.Tcpdf',
+        'options' => [
+            'print-media-type' => false,
+            'outline' => true,
+            'dpi' => 96
+        ],
+    ],
+    'download' => true,
+    'filename'=>'resumen.pdf'
+]);
 Configure::write('Company.mail','misioncero1@gmail.com');

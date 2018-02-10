@@ -302,6 +302,7 @@
     $(function () {
 <?php if (!$admin) { ?>
 
+ 
             $('#addinter').click(function () {
                 if ($('#inter').val() == "") {
                     $('#inter').focus();

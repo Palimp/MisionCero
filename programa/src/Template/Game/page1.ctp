@@ -51,7 +51,7 @@ if ($admin) {
         </div>
         <?php if ($admin) { ?>
             <div class="my-4 text-right">
-                <button style="display:none" id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
+                <button id="siguiente" type="button" class="btn btn-primary"><?= __('Siguiente') ?></button>
             </div>
         <?php } ?>
     </section>

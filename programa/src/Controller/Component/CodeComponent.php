@@ -810,6 +810,22 @@ class CodeComponent extends Component {
         return $res;
     }
 
+    public function getTopsOrderCon($id) {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('SELECT * FROM tops where game_id=' . $id . ' and votes>0 order by votes desc');
+        $res = $query->fetchAll('assoc');
+        return $res;
+    }
+
+    public function getTopsOrderSin($id) {
+        $conn = ConnectionManager::get('default');
+
+        $query = $conn->execute('SELECT * FROM tops where game_id=' . $id . ' and votes=0 order by votes desc');
+        $res = $query->fetchAll('assoc');
+        return $res;
+    }
+
     public function getTopsQuick($id) {
         $conn = ConnectionManager::get('default');
 

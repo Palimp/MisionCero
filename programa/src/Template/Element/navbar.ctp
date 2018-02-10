@@ -29,7 +29,9 @@
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams']
+                                __('Crear equipos').'<i class="fa fa-trash fa-lg float-right"></i>',
+                                ['controller' => 'Build', 'action' => 'teams'],
+                                ['escape' => false,]
                         )
                         ?>
                     </li>

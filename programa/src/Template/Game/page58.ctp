@@ -34,6 +34,7 @@ if ($admin) {
             </thead>
             <tbody>
                 <?php
+                $i=0;
                 foreach ($ranking as $team) {
                     ?>
                     <tr>
@@ -43,6 +44,7 @@ if ($admin) {
                         <td><?= $team['bikles'] ?></td>
                     </tr>
                     <?php
+                    $i++;
                 }
                 ?>
             </tbody>

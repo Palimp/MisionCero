@@ -34,12 +34,15 @@ $tipos=[__('Ambicioso'),__('Quick win')]
     <section class="container">
 
         <div class="text-right">
-            <a href="#" class="mr-2" data-toggle="tooltip" title="<?=__('Haz click para descargar')?>"><i class="fa fa-download"></i></a>
-            <a href="#" data-toggle="tooltip" title="<?=__('Haz click para imprimir')?>">
-              <i class="fa fa-print"></i>
-            </a>
+                       <?=
+            $this->Html->link(
+                    '<i class="fa fa-download"></i>', ['controller' => 'Game', 'action' => 'resumen.pdf'],
+                    ['escape' => false,"class"=>"mr-2","data-toggle"=>"tooltip","title"=>"Haz click para descargar"]
+            )
+            ?>
+
             <p class="fs14">
-                <?= __('Descarga o imprime el resumen de la partida') ?>
+                <?= __('Descarga el resumen de la partida') ?>
             </p>
         </div>
         <article>
@@ -111,7 +114,7 @@ $tipos=[__('Ambicioso'),__('Quick win')]
                 location.href = '<?=
     $this->Url->build([
         "controller" => "Game",
-        "action" => "page69"
+        "action" => "page68"
     ])
     ?>';
             });
