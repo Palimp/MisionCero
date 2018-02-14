@@ -39,7 +39,7 @@ if ($admin) {
                     <?php foreach ($comments as $comment) { ?>
                         <tr>
                             <td scope="row" >
-                                <span id="com<?= $comment['id'] ?>"> <?= $comment['question'] ?></span>
+                                <span id="com<?= $comment['id'] ?>"><?= __('¿Cómo ') ?> <?= $comment['question'] ?></span>
                             </td>
                             <td class="text-right">
                                 <label class="custom-control custom-checkbox">
