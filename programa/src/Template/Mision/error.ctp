@@ -6,21 +6,14 @@
 if (empty($error)){$error=__('Ha ocurrido un error');}
 ?>
 <main>
-      <header class="text-center mb-10" style="padding-top: 10rem;">
-        <div>
-          <img src="img/logo_binnakle_es.png" alt="">
-        </div>
-          <p></p>
-            <p class="fs26"><?=$error?></p>
-        <div>
-            <?=$this->Html->link(
-    __('Volver a la página principal'),'/');
-?>
-          
-        </div>
-      </header>
+  <header class="py-2 text-center fs26">
+      <span>
+          <?=$error?>
+      </span>
+  </header>
 
-
-   
-    </main>
+  <div class="text-center mt-5">
+    <?=$this->Html->link(__('Volver a la página principal'),'/', ['class' => 'btn btn-primary']);?>
+  </div>
+</main>
 
