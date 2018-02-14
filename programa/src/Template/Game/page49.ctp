@@ -13,7 +13,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
 
 <main>
     <header>
-        <?= $this->Html->image("breadp632.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp632.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <div class="title_wrap text-center">
       <span class="title">

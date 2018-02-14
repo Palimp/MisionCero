@@ -69,6 +69,7 @@ header {
 .home header{
   background-color: transparent;
 }
+
 header .header-content {
 }
 footer {
@@ -781,11 +782,15 @@ body {
     display: block;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px){
+  .head-img{ max-width: 1000px !important;}
 }
 
 /* Large screens ----------- */
 @media (min-width: 1200px) and (max-width: 3000px) {
+  html{
+    font-size: 13px;
+  }
 }   
 
 

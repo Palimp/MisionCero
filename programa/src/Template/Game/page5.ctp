@@ -7,12 +7,12 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main style="background-color: #e3e3e3;">
+<main>
     <div class="text-center">
         <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
     </div>
       <div style="margin: -0.5em;">
-          <?= $this->Html->image("breadp12.svg", ['class' => 'img-fluid']); ?>
+          <?= $this->Html->image("breadp12.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
       </div>
     <section class="container">
       <div class="fs22 text-center mb-4 mt-4">

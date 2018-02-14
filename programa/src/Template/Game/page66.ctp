@@ -24,7 +24,7 @@ function getTipo($a, $b, $c) {
 ?>
 <main>
     <header>
-        <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <div class="title_wrap text-center">
       <span class="title">

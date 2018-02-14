@@ -6,7 +6,7 @@
 echo $this->element('navbar');
 
 $fila = '<div class="row bloque">
-            <div class="col">
+            <div class="col-4">
                 <div class="d-inline">
                     ' . $this->Form->input(
                 'name[]', [
@@ -15,7 +15,7 @@ $fila = '<div class="row bloque">
             'options' => $names,
             'empty' => __('Selecciona el nombre del equipo'),
             'label' => '',
-            'class' => 'custom-select ml-2'
+            'class' => 'custom-select'
         ]) . '
                 </div>
             </div>

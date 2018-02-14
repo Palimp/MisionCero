@@ -11,7 +11,7 @@ echo $url;
 
 <main class="text-center">
     <header>
-        <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp28.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <div>
         <p class="title_first mt-3 pb-2">

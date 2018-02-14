@@ -7,7 +7,7 @@
 
 <main>
     <header>
-        <?= $this->Html->image("breadp151.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp151.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <section class="container">
         <p class="h_green mt-5">

@@ -10,7 +10,7 @@ if ($admin) {
 
 <main>
     <header>
-        <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <section class="container text-center">
         <div>

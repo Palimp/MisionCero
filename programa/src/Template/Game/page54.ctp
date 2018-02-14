@@ -9,7 +9,7 @@ if ($admin) {
 ?>
 <main>
     <header>
-        <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp74.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <section class="container text-center">
         <p class="title_first py-4">

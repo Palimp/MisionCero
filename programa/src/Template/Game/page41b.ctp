@@ -6,7 +6,7 @@
 ?>
 <main>
     <header>
-        <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp60.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <section class="container text-center">
         <p class="title_first mt-3 pb-2">

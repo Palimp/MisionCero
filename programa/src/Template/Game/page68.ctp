@@ -18,7 +18,7 @@ $colors = ['ebfa94', 'f3ed48', 'f2e500', 'e5da00', 'd1d600', 'bcca00', 'a1c41f',
 ?>
 <main>
     <header>
-        <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid']); ?>
+        <?= $this->Html->image("breadp85.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <div class="title_wrap text-center">
         <span class="title">
