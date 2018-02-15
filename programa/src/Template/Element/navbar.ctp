@@ -22,30 +22,28 @@
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Introducir problemática'), ['controller' => 'Build', 'action' => 'trouble']
+                                __('Introducir problemática') . '<i class="fa fa-home fa-lg float-right"></i>', ['controller' => 'Build', 'action' => 'trouble'], ['escape' => false,]
                         )
                         ?>
                     </li>
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Crear equipos').'<i class="fa fa-trash fa-lg float-right"></i>',
-                                ['controller' => 'Build', 'action' => 'teams'],
-                                ['escape' => false,]
+                                __('Crear equipos') . '<i class="fa fa-trash fa-lg float-right"></i>', ['controller' => 'Build', 'action' => 'teams'], ['escape' => false,]
                         )
                         ?>
                     </li>
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Estado partida'), ['controller' => 'Build', 'action' => 'estado']
+                                __('Estado partida') . '<i class="fa fa-play-circle-o fa-lg float-right"></i>', ['controller' => 'Build', 'estado' => 'teams'], ['escape' => false,]
                         )
                         ?>
                     </li>
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Otro código'), ['controller' => 'Build', 'action' => 'reset']
+                                __('Otro código') . '<i class="fa fa-sign-out fa-lg float-right"></i>', ['controller' => 'Build', 'action' => 'teams'], ['escape' => false,]
                         )
                         ?>
                     </li>
