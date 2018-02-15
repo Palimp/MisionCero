@@ -54,7 +54,8 @@ $tipos=[__('Ambicioso'),__('Quick win')]
             </p>
             <div id="accordion_a" role="tablist" aria-multiselectable="true">
                 <?php
-                for ($i = 0; $i <3; $i++) {
+                
+                for ($i = 0; $i <count($tipos); $i++) {
                     ?>
                     <div class="card">
                          <?php if (isset($retos[$i])) { ?>
