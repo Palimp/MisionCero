@@ -1362,7 +1362,8 @@ class GameController extends AppController {
             }
             $image = $this->Code->getImageId($sesion['ludico']);
         } else {
-            $image = $this->Code->getImageId($sesion['ludico']);
+            //$image = $this->Code->getImageId($sesion['ludico']);
+            $image = $this->Code->getImage($id);
             $this->Code->setTime($id, -1);
             $session->write('seconds', $period);
             $this->set('stop', 0);

@@ -6,7 +6,7 @@
 if ($admin) {
     echo $this->element('navbar');
 }
-echo $url;
+//echo $url;
 ?>
 
 <main class="text-center">
