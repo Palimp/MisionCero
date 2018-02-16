@@ -422,7 +422,7 @@ main{/* height: 980px; *//* overflow: auto; */}/* BORRAR */
   box-shadow: inset 0 3px 6px -4px rgba(43, 43, 43, 0.5);
 }
 .bg-colors li .fa-lg {
-  /*line-height: 1;*/
+  line-height: 1;
 }
 .bg-colors li:nth-child(1){
   background-color: #ebfa94;
