@@ -40,7 +40,6 @@ echo $this->element('navbar');
                 <p>
                     <?= __('Cuando todos los equipos hayan sido confirmados, aparecerá abajo “EMPEZAR PARTIDA”. ') ?>
                 </p>
-                <!-- end ESTO VA EN OTRA PÁGINA -->
 
                 <div>
                     <?php
@@ -50,6 +49,8 @@ echo $this->element('navbar');
                     }
                     ?>
                 </div>
+                <!-- end ESTO VA EN OTRA PÁGINA -->
+
 
                 <!-- <div class="form-group">
                     <p class="fs26"><?= __('Menú de administración') ?></p>

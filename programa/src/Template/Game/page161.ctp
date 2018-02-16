@@ -30,13 +30,6 @@ if ($admin) {
             
             <div class="text-left mt-5 row">
                 <div class="col-2">
-                    <a href="#" data-toggle="modal" data-target="#modal_video_1" class="grey_link">
-                        <i class="fa fa-question-circle-o fa-2x example_ic mr-3 pull-left"></i>
-                        <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver pregunta') ?>
-                        </p>
-                    </a>
-                </div>
-                <div class="col-2">
                     <a href="#" data-toggle="modal" data-target="#modal_video_2" class="grey_link">
                         <i class="fa fa-check-circle-o fa-2x green mr-3 pull-left"></i>
                         <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver solución') ?>
@@ -49,36 +42,8 @@ if ($admin) {
                     <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Continuar Etapa 2') ?></button>
                 </div>
                 <div>
-                    <div id="modal_video_1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_video_1LiveLabel" style="display: none;" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header align-items-start">
-                                    <div class="example fs26">
-                                        <i class="fa fa-question-circle-o fa-3x example_ic align-top mr-3"></i>
-                                        <div class="example_wrapper d-inline-block">
-                                            <div class="example_innerX text-left py-3 px-4">
-                                                <b><?= __('Pregunta') ?></b>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p class="fs22"><?= __('¿Alguien ha observado algo extraño en la escena?') ?></p>
-                                    <br>
-                                    <br>
-                                    <?= __('Cuando todos los equipos hayan respondido, el Jefe de Expedición reproducirá el video para conocer la solución. ') ?>
-                                    <br>
-                                    <br>
-                                    <?= __('Luego hará click en el icono ') ?><i class="fa fa-check-circle-o fa-lg green"></i> <?= __('para ver cuántos Bikles ganará cada equipo') ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div id="modal_video_2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_video_2LiveLabel" style="display: none;" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-dialog modal-lgX" role="document">
                             <div class="modal-content" style="background-color: #f2e500;">
                                 <div class="modal-header align-items-start">
                                     <div class="example fs26 white">

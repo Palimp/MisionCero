@@ -35,13 +35,6 @@ if ($admin) {
                         </p>
                     </a>
                 </div>
-                <div class="col-2">
-                    <a href="#" data-toggle="modal" data-target="#modal_video_2" class="grey_link">
-                        <i class="fa fa-check-circle-o fa-2x green mr-3 pull-left"></i>
-                        <p class="fs12"><?= __('click aquí para') ?><br><?= __(' ver solución') ?>
-                        </p>
-                    </a>
-                </div>
                 <div class="col-8 text-right">
                     <button  id="otro" type="button" class="btn btn-primary"><?= __('Cambiar de vídeo') ?></button>
                     <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
@@ -50,7 +43,7 @@ if ($admin) {
 
                 <div>
                     <div id="modal_video_1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_video_1LiveLabel" style="display: none;" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-dialog modal-lgX" role="document">
                             <div class="modal-content">
                                 <div class="modal-header align-items-start">
                                     <div class="example fs26">
@@ -69,45 +62,10 @@ if ($admin) {
                                     <p class="fs22"><?= __('¿Alguien ha observado algo extraño en la escena?') ?></p>
                                     <br>
                                     <br>
-                                    <?= __('Cuando todos los equipos hayan respondido, el Jefe de Expedición reproducirá el video para conocer la solución. ') ?>
+                                    <?= __('Cuando todos los equipos hayan respondido, el Jefe de Expedición pulsará en ”Continuar Parada lúdica 1"') ?>
                                     <br>
                                     <br>
                                     <?= __('Luego hará click en el icono ') ?><i class="fa fa-check-circle-o fa-lg green"></i> <?= __('para ver cuántos Bikles ganará cada equipo') ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="modal_video_2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_video_2LiveLabel" style="display: none;" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content" style="background-color: #f2e500;">
-                                <div class="modal-header align-items-start">
-                                    <div class="example fs26 white">
-                                        <i class="fa fa-check-circle-o fa-3x example_ic align-top white"></i>
-                                        <div class="example_wrapper d-inline-block">
-                                            <div class="example_innerX text-left py-3 px-4">
-                                                <b><?= __('Solución') ?></b>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body pt-0">
-                                    <p class="video_solution"><?= __($solucion) ?></p>
-                                    <div class="alert alert_bikles float-right text-center col-5" role="alert">
-                                        <img src="/img/bikles.png" class="mb-1 img-fluid" alt="">
-                                        <br>
-                                        <b><?= __('+ 2 Bikles ') ?></b>
-                                        <?= __('para el equipo que haya detectado que algo en la calle ha cambiado') ?>
-                                        <br>
-                                        <b><?= __('+ 4 Bikles ') ?></b>
-                                        <?= __('para el equipo capaz de enumerar elementos que han cambiado') ?>
-                                    </div>
-                                    <p class="fs22">
-                                        <?= __('La calle entera ha cambiado completamente!') ?>
-                                        <i class="fa fa-smile-o ml-1"></i>
-                                    </p>
                                 </div>
                             </div>
                         </div>

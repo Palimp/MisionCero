@@ -95,7 +95,7 @@ $fila = '<div class="row bloque">
                                 'options' => $names,
                                 'empty' => __('Selecciona el nombre del equipo'),
                                 'label' => '',
-                                'class' => 'custom-select ml-2',
+                                'class' => 'custom-select',
                                 'default' => array_search($team[1],$names)
                             ]);
                             ?>
@@ -134,7 +134,7 @@ $fila = '<div class="row bloque">
                 'options' => $names,
                 'empty' => __('Selecciona el nombre del equipo'),
                 'label' => '',
-                'class' => 'custom-select ml-2'
+                'class' => 'custom-select'
             ]);
             ?>
        

@@ -15,7 +15,7 @@
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="bg-colors collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right unstyled">
                     <li>
                         <a href="http://misioncero.binnakle.com/">Inicio</a>
                     </li>
@@ -48,13 +48,13 @@
                         ?>
                     </li>
                     <li>
-                        <a class="" href="#">Ranking bikles</a>
+                        <a href="page70">Ranking bikles<i class="fa fa-list-ol fa-lg float-right"></i></a>
                     </li>
                     <li>
-                        <a class="" href="#">Resumen final</a>
+                        <a href="page67">Resumen final<i class="fa fa-sitemap fa-lg float-right"></i></a>
                     </li>
                     <li>
-                        <a class="" href="#">Exportar resumen final</a>
+                        <a href="resumen.pdf">Exportar resumen final<i class="fa fa-download fa-lg float-right"></i></a>
                     </li>
                 </ul>
             </div>
