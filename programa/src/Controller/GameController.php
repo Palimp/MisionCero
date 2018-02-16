@@ -71,7 +71,7 @@ class GameController extends AppController {
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('comments', $interactions);
-                    $period = $this->Code->getTime();
+                    $period = 780;
                     $session->write('period', $period);
 
                     $this->set('time', '');
@@ -83,7 +83,7 @@ class GameController extends AppController {
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('comments', $comments);
-                    $period = 600;
+                    $period = 300;
                     $session->write('period', $period);
 
                     $this->set('time', '');
@@ -122,7 +122,7 @@ class GameController extends AppController {
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('comments', $comments);
-                    $period = $this->Code->getTime();
+                    $period = $this->Code->getTime(1);
                     $session->write('period', $period);
 
                     $this->set('trouble', $sesion['trouble']);
@@ -264,6 +264,17 @@ class GameController extends AppController {
                     $this->set('time', '');
                     $this->viewBuilder()->template('page411b');
                 } else
+                if ($sesion['page'] == 431) {
+                    $period = $this->Code->getTime(1);
+                    $this->set('id', $id);
+                    $this->set('team', $team);
+                    $this->set('stop', 1);
+
+                    $session = $this->request->session();
+                    $session->write('period', $period);
+                    $this->set('time', '');
+                    $this->viewBuilder()->template('page431');
+                } else
                 if ($sesion['page'] > 1) {
                     if ($sesion['page'] == 9) {
                         $comments = $this->Code->getTeamComments($id);
@@ -298,6 +309,8 @@ class GameController extends AppController {
                     if ($sesion['page'] == 58) {
                         $comments = $this->Code->getTeamQuestions($id, 'motions');
                         $this->set('ranking', $comments);
+                        $teams = $this->Code->getTeams($id);
+                        $this->set('teams', $teams);
                     }
                     if ($sesion['page'] == 67) {
                         $comments = $this->Code->getTopsOrder($id);
@@ -634,7 +647,7 @@ class GameController extends AppController {
         $this->set('stop', 1);
         $this->set('time', '');
         $session = $this->request->session();
-        $period = 600;
+        $period = 300;
         $session->write('period', $period);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
@@ -1107,7 +1120,7 @@ class GameController extends AppController {
         $this->set('stop', 1);
         $this->set('time', '');
         $session = $this->request->session();
-        $period = 600;
+        $period = 300;
         $session->write('period', $period);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
@@ -1403,6 +1416,46 @@ class GameController extends AppController {
         $this->set('trouble', $sesion['trouble']);
     }
 
+    public function page431() {
+        $sesion = $this->Code->loadSesion();
+        $session = $this->request->session();
+        $id = $sesion['id'];
+        $this->Code->setPage($id, 431);
+        $this->set('stop', 1);
+        $this->set('time', '');
+        $period = $this->Code->getTime(1);
+
+        $session->write('period', $period);
+
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $datos = $this->request->getData();
+            if (!empty($datos['time'])) {
+                $this->Code->addTime($id, $datos['time']);
+            }
+            if (!empty($datos['stop'])) {
+                $time2 = new Time($sesion['time1']);
+                $sec = $period - $time2->diffInSeconds(null, false); //$time->diff($time2,1)->format('%i:%s');
+                $this->Code->setTime($id, -1);
+                $session->write('seconds', $sec);
+                $this->set('stop', 0);
+                $this->set('time', gmdate("i:s", $sec));
+            }
+            if (!empty($datos['start'])) {
+                $time2 = Time::now();
+                $sec = $session->read('seconds');
+                $time2->subSecond($period - $sec);
+                $this->Code->setTime($id, 1, $time2);
+                $this->set('stop', 1);
+            }
+        } else {
+            $this->Code->setTime($id);
+        }
+
+        $this->set('admin', $sesion['admin']);
+        $this->set('trouble', $sesion['trouble']);
+    }
+
     public function page430() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
@@ -1418,7 +1471,7 @@ class GameController extends AppController {
         $this->Code->setPage($id, 44);
         $this->set('stop', 1);
         $this->set('time', '');
-        $period = $this->Code->getTime();
+        $period = 780;
         $session->write('period', $period);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
