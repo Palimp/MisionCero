@@ -23,9 +23,9 @@
 
                 </ul>
             </div>
-            <div class="row">
-                <div class="col">
-                    <p><?= __('Top 5 retos prioritarios') ?></p>
+            <div class="row mt-2">
+                <div class="col mr-4 pz-4 t5_p">
+                    <h5 class><?= __('TOP 5 RETOS PRIORITARIOS') ?></h5>
                     <ul>
                         <?php
                         foreach ($comments as $comment) {
@@ -39,9 +39,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <p><?= __('Top 5 retos operativos (quick win)') ?></p>
+            <div class="col ml-4 pz-4 t5_qw">
+                <h5><?= __('TOP 5 RETOS OPERATIVOS (QUICK WINS)') ?></h5>
                     <ul>
                         <?php
                         foreach ($quick as $comment) {
