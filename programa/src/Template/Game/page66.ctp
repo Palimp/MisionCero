@@ -67,7 +67,7 @@ function getTipo($a, $b, $c) {
                             <?= $team['votes'] ?>
                         </td>
                         <td><?= $ambits[$team['ambit'] - 1]->ambit ?></td>
-                        <td><?= getTipo($team['amb'], $team['nor'], $team['qui']) ?></td>
+                        <td><?= getTipo($team['amb'], $team['qui']) ?></td>
                     </tr>
                     <?php
                     if ($cont == 5) {
