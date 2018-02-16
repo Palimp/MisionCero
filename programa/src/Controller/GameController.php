@@ -264,7 +264,7 @@ class GameController extends AppController {
                     $this->set('time', '');
                     $this->viewBuilder()->template('page411b');
                 } else
-                     if ($sesion['page'] == 431) {
+                if ($sesion['page'] == 431) {
                     $period = $this->Code->getTime(1);
                     $this->set('id', $id);
                     $this->set('team', $team);
@@ -309,6 +309,8 @@ class GameController extends AppController {
                     if ($sesion['page'] == 58) {
                         $comments = $this->Code->getTeamQuestions($id, 'motions');
                         $this->set('ranking', $comments);
+                        $teams = $this->Code->getTeams($id);
+                        $this->set('teams', $teams);
                     }
                     if ($sesion['page'] == 67) {
                         $comments = $this->Code->getTopsOrder($id);
@@ -1452,7 +1454,6 @@ class GameController extends AppController {
 
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
-        
     }
 
     public function page430() {
