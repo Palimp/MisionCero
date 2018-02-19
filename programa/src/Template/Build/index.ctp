@@ -8,41 +8,50 @@ echo $this->element('navbar');
 
 <main>
     <section>
-                <div class="text-center mt-5">
-            <div class="alert alert_bikles d-inline-block" role="alert">
-                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
-                <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
-            </div>
-        </div>
         <div class="container py-5">
+            <div class="text-center">
+                <div class="alert alert_bikles d-inline-block" role="alert">
+                    <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
+                    <?= __('Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!') ?>
+                </div>
+            </div>
             <p>
-                <?= __('Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!') ?>
+                <?= __('Si no dispones de toda la información para formar los equipos ahora no te preocupes porque podrás hacerlo al inicio de la partida con los Exploradores (jugadores), o en cualquier momento desde el Menú del Jefe de Expedición.') ?>
                 </br>
                 </br>
-                <?= __('Como Jefe de Expedición, puedes formar los equipos antes de la partida y así tener todo preparado.') ?>
-                </br>
-                </br>
-                <?= __('Si no dispones todavía de toda la información para formar los equipos, no te preocupes porque lo podrás hacer al inicio de la partida con los Exploradores (jugadores). En este caso, pulsa abajo en “Crear equipos más tarde”') ?>
-                </br>
-                </br>
-                <?= __('Si quieres formar los equipos ahora pulsa en ”Crear equipos”') ?>
+                <?= __('Si quieres formar los equipos ahora pulsa en ”Crear equipos”. En caso contrario, pulsa “Siguiente”') ?>
             </p><?php
             echo $this->Html->link(
                     __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams'], ['class' => 'btn btn-primary']);
             ?>
+            <?php
+            echo $this->Html->link(
+                    __('“Siguiente”'), ['class' => 'btn btn-primary']);
+            ?>
             <!-- ESTO VA EN OTRA PÁGINA -->
 
                 <p>
-                    <?= __('Ahora, espera que los equipos entren en la partida y:') ?>
+                    <?= __('Para empezar la partida, los exploradores deberán acceder a la Misión 0 y seleccionar sus equipos:') ?>
                 </p>
                 <ul>
                     <li>
-                        <?= __('en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.') ?>
+                        <?= __('Si has creado los equipos con anterioridad, sólo tienen que confirmar su nombre de equipo') ?>
                     </li>
                     <li>
-                        <?= __('si no se han configurado con anterioridad, cada equipo tiene que elegir un nombre de equipo y introducir los nombres de todos sus miembros') ?>
+                        <?= __('Si los equipos se van a formar el mismo día de la partida, cada equipo deberá:') ?>
+                        <ol>
+                            <li>
+                                <?= __('Seleccionar el nombre del equipo con el que quieren jugar la Misión') ?>
+                            </li>
+                            <li>
+                                <?= __('Introducir los nombres de los miembros del equipo, separados por comas') ?>
+                            </li>
+                        </ol>
                     </li>
                 </ul>
+                <p>
+                    <?= __('¡Los Exploradores tendrán que ser rápidos en elegir con qué equipo quieren jugar la Misión, si no quieren que otro equipo rival se les adelante!') ?>
+                </p>
                 <p>
                     <?= __('Cuando todos los equipos hayan sido confirmados, aparecerá abajo “EMPEZAR PARTIDA”. ') ?>
                 </p>
