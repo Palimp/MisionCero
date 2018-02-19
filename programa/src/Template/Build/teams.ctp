@@ -38,7 +38,7 @@ $fila = '<div class="row bloque">
 ?>
 
 <main>
-    <section style="background-color: #E3E3E3;">
+    <section>
         <div class="title_band text-center py-2">
             <?= __('¡Competiremos por equipos!') ?>
         </div>

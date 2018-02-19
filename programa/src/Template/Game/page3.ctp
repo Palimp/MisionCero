@@ -8,7 +8,7 @@ if ($admin) {
 }
 ?>
 
-<main style="background-color: #e3e3e3;">
+<main>
     <div class="text-center">
         <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
     </div>

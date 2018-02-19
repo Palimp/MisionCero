@@ -8,7 +8,7 @@ echo $this->element('navbar');
 
 <main>
 
-    <section style="background-color: #E3E3E3;">
+    <section>
         <div class="container py-5 text-center">
 
             <div class="form-group">

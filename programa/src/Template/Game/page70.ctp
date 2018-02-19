@@ -7,7 +7,7 @@ if ($admin) {
     echo $this->element('navbar');
 }
 ?>
-<main style="background-color: #e3e3e3;">
+<main>
     <div class="title_alt text-center">
         <?=__('Problemática: '.$trouble)?>
     </div>

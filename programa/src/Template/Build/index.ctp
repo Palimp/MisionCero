@@ -7,7 +7,13 @@ echo $this->element('navbar');
 ?>
 
 <main>
-    <section style="background-color: #E3E3E3;">
+    <section>
+                <div class="text-center mt-5">
+            <div class="alert alert_bikles d-inline-block" role="alert">
+                <img src="/img/bikles.png" class="float-left mr-3 img-fluid" alt="">
+                <?=__('¡Los equipos que hayan obtenido más votos ganan Bikles!')?>
+            </div>
+        </div>
         <div class="container py-5">
             <p>
                 <?= __('Cada equipo podrá ganar o perder Bikles, la moneda de la expedición, en cada etapa, en función de 4 criterios: la cantidad de contenido generado, la calidad de estos contenidos, el ingenio en las paradas lúdicas y ... ¡la suerte que siempre tiene un papel en las aventuras!') ?>

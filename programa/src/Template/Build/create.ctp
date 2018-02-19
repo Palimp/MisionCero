@@ -12,7 +12,7 @@ echo $this->element('navbar');
             <?= __('Creación de juego') ?>
         </span>
     </header>
-    <section style="background-color: #E3E3E3;" class="text-center">
+    <section class="text-center">
         <div class="title_wrap">
             <span class="title">
                 <?php
