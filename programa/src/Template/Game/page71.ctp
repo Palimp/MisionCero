@@ -21,9 +21,9 @@ if ($admin) {
             </p>
         </div>
         <div class="text-center mb-10" style="position:relative; width: 637px; margin: auto;">
-            <span class="first"><?= $this->Html->image("exp" . str_pad($teams[0]['img'],2, "0", STR_PAD_LEFT).".png", ['class' => 'img-fluid']); ?><?=$teams[1]['name']?></span>
-            <b class="second"><?= $this->Html->image("exp" . str_pad($teams[1]['img'],2, "0", STR_PAD_LEFT).".png", ['class' => 'img-fluid']); ?><?=$teams[0]['name']?></b>
-            <span class="third"><?= $this->Html->image("exp" . str_pad($teams[2]['img'],2, "0", STR_PAD_LEFT).".png", ['class' => 'img-fluid']); ?><?=isset($teams[2]['name'])?$teams[2]['name']:''?></span>
+            <span class="first"><?= $this->Html->image("exp" . str_pad($teams[0]['img'],2, "0", STR_PAD_LEFT).".png", ['class' => 'img-fluid mx-auto d-block']); ?><?=$teams[1]['name']?></span>
+            <b class="second"><?= $this->Html->image("exp" . str_pad($teams[1]['img'],2, "0", STR_PAD_LEFT).".png", ['class' => 'img-fluid mx-auto d-block']); ?><?=$teams[0]['name']?></b>
+            <span class="third"><?= $this->Html->image("exp" . str_pad($teams[2]['img'],2, "0", STR_PAD_LEFT).".png", ['class' => 'img-fluid mx-auto d-block']); ?><?=isset($teams[2]['name'])?$teams[2]['name']:''?></span>
               <?= $this->Html->image("imgp92.svg"); ?>
         </div>
 
