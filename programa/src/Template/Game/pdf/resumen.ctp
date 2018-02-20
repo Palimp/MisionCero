@@ -29,6 +29,7 @@
                     <ul>
                         <?php
                         foreach ($comments as $comment) {
+                            print_r($comment);
                             ?>
                             <li><?= $comment['question'] ?>
 
