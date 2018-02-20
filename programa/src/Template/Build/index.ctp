@@ -23,76 +23,10 @@ echo $this->element('navbar');
             </p><?php
             echo $this->Html->link(
                     __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams'], ['class' => 'btn btn-primary']);
-            ?>
-            <?php
             echo $this->Html->link(
-                    __('“Siguiente”'), ['class' => 'btn btn-primary']);
+                    __('Siguiente'), ['controller' => 'Build', 'action' => 'landing'], ['class' => 'btn btn-primary']);
             ?>
-            <!-- ESTO VA EN OTRA PÁGINA -->
 
-                <p>
-                    <?= __('Para empezar la partida, los exploradores deberán acceder a la Misión 0 y seleccionar sus equipos:') ?>
-                </p>
-                <ul>
-                    <li>
-                        <?= __('Si has creado los equipos con anterioridad, sólo tienen que confirmar su nombre de equipo') ?>
-                    </li>
-                    <li>
-                        <?= __('Si los equipos se van a formar el mismo día de la partida, cada equipo deberá:') ?>
-                        <ol>
-                            <li>
-                                <?= __('Seleccionar el nombre del equipo con el que quieren jugar la Misión') ?>
-                            </li>
-                            <li>
-                                <?= __('Introducir los nombres de los miembros del equipo, separados por comas') ?>
-                            </li>
-                        </ol>
-                    </li>
-                </ul>
-                <p>
-                    <?= __('¡Los Exploradores tendrán que ser rápidos en elegir con qué equipo quieren jugar la Misión, si no quieren que otro equipo rival se les adelante!') ?>
-                </p>
-                <p>
-                    <?= __('Cuando todos los equipos hayan sido confirmados, aparecerá abajo “EMPEZAR PARTIDA”. ') ?>
-                </p>
-
-                <div>
-                    <?php
-                    if ($teams) {
-                        echo $this->Html->link(
-                                __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin'], ['class' => 'btn btn-primary']);
-                    }
-                    ?>
-                </div>
-                <!-- end ESTO VA EN OTRA PÁGINA -->
-
-
-                <!-- <div class="form-group">
-                    <p class="fs26"><?= __('Menú de administración') ?></p>
-        
-                </div>
-        
-        
-                <div>
-                <?=
-                $this->Html->link(
-                        __('Introducir/Modificar problemática'), ['controller' => 'Build', 'action' => 'trouble']);
-                ?>
-                </div>
-                <div>
-                <?=
-                $this->Html->link(
-                        __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams']);
-                ?>
-                </div>
-                <div>
-                <?php
-                if ($teams) {
-                    echo $this->Html->link(
-                            __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin']);
-                }
-                ?>
-                </div> -->
         </div>
     </section>
 

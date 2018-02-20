@@ -36,14 +36,14 @@
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Estado partida') . '<i class="fa fa-play-circle-o fa-lg float-right"></i>', ['controller' => 'Build', 'estado' => 'teams'], ['escape' => false,]
+                                __('Estado partida') . '<i class="fa fa-play-circle-o fa-lg float-right"></i>', ['controller' => 'Build', 'action' => 'estado'], ['escape' => false,]
                         )
                         ?>
                     </li>
                     <li>
                         <?=
                         $this->Html->link(
-                                __('Otro código') . '<i class="fa fa-sign-out fa-lg float-right"></i>', ['controller' => 'Build', 'action' => 'teams'], ['escape' => false,]
+                                __('Otro código') . '<i class="fa fa-sign-out fa-lg float-right"></i>', ['controller' => 'Build', 'action' => 'reset'], ['escape' => false,]
                         )
                         ?>
                     </li>

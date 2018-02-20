@@ -5,7 +5,8 @@
     <title>
         <?= $this->fetch('title') ?>
     </title>
-    <?= $this->Html->css('style.css', ['fullBase' => true]) ?>
+   <?= $this->Html->css(WWW_ROOT . '/css/pdf.css') ?>
+   
 </head>
 <body>
     <div id="container">

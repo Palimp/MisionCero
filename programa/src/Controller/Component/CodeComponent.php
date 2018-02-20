@@ -354,7 +354,6 @@ class CodeComponent extends Component {
         $table = TableRegistry::get('Teams');
         $first = $table->find('all')
                         ->where(['game_id' => $id, 'puzz' . $puzzle => -1])->toArray();
-
         return count($first) == 0;
     }
 
@@ -672,6 +671,17 @@ class CodeComponent extends Component {
         return $num;
     }
 
+    public function getFeelingsType() {
+        $table = TableRegistry::get('Feelings');
+        $num = $table->find('all')->toArray();
+        $res=[];
+        foreach ($num as $feeling){
+            $res[$feeling->name]=$feeling->type;
+            
+        }
+        return $res;
+    }
+    
     public function getTeamFeelings($id) {
         $conn = ConnectionManager::get('default');
 

@@ -21,6 +21,7 @@ if ($admin) {
             <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
             <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
             <?php
+            if ($admin){
             echo $this->Form->create('Begin', array(
                 'url' => array('controller' => 'Game', 'action' => 'page431'), 'class' => 'd-inline-block'
             ));
@@ -60,6 +61,7 @@ if ($admin) {
             <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block btn btn-primary btn-green">
                 <i class="fa fa-minus"></i><time> 00:30</time>
             </a>
+            <?php } ?>
             </form>
         </div>
 
@@ -82,7 +84,7 @@ if ($admin) {
     var stop =<?= $stop ?>;
 
     $(function () {
-<?php if ($admin) { ?>
+<?php if (1) { ?>
             $('#finalizar').click(function () {
                 $('#siguiente').click();
             });
