@@ -23,33 +23,10 @@ echo $this->element('navbar');
             </p><?php
             echo $this->Html->link(
                     __('Crear equipos'), ['controller' => 'Build', 'action' => 'teams'], ['class' => 'btn btn-primary']);
+            echo $this->Html->link(
+                    __('Crear equipos más adelante'), ['controller' => 'Build', 'action' => 'landing'], ['class' => 'btn btn-primary']);
             ?>
-            <!-- ESTO VA EN OTRA PÁGINA -->
-
-                <p>
-                    <?= __('Ahora, espera que los equipos entren en la partida y:') ?>
-                </p>
-                <ul>
-                    <li>
-                        <?= __('en el caso de que hayas configurado previamente los equipos, simplemente confirmen el nombre de su equipo.') ?>
-                    </li>
-                    <li>
-                        <?= __('si no se han configurado con anterioridad, cada equipo tiene que elegir un nombre de equipo y introducir los nombres de todos sus miembros') ?>
-                    </li>
-                </ul>
-                <p>
-                    <?= __('Cuando todos los equipos hayan sido confirmados, aparecerá abajo “EMPEZAR PARTIDA”. ') ?>
-                </p>
-
-                <div>
-                    <?php
-                    if ($teams) {
-                        echo $this->Html->link(
-                                __('Empezar partida'), ['controller' => 'Build', 'action' => 'begin'], ['class' => 'btn btn-primary']);
-                    }
-                    ?>
-                </div>
-                <!-- end ESTO VA EN OTRA PÁGINA -->
+            
 
 
                 <!-- <div class="form-group">

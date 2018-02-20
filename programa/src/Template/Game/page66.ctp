@@ -9,15 +9,12 @@ if ($admin) {
 $ambits[-1] = new \stdClass();
 $ambits[-1]->ambit = __('Sin ámbito');
 
-function getTipo($a, $b, $c) {
+function getTipo($a, $b) {
     $types = ['Ambicioso', 'Quick win'];
-    if ($c >= $b and $c >= $a) {
-        return $types[2];
-    }
-    if ($a >= $b and $a >= $c) {
+    if ($a >= $b ) {
         return $types[0];
     }
-    if ($b >= $a and $b >= $c) {
+    if ($b >= $a ) {
         return $types[1];
     }
 }

@@ -53,9 +53,9 @@
                 'id' => 'datos'
             ]);
             ?>
-            <a href="#" id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
-                <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
-            </a>
+            <span  id="sendretos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block">
+                <button type="button" class="btn btn-primary"><?= __('Valida') ?></button>
+            </span>
             </form>
         </div>
     </section>
@@ -78,7 +78,10 @@
                         return;
                     }
                     datos.push({"id": $('#reto' + i).val(), "ambito": $("[name='radio" + i + "']:checked").val()});
+                    
+                
                 }
+                
                 $('#datos').val(JSON.stringify(datos));
                 $('#team').submit();
             });

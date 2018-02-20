@@ -30,6 +30,14 @@ class BuildController extends AppController {
         $this->set("teams", $this->Code->teamsOK($sesion['id']));
     }
 
+      public function landing() {
+        $sesion = $this->Code->loadSesion();
+
+        if (empty($sesion['trouble'])) {
+            return $this->redirect(['action' => 'trouble']);
+        }
+        $this->set("teams", $this->Code->teamsOK($sesion['id']));
+    }
     public function estado() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
@@ -146,7 +154,7 @@ class BuildController extends AppController {
             }
             $this->Flash->success(__('Los equipos se han guardado.'));
 
-            return $this->redirect(['action' => 'index']);
+            return $this->redirect(['action' => 'landing']);
         }
 
         $this->set('teams', $teams);

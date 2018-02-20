@@ -25,13 +25,16 @@
             </div>
             <div class="row mt-2">
                 <div class="col mr-4 pz-4 t5_p">
-                    <h5 class><?= __('TOP 5 RETOS PRIORITARIOS') ?></h5>
+                    <h5 class><?= __('TOP 25 RETOS ') ?></h5>
                     <ul>
                         <?php
+                        
                         foreach ($comments as $comment) {
-                            print_r($comment);
+                            if ($comment['ambit']==0){
+                                $comment['ambit']=10;
+                            }
                             ?>
-                            <li><?= $comment['question'] ?>
+                            <li><?= $comment['question'] ?> (<?=$ambits[$comment['ambit']-1]->ambit?>)
 
                             </li>
                             <?php
@@ -45,8 +48,11 @@
                     <ul>
                         <?php
                         foreach ($quick as $comment) {
+                              if ($comment['ambit']==0){
+                                $comment['ambit']=10;
+                            }
                             ?>
-                            <li><?= $comment['question'] ?>
+                           <li><?= $comment['question'] ?> (<?=$ambits[$comment['ambit']-1]->ambit?>)
 
                             </li>
                             <?php

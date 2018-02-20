@@ -29,6 +29,8 @@ class GameController extends AppController {
         $quick = $this->Code->getTopsQuick($id);
         $con = $this->Code->getTopsOrderCon($id);
         $sin = $this->Code->getTopsOrderSin($id);
+        $ambits = $this->Code->getAmbits();
+        $this->set('ambits', $ambits);
         $this->set('sesion', $sesion);
         $this->set('teams', $teams);
         $this->set('comments', $comments);
@@ -92,7 +94,7 @@ class GameController extends AppController {
                 if ($sesion['page'] == 57) {
 
                     $comments = $this->Code->getQuestion($team, 'Motions');
-                    $feelings = $this->Code->getTeamFeelings($team);
+                    $feelings = $this->Code->getFeelingsType();
 
                     $this->set('id', $id);
                     $this->set('team', $team);
@@ -189,7 +191,9 @@ class GameController extends AppController {
                     }
                 } else
                 if ($sesion['page'] == 47) {
-                    $comments = $this->Code->getQuestionSel($team, 'Ppchallenges');
+
+                    $comments = $this->Code->getQuestionSel($team, 'ppchallenges');
+
                     $ambits = $this->Code->getAmbits();
                     $this->set('id', $id);
                     $this->set('team', $team);
@@ -1345,7 +1349,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $session = $this->request->session();
         $id = $sesion['id'];
-        $this->Code->setPage($id, 41);
+        $this->Code->setPage($id, 411);
         $this->set('stop', 1);
         $this->set('time', '');
         $period = $this->Code->getTime(2);
