@@ -28,8 +28,13 @@ shuffle($answers);
         </p>
         <div>
             <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
+            <?php if ($admin) { ?>
             <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
+            <?php } else { ?>
+            <h1><i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time></h1>
+            
             <?php
+            }
             if ($admin) {
                 echo $this->Form->create('Begin', array(
                     'url' => array('controller' => 'Game', 'action' => 'page52'), 'class' => 'd-inline-block'

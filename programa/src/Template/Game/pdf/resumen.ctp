@@ -1,14 +1,19 @@
 <main>
-    <div class="text-center">
-        <h4 class="title_alt"><?= __('Binnakle Mission 0 - ') . $sesion['trouble'] ?></h4>
+    <div class="text-center" style="text-align: center">
+        <h1 class="title_alt"><?= __('Binnakle Mission 0 - ') . $sesion['trouble'] ?></h1>
     </div>
+    
+    <table style="background-color: #33f48a; padding: 10px;">
+        <tr><td style="background-color: white;width:20%">&nbsp;</td><td style="width:60%"><?= __('Código ') . $sesion['code'] ?></td></tr>
+        <tr><td style="background-color: white;width:20%">&nbsp;</td><td style="width:60%"><?= __('Fecha: ') . date('d/m/Y') ?></td></tr>
+    </table>
     <section class="container">
         <div class="fs22 text-center mb-4">
-            <?= __('Código ') . $sesion['code'] ?>
+            
         </div>
         <div class="row">
             <div class="col">
-                <p><?= __('Fecha :') . date('d/m/Y') ?></p>
+                <p></p>
                 <p><?= __('Equipos') ?></p>
                 <ul>
                     <?php
