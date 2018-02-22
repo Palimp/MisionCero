@@ -23,7 +23,7 @@ if ($admin) {
             <?= __('Introducir retos basados en actores') ?>
         </p>
         <div class="clock-c">
-            <i class="fa fa-clock-o mr-2"></i><time>10'</time>
+            <i class="fa fa-clock-o mr-2"></i><time>7'</time>
         </div>
         <p>
             <?= __('Cada equipo se pondrá en el punto de vista de varios de ellos (un cliente interno/externo, un competidor, un proveedor, un distribuidor, la administración, otro departamento, un usuario, la familia de un usuario...) para generar retos:') ?><br>
