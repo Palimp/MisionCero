@@ -24,7 +24,7 @@ if ($admin) {
         </p>
         <p>
             <i class="fa fa-comment-o"></i>
-            <?= __('En esta etapa los Exploradores deberán observar con atención video que se mostrará a continuación. ') ?>
+            <?= __('En esta etapa los Exploradores deberán observar con atención el video que se mostrará a continuación. ') ?>
             <br>
             <?= __('El Jefe de Expedición realizará algunas preguntas al terminar…') ?>
             <br>
