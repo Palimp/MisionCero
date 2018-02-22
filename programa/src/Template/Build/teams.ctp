@@ -57,13 +57,13 @@ $fila = '<div class="row bloque">
             <?php
             echo $this->Form->create('Teams', array(
                 'url' => array('controller' => 'Build', 'action' => 'teams'),
-                "id"=>'team'
+                "id" => 'team'
             ));
             echo $this->Form->input(
-                                    'names', [
-                                'type' => 'hidden',
-                                 'value'=> serialize($names)
-                            ]);
+                    'names', [
+                'type' => 'hidden',
+                'value' => serialize($names)
+            ]);
             ?>
             <div class="row">
                 <div class="col pl-4">
@@ -80,6 +80,16 @@ $fila = '<div class="row bloque">
 
                 </div>
             </div>
+
+            <select name="webmenu" id="webmenu" style="width:300px;">
+                <?php
+                for ($i = 0; $i < count($names); $i++) {
+                    ?>
+                    <option value="<?= $i ?>" title="/img/exp<?= sprintf('%02d', $i+1); ?>.png"><?= $names[$i] ?></option>
+                    <?php
+                }
+                ?>                  
+            </select>
             <?php
             foreach ($teams as $team) {
                 ?>
@@ -96,7 +106,7 @@ $fila = '<div class="row bloque">
                                 'empty' => __('Selecciona el nombre del equipo'),
                                 'label' => '',
                                 'class' => 'custom-select',
-                                'default' => array_search($team[1],$names)
+                                'default' => array_search($team[1], $names)
                             ]);
                             ?>
 
@@ -165,15 +175,15 @@ $fila = '<div class="row bloque">
                 </a>
             </div>
             <button type="button" id="saveteam" class="btn btn-primary float-right"><?= __('Guardar equipos') ?></button>
-            </div>
-            </form>
+        </div>
+        </form>
         </div>
     </section>
 </main>
 
 <script>
     $(function () {
-
+        $("#webmenu").msDropDown();
         $('.fa-trash').click(function () {
             if (confirm('<?= __('¿Está seguro?') ?>')) {
                 $(this).closest(".bloque").remove();
@@ -188,15 +198,15 @@ $fila = '<div class="row bloque">
         $('#saveteam').click(function () {
             $('#team').submit();
         });
-        $('select').change(function(){
-            var a=$(this);
-             $('select').not(this).each(function(  ) {
-                 if(a.val()==$(this).val()){
-                     a.val('');
-                 }
-             });
-             
-            
+        $('select').change(function () {
+            var a = $(this);
+            $('select').not(this).each(function (  ) {
+                if (a.val() == $(this).val()) {
+                    a.val('');
+                }
+            });
+
+
         });
 
     });

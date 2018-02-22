@@ -26,16 +26,22 @@ $cakeDescription = 'Misión Cero';
     </title>
   <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('bootstrap.min.css') ?>
+    <?= $this->Html->css('dd.css') ?>
      <!-- <?= $this->Html->css('font-awesome.min.css') ?> -->
    <?= $this->Html->css('style.css') ?>
    <?= $this->Html->script('jquery-3.1.1.min.js') ?>
    <?= $this->Html->script('popper.min.js') ?>
    <?= $this->Html->script('bootstrap.min.js') ?>
    <?= $this->Html->script('scripts.js') ?>
+   <?= $this->Html->script('jquery.dd.min') ?>
    <?= $this->Html->script('ie10-viewport-bug-workaround.js') ?>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
-
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">  
+      <style>
+          .dd li::before {
+              border:none !important;
+          }
+      </style>
 <body>
 
   <div>

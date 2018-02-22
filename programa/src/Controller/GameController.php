@@ -85,7 +85,7 @@ class GameController extends AppController {
                     $this->set('id', $id);
                     $this->set('team', $team);
                     $this->set('comments', $comments);
-                    $period = 300;
+                    $period = 420;
                     $session->write('period', $period);
 
                     $this->set('time', '');
@@ -1124,7 +1124,7 @@ class GameController extends AppController {
         $this->set('stop', 1);
         $this->set('time', '');
         $session = $this->request->session();
-        $period = 300;
+        $period = 420;
         $session->write('period', $period);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
