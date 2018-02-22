@@ -247,7 +247,7 @@ td.fs32{
 }
 .custom-control{
   cursor: pointer;
-  padding-left: 0;
+  /*padding-left: 0;*/ /*si s'ha d'activar de nou check p65 queda desplaçat esq*/
   /*margin-right: 0;*/
 }
 .custom-control-indicator{
@@ -620,7 +620,7 @@ ul.circle > li {
 }*/
 
 ul:not(.unstyled) > li {
-  padding-left: 1.5em;
+  padding-left: 0em;/*padding-left: 1.5em;*/
   position: relative;
 }
 ul:not(.unstyled) > li:before, ol > li:before {
