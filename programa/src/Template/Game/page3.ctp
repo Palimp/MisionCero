@@ -13,16 +13,19 @@ if ($admin) {
         <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
     </div>
     <section class="container">
-        <div class="fs22 text-center mb-4">
-            <?= __('Si siempre observamos nuestro problema desde el mismo punto de vista…')?>
-            <br>
-            <?= __('…¡podemos perdernos soluciones simples y nuevas!')?>
+
+        <div class="row mt-5">
+            <div class="fs22 text-center my-auto col">
+                <?= __('Si siempre observamos nuestro problema desde el mismo punto de vista…')?>
             </div>
-        <div class="text-center">
-
-            <?= $this->Html->image("img4.jpg", ['class' => 'img-fluid']);?>
-
+            <div class="text-center col">
+                <?= $this->Html->image("img4.jpg", ['class' => 'img-fluid']);?>
+            </div>
+            <div class="fs22 text-center my-auto col">  
+                <?= __('… ¡podemos perdernos soluciones simples y nuevas!')?>
+            </div>
         </div>
+
         <?php if ($admin) { ?>
             <div class="my-4 text-right">
                 <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
