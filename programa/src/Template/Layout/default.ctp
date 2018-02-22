@@ -36,7 +36,7 @@ $cakeDescription = 'Misión Cero';
    <?= $this->Html->script('jquery.dd.min') ?>
    <?= $this->Html->script('ie10-viewport-bug-workaround.js') ?>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">  
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">  
       <style>
           .dd li::before {
               border:none !important;

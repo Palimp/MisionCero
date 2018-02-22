@@ -21,8 +21,8 @@ if ($admin) {
         <p class="h_green">
             <?=__('Pain Points')?>
         </p>
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?=__('Entre todos los retos generados, ahora cada equipo selecciona los 3 más relevantes y novedosos para explorar nuevas líneas de trabajo de la problemática')?>
         </p>
         <?php if ($admin) { ?>

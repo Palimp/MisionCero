@@ -18,8 +18,8 @@ if ($admin) {
       </span>
     </div>
     <section class="container text-center">
-        <p class="green">
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg"></i>
             <?= __('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados.') ?>
         </p>
 

@@ -21,8 +21,8 @@ if ($admin) {
         <p class="h_green">
             <?=__('Actores')?>
         </p>
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?=__('Entre todos los retos generados, ahora cada equipo selecciona')?> 
             <b><?=__('los 3 más relevantes y novedosos')?></b>
             <?=__('para explorar nuevas líneas de trabajo de la problemática')?>

@@ -23,8 +23,8 @@ if ($admin) {
               <?=__('Etapa 1- Insights espontáneos')?>
             </p>
         </div>
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?=__('Pensar en los comentarios internos más habituales sobre la problemática, positivos o negativos, expresados de forma natural')?>
         </p>
         <ul class="unstyled">

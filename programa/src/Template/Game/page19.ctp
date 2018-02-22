@@ -23,8 +23,8 @@ if ($admin) {
               <?=__('Etapa 2- Preguntas Básicas')?>
             </p>
         </div>
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?=__('Utilizar las preguntas básicas para identificar retos más concretos y, si es posible, no habituales, sobre la problemática.')?>
         </p>
         <p>

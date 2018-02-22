@@ -18,7 +18,7 @@
     <section class="container">
         <div class="no-gutters mb-5">
             <p class="h_green">
-                <i class="fa fa-lightbulb-o"></i>
+                <i class="fa fa-lightbulb-o fa-lg"></i>
                 <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?><br>
                 <b><?= __('Los equipos tienen 5 minutos') ?></b>
             </p>

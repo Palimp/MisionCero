@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <section class="container text-center">
         <p class="h_green">
-            <i class="fa fa-lightbulb-o"></i>
+            <i class="fa fa-lightbulb-o fa-lg"></i>
             <?= __('Introducir comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
         </p>
         <div class="clock-c">

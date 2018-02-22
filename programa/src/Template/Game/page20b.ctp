@@ -16,7 +16,7 @@
     </div>
     <section class="container text-center">
         <p class="h_green">
-            <i class="fa fa-lightbulb-o"></i>
+            <i class="fa fa-lightbulb-o fa-lg"></i>
             <?= __('Identificar retos basados en preguntas básicas') ?>
         </p>
         <div class="clock-c">
