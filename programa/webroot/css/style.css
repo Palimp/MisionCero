@@ -50,7 +50,7 @@ body {
 }
 body {
   font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
-  background: url(../img/band.jpg) no-repeat center top scroll; 
+  background: url(../img/band.jpg) repeat-x center top scroll; 
   background-color: #e3e3e3;
 }
 .home{
@@ -127,6 +127,9 @@ ul:not(.unstyled) > li, .green, .title, .example_ic + div{
 .fs16{
   font-size: 1rem;
 }
+.fs18{
+  font-size: 1.1rem;
+}
 .fs22{
   font-size: 1.375rem; /*22px*/
 }
@@ -186,6 +189,9 @@ td.fs32{
 .bikles_table{
   max-height: 50px;
   margin: -0.7em;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255,255,255,.5);
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -796,6 +802,9 @@ tr:nth-of-type(even) > .retos_propios {
   .container, #mainNav, main{
     display: none;
   }
+}
+@media (max-width: 888px){
+  body{  background-position-y: -32px;}
 }
 @media (min-width: 768px) {
 }
