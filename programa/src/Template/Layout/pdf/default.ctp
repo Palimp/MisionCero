@@ -7,7 +7,7 @@
     </title>
    <?= $this->Html->css(WWW_ROOT . '/css/pdf.css') ?>
    <style type="text/css">
-    /*! CSS Used from: http://misioncero.binnakle.com/css/bootstrap.min.css */
+    /*! CSS Used from: http://misioncero.binnakle.com/css/bootstrap.min.css 
         @media print{
         *,::after,::before{text-shadow:none!important;box-shadow:none!important;}
         p{orphans:3;widows:3;}
@@ -23,15 +23,15 @@
         .col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%;}
         .mt-2{margin-top:.5rem!important;}
         .mr-4{margin-right:1.5rem!important;}
-        .ml-4{margin-left:1.5rem!important;}
-        /*! CSS Used from: http://misioncero.binnakle.com/css/style.css */
+        .ml-4{margin-left:150px!important;}
+        /*! CSS Used from: http://misioncero.binnakle.com/css/style.css 
         .pz-4{padding:.75rem .75rem 0.25rem .75rem!important;}
         .t5_p{border:3px solid #83A521;font-weight:400;}
         .t5_qw{border:3px solid white;}
         :focus{outline:none!important;}
         ::-moz-selection{color:white;text-shadow:none;background:green;}
         ::selection{color:white;text-shadow:none;background:green;}
-        /*! CSS Used from: http://misioncero.binnakle.com/css/bootstrap.min.css */
+        /*! CSS Used from: http://misioncero.binnakle.com/css/bootstrap.min.css 
         @media print{
         *,::after,::before{text-shadow:none!important;box-shadow:none!important;}
         p{orphans:3;widows:3;}
@@ -39,7 +39,7 @@
         *,::after,::before{box-sizing:inherit;}
         p{margin-top:0;margin-bottom:1rem;}
         .mb-0{margin-bottom:0!important;}
-        /*! CSS Used from: http://misioncero.binnakle.com/css/style.css */
+        /*! CSS Used from: http://misioncero.binnakle.com/css/style.css 
         .progressa{background-color:#eee;}
         .progressa .mb-0{color:#000;white-space:nowrap;}
         .progress-bar{padding:.375rem .625rem;height:initial;}
@@ -47,6 +47,14 @@
         :focus{outline:none!important;}
         ::-moz-selection{color:white;text-shadow:none;background:green;}
         ::selection{color:white;text-shadow:none;background:green;}
+
+        /*OK*/
+
+        body{margin: 0;background-color: #A6BD49; color: #174925;}
+        html{background-color: #A6BD49;}
+        .text-center{text-align: center;}
+        h2{font-size: 12px;}
+        p{margin-bottom: 0;}
    </style>
 </head>
 <body>

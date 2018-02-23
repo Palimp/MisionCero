@@ -1,120 +1,112 @@
 <main>
-    <div class="text-center" style="text-align: center">
-        <h1 class="title_alt"><?= __('Binnakle Mission 0 - ') . $sesion['trouble'] ?></h1>
+    <div class="text-center" style="background-color: #A6BD49;">
+        <table>
+          <tr>
+            <td>
+                <img src="http://misioncero.binnakle.com/img/logo_m0_es.svg" alt="" width="150">
+            </td>
+            <td>
+                <img src="http://misioncero.binnakle.com/img/logo_binnakle_es_big.png" alt="" width="150">
+            </td>
+          </tr>
+        </table>
+        <h3><?= __('- BINNAKLE MISSION 0 -')?></h3>
+        <h2><?= $sesion['trouble'] ?></h2>
+        
+        <br>
+        <?= __('Código ') . $sesion['code'] ?>
+        <br>
+        <?= __('Fecha: ') . date('d/m/Y') ?>
     </div>
-    
-    <table style="background-color: #33f48a; padding: 10px;">
-        <tr><td style="background-color: white;width:20%">&nbsp;</td><td style="width:60%"><?= __('Código ') . $sesion['code'] ?></td></tr>
-        <tr><td style="background-color: white;width:20%">&nbsp;</td><td style="width:60%"><?= __('Fecha: ') . date('d/m/Y') ?></td></tr>
-    </table>
-    <section class="container">
-        <div class="fs22 text-center mb-4">
-            
+    <div>
+        <div class="text-center"><b><?= __('EQUIPOS') ?></b></div>
+        <div>
+            <?php
+            foreach ($teams as $team) {
+                ?>
+                
+                    <b>
+                        <?= $team['name'] ?>
+                    </b> -  
+                    <?= __('Participantes: ') . $team['members'] ?>
+                    <br>
+                
+                <?php
+            }
+            ?>
+
         </div>
-        <div class="row">
-            <div class="col">
-                <p></p>
-                <p><?= __('Equipos') ?></p>
-                <ul>
-                    <?php
-                    foreach ($teams as $team) {
-                        ?>
-                        <li><?= $team['name'] ?><br/>
-                            <?= __('Participantes: ') . $team['members'] ?>
-                        </li>
-                        <?php
+        <table>
+          <tr>
+            <td colspan="2">
+                <h1 class="text-center"><span style="background-color:#edf69d"><?= __(' TOP 25 RETOS ') ?></span></h1>
+                <?php
+                
+                foreach ($comments as $comment) {
+                    if ($comment['ambit']==0){
+                        $comment['ambit']=10;
                     }
                     ?>
-
-                </ul>
-            </div>
-            <div class="row mt-2">
-                <div class="col mr-4 pz-4 t5_p">
-                    <h1 class><?= __('TOP 25 RETOS ') ?></h1>
-                    <ul>
-                        <?php
-                        
-                        foreach ($comments as $comment) {
-                            if ($comment['ambit']==0){
-                                $comment['ambit']=10;
-                            }
-                            ?>
-                            <li><?= $comment['question'] ?> (<?=$ambits[$comment['ambit']-1]->ambit?>)
-
-                            </li>
-                            <?php
+                    <span> - <?= $comment['question'] ?> <b>(<?=$ambits[$comment['ambit']-1]->ambit?>)</b></span><br><?php
+                }
+                ?>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <h2 class="text-center"><span style="background-color:#e4d949"><?= __(' TOP 5 RETOS PRIORITARIOS ') ?></span></h2>
+                FALTAN
+                        <br>
+                FALTAN
+                        <br>
+                FALTAN
+                        <br>
+                FALTAN
+                        <br>
+                FALTAN
+                        <br>
+                FALTAN
+            </td>
+            <td>
+                <h2 class="text-center"><span style="background-color:#e4d949"><?= __(' TOP 5 RETOS OPERATIVOS (QUICK WINS) ') ?></span></h2>
+                <div>
+                    <?php
+                    foreach ($quick as $comment) {
+                          if ($comment['ambit']==0){
+                            $comment['ambit']=10;
                         }
                         ?>
-                    </ul>
-                </div>
-                <div class="col ml-4 pz-4 t5_qw">
-                    <h1><?= __('TOP 5 RETOS OPERATIVOS (QUICK WINS)') ?></h1>
-                    <ul>
-                        <?php
-                        foreach ($quick as $comment) {
-                              if ($comment['ambit']==0){
-                                $comment['ambit']=10;
-                            }
-                            ?>
-                           <li><?= $comment['question'] ?> (<?=$ambits[$comment['ambit']-1]->ambit?>)
-
-                            </li>
-                            <?php
-                        }
+                       <span> - <?= $comment['question'] ?> <b>(<?=$ambits[$comment['ambit']-1]->ambit?>)</b></span><br><?php
+                    }
+                    ?>  
+                </div>  
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <h2 class="text-center"><span style="background-color:#fff"><?= __(' Retos con votos ') ?></span></h2>
+                <div>
+                    <?php
+                    foreach ($con as $comment) {
                         ?>
-                    </ul>
+                        <span> - <?= $comment['question'] ?></span><br><?php
+                    }
+                    ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p><?= __('Retos con votos') ?></p>
-                    <ul>
-                        <?php
-                        foreach ($con as $comment) {
-                            ?>
-                            <li><?= $comment['question'] ?>
-
-                            </li>
-                            <?php
-                        }
+                
+            </td>
+            <td>
+                <h2 class="text-center"><span style="background-color:#fff"><?= __(' Retos sin votos ') ?></span></h2>
+                <div>
+                    <?php
+                    foreach ($sin as $comment) {
                         ?>
-                    </ul>
+                        <span> - <?= $comment['question'] ?></span><br><?php
+                    }
+                    ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p><?= __('Retos sin votos') ?></p>
-                    <ul>
-                        <?php
-                        foreach ($sin as $comment) {
-                            ?>
-                            <li><?= $comment['question'] ?>
-
-                            </li>
-                            <?php
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </div>
-            <!-- INTENTO DE PONER ESTILO A LAS BARRAS
-            <div class="card">
-                <div class="progressa">
-                    <div class="progress-bar progress-bar-striped" style="width: 67%; background-color: #e5da00;">
-                            <p class="mb-0">
-                                Personas                                        
-                            </p>
-                        </div>
-                </div>
-
-                <div class="card-block">
-                    <p>
-                        estamos birn                                        
-                    </p>
-                    <p>
-                        estamos buenos
-                    </p>
-                </div>
-            </div> -->
-    </section>
+            </td>
+          </tr>
+        </table>
+    </div>
 </main>
