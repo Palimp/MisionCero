@@ -12,13 +12,14 @@ if ($admin) {
         <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
     </div>
     <section class="container">
-        <div class="fs22 text-center mb-4">
+        <div class="fs22 text-center py-4">
             <?=__('Las empresas suelen plantearse problemáticas y necesidades de manera muy genérica')?>
         </div>
         <div class="row">
             <div class="col">
-                <p><?=__('Por ejemplo:')?></p>
-                <ul>
+                <p class="fs18">
+                    <?=__('Por ejemplo:')?></p>
+                <ul class="fs18">
                     <li>
                         <?=__('Tengo un problema de comunicación interna')?>
                     </li>

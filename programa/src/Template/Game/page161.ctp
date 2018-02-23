@@ -25,7 +25,7 @@ if ($admin) {
             </div>
             
             <div class="video">
-                <?= __($texto) ?>
+                <br>
             </div>
             
             <div class="text-left mt-5 row">

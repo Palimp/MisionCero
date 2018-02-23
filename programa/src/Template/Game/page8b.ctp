@@ -20,7 +20,7 @@
             <?= __('Introducir comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
         </p>
         <div class="clock-c">
-            <i class="fa fa-clock-o mr-2"></i><time>10'</time>
+            <i class="fa fa-clock-o mr-2"></i><time>5'</time>
         </div>
         <div class="fs32">
             <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>

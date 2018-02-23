@@ -31,7 +31,7 @@ if ($admin) {
                     <th><?= __('RANKING GENERAL') ?></th>
                     <th></th>
                     <th><?= __('EQUIPOS: CLASIFICACIÓN ETAPA') ?></th>
-                    <th><?= __('TOTAL BIKLES') ?></th>
+                    <th><img src="/img/bikles.png" class="img-fluid bikles_table" alt="TOTAL BIKLES"></th>
                 </tr>
             </thead>
             <tbody>

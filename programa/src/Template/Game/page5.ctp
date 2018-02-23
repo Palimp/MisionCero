@@ -9,11 +9,11 @@ if ($admin) {
 ?>
 <main>
     <div class="text-center">
-        <h4 class="title_alt"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
+        <h4 class="title_alt mb-0"><?=__('Binnakle Mission 0 -¿Por qué?')?></h4>
     </div>
-      <div style="margin: -0.5em;">
+      <header>
           <?= $this->Html->image("breadp12.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
-      </div>
+      </header>
     <section class="container">
       <div class="fs22 text-center mb-4 mt-4">
         <?=__('Metodología') ?>
