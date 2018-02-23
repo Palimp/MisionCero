@@ -47,7 +47,7 @@ img.fnone{float:none !important}
 .dd .divider{border-left:1px solid #c3c3c3; border-right:1px solid #fff;; right:24px;}
 .dd .ddArrow{width:16px;height:16px; margin-top:-8px; background:url(../img/dd_arrow.gif) no-repeat;}
 .dd .ddArrow:hover{background-position:0 100%;}
-.dd .ddTitle{color:#000;background:#e2e2e4 url(../img/title-bg.gif) repeat-x left top;}
+.dd .ddTitle{color:#000;background:#fff;}
 .dd .ddTitle .ddTitleText{padding:5px 20px 5px 5px;}
 .dd .ddTitle .ddTitleText .ddTitleText{padding:0;}
 .dd .ddTitle .description{font-size:12px; color:#666}
@@ -61,4 +61,4 @@ img.fnone{float:none !important}
 .dd .ddChild li.optgroup{padding:0;}
 .dd .ddChild li.optgroup .optgroupTitle{padding:0 5px; font-weight:bold; font-style:italic}
 .dd .ddChild li.optgroup ul li{padding:5px 5px 5px 15px}
-.dd .ddChild li.selected{background-color:#d5d5d5; color:#000;}
+.dd .ddChild li.selected{background-color:#EBFA94; color:#000;}

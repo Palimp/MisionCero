@@ -37,6 +37,8 @@ $fila = '<div class="row bloque">
         ';
 ?>
 
+
+
 <main>
     <section>
         <div class="title_band text-center py-2">
@@ -81,15 +83,7 @@ $fila = '<div class="row bloque">
                 </div>
             </div>
 
-            <select name="webmenu" id="webmenu" style="width:300px;">
-                <?php
-                for ($i = 0; $i < count($names); $i++) {
-                    ?>
-                    <option value="<?= $i ?>" title="/img/exp<?= sprintf('%02d', $i+1); ?>.png"><?= $names[$i] ?></option>
-                    <?php
-                }
-                ?>                  
-            </select>
+
             <?php
             foreach ($teams as $team) {
                 ?>
@@ -97,18 +91,15 @@ $fila = '<div class="row bloque">
                     <div class="col">
 
                         <div class="d-inline">
-                            <?php
-                            echo $this->Form->input(
-                                    'name[]', [
-                                'type' => 'select',
-                                'multiple' => false,
-                                'options' => $names,
-                                'empty' => __('Selecciona el nombre del equipo'),
-                                'label' => '',
-                                'class' => 'custom-select',
-                                'default' => array_search($team[1], $names)
-                            ]);
-                            ?>
+                            <select name="webmenu" class="webmenu" style="width:100%">
+                                <?php
+                                for ($i = 0; $i < count($names); $i++) {
+                                    ?>
+                                    <option value="<?= $i ?>" title="/img/exp<?= sprintf('%02d', $i+1); ?>.png"><?= $names[$i] ?></option>
+                                    <?php
+                                }
+                                ?>                  
+                            </select>
 
 
                         </div>
@@ -117,10 +108,10 @@ $fila = '<div class="row bloque">
 
                         <div class="row form-group">
                             <div class="col pl-0">
-                                <input name="members[]"  type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas" value="<?= $team[2] ?>">
+                                <input name="members[]"  type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas" value="<?= $team[2] ?>" style="height: 62px;">
                                 <input name="ids[]"  type="hidden" class="form-control"  value="<?= $team[3] ?>">
                             </div>
-                            <div class="col-12 col-md-auto">
+                            <div class="col-12 col-md-auto my-auto">
                                 <a href="#" data-toggle="tooltip" title="Haz click para eliminar el equipo" class="d-inline-block">
                                     <i class="fa fa-trash fa-2x"></i>
                                 </a>
@@ -183,7 +174,7 @@ $fila = '<div class="row bloque">
 
 <script>
     $(function () {
-        $("#webmenu").msDropDown();
+        $(".webmenu").msDropDown();
         $('.fa-trash').click(function () {
             if (confirm('<?= __('¿Está seguro?') ?>')) {
                 $(this).closest(".bloque").remove();
