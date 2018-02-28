@@ -20,7 +20,7 @@ if ($admin) {
     </div>
     <section class="container">
         <p class="h_green">
-            <i class="fa fa-lightbulb-o"></i>
+            <i class="fa fa-lightbulb-o fa-lg"></i>
             <?= __('Convertir estos 3 comentarios en RETOS y seleccionar a qué ÁMBITO pertenece cada uno de ellos.') ?>
         </p>
         <div class="clock-c">

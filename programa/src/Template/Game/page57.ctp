@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <section class="container text-center">
         <p class="h_green">
-            <i class="fa fa-lightbulb-o"></i>
+            <i class="fa fa-lightbulb-o fa-lg"></i>
             <?= __('Convertir en retos basados en estados de ánimo') ?>
         </p>
         <div class="clock-c">

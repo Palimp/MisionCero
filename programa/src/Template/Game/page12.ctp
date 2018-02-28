@@ -21,23 +21,23 @@ $ambits[-1]->ambit = __('Sin ámbito');
       </span>
     </div>
     <section class="container">
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?= __('Ahora, cada ') ?><b><?= __('explorador, INDIVIDUALMENTE,') ?></b><?= __(' votará los 3 retos que le parecen más relevantes') ?>
             <br>
             <?= __('Cada miembro del equipo debe marcar su selección de 3 retos en la columna que lleva su nombre') ?>
         </p>
         <ul class="unstyled">
             <li>
-                <i class="fa fa-comment-o"></i>
+                <span class="fa-stack"> <i class="fa fa-circle fa-stack-2x green4"></i> <i class="fa fa-comment-o fa-stack-1x fa-inverse"></i> </span>
                 <?=__('Los retos elegidos por tu equipo son los 3 primeros.')?>
             </li>
             <li>
-                <i class="fa fa-comment-o"></i>
+                <span class="fa-stack"> <i class="fa fa-circle fa-stack-2x green4"></i> <i class="fa fa-comment-o fa-stack-1x fa-inverse"></i> </span>
                 <?=__('No puedes votar más de 1 reto de tu equipo')?>
             </li>
             <li>
-                <i class="fa fa-comment-o"></i>
+                <span class="fa-stack"> <i class="fa fa-circle fa-stack-2x green4"></i> <i class="fa fa-comment-o fa-stack-1x fa-inverse"></i> </span>
                 <?=__('Este voto es personal')?>
             </li>
         </ul>

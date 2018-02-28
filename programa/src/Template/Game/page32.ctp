@@ -32,8 +32,8 @@ if ($admin) {
         </p>
 
 
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?=__('Pensar en los diferentes actores involucrados que intervienen en nuestra problemática.')?>
         </p>
         <p>

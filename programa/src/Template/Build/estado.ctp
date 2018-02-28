@@ -42,7 +42,7 @@ echo $this->element('navbar');
                         <td><?= $team->team ?></td>
                         <td><?= $team->name ?></td>
                         <td><?= $team->members ?></td>
-                        <td><?= $team->taken ? __("Cogido") : __("Libre") ?></td>
+                        <td><?= $team->taken ? __("Seleccionado") : __("Libre") ?></td>
 
                     </tr>
                 <?php } ?>

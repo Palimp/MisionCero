@@ -15,14 +15,17 @@
       </span>
     </div>
     <section class="container text-center">
+
         <p class="h_green">
                 <?= __('El equipo escribe los retos') ?>
         </p>
+        <div class="clock-c">
+            <i class="fa fa-clock-o mr-2"></i><time>7'</time>
+        </div>
 
         <div class="fs32 text-center">
             <i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time>
         </div>
-
         <?php
         foreach ($comments as $comment) {
             ?>

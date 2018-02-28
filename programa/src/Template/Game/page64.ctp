@@ -27,8 +27,8 @@ if ($admin) {
             <?=__('Exploradores, hemos llegado al Final del Viaje')?><br>
             <?=__('Estamos a punto de conocer los mejores retos para resolver la problemática planteada.')?>
         </p>
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?=__('Cada equipo tiene que indicar, para cada reto, si lo considera un reto:')?>
         </p>
         <ul class="unstyled">

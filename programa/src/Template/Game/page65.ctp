@@ -23,7 +23,7 @@ if ($admin) {
     </div>
     <section class="container">
         <p class="h_green">
-            <i class="fa fa-lightbulb-o"></i>
+            <i class="fa fa-lightbulb-o fa-lg"></i>
             <?=__('Selección final: Cada explorador selecciona los 5 retos más relevantes y novedosos entre los 25 finalistas (5 por etapa)')?>
         </p>
         <ul class="unstyled">
@@ -75,7 +75,7 @@ if ($admin) {
         <?php } else { ?>
             <div class="text-right mt-5">
                 <a href="#" id="submitvotos" data-toggle="tooltip" title="<?= __('Haz click para enviar') ?>" class="d-inline-block" <?= $voted ? 'style="display:none !important"' : '' ?>>
-                    <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
+                    <button type="button" class="btn btn-primary"><?= __('Valida') ?></button>
                 </a>
             </div>
         <?php } ?>

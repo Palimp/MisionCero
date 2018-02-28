@@ -16,7 +16,7 @@
     </div>
     <section class="container">
         <p class="h_green">
-            <i class="fa fa-lightbulb-o"></i>
+            <i class="fa fa-lightbulb-o fa-lg"></i>
             <?= __('Seleccionar a qué ÁMBITO pertenece cada uno de los 3 retos seleccionados.') ?>
         </p>
         <?php

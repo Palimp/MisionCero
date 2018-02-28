@@ -26,8 +26,8 @@ if ($admin) {
         <p class="h_green">
             <?= __('¿Cómo me siento ante la problemática?') ?>
         </p>
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?= __('Seleccionar los 3 estados de ánimo o sensaciones que mejor representan cómo se siente el equipo ante la problemática planteada.') ?>
         </p>
         <p>

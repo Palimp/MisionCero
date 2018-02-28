@@ -19,7 +19,7 @@ if ($admin) {
     </div>
     <section class="container">
             <p class="h_green">
-                <i class="fa fa-lightbulb-o"></i>
+                <i class="fa fa-lightbulb-o fa-lg"></i>
                 <?= __('Introducir retos basados en momentos claves y en ') ?><i><?= __('pain points') ?></i>
             </p>
             <div class="clock-c">

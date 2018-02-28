@@ -23,8 +23,8 @@ if ($admin) {
         </p>
     </div>
     <section class="container">
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
              <?= __('Identificar los momentos clave con los diferentes actores de la problemática y sus ')?><i><?= __('pain points')?></i><?= __(': puntos críticos o problemas que se presentan en cada momento.')?>
         </p>
         <p>

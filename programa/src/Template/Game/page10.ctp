@@ -23,8 +23,8 @@ if ($admin) {
         </p>
     </div>
     <section class="container">
-        <p>
-            <i class="fa fa-lightbulb-o"></i>
+        <p class="green1back">
+            <i class="fa fa-lightbulb-o fa-lg mr-1"></i>
             <?=__('Entre todos los comentarios generados,')?>
             <b><?=__('ahora cada equipo selecciona los 3 más relevantes')?></b>
             <br>
