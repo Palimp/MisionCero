@@ -198,11 +198,7 @@ if ($admin) {
             }
             $('#siguiente').click(function () {
                 location.href = '<?=
-    $this->Url->build([
-        "controller" => "Game",
-        "action" => "page11"
-    ])
-    ?>';
+    $this->Url->build([        "controller" => "Game",        "action" => "page11"   ])    ?>';
             });
             $('#anterior').click(function () {
                 location.href = '<?=

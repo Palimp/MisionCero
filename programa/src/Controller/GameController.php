@@ -1463,6 +1463,7 @@ class GameController extends AppController {
     public function page430() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
+        $this->Code->addTime($id, -600);
         $this->Code->setPage($id, 430);
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
