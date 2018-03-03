@@ -1,40 +1,44 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 echo $this->element('navbar');
+function getSelect($names,$name=""){
+    
+$select='<select class="webmenu" name="name[]"  style="width:300px;">';
+ 
+for ($i = 0; $i < count($names); $i++) {
+     $select.='<option '.($names[$i]==$name?'selected':'').' value="'.$i.'"  title="/img/exp'. sprintf('%02d', $i+1).'.png">'.$names[$i] .'</option>';
+                    
+                }
+$select.='</select>';
+return $select;
+}
 
 $fila = '<div class="row bloque">
-            <div class="col-4">
-                <div class="d-inline">
-                    ' . $this->Form->input(
-                'name[]', [
-            'type' => 'select',
-            'multiple' => false,
-            'options' => $names,
-            'empty' => __('Selecciona el nombre del equipo'),
-            'label' => '',
-            'class' => 'custom-select'
-        ]) . '
-                </div>
+    <div class="col-4">
+        <div class="d-inline">
+            ' . getSelect($names) . '
+        </div>
+    </div>
+    <div class="col-8">
+
+        <div class="row form-group">
+            <div class="col pl-0">
+                <input name="members[]"  type="text" class="form-control" placeholder="' . __('Nombre de los jugadores separados por comas') . '">
             </div>
-            <div class="col-8">
-
-                <div class="row form-group">
-                    <div class="col pl-0">
-                        <input name="members[]"  type="text" class="form-control" placeholder="' . __('Nombre de los jugadores separados por comas') . '">
-                    </div>
-                    <div class="col-12 col-md-auto">
-                        <a href="#" data-toggle="tooltip" title="' . __('Haz click para eliminar el equipo') . '" class="d-inline-block">
-                            <i class="fa fa-trash fa-2x"></i>
-                        </a>
-                    </div>
-                </div>
-
+            <div class="col-12 col-md-auto">
+                <a href="#" data-toggle="tooltip" title="' . __('Haz click para eliminar el equipo') . '" class="d-inline-block">
+                    <i class="fa fa-trash fa-2x"></i>
+                </a>
             </div>
         </div>
-        ';
+
+    </div>
+</div>
+';
 ?>
 
 <main>
@@ -55,6 +59,7 @@ $fila = '<div class="row bloque">
                 </li>
             </ol>
             <?php
+            
             echo $this->Form->create('Teams', array(
                 'url' => array('controller' => 'Build', 'action' => 'teams'),
                 "id" => 'team'
@@ -81,54 +86,37 @@ $fila = '<div class="row bloque">
                 </div>
             </div>
 
-            <select name="webmenu" id="webmenu" style="width:300px;">
-                <?php
-                for ($i = 0; $i < count($names); $i++) {
-                    ?>
-                    <option value="<?= $i ?>" title="/img/exp<?= sprintf('%02d', $i+1); ?>.png"><?= $names[$i] ?></option>
-                    <?php
-                }
-                ?>                  
-            </select>
             <?php
             foreach ($teams as $team) {
                 ?>
-                <div class="row bloque">
-                    <div class="col">
+            <div class="row bloque">
+                <div class="col">
 
-                        <div class="d-inline">
+                    <div class="d-inline">
                             <?php
-                            echo $this->Form->input(
-                                    'name[]', [
-                                'type' => 'select',
-                                'multiple' => false,
-                                'options' => $names,
-                                'empty' => __('Selecciona el nombre del equipo'),
-                                'label' => '',
-                                'class' => 'custom-select',
-                                'default' => array_search($team[1], $names)
-                            ]);
+                           
+                            echo getSelect($names,$team[1]);
                             ?>
 
 
-                        </div>
-                    </div>
-                    <div class="col-8">
-
-                        <div class="row form-group">
-                            <div class="col pl-0">
-                                <input name="members[]"  type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas" value="<?= $team[2] ?>">
-                                <input name="ids[]"  type="hidden" class="form-control"  value="<?= $team[3] ?>">
-                            </div>
-                            <div class="col-12 col-md-auto">
-                                <a href="#" data-toggle="tooltip" title="Haz click para eliminar el equipo" class="d-inline-block">
-                                    <i class="fa fa-trash fa-2x"></i>
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
+                <div class="col-8">
+
+                    <div class="row form-group">
+                        <div class="col pl-0">
+                            <input name="members[]"  type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas" value="<?= $team[2] ?>">
+                            <input name="ids[]"  type="hidden" class="form-control"  value="<?= $team[3] ?>">
+                        </div>
+                        <div class="col-12 col-md-auto">
+                            <a href="#" data-toggle="tooltip" title="Haz click para eliminar el equipo" class="d-inline-block">
+                                <i class="fa fa-trash fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
                 <?php
             }
             ?>
@@ -183,7 +171,7 @@ $fila = '<div class="row bloque">
 
 <script>
     $(function () {
-        $("#webmenu").msDropDown();
+        $(".webmenu").msDropDown();
         $('.fa-trash').click(function () {
             if (confirm('<?= __('¿Está seguro?') ?>')) {
                 $(this).closest(".bloque").remove();
@@ -193,6 +181,7 @@ $fila = '<div class="row bloque">
         $('#addteam').click(function () {
 
             $('#formsubmit').before('<?= str_replace("\n", " ", $fila) ?>');
+        $(".webmenu").msDropDown();
 
         });
         $('#saveteam').click(function () {
