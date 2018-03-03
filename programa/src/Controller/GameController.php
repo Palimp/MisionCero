@@ -2077,8 +2077,10 @@ class GameController extends AppController {
                             ->where(['game_id' => $sesion['id']])
                             ->order(['team' => 'ASC'])->toArray();
             $names = $this->Code->getFreeNames($id);
+            $namesall = $this->Code->getNames($id);
             $this->set('teams', $query);
             $this->set('names', $names);
+            $this->set('namesall', $namesall);
         } else {
             if ($active && $data == 1) {
                 return $this->redirect(['action' => 'taken']);
