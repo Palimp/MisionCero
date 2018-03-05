@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 echo $this->element('navbar');
+                print_r($names);
 
 $fila = '<div class="row bloque">
             <div class="col-4">
