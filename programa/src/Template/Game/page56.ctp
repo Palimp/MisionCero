@@ -123,7 +123,7 @@ if ($admin) {
                                                 <?= __('ESTADO DE ÁNIMO') ?> 
                                             </th>
                                             <th class="fs22 fw100 w30" style="position: relative;">
-                                                <?= __('PAINPOINTS') ?> 
+                                                <?= __('RETOS') ?> 
                                             </th>
                                         </tr>
                                     </thead>

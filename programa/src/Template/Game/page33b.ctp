@@ -30,7 +30,7 @@
         foreach ($comments as $comment) {
             ?>
             <div id="bloque<?= $comment->id ?>" class="row form-group"><div class="col pl-0">
-                    <span><?= __('¿ Cómo') ?></span> <span><?= $comment->question ?> ?</span></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="<?= __('Haz click para borrar un comentario') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
+                    <span><?= __('¿ Cómo') ?></span> <span><?= $comment->question ?> </span></div><div class="col col-md-auto"><a href="#" id="delete<?= $comment->id ?>" onclick="delComment(<?= $comment->id ?>)" data-toggle="tooltip" title="<?= __('Haz click para borrar un comentario') ?>" class="d-inline-block pull-right"><i class="fa fa-close fa-2x"></i></a></div></div>
             <?php
         }
         ?>

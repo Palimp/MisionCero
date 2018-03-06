@@ -23,7 +23,7 @@ if ($admin) {
             <?= __('Introducir comentarios espontáneos más relevantes sobre nuestra problemática:') ?>
         </p>
         <div class="clock-c">
-            <i class="fa fa-clock-o mr-2"></i><time>10'</time>
+            <i class="fa fa-clock-o mr-2"></i><time>5'</time>
         </div>
         <div>
             <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>

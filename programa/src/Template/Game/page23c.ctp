@@ -42,9 +42,11 @@
                 'id' => 'datos'
             ]);
             ?>
+            <!--
             <a href="#" id="sendretos" data-toggle="tooltip" title="<?=__('Haz click para enviar')?>" class="d-inline-block">
                 <button type="buttonx" class="btn btn-primary"><?= __('Valida') ?></button>
             </a>
+            -->
             </form>
         </div>
     </section>

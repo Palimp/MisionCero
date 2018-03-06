@@ -1515,7 +1515,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 45);
-        $this->Code->addTime($id, -600);
+        $this->Code->addTime($id, -900);
         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
         $this->Code->setScore($id, 7, $this->Code->getOrder($comments));
         $this->Code->blabla($id, 'ppchallenges', 'question');

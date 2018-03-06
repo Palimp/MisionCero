@@ -122,7 +122,7 @@ shuffle($answers);
             </div>
             <div class="my-4 text-right">
                 <button  id="anterior" type="button" class="btn btn-primary"><?= __('Anterior') ?></button>
-                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Acabar fase retos') ?></button>
+                <button  id="siguiente" type="button" class="btn btn-primary"><?= __('Finalizar etapa lúdica') ?></button>
             </div>
             <?php
         } else if (!isset($voted)) {
@@ -149,7 +149,9 @@ shuffle($answers);
 
     $(function () {
 
-
+ $('#finalizar').click(function () {
+                $('#siguiente').click();
+            });
         setTimeout(checkTime, 1000);
 
 <?php if ($admin) { ?>
@@ -224,6 +226,7 @@ shuffle($answers);
                     }
                         
                     $('#error').html('<div class="alert alert_solution d-inline-block text-left rounded"><h4 class="green"><i class="fa fa-check-circle-o mr-2"></i><?= __('Solución') ?></h4>' + textos[texto] + '<br/>La solución es:<br/><b><?= $solution ?></b>');
+                    $('#sendretos').hide();
 
                     setTimeout(checkPage, 1000);
                 });

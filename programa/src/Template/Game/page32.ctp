@@ -27,10 +27,10 @@ if ($admin) {
         <p class="h_green">
             <?=__('¿Cómo ven los actores involucrados el problema, desde su punto de vista?')?>
         </p>
-        <p>
+        <!--<p>
             <b><?=__('Los 5 retos más votados por todos los equipos pasan al Final del Viaje')?></b>
         </p>
-
+-->
 
         <p class="green1back">
             <i class="fa fa-lightbulb-o fa-lg mr-1"></i>

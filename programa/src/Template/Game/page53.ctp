@@ -28,8 +28,14 @@ $solution=$puzzle->answer1;
         </p>
         <div>
             <?= __('El Jefe de Expedición, puede ampliar, reducir o pausar el tiempo desde su cronómetro.') ?>
+              <?php if ($admin) { ?>
             <h1><time id="clock" class="clock-b"><?= $time ?></time></h1>
+            <?php } else { ?>
+            <h1><i class="fa fa-clock-o mr-3"></i><time id="clock" class="clock-a"><?= $time ?></time></h1>
+            
             <?php
+            }
+            if ($admin) {
             echo $this->Form->create('Begin', array(
                 'url' => array('controller' => 'Game', 'action' => 'page53'), 'class' => 'd-inline-block'
             ));
@@ -69,6 +75,7 @@ $solution=$puzzle->answer1;
             <a href="#" onclick="$(this).closest('form').submit()" data-toggle="tooltip" title="<?= ('Haz click para restar tiempo') ?>" class="d-inline-block btn btn-primary btn-green">
                 <i class="fa fa-minus"></i><time> 00:30</time>
             </a>
+              <?php } ?>
             </form>
         </div>
 
@@ -140,7 +147,9 @@ $solution=$puzzle->answer1;
 
     $(function () {
 
-
+ $('#finalizar').click(function () {
+                $('#siguiente').click();
+            });
         setTimeout(checkTime, 1000);
 
 <?php if ($admin) { ?>
@@ -206,6 +215,7 @@ $solution=$puzzle->answer1;
                         '<?= __('¡Felicidades! Has sido el primero en adivinar la respuesta. Ganas 3 bikles') ?>'];
 
                     $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>' + textos[parseInt(data)]+"<br/>La solución es: <?=$solution ?>");
+                    $('#sendretos').hide();
                     setTimeout(checkPage, 1000);
                 });
             });

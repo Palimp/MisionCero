@@ -60,7 +60,7 @@
                         <span>1</span>
                         </br>
                         <i class="fa fa-chevron-right " style="right: -1.2rem; position: absolute;  bottom: 2.7rem;"></i>
-                        <?= __('INTERACCIONES') ?>
+                        <?= __('MOMENTO CLAVE') ?>
                     </th>
                     <th class="fs22 fw100" style="position: relative;">
                         <span>2</span>
@@ -123,7 +123,7 @@
 
         <div class="text-right mt-5">
             <a href="#" id="submitcomment" data-toggle="tooltip" title="Haz click para enviar" class="d-inline-block">
-                <button type="buttonx" class="btn btn-primary"><?= __('Añadir otro Pain point') ?></button>
+                <button type="buttonx" class="btn btn-primary"><?= __('Añadir otro Momento Clave') ?></button>
             </a>
         </div>
         <div class="col">
