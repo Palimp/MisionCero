@@ -46,7 +46,7 @@ if ($admin) {
                     ?>
                     <tr <?=$cont<=5?'class="green"':''?>>
                         <td scope="row" class="text-left">
-                            <?=$team['challenge']?>
+                           <?= __('¿Cómo ') ?> <?=$team['challenge']?>
                         </td>
                         <td>
                             <?=$team['votes']?>

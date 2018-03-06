@@ -1463,6 +1463,7 @@ class GameController extends AppController {
     public function page430() {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
+        $this->Code->addTime($id, -600);
         $this->Code->setPage($id, 430);
         $this->set('admin', $sesion['admin']);
         $this->set('trouble', $sesion['trouble']);
@@ -1514,7 +1515,7 @@ class GameController extends AppController {
         $sesion = $this->Code->loadSesion();
         $id = $sesion['id'];
         $this->Code->setPage($id, 45);
-        $this->Code->addTime($id, -600);
+        $this->Code->addTime($id, -900);
         $comments = $this->Code->getTeamQuestions($id, 'ppchallenges');
         $this->Code->setScore($id, 7, $this->Code->getOrder($comments));
         $this->Code->blabla($id, 'ppchallenges', 'question');
@@ -2077,8 +2078,10 @@ class GameController extends AppController {
                             ->where(['game_id' => $sesion['id']])
                             ->order(['team' => 'ASC'])->toArray();
             $names = $this->Code->getFreeNames($id);
+            $namesall = $this->Code->getNames($id);
             $this->set('teams', $query);
             $this->set('names', $names);
+            $this->set('namesall', $namesall);
         } else {
             if ($active && $data == 1) {
                 return $this->redirect(['action' => 'taken']);

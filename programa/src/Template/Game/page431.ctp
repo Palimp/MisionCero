@@ -105,7 +105,7 @@ if ($admin) {
 
                         if (stop) {
                             alert("<?= __('Se acabó el tiempo') ?>");
-                            location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page42"]) ?>';
+                            location.href = '<?= $this->Url->build(["controller" => "Game", "action" => "page430"]) ?>';
                         }
 
                     }

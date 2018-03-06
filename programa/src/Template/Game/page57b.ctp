@@ -35,7 +35,7 @@ $ids = [];
             ?>
             <div class="striped rounded mb-2">
                 <b id="c<?= $i ?>">
-                    <?= $comments[$i]->feeling." (".($feelings[$comments[$i]->feeling]==1?__('Optimistas'):__('Pesimistas')).")" ?>
+                    <?= $comments[$i]->feeling ?>
                 </b>
 
                 <div class="col-10 pl-0 mb-2">

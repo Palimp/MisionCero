@@ -58,7 +58,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
                 <?php foreach ($retos as $reto) { ?>
                     <tr>
                         <td scope="row" class="text-left <?= in_array($reto['id'], $propios) ? " retos_propios" : '' ?>">
-                            <?= $reto['question'] ?>
+                           <?= __('¿Cómo ') ?> <?= $reto['question'] ?>
                         </td>
                         <?php foreach ($users as $user) { ?>
                             <td>
@@ -98,7 +98,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
     var cambiar = false;
     var chequeados = [];
     var users = JSON.parse('<?= json_encode($users) ?>');
-    var retos = JSON.parse('<?= json_encode($retos) ?>');
+    var retos = JSON.parse('<?= str_replace("\\\"","\\\\\"",json_encode($retos)) ?>');
     function checkPage() {
         $.get("<?= $this->Url->build(["controller" => "Game", "action" => "pageactive"])
     ?>", function (data, status) {

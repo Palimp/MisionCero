@@ -48,7 +48,7 @@ $ambits[-1]->ambit=__('Sin ámbito');
                     ?>
                     <tr <?=$cont<=5?'class="green"':''?>>
                         <td scope="row" class="text-left">
-                            <?=$team['question']?>
+                           <?= __('¿Cómo ') ?> <?=$team['question']?>
                         </td>
                         <td>
                             <?=$team['votes']?>

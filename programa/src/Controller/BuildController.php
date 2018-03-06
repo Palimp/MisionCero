@@ -126,6 +126,7 @@ class BuildController extends AppController {
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $datos = $this->request->getData();
+            
             if (isset($datos['ids'])) {
                 $this->Teams->deleteAll(['game_id' => $id, 'id NOT IN' => $datos['ids']]);
             }

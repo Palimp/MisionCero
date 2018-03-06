@@ -24,7 +24,7 @@
             ?>
             <div class="striped rounded mb-2">
                 <b>
-                    <?= $comments[$i]['question'] ?>
+                    <?= __('¿Cómo ') ?><?= $comments[$i]['question'] ?>
                 </b>
 
                 <input type="hidden" id="reto<?= $i ?>" value="<?= $comments[$i]['id'] ?>">

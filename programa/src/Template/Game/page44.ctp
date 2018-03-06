@@ -23,7 +23,7 @@ if ($admin) {
                 <?= __('Introducir retos basados en momentos claves y en ') ?><i><?= __('pain points') ?></i>
             </p>
             <div class="clock-c">
-                <i class="fa fa-clock-o mr-2"></i><time>10'</time>
+                <i class="fa fa-clock-o mr-2"></i><time>13'</time>
             </div>
             <p>
                 <?= __('Para ello, procederán en 3 fases:') ?>

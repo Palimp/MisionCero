@@ -4,6 +4,19 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 
+function getSelect($names,$namesall){
+    
+$select='<select class="webmenu" name="name"  style="width:300px;">';
+ 
+for ($i = 0; $i < count($names); $i++) {
+     $select.='<option  value="'.$i.'"  title="/img/exp'. sprintf('%02d', array_search($names[$i],$namesall)+1).'.png">'.$names[$i] .'</option>';
+                    
+                }
+$select.='</select>';
+return $select;
+}
+
+
 ?>
 
 <main class="text-center">
@@ -77,16 +90,8 @@
 
                 <div class="d-inline">
                     <?php
-                    echo $this->Form->input(
-                            'name', [
-                        'type' => 'select',
-                        'multiple' => false,
-                        'options' => $names,
-                        'empty' => __('Selecciona el nombre del equipo'),
-                        'label' => '',
-                        'class' => 'custom-select',
-                                 'default' => null
-                    ]);
+                    
+                    echo getSelect($names,$namesall);
                     ?>
 
 
@@ -114,6 +119,7 @@
 
 <script>
     $(function () {
+        $(".webmenu").msDropDown();
 
         function checkTeams() {
             $.get("<?=

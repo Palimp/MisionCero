@@ -88,7 +88,7 @@ if ($admin) {
     var cambiar = false;
     var chequeados = [];
     var users = JSON.parse('<?= json_encode($users) ?>');
-    var retos = JSON.parse('<?= json_encode($retos) ?>');
+    var retos = JSON.parse('<?= str_replace("\\\"","\\\\\"",json_encode($retos)) ?>');
     function checkPage() {
         $.get("<?= $this->Url->build(["controller" => "Game", "action" => "pageactive"])
     ?>", function (data, status) {

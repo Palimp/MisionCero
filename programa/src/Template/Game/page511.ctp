@@ -25,11 +25,6 @@ if ($admin) {
             <br>
             <?= __('¡Ganaran Bikles los equipos que responden correctamente!') ?>
         </p>
-        <?php if ($admin) { ?>
-            <p>
-                <?= __('Sigue las instrucciones al pie del video para pausar y lanzar la pregunta en el momento adecuado') ?>
-            </p>
-        <?php } ?>
     </section>
     <?php if ($admin) { ?>
         <button  id="anterior" type="button" class="btn btn-primary mb-10"><?= __('Anterior') ?></button>

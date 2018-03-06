@@ -61,7 +61,7 @@ $ambits[-1]->ambit = __('Sin ámbito');
                 <?php foreach ($retos as $reto) { ?>
                     <tr>
                         <td scope="row" class="text-left <?= in_array($reto['id'], $propios) ? " retos_propios" : '' ?>">
-                            <?= $reto['challenge'] ?>
+                            <?= __('¿Cómo ') ?><?= $reto['challenge'] ?>
                         </td>
                         <?php foreach ($users as $user) { ?>
                             <td>

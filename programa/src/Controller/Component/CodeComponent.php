@@ -67,7 +67,7 @@ class CodeComponent extends Component {
 
     public function getNames() {
         $games = TableRegistry::get('Names');
-        $query = $games->find('all');
+        $query = $games->find('all',['order'=>'id']);
         $names = [];
         foreach ($query as $row) {
             $names[] = $row->name;
