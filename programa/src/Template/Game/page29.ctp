@@ -103,6 +103,7 @@ $solution = $practical->answer4;
                         '<?= __('¡Felicidades! El reto seleccionado es el que mejor va a ayudar a cumplir con el objetivo!') ?><br/><div class="alert alert_bikles float-right text-center m-3" role="alert"><img src="/img/bikles.png" class="mb-1 img-fluid" alt=""></br><?= __('Tu equipo ha ganado: ') ?><b><?= __('2 Bikles') ?></b></div>'];
                     $('#sended').html('<div class="mb-3"><?= __('El Jefe de Expedición ha recibido tu selección') ?></div>');
                     $('#error').html('<div class="alert alert_solution d-inline-block text-left rounded"><h4 class="green"><i class="fa fa-check-circle-o mr-2"></i><?= __('Solución') ?></h4>' + textos[parseInt(voto) + 1] + '<br/>La solución es:<br/><b><?= $solution ?></b>');
+                    $('#sendretos button').hide();
                     setTimeout(checkPage, 1000);
                 });
             });

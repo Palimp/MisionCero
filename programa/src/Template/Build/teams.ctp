@@ -41,8 +41,6 @@ $fila = '<div class="row bloque">
 ';
 ?>
 
-
-
 <main>
     <section>
         <div class="title_band text-center py-2">
@@ -88,55 +86,22 @@ $fila = '<div class="row bloque">
                 </div>
             </div>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b872cf39a4593f5c4c235217999de87d322bc84c
             <?php
             foreach ($teams as $team) {
                 ?>
             <div class="row bloque">
                 <div class="col">
 
-<<<<<<< HEAD
-                        <div class="d-inline">
-                            <select name="webmenu" class="webmenu" style="width:100%">
-                                <?php
-                                for ($i = 0; $i < count($names); $i++) {
-                                    ?>
-                                    <option value="<?= $i ?>" title="/img/exp<?= sprintf('%02d', $i+1); ?>.png"><?= $names[$i] ?></option>
-                                    <?php
-                                }
-                                ?>                  
-                            </select>
-=======
                     <div class="d-inline">
                             <?php
                            
                             echo getSelect($names,$team[1]);
                             ?>
->>>>>>> b872cf39a4593f5c4c235217999de87d322bc84c
 
 
                     </div>
-<<<<<<< HEAD
-                    <div class="col-8">
-
-                        <div class="row form-group">
-                            <div class="col pl-0">
-                                <input name="members[]"  type="text" class="form-control" placeholder="Nombre de los jugadores separados por comas" value="<?= $team[2] ?>" style="height: 62px;">
-                                <input name="ids[]"  type="hidden" class="form-control"  value="<?= $team[3] ?>">
-                            </div>
-                            <div class="col-12 col-md-auto my-auto">
-                                <a href="#" data-toggle="tooltip" title="Haz click para eliminar el equipo" class="d-inline-block">
-                                    <i class="fa fa-trash fa-2x"></i>
-                                </a>
-                            </div>
-                        </div>
-=======
                 </div>
                 <div class="col-8">
->>>>>>> b872cf39a4593f5c4c235217999de87d322bc84c
 
                     <div class="row form-group">
                         <div class="col pl-0">

@@ -215,7 +215,7 @@ $solution=$puzzle->answer1;
                         '<?= __('¡Felicidades! Has sido el primero en adivinar la respuesta. Ganas 3 bikles') ?>'];
 
                     $('#error').html('<?= __('El Jefe de Expedición ha recibido tu selección') ?><br/>' + textos[parseInt(data)]+"<br/>La solución es: <?=$solution ?>");
-                    $('#sendretos').hide();
+                    $('#sendretos button').hide();
                     setTimeout(checkPage, 1000);
                 });
             });

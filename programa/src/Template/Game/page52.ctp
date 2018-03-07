@@ -226,7 +226,7 @@ shuffle($answers);
                     }
                         
                     $('#error').html('<div class="alert alert_solution d-inline-block text-left rounded"><h4 class="green"><i class="fa fa-check-circle-o mr-2"></i><?= __('Solución') ?></h4>' + textos[texto] + '<br/>La solución es:<br/><b><?= $solution ?></b>');
-                    $('#sendretos').hide();
+                    $('#sendretos button').hide();
 
                     setTimeout(checkPage, 1000);
                 });
