@@ -20,7 +20,7 @@ $ids = [];
             <i class="fa fa-lightbulb-o fa-lg"></i>
                 <?= __('Convertir en retos basados en estados de ánimo') ?>
         </p>
-        <div class="clock-c">
+        <div class="clock-c text-center">
             <i class="fa fa-clock-o mr-2"></i><time>5'</time>
         </div>
 
