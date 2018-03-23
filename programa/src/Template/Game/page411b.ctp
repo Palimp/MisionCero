@@ -50,6 +50,8 @@
 
 <script>
     var page = 20;
+    var stop = 1;
+
     function delComment(id) {
         $.get("<?=
                     $this->Url->build([
@@ -71,6 +73,9 @@
                 }
             });
             $('#addcomment').click(function () {
+                if (stop) {
+                    return;
+                }
                 $('#addcomment').attr('style', 'display: none !important');
                 $.get("<?=
     $this->Url->build([
@@ -95,6 +100,11 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
+                    if (data == "0") {
+                        stop = 1;
+                    } else {
+                        stop = 0;
+                    }
                     if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);

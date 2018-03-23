@@ -10,9 +10,9 @@
         <?= $this->Html->image("breadp15.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <div class="title_wrap text-center">
-      <span class="title">
-        <?= __('Problemática: ' . $trouble) ?>
-      </span>
+        <span class="title">
+            <?= __('Problemática: ' . $trouble) ?>
+        </span>
     </div>
     <section class="container text-center">
         <p class="h_green">
@@ -42,7 +42,7 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="py-3">
             <a href="#" data-toggle="modal" data-target="#modal_ex1" class="grey_link">
                 <i class="fa fa fa-file-text-o fa-2x example_ic mr-2"></i>
@@ -81,7 +81,7 @@
                     <div class="modal-body">
 
                         <p class="green">
-                                <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
+                            <?= __('Ejemplo: si nuestra problemática inicial fuera ') ?><i><?= __('“¿Cómo podríamos mejorar la comunicación interna?"') ?></i>
                         </p>
                         <p>
                             <b>
@@ -136,13 +136,14 @@
 
 <script>
     var page = 8;
+    var stop = 1;
     function delComment(id) {
         $.get("<?=
-                                $this->Url->build([
-                                    "controller" => "Game",
-                                    "action" => "deletecomment"
-                                ])
-                                ?>", {'id': id}, function (data, status) {
+                $this->Url->build([
+                    "controller" => "Game",
+                    "action" => "deletecomment"
+                ])
+                ?>", {'id': id}, function (data, status) {
             if (status == 'success') {
 
                 $('#bloque' + id).remove();
@@ -157,7 +158,10 @@
                 }
             });
             $('#addcomment').click(function () {
-                if ($('#comment').val()===""){
+                if (stop) {
+                    return;
+                }
+                if ($('#comment').val() === "") {
                     return;
                 }
                 $('#addcomment').attr('style', 'display: none !important');
@@ -185,7 +189,11 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-
+                    if (data == "0") {
+                        stop = 1;
+                    } else {
+                        stop = 0;
+                    }
                     if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);

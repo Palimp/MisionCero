@@ -10,9 +10,9 @@
         <?= $this->Html->image("breadp33.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <div class="title_wrap text-center">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
+        <span class="title">
+            <?= __('Problemática: ' . $trouble) ?>
+        </span>
     </div>
     <section class="container text-center">
         <p class="h_green">
@@ -23,49 +23,49 @@
             <i class="fa fa-clock-o mr-2"></i><time>10'</time>
         </div>
         <p>
-            <?=__('Pensar en las preguntas más básicas para identificar retos:')?>
+            <?= __('Pensar en las preguntas más básicas para identificar retos:') ?>
         </p>
-        
+
         <div class="text-left">
             <div class="pr-3 d-inline-block" style="background-color: #ebfa94;">
                 <span class="mx-2">
-                    <?=__('¿QUIÉN?')?>
+                    <?= __('¿QUIÉN?') ?>
                 </span>
                 <span class="mr-2">
-                    <?=__('¿DÓNDE?')?>
+                    <?= __('¿DÓNDE?') ?>
                 </span>
                 <span>
-                    <?=__('¿CUÁNDO?')?>
+                    <?= __('¿CUÁNDO?') ?>
                 </span>
             </div>
         </div>
         <ol class="mt-2 list-numbered text-left">
             <li>
-                <?=__('Pensar en públicos objetivos (internos o externos), lugares y momentos relevantes asociados con la problemática')?>
+                <?= __('Pensar en públicos objetivos (internos o externos), lugares y momentos relevantes asociados con la problemática') ?>
             </li>
             <li>
-                <?=__('Convertir estas respuestas en retos: ¿cómo…?')?>
+                <?= __('Convertir estas respuestas en retos: ¿cómo…?') ?>
             </li>
         </ol>
         <div class="text-left">
             <div class="pr-3 d-inline-block" style="background-color: #f3ed48;">
                 <span class="mx-2">
-                    <?=__('¿POR QUÉ?')?>
+                    <?= __('¿POR QUÉ?') ?>
                 </span>
                 <span>
-                    <?=__('¿PARA QUÉ?')?>
+                    <?= __('¿PARA QUÉ?') ?>
                 </span>
             </div>
         </div>
         <ol class="mt-2 list-numbered text-left">
             <li>
-                <?=__('Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto.')?>
+                <?= __('Pensar en “¿por qué?/¿para qué?”  tenemos que trabajar este reto.') ?>
             </li>
             <li>
-                <?=__('Convertirlos en reto: ¿Cómo…? ')?>
+                <?= __('Convertirlos en reto: ¿Cómo…? ') ?>
             </li>
         </ol>
-            
+
 
 
 
@@ -111,11 +111,11 @@
                                     <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
                                     <div class="example_wrapper col mr-4">
                                         <div class="example_inner text-left py-3 px-4">
-                                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?>
+                                            <?= __('Siguiendo nuestra simulación de partida sobre la problemática ficticia ') ?>
                                             </br>
-                                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?>
+                                            <?= __('“¿Cómo podríamos mejorar la comunicación interna?”,') ?>
                                             </br>
-                                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
+                                            <?= __('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso') ?>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@
                             </div>
                             <div class="modal-body text-center">
                                 <p>
-                                        <?=__('Para esta Etapa 2, algunos ejemplos de ')?><i><?=__('“retos basados en preguntas básicas”')?></i> <?=__(' podrían ser:')?> 
+                                    <?= __('Para esta Etapa 2, algunos ejemplos de ') ?><i><?= __('“retos basados en preguntas básicas”') ?></i> <?= __(' podrían ser:') ?> 
                                 </p>
                                 <div class="text-center">
                                     <div class="row">
@@ -274,7 +274,7 @@
                 </div>
             </div>
         </div>
-        
+
 
         <div class="text-center mt-5">
             <div class="alert alert_bikles d-inline-block" role="alert">
@@ -292,13 +292,15 @@
 
 <script>
     var page = 20;
+    var stop = 1;
+
     function delComment(id) {
         $.get("<?=
-                                                $this->Url->build([
-                                                    "controller" => "Game",
-                                                    "action" => "deletequestion"
-                                                ])
-                                                ?>", {'id': id}, function (data, status) {
+                    $this->Url->build([
+                        "controller" => "Game",
+                        "action" => "deletequestion"
+                    ])
+                    ?>", {'id': id}, function (data, status) {
             if (status == 'success') {
 
                 $('#bloque' + id).remove();
@@ -313,6 +315,9 @@
                 }
             });
             $('#addcomment').click(function () {
+                if (stop) {
+                    return;
+                }
                 $('#addcomment').attr('style', 'display: none !important');
                 $.get("<?=
     $this->Url->build([
@@ -337,7 +342,11 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
-
+                    if (data == "0") {
+                        stop = 1;
+                    } else {
+                        stop = 0;
+                    }
                     if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);

@@ -10,14 +10,14 @@
         <?= $this->Html->image("breadp49.svg", ['class' => 'img-fluid mx-auto d-block head-img']); ?>
     </header>
     <div class="title_wrap text-center">
-      <span class="title">
-        <?=__('Problemática: '.$trouble)?>
-      </span>
+        <span class="title">
+            <?= __('Problemática: ' . $trouble) ?>
+        </span>
     </div>
     <section class="container text-center">
 
         <p class="h_green">
-                <?= __('El equipo escribe los retos') ?>
+            <?= __('El equipo escribe los retos') ?>
         </p>
         <div class="clock-c">
             <i class="fa fa-clock-o mr-2"></i><time>7'</time>
@@ -60,147 +60,149 @@
         <div>
 
             <div class="py-3">
-              <a href="#" data-toggle="modal" data-target="#modal_ex4" class="grey_link">
-                <i class="fa fa-file-text-o fa-2x example_ic mr-2"></i>
-                <p class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
-                </p>
-              </a>
+                <a href="#" data-toggle="modal" data-target="#modal_ex4" class="grey_link">
+                    <i class="fa fa-file-text-o fa-2x example_ic mr-2"></i>
+                    <p class="fs12 d-inline-block"><?= __('click aquí para') ?><br><?= __(' ver ejemplo') ?>
+                    </p>
+                </a>
             </div>
             <div id="modal_ex4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal_ex4LiveLabel" style="display: none;" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header align-items-start">
-                    <div class="example row">
-                        <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
-                        <div class="example_wrapper col mr-4">
-                           <div class="example_inner text-left py-3 px-4">
-                            <?=__('Siguiendo nuestra simulación de partida sobre la problemática ficticia ')?></br>
-                            <?=__('“¿Cómo podríamos mejorar la comunicación interna?”,')?></br>
-                            <?=__('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso')?>
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header align-items-start">
+                            <div class="example row">
+                                <i class="fa fa-file-text-o fa-3x example_ic align-top col-1"></i>
+                                <div class="example_wrapper col mr-4">
+                                    <div class="example_inner text-left py-3 px-4">
+                                        <?= __('Siguiendo nuestra simulación de partida sobre la problemática ficticia ') ?></br>
+                                        <?= __('“¿Cómo podríamos mejorar la comunicación interna?”,') ?></br>
+                                        <?= __('aquí tienes ejemplos de contenidos que se podrían haber generado en este paso') ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
                         </div>
-                      </div>
+                        <div class="modal-body text-center">
+                            <p>
+                                <?= __('Para esta Etapa 3, algunos ejemplos de ') ?><i><?= __('retos basados en puntos de vista') ?></i> <?= __(' podrían ser:') ?> 
+                            </p>
+                            <div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="fs26">
+                                            <b>
+                                                <?= __('Stakeholder') ?>
+                                            </b>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            <?= __('reto visto desde su punto de vista') ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            <i class="fa fa-shopping-cart fa-2x"></i>
+                                            </br>
+                                            <b>
+                                                <?= __('Mis clientes') ?>
+                                            </b>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            <?= __('¿Cómo conseguir que mi comunicación ayude a la gente a conocer mejor a los clientes?') ?>
+                                            </br>
+                                            </br>
+                                            <?= __('¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?') ?>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p>
+                                            <i class="fa fa-user-o fa-2x"></i>
+                                            </br>
+                                            <b>
+                                                <?= __('Los jefes') ?>
+                                            </b>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            <?= __('¿Cómo podríamos conseguir que los jefes ayuden a sus equipos a entender la comunicación?') ?>
+                                            </br>
+                                            </br>
+                                            <?= __('¿Cómo podríamos informarles primero y que no digan nada hasta que sea oficial?') ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            <i class="fa fa-handshake-o fa-2x"></i>
+                                            </br>
+                                            <b>
+                                                <?= __('Los responsables de comunicación') ?>
+                                            </b>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            <?= __('¿Cómo podríamos conseguir que conozcan mejor los diferentes colectivos?') ?>
+                                            </br>
+                                            </br>
+                                            <?= __('¿Cómo conseguir que formen a la gente en comunicación?') ?>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p>
+                                            <i class="fa fa-crosshairs fa-2x"></i>
+                                            </br>
+                                            <b>
+                                                <?= __('El entorno de los trabajadores') ?>
+                                            </b>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            </br>
+                                            <?= __('¿Cómo podríamos conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?') ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            <i class="fa fa-truck fa-2x"></i>
+                                            </br>
+                                            <?= __('Mis proveedores') ?>
+                                            </br>
+                                            <i class="fa fa-chevron-down"></i>
+                                            </br>
+                                            <?= __('¿Cómo utilizar a mi comunicación interna para involucrar a los proveedores?') ?>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">×</span>
-                    </button>
-                  </div>
-                  <div class="modal-body text-center">
-                    <p>
-                            <?=__('Para esta Etapa 3, algunos ejemplos de ')?><i><?=__('retos basados en puntos de vista')?></i> <?=__(' podrían ser:')?> 
-                    </p>
-                    <div>
-                      <div class="row">
-                        <div class="col">
-                          <p class="fs26">
-                            <b>
-                              <?=__('Stakeholder')?>
-                            </b>
-                            </br>
-                            <i class="fa fa-chevron-down"></i>
-                            </br>
-                                <?=__('reto visto desde su punto de vista')?>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <p>
-                            <i class="fa fa-shopping-cart fa-2x"></i>
-                            </br>
-                            <b>
-                              <?=__('Mis clientes')?>
-                            </b>
-                            </br>
-                            <i class="fa fa-chevron-down"></i>
-                            </br>
-                            <?=__('¿Cómo conseguir que mi comunicación ayude a la gente a conocer mejor a los clientes?')?>
-                            </br>
-                            </br>
-                            <?=__('¿Cómo utilizar a mi comunicación interna para que los clientes nos conozcan mejor?')?>
-                          </p>
-                        </div>
-                        <div class="col">
-                          <p>
-                            <i class="fa fa-user-o fa-2x"></i>
-                            </br>
-                            <b>
-                              <?=__('Los jefes')?>
-                            </b>
-                            </br>
-                            <i class="fa fa-chevron-down"></i>
-                            </br>
-                            <?=__('¿Cómo podríamos conseguir que los jefes ayuden a sus equipos a entender la comunicación?')?>
-                            </br>
-                            </br>
-                            <?=__('¿Cómo podríamos informarles primero y que no digan nada hasta que sea oficial?')?>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <p>
-                            <i class="fa fa-handshake-o fa-2x"></i>
-                            </br>
-                            <b>
-                              <?=__('Los responsables de comunicación')?>
-                            </b>
-                            </br>
-                            <i class="fa fa-chevron-down"></i>
-                            </br>
-                            <?=__('¿Cómo podríamos conseguir que conozcan mejor los diferentes colectivos?')?>
-                            </br>
-                            </br>
-                            <?=__('¿Cómo conseguir que formen a la gente en comunicación?')?>
-                          </p>
-                        </div>
-                        <div class="col">
-                          <p>
-                            <i class="fa fa-crosshairs fa-2x"></i>
-                            </br>
-                            <b>
-                              <?=__('El entorno de los trabajadores')?>
-                            </b>
-                            </br>
-                            <i class="fa fa-chevron-down"></i>
-                            </br>
-                            </br>
-                            <?=__('¿Cómo podríamos conseguir que parte de la comunicación corporativa pueda ayudar a mejorar nuestra imagen en el entorno?')?>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <p>
-                            <i class="fa fa-truck fa-2x"></i>
-                            </br>
-                            <?=__('Mis proveedores')?>
-                            </br>
-                            <i class="fa fa-chevron-down"></i>
-                            </br>
-                            <?=__('¿Cómo utilizar a mi comunicación interna para involucrar a los proveedores?')?>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
 
         </div>
     </section>
-        
+
 </main>
 
 <script>
     var page = 20;
+    var stop = 1;
+
     function delComment(id) {
         $.get("<?=
-                                $this->Url->build([
-                                    "controller" => "Game",
-                                    "action" => "deletestake"
-                                ])
-                                ?>", {'id': id}, function (data, status) {
+                                            $this->Url->build([
+                                                "controller" => "Game",
+                                                "action" => "deletestake"
+                                            ])
+                                            ?>", {'id': id}, function (data, status) {
             if (status == 'success') {
 
                 $('#bloque' + id).remove();
@@ -215,6 +217,9 @@
                 }
             });
             $('#addcomment').click(function () {
+                if (stop) {
+                    return;
+                }
                 $('#addcomment').attr('style', 'display: none !important');
                 $.get("<?=
     $this->Url->build([
@@ -239,6 +244,11 @@
         "action" => "gettime"
     ])
     ?>", function (data, status) {
+                    if (data == "0") {
+                        stop = 1;
+                    } else {
+                        stop = 0;
+                    }
                     if (data != "0" && data != "00:00") {
                         $('#clock').html(data);
                         setTimeout(checkTime, 500);
